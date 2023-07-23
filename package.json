@@ -1,0 +1,21 @@
+{
+  "name": "flawul",
+  "displayName": "Flawul",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Flawul",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Flawul-color-theme.json"
+      }
+    ]
+  }
+}
