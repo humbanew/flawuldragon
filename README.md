@@ -3,10 +3,11 @@
 <div align="center">
 
   ![Flawul Logo](https://github.com/Humba01/flawul/assets/59739253/6b522752-6b3c-43fd-8819-a12e6c067b94)
-
-  ![Model_Schema_Theme](https://github.com/Humba01/flawul/assets/59739253/db5901a7-5a56-4f19-85c8-f63e50316cf6)
   
+  ![Color Schema](https://github.com/Humba01/flawul/assets/59739253/9767d2a4-edc5-40d3-add0-ada062aa4fde)
+
 </div>
+<br><br>
 
 ## Extension Readme
 
