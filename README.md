@@ -1,8 +1,8 @@
 # flawul
 
 <div align="center">
-
-  ![Flawul Logo](https://github.com/Humba01/flawul/assets/59739253/6b522752-6b3c-43fd-8819-a12e6c067b94)
+  
+  ![Flawul - Chaosdragon Logo](https://github.com/Humba01/flawul-chaosdragon/assets/59739253/d262e7a8-3561-40c3-8359-cb62dd650559)
 
 </div>
 <br><br>
