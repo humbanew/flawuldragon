@@ -1,50 +1,26 @@
-// Paleta de Cores
-	
-	// Interface
-		// Loulou ⇒ #492842
-		// Castro ⇒ #4B253C
-		// Black Rose ⇒ #4C2439
-		// Black Rose ⇒ #4D2337
-		// Black Rose ⇒ #4D2235
-		// Siren ⇒ #63263D
-		// Disco ⇒ #8F2E4D
-		// Night Shadz ⇒ #A7384D
-		// Sunset ⇒ #BE423C
-		// Dark Coral ⇒ #CD4E41
-		// Sorbus ⇒ #DB5935
-		// Pizazz ⇒ #ED7437
-		// Neon Carrot ⇒ #FF8E38
-		// Yellow Orange ⇒ #FFAC43
-		// Golden Tainoi ⇒ #FFC94D
+// Interface
+	// Loulou ⇒ #492842
+	// Castro ⇒ #4B253C
+	// Black Rose ⇒ #4C2439
+	// Black Rose ⇒ #4D2337
+	// Black Rose ⇒ #4D2235
+	// Siren ⇒ #63263D
+	// Disco ⇒ #8F2E4D
+	// Night Shadz ⇒ #A7384D
+	// Sunset ⇒ #BE423C
+	// Dark Coral ⇒ #CD4E41
+	// Sorbus ⇒ #DB5935
+	// Pizazz ⇒ #ED7437
+	// Neon Carrot ⇒ #FF8E38
+	// Yellow Orange ⇒ #FFAC43
+	// Golden Tainoi ⇒ #FFC94D
+	// Alice Blue ⇒ #DFEDFF
+	// Onahau ⇒ #BEDDEF
+	// French Pass ⇒ #9FCDDE
+	// Seagull ⇒ #81BECD
+	// Fountain Blue ⇒ #65AEBC
+	// Half Blue ⇒ #508A95 
 
-	// Sintaxe
-		// Hollywood Cerise ⇒ #FF0099
-		// Hot Magenta ⇒ #FF00CC
-		// Magenta ⇒ #FF00FF
-		// Persimmon ⇒ #E33D00
-		// Safety Orange ⇒ #FF6200
-		// Neon Carrot ⇒ #FF8826
-		// Red ⇒ #E80000
-		// Scarlet ⇒ #ED2100
-		// Torch Red ⇒ #FC1D1D
-		// Dark Pastel Green ⇒ #0AC40A
-		// Lime ⇒ #00FF00
-		// Bright Green ⇒ #66FF00
-		// Golden Yellow ⇒ #FFEB00
-		// Paris Daisy ⇒ #FFF049
-		// Laser Lemon ⇒ #FFFF69
-		// Light Sky Blue ⇒ #80D8FF
-		// Dodger Blue ⇒ #29B6F6
-		// Deep Sky Blue ⇒ #00B0FF
-		// Dodger Blue ⇒ #0091EA
-		// Navy Blue ⇒ #0277BD
-		// Cobalt ⇒ #01579B
-		// Alice Blue ⇒ #DFEDFF
-		// Onahau ⇒ #BEDDEF
-		// French Pass ⇒ #9FCDDE
-		// Seagull ⇒ #81BECD
-		// Fountain Blue ⇒ #65AEBC
-		// Half Blue ⇒ #508A95 
 
 {
 	"name": "Flawul",
@@ -66,6 +42,11 @@
 		// Badge
 		"badge.background": "#a7384d",
 		"badge.foreground": "#ffac43",
+
+		// Banner
+		"banner.background": "#63263d",
+		"banner.foreground": "#ffac43",
+		"banner.iconForeground": "#db5935",
 
 		// Breadcrumb, Breadcrumb Picker
 		"breadcrumb.background": "#4b253c",
@@ -91,6 +72,34 @@
 		"checkbox.selectBackground": "#63263d",
 		"checkbox.selectBorder": "#ffc94d",
 
+		// Icon
+		"icon.foreground": "#db5935",
+
+		// Menu, Menu Bar
+		"menu.background": "#682e4d",
+		"menu.foreground": "#ffac43",
+		"menu.selectionBackground": "#cd4e41",
+		"menu.selectionForeground": "#ffac43",
+		"menu.border": "#4c2439",
+		"menu.selectionBorder": "#a7384d",
+		"menu.separatorBackground": "#49263d",
+		"menubar.selectionBackground": "#63263d",
+		"menubar.selectionBorder": "#49263d",
+		"menubar.selectionForeground": "#ff8e43",
+		
+		// Notifications, Notifications Link, Notifications Toast, Notifications Center, Notifications Center Header
+		"notifications.background": "#492832",
+		"notifications.border": "#4c2439",
+		"notifications.foreground": "#ffac43",
+		"notificationsErrorIcon.foreground": "#440000",
+		"notificationsInfoIcon.foreground": "#ffffff",
+		"notificationsWarningIcon.foreground": "#ffcc00",
+		"notificationToast.border": "#4c2439",
+		"notificationLink.foreground": "#ffffff",
+		"notificationCenter.border": "#4c2439",
+		"notificationCenterHeader.background": "#cd4e41",
+		"notificationCenterHeader.foreground": "#ffac43",
+		
 		// Side Bar, Side Bar Header, Side Bar Title
 		"sideBar.background": "#4c2439",
 		"sideBar.border": "#492842",
@@ -108,6 +117,13 @@
 		// Text Link
 		"textLink.activeForeground": "#ed7437",
 		"textLink.foreground": "#ffac43",
+
+		// Title Bar
+		"titleBar.activeBackground": "#49263d",
+		"titleBar.activeForeground": "#ffac43",
+		"titleBar.border": "#49263d",
+		"titleBar.inactiveBackground": "#48263d",
+		"titleBar.inactiveForeground": "#a7384d",
 		
 		// Welcome Page
 		"welcomePage.background": "#492842",
@@ -117,15 +133,29 @@
 		"welcomePage.progress.foreground": "#cd4e41",
 		"welcomePage.tileBorder": "#ffac43",
 
-		"list.inactiveSelectionBackground": "#4d2235",
+		// Window
+		"window.activeBorder": "#00000000",
+		"window.inactiveBorder": "#00000000",
 
-		"editor.background": "#492842",
-		"editorGroupHeader.tabsBackground": "#8f2e4d",
-		"editor.lineHighlightBackground": "#4b253c",
+
+		"list.inactiveSelectionBackground": "#4d2235",
+		"list.hoverBackground": "#63263d",
 
 		"statusBar.background": "#cd4e41",
 		"statusBar.foreground": "#ffc94d",
 		"statusBar.border": "#8f2e4d",
+		"statusBar.debuggingBackground": "#63263d",
+		"statusBar.debuggingBorder": "#8f2e4d",
+		"statusBar.debuggingForeground": "#ffc94d",
+		"statusBar.focusBorder": "#8f2e4d",
+		"statusBar.noFolderBackground": "#cd4e41",
+		"statusBar.noFolderBorder": "#8f2e4d",
+		"statusBar.noFolderForeground": "#ffc94d",
+		"statusBar.offlineBackground": "#ed7437",
+		"statusBar.offlineForeground": "#8f2e4d",
+		"statusBarItem.activeBackground": "#682e4d",
+		"statusBarItem.remoteBackground": "#be423c",
+		"statusBarItem.errorBackground": "#cd4e41",
 
 		"tab.activeBackground": "#cd4e41",
 		"tab.inactiveBackground": "#a7384d",
@@ -134,9 +164,57 @@
 		"tab.activeBorderTop": "#cd4e41",
 		"tab.inactiveForeground": "#db5935",
 
+
+		"editorBracketHighlight.foreground1": "#dfedff",
+		"editorBracketHighlight.foreground2": "#beddef",
+		"editorBracketHighlight.foreground3": "#9fcdde",
+		"editorBracketHighlight.foreground4": "#81becd",
+		"editorBracketHighlight.foreground5": "#65aebc",
+		"editorBracketHighlight.foreground6": "#508a95",
+
+		"editor.background": "#492842",
+		"editor.foreground": "#ffffff",
+		"editor.lineHighlightBackground": "#4b253c",
+		"editor.selectionBackground": "#cd4e41",
+		"editorGroupHeader.tabsBackground": "#8f2e4d",
+		"editorLineNumber.activeForeground": "#ffc94d",
+		"editorLineNumber.foreground": "#be423c",
+		"editorLineNumber.dimmedForeground": "#ffc94d99",
+
 	},
 
-	"tokenColors": [ ],
+// Esquema de cores
+	// Maroon ⇒ #751102
+	// Fire Brick ⇒ #A72F1D
+	// Sunset ⇒ #C55241
+	// Terra Cotta ⇒ #E07464
+	// Wewak ⇒ #F59E91
+	// Tiber ⇒ #184D47
+	// Mosque ⇒ #035956
+	// Observatory ⇒ #00917C
+	// Magic Mint ⇒ #A5F0C5
+	// Prussian Blue ⇒ #000137
+	// Navy ⇒ #02055A
+	// Dark Blue ⇒ #02198B
+	// Cerulean Blue ⇒ #253DA1
+	// Pale Cornflower Blue ⇒ #B0DBF1
+	// Lemon Chiffon ⇒ #FFFBC3
+	// Salomie ⇒ #FEE582
+	// Grandis ⇒ #FEC66E
+	// Dark Tangerine ⇒ #FFA921
+	// Tacao ⇒ #F7BE6D
+	// Yellow Orange ⇒ #FFB347
+	// Dark Tangerine ⇒ #FA9C1B
+	// Carrot Orange ⇒ #F58216
+	// Persimmon ⇒ #F05E16
+
+
+	"tokenColors": [
+
+		{ "scope": "comment.line", "settings": { } },
+		{ "scope": "comment.block", "settings": { } }
+
+	],
 
 	"semanticHighlighting": true
 
