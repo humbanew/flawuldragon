@@ -12,6 +12,13 @@
 </div>
 <br><br>
 
+## Links for Documentation [Links da Documentação do VS Code]
+
+- https://code.visualstudio.com/api/get-started/your-first-extension
+- https://code.visualstudio.com/api/references/theme-color#base-colors
+- https://code.visualstudio.com/api/references/extension-manifest
+- https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce
+
 ## Extension Readme [Instruções de Criação do Projeto e Uso do VS Code]
 
 ### Working with Markdown
