@@ -4,10 +4,15 @@
   
   ![Flawul - Chaosdragon Logo](https://github.com/Humba01/flawul-chaosdragon/assets/59739253/d262e7a8-3561-40c3-8359-cb62dd650559)
 
+  ## Planejamento
+  <br><br>
+
+  ![Planejamento Projeto](https://github.com/Humba01/flawul-chaosdragon/assets/59739253/97f8f5ae-2363-4727-8323-c7f31a7c95fe)
+
 </div>
 <br><br>
 
-## Extension Readme
+## Extension Readme [Instruções de Criação do Projeto e Uso do VS Code]
 
 ### Working with Markdown
 
