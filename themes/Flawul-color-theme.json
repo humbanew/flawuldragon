@@ -457,12 +457,20 @@
     },
 
     {
-      "scope": ["constant.json"],
+      "scope": "constant.numeric.json",
       "settings": {
-        "foreground": "#ffffff",
+        "foreground": "#A8F387",
         "fontStyle": "bold"
       }
     },
+
+		{
+			"scope": "constant.language.json",
+			"settings": {
+				"foreground": "#AF87CE",
+				"fontStyle": "italic bold"
+			}
+		},
 
     {
       "scope": [
