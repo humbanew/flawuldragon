@@ -2,7 +2,7 @@
   "name": "flawul",
   "displayName": "Flawul",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "buildprj": "vsce package"
   },
