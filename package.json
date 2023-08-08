@@ -3,6 +3,9 @@
   "displayName": "Flawul",
   "description": "",
   "version": "0.0.2",
+  "scripts": {
+    "buildprj": "vsce package"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -17,5 +20,8 @@
         "path": "./themes/Flawul-color-theme.json"
       }
     ]
+  },
+  "dependencies": {
+    "@vscode/vsce": "^2.20.1"
   }
 }
