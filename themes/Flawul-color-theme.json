@@ -281,7 +281,10 @@
 				"entity.name.method",
 				"entity.name.selector",
 				"support",
-				"variable"
+				"variable",
+				"constant.c++",
+				"constant.c",
+				"constant.h"
 			],
 			"settings": {
 				"foreground": "#eab636",
@@ -290,9 +293,34 @@
 		},
 
 		{
+			"scope": "support",
+			"settings": { 
+				"foreground": "#ebceac", 
+				"fontStyle": "italic" 
+			}
+		},
+
+		{
+			"scope": "keyword.control",
+			"settings": { 
+				"foreground": "#e52c32", 
+				"fontStyle": "bold italic" 
+			}
+		},
+
+		{
+			"scope": [ 
+				"variable.parameter" 
+			],
+			"settings": {
+				"foreground": "#84eca4",
+				"fontStyle": "bold"
+			}
+		},
+
+		{
 			"scope": [
 				"keyword.operator.new",
-				"keyword.control",
 				"invalid.illegal",
 				"invalid.deprecated"
 			],
