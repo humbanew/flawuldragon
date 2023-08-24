@@ -2,7 +2,14 @@
   "name": "flawul",
   "displayName": "Flawul",
   "description": "",
-  "version": "0.0.4",
+  "version": "0.0.4-1",
+  "publisher": "humbanew-project",
+  "license": "HNLUT-3.0",
+  "repository": {
+    "url": "git@github.com:Humba01/flawul-chaosdragon.git",
+    "directory": ".",
+    "type": "git"
+  },
   "scripts": {
     "buildprj": "vsce package"
   },
