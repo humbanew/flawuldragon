@@ -12,12 +12,7 @@
   "contributes": {
     "themes": [
       {
-        "label": "Flawuldragon - Template Theme",
-        "uiTheme": "vs-dark",
-        "path": "./themes/FlawuldragonTemplate-color-theme.json"
-      },
-      {
-        "label": "Flawuldragon - IDO Theme",
+        "label": "Flawuldragon - Internal Development Theme",
         "uiTheme": "vs-dark",
         "path": "./themes/FlawuldragonInternal-color-theme.json"
       }
