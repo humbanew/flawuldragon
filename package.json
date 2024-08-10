@@ -12,7 +12,7 @@
   "contributes": {
     "themes": [
       {
-        "label": "Flawuldragon - Internal Development Theme",
+        "label": "Flawuldragon - IDT Hacker",
         "uiTheme": "vs-dark",
         "path": "./themes/FlawuldragonInternal-color-theme.json"
       }
