@@ -466,9 +466,10 @@
 		{
 			// editado↴
 			"name": "Number",
-			"scope": "constant.numeric",
+			"scope": "constant.numeric, variable.other.constant, constant.character, constant.escape, constant.other, constant.regexp, entity.name.constant, keyword.other.unit",
 			"settings": {
-				"foreground": "#99efcd"
+				"foreground": "#6d5d6e",
+				"fontStyle": "bold"
 			}
 		},
 		{
@@ -527,6 +528,144 @@
 			"scope": "punctuation.section.embedded.begin, punctuation.section.embedded.end",
 			"settings": {
 				"foreground": "#54814eff"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "Keywords - New",
+			"scope": "keyword.operator.new, keyword.operator.delete, keyword.operator.typeof, keyword.operator.in, keyword.operator.instanceof, keyword.operator.sizeof",
+			"settings": {
+				"foreground": "#ffce4a",
+				"fontStyle": "italic bold"
+			}
+		},
+		{
+			"name": "Keywords - Control",
+			"scope": "constant.language.true, constant.language.false, constant.language.null, constant.language.undefined, constant.language.NULL, constant.language.boolean.false.js,source.js, constant.language.boolean.true.js,source.js, constant.language.null.js,source.js, constant.language.undefined.js,source.js, constant.language.NULL.js,source.js, constant.language.boolean.false.ts,source.ts, constant.language.boolean.true.ts,source.ts, constant.language.null.ts,source.ts, constant.language.undefined.ts,source.ts, constant.language.NULL.ts,source.ts, constant.language.boolean.false.jsx,source.jsx, constant.language.boolean.true.jsx,source.jsx, constant.language.null.jsx,source.jsx, constant.language.undefined.jsx,source.jsx, constant.language.NULL.jsx,source.jsx, constant.language.boolean.false.tsx,source.tsx, constant.language.boolean.true.tsx,source.tsx, constant.language.null.tsx,source.tsx, constant.language.undefined.tsx,source.tsx, constant.language.NULL.tsx,source.tsx, entity.name.function.js, meta.function-call.js",
+			"settings": {
+				"foreground": "#ff7777",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "CSS Classes",
+			"scope": [
+				"entity.other.attribute-name.class"
+			],
+			"settings": {
+				"foreground": "#FFCB6B"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "CSS ID's",
+			"scope": [
+				"source.sass keyword.control"
+			],
+			"settings": {
+				"foreground": "#82AAFF"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "ES7 Bind Operator",
+			"scope": [
+				"source.js constant.other.object.key.js string.unquoted.label.js"
+			],
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#FF5370"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "JSON Key - Level 0",
+			"scope": [
+				"source.json meta.structure.dictionary.json support.type.property-name.json"
+			],
+			"settings": {
+				"foreground": "#C792EA"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "JSON Key - Level 1",
+			"scope": [
+				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+			],
+			"settings": {
+				"foreground": "#FFCB6B"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "JSON Key - Level 2",
+			"scope": [
+				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+			],
+			"settings": {
+				"foreground": "#F78C6C"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "JSON Key - Level 3",
+			"scope": [
+				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+			],
+			"settings": {
+				"foreground": "#FF5370"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "JSON Key - Level 4",
+			"scope": [
+				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+			],
+			"settings": {
+				"foreground": "#C17E70"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "JSON Key - Level 5",
+			"scope": [
+				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+			],
+			"settings": {
+				"foreground": "#82AAFF"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "JSON Key - Level 6",
+			"scope": [
+				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+			],
+			"settings": {
+				"foreground": "#f07178"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "JSON Key - Level 7",
+			"scope": [
+				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+			],
+			"settings": {
+				"foreground": "#C792EA"
+			}
+		},
+		{
+			// adicionado↴
+			"name": "JSON Key - Level 8",
+			"scope": [
+				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+			],
+			"settings": {
+				"foreground": "#C3E88D"
 			}
 		},
 		{
@@ -644,53 +783,54 @@
 			}
 		},
 		{
-			// vizualizado↴
+			// editado↴
 			"name": "Markup Quote",
 			"scope": "markup.quote",
 			"settings": {
-				"foreground": "#68AD1F"
+				"foreground": "#00307d"
 			}
 		},
 		{
-			// vizualizado↴
+			// editado↴
 			"name": "Markup Lists",
 			"scope": "markup.list",
 			"settings": {
-				"foreground": "#9DC734"
+				"foreground": "#1583af"
 			}
 		},
 		{
-			// vizualizado↴
+			// editado↴
 			"name": "Markup Styling",
 			"scope": "markup.bold, markup.italic",
 			"settings": {
-				"foreground": "#519b49ff"
+				"foreground": "#0b005aff"
 			}
 		},
 		{
-			// vizualizado↴
+			// editado↴
 			"name": "Markup Inline",
 			"scope": "markup.inline.raw",
 			"settings": {
 				"fontStyle": "",
-				"foreground": "#54814eff"
+				"foreground": "#0b555f"
 			}
 		},
 		{
-			// vizualizado↴
+			// editado↴
 			"name": "Markup Headings",
 			"scope": "markup.heading",
 			"settings": {
-				"foreground": "#E08C48"
+				"foreground": "#00ca89",
+				"fontStyle": "bold"
 			}
 		},
 		{
-			// vizualizado↴
+			// editado↴
 			"name": "Markup Setext Header",
 			"scope": "markup.heading.setext",
 			"settings": {
 				"fontStyle": "",
-				"foreground": "#519449ff"
+				"foreground": "#00ca8977"
 			}
 		},
 		{
