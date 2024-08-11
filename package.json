@@ -3,6 +3,10 @@
   "displayName": "Flawuldragon",
   "description": "Humbanew Internal Development Official Theme",
   "version": "0.0.1",
+  "author": {
+    "name": "Humbanew Project"
+  },
+  "icon": "assets/icon.png",
   "engines": {
     "vscode": "^1.92.0"
   },
