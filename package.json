@@ -5,6 +5,7 @@
   "version": "0.0.1-1",
   "icon": "assets/icon.png",
   "readme": "README.md",
+  "license": "Humbanew License v5",
   "repository": {
     "type": "git",
     "url": "https://github.com/humbanew/flawuldragon"
