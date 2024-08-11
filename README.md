@@ -1,9 +1,4 @@
-<div align="center">
-
-  ![](assets\flawuldragon.png)
-
-</div>
-
+# Flawuldragon Themes
 ____
 
 ## Themes
