@@ -4,6 +4,11 @@
   "description": "Humbanew Internal Development Official Theme",
   "version": "0.0.1",
   "icon": "assets/icon.png",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/humbanew/flawuldragon"
+  },
   "publishConfig": {
     "access": "restricted"
   },
