@@ -190,7 +190,31 @@
 		"statusBarItem.warningBackground": "#cca700",
 		
 		// novo↴
-		"statusBarItem.warningForeground": "#ffffff"
+		"statusBarItem.warningForeground": "#ffffff",
+
+		// v0.0.2-novo↴
+		"terminal.foreground": "#da5f59",
+		"terminal.background": "#050505",
+		"terminalCursor.foreground": "#3ac3ed",
+		"terminalCommandDecoration.defaultBackground": "#3ac3ed",
+		"terminalCursor.background": "#3ac3ed",
+
+		"terminal.ansiBrightYellow": "#ffcb6b",
+		"terminal.ansiBrightGreen": "#0dbc79",
+		"terminal.ansiBrightBlue": "#3b8eea",
+		"terminal.ansiBrightCyan": "#29b8db",
+		"terminal.ansiBrightMagenta": "#d670d6",
+		"terminal.ansiBrightRed": "#f14c4c",
+		"terminal.ansiBrightBlack": "#666666",
+		"terminal.ansiBrightWhite": "#e5e5e5",
+		"terminal.ansiBlack": "#000000",
+		"terminal.ansiBlue": "#2472c8",
+		"terminal.ansiCyan": "#11a8cd",
+		"terminal.ansiGreen": "#0dbc79",
+		"terminal.ansiMagenta": "#bc3fbc",
+		"terminal.ansiRed": "#cd3131",
+		"terminal.ansiWhite": "#e5e5e5",
+		"terminal.ansiYellow": "#e5e510",
 		
 		//"activityBar.dropBackground": "#ffffff1f",
 		//"activityBar.inactiveForeground": "#ffffff99",
