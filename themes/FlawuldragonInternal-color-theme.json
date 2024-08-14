@@ -28,7 +28,7 @@
 		"button.foreground": "#4a71f5",
 		
 		// editado↴
-		"editor.background": "#000000",
+		"editor.background": "#060606",
 		
 		// editado-não-modificado↴
 		"editor.foreground": "#ffffff",
@@ -163,7 +163,7 @@
 		"welcomePage.tileHoverBackground": "#0cc48f",
 
 		// novo↴
-		"welcomePage.background": "#000000",
+		"welcomePage.background": "#050505",
 
 		// novo↴
 		"welcomePage.tileBorder": "#222222",
@@ -458,8 +458,16 @@
 			"name": "Comment",
 			"scope": "comment",
 			"settings": {
-				"foreground": "#363344",
-				"fontStyle": "bold italic"
+				"foreground": "#e5c69f",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Comment Multiline",
+			"scope": "comment.block",
+			"settings": {
+				"foreground": "#813a38",
+				"fontStyle": "italic"
 			}
 		},
 		{
@@ -467,7 +475,7 @@
 			"name": "String",
 			"scope": "string.quoted.double",
 			"settings": {
-				"foreground": "#ff1a4d"
+				"foreground": "#fbffdd"
 			}
 		},
 		{
@@ -475,8 +483,7 @@
 			"name": "String",
 			"scope": "string.quoted.single",
 			"settings": {
-				"foreground": "#a10d3c",
-				"fontStyle": "bold"
+				"foreground": "#7ae1ef"
 			}
 		},
 		{
