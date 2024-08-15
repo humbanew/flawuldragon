@@ -179,6 +179,9 @@
 		
 		// novo↴
 		"statusBar.debuggingForeground": "#ffffff",
+
+		// novo-v0.0.2-2↴
+		"statusBarItem.hoverBackground": "#000000",
 		
 		// novo↴
 		"statusBarItem.errorBackground": "#f14c4c",
@@ -193,7 +196,7 @@
 		"statusBarItem.warningForeground": "#ffffff",
 
 		// v0.0.2-novo↴
-		"terminal.foreground": "#da5f59",
+		"terminal.foreground": "#8d2c61",
 		"terminal.background": "#050505",
 		"terminalCursor.foreground": "#3ac3ed",
 		"terminalCommandDecoration.defaultBackground": "#3ac3ed",
@@ -946,6 +949,13 @@
 			"scope": "token.debug-token",
 			"settings": {
 				"foreground": "#b267e6"
+			}
+		},
+		{
+			"scope": "punctuation.terminator, punctuation.separator, punctuation",
+			"settings": {
+				"foreground": "#00ca89",
+				"fontStyle": "bold"
 			}
 		}
 	]
