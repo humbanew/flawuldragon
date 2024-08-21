@@ -27,6 +27,13 @@
         "uiTheme": "vs-dark",
         "path": "./themes/FlawuldragonInternal-color-theme.json"
       }
+    ],
+    "iconThemes": [
+      {
+        "id": "flawuldragon-icon-theme",
+        "label": "Flawuldragon Icon Theme",
+        "path": "./themes/icons/Flawuldragon-icon-theme.json"
+      }
     ]
   }
 }
