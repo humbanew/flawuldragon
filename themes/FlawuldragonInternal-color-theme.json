@@ -42,9 +42,6 @@
 		// editado↴
 		"editorCursor.foreground": "#3e2a7b",
 		
-		// editado↴
-		"editorGroupHeader.tabsBackground": "#0f0f0f",
-		
 		// editado-não-modificado↴
 		"editorGutter.background": "#000000",
 		
@@ -140,12 +137,6 @@
 		
 		// editado-não-modificado↴
 		"statusBar.noFolderBackground": "#000000",
-		
-		// editado-não-modificado↴
-		"tab.inactiveBackground": "#000000",
-
-		// editado↴
-		"titleBar.activeBackground": "#0f0f0f",
 
 		/**
 		 * Novos atributos 
@@ -201,7 +192,6 @@
 		"terminalCursor.foreground": "#3ac3ed",
 		"terminalCommandDecoration.defaultBackground": "#3ac3ed",
 		"terminalCursor.background": "#3ac3ed",
-
 		"terminal.ansiBrightYellow": "#ffcb6b",
 		"terminal.ansiBrightGreen": "#0dbc79",
 		"terminal.ansiBrightBlue": "#3b8eea",
@@ -218,7 +208,29 @@
 		"terminal.ansiRed": "#cd3131",
 		"terminal.ansiWhite": "#e5e5e5",
 		"terminal.ansiYellow": "#e5e510",
-		
+
+		// v0.0.3-novo↴
+		"editorGroupHeader.tabsBackground": "#111111",
+		"editorGroupHeader.tabsBorder": "#001c4c",
+		"tab.activeBackground": "#001c4c",
+		"tab.inactiveBackground": "#00111c",
+		"tab.border": "#001c4c",
+		"tab.activeBorder": "#001fcf",
+		"tab.lastPinnedBorder": "#001c4c",
+		"tab.hoverBorder": "#001fcf",
+		"tab.dragAndDropBorder": "#3e2a7b",
+		"list.dropBackground": "#3e2a7b",
+		"list.dropBetweenBackground": "#3e2a9b",
+		"icon.foreground": "#3ac3ed",
+		"titleBar.activeForeground": "#3ac3ed",
+		"titleBar.inactiveForeground": "#3ac3ed44",
+		"titleBar.activeBackground": "#0f0f0f",
+		"titleBar.inactiveBackground": "#111111",
+		"breadcrumb.foreground": "#3ac3ed",
+		"breadcrumbPicker.background": "#1f1f1f",
+		"breadcrumb.activeSelectionForeground": "#3ac3ff",
+		"breadcrumb.background": "#111111"
+
 		//"activityBar.dropBackground": "#ffffff1f",
 		//"activityBar.inactiveForeground": "#ffffff99",
 		//"breadcrumb.activeSelectionForeground": "#ffffff",
@@ -487,14 +499,6 @@
 			"scope": "string.quoted.single",
 			"settings": {
 				"foreground": "#7ae1ef"
-			}
-		},
-		{
-			// editado↴
-			"name": "Regexp",
-			"scope": "string.regexp",
-			"settings": {
-				"foreground": "#0cc48f"
 			}
 		},
 		{
@@ -952,10 +956,59 @@
 			}
 		},
 		{
+			// editado↴
 			"scope": "punctuation.terminator, punctuation.separator, punctuation",
 			"settings": {
+				"foreground": "#ffffff",
+				"fontStyle": ""
+			}
+		},
+		// v0.0.3-novo↴
+		{
+			"scope": "comment.line",
+			"settings": {
 				"foreground": "#00ca89",
-				"fontStyle": "bold"
+				"fontStyle": ""
+			}
+		},
+		{
+			"name": "Hexadecimal",
+			"scope": "constant.numeric.hex",
+			"settings": {
+				"foreground": "#a11aff",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Octal",
+			"scope": "constant.numeric.octal",
+			"settings": {
+				"foreground": "#a11faf",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Regexp",
+			"scope": "constant.regexp, string.regexp",
+			"settings": {
+				"foreground": "#0011ff",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Regexp Keyword",
+			"scope": "keyword.other, regexp.keyword.operator, keyword.operator.quantifier, keyword.operator.or, keyword.operator.lookahead, keyword.operator.lookbehind, keyword.operator.group, keyword.operator.assertion, keyword.operator.backreference, keyword.operator.reference, keyword.operator.subexpression, keyword.operator.alternation, keyword.operator.character-class, keyword.operator.negation, keyword.operator.escape, keyword.operator.anchor, keyword.operator.atom",
+			"settings": {
+				"foreground": "#b9c4ff",
+				"fontStyle": "italic bold"
+			}
+		},
+		{
+			"name": "Regexp Symbol",
+			"scope": "punctuation.definition.group.regexp, punctuation.definition.character-class.regexp, punctuation.definition.string.begin.regexp, punctuation.definition.string.end.regexp, punctuation.definition.assertion.regexp, punctuation.definition.quantifier.regexp, punctuation.definition.alternation.regexp, punctuation.definition.group.assertion.regexp, punctuation.definition.group.regexp, punctuation.definition.character-class.regexp, punctuation.definition.string.begin.regexp, punctuation.definition.string.end.regexp, punctuation.definition.assertion.regexp, punctuation.definition.quantifier.regexp, punctuation.definition.alternation.regexp, punctuation.definition.group.assertion.regexp, punctuation.definition.group.regexp, punctuation.definition.character-class.regexp, punctuation.definition.string.begin.regexp, punctuation.definition.string.end.regexp, punctuation.definition.assertion.regexp, punctuation.definition.quantifier.regexp, punctuation.definition.alternation.regexp, punctuation.definition.group.assertion.regexp, punctuation.definition.group.regexp, punctuation.definition.character-class.regexp, punctuation.definition.string.begin.regexp, punctuation.definition.string.end.regexp, punctuation.definition.assertion.regexp, punctuation.definition.quantifier.regexp, punctuation.definition.alternation.regexp, punctuation.definition.group.assertion.regexp, punctuation.definition.group.regexp, punctuation.definition.character-class.regexp, punctuation.definition.string.begin.regexp, punctuation.definition.string.end.regexp, punctuation.definition.assertion.regexp, punctuation.definition.quantifier.regexp, punctuation.definition.alternation.regexp, punctuation.definition.group.assertion.regexp",
+			"settings": {
+				"foreground": "#00a0ff",
+				"fontStyle": "italic"
 			}
 		}
 	]
