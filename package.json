@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "flawuldragon",
   "displayName": "Flawuldragon",
   "description": "Humbanew Internal Development Official Theme",
@@ -17,24 +16,6 @@
   "publisher": "humbanew",
   "engines": {
     "vscode": "^1.92.0"
-=======
-  "name": "flawul",
-  "displayName": "Flawul",
-  "description": "",
-  "version": "0.1.0",
-  "publisher": "humbanew-project",
-  "license": "HNLUT-3.0",
-  "repository": {
-    "url": "git@github.com:Humba01/flawul-chaosdragon.git",
-    "directory": ".",
-    "type": "git"
-  },
-  "scripts": {
-    "buildprj": "vsce package"
-  },
-  "engines": {
-    "vscode": "^1.80.0"
->>>>>>> 93b29f02253f9785d9562a26405db9c53268d1bd
   },
   "categories": [
     "Themes"
@@ -42,21 +23,10 @@
   "contributes": {
     "themes": [
       {
-<<<<<<< HEAD
         "label": "Flawuldragon Futurism Hacker",
         "uiTheme": "vs-dark",
         "path": "./themes/FuturismHacker-color-theme.json"
       }
     ]
-=======
-        "label": "Flawul",
-        "uiTheme": "vs-dark",
-        "path": "./themes/Flawul-color-theme.json"
-      }
-    ]
-  },
-  "dependencies": {
-    "@vscode/vsce": "^2.20.1"
->>>>>>> 93b29f02253f9785d9562a26405db9c53268d1bd
   }
 }
