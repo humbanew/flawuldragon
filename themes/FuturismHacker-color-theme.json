@@ -2,6 +2,10 @@
 	"name": "Flawuldragon Theme - Hacker",
 	"type": "dark",
 	"colors": {
+
+		/**
+		 * Repaginação v0.0.4
+		 */
 		
 		// editado↴
 		"activityBar.background": "#111111",
