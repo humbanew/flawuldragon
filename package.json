@@ -11,11 +11,11 @@
     "url": "https://github.com/humbanew/flawuldragon"
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "publisher": "humbanew",
   "engines": {
-    "vscode": "^1.92.0"
+    "vscode": "^1.95.1"
   },
   "categories": [
     "Themes"
@@ -23,10 +23,18 @@
   "contributes": {
     "themes": [
       {
+        "id": "fdt-0",
         "label": "Flawuldragon - Blueprint Paper",
         "uiTheme": "vs-dark",
         "path": "./themes/blueprint_paper-color-theme.json"
+      },
+      {
+        "id": "fdt-1",
+        "label": "Flawuldragon - Los Angeles Summer",
+        "uiTheme": "vs-dark",
+        "path": "./themes/los_angeles_summer-color-theme.json"
       }
-    ]
+    ],
+    "iconThemes": []
   }
 }
