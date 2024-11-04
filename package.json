@@ -1,8 +1,8 @@
 {
   "name": "flawuldragon",
   "displayName": "Flawuldragon",
-  "description": "Humbanew Internal Development Official Theme",
-  "version": "0.0.3",
+  "description": "Humbanew Official Theme",
+  "version": "0.0.1-r",
   "icon": "assets/icon.png",
   "readme": "README.md",
   "license": "Humbanew License v5",
@@ -23,9 +23,9 @@
   "contributes": {
     "themes": [
       {
-        "label": "Flawuldragon Futurism Hacker",
+        "label": "Flawuldragon - Blueprint Paper",
         "uiTheme": "vs-dark",
-        "path": "./themes/FuturismHacker-color-theme.json"
+        "path": "./themes/blueprint_paper-color-theme.json"
       }
     ]
   }

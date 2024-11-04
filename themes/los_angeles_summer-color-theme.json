@@ -1,0 +1,63 @@
+// Interface
+	// Loulou ⇒ #492842
+	// Castro ⇒ #4B253C
+	// Black Rose ⇒ #4C2439
+	// Black Rose ⇒ #4D2337
+	// Black Rose ⇒ #4D2235
+	// Siren ⇒ #63263D
+	// Disco ⇒ #8F2E4D
+	// Night Shadz ⇒ #A7384D
+	// Sunset ⇒ #BE423C
+	// Dark Coral ⇒ #CD4E41
+	// Sorbus ⇒ #DB5935
+	// Pizazz ⇒ #ED7437
+	// Neon Carrot ⇒ #FF8E38
+	// Yellow Orange ⇒ #FFAC43
+	// Golden Tainoi ⇒ #FFC94D
+	// Alice Blue ⇒ #DFEDFF
+	// Onahau ⇒ #BEDDEF
+	// French Pass ⇒ #9FCDDE
+	// Seagull ⇒ #81BECD
+	// Fountain Blue ⇒ #65AEBC
+	// Half Blue ⇒ #508A95 
+
+	
+// Esquema de cores 
+
+	// Sintaxe I
+		// White ⇒ #FFFFFF
+		// Biloba Flower ⇒ #AF87CE
+		// Careys Pink ⇒ #C3979B
+		// Apache ⇒ #D7A769
+		// Bright Sun ⇒ #EAB636
+		// Golden Poppy ⇒ #FEC603
+		// Light Green ⇒ #A8F387
+		// Light Green 2 ⇒ #84ECA4
+		// Turquiose ⇒ #5FE5C1
+		// Turquiose 2 ⇒ #3BDDDD
+		// Deep Sky Blue ⇒ #16D6FA
+
+	// Sintaxe II
+		// Brown ⇒ #AB3328
+		// Frame Pea ⇒ #B7634E
+		// Resolution Blue ⇒ #294370
+		// Curious Blue ⇒ #3989B9
+		// Glacier ⇒ #81AEC4
+		
+	// Sintaxe III
+		// Givry ⇒ #EBCEAC
+		// Harvest Gold ⇒ #EFAE79
+		// Japonica ⇒ #CD7D54
+		// Rose of Sharon ⇒ #A95029
+		// Mandarian Orange ⇒ #84261D
+		// Alizarin ⇒ #E52C32
+		// Pizazz ⇒ #E97443
+		// Negroni ⇒ #F0BF9D
+
+
+{
+	"name": "Los Angeles Summer",
+	"semanticHighlighting": true,
+	"colors": {},
+	"tokenColors": []
+}
