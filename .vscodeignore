@@ -1,4 +1,13 @@
 .vscode/**
 .vscode-test/**
 .gitignore
-sources/**
+storage/**
+# powered by Jetbrains Mono Font Pack Integration
+out/test/**
+src/**
+.yarnrc
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/.eslintrc.json
+**/*.map
+**/*.ts

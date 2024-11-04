@@ -10,16 +10,36 @@
     "type": "git",
     "url": "https://github.com/humbanew/flawuldragon"
   },
+  "galleryBanner": {
+    "color": "#ff3335",
+    "theme": "dark"
+  },
   "publishConfig": {
     "access": "public"
   },
   "publisher": "humbanew",
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
   "engines": {
     "vscode": "^1.95.1"
   },
   "categories": [
-    "Themes"
+    "Extension Packs",
+    "Formatters",
+    "Themes",
+    "Programming Languages",
+    "Other"
   ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
   "contributes": {
     "themes": [
       {
@@ -35,6 +55,46 @@
         "path": "./themes/los_angeles_summer-color-theme.json"
       }
     ],
-    "iconThemes": []
+    "iconThemes": [],
+    "commands": [
+      {
+        "command": "flawuldragon_jetbrainsmonofont.activate",
+        "title": "Activate JetBrains Mono Font Pack for Flawuldragon"
+      },
+      {
+        "command": "flawuldragon_jetbrainsmonofont.deactivate",
+        "title": "Deactivate JetBrains Mono Font for Flawuldragon"
+      }
+    ]
+  },
+  "keywords": [
+    "font",
+    "JetBrains Mono font",
+    "Extension for JetBrains Mono font pack",
+    "Professional fonts for programming",
+    "Mono Font",
+    "JetBrains Mono",
+    "JetBrains Mono font pack",
+    "JetBrains Mono font pack vscode extension",
+    "JetBrains Mono font pack vscode"
+  ],
+  "devDependencies": {
+    "@types/follow-redirects": "^1.13.0",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^16.11.68",
+    "@types/vscode": "^1.72.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "@vscode/test-electron": "^2.1.5",
+    "eslint": "^8.24.0",
+    "follow-redirects": "^1.13.3",
+    "fs": "^0.0.1-security",
+    "glob": "^8.0.3",
+    "inly": "^4.0.8",
+    "mocha": "^10.0.0",
+    "path": "^0.12.7",
+    "typescript": "^4.8.4",
+    "vscode-test": "^1.5.0"
   }
 }
