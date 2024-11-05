@@ -106,6 +106,9 @@
     // editor gutter
     "editorGutter.background": "#001484",
 
+    // icon
+    "icon.foreground": "#ffeb7b",
+
     // list
     "list.activeSelectionBackground": "#0018a1",
     "list.activeSelectionForeground": "#ffeb7b",
@@ -200,7 +203,19 @@
     "statusBarItem.hoverBackground": "#ffe656",
     "statusBarItem.prominentBackground": "#001484",
     "statusBarItem.prominentHoverBackground": "#0018a1",
-  
+    "statusBarItem.compactHoverBackground": "#0018a1",
+    "statusBarItem.remoteBackground": "#001484",
+    "statusBarItem.remoteForeground": "#ffeb7b",
+    "statusBarItem.remoteHoverBackground": "#0018a1",
+    "statusBarItem.offlineBackground": "#ff3030",
+    "statusBarItem.offlineForeground": "#ffeb7b",
+    "statusBarItem.offlineHoverBackground": "#ff3030",
+    "statusBarItem.errorBackground": "#ff3030",
+    "statusBarItem.errorForeground": "#ffeb7b",
+    "statusBarItem.errorHoverBackground": "#ff3030",
+    "statusBarItem.warningBackground": "#ffdb4b",
+    "statusBarItem.warningForeground": "#001484",
+    "statusBarItem.warningHoverBackground": "#ffdb4b",
     // tab
     "tab.activeBackground": "#001484",
     "tab.activeForeground": "#ffeb7b",

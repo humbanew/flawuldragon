@@ -58,6 +58,18 @@
 {
 	"name": "Los Angeles Summer",
 	"semanticHighlighting": true,
-	"colors": {},
+	"colors": {
+
+    // activitybar
+    // "activityBar.background": "#001484",
+    // "activityBar.foreground": "#ffeb7b",
+    // "activityBar.border": "#ffffff",
+    // "activityBarBadge.background": "#ffeb7b",
+    // "activityBarBadge.foreground": "#001484",
+    // "activityBar.activeBorder": "#ffeb7b",
+    // "actionBar.toggledBackground": "#001484",
+    // "activityBar.activeBackground": "#0018a1",
+
+	},
 	"tokenColors": []
 }
