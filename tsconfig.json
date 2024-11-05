@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es6",
-    "outDir": "out",
-    "lib": ["es6"],
-    "sourceMap": true,
-    "rootDir": "src",
+    "module": "es2020",
+    "target": "esnext",
+    "outDir": "./out",
+    "lib": ["es2020"],
+    "sourceMap": false,
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "moduleDetection": "auto",
     "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true
   },
-  "exclude": ["node_modules", ".vscode-test"]
+  "exclude": ["node_modules", ".vscode-test", "scripts", "out"]
 }

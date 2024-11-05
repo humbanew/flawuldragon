@@ -2,7 +2,7 @@
   "name": "flawuldragon",
   "displayName": "Flawuldragon",
   "description": "Humbanew Official Theme",
-  "version": "0.0.1-r",
+  "version": "0.0.1",
   "icon": "assets/icon.png",
   "readme": "README.md",
   "license": "Humbanew License v5",
@@ -24,11 +24,21 @@
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "prebuild": "tsx ./scripts/build/build.ts",
+    "package": "vsce package"
   },
   "engines": {
-    "vscode": "^1.95.1"
+    "vscode": "^1.83.1",
+    "node": "^22.0.0"
   },
+  "bundleDependencies": [
+    "vscode"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
   "categories": [
     "Extension Packs",
     "Formatters",
@@ -37,25 +47,48 @@
     "Other"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "onStartupFinished",
+    "onTaskType:node",
+    "onTaskType:npm"
   ],
-  "main": "./out/extension.js",
+  "main": "./out/extension.cjs",
   "contributes": {
     "themes": [
       {
-        "id": "fdt-0",
+        "id": "flawuldragon-blueprint-paper-theme",
         "label": "Flawuldragon - Blueprint Paper",
         "uiTheme": "vs-dark",
         "path": "./themes/blueprint_paper-color-theme.json"
       },
       {
-        "id": "fdt-1",
+        "id": "flawuldragon-los-angeles-summer-theme",
         "label": "Flawuldragon - Los Angeles Summer",
         "uiTheme": "vs-dark",
         "path": "./themes/los_angeles_summer-color-theme.json"
       }
     ],
-    "iconThemes": [],
+    "iconThemes": [
+      {
+        "id": "flawuldragon-jetbrains-icon-theme",
+        "label": "Flawuldragon - JIT v1 Dark",
+        "path": "./dist/v1/dark/theme.json"
+      },
+      {
+        "id": "flawuldragon-jetbrains-icon-theme-2023-light",
+        "label": "Flawuldragon - JIT 2023+ UI Light",
+        "path": "./dist/2023/light/theme.json"
+      },
+      {
+        "id": "flawuldragon-jetbrains-icon-theme-2023-dark",
+        "label": "Flawuldragon - JIT 2023+ UI Dark",
+        "path": "./dist/2023/dark/theme.json"
+      },
+      {
+        "id": "flawuldragon-jetbrains-icon-theme-2023-auto",
+        "label": "Flawuldragon - JIT 2023+ UI Auto",
+        "path": "./dist/2023/auto/theme.json"
+      }
+    ],
     "commands": [
       {
         "command": "flawuldragon_jetbrainsmonofont.activate",
@@ -68,21 +101,22 @@
     ]
   },
   "keywords": [
-    "font",
-    "JetBrains Mono font",
-    "Extension for JetBrains Mono font pack",
-    "Professional fonts for programming",
-    "Mono Font",
+    "Flawuldragon",
+    "Humbanew",
+    "Theme",
+    "Color Theme",
+    "Icon Theme",
+    "Font Pack",
     "JetBrains Mono",
-    "JetBrains Mono font pack",
-    "JetBrains Mono font pack vscode extension",
-    "JetBrains Mono font pack vscode"
+    "Blueprint Paper",
+    "Los Angeles Summer",
+    "Official"
   ],
   "devDependencies": {
     "@types/follow-redirects": "^1.13.0",
     "@types/glob": "^8.0.0",
     "@types/mocha": "^10.0.0",
-    "@types/node": "^16.11.68",
+    "@types/node": "^20.8.0",
     "@types/vscode": "^1.72.0",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
@@ -94,7 +128,13 @@
     "inly": "^4.0.8",
     "mocha": "^10.0.0",
     "path": "^0.12.7",
-    "typescript": "^4.8.4",
-    "vscode-test": "^1.5.0"
+    "typescript": "^5.2.2",
+    "vscode-test": "^1.5.0",
+    "@actions/core": "^1.10.1",
+    "@vscode/vsce": "^2.19.0",
+    "semantic-release": "^21.0.6",
+    "semantic-release-vsce": "^5.5.10",
+    "svgson": "^5.3.1",
+    "tsx": "^3.13.0"
   }
 }
