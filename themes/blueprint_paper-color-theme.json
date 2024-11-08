@@ -10,7 +10,6 @@
     "activityBarBadge.background": "#ffeb7b",
     "activityBarBadge.foreground": "#001484",
     "activityBar.activeBorder": "#ffeb7b",
-    "actionBar.toggledBackground": "#001484",
     "activityBar.activeBackground": "#0018a1",
 
     // badge
@@ -103,8 +102,9 @@
     // editor code lens
     "editorCodeLens.foreground": "#ffeb7b",
 
-    // editor gutter
-    "editorGutter.background": "#001484",
+    // editor line number
+    "editorLineNumber.activeForeground": "#ffeb7b",
+    "editorLineNumber.foreground": "#ffffff",
 
     // icon
     "icon.foreground": "#ffeb7b",
@@ -189,7 +189,7 @@
     "sideBarTitle.background": "#001171",
     "sideBySideEditor.horizontalBorder": "#001484",
 
-    // statusbar
+    // statusbar e statusbar item
     "statusBar.background": "#ffeb7b",
     "statusBar.foreground": "#001484",
     "statusBar.border": "#ffeb7b",
@@ -197,16 +197,14 @@
     "statusBar.noFolderForeground": "#001484",
     "statusBar.debuggingBackground": "#424242",
     "statusBar.debuggingForeground": "#ffeb7b",
-
-    // statusbar item
     "statusBarItem.activeBackground": "#ffdd1c",
     "statusBarItem.hoverBackground": "#ffe656",
     "statusBarItem.prominentBackground": "#001484",
-    "statusBarItem.prominentHoverBackground": "#0018a1",
-    "statusBarItem.compactHoverBackground": "#0018a1",
-    "statusBarItem.remoteBackground": "#001484",
-    "statusBarItem.remoteForeground": "#ffeb7b",
-    "statusBarItem.remoteHoverBackground": "#0018a1",
+    "statusBarItem.prominentHoverBackground": "#ffdb4b",
+    "statusBarItem.compactHoverBackground": "#ffeb7b",
+    "statusBarItem.remoteBackground": "#ffeb7b",
+    "statusBarItem.remoteForeground": "#001484",
+    "statusBarItem.remoteHoverBackground": "#ffdb4b",
     "statusBarItem.offlineBackground": "#ff3030",
     "statusBarItem.offlineForeground": "#ffeb7b",
     "statusBarItem.offlineHoverBackground": "#ff3030",
@@ -216,6 +214,7 @@
     "statusBarItem.warningBackground": "#ffdb4b",
     "statusBarItem.warningForeground": "#001484",
     "statusBarItem.warningHoverBackground": "#ffdb4b",
+
     // tab
     "tab.activeBackground": "#001484",
     "tab.activeForeground": "#ffeb7b",
@@ -927,36 +926,15 @@
         "fontStyle": "bold"
       }
     },
-    // booleans - true
+    // booleans - true e false
     {
-      "name": "Booleans - True",
+      "name": "Booleans",
       "scope": [
-        "constant.language.boolean.true"
-      ],
-      "settings": {
-        "foreground": "#00ff00",
-        "fontStyle": "bold"
-      }
-    },
-    // booleans - false
-    {
-      "name": "Booleans - False",
-      "scope": [
+        "constant.language.boolean.true",
         "constant.language.boolean.false"
       ],
       "settings": {
-        "foreground": "#ff3030",
-        "fontStyle": "bold"
-      }
-    },
-    // booleans - null
-    {
-      "name": "Booleans - Null",
-      "scope": [
-        "constant.language.null"
-      ],
-      "settings": {
-        "foreground": "#ff3030",
+        "foreground": "#fc5567",
         "fontStyle": "bold"
       }
     },
