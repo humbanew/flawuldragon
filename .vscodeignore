@@ -2,6 +2,7 @@
 .vscode-test/**
 .gitignore
 storage/**
+scripts/**
 # powered by Jetbrains Mono Font Pack Integration
 out/test/**
 src/**

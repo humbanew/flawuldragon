@@ -1,8 +1,8 @@
 {
-  "name": "hn.flawuldragon-developer-theme",
+  "name": "hn.flawuldragon",
   "displayName": "Flawuldragon",
   "description": "Humbanew Official Theme",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "icon": "assets/icon.png",
   "readme": "README.md",
   "license": "Humbanew License v5",
@@ -55,13 +55,13 @@
   "contributes": {
     "themes": [
       {
-        "id": "flawuldragon-blueprint-paper-theme",
+        "id": "fd-blueprint-paper",
         "label": "Flawuldragon - Blueprint Paper",
         "uiTheme": "vs-dark",
         "path": "./themes/blueprint_paper-color-theme.json"
       },
       {
-        "id": "flawuldragon-los-angeles-summer-theme",
+        "id": "fd-los-angeles-summer",
         "label": "Flawuldragon - Los Angeles Summer",
         "uiTheme": "vs-dark",
         "path": "./themes/los_angeles_summer-color-theme.json"
@@ -69,33 +69,33 @@
     ],
     "iconThemes": [
       {
-        "id": "flawuldragon-jetbrains-icon-theme",
+        "id": "fd-jetbrains-icon-classic",
         "label": "Flawuldragon - JIT v1 Dark",
         "path": "./dist/v1/dark/theme.json"
       },
       {
-        "id": "flawuldragon-jetbrains-icon-theme-2023-light",
+        "id": "fd-jetbrains-icon-theme-2023-light",
         "label": "Flawuldragon - JIT 2023+ UI Light",
         "path": "./dist/2023/light/theme.json"
       },
       {
-        "id": "flawuldragon-jetbrains-icon-theme-2023-dark",
+        "id": "fd-jetbrains-icon-theme-2023-dark",
         "label": "Flawuldragon - JIT 2023+ UI Dark",
         "path": "./dist/2023/dark/theme.json"
       },
       {
-        "id": "flawuldragon-jetbrains-icon-theme-2023-auto",
+        "id": "fd-jetbrains-icon-theme-2023-auto",
         "label": "Flawuldragon - JIT 2023+ UI Auto",
         "path": "./dist/2023/auto/theme.json"
       }
     ],
     "commands": [
       {
-        "command": "flawuldragon_jetbrainsmonofont.activate",
+        "command": "fd_jetbrainsmonofont.activate",
         "title": "Activate JetBrains Mono Font Pack for Flawuldragon"
       },
       {
-        "command": "flawuldragon_jetbrainsmonofont.deactivate",
+        "command": "fd_jetbrainsmonofont.deactivate",
         "title": "Deactivate JetBrains Mono Font for Flawuldragon"
       }
     ]

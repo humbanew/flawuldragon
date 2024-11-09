@@ -40,7 +40,7 @@ const JBMActivationPrompt = (context) => showDialog("Activate JetBrains Mono Fon
     : showDialog("You can activate JetBrains Mono later by running 'JetBrainsMono' or 'JBM' in command palette."));
 exports.JBMActivationPrompt = JBMActivationPrompt;
 function firstTimeActivation(context) {
-    const version = context.extension.packageJSON.version ?? "0.0.1";
+    const version = context.extension.packageJSON.version ?? "1.0.0";
     const previousVersion = context.globalState.get(context.extension.id);
     if (previousVersion === version)
         return;
