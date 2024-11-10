@@ -17,9 +17,8 @@ function activate(context) {
     const flawuldragonStatusbaritemId = "flawuldragon.extension.infos";
     context.subscriptions.push(vscode.commands.registerCommand(flawuldragonStatusbaritemId, () => vscode.window.showInformationMessage("Working!")));
     statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
-    statusBar.text = "The Flawuldragon ✅";
+    statusBar.text = `$(check-icon) The Flawuldragon`;
     statusBar.command = flawuldragonStatusbaritemId;
-    statusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.background='#ffffff'");
     statusBar.show();
     context.subscriptions.push(statusBar);
 }

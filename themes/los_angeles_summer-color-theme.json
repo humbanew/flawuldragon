@@ -49,9 +49,9 @@
     "editorWhitespace.foreground": "#4d2235",
 
     // editor find match highlight
-    "editor.findMatchBackground": "#ffeb7b",
-    "editor.findMatchBorder": "#ffeb7b",
-    "editor.findMatchHighlightBorder": "#ffeb7b",
+    "editor.findMatchBackground": "#a7384d",
+    "editor.findMatchBorder": "#a7384d",
+    "editor.findMatchHighlightBorder": "#a7384d",
     
     // editor hover
     "editorHoverWidget.background": "#4d2235",
@@ -99,6 +99,19 @@
 
     // icon
     "icon.foreground": "#ff8e38",
+
+		// input
+		"input.background": "#4d2235",
+		"input.border": "#492842",
+		"input.foreground": "#ffeb7b",
+		"input.placeholderForeground": "#ffeb7b",
+		"inputOption.activeBorder": "#ffeb7b",
+		"inputValidation.errorBackground": "#ff3030",
+		"inputValidation.errorBorder": "#ff3030",
+		"inputValidation.infoBackground": "#6796e6",
+		"inputValidation.infoBorder": "#6796e6",
+		"inputValidation.warningBackground": "#ffdb4b",
+		"inputValidation.warningBorder": "#ffdb4b",
 
     // list
     "list.activeSelectionBackground": "#492842",
@@ -165,7 +178,7 @@
     "scrollbarSlider.activeBackground": "#63263d",
 
     // sideBar e side by side editor
-    "sideBar.background": "#4d2235",
+    "sideBar.background": "#63263D",
     "sideBar.foreground": "#ffffff",
     "sideBar.border": "#492842",
     "sideBar.dropBackground": "#492842",
