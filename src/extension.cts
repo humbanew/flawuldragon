@@ -31,8 +31,10 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.StatusBarAlignment.Left,
     100
   );
-  statusBar.text = `$(check-icon) The Flawuldragon`;
+  statusBar.text = `$(flawuldragon-on) The Flawuldragon`;
   statusBar.command = flawuldragonStatusbaritemId;
+  statusBar.color = "darkblue";
+  statusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
   statusBar.show();
   context.subscriptions.push(statusBar);
 }

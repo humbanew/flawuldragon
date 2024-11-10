@@ -15,10 +15,12 @@ function activate(context) {
     // Flawuldragon Configs
     console.log("StatusBarItem Loaded!");
     const flawuldragonStatusbaritemId = "flawuldragon.extension.infos";
-    context.subscriptions.push(vscode.commands.registerCommand(flawuldragonStatusbaritemId, () => vscode.window.showInformationMessage("Working!")));
+    context.subscriptions.push(vscode.commands.registerCommand(flawuldragonStatusbaritemId, () => { vscode.window.showInformationMessage("Working!"); }));
     statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
-    statusBar.text = `$(check-icon) The Flawuldragon`;
+    statusBar.text = `$(flawuldragon-on) The Flawuldragon`;
     statusBar.command = flawuldragonStatusbaritemId;
+    statusBar.color = "darkblue";
+    statusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
     statusBar.show();
     context.subscriptions.push(statusBar);
 }

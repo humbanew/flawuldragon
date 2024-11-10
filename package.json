@@ -25,7 +25,7 @@
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
-    "prebuild": "tsx ./scripts/build/build.ts",
+    "prebuild": "tsx ./src/jbit/build/build.ts",
     "package": "vsce package"
   },
   "engines": {
@@ -61,38 +61,38 @@
         "path": "./themes/blueprint_paper-color-theme.json"
       },
       {
-        "id": "fd-los-angeles-summer",
-        "label": "Flawuldragon - Los Angeles Summer",
+        "id": "fd-winter-day",
+        "label": "Flawuldragon - Winter Day",
         "uiTheme": "vs-dark",
-        "path": "./themes/los_angeles_summer-color-theme.json"
+        "path": "./themes/winter_day-color-theme.json"
       },
       {
-        "id": "fd-skynet-born",
-        "label": "Flawuldragon - Skynet Born",
+        "id": "fd-advanced_circuits",
+        "label": "Flawuldragon - Advanced Circuits",
         "uiTheme": "vs-dark",
-        "path": "./themes/skynet_born-color-theme.json"
+        "path": "./themes/advanced_circuits-color-theme.json"
       }
     ],
     "iconThemes": [
       {
         "id": "fd-jetbrains-icon-classic",
         "label": "Flawuldragon - JIT v1 Dark",
-        "path": "./dist/v1/dark/theme.json"
+        "path": "./out/icons/v1/dark/theme.json"
       },
       {
         "id": "fd-jetbrains-icon-theme-2023-light",
         "label": "Flawuldragon - JIT 2023+ UI Light",
-        "path": "./dist/2023/light/theme.json"
+        "path": "./out/icons/2023/light/theme.json"
       },
       {
         "id": "fd-jetbrains-icon-theme-2023-dark",
         "label": "Flawuldragon - JIT 2023+ UI Dark",
-        "path": "./dist/2023/dark/theme.json"
+        "path": "./out/icons/2023/dark/theme.json"
       },
       {
         "id": "fd-jetbrains-icon-theme-2023-auto",
         "label": "Flawuldragon - JIT 2023+ UI Auto",
-        "path": "./dist/2023/auto/theme.json"
+        "path": "./out/icons/2023/auto/theme.json"
       }
     ],
     "commands": [
@@ -104,7 +104,23 @@
         "command": "fd_jetbrainsmonofont.deactivate",
         "title": "Deactivate JetBrains Mono Font for Flawuldragon"
       }
-    ]
+    ],
+    "icons": {
+      "flawuldragon-on":{
+        "description": "fd-on",
+        "default": {
+          "fontPath": "assets/ifonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E901"
+        }
+      },
+      "flawuldragon-off":{
+        "description": "fd-off",
+        "default": {
+          "fontPath": "assets/ifonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E900"
+        }
+      }
+    }
   },
   "keywords": [
     "Flawuldragon",
@@ -114,8 +130,9 @@
     "Icon Theme",
     "Font Pack",
     "JetBrains Mono",
-    "Blueprint Paper",
-    "Los Angeles Summer",
+    "Blueprint Paper Theme",
+    "Winter Day Theme",
+    "Advanced Circuits Theme",
     "Official"
   ],
   "devDependencies": {
