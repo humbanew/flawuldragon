@@ -24,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
   const flawuldragonStatusbaritemId = "flawuldragon.extension.infos";
   context.subscriptions.push(vscode.commands.registerCommand(
     flawuldragonStatusbaritemId,
-    () => vscode.window.showInformationMessage("Working!")
+    () => {vscode.window.showInformationMessage("Working!")}
   ));
 
   statusBar = vscode.window.createStatusBarItem(

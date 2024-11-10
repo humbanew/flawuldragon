@@ -65,6 +65,12 @@
         "label": "Flawuldragon - Los Angeles Summer",
         "uiTheme": "vs-dark",
         "path": "./themes/los_angeles_summer-color-theme.json"
+      },
+      {
+        "id": "fd-skynet-born",
+        "label": "Flawuldragon - Skynet Born",
+        "uiTheme": "vs-dark",
+        "path": "./themes/skynet_born-color-theme.json"
       }
     ],
     "iconThemes": [
