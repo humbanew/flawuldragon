@@ -17,7 +17,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "publisher": "humbanew",
+  "publisher": "humbanew_project",
   "scripts": {
     "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
@@ -106,14 +106,14 @@
       }
     ],
     "icons": {
-      "flawuldragon-on":{
+      "flawuldragon-on": {
         "description": "fd-on",
         "default": {
           "fontPath": "assets/ifonts/flawuldragon-icons.woff",
           "fontCharacter": "\\E901"
         }
       },
-      "flawuldragon-off":{
+      "flawuldragon-off": {
         "description": "fd-off",
         "default": {
           "fontPath": "assets/ifonts/flawuldragon-icons.woff",
@@ -136,6 +136,7 @@
     "Official"
   ],
   "devDependencies": {
+    "@actions/core": "^1.10.1",
     "@types/follow-redirects": "^1.13.0",
     "@types/glob": "^8.0.0",
     "@types/mocha": "^10.0.0",
@@ -144,6 +145,7 @@
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "@vscode/test-electron": "^2.1.5",
+    "@vscode/vsce": "^2.19.0",
     "eslint": "^8.24.0",
     "follow-redirects": "^1.13.3",
     "fs": "^0.0.1-security",
@@ -151,13 +153,14 @@
     "inly": "^4.0.8",
     "mocha": "^10.0.0",
     "path": "^0.12.7",
-    "typescript": "^5.2.2",
-    "vscode-test": "^1.5.0",
-    "@actions/core": "^1.10.1",
-    "@vscode/vsce": "^2.19.0",
     "semantic-release": "^21.0.6",
     "semantic-release-vsce": "^5.5.10",
     "svgson": "^5.3.1",
-    "tsx": "^3.13.0"
+    "tsx": "^3.13.0",
+    "typescript": "^5.2.2",
+    "vscode-test": "^1.5.0"
+  },
+  "dependencies": {
+    "electron": "^33.2.0"
   }
 }

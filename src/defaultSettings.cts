@@ -5,5 +5,5 @@ export const defaultSettings = {
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
   // active warns module js file
-  "javascript.validate.enable": false,
+  "javascript.validate.enable": false
 }
