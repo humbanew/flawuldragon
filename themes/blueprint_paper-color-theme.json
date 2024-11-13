@@ -41,9 +41,9 @@
     "editor.background": "#002082",
     "editor.compositionBorder": "#002082",
     "editor.foreground": "#ffffff",
-    "editorGroup.border": "#002082",
-    "editorGroupHeader.tabsBackground": "#192c64",
-    "editorGroupHeader.tabsBorder": "#002082",
+    "editorGroup.border": "#192c64",
+    "editorGroupHeader.tabsBackground": "#002082",
+    "editorGroupHeader.tabsBorder": "#192c64",
 
     // editor line highlight
     "editor.lineHighlightBackground": "#242f8f",
@@ -236,7 +236,7 @@
     "tab.inactiveForeground": "#bdc5dd",
     "tab.hoverBackground": "#242f8f",
     "tab.unfocusedHoverBackground": "#242f8f",
-    "tab.activeBorder": "#ffffff",
+    "tab.activeBorderTop": "#ffffff",
     "tab.activeModifiedBorder": "#ff3030",
     "tab.inactiveModifiedBorder": "#ff3030",
     "tab.unfocusedActiveModifiedBorder": "#ff3030",
@@ -319,6 +319,10 @@
     // resize
     "editorWidget.resizeBorder": "#ffffff",
     "sideBySideEditor.verticalBorder": "#ffffff",
+
+		// link
+		"textLink.foreground": "#ffdb4b",
+		"textLink.activeForeground": "#ffffff"
 
   },
   "tokenColors": [

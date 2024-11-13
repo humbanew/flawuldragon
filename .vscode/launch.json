@@ -12,6 +12,7 @@
             "args": [
                 "--extensionDevelopmentPath=${workspaceFolder}",
                 // "--extensionTestsPath=${workspaceFolder}/out/test/suite/index.cjs",
+                "--disable-extensions",
             ]
         }
     ]

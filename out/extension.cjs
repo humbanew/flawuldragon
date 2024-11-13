@@ -4,6 +4,8 @@ exports.activate = activate;
 exports.deactivate = deactivate;
 const vscode = require("vscode");
 const util_cjs_1 = require("./util.cjs");
+const fs = require("fs");
+const path = require("path");
 let statusBar;
 function activate(context) {
     // Jetbrains Mono Font Extension Configs
@@ -16,15 +18,15 @@ function activate(context) {
     console.log("Flawuldragon is loaded!");
     const flawuldragonStatusbaritemId = "flawuldragon.extension.infos";
     context.subscriptions.push(vscode.commands.registerCommand(flawuldragonStatusbaritemId, () => {
-        vscode.window.showInformationMessage("Working!");
-        let webview = vscode.window.createWebviewPanel("flawuldragon", "Flawuldragon - Features Board", vscode.ViewColumn.One, { "enableFindWidget": true });
-        webview.webview.html = `<html><h1>Humbanew Flawuldragon</h1></html>`;
+        return 0;
     }));
     statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
-    statusBar.text = `$(flawuldragon-on) The Flawuldragon`;
+    statusBar.text = `$(flawuldragon-on) FD`;
     statusBar.command = flawuldragonStatusbaritemId;
     statusBar.color = "darkblue";
     statusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
+    statusBar.tooltip = new vscode.MarkdownString(fs.readFileSync(path.join(__dirname, "../", "assets", "flawuldragon.md"), "utf-8"));
+    statusBar.tooltip.isTrusted = true;
     statusBar.show();
     context.subscriptions.push(statusBar);
     if (vscode.workspace.getConfiguration("flawuldragon").get("enable") === false) {

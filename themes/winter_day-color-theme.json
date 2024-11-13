@@ -173,14 +173,14 @@
 
     // scrollbar
     "scrollbar.shadow": "#4d2235cc",
-    "scrollbarSlider.background": "#4d2235",
-    "scrollbarSlider.hoverBackground": "#492842",
+    "scrollbarSlider.background": "#a7384d",
+    "scrollbarSlider.hoverBackground": "#a7384d",
     "scrollbarSlider.activeBackground": "#63263d",
 
     // sideBar e side by side editor
     "sideBar.background": "#63263D",
     "sideBar.foreground": "#ffffff",
-    "sideBar.border": "#492842",
+    "sideBar.border": "#4d2235",
     "sideBar.dropBackground": "#492842",
     "sideBarTitle.foreground": "#ffc94d",
     "sideBarSectionHeader.background": "#492842",
@@ -225,9 +225,9 @@
     "tab.border": "#492842",
     "tab.inactiveBackground": "#4B253C",
     "tab.inactiveForeground": "#FFAC43",
-    "tab.hoverBackground": "#63263d",
+    "tab.hoverBackground": "#492842",
     "tab.unfocusedHoverBackground": "#63263dcc",
-    "tab.activeBorder": "#63263d",
+    "tab.activeBorderTop": "#ffeb7b",
     "tab.activeModifiedBorder": "#ff3030",
     "tab.inactiveModifiedBorder": "#ff3030",
     "tab.unfocusedActiveModifiedBorder": "#ff3030",
@@ -248,12 +248,12 @@
     "titleBar.inactiveForeground": "#ffac43",
 
     // welcome page
-    "welcomePage.background": "#492842",
+    "welcomePage.background": "#4b253c",
     "welcomePage.progress.background": "#ffac43",
-    "welcomePage.progress.foreground": "#492842",
-    "welcomePage.tileBackground": "#492842",
+    "welcomePage.progress.foreground": "#4b253c",
+    "welcomePage.tileBackground": "#4b253c",
     "welcomePage.tileHoverBackground": "#4b253c",
-    "welcomePage.tileBorder": "#492842",
+    "welcomePage.tileBorder": "#4b253c",
 
     // git
     "gitDecoration.addedResourceForeground": "#005021",
@@ -310,6 +310,10 @@
     // resize
     "editorWidget.resizeBorder": "#492842",
     "sideBySideEditor.verticalBorder": "#492842",
+
+		// link
+		"textLink.foreground": "#ffdb4b",
+		"textLink.activeForeground": "#ffffff"
 
 	},
   "tokenColors": [
