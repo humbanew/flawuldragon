@@ -19,15 +19,23 @@
   },
   "publisher": "humbanew_project",
   "scripts": {
-    "vscode:prepublish": "yarn run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "yarn run compile && yarn run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js",
-    "prebuild": "tsx ./src/jbit/build/build.ts",
-    "package": "vsce package"
+    "fd:vscode:prepublish": "yarn run compile",
+    "fd:compile": "tsc -p ./",
+    "fd:watch": "tsc -watch -p ./",
+    "fd:pretest": "yarn run compile && yarn run lint",
+    "fd:lint": "eslint src --ext ts",
+    "fd:test": "node ./out/test/runTest.js",
+    "fd:prebuild": "tsx ./src/jbit/build/build.ts",
+    "fd:package": "vsce package",
+    "todo:chrome": "npx vscode-test-web --browserType=chromium --extensionDevelopmentPath=. <path_to_open>",
+    "todo:postinstall": "node ./node_modules/vscode/bin/install",
+    "todo:vscode:prepublish": "npm run package-web",
+    "todo:compile-web": "webpack --config ./build/web-extension.webpack.config.js",
+    "todo:watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
+    "todo:package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js"
   },
+  "main": "./out/extension.cjs",
+  "browser": "./out/web/extension.js",
   "engines": {
     "vscode": "^1.83.1",
     "node": "^22.0.0"
@@ -51,7 +59,6 @@
     "onTaskType:node",
     "onTaskType:npm"
   ],
-  "main": "./out/extension.cjs",
   "contributes": {
     "themes": [
       {
@@ -97,12 +104,24 @@
     ],
     "commands": [
       {
+        "category": "Flawuldragon",
         "command": "fd_jetbrainsmonofont.activate",
         "title": "Activate JetBrains Mono Font Pack for Flawuldragon"
       },
       {
+        "category": "Flawuldragon",
         "command": "fd_jetbrainsmonofont.deactivate",
         "title": "Deactivate JetBrains Mono Font for Flawuldragon"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "fd_todohighlight.toggleHighlight",
+        "title": "Toggle highlight"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "fd_todohighlight.listAnnotations",
+        "title": "List highlighted annotations"
       }
     ],
     "icons": {
@@ -120,6 +139,133 @@
           "fontCharacter": "\\E900"
         }
       }
+    },
+    "configuration": {
+      "type": "object",
+      "title": "TODO Highlight",
+      "properties": {
+        "todohighlight.isEnable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable the highlight"
+        },
+        "todohighlight.isCaseSensitive": {
+          "type": "boolean",
+          "default": true,
+          "description": "Specify whether the keywords are case sensitive or not"
+        },
+        "todohighlight.toggleURI": {
+          "type": "boolean",
+          "default": false,
+          "description": "If the file path within the output channel not clickable, set this to true to toggle the path patten between `<path>#<line>` and `<path>:<line>:<column>`"
+        },
+        "todohighlight.keywords": {
+          "type": "array",
+          "description": "Customize keywords and colors. Any css color identifier is valid.",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Custom text to be highlighted"
+                  },
+                  "color": {
+                    "type": "string",
+                    "description": "The text color. Besides, you can play with all the string and boolean styling properties provied by VS Code API. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+                  },
+                  "backgroundColor": {
+                    "type": "string",
+                    "description": "The text background color. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+                  },
+                  "overviewRulerColor": {
+                    "type": "string",
+                    "description": "The color of the ruler mark on the scroll bar. Use rgba() and define transparent colors to play well with other decorations. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "todohighlight.keywordsPattern": {
+          "type": "string",
+          "default": "",
+          "description": "Specify keywords via RegExp instead of `todohighlight.keywords` one by one. NOTE that if this presents, `todohighlight.keywords` will be ignored. And REMEMBER to escapse the back slash if there's any in your regexp (using \\\\ instead of single back slash)"
+        },
+        "todohighlight.defaultStyle": {
+          "type": "object",
+          "description": "Default style for all customized keywords",
+          "properties": {
+            "color": {
+              "type": "string",
+              "description": "The text color. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+            },
+            "backgroundColor": {
+              "type": "string",
+              "description": "The text background color. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+            },
+            "overviewRulerColor": {
+              "type": "string",
+              "description": "The color of the ruler mark on the scroll bar. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+            }
+          }
+        },
+        "todohighlight.include": {
+          "type": "array",
+          "default": [
+            "**/*.js",
+            "**/*.jsx",
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.html",
+            "**/*.php",
+            "**/*.css",
+            "**/*.scss"
+          ],
+          "description": "Glob patterns that defines the files to search for. Only include files you need, DO NOT USE `{**/*.*}` for both permormance and avoiding binary files reason.",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "A glob pattern that defines the files to search for. Only include files you need, DO NOT USE `**/*.*` for both performance and avoiding binary files reason"
+              }
+            ]
+          }
+        },
+        "todohighlight.exclude": {
+          "type": "array",
+          "default": [
+            "**/node_modules/**",
+            "**/bower_components/**",
+            "**/dist/**",
+            "**/build/**",
+            "**/.vscode/**",
+            "**/.github/**",
+            "**/_output/**",
+            "**/*.min.*",
+            "**/*.map",
+            "**/.next/**"
+          ],
+          "description": "Glob pattern that defines files and folders to exclude while listing annotations.",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "A glob pattern that defines files and folders to exclude while listing annotations"
+              }
+            ]
+          }
+        },
+        "todohighlight.maxFilesForSearch": {
+          "type": "number",
+          "default": 5120,
+          "description": "Max files for searching"
+        }
+      }
     }
   },
   "keywords": [
@@ -130,10 +276,15 @@
     "Icon Theme",
     "Font Pack",
     "JetBrains Mono",
+    "Advanced Circuits Theme",
     "Blueprint Paper Theme",
     "Winter Day Theme",
-    "Advanced Circuits Theme",
-    "Official"
+    "Official",
+    "Todo",
+    "Fixme",
+    "Highlight",
+    "Keyword",
+    "Annotation"
   ],
   "devDependencies": {
     "@actions/core": "^1.10.1",
@@ -158,7 +309,12 @@
     "svgson": "^5.3.1",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2",
-    "vscode-test": "^1.5.0"
+    "vscode-test": "^1.5.0",
+    "@vscode/test-web": "0.0.15",
+    "os-browserify": "^0.3.0",
+    "vscode": "^1.0.0",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
   },
   "dependencies": {
     "electron": "^33.2.0"

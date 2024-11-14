@@ -10,7 +10,8 @@
     "moduleDetection": "auto",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "allowJs": false,
     "strict": true
   },
-  "exclude": ["node_modules", ".vscode-test", "scripts", "out"]
+  "exclude": ["node_modules", "out", "triagem"]
 }

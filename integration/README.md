@@ -9,7 +9,7 @@ Fonte de Texto, Ícones e Temas de Aparência
 - [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
 - [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
 
-## Integrações Extensão Devkit
+## Integrações Extensão Devkit [Deve entrar em votação na comunidade do repositório]
 Path Intellisense, Clock Countdown, Clock Time and Date, GitLens, Git Graph, Git History, GitLab Workflow, Github Extensions, Jira and BitBucket
 
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
