@@ -3,7 +3,7 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-import { SRC_DIR_PATH, BUILD_DIR_PATH } from "./constants";
+import { SRC_DIR_PATH, BUILD_DIR_PATH } from "./constants.js";
 import { generate2023AutoTheme } from "./generators/generate-2023-auto-theme";
 import { buildTheme } from "./utils/build-theme";
 

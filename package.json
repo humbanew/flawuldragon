@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "icon": "assets/icon.png",
   "readme": "README.md",
-  "license": "Humbanew License v5",
+  "license": "Humbanew License v5, powered by MIT License",
   "repository": {
     "type": "git",
     "url": "https://github.com/humbanew/flawuldragon"
@@ -19,7 +19,8 @@
   },
   "publisher": "humbanew_project",
   "scripts": {
-    "fd:vscode:prepublish": "yarn run compile",
+    "fd:vscode:prepublish": "vsce package",
+    "fd:vscode:publish": "vsce publish",
     "fd:compile": "tsc -p ./",
     "fd:watch": "tsc -watch -p ./",
     "fd:pretest": "yarn run compile && yarn run lint",
@@ -27,26 +28,30 @@
     "fd:test": "node ./out/test/runTest.js",
     "fd:prebuild": "tsx ./src/jbit/build/build.ts",
     "fd:package": "vsce package",
+    "fd:build-dev": "npm run fd:prebuild && npm run fd:compile",
+    "fd:build": "npm run fd:prebuild && npm run fd:compile && npm run fd:package",
     "todo:chrome": "npx vscode-test-web --browserType=chromium --extensionDevelopmentPath=. <path_to_open>",
     "todo:postinstall": "node ./node_modules/vscode/bin/install",
     "todo:vscode:prepublish": "npm run package-web",
     "todo:compile-web": "webpack --config ./build/web-extension.webpack.config.js",
     "todo:watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
-    "todo:package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js"
+    "todo:package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
+    "ch:force-resolutions": "npx npm-force-resolutions"
   },
   "main": "./out/extension.cjs",
-  "browser": "./out/web/extension.js",
   "engines": {
     "vscode": "^1.83.1",
     "node": "^22.0.0"
   },
-  "bundleDependencies": [
-    "vscode"
-  ],
   "extensionKind": [
     "ui",
     "workspace"
   ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
   "categories": [
     "Extension Packs",
     "Formatters",
@@ -122,6 +127,11 @@
         "category": "Flawuldragon",
         "command": "fd_todohighlight.listAnnotations",
         "title": "List highlighted annotations"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "fd_filesize.toggleFilesizeInfo",
+        "title": "Toggle filesize detailed information"
       }
     ],
     "icons": {
@@ -142,7 +152,7 @@
     },
     "configuration": {
       "type": "object",
-      "title": "TODO Highlight",
+      "title": "Flawuldragon Settings",
       "properties": {
         "todohighlight.isEnable": {
           "type": "boolean",
@@ -264,9 +274,128 @@
           "type": "number",
           "default": 5120,
           "description": "Max files for searching"
+        },
+        "filesize.useDecimal": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, using IEC's representation. Set to true to get SI representation."
+        },
+        "filesize.use24HourFormat": {
+          "type": "boolean",
+          "default": true,
+          "description": "Defaults to true, using 24-hour format. Set to false to get 12-hour format."
+        },
+        "filesize.showGzip": {
+          "type": "boolean",
+          "default": true,
+          "description": "Defaults to true, whether to show gzip size in detailed view or not."
+        },
+        "filesize.showBrotli": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, whether to show brotli size in the detailed view."
+        },
+        "filesize.showRawInBytes": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, whether to show raw size in bytes in the detailed view."
+        },
+        "filesize.showGzipInStatusBar": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, whether to show gzip size in the status bar."
+        },
+        "filesize.showBrotliInStatusBar": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, whether to show brotli size in the status bar."
+        },
+        "filesize.displayInfoOnTheRightSideOfStatusBar": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, whether to show the filesize info on the right side of the status bar."
+        },
+        "indentRainbow.includedLanguages": {
+          "type": "array",
+          "default": [],
+          "description": "For which languages indent-rainbow should be activated. When empty will use for all languages."
+        },
+        "indentRainbow.excludedLanguages": {
+          "type": "array",
+          "default": [
+            "plaintext"
+          ],
+          "description": "For which languages indent-rainbow should be deactivated. When left empty will ignore."
+        },
+        "indentRainbow.ignoreErrorLanguages": {
+          "type": "array",
+          "default": [
+            "markdown"
+          ],
+          "description": "For which languages indent-rainbow should skip indent error detection (use '*' to deactivate errors for all languages)."
+        },
+        "indentRainbow.updateDelay": {
+          "type": "integer",
+          "default": 100,
+          "description": "The delay in ms until the editor gets updated."
+        },
+        "indentRainbow.errorColor": {
+          "type": "string",
+          "default": "rgba(128,32,32,0.6)",
+          "description": "Indent color for when there is an error in the indentation, for example if you have your tabs set to 2 spaces but the indent is 3 spaces. Can be any type of web based color format (hex, rgba, rgb)."
+        },
+        "indentRainbow.tabmixColor": {
+          "type": "string",
+          "default": "rgba(128,32,96,0.6)",
+          "description": "Indent color for when there is a mix between spaces and tabs in the indentation. Can be any type of web based color format (hex, rgba, rgb) or a empty string(to be disabled this coloring)."
+        },
+        "indentRainbow.ignoreLinePatterns": {
+          "type": "array",
+          "default": [
+            "/[ \t]* [*]/g",
+            "/[ \t]+[/]{2}/g"
+          ],
+          "description": "Skip error highlighting for RegEx patterns. Defaults to c/cpp decorated block and full line comments."
+        },
+        "indentRainbow.colors": {
+          "type": "array",
+          "default": [
+            "rgba(255,255,64,0.07)",
+            "rgba(127,255,127,0.07)",
+            "rgba(255,127,255,0.07)",
+            "rgba(79,236,236,0.07)"
+          ],
+          "description": "An array with color (hex, rgba, rgb) strings which are used as colors, can be any length."
+        },
+        "indentRainbow.colorOnWhiteSpaceOnly": {
+          "type": "boolean",
+          "default": false,
+          "description": "If error color is disabled, indent colors will be rendered until the length of rendered characters (white spaces, tabs, and other ones) is divisible by tabsize. Turn on this option to render white spaces and tabs only."
+        },
+        "indentRainbow.indicatorStyle": {
+          "type": "string",
+          "default": "classic",
+          "enum": [
+            "classic",
+            "light"
+          ],
+          "markdownDescription": "Classic mode uses a full colored tab to indicate the indendation. Light mode will only display a colored border similar to the default indent guide lines. You can disable the default indicators with `#editor.guides.indentation#`."
+        },
+        "indentRainbow.lightIndicatorStyleLineWidth": {
+          "type": "number",
+          "default": 1,
+          "description": "This property defines the indent indicator lineWidth when using light mode."
         }
       }
-    }
+    },
+    "keybindings": [
+      {
+        "command": "fd_filesize.toggleFilesizeInfo",
+        "key": "ctrl+shift+'",
+        "mac": "cmd+shift+'",
+        "when": "editorTextFocus"
+      }
+    ]
   },
   "keywords": [
     "Flawuldragon",
@@ -284,18 +413,25 @@
     "Fixme",
     "Highlight",
     "Keyword",
-    "Annotation"
+    "Annotation",
+    "File",
+    "Size",
+    "Filesize",
+    "Status Bar",
+    "Info"
   ],
   "devDependencies": {
     "@actions/core": "^1.10.1",
     "@types/follow-redirects": "^1.13.0",
     "@types/glob": "^8.0.0",
+    "@types/mime": "^3.0.4",
     "@types/mocha": "^10.0.0",
-    "@types/node": "^20.8.0",
-    "@types/vscode": "^1.72.0",
+    "@types/node": "^22.9.0",
+    "@types/vscode": "^1.95.0",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "@vscode/test-electron": "^2.1.5",
+    "@vscode/test-web": "0.0.15",
     "@vscode/vsce": "^2.19.0",
     "eslint": "^8.24.0",
     "follow-redirects": "^1.13.3",
@@ -303,6 +439,7 @@
     "glob": "^8.0.3",
     "inly": "^4.0.8",
     "mocha": "^10.0.0",
+    "os-browserify": "^0.3.0",
     "path": "^0.12.7",
     "semantic-release": "^21.0.6",
     "semantic-release-vsce": "^5.5.10",
@@ -310,13 +447,20 @@
     "tsx": "^3.13.0",
     "typescript": "^5.2.2",
     "vscode-test": "^1.5.0",
-    "@vscode/test-web": "0.0.15",
-    "os-browserify": "^0.3.0",
-    "vscode": "^1.0.0",
     "webpack": "^5.44.0",
     "webpack-cli": "^4.7.2"
   },
   "dependencies": {
-    "electron": "^33.2.0"
+    "brotli-size": "^4.0.0",
+    "color": "^1.0.3",
+    "color-name": "^1.1.4",
+    "electron": "^33.2.0",
+    "file-importer": "^1.0.0",
+    "gzip-size": "^7.0.0",
+    "image-size": "^1.1.1",
+    "mime": "^4.0.4"
+  },
+  "resolutions": {
+    "minimist": "^1.2.5"
   }
 }

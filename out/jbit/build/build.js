@@ -1,7 +1,7 @@
 // This script is used to prepare the build directory of the icon set.
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { SRC_DIR_PATH, BUILD_DIR_PATH } from "./constants";
+import { SRC_DIR_PATH, BUILD_DIR_PATH } from "./constants.js";
 import { generate2023AutoTheme } from "./generators/generate-2023-auto-theme";
 import { buildTheme } from "./utils/build-theme";
 // Here is the mapping of the source theme directory to the build theme directory.

@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
-    "module": "es2020",
-    "target": "esnext",
+    "module": "ESNext",
+    "target": "es2020",
     "outDir": "./out",
     "lib": ["es2020"],
     "sourceMap": false,
     "rootDir": "./src",
     "moduleResolution": "node",
-    "moduleDetection": "auto",
+    "moduleDetection": "force",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "allowJs": false,
+    "allowJs": true,
+    "checkJs": false,
     "strict": true
   },
-  "exclude": ["node_modules", "out", "triagem"]
+  "exclude": ["node_modules", "out", "triagem", "src/old"]
 }

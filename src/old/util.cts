@@ -5,7 +5,7 @@ import { defaultSettings, GeneralObject } from "./defaultSettings.cjs";
 // Jetbrains Mono Font Extension Configs
 const showDialog = vscode.window.showInformationMessage;
 
-const JBMPath = (context: vscode.ExtensionContext) =>
+const JetBrainsMonoPath = (context: vscode.ExtensionContext) =>
   path.resolve(context.extensionPath, "JetBrainsMono");
 
 const updateUserSettings = (settings: GeneralObject, remove = false) =>
@@ -35,28 +35,28 @@ export function dirOpen(dirPath: string) {
   return require("child_process").exec(`${command} ${dirPath}`);
 }
 
-export function JBMActivation(context: vscode.ExtensionContext) {
-  const JBMAddress = JBMPath(context);
+export function JetBrainsMonoActivation(context: vscode.ExtensionContext) {
+  const JetBrainsMonoAddress = JetBrainsMonoPath(context);
   updateUserSettings(defaultSettings);
-  dirOpen(JBMAddress);
+  dirOpen(JetBrainsMonoAddress);
   showDialog(
     `${context.extension.packageJSON.displayName} - Jetbrains Mono Font is activated!`
   );
   showDialog(
-    `Important Note - Don't forget to install fonts! Font Directory will open, once you have manually installed fonts, restart VSCODE - ${JBMAddress}`
+    `Important Note - Don't forget to install fonts! Font Directory will open, once you have manually installed fonts, restart VSCODE - ${JetBrainsMonoAddress}`
   );
 }
 
-export const JBMActivationPrompt = (context: vscode.ExtensionContext) =>
+export const JetBrainsMonoActivationPrompt = (context: vscode.ExtensionContext) =>
   showDialog(
     "Activate JetBrains Mono Font for Flawuldragon?",
     "Yes",
     "No"
   ).then((value) =>
     value === "Yes"
-      ? JBMActivation(context)
+      ? JetBrainsMonoActivation(context)
       : (showDialog(
-          "You can activate JetBrains Mono later by running 'JetBrainsMono' or 'JBM' in command palette."
+          "You can activate JetBrains Mono later by running 'JetBrainsMono' or 'JetBrainsMono' in command palette."
         ) as any)
   );
 
@@ -65,11 +65,11 @@ export function firstTimeActivation(context: vscode.ExtensionContext) {
   const previousVersion = context.globalState.get(context.extension.id);
   if (previousVersion === version) return;
 
-  JBMActivation(context);
+  JetBrainsMonoActivation(context);
   context.globalState.update(context.extension.id, version);
 }
 
-export function deactivateJBM(context: vscode.ExtensionContext) {
+export function deactivateJetBrainsMono(context: vscode.ExtensionContext) {
   // context.globalState.update(context.extension.id, undefined);
   updateUserSettings(defaultSettings, true);
   showDialog(`${context.extension.packageJSON.displayName} is deactivated!`);
@@ -96,6 +96,24 @@ export var DEFAULT_KEYWORDS = {
     color: "#fff",
     backgroundColor: "#f06292",
     overviewRulerColor: "rgba(240,98,146,0.8)"
+  },
+  "ISSUE:": {
+    text: "ISSUE:",
+    color: "#fff",
+    backgroundColor: "#ff5370",
+    overviewRulerColor: "rgba(255,83,112,0.8)"
+  },
+  "BUG:": {
+    text: "BUG:",
+    color: "#fff",
+    backgroundColor: "#ff3400",
+    overviewRulerColor: "rgba(255,52,0,0.8)"
+  },
+  "NOTE:": {
+    text: "NOTE:",
+    color: "#fff",
+    backgroundColor: "#64b5f6",
+    overviewRulerColor: "rgba(100,181,246,0.8)"
   }
 };
 
@@ -373,7 +391,7 @@ export function setStatusMsg(icon: string, msg: string, tooltip: string | vscode
     if (window.statusBarItem) {
         window.statusBarItem.text = `${icon} ${msg}` || '';
         if (tooltip) {
-            window.statusBarItem.tooltip = tooltip || '';
+            window.statusBarItem.tooltip = typeof tooltip === 'string' ? tooltip : undefined;
         }
         window.statusBarItem.show();
     }

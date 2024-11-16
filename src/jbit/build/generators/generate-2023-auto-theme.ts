@@ -3,7 +3,7 @@ import * as path from "node:path";
 
 import * as svg from "svgson";
 
-import { __dirname } from "../constants";
+import { __dirname } from "../constants.js";
 import { Theme } from "../types/Theme";
 
 function removeExtension(fileName: string) {
