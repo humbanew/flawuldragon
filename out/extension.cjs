@@ -2,9 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = activate;
 exports.deactivate = deactivate;
-var fs = require("fs");
-var path = require("path");
-var vscode = require("vscode");
+exports.activationPrompt = activationPrompt;
+const FileSize_cjs_1 = require("./FileSize.cjs");
+const JetbrainsIcons_cjs_1 = require("./JetbrainsIcons.cjs");
+const JetbrainsMono_cjs_1 = require("./JetbrainsMono.cjs");
+const Vanilla_cjs_1 = require("./Vanilla.cjs");
+const vanilla = new Vanilla_cjs_1.Vanilla();
+const jetbrainsmono = new JetbrainsMono_cjs_1.JetbrainsMono();
+const jetbrainsicons = new JetbrainsIcons_cjs_1.JetbrainsIcons();
+const filesize = new FileSize_cjs_1.FileSize();
 /**
  * Activates the extension.
  *
@@ -15,34 +21,10 @@ var vscode = require("vscode");
  * access to the extension's global state, subscriptions, and other utilities.
  */
 function activate(context) {
-    let statusBar;
-    console.log("Flawuldragon is loaded!");
-    const flawuldragonStatusbaritemId = "flawuldragon.extension.infos";
-    context.subscriptions.push(vscode.commands.registerCommand(flawuldragonStatusbaritemId, () => {
-        let viewPanel = vscode.window.createWebviewPanel("flawuldragon", "Flawuldragon Notes", vscode.ViewColumn.One, {});
-        viewPanel.title = "Flawuldragon Notes";
-        viewPanel.iconPath = vscode.Uri.file(path.join(__dirname, "../", "assets", "icon.png"));
-        viewPanel.webview.html = fs
-            .readFileSync(path.join(__dirname, "../", "assets", "flawuldragon.html"))
-            .toString();
-        return 0;
-    }));
-    statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
-    statusBar.text = `$(flawuldragon-on) FD`;
-    statusBar.command = flawuldragonStatusbaritemId;
-    statusBar.color = "darkblue";
-    statusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
-    statusBar.tooltip = "Click to view Flawuldragon Notes";
-    statusBar.show();
-    context.subscriptions.push(statusBar);
-    if (vscode.workspace.getConfiguration("flawuldragon").get("enable") === false) {
-        console.warn("Flawuldragon is disabled. Enable it in your settings.");
-        vscode.window.showWarningMessage("Flawuldragon is disabled. Enable it in your settings.");
-        statusBar.text = `$(flawuldragon-off) The Flawuldragon`;
-        statusBar.color = "darkred";
-        statusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.errorBackground");
-        return;
-    }
+    vanilla.vanilla_activate(context);
+    jetbrainsmono.jetbrainsMono_activate(context);
+    jetbrainsicons.jetbrainsIcons_activate(context);
+    filesize.filesize_activate(context);
 }
 /**
  * Deactivates the extension.
@@ -52,57 +34,21 @@ function activate(context) {
  *
  * @param context - The context in which the extension is running.
  */
-function deactivate(context) { }
-// import fs from "fs";
-// import path from "path";
-// import vscode from "vscode";
-// import { annotationsFound, chooseAnnotationType, createStatusBarItem, deactivateJetBrainsMono, DEFAULT_STYLE, escapeRegExp, firstTimeActivation, getAssembledData, JetBrainsMonoActivation, searchAnnotations, showOutputChannel } from "./util.cjs";
-// let statusBar: vscode.StatusBarItem;
-// let window = vscode.window;
-// let statusBarItem: vscode.StatusBarItem | undefined;
-// let workspace = vscode.workspace;
-// // File Size Configs Functions
-// function getCurrentFileSize(statusItem: {
-//   text: string | undefined;
-//   show: () => void;
-// }) {
-//   new Promise((resolve) => {
-//     let _filepath = vscode.window.activeTextEditor
-//       ? vscode.window.activeTextEditor.document.fileName
-//       : "";
-//     resolve(_filepath);
-//   }).then((filepath) => {
-//     let _size = fs.statSync(filepath as string).size;
-//     let _sizeText = convertSize(_size);
-//     // let statusBarRightItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 1000)
-//     statusItem.text = _sizeText;
-//     statusItem.show();
-//   });
-// }
-// function convertSize(size: number) {
-//   if (size < 1024) {
-//     return `${size} B`;
-//   } else if (size >= 1024 && size < 1048576) {
-//     return `${Math.floor(size / 10.24 / 100)} KB`;
-//   } else if (size > 1048576) {
-//     return `${Math.floor(size / 10485.76) / 100} MB`;
-//   }
-// }
+function deactivate(context) {
+    vanilla.vanilla_desactivate();
+    jetbrainsmono.jetbrainsMono_desactivate(context);
+    jetbrainsicons.jetbrainsIcons_deactivate();
+    filesize.filesize_deactivate();
+}
+/**
+ * Activates the JetBrains Mono prompt within the given VS Code extension context.
+ *
+ * @param context - The VS Code extension context in which the activation prompt is triggered.
+ */
+function activationPrompt(context) {
+    jetbrainsmono.jetbrainsMono_activationPrompt(context);
+}
 // export function activate(context: vscode.ExtensionContext) {
-//   // Jetbrains Mono Font Extension Configs
-//   console.log(
-//     `Congratulations, your extension "${context.extension.packageJSON.displayName} - Jetbrains Mono Font installed!"`,
-//   );
-//   firstTimeActivation(context);
-//   let activateCommand = vscode.commands.registerCommand(
-//     "flawuldragon_jetbrainsmonofont.activate",
-//     () => JetBrainsMonoActivation(context),
-//   );
-//   let deactivateCommand = vscode.commands.registerCommand(
-//     "flawuldragon_jetbrainsmonofont.deactivate",
-//     () => deactivateJetBrainsMono(context),
-//   );
-//   context.subscriptions.push(activateCommand, deactivateCommand);
 //   // Todo Highlight Configs
 //   var timeout: NodeJS.Timeout | null = null;
 //   var activeEditor = window.activeTextEditor;
@@ -277,21 +223,6 @@ function deactivate(context) { }
 //       pattern = new RegExp(pattern, "g");
 //     }
 //   }
-//   // File Size Configs
-//   let statusBarItemFilesize = vscode.window.createStatusBarItem(
-//     vscode.StatusBarAlignment.Left,
-//     99,
-//   );
-//   statusBarItemFilesize.backgroundColor = new vscode.ThemeColor(
-//     "statusBarItem.warningBackground",
-//   );
-//   getCurrentFileSize(statusBarItemFilesize);
-//   vscode.window.onDidChangeActiveTextEditor(function () {
-//     getCurrentFileSize(statusBarItemFilesize);
-//   });
-//   vscode.workspace.onDidSaveTextDocument(function () {
-//     getCurrentFileSize(statusBarItemFilesize);
-//   });
 //   // Indent Rainbow Configs
 //   // Create a decorator types that we use to decorate indent levels
 //   let decorationTypesIR: any[] = [];
@@ -548,58 +479,4 @@ function deactivate(context) { }
 //         });
 //     }
 // 	});
-//   // Flawuldragon Configs
-//   console.log("Flawuldragon is loaded!");
-//   const flawuldragonStatusbaritemId = "flawuldragon.extension.infos";
-//   context.subscriptions.push(
-//     vscode.commands.registerCommand(flawuldragonStatusbaritemId, () => {
-//       let viewPanel = vscode.window.createWebviewPanel(
-//         "flawuldragon",
-//         "Flawuldragon Notes",
-//         vscode.ViewColumn.One,
-//         {},
-//       );
-//       viewPanel.title = "Flawuldragon Notes";
-//       viewPanel.iconPath = vscode.Uri.file(
-//         path.join(__dirname, "../", "assets", "icon.png"),
-//       );
-//       viewPanel.webview.html = fs
-//         .readFileSync(
-//           path.join(__dirname, "../", "assets", "flawuldragon.html"),
-//         )
-//         .toString();
-//       return 0;
-//     }),
-//   );
-//   statusBar = vscode.window.createStatusBarItem(
-//     vscode.StatusBarAlignment.Left,
-//     100,
-//   );
-//   statusBar.text = `$(flawuldragon-on) FD`;
-//   statusBar.command = flawuldragonStatusbaritemId;
-//   statusBar.color = "darkblue";
-//   statusBar.backgroundColor = new vscode.ThemeColor(
-//     "statusBarItem.warningBackground",
-//   );
-//   statusBar.tooltip = "Click to view Flawuldragon Notes";
-//   statusBar.show();
-//   context.subscriptions.push(statusBar);
-//   if (
-//     vscode.workspace.getConfiguration("flawuldragon").get("enable") === false
-//   ) {
-//     console.warn("Flawuldragon is disabled. Enable it in your settings.");
-//     vscode.window.showWarningMessage(
-//       "Flawuldragon is disabled. Enable it in your settings.",
-//     );
-//     statusBar.text = `$(flawuldragon-off) The Flawuldragon`;
-//     statusBar.color = "darkred";
-//     statusBar.backgroundColor = new vscode.ThemeColor(
-//       "statusBarItem.errorBackground",
-//     );
-//     return;
-//   }
-// }
-// export function deactivate(context: vscode.ExtensionContext) {
-//   // Jetbrains Mono Font Extension Configs
-//   deactivateJetBrainsMono(context);
 // }
