@@ -97,15 +97,15 @@ export class TodoHighlight {
     var result: { [key: string]: ITHKeyword } = {};
     keywords.forEach((v) => {
       v = typeof v == "string" ? { text: v } : v;
-      var text = v.text;
-      v = Object.assign(
+      var text = v?.text;
+      v = Object?.assign(
         {},
         this.DEFAULT_KEYWORDS[text as keyof typeof this.DEFAULT_KEYWORDS],
         v,
       );
 
       if (!isCaseSensitive) {
-        text = text.toUpperCase();
+        text = text?.toUpperCase();
       }
 
       if (
@@ -120,9 +120,9 @@ export class TodoHighlight {
         text == "EXAMPLE:" ||
         text == "TEST:"
       ) {
-        v = Object.assign({}, this.DEFAULT_KEYWORDS[text], v);
+        v = Object?.assign({}, this.DEFAULT_KEYWORDS[text], v);
       }
-      result[text] = Object.assign(
+      result[text] = Object?.assign(
         {},
         this.DEFAULT_STYLE,
         customDefaultStyle,
@@ -132,7 +132,7 @@ export class TodoHighlight {
 
     Object.keys(this.DEFAULT_KEYWORDS).forEach((v) => {
       if (!result[v]) {
-        result[v] = Object.assign(
+        result[v] = Object?.assign(
           {},
           this.DEFAULT_STYLE,
           customDefaultStyle,
@@ -624,7 +624,7 @@ export class TodoHighlight {
       decorationTypes = {};
   
       if (keywordsPattern.trim()) {
-        styleForRegExp = Object.assign(
+        styleForRegExp = Object?.assign(
           {},
           TodoHighlight.prototype.DEFAULT_STYLE,
           customDefaultStyle,
@@ -648,7 +648,7 @@ export class TodoHighlight {
               v = v.toUpperCase();
             }
   
-            var mergedStyle = Object.assign(
+            var mergedStyle = Object?.assign(
               {},
               {
                 overviewRulerLane: vscode.OverviewRulerLane.Right
