@@ -19,18 +19,18 @@
   },
   "publisher": "humbanew_project",
   "scripts": {
-    "fd:vscode:prepublish": "vsce package",
-    "fd:vscode:publish": "vsce publish",
+    "fd:vscode:package": "npx vsce package",
+    "fd:vscode:publish": "npx vsce publish",
+    "fd:vscode:help": "npx vsce help",
     "fd:compile": "tsc -p ./",
     "fd:watch": "tsc -watch -p ./",
     "fd:pretest": "yarn run compile && yarn run lint",
     "fd:lint": "eslint src --ext ts",
-    "fd:test": "node ./out/test/runTest.js",
-    "fd:package": "vsce package"
+    "fd:test": "node ./out/test/runTest.js"
   },
   "main": "./out/extension.cjs",
   "engines": {
-    "vscode": "^1.83.1",
+    "vscode": "^1.80.0",
     "node": "^22.0.0"
   },
   "extensionKind": [
