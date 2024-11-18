@@ -127,6 +127,11 @@
         "category": "Flawuldragon",
         "command": "fd_todohighlight.listAnnotations",
         "title": "List highlighted annotations"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "fd_todohighlight.showOutputChannel",
+        "title": "Show a output logs channel"
       }
     ],
     "icons": {
