@@ -1,0 +1,1 @@
+npm install -y yo code-generator

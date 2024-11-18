@@ -377,13 +377,15 @@
   },
   "dependencies": {
     "brotli-size": "^4.0.0",
+    "code-generator": "^1.0.7",
     "color": "^1.0.3",
     "color-name": "^1.1.4",
     "electron": "^33.2.0",
     "file-importer": "^1.0.0",
     "gzip-size": "^7.0.0",
     "image-size": "^1.1.1",
-    "mime": "^4.0.4"
+    "mime": "^4.0.4",
+    "yo": "^5.0.0"
   },
   "resolutions": {
     "minimist": "^1.2.5"
