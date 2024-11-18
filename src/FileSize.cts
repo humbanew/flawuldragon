@@ -28,8 +28,35 @@ export class FileSize {
         : "";
       resolve(_filepath);
     }).then((filepath) => {
+      if (filepath == "") {
+        statusItem.text = "No file";
+        statusItem.show();
+        return;
+      }
       let _size = fs.statSync(filepath as string).size;
       let _sizeText = this.filesize_convertSize(_size);
+      statusItem.text = _sizeText;
+      statusItem.show();
+    });
+  }
+
+  private filesize_getCurrentAdvancedFileSize(statusItem: {
+    text: string | undefined;
+    show: () => void;
+  }) {
+    new Promise((resolve) => {
+      let _filepath = vscode.window.activeTextEditor
+        ? vscode.window.activeTextEditor.document.fileName
+        : "";
+      resolve(_filepath);
+    }).then((filepath) => {
+      if (filepath == "") {
+        statusItem.text = "No file";
+        statusItem.show();
+        return;
+      }
+      let _size = fs.statSync(filepath as string).size;
+      let _sizeText = this.filesize_convertAdvancedSize(_size);
       statusItem.text = _sizeText;
       statusItem.show();
     });
@@ -39,7 +66,7 @@ export class FileSize {
    * Converts a file size in bytes to a human-readable string format.
    *
    * @param size - The size of the file in bytes.
-   * @returns A string representing the file size in B, KB, or MB.
+   * @returns A string representing the file size in B, KB, MB, GB and TB.
    */
   private filesize_convertSize(size: number) {
     if (size < 1024) {
@@ -48,6 +75,25 @@ export class FileSize {
       return `${Math.floor(size / 10.24 / 100)} KB`;
     } else if (size > 1048576) {
       return `${Math.floor(size / 10485.76) / 100} MB`;
+    } else if (size > 1073741824) {
+      return `${Math.floor(size / 10737418.24) / 100} GB`;
+    } else {
+      return `${Math.floor(size / 1099511627776) / 100} TB`;
+    }
+  }
+
+  private filesize_convertAdvancedSize(size: number) {
+    // brute size of bytes
+    if (size < 1024) {
+      return `${size} B`;
+    } else if (size >= 1024 && size < 1048576) {
+      return `${Math.floor(size / 10.24 / 100)} KB | ${size} B`;
+    } else if (size > 1048576) {
+      return `${Math.floor(size / 10485.76) / 100} MB | ${size} B`;
+    } else if (size > 1073741824) {
+      return `${Math.floor(size / 10737418.24) / 100} GB | ${size} B`;
+    } else {
+      return `${Math.floor(size / 1099511627776) / 100} TB | ${size} B`;
     }
   }
 
@@ -62,12 +108,26 @@ export class FileSize {
     );
     this.filesize_getCurrentFileSize(this.filesizeStatusBar);
 
+    content.subscriptions.push(
+      vscode.commands.registerCommand("fd_filesize.toggleFileSizeAdvancedInfo", () => {
+        this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
+      }),
+    );
+
+    content.subscriptions.push(
+      vscode.commands.registerCommand("fd_filesize.toggleFileSizeInfo", () => {
+        this.filesize_getCurrentFileSize(this.filesizeStatusBar);
+      }),
+    );
+
     vscode.window.onDidChangeActiveTextEditor(() => {
       this.filesize_getCurrentFileSize(this.filesizeStatusBar);
+      this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
     });
 
     vscode.workspace.onDidSaveTextDocument(() => {
       this.filesize_getCurrentFileSize(this.filesizeStatusBar);
+      this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
     });
   }
 
@@ -78,6 +138,6 @@ export class FileSize {
    * or features related to file size within the application.
    */
   public filesize_deactivate() {
-    return;
+    this.filesizeStatusBar.dispose();
   }
 }

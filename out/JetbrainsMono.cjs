@@ -18,6 +18,7 @@ class JetbrainsMono {
     jetbrainsMono_defaultSettings = {
         "editor.fontFamily": "JetBrains Mono",
         "editor.fontLigatures": true,
+        "accessibility.signals.lineHasError": { "sound": "on" },
     };
     /**
      * Displays an information message to the user.
@@ -127,10 +128,8 @@ class JetbrainsMono {
      */
     jetbrainsMono_activate(context) {
         console.log(`Congratulations, your extension "${context.extension.packageJSON.displayName} - Jetbrains Mono Font installed!"`);
-        this.jetbrainsMono_dirOpen(this.jetbrainsMono_path(context));
-        this.jetbrainsMono_firstTimeActivation(context);
-        let activateCommand = vscode.commands.registerCommand("flawuldragon_jetbrainsmonofont.activate", () => this.jetbrainsMono_activation(context));
-        let deactivateCommand = vscode.commands.registerCommand("flawuldragon_jetbrainsmonofont.deactivate", () => this.jetbrainsMono_desactivate(context));
+        let activateCommand = vscode.commands.registerCommand("fd_jetbrainsmonofont.activate", () => this.jetbrainsMono_activation(context));
+        let deactivateCommand = vscode.commands.registerCommand("fd_jetbrainsmonofont.deactivate", () => this.jetbrainsMono_desactivate(context));
         context.subscriptions.push(activateCommand, deactivateCommand);
     }
     /**

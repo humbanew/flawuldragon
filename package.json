@@ -26,14 +26,7 @@
     "fd:pretest": "yarn run compile && yarn run lint",
     "fd:lint": "eslint src --ext ts",
     "fd:test": "node ./out/test/runTest.js",
-    "fd:package": "vsce package",
-    "todo:chrome": "npx vscode-test-web --browserType=chromium --extensionDevelopmentPath=. <path_to_open>",
-    "todo:postinstall": "node ./node_modules/vscode/bin/install",
-    "todo:vscode:prepublish": "npm run package-web",
-    "todo:compile-web": "webpack --config ./build/web-extension.webpack.config.js",
-    "todo:watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
-    "todo:package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
-    "ch:force-resolutions": "npx npm-force-resolutions"
+    "fd:package": "vsce package"
   },
   "main": "./out/extension.cjs",
   "engines": {
@@ -117,6 +110,16 @@
       },
       {
         "category": "Flawuldragon",
+        "command": "fd_filesize.toggleFileSizeInfo",
+        "title": "Toggle file size info"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "fd_filesize.toggleFileSizeAdvancedInfo",
+        "title": "Toggle advanced file size info"
+      },
+      {
+        "category": "Flawuldragon",
         "command": "fd_todohighlight.toggleHighlight",
         "title": "Toggle highlight"
       },
@@ -124,11 +127,6 @@
         "category": "Flawuldragon",
         "command": "fd_todohighlight.listAnnotations",
         "title": "List highlighted annotations"
-      },
-      {
-        "category": "Flawuldragon",
-        "command": "fd_filesize.toggleFilesizeInfo",
-        "title": "Toggle filesize detailed information"
       }
     ],
     "icons": {
@@ -150,6 +148,7 @@
     "configuration": {
       "type": "object",
       "title": "Flawuldragon Settings",
+      "order": 0,
       "properties": {
         "todohighlight.isEnable": {
           "type": "boolean",
@@ -311,77 +310,6 @@
           "type": "boolean",
           "default": false,
           "description": "Defaults to false, whether to show the filesize info on the right side of the status bar."
-        },
-        "indentRainbow.includedLanguages": {
-          "type": "array",
-          "default": [],
-          "description": "For which languages indent-rainbow should be activated. When empty will use for all languages."
-        },
-        "indentRainbow.excludedLanguages": {
-          "type": "array",
-          "default": [
-            "plaintext"
-          ],
-          "description": "For which languages indent-rainbow should be deactivated. When left empty will ignore."
-        },
-        "indentRainbow.ignoreErrorLanguages": {
-          "type": "array",
-          "default": [
-            "markdown"
-          ],
-          "description": "For which languages indent-rainbow should skip indent error detection (use '*' to deactivate errors for all languages)."
-        },
-        "indentRainbow.updateDelay": {
-          "type": "integer",
-          "default": 100,
-          "description": "The delay in ms until the editor gets updated."
-        },
-        "indentRainbow.errorColor": {
-          "type": "string",
-          "default": "rgba(128,32,32,0.6)",
-          "description": "Indent color for when there is an error in the indentation, for example if you have your tabs set to 2 spaces but the indent is 3 spaces. Can be any type of web based color format (hex, rgba, rgb)."
-        },
-        "indentRainbow.tabmixColor": {
-          "type": "string",
-          "default": "rgba(128,32,96,0.6)",
-          "description": "Indent color for when there is a mix between spaces and tabs in the indentation. Can be any type of web based color format (hex, rgba, rgb) or a empty string(to be disabled this coloring)."
-        },
-        "indentRainbow.ignoreLinePatterns": {
-          "type": "array",
-          "default": [
-            "/[ \t]* [*]/g",
-            "/[ \t]+[/]{2}/g"
-          ],
-          "description": "Skip error highlighting for RegEx patterns. Defaults to c/cpp decorated block and full line comments."
-        },
-        "indentRainbow.colors": {
-          "type": "array",
-          "default": [
-            "rgba(255,255,64,0.07)",
-            "rgba(127,255,127,0.07)",
-            "rgba(255,127,255,0.07)",
-            "rgba(79,236,236,0.07)"
-          ],
-          "description": "An array with color (hex, rgba, rgb) strings which are used as colors, can be any length."
-        },
-        "indentRainbow.colorOnWhiteSpaceOnly": {
-          "type": "boolean",
-          "default": false,
-          "description": "If error color is disabled, indent colors will be rendered until the length of rendered characters (white spaces, tabs, and other ones) is divisible by tabsize. Turn on this option to render white spaces and tabs only."
-        },
-        "indentRainbow.indicatorStyle": {
-          "type": "string",
-          "default": "classic",
-          "enum": [
-            "classic",
-            "light"
-          ],
-          "markdownDescription": "Classic mode uses a full colored tab to indicate the indendation. Light mode will only display a colored border similar to the default indent guide lines. You can disable the default indicators with `#editor.guides.indentation#`."
-        },
-        "indentRainbow.lightIndicatorStyleLineWidth": {
-          "type": "number",
-          "default": 1,
-          "description": "This property defines the indent indicator lineWidth when using light mode."
         }
       }
     },

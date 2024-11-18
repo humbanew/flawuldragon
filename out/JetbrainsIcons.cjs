@@ -4,6 +4,7 @@ exports.JetbrainsIcons = void 0;
 const fs = require("node:fs");
 const svg = require("svgson");
 const path = require("node:path");
+const vscode = require("vscode");
 const node_url_1 = require("node:url");
 /**
  * The `JetbrainsIcons` class provides methods for managing and building JetBrains theme icons.
@@ -314,7 +315,7 @@ class JetbrainsIcons {
      * It is a placeholder for future implementation.
      */
     jetbrainsIcons_deactivate() {
-        return;
+        vscode.window.showInformationMessage("Jetbrains Icons deactivated.");
     }
 }
 exports.JetbrainsIcons = JetbrainsIcons;

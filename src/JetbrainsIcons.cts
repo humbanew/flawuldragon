@@ -426,6 +426,6 @@ export class JetbrainsIcons {
    * It is a placeholder for future implementation.
    */
   public jetbrainsIcons_deactivate() {
-    return;
+    vscode.window.showInformationMessage("Jetbrains Icons deactivated.");
   }
 }

@@ -12,7 +12,8 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "checkJs": false,
+    "strictNullChecks": false,
     "strict": true
   },
-  "exclude": ["node_modules", "out", "triagem", "src/old"]
+  "exclude": ["node_modules", "out", "triagem"]
 }

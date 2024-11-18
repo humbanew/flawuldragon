@@ -17,6 +17,7 @@ export class JetbrainsMono {
   private jetbrainsMono_defaultSettings = {
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontLigatures": true,
+    "accessibility.signals.lineHasError": {"sound": "on"},
   };
 
   /**
@@ -90,7 +91,7 @@ export class JetbrainsMono {
    * Activates the JetBrains Mono font for the extension.
    *
    * @param context - The extension context provided by VSCode.
-   * 
+   *
    * This method performs the following actions:
    * 1. Retrieves the path to the JetBrains Mono font.
    * 2. Updates the user settings with the default JetBrains Mono settings.
@@ -112,10 +113,10 @@ export class JetbrainsMono {
 
   /**
    * Prompts the user to activate the JetBrains Mono font for Flawuldragon.
-   * 
+   *
    * @param context - The VSCode extension context.
    * @returns A promise that resolves when the user makes a selection in the dialog.
-   * 
+   *
    * The function shows a dialog asking the user if they want to activate the JetBrains Mono font.
    * If the user selects "Yes", the font is activated.
    * If the user selects "No", another dialog is shown informing them that they can activate the font later.
@@ -135,15 +136,15 @@ export class JetbrainsMono {
 
   /**
    * Handles the first-time activation of the JetbrainsMono extension.
-   * 
+   *
    * This method checks the current version of the extension against the previously
    * stored version in the global state. If the versions match, it returns early.
    * Otherwise, it triggers the activation process and updates the stored version.
-   * 
+   *
    * @param context - The extension context provided by VS Code, which includes
    *                  information about the extension's environment and state.
    */
-  private jetbrainsMono_firstTimeActivation(context: vscode.ExtensionContext) {
+  public jetbrainsMono_firstTimeActivation(context: vscode.ExtensionContext) {
     const version = context.extension.packageJSON.version ?? "1.0.0";
     const previousVersion = context.globalState.get(context.extension.id);
     if (previousVersion === version) return;
@@ -160,14 +161,12 @@ export class JetbrainsMono {
     console.log(
       `Congratulations, your extension "${context.extension.packageJSON.displayName} - Jetbrains Mono Font installed!"`,
     );
-    this.jetbrainsMono_dirOpen(this.jetbrainsMono_path(context));
-    this.jetbrainsMono_firstTimeActivation(context);
     let activateCommand = vscode.commands.registerCommand(
-      "flawuldragon_jetbrainsmonofont.activate",
+      "fd_jetbrainsmonofont.activate",
       () => this.jetbrainsMono_activation(context),
     );
     let deactivateCommand = vscode.commands.registerCommand(
-      "flawuldragon_jetbrainsmonofont.deactivate",
+      "fd_jetbrainsmonofont.deactivate",
       () => this.jetbrainsMono_desactivate(context),
     );
     context.subscriptions.push(activateCommand, deactivateCommand);
