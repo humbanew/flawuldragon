@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TodoHighlight = void 0;
 const vscode = require("vscode");
 const os = require("os");
+// Fazer uma análise do algoritmo e viabilidade do módulo'
 class TodoHighlight {
     window = vscode.window;
     defaultIcon = "$(checklist)";
@@ -79,10 +80,10 @@ class TodoHighlight {
         var result = {};
         keywords.forEach((v) => {
             v = typeof v == "string" ? { text: v } : v;
-            var text = v.text;
-            v = Object.assign({}, this.DEFAULT_KEYWORDS[text], v);
+            var text = v?.text;
+            v = Object?.assign({}, this.DEFAULT_KEYWORDS[text], v);
             if (!isCaseSensitive) {
-                text = text.toUpperCase();
+                text = text?.toUpperCase();
             }
             if (text == "TODO:" ||
                 text == "FIXME:" ||
@@ -94,13 +95,13 @@ class TodoHighlight {
                 text == "QUESTION:" ||
                 text == "EXAMPLE:" ||
                 text == "TEST:") {
-                v = Object.assign({}, this.DEFAULT_KEYWORDS[text], v);
+                v = Object?.assign({}, this.DEFAULT_KEYWORDS[text], v);
             }
-            result[text] = Object.assign({}, this.DEFAULT_STYLE, customDefaultStyle, v);
+            result[text] = Object?.assign({}, this.DEFAULT_STYLE, customDefaultStyle, v);
         });
-        Object.keys(this.DEFAULT_KEYWORDS).forEach((v) => {
+        Object?.keys(this.DEFAULT_KEYWORDS).forEach((v) => {
             if (!result[v]) {
-                result[v] = Object.assign({}, this.DEFAULT_STYLE, customDefaultStyle, this.DEFAULT_KEYWORDS[v]);
+                result[v] = Object?.assign({}, this.DEFAULT_STYLE, customDefaultStyle, this.DEFAULT_KEYWORDS[v]);
             }
         });
         return result;
@@ -391,7 +392,7 @@ class TodoHighlight {
             const outputChannel = vscode.window.createOutputChannel("Flawuldragon TodoHighlight");
             decorationTypes = {};
             if (keywordsPattern.trim()) {
-                styleForRegExp = Object.assign({}, TodoHighlight.prototype.DEFAULT_STYLE, customDefaultStyle, {
+                styleForRegExp = Object?.assign({}, TodoHighlight.prototype.DEFAULT_STYLE, customDefaultStyle, {
                     overviewRulerLane: vscode.OverviewRulerLane.Right
                 });
                 pattern = new RegExp(keywordsPattern, isCaseSensitive ? "g" : "gi");
@@ -404,7 +405,7 @@ class TodoHighlight {
                         if (!isCaseSensitive) {
                             v = v.toUpperCase();
                         }
-                        var mergedStyle = Object.assign({}, {
+                        var mergedStyle = Object?.assign({}, {
                             overviewRulerLane: vscode.OverviewRulerLane.Right
                         }, assembledData ? assembledData[v] : {});
                         if (!mergedStyle.overviewRulerColor) {

@@ -8,6 +8,7 @@ import { ITHAnnotation } from "./ITHAnnotation";
 import { ITHAnnotationsFoundError } from "./ITHAnnotationsFoundError";
 import { ITHAnnotations } from "./ITHAnnotations";
 
+// Fazer uma análise do algoritmo e viabilidade do módulo'
 export class TodoHighlight {
   private window = vscode.window as typeof vscode.window & {
     processing?: boolean;
@@ -130,7 +131,7 @@ export class TodoHighlight {
       );
     });
 
-    Object.keys(this.DEFAULT_KEYWORDS).forEach((v) => {
+    Object?.keys(this.DEFAULT_KEYWORDS).forEach((v) => {
       if (!result[v]) {
         result[v] = Object?.assign(
           {},
