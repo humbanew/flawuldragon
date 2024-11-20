@@ -5,8 +5,16 @@ const fs = require("node:fs");
 const path = require("node:path");
 const vscode = require("vscode");
 /**
- * Represents the Vanilla class which manages the activation and deactivation
- * of the Flawuldragon extension in VS Code.
+ * Represents the Vanilla class which is responsible for managing the Flawuldragon extension's status bar item.
+ *
+ * The Vanilla class provides methods to activate and deactivate the Flawuldragon extension, including setting up
+ * the status bar item, registering commands, and handling the extension's enabled/disabled state.
+ *
+ * @class
+ * @example
+ * // Example usage:
+ * const vanilla = new Vanilla();
+ * vanilla.vanilla_activate(context);
  */
 class Vanilla {
     /**

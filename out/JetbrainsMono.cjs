@@ -4,10 +4,16 @@ exports.JetbrainsMono = void 0;
 const path = require("node:path");
 const vscode = require("vscode");
 /**
- * Represents the JetbrainsMono class which manages the settings for the JetBrains Mono font in the editor.
+ * The `JetbrainsMono` class provides methods to manage the JetBrains Mono font settings
+ * within a Visual Studio Code extension. It includes functionalities to activate, deactivate,
+ * and update font settings, as well as to prompt the user for activation and handle first-time
+ * activation scenarios.
  *
- * The JetbrainsMono class provides methods to manage the JetBrains Mono font settings
- * within a Visual Studio Code extension.
+ * @class
+ * @example
+ * // Example usage:
+ * const jetbrainsMono = new JetbrainsMono();
+ * jetbrainsMono.jetbrainsMono_activate(context);
  */
 class JetbrainsMono {
     /**

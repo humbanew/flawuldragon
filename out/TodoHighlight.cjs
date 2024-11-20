@@ -3,13 +3,51 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TodoHighlight = void 0;
 const vscode = require("vscode");
 const os = require("os");
-// Fazer uma análise do algoritmo e viabilidade do módulo'
+/**
+ * The `TodoHighlight` class provides functionality to highlight and manage TODO annotations within a Visual Studio Code workspace.
+ * It includes methods to search for annotations, display them in the output channel, and manage the status bar item.
+ *
+ * @class
+ * @example
+ * // Example usage:
+ * const todohighlight = new TodoHighlight();
+ * todohighlight.todohighlight_activate(context);
+ */
 class TodoHighlight {
+    /**
+     * A reference to the VS Code window object with additional custom properties.
+     *
+     * @property {boolean} [processing] - Indicates if a process is currently running.
+     * @property {boolean} [manuallyCancel] - Indicates if a process was manually cancelled.
+     * @property {vscode.OutputChannel} [outputChannel] - A custom output channel for logging.
+     */
     window = vscode.window;
+    /**
+     * The default icon used for the todo highlight.
+     *
+     * @default "$(checklist)"
+     */
     defaultIcon = "$(checklist)";
+    /**
+     * Represents the icon for a zap action.
+     * The icon is defined using a string that corresponds to a specific symbol.
+     *
+     * @default "$(zap)"
+     */
     zapIcon = "$(zap)";
+    /**
+     * The default message to be displayed.
+     *
+     * @default "0"
+     */
     defaultMsg = "0";
-    static todoStatusBarItem;
+    /**
+     * A status bar item to display the current status of TODOs.
+     * This item is used to provide quick information and actions related to TODOs in the editor.
+     *
+     * @type {vscode.StatusBarItem | undefined}
+     */
+    todoStatusBarItem;
     DEFAULT_KEYWORDS = {
         "TODO:": {
             text: "TODO:",
@@ -169,7 +207,7 @@ class TodoHighlight {
                 }
                 let content = this.todoHighlight_getContent(lineText, match);
                 if (content.length > 500) {
-                    content = content.substring(0, 500).trim() + "...";
+                    content = content.substring(0, 500)?.trim() + "...";
                 }
                 const locationInfo = this.todoHighlight_getLocationInfo(fileInUri, pathWithoutFile, lineText, line, match);
                 const annotation = {
@@ -260,7 +298,7 @@ class TodoHighlight {
         todoHighlightStatusBarItem.command = "fd_todohighlight.showOutputChannel";
         todoHighlightStatusBarItem.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
         todoHighlightStatusBarItem.show();
-        TodoHighlight.todoStatusBarItem = todoHighlightStatusBarItem;
+        this.todoStatusBarItem = todoHighlightStatusBarItem;
         return todoHighlightStatusBarItem;
     }
     todoHighlight_errorHandler(err) {
@@ -269,12 +307,12 @@ class TodoHighlight {
         console.log("todohighlight err:", err);
     }
     todoHighlight_setStatusMsg(icon, msg, tooltip) {
-        if (TodoHighlight.todoStatusBarItem) {
-            TodoHighlight.todoStatusBarItem.text = `${icon} ${msg}` || "";
+        if (this.todoStatusBarItem) {
+            this.todoStatusBarItem.text = `${icon} ${msg}` || "";
             if (tooltip) {
-                TodoHighlight.todoStatusBarItem.tooltip = tooltip || "";
+                this.todoStatusBarItem.tooltip = tooltip || "";
             }
-            TodoHighlight.todoStatusBarItem.show();
+            this.todoStatusBarItem.show();
         }
     }
     todoHighlight_escapeRegExp(s) {
@@ -286,65 +324,11 @@ class TodoHighlight {
         let isCaseSensitive, assembledData, decorationTypes, pattern, styleForRegExp, keywordsPattern;
         var workspaceState = context.workspaceState;
         var settings = vscode.workspace.getConfiguration("todohighlight");
-        init(settings);
-        context.subscriptions.push(vscode.commands.registerCommand("fd_todohighlight.toggleHighlight", function () {
-            settings
-                .update("isEnable", !settings.get("isEnable"), true)
-                .then(function () {
-                triggerUpdateDecorations();
-            });
-        }));
-        context.subscriptions.push(vscode.commands.registerCommand("fd_todohighlight.listAnnotations", function () {
-            if (keywordsPattern.trim()) {
-                TodoHighlight.prototype.todoHighlight_searchAnnotations(workspaceState, pattern, (err, annotations, annotationList = []) => TodoHighlight.prototype.todoHighlight_annotationsFound(err, annotations, annotationList));
-            }
-            else {
-                if (!assembledData)
-                    return;
-                var availableAnnotationTypes = Object.keys(assembledData);
-                availableAnnotationTypes.unshift("ALL");
-                TodoHighlight.prototype.todoHighlight_chooseAnnotationType(availableAnnotationTypes.map(type => ({ label: type, annotationType: type })))
-                    .then(function (annotationType) {
-                    if (!annotationType)
-                        return;
-                    if (!annotationType)
-                        return;
-                    var searchPattern = pattern;
-                    if (annotationType.annotationType != "ALL") {
-                        annotationType.annotationType = TodoHighlight.prototype.todoHighlight_escapeRegExp(annotationType.annotationType);
-                        searchPattern = new RegExp(annotationType.annotationType, isCaseSensitive ? "g" : "gi");
-                    }
-                    TodoHighlight.prototype.todoHighlight_searchAnnotations(workspaceState, searchPattern, (err, annotations, annotationList = []) => TodoHighlight.prototype.todoHighlight_annotationsFound(err, annotations, annotationList));
-                });
-            }
-        }));
-        context.subscriptions.push(vscode.commands.registerCommand("fd_todohighlight.showOutputChannel", function () {
-            var annotationList = workspaceState.get("annotationList", []);
-            TodoHighlight.prototype.todoHighlight_showOutputChannel(annotationList);
-        }));
-        if (activeEditor) {
-            triggerUpdateDecorations();
-        }
-        vscode.window.onDidChangeActiveTextEditor(function (editor) {
-            activeEditor = editor;
-            if (editor) {
-                triggerUpdateDecorations();
-            }
-        }, "", context.subscriptions);
-        vscode.workspace.onDidChangeTextDocument(function (event) {
-            if (activeEditor && event.document === activeEditor.document) {
-                triggerUpdateDecorations();
-            }
-        }, "", context.subscriptions);
-        vscode.workspace.onDidChangeConfiguration(function () {
-            settings = vscode.workspace.getConfiguration("todohighlight");
-            //NOTE: if disabled, do not re-initialize the data or we will not be able to clear the style immediatly via 'toggle highlight' command
-            if (!settings.get("isEnable"))
-                return;
-            init(settings);
-            triggerUpdateDecorations();
-        }, "", context.subscriptions);
-        function updateDecorations() {
+        let triggerUpdateDecorations = () => {
+            timeout && clearTimeout(timeout);
+            timeout = setTimeout(updateDecorations, 0);
+        };
+        let updateDecorations = () => {
             if (!activeEditor || !activeEditor.document) {
                 return;
             }
@@ -366,7 +350,7 @@ class TodoHighlight {
                 else {
                     mathes[matchedValue] = [decoration];
                 }
-                if (keywordsPattern.trim() && !decorationTypes[matchedValue]) {
+                if (keywordsPattern?.trim() && !decorationTypes[matchedValue]) {
                     decorationTypes[matchedValue] =
                         vscode.window.createTextEditorDecorationType(styleForRegExp);
                 }
@@ -381,61 +365,125 @@ class TodoHighlight {
                     activeEditor.setDecorations(decorationType, rangeOption);
                 }
             });
-        }
-        function init(settings) {
-            var customDefaultStyle = settings.get("defaultStyle") || {};
-            keywordsPattern = settings.get("keywordsPattern") || "";
-            isCaseSensitive = settings.get("isCaseSensitive", true);
-            if (!TodoHighlight.todoStatusBarItem) {
-                TodoHighlight.todoStatusBarItem = TodoHighlight.prototype.todoHighlight_createStatusBarItem();
-            }
-            const outputChannel = vscode.window.createOutputChannel("Flawuldragon TodoHighlight");
-            decorationTypes = {};
-            if (keywordsPattern.trim()) {
-                styleForRegExp = Object?.assign({}, TodoHighlight.prototype.DEFAULT_STYLE, customDefaultStyle, {
-                    overviewRulerLane: vscode.OverviewRulerLane.Right
-                });
-                pattern = new RegExp(keywordsPattern, isCaseSensitive ? "g" : "gi");
+        };
+        let init = () => { };
+        context.subscriptions.push(vscode.commands.registerCommand("fd_todohighlight.toggleHighlight", () => {
+            settings.update("isEnable", !settings.get("isEnable"), true).then(() => {
+                triggerUpdateDecorations();
+            });
+        }));
+        context.subscriptions.push(vscode.commands.registerCommand("fd_todohighlight.listAnnotations", () => {
+            if (keywordsPattern?.trim()) {
+                this.todoHighlight_searchAnnotations(workspaceState, pattern, (err, annotations, annotationList = []) => this.todoHighlight_annotationsFound(err, annotations, annotationList));
             }
             else {
-                const keywords = settings.get("keywords");
-                assembledData = TodoHighlight.prototype.todoHighlight_getAssembledData(Array.isArray(keywords) ? keywords : [], customDefaultStyle, isCaseSensitive);
-                if (assembledData != undefined) {
-                    Object.keys(assembledData).forEach((v) => {
-                        if (!isCaseSensitive) {
-                            v = v.toUpperCase();
-                        }
-                        var mergedStyle = Object?.assign({}, {
-                            overviewRulerLane: vscode.OverviewRulerLane.Right
-                        }, assembledData ? assembledData[v] : {});
-                        if (!mergedStyle.overviewRulerColor) {
-                            // use backgroundColor as the default overviewRulerColor if not specified by the user setting
-                            mergedStyle.overviewRulerColor = mergedStyle.backgroundColor;
-                        }
-                        decorationTypes[v] =
-                            TodoHighlight.prototype.window.createTextEditorDecorationType(mergedStyle);
-                    });
-                    const patternString = Object.keys(assembledData)
-                        .map((v) => {
-                        return TodoHighlight.prototype.todoHighlight_escapeRegExp(v);
-                    })
-                        .join("|");
-                    pattern = new RegExp(patternString, "gi");
-                }
+                if (!assembledData)
+                    return;
+                var availableAnnotationTypes = Object.keys(assembledData);
+                availableAnnotationTypes.unshift("ALL");
+                this.todoHighlight_chooseAnnotationType(availableAnnotationTypes.map(type => ({ label: type, annotationType: type }))).then(function (annotationType) {
+                    if (!annotationType)
+                        return;
+                    if (!annotationType)
+                        return;
+                    var searchPattern = pattern;
+                    if (annotationType.annotationType != "ALL") {
+                        annotationType.annotationType = new TodoHighlight().todoHighlight_escapeRegExp(annotationType.annotationType);
+                        searchPattern = new RegExp(annotationType.annotationType, isCaseSensitive ? "g" : "gi");
+                    }
+                    new TodoHighlight().todoHighlight_searchAnnotations(workspaceState, searchPattern, (err, annotations, annotationList = []) => new TodoHighlight().todoHighlight_annotationsFound(err, annotations, annotationList));
+                });
             }
-            pattern = new RegExp(pattern, "gi");
-            if (isCaseSensitive) {
-                pattern = new RegExp(pattern, "g");
+        }));
+        context.subscriptions.push(vscode.commands.registerCommand("fd_todohighlight.showOutputChannel", () => {
+            var annotationList = workspaceState.get("annotationList", []);
+            new TodoHighlight().todoHighlight_showOutputChannel(annotationList);
+        }));
+        if (activeEditor) {
+            triggerUpdateDecorations();
+        }
+        vscode.window.onDidChangeActiveTextEditor(function (editor) {
+            activeEditor = editor;
+            if (editor) {
+                triggerUpdateDecorations();
             }
-        }
-        function triggerUpdateDecorations() {
-            timeout && clearTimeout(timeout);
-            timeout = setTimeout(updateDecorations, 0);
-        }
+        }, "", context.subscriptions);
+        vscode.workspace.onDidChangeTextDocument(function (event) {
+            if (activeEditor && event.document === activeEditor.document) {
+                triggerUpdateDecorations();
+            }
+        }, "", context.subscriptions);
+        vscode.workspace.onDidChangeConfiguration(function () {
+            settings = vscode.workspace.getConfiguration("todohighlight");
+            if (!settings.get("isEnable"))
+                return;
+            // NOTE: if disabled, do not re-initialize the data or we will not be able to clear the style immediatly via 'toggle highlight' command
+            // init(settings);
+            triggerUpdateDecorations();
+        }, "", context.subscriptions);
+        // init(settings);
+        // function init(settings: vscode.WorkspaceConfiguration) {
+        //   var customDefaultStyle = settings.get("defaultStyle") || {};
+        //   keywordsPattern = settings.get("keywordsPattern") || "";
+        //   isCaseSensitive = settings.get("isCaseSensitive", true);
+        //   if (!this.todoStatusBarItem) {
+        //     this.todoStatusBarItem = TodoHighlight.prototype.todoHighlight_createStatusBarItem();
+        //   }
+        //   const outputChannel = vscode.window.createOutputChannel("Flawuldragon TodoHighlight");
+        //   decorationTypes = {};
+        //   if (keywordsPattern.trim()) {
+        //     styleForRegExp = Object?.assign(
+        //       {},
+        //       TodoHighlight.prototype.DEFAULT_STYLE,
+        //       customDefaultStyle,
+        //       {
+        //         overviewRulerLane: vscode.OverviewRulerLane.Right
+        //       }
+        //     );
+        //     pattern = new RegExp(keywordsPattern, isCaseSensitive ? "g" : "gi");
+        //   } else {
+        //     const keywords = settings.get("keywords");
+        //     assembledData = TodoHighlight.prototype.todoHighlight_getAssembledData(
+        //       Array.isArray(keywords) ? keywords : [],
+        //       customDefaultStyle,
+        //       isCaseSensitive
+        //     );
+        //     if (assembledData != undefined) {
+        //       Object.keys(assembledData).forEach((v) => {
+        //         if (!isCaseSensitive) {
+        //           v = v.toUpperCase();
+        //         }
+        //         var mergedStyle = Object?.assign(
+        //           {},
+        //           {
+        //             overviewRulerLane: vscode.OverviewRulerLane.Right
+        //           },
+        //           assembledData ? assembledData[v] : {}
+        //         );
+        //         if (!mergedStyle.overviewRulerColor) {
+        //           // use backgroundColor as the default overviewRulerColor if not specified by the user setting
+        //           mergedStyle.overviewRulerColor = mergedStyle.backgroundColor;
+        //         }
+        //         decorationTypes[v] =
+        //           TodoHighlight.prototype.window.createTextEditorDecorationType(mergedStyle);
+        //       });
+        //       const patternString = Object.keys(assembledData)
+        //         .map((v) => {
+        //           return TodoHighlight.prototype.todoHighlight_escapeRegExp(v);
+        //         })
+        //         .join("|");
+        //       pattern = new RegExp(patternString, "gi");
+        //     }
+        //   }
+        //   pattern = new RegExp(pattern, "gi");
+        //   if (isCaseSensitive) {
+        //     pattern = new RegExp(pattern, "g");
+        //   }
+        // }
     }
     todoHighlight_desactivate() {
-        if (TodoHighlight.todoStatusBarItem) {
-            TodoHighlight.todoStatusBarItem.dispose();
+        if (this.todoStatusBarItem) {
+            this.todoStatusBarItem.dispose();
         }
         if (this.window.outputChannel) {
             this.window.outputChannel.dispose();

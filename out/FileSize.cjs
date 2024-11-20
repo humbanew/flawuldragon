@@ -4,7 +4,15 @@ exports.FileSize = void 0;
 const fs = require("node:fs");
 const vscode = require("vscode");
 /**
- * The `FileSize` class provides methods to get the current file size and convert it to a readable format.
+ * A class that provides functionality to display the file size of the currently active text editor's document
+ * in the Visual Studio Code status bar. It includes methods to retrieve and convert file sizes, as well as
+ * activate and deactivate the file size display functionality.
+ *
+ * @class
+ * @example
+ * // Example usage:
+ * const filesize = new FileSize();
+ * filesize.filesize_activate(context);
  */
 class FileSize {
     /**

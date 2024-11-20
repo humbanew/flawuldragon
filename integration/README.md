@@ -1,14 +1,5 @@
 # Flawuldragon
 
-## Integrações Extensão Base
-Fonte de Texto, Ícones e Temas de Aparência
-
-- [JetBrains Mono Font Pack](https://marketplace.visualstudio.com/items?itemName=NarasimaPandiyan.jetbrainsmono)
-- [JetBrains Icons](https://marketplace.visualstudio.com/items?itemName=chadalen.vscode-jetbrains-icon-theme)
-- [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
-- [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
-- [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
-
 ## Integrações Extensão Devkit [Deve entrar em votação na comunidade do repositório]
 Path Intellisense, Clock Countdown, Clock Time and Date, GitLens, Git Graph, Git History, GitLab Workflow, Github Extensions, Jira and BitBucket
 

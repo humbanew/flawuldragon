@@ -6,7 +6,13 @@ import { fileURLToPath } from "node:url";
 import { Theme } from "./IJBIThemes";
 
 /**
- * The `JetbrainsIcons` class provides methods for managing and building JetBrains theme icons.
+ * The `JetbrainsIcons` class provides methods to manage and build JetBrains-themed icons for both light and dark themes.
+ * It includes functionalities to retrieve icon paths, build themes, generate auto themes, and handle icon file operations.
+ *
+ * @class
+ * @example
+ * const jetbrainsIcons = new JetbrainsIcons();
+ * jetbrainsIcons.jetbrainsIcons_activate(context);
  */
 export class JetbrainsIcons {
   /**

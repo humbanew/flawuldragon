@@ -1,8 +1,9 @@
+// import { DateTime } from "./DateTime.cjs";
 import { FileSize } from "./FileSize.cjs";
 import { IndentRainbow } from "./IndentRainbow.cjs";
 import { JetbrainsIcons } from "./JetbrainsIcons.cjs";
 import { JetbrainsMono } from "./JetbrainsMono.cjs";
-// import { TodoHighlight } from "./TodoHighlight.cjs";
+import { TodoHighlight } from "./TodoHighlight.cjs";
 import { Vanilla } from "./Vanilla.cjs";
 import * as vscode from "vscode";
 
@@ -10,8 +11,9 @@ const vanilla = new Vanilla();
 const jetbrainsmono = new JetbrainsMono();
 const jetbrainsicons = new JetbrainsIcons();
 const filesize = new FileSize();
-// const todohighlight = new TodoHighlight();
+const todohighlight = new TodoHighlight();
 const indentrainbow = new IndentRainbow();
+// const datetime = new DateTime();
 
 /**
  * Activates the extension.
@@ -28,8 +30,9 @@ export function activate(context: vscode.ExtensionContext) {
   jetbrainsmono.jetbrainsMono_firstTimeActivation(context);
   jetbrainsicons.jetbrainsIcons_activate(context);
   filesize.filesize_activate(context);
-  // todohighlight.todoHighlight_activate(context);
+  todohighlight.todoHighlight_activate(context);
   indentrainbow.indentRainbow_activate(context);
+  // datetime.datetime_activate(context);
 }
 
 /**
@@ -45,8 +48,9 @@ export function deactivate(context: vscode.ExtensionContext) {
   jetbrainsmono.jetbrainsMono_desactivate(context);
   jetbrainsicons.jetbrainsIcons_deactivate();
   filesize.filesize_deactivate();
-  // todohighlight.todoHighlight_desactivate();
+  todohighlight.todoHighlight_desactivate();
   indentrainbow.indentRainbow_deactivate();
+  // datetime.datetime_deactivate();
 }
 
 /**
