@@ -120,7 +120,7 @@
     "list.focusForeground": "#ff8e38",
     "list.highlightForeground": "#ffc940",
     "list.hoverBackground": "#63263d",
-    "list.hoverForeground": "#ffc940",
+    "list.hoverForeground": "#ffeb7b",
     "list.inactiveSelectionBackground": "#492842cc",
     "list.inactiveSelectionForeground": "#ff8e38cc",
     "list.errorForeground": "#ff3030",
@@ -159,10 +159,10 @@
     "notificationCenterHeader.foreground": "#DFEDFF",
     "notificationCenterHeader.background": "#4d2235",
     "notificationToast.border": "#4d2235",
-    "notifications.background": "#DFEDFF",
-    "notifications.foreground": "#4d2235",
+    "notifications.background": "#4d2235",
+    "notifications.foreground": "#DFEDFF",
     "notifications.border": "#4d2235",
-    "notificationLink.foreground": "#DFEDFF",
+    "notificationLink.foreground": "#ffeb7b",
 
     // panel
     "panel.background": "#4C2439",

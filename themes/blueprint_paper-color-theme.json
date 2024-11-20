@@ -165,13 +165,13 @@
 
     // notifications
     "notificationCenter.border": "#002082",
-    "notificationCenterHeader.foreground": "#e9ebf3",
+    "notificationCenterHeader.foreground": "#ffffff",
     "notificationCenterHeader.background": "#002082",
     "notificationToast.border": "#002082",
-    "notifications.background": "#e9ebf3",
-    "notifications.foreground": "#002082",
+    "notifications.background": "#002082",
+    "notifications.foreground": "#ffffff",
     "notifications.border": "#002082",
-    "notificationLink.foreground": "#e9ebf3",
+    "notificationLink.foreground": "#c899ff",
 
     // panel
     "panel.background": "#002082",

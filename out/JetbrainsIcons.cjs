@@ -295,24 +295,32 @@ class JetbrainsIcons {
      * @param context - The VS Code extension context.
      */
     jetbrainsIcons_activate(context) {
-        // Here is the mapping of the source theme directory to the build theme directory.
-        //
-        // assets/v1/theme-dark.json -> build/themes/v1/dark/theme-dark.json
-        // assets/2023/theme-light.json -> build/themes/2023/light/theme-light.json
-        // assets/2023/theme-dark.json -> build/themes/2023/dark/theme-dark.json
-        // [GENERATED] -> build/themes/2023/auto/theme-auto.json
-        // STEP 1: Remove existing build directory.
-        if (fs.existsSync(this.BUILD_DIR_PATH)) {
-            fs.rmSync(this.BUILD_DIR_PATH, { recursive: true });
+        try {
+            console.log("Flawuldragon - Jetbrains Icons activated!");
+            // Here is the mapping of the source theme directory to the build theme directory.
+            //
+            // assets/v1/theme-dark.json -> build/themes/v1/dark/theme-dark.json
+            // assets/2023/theme-light.json -> build/themes/2023/light/theme-light.json
+            // assets/2023/theme-dark.json -> build/themes/2023/dark/theme-dark.json
+            // [GENERATED] -> build/themes/2023/auto/theme-auto.json
+            // STEP 1: Remove existing build directory.
+            if (fs.existsSync(this.BUILD_DIR_PATH)) {
+                fs.rmSync(this.BUILD_DIR_PATH, { recursive: true });
+            }
+            // STEP 2: Create build directory.
+            fs.mkdirSync(this.BUILD_DIR_PATH, { recursive: true });
+            // STEP 3: Build themes.
+            this.jetbrainsIcons_buildTheme(path.join(this.SRC_DIR_PATH, "v1", "theme-dark.json"), path.join(this.BUILD_DIR_PATH, "v1", "dark"));
+            this.jetbrainsIcons_buildTheme(path.join(this.SRC_DIR_PATH, "2023", "theme-light.json"), path.join(this.BUILD_DIR_PATH, "2023", "light"));
+            this.jetbrainsIcons_buildTheme(path.join(this.SRC_DIR_PATH, "2023", "theme-dark.json"), path.join(this.BUILD_DIR_PATH, "2023", "dark"));
+            // STEP 4: Generate 2023 auto theme.
+            this.jetbrainsIcons_generate2023AutoTheme(path.join(this.SRC_DIR_PATH, "2023", "theme-light.json"), path.join(this.SRC_DIR_PATH, "2023", "theme-dark.json"), path.join(this.BUILD_DIR_PATH, "2023", "auto"));
         }
-        // STEP 2: Create build directory.
-        fs.mkdirSync(this.BUILD_DIR_PATH, { recursive: true });
-        // STEP 3: Build themes.
-        this.jetbrainsIcons_buildTheme(path.join(this.SRC_DIR_PATH, "v1", "theme-dark.json"), path.join(this.BUILD_DIR_PATH, "v1", "dark"));
-        this.jetbrainsIcons_buildTheme(path.join(this.SRC_DIR_PATH, "2023", "theme-light.json"), path.join(this.BUILD_DIR_PATH, "2023", "light"));
-        this.jetbrainsIcons_buildTheme(path.join(this.SRC_DIR_PATH, "2023", "theme-dark.json"), path.join(this.BUILD_DIR_PATH, "2023", "dark"));
-        // STEP 4: Generate 2023 auto theme.
-        this.jetbrainsIcons_generate2023AutoTheme(path.join(this.SRC_DIR_PATH, "2023", "theme-light.json"), path.join(this.SRC_DIR_PATH, "2023", "theme-dark.json"), path.join(this.BUILD_DIR_PATH, "2023", "auto"));
+        catch (error) {
+            console.log("Flawuldragon - Jetbrains Icons error: " + error);
+            vscode.window.showErrorMessage("An error occurred while activating the jetbrains icons integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
+            this.jetbrainsIcons_deactivate();
+        }
     }
     /**
      * Deactivates Jetbrains icons.

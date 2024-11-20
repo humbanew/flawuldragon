@@ -164,18 +164,25 @@ export class JetbrainsMono {
    * @param {vscode.ExtensionContext} context - The context in which the extension is activated.
    */
   public jetbrainsMono_activate(context: vscode.ExtensionContext) {
-    console.log(
-      `Congratulations, your extension "${context.extension.packageJSON.displayName} - Jetbrains Mono Font installed!"`,
-    );
-    let activateCommand = vscode.commands.registerCommand(
-      "fd_jetbrainsmonofont.activate",
-      () => this.jetbrainsMono_activation(context),
-    );
-    let deactivateCommand = vscode.commands.registerCommand(
-      "fd_jetbrainsmonofont.deactivate",
-      () => this.jetbrainsMono_desactivate(context),
-    );
-    context.subscriptions.push(activateCommand, deactivateCommand);
+    try {
+      console.log("Flawuldragon - Jetbrains Mono Font activated!");
+      console.log(
+        `Congratulations, your extension "${context.extension.packageJSON.displayName} - Jetbrains Mono Font installed!"`,
+      );
+      let activateCommand = vscode.commands.registerCommand(
+        "fd_jetbrainsmonofont.activate",
+        () => this.jetbrainsMono_activation(context),
+      );
+      let deactivateCommand = vscode.commands.registerCommand(
+        "fd_jetbrainsmonofont.deactivate",
+        () => this.jetbrainsMono_desactivate(context),
+      );
+      context.subscriptions.push(activateCommand, deactivateCommand);
+    } catch (error) {
+      console.log("Flawuldragon - Jetbrains Mono Font error: " + error);
+      vscode.window.showErrorMessage("An error occurred while activating the jetbrains mono font pack integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
+      this.jetbrainsMono_desactivate(context);
+    }
   }
 
   /**

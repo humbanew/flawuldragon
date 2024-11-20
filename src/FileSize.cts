@@ -111,32 +111,40 @@ export class FileSize {
    * @param content - The VS Code extension context in which the file size functionality is activated.
    */
   public filesize_activate(content: vscode.ExtensionContext) {
-    this.filesizeStatusBar.backgroundColor = new vscode.ThemeColor(
-      "statusBarItem.warningBackground",
-    );
-    this.filesize_getCurrentFileSize(this.filesizeStatusBar);
-
-    content.subscriptions.push(
-      vscode.commands.registerCommand("fd_filesize.toggleFileSizeAdvancedInfo", () => {
-        this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
-      }),
-    );
-
-    content.subscriptions.push(
-      vscode.commands.registerCommand("fd_filesize.toggleFileSizeInfo", () => {
+    try {
+      console.log("Flawuldragon - File size activated!");
+      this.filesizeStatusBar.backgroundColor = new vscode.ThemeColor(
+        "statusBarItem.warningBackground",
+      );
+      this.filesize_getCurrentFileSize(this.filesizeStatusBar);
+      this.filesizeStatusBar.tooltip = "Filesize of the current document";
+  
+      content.subscriptions.push(
+        vscode.commands.registerCommand("fd_filesize.toggleFileSizeAdvancedInfo", () => {
+          this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
+        }),
+      );
+  
+      content.subscriptions.push(
+        vscode.commands.registerCommand("fd_filesize.toggleFileSizeInfo", () => {
+          this.filesize_getCurrentFileSize(this.filesizeStatusBar);
+        }),
+      );
+  
+      vscode.window.onDidChangeActiveTextEditor(() => {
         this.filesize_getCurrentFileSize(this.filesizeStatusBar);
-      }),
-    );
-
-    vscode.window.onDidChangeActiveTextEditor(() => {
-      this.filesize_getCurrentFileSize(this.filesizeStatusBar);
-      this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
-    });
-
-    vscode.workspace.onDidSaveTextDocument(() => {
-      this.filesize_getCurrentFileSize(this.filesizeStatusBar);
-      this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
-    });
+        this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
+      });
+  
+      vscode.workspace.onDidSaveTextDocument(() => {
+        this.filesize_getCurrentFileSize(this.filesizeStatusBar);
+        this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
+      });
+    } catch (error) {
+      console.error("Flawuldragon - File size error: " + error);
+      vscode.window.showErrorMessage("An error occurred while activating the file size integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
+      this.filesize_deactivate();
+    }
   }
 
   /**

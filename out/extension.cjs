@@ -10,6 +10,7 @@ const JetbrainsIcons_cjs_1 = require("./JetbrainsIcons.cjs");
 const JetbrainsMono_cjs_1 = require("./JetbrainsMono.cjs");
 const TodoHighlight_cjs_1 = require("./TodoHighlight.cjs");
 const Vanilla_cjs_1 = require("./Vanilla.cjs");
+const vscode = require("vscode");
 const vanilla = new Vanilla_cjs_1.Vanilla();
 const jetbrainsmono = new JetbrainsMono_cjs_1.JetbrainsMono();
 const jetbrainsicons = new JetbrainsIcons_cjs_1.JetbrainsIcons();
@@ -27,14 +28,22 @@ const indentrainbow = new IndentRainbow_cjs_1.IndentRainbow();
  * access to the extension's global state, subscriptions, and other utilities.
  */
 function activate(context) {
-    vanilla.vanilla_activate(context);
-    jetbrainsmono.jetbrainsMono_activate(context);
-    jetbrainsmono.jetbrainsMono_firstTimeActivation(context);
-    jetbrainsicons.jetbrainsIcons_activate(context);
-    filesize.filesize_activate(context);
-    todohighlight.todoHighlight_activate(context);
-    indentrainbow.indentRainbow_activate(context);
-    // datetime.datetime_activate(context);
+    try {
+        console.log("Flawuldragon core hub activated!");
+        vanilla.vanilla_activate(context);
+        jetbrainsmono.jetbrainsMono_activate(context);
+        jetbrainsmono.jetbrainsMono_firstTimeActivation(context);
+        jetbrainsicons.jetbrainsIcons_activate(context);
+        filesize.filesize_activate(context);
+        todohighlight.todoHighlight_activate(context);
+        indentrainbow.indentRainbow_activate(context);
+        // datetime.datetime_activate(context);
+    }
+    catch (error) {
+        console.log("Flawuldragon core hub - Error: " + error);
+        vscode.window.showErrorMessage("An error occurred while activating the Flawuldragon core hub: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
+        deactivate(context);
+    }
 }
 /**
  * Deactivates the extension.

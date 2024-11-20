@@ -42,50 +42,78 @@ export class Vanilla {
    * @param context - The extension context provided by VS Code.
    */
   public vanilla_activate(context: vscode.ExtensionContext) {
-    context.subscriptions.push(
-      vscode.commands.registerCommand(this.flawuldragonStatusbaritemId, () => {
-        let viewPanel = vscode.window.createWebviewPanel(
-          "flawuldragon",
-          "Flawuldragon Notes",
-          vscode.ViewColumn.One,
-          {},
-        );
-        viewPanel.title = "Flawuldragon Notes";
-        viewPanel.iconPath = vscode.Uri.file(
-          path.join(__dirname, "../", "assets", "icon.png"),
-        );
-        viewPanel.webview.html = fs
-          .readFileSync(
-            path.join(__dirname, "../", "assets", "flawuldragon.html"),
-          )
-          .toString();
-        return 0;
-      }),
-    );
+    try {
+      console.log("Flawuldragon Vanilla activated!");
 
-    this.flawuldragonStatusBar.text = `$(flawuldragon-on) FD`;
-    this.flawuldragonStatusBar.command = this.flawuldragonStatusbaritemId;
-    this.flawuldragonStatusBar.color = "darkblue";
-    this.flawuldragonStatusBar.backgroundColor = new vscode.ThemeColor(
-      "statusBarItem.warningBackground",
-    );
-    this.flawuldragonStatusBar.tooltip = "Click to view Flawuldragon Notes";
-    this.flawuldragonStatusBar.show();
-    context.subscriptions.push(this.flawuldragonStatusBar);
+      context.subscriptions.push(
+        vscode.commands.registerCommand(this.flawuldragonStatusbaritemId, () => {
+          let viewPanel = vscode.window.createWebviewPanel(
+            "flawuldragon",
+            "Flawuldragon Notes",
+            vscode.ViewColumn.One,
+            {},
+          );
+          viewPanel.title = "Flawuldragon Notes";
+          viewPanel.iconPath = vscode.Uri.file(
+            path.join(__dirname, "../", "assets", "icon.png"),
+          );
+          viewPanel.webview.html = fs
+            .readFileSync(
+              path.join(__dirname, "../", "assets", "flawuldragon.html"),
+            )
+            .toString();
+          return 0;
+        }),
+      );
   
-    if (
-      vscode.workspace.getConfiguration("flawuldragon").get("enable") === false
-    ) {
-      console.warn("Flawuldragon is disabled. Enable it in your settings.");
-      vscode.window.showWarningMessage(
-        "Flawuldragon is disabled. Enable it in your settings.",
-      );
-      this.flawuldragonStatusBar.text = `$(flawuldragon-off) The Flawuldragon`;
-      this.flawuldragonStatusBar.color = "darkred";
+      this.flawuldragonStatusBar.text = `$(flawuldragon-on) FD`;
+      this.flawuldragonStatusBar.command = this.flawuldragonStatusbaritemId;
+      this.flawuldragonStatusBar.color = "darkblue";
       this.flawuldragonStatusBar.backgroundColor = new vscode.ThemeColor(
-        "statusBarItem.errorBackground",
+        "statusBarItem.warningBackground",
       );
-      return;
+      this.flawuldragonStatusBar.tooltip = "Click to view Flawuldragon Notes";
+      this.flawuldragonStatusBar.show();
+      context.subscriptions.push(this.flawuldragonStatusBar);
+    
+      if (
+        vscode.workspace.getConfiguration("flawuldragon").get("enable") === false
+      ) {
+        console.warn("Flawuldragon is disabled. Enable it in your settings.");
+        vscode.window.showWarningMessage(
+          "Flawuldragon is disabled. Enable it in your settings.",
+        );
+        this.flawuldragonStatusBar.text = `$(flawuldragon-off) The Flawuldragon`;
+        this.flawuldragonStatusBar.color = "darkred";
+        this.flawuldragonStatusBar.backgroundColor = new vscode.ThemeColor(
+          "statusBarItem.errorBackground",
+        );
+        return;
+      }
+
+      // // debug status bar
+      // let debugStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 101);
+      // debugStatusBar.text = `$(flawuldragon-on) FD Dbg`;
+      // debugStatusBar.color = "darkgreen";
+      // debugStatusBar.backgroundColor = new vscode.ThemeColor(
+      //   "statusBarItem.errorBackground",
+      // );
+      // debugStatusBar.tooltip = "Click to view info";
+      // debugStatusBar.command = "flawuldragon.extension.infos.debug";
+      // debugStatusBar.show();
+      // context.subscriptions.push(debugStatusBar);
+
+      // // debug command
+      // context.subscriptions.push(
+      //   vscode.commands.registerCommand("flawuldragon.extension.infos.debug", () => {
+      //     vscode.window.showInformationMessage("Flawuldragon debug info [debug](https://github.com/humbanew/flawuldragon)");
+      //   }),
+      // );
+
+    } catch (error) {
+      console.error("Flawuldragon vanilla error: " + error);
+      vscode.window.showErrorMessage("An error occurred while activating the Flawuldragon vanilla features: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
+      this.vanilla_desactivate();
     }
   }
 

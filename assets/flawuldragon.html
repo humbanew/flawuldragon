@@ -1,6 +1,7 @@
 <html>
 <style>
   html {
+    background-color: black;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -20,7 +21,7 @@
   }
 
   h1 {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid lightblue;
     border-radius: 4px;
   }
 
@@ -31,6 +32,13 @@
   p.version_notes {
     font-style: italic;
     line-height: 2rem;
+    margin-left: 0.5rem;
+    padding: 0.6rem;
+  }
+
+  a {
+    color: lightblue;
+    text-decoration: none;
   }
 
   span.version {
@@ -44,7 +52,7 @@
   }
 
   span.hover_selection:hover {
-    color: bisque;
+    color: chocolate;
     font-weight: bold;
   }
 
@@ -77,7 +85,7 @@
   <p><a href="https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow">About</a> ■ <a
       href="https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow/license">License Terms</a></p>
 
-  <span>¬ TODO Highlight<span class="creator">by Wayou</span></span>
+  <span>✓ TODO Highlight<span class="creator">by Wayou</span></span>
   <p><a href="https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight">About</a> ■ <a
       href="https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight/license">License Terms</a>
   </p>
@@ -89,10 +97,14 @@
 
   <h2>Themes</h2>
 
-  <span>✓ Advanced Circuits &nbsp;&nbsp; ¬ Advanced Circuits (Light)</span><br>
-  <span>✓ Blueprint Paper &nbsp;&nbsp; ¬ Blueprint Paper (Light)</span><br>
-  <span>¬ Clear Code &nbsp;&nbsp; ¬ Clear Code (Light)</span><br>
-  <span>✓ Winter Day &nbsp;&nbsp; ¬ Winter Day (Light)</span><br>
+  <span>✓ Advanced Circuits</span><br>
+  <span>¬ Advanced Circuits (Light)</span><br>
+  <span>✓ Blueprint Paper</span><br>
+  <span>¬ Blueprint Paper (Light)</span><br>
+  <span>¬ Clear Code</span><br>
+  <span>¬ Clear Code (Light)</span><br>
+  <span>✓ Winter Day</span><br>
+  <span>¬ Winter Day (Light)</span><br>
 
   <h2>Changelog</h2>
 
@@ -102,9 +114,9 @@
     <span class="hover_selection">+ Added Integration Jetbrains Mono Font Pack</span><br>
     <span class="hover_selection">+ Added Integration Jetbrains Icons</span><br>
     <span class="hover_selection">+ Added Integration Filesize</span><br>
-    <!-- <span class="hover_selection">+ Added Integration TODO Highlight</span><br> -->
-    <!-- <span class="hover_selection">+ Added Integration Color Highlight</span><br> -->
     <span class="hover_selection">+ Added Integration Indent Rainbow</span><br>
+    <span class="hover_selection">+ Added Integration TODO Highlight</span><br>
+    <!-- <span class="hover_selection">+ Added Integration Color Highlight</span><br> -->
     <span class="hover_selection">+ Added Advanced Circuits Theme Dark and Light</span><br>
     <span class="hover_selection">+ Added Blueprint Paper Theme Dark and Light</span><br>
     <!-- <span class="hover_selection">+ Added Clear Code Theme Dark and Light</span><br> -->

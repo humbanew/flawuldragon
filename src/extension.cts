@@ -25,14 +25,23 @@ const indentrainbow = new IndentRainbow();
  * access to the extension's global state, subscriptions, and other utilities.
  */
 export function activate(context: vscode.ExtensionContext) {
-  vanilla.vanilla_activate(context);
-  jetbrainsmono.jetbrainsMono_activate(context);
-  jetbrainsmono.jetbrainsMono_firstTimeActivation(context);
-  jetbrainsicons.jetbrainsIcons_activate(context);
-  filesize.filesize_activate(context);
-  todohighlight.todoHighlight_activate(context);
-  indentrainbow.indentRainbow_activate(context);
-  // datetime.datetime_activate(context);
+  try {
+    console.log("Flawuldragon core hub activated!");
+
+    vanilla.vanilla_activate(context);
+    jetbrainsmono.jetbrainsMono_activate(context);
+    jetbrainsmono.jetbrainsMono_firstTimeActivation(context);
+    jetbrainsicons.jetbrainsIcons_activate(context);
+    filesize.filesize_activate(context);
+    todohighlight.todoHighlight_activate(context);
+    indentrainbow.indentRainbow_activate(context);
+    // datetime.datetime_activate(context);
+  } catch (error) {
+    console.log("Flawuldragon core hub - Error: " + error);
+    vscode.window.showErrorMessage(
+      "An error occurred while activating the Flawuldragon core hub: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
+    deactivate(context);
+  }
 }
 
 /**
