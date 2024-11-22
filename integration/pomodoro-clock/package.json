@@ -1,0 +1,101 @@
+{
+  "name": "pomodoro-clock",
+  "displayName": "Pomodoro Clock",
+  "description": "Pomodoro Clock for vscode",
+  "version": "1.0.2",
+  "author": "jackluson",
+  "publisher": "jackluson",
+  "engines": {
+    "vscode": "^1.64.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/src/extension",
+  "icon": "pomodoro-clock.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pomodoroClock.startPomodoro",
+        "title": "Start Pomodoro"
+      },
+      {
+        "command": "pomodoroClock.pausePomodoro",
+        "title": "Pause Pomodoro"
+      },
+      {
+        "command": "pomodoroClock.continuePomodoro",
+        "title": "Continue Pomodoro"
+      },
+      {
+        "command": "pomodoroClock.restartPomodoro",
+        "title": "Restart Pomodoro"
+      },
+      {
+        "command": "pomodoroClock.resetPomodoro",
+        "title": "Reset Pomodoro"
+      },
+      {
+        "command": "pomodoroClock.toggleCurrentPomodoroCountdown",
+        "title": "toggle Current Pomodoro Countdown"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "PomodoroClock Configuration",
+      "properties": {
+        "pomodoroClock.workTime": {
+          "type": "number",
+          "default": 25,
+          "description": "Time of work, in minutes."
+        },
+        "pomodoroClock.breakTime": {
+          "type": "number",
+          "default": 5,
+          "description": "Time of break, in minutes"
+        },
+        "pomodoroClock.longBreakTime": {
+          "type": "number",
+          "default": 15,
+          "description": "Time of long break, in minutes"
+        },
+        "pomodoroClock.repeat": {
+          "type": "number",
+          "default": 4,
+          "description": "Number of repeat before long break"
+        },
+        "pomodoroClock.countdown": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to use countdown display"
+        }
+      }
+    }
+  },
+  "keywords": [
+    "Pomodoro",
+    "Clock",
+    "Timer",
+    "Task"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jackluson/vscode-pomodoro-clock.git"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/mocha": "9.1.1",
+    "@types/node": "16.11.60",
+    "@types/vscode": "1.64.0",
+    "mocha": "6.2.3",
+    "typescript": "4.8.3"
+  },
+  "dependencies": {}
+}

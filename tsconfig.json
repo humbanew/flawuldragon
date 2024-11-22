@@ -15,5 +15,5 @@
     "strictNullChecks": false,
     "strict": true
   },
-  "exclude": ["node_modules", "out", "triagem", "flawuldragon-devkit"]
+  "exclude": ["node_modules", "out", "flawuldragon-devkit", "integration"]
 }

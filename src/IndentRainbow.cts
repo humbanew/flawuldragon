@@ -397,5 +397,9 @@ export class IndentRainbow {
    */
   public indentRainbow_deactivate() {
     vscode.window.showInformationMessage("Indent Rainbow deactivated.");
+    // remove indent rainbow decorationType
+    this.indentRainbow_activate.prototype.decorationTypes.forEach((decorationType: any) => {
+      decorationType.dispose();
+    });
   }
 }

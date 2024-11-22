@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = activate;
 exports.deactivate = deactivate;
 exports.activationPrompt = activationPrompt;
-// import { DateTime } from "./DateTime.cjs";
 const FileSize_cjs_1 = require("./FileSize.cjs");
 const IndentRainbow_cjs_1 = require("./IndentRainbow.cjs");
 const JetbrainsIcons_cjs_1 = require("./JetbrainsIcons.cjs");
@@ -17,7 +16,6 @@ const jetbrainsicons = new JetbrainsIcons_cjs_1.JetbrainsIcons();
 const filesize = new FileSize_cjs_1.FileSize();
 const todohighlight = new TodoHighlight_cjs_1.TodoHighlight();
 const indentrainbow = new IndentRainbow_cjs_1.IndentRainbow();
-// const datetime = new DateTime();
 /**
  * Activates the extension.
  *
@@ -37,7 +35,6 @@ function activate(context) {
         filesize.filesize_activate(context);
         todohighlight.todoHighlight_activate(context);
         indentrainbow.indentRainbow_activate(context);
-        // datetime.datetime_activate(context);
     }
     catch (error) {
         console.log("Flawuldragon core hub - Error: " + error);
@@ -60,7 +57,6 @@ function deactivate(context) {
     filesize.filesize_deactivate();
     todohighlight.todoHighlight_desactivate();
     indentrainbow.indentRainbow_deactivate();
-    // datetime.datetime_deactivate();
 }
 /**
  * Activates the JetBrains Mono prompt within the given VS Code extension context.
