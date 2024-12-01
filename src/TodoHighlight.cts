@@ -962,7 +962,7 @@ export class TodoHighlight {
       console.error("Flawuldragon - TODO Highlight error: " + error);
       vscode.window.showErrorMessage("An error occurred while activating the TODO Highlight integration: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
       this.todoHighlight_desactivate();
-    }
+    } finally {}
   }
 
   /**

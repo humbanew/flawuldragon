@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.window.showErrorMessage(
       "An error occurred while activating the Flawuldragon core hub: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
     deactivate(context);
-  }
+  } finally {}
 }
 
 /**

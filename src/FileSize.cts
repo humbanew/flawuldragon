@@ -144,7 +144,7 @@ export class FileSize {
       console.error("Flawuldragon - File size error: " + error);
       vscode.window.showErrorMessage("An error occurred while activating the file size integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
       this.filesize_deactivate();
-    }
+    } finally {}
   }
 
   /**

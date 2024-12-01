@@ -429,7 +429,7 @@ export class JetbrainsIcons {
       console.log("Flawuldragon - Jetbrains Icons error: " + error);
       vscode.window.showErrorMessage("An error occurred while activating the jetbrains icons integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
       this.jetbrainsIcons_deactivate();
-    }
+    } finally {}
   }
 
   /**

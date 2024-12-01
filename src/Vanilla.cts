@@ -114,7 +114,7 @@ export class Vanilla {
       console.error("Flawuldragon vanilla error: " + error);
       vscode.window.showErrorMessage("An error occurred while activating the Flawuldragon vanilla features: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
       this.vanilla_desactivate();
-    }
+    } finally {}
   }
 
   /**

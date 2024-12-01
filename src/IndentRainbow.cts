@@ -387,7 +387,7 @@ export class IndentRainbow {
       console.error("Flawuldragon - Indent Rainbow error: ", error);
       vscode.window.showErrorMessage("An error occurred while activating the indent rainbow integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
       this.indentRainbow_deactivate();
-    }
+    } finally {}
   }
 
   /**

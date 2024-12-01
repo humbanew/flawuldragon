@@ -2936,7 +2936,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_gl(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "gl",
       language: "Galician",
       weekdays: "domingo_luns_martes_mércores_xoves_venres_sábado".split("_"),
@@ -2979,8 +2979,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_gom_latn(): object {
-    const locale = {
+  protected dayjs_locale_gomLatn(): object {
+    const locale: IDJSLocale = {
       name: "gom-latn",
       language: "Konkani (Latin script)",
       weekdays: "Aitar_Somar_Mongllar_Budvar_Brestar_Sukrar_Son'var".split("_"),
@@ -3008,7 +3008,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_gu(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "gu",
       language: "Gujarati",
       weekdays: "રવિવાર_સોમવાર_મંગળવાર_બુધ્વાર_ગુરુવાર_શુક્રવાર_શનિવાર".split(
@@ -3083,7 +3083,7 @@ export abstract class DayJS {
       return text.replace("%d", number.toString());
     }
 
-    const locale = {
+    const locale: IDJSLocale = {
       name: "he",
       language: "Hebrew",
       weekdays: "ראשון_שני_שלישי_רביעי_חמישי_שישי_שבת".split("_"),
@@ -3110,18 +3110,6 @@ export abstract class DayJS {
         yy: relativeTimeFormatter,
       },
       ordinal: (n: any) => n,
-      format: {
-        LT: "HH:mm",
-        LTS: "HH:mm:ss",
-        L: "DD/MM/YYYY",
-        LL: "D [ב]MMMM YYYY",
-        LLL: "D [ב]MMMM YYYY HH:mm",
-        LLLL: "dddd, D [ב]MMMM YYYY HH:mm",
-        l: "D/M/YYYY",
-        ll: "D MMM YYYY",
-        lll: "D MMM YYYY HH:mm",
-        llll: "ddd, D MMM YYYY HH:mm",
-      },
       formats: {
         LT: "HH:mm",
         LTS: "HH:mm:ss",
@@ -3139,7 +3127,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_hi(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "hi",
       language: "Hindi",
       weekdays: "रविवार_सोमवार_मंगलवार_बुधवार_गुरूवार_शुक्रवार_शनिवार".split(
@@ -3204,14 +3192,14 @@ export abstract class DayJS {
     months.s = monthStandalone;
     months.f = monthFormat;
 
-    const locale = {
+    const locale: IDJSLocale = {
       name: "hr",
       language: "Croatian",
       weekdays:
         "nedjelja_ponedjeljak_utorak_srijeda_četvrtak_petak_subota".split("_"),
       weekdaysShort: "ned._pon._uto._sri._čet._pet._sub.".split("_"),
       weekdaysMin: "ne_po_ut_sr_če_pe_su".split("_"),
-      months,
+      months: months,
       monthsShort:
         "sij._velj._ožu._tra._svi._lip._srp._kol._ruj._lis._stu._pro.".split(
           "_",
@@ -3246,7 +3234,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ht(): object {
-    const locale = {
+    const locale: IDJSLocale  = {
       name: "ht",
       language: "Haitian Creole",
       weekdays: "dimanch_lendi_madi_mèkredi_jedi_vandredi_samdi".split("_"),
@@ -3287,7 +3275,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_hu(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "hu",
       language: "Hungarian",
       weekdays: "vasárnap_hétfő_kedd_szerda_csütörtök_péntek_szombat".split(
@@ -3342,8 +3330,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_hy_am(): object {
-    const locale = {
+  protected dayjs_locale_hyAm(): object {
+    const locale: IDJSLocale = {
       name: "hy-am",
       language: "Armenian",
       weekdays:
@@ -3387,7 +3375,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_id(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "id",
       language: "Indonesian",
       weekdays: "Minggu_Senin_Selasa_Rabu_Kamis_Jumat_Sabtu".split("_"),
@@ -3471,7 +3459,7 @@ export abstract class DayJS {
       return template.replace("%d", number);
     }
 
-    const locale = {
+    const locale: IDJSLocale = {
       name: "is",
       language: "Icelandic",
       weekdays:
@@ -3514,8 +3502,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_it_ch(): object {
-    const locale = {
+  protected dayjs_locale_itCh(): object {
+    const locale: IDJSLocale = {
       name: "it-ch",
       language: "Italian (Switzerland)",
       weekdays:
@@ -3557,9 +3545,9 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_it(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "it",
-      locale: "Italian",
+      language: "Italian",
       weekdays:
         "domenica_lunedì_martedì_mercoledì_giovedì_venerdì_sabato".split("_"),
       weekdaysShort: "dom_lun_mar_mer_gio_ven_sab".split("_"),
@@ -3599,7 +3587,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ja(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ja",
       language: "Japanese",
       weekdays: "日曜日_月曜日_火曜日_水曜日_木曜日_金曜日_土曜日".split("_"),
@@ -3643,7 +3631,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_jv(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "jv",
       language: "Javanese",
       weekdays: "Minggu_Senen_Seloso_Rebu_Kemis_Jemuwah_Septu".split("_"),
@@ -3684,7 +3672,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ka(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ka",
       language: "Georgian",
       weekdays:
@@ -3728,7 +3716,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_kk(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "kk",
       language: "Kazakh",
       weekdays: "жексенбі_дүйсенбі_сейсенбі_сәрсенбі_бейсенбі_жұма_сенбі".split(
@@ -3771,7 +3759,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_km(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "km",
       language: "Cambodian",
       weekdays: "អាទិត្យ_ច័ន្ទ_អង្គារ_ពុធ_ព្រហស្បតិ៍_សុក្រ_សៅរ៍".split("_"),
@@ -3815,7 +3803,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_kn(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "kn",
       language: "Kannada",
       weekdays: "ಭಾನುವಾರ_ಸೋಮವಾರ_ಮಂಗಳವಾರ_ಬುಧವಾರ_ಗುರುವಾರ_ಶುಕ್ರವಾರ_ಶನಿವಾರ".split(
@@ -3860,7 +3848,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ko(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ko",
       language: "Korean",
       weekdays: "일요일_월요일_화요일_수요일_목요일_금요일_토요일".split("_"),
@@ -3945,7 +3933,7 @@ export abstract class DayJS {
       "کانوونی یەکەم",
     ];
 
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ku",
       language: "Kurdish",
       months,
@@ -4009,7 +3997,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ky(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ky",
       language: "Kyrgyz",
       weekdays:
@@ -4053,7 +4041,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_lb(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "lb",
       language: "Luxembourgish",
       weekdays:
@@ -4085,7 +4073,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_lo(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "lo",
       language: "Lao",
       weekdays: "ອາທິດ_ຈັນ_ອັງຄານ_ພຸດ_ພະຫັດ_ສຸກ_ເສົາ".split("_"),
@@ -4152,7 +4140,7 @@ export abstract class DayJS {
     months.s = monthStandalone;
     months.f = monthFormat;
 
-    const locale = {
+    const locale: IDJSLocale = {
       name: "lt",
       language: "Lithuanian",
       weekdays:
@@ -4180,18 +4168,6 @@ export abstract class DayJS {
         y: "metus",
         yy: "%d metus",
       },
-      format: {
-        LT: "HH:mm",
-        LTS: "HH:mm:ss",
-        L: "YYYY-MM-DD",
-        LL: "YYYY [m.] MMMM D [d.]",
-        LLL: "YYYY [m.] MMMM D [d.], HH:mm [val.]",
-        LLLL: "YYYY [m.] MMMM D [d.], dddd, HH:mm [val.]",
-        l: "YYYY-MM-DD",
-        ll: "YYYY [m.] MMMM D [d.]",
-        lll: "YYYY [m.] MMMM D [d.], HH:mm [val.]",
-        llll: "YYYY [m.] MMMM D [d.], ddd, HH:mm [val.]",
-      },
       formats: {
         LT: "HH:mm",
         LTS: "HH:mm:ss",
@@ -4209,7 +4185,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_lv(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "lv",
       language: "Latvian",
       weekdays:
@@ -4253,7 +4229,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_me(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "me",
       language: "Montenegrin",
       weekdays:
@@ -4281,7 +4257,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_mi(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "mi",
       language: "Māori",
       weekdays: "Rātapu_Mane_Tūrei_Wenerei_Tāite_Paraire_Hātarei".split("_"),
@@ -4325,7 +4301,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_mk(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "mk",
       language: "Macedonian",
       weekdays: "недела_понеделник_вторник_среда_четврток_петок_сабота".split(
@@ -4368,7 +4344,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ml(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ml",
       language: "Malayalam",
       weekdays:
@@ -4414,7 +4390,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_mn(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "mn",
       language: "Mongolian",
       weekdays: "Ням_Даваа_Мягмар_Лхагва_Пүрэв_Баасан_Бямба".split("_"),
@@ -4457,7 +4433,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_mr(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "mr",
       language: "Marathi",
       weekdays: "रविवार_सोमवार_मंगळवार_बुधवार_गुरूवार_शुक्रवार_शनिवार".split(
@@ -4486,8 +4462,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_ms_my(): object {
-    const locale = {
+  protected dayjs_locale_msMy(): object {
+    const locale: IDJSLocale = {
       name: "ms-my",
       language: "Malay",
       weekdays: "Ahad_Isnin_Selasa_Rabu_Khamis_Jumaat_Sabtu".split("_"),
@@ -4528,7 +4504,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ms(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ms",
       language: "Malay",
       weekdays: "Ahad_Isnin_Selasa_Rabu_Khamis_Jumaat_Sabtu".split("_"),
@@ -4569,7 +4545,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_mt(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "mt",
       language: "Maltese",
       weekdays:
@@ -4613,7 +4589,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_my(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "my",
       language: "Burmese",
       weekdays: "တနင်္ဂနွေ_တနင်္လာ_အင်္ဂါ_ဗုဒ္ဓဟူး_ကြာသပတေး_သောကြာ_စနေ".split(
@@ -4658,7 +4634,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_nb(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "nb",
       language: "Norwegian Bokmål",
       weekdays: "søndag_mandag_tirsdag_onsdag_torsdag_fredag_lørdag".split("_"),
@@ -4703,7 +4679,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ne(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ne",
       language: "Nepalese",
       weekdays: "आइतबार_सोमबार_मङ्गलबार_बुधबार_बिहिबार_शुक्रबार_शनिबार".split(
@@ -4747,8 +4723,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_nl_be(): object {
-    const locale = {
+  protected dayjs_locale_nlBe(): object {
+    const locale: IDJSLocale = {
       name: "nl-be",
       language: "Dutch (Belgium)",
       weekdays:
@@ -4791,7 +4767,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_nl(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "nl",
       language: "Dutch",
       weekdays:
@@ -4835,7 +4811,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_nn(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "nn",
       language: "Nynorsk",
       weekdays: "sundag_måndag_tysdag_onsdag_torsdag_fredag_laurdag".split("_"),
@@ -4875,8 +4851,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_oc_lnc(): object {
-    const locale = {
+  protected dayjs_locale_ocLnc(): object {
+    const locale: IDJSLocale = {
       name: "oc-lnc",
       language: "Occitan, lengadocian dialecte",
       weekdays:
@@ -4919,8 +4895,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_pa_in(): object {
-    const locale = {
+  protected dayjs_locale_paIn(): object {
+    const locale: IDJSLocale = {
       name: "pa-in",
       language: "Punjabi",
       weekdays: "ਐਤਵਾਰ_ਸੋਮਵਾਰ_ਮੰਗਲਵਾਰ_ਬੁਧਵਾਰ_ਵੀਰਵਾਰ_ਸ਼ੁੱਕਰਵਾਰ_ਸ਼ਨੀਚਰਵਾਰ".split(
@@ -5010,7 +4986,7 @@ export abstract class DayJS {
     months.s = monthStandalone;
     months.f = monthFormat;
 
-    const locale = {
+    const locale: IDJSLocale = {
       name: "pl",
       language: "Polish",
       weekdays:
@@ -5049,8 +5025,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_pt_br(): object {
-    const locale = {
+  protected dayjs_locale_ptBr(): object {
+    const locale: IDJSLocale = {
       name: "pt-br",
       language: "Portuguese (Brazil)",
       weekdays:
@@ -5093,7 +5069,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_pt(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "pt",
       language: "Portuguese",
       weekdays:
@@ -5138,7 +5114,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_rn(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "rn",
       language: "Kirundi",
       weekdays:
@@ -5185,7 +5161,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ro(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ro",
       language: "Romanian",
       weekdays: "Duminică_Luni_Marți_Miercuri_Joi_Vineri_Sâmbătă".split("_"),
@@ -5299,7 +5275,7 @@ export abstract class DayJS {
     monthsShort.s = monthShortStandalone;
     monthsShort.f = monthShortFormat;
 
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ru",
       language: "Russian",
       weekdays:
@@ -5308,8 +5284,8 @@ export abstract class DayJS {
         ),
       weekdaysShort: "вск_пнд_втр_срд_чтв_птн_сбт".split("_"),
       weekdaysMin: "вс_пн_вт_ср_чт_пт_сб".split("_"),
-      months,
-      monthsShort,
+      months: months,
+      monthsShort: monthsShort,
       weekStart: 1,
       yearStart: 4,
       formats: {
@@ -5351,7 +5327,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_rw(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "rw",
       language: "Kinyarwanda",
       weekdays:
@@ -5391,7 +5367,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_sd(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "sd",
       language: "Sindhi",
       weekdays: "آچر_سومر_اڱارو_اربع_خميس_جمع_ڇنڇر".split("_"),
@@ -5435,7 +5411,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_se(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "se",
       language: "Northern Sami",
       weekdays:
@@ -5480,7 +5456,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_si(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "si",
       language: "Sinhalese",
       weekdays:
@@ -5578,7 +5554,7 @@ export abstract class DayJS {
       }
     }
     /* eslint-enable */
-    const locale = {
+    const locale: IDJSLocale = {
       name: "sk",
       language: "Slovak",
       weekdays: "nedeľa_pondelok_utorok_streda_štvrtok_piatok_sobota".split(
@@ -5695,7 +5671,7 @@ export abstract class DayJS {
     }
 
     /* eslint-enable */
-    const locale = {
+    const locale: IDJSLocale = {
       name: "sl",
       language: "Slowenian",
       weekdays: "nedelja_ponedeljek_torek_sreda_četrtek_petek_sobota".split(
@@ -5742,7 +5718,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_sq(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "sq",
       language: "Albanian",
       weekdays:
@@ -5782,7 +5758,8 @@ export abstract class DayJS {
     };
     return locale;
   }
-  protected dayjs_locale_sr_cyrl(): object {
+
+  protected dayjs_locale_srCyrl(): object {
     const translator = {
       words: {
         m: ["један минут", "једног минута"],
@@ -5829,7 +5806,7 @@ export abstract class DayJS {
       },
     };
 
-    const locale = {
+    const locale: IDJSLocale = {
       name: "sr-cyrl",
       language: "Serbian (Cyrillic)",
       weekdays: "Недеља_Понедељак_Уторак_Среда_Четвртак_Петак_Субота".split(
@@ -5919,7 +5896,7 @@ export abstract class DayJS {
       },
     };
 
-    const locale = {
+    const locale: IDJSLocale = {
       name: "sr",
       language: "Serbian",
       weekdays: "Nedelja_Ponedeljak_Utorak_Sreda_Četvrtak_Petak_Subota".split(
@@ -5963,7 +5940,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ss(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ss",
       language: "Swati",
       weekdays:
@@ -6006,8 +5983,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_sv_fi(): object {
-    const locale = {
+  protected dayjs_locale_svFi(): object {
+    const locale: IDJSLocale = {
       name: "sv-fi",
       language: "Swedish (Finland)",
       weekdays: "söndag_måndag_tisdag_onsdag_torsdag_fredag_lördag".split("_"),
@@ -6057,7 +6034,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_sv(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "sv",
       language: "Swedish",
       weekdays: "söndag_måndag_tisdag_onsdag_torsdag_fredag_lördag".split("_"),
@@ -6105,7 +6082,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_sw(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "sw",
       language: "Swahili",
       weekdays:
@@ -6149,7 +6126,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ta(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "ta",
       language: "Tamil",
       weekdays:
@@ -6197,7 +6174,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_te(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "te",
       language: "Telugu",
       weekdays:
@@ -6241,8 +6218,9 @@ export abstract class DayJS {
     };
     return locale;
   }
+
   protected dayjs_locale_tet(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "tet",
       language: "Tetun Dili (East Timor)",
       weekdays: "Domingu_Segunda_Tersa_Kuarta_Kinta_Sesta_Sabadu".split("_"),
@@ -6283,7 +6261,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_tg(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "tg",
       language: "Tajik",
       weekdays: "якшанбе_душанбе_сешанбе_чоршанбе_панҷшанбе_ҷумъа_шанбе".split(
@@ -6326,7 +6304,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_th(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "th",
       language: "Thai",
       weekdays: "อาทิตย์_จันทร์_อังคาร_พุธ_พฤหัสบดี_ศุกร์_เสาร์".split("_"),
@@ -6369,7 +6347,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_tk(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "tk",
       language: "Turkmen",
       weekdays: "Ýekşenbe_Duşenbe_Sişenbe_Çarşenbe_Penşenbe_Anna_Şenbe".split(
@@ -6411,8 +6389,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_tl_ph(): object {
-    const locale = {
+  protected dayjs_locale_tlPh(): object {
+    const locale: IDJSLocale = {
       name: "tl-ph",
       language: "Tagalog (Philippines)",
       weekdays: "Linggo_Lunes_Martes_Miyerkules_Huwebes_Biyernes_Sabado".split(
@@ -6455,7 +6433,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_tlh(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "tlh",
       language: "Klingon",
       weekdays:
@@ -6487,7 +6465,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_tr(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "tr",
       language: "Turkish",
       weekdays: "Pazar_Pazartesi_Salı_Çarşamba_Perşembe_Cuma_Cumartesi".split(
@@ -6530,7 +6508,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_tzl(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "tzl",
       language: "Talossan",
       weekdays: "Súladi_Lúneçi_Maitzi_Márcuri_Xhúadi_Viénerçi_Sáturi".split(
@@ -6557,8 +6535,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_tzm_latn(): object {
-    const locale = {
+  protected dayjs_locale_tzmLatn(): object {
+    const locale: IDJSLocale = {
       name: "tzm-latn",
       language: "Central Atlas Tamazight Latin",
       weekdays: "asamas_aynas_asinas_akras_akwas_asimwas_asiḍyas".split("_"),
@@ -6604,7 +6582,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_tzm(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: "tzm",
       language: "Central Atlas Tamazight",
       weekdays: "ⴰⵙⴰⵎⴰⵙ_ⴰⵢⵏⴰⵙ_ⴰⵙⵉⵏⴰⵙ_ⴰⴽⵔⴰⵙ_ⴰⴽⵡⴰⵙ_ⴰⵙⵉⵎⵡⴰⵙ_ⴰⵙⵉⴹⵢⴰⵙ".split("_"),
@@ -6649,8 +6627,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_ug_cn(): object {
-    const locale = {
+  protected dayjs_locale_ugCn(): object {
+    const locale: IDJSLocale = {
       name: "ug-cn",
       language: "Uyghur (China)",
       weekdays: "يەكشەنبە_دۈشەنبە_سەيشەنبە_چارشەنبە_پەيشەنبە_جۈمە_شەنبە".split(
@@ -6749,7 +6727,7 @@ export abstract class DayJS {
     months.s = monthStandalone;
     months.f = monthFormat;
 
-    const locale = {
+    const locale: IDJSLocale = {
       name: "uk",
       language: 'Ukrainian',
       weekdays: "неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота".split(
@@ -6790,7 +6768,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_ur(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: 'ur',
       language: 'Urdu',
       weekdays: 'اتوار_پیر_منگل_بدھ_جمعرات_جمعہ_ہفتہ'.split('_'),
@@ -6827,8 +6805,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_uz_latn(): object {
-    const locale = {
+  protected dayjs_locale_uzLatn(): object {
+    const locale: IDJSLocale = {
       name: 'uz-latn',
       language: 'Uzbek (Latin)',
       weekdays: 'Yakshanba_Dushanba_Seshanba_Chorshanba_Payshanba_Juma_Shanba'.split('_'),
@@ -6866,7 +6844,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_uz(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: 'uz',
       language: 'Uzbek',
       weekdays: 'Якшанба_Душанба_Сешанба_Чоршанба_Пайшанба_Жума_Шанба'.split('_'),
@@ -6904,7 +6882,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_vi(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: 'vi',
       language: 'Vietnamese',
       weekdays: 'chủ nhật_thứ hai_thứ ba_thứ tư_thứ năm_thứ sáu_thứ bảy'.split('_'),
@@ -6945,8 +6923,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_x_pseudo(): object {
-    const locale = {
+  protected dayjs_locale_xPseudo(): object {
+    const locale: IDJSLocale = {
       name: 'x-pseudo',
       language: 'Pseudo',
       weekdays: 'S~úñdá~ý_Mó~ñdáý~_Túé~sdáý~_Wéd~ñésd~áý_T~húrs~dáý_~Fríd~áý_S~átúr~dáý'.split('_'),
@@ -6984,7 +6962,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_yo(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: 'yo',
       language: 'Yoruba Nigeria',
       weekdays: 'Àìkú_Ajé_Ìsẹ́gun_Ọjọ́rú_Ọjọ́bọ_Ẹtì_Àbámẹ́ta'.split('_'),
@@ -7021,8 +6999,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_zh_cn(): object {
-    const locale = {
+  protected dayjs_locale_zhCn(): object {
+    const locale: IDJSLocale = {
       name: 'zh-cn',
       language: 'Chinese (China)',
       weekdays: '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
@@ -7086,8 +7064,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_zh_hk(): object {
-    const locale = {
+  protected dayjs_locale_zhHk(): object {
+    const locale: IDJSLocale = {
       name: 'zh-hk',
       language: 'Chinese (Hong Kong)',
       months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),
@@ -7149,8 +7127,8 @@ export abstract class DayJS {
     return locale;
   }
 
-  protected dayjs_locale_zh_tw(): object {
-    const locale = {
+  protected dayjs_locale_zhTw(): object {
+    const locale: IDJSLocale = {
       name: 'zh-tw',
       language: 'Chinese (Taiwan)',
       weekdays: '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
@@ -7213,7 +7191,7 @@ export abstract class DayJS {
   }
 
   protected dayjs_locale_zh(): object {
-    const locale = {
+    const locale: IDJSLocale = {
       name: 'zh',
       language: 'Chinese',
       weekdays: '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
