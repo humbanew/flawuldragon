@@ -456,7 +456,7 @@ class TodoHighlight {
      * @returns {vscode.StatusBarItem} The created status bar item.
      */
     todoHighlight_createStatusBarItem(numNotations) {
-        let todoHighlightStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 98);
+        let todoHighlightStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 97);
         if (numNotations == 0) {
             todoHighlightStatusBarItem.text = this.defaultIcon + " " + this.defaultMsg;
         }
@@ -693,6 +693,7 @@ class TodoHighlight {
             vscode.window.showErrorMessage("An error occurred while activating the TODO Highlight integration: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
             this.todoHighlight_desactivate();
         }
+        finally { }
     }
     /**
      * Deactivates the todo highlight feature by disposing of the status bar item and output channel if they exist.

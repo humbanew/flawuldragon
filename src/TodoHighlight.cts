@@ -601,7 +601,7 @@ export class TodoHighlight {
   private todoHighlight_createStatusBarItem(numNotations?: number) {
     let todoHighlightStatusBarItem = vscode.window.createStatusBarItem(
       vscode.StatusBarAlignment.Left,
-      98,
+      97,
     );
     if(numNotations == 0) {
       todoHighlightStatusBarItem.text = this.defaultIcon + " " + this.defaultMsg;

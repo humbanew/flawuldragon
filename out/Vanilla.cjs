@@ -25,6 +25,7 @@ class Vanilla {
      * @type {vscode.StatusBarItem}
      */
     flawuldragonStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
+    flawuldragonDateTimeStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 99);
     /**
      * A unique identifier for the status bar item associated with the Flawuldragon extension.
      * This ID is used to register and manage the status bar item within the extension.
@@ -52,6 +53,7 @@ class Vanilla {
                     .toString();
                 return 0;
             }));
+            // flawuldragon development notes status bar item
             this.flawuldragonStatusBar.text = `$(flawuldragon-on) FD`;
             this.flawuldragonStatusBar.command = this.flawuldragonStatusbaritemId;
             this.flawuldragonStatusBar.color = "darkblue";
@@ -59,37 +61,44 @@ class Vanilla {
             this.flawuldragonStatusBar.tooltip = "Click to view Flawuldragon Notes";
             this.flawuldragonStatusBar.show();
             context.subscriptions.push(this.flawuldragonStatusBar);
+            // flawuldragon date and time status bar items
+            // update every second window to show the current time
+            setInterval(() => {
+                let timer = new Date(), text;
+                if (timer.getHours() < 10) {
+                    text = `${timer.getDay() + 1}-${timer.getMonth() + 1}-${timer.getFullYear()} ◆ 0${timer.getHours()}:${timer.getMinutes()}`;
+                }
+                else if (timer.getMinutes() < 10) {
+                    text = `${timer.getDay() + 1}-${timer.getMonth() + 1}-${timer.getFullYear()} ◆ ${timer.getHours()}:0${timer.getMinutes()}`;
+                }
+                else if (timer.getMinutes() < 10 && timer.getSeconds() < 10) {
+                    text = `${timer.getDay() + 1}-${timer.getMonth() + 1}-${timer.getFullYear()} ◆ 0${timer.getHours()}:0${timer.getMinutes()}`;
+                }
+                else {
+                    text = `${timer.getDay() + 1}-${timer.getMonth() + 1}-${timer.getFullYear()} ◆ ${timer.getHours()}:${timer.getMinutes()}`;
+                }
+                this.flawuldragonDateTimeStatusBar.text = text;
+            }, 1000);
+            this.flawuldragonDateTimeStatusBar.tooltip = "Current time";
+            this.flawuldragonDateTimeStatusBar.color = "blue";
+            this.flawuldragonDateTimeStatusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
+            this.flawuldragonDateTimeStatusBar.show();
+            context.subscriptions.push(this.flawuldragonDateTimeStatusBar);
             if (vscode.workspace.getConfiguration("flawuldragon").get("enable") === false) {
                 console.warn("Flawuldragon is disabled. Enable it in your settings.");
                 vscode.window.showWarningMessage("Flawuldragon is disabled. Enable it in your settings.");
-                this.flawuldragonStatusBar.text = `$(flawuldragon-off) The Flawuldragon`;
+                this.flawuldragonStatusBar.text = `$(flawuldragon-off) FD`;
                 this.flawuldragonStatusBar.color = "darkred";
                 this.flawuldragonStatusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.errorBackground");
                 return;
             }
-            // // debug status bar
-            // let debugStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 101);
-            // debugStatusBar.text = `$(flawuldragon-on) FD Dbg`;
-            // debugStatusBar.color = "darkgreen";
-            // debugStatusBar.backgroundColor = new vscode.ThemeColor(
-            //   "statusBarItem.errorBackground",
-            // );
-            // debugStatusBar.tooltip = "Click to view info";
-            // debugStatusBar.command = "flawuldragon.extension.infos.debug";
-            // debugStatusBar.show();
-            // context.subscriptions.push(debugStatusBar);
-            // // debug command
-            // context.subscriptions.push(
-            //   vscode.commands.registerCommand("flawuldragon.extension.infos.debug", () => {
-            //     vscode.window.showInformationMessage("Flawuldragon debug info [debug](https://github.com/humbanew/flawuldragon)");
-            //   }),
-            // );
         }
         catch (error) {
             console.error("Flawuldragon vanilla error: " + error);
             vscode.window.showErrorMessage("An error occurred while activating the Flawuldragon vanilla features: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
             this.vanilla_desactivate();
         }
+        finally { }
     }
     /**
      * Deactivates the vanilla feature by disposing of the flawuldragon status bar.

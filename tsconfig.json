@@ -5,6 +5,8 @@
     "outDir": "./out",
     "lib": ["es2020"],
     "sourceMap": false,
+    "declaration": false,
+    "declarationMap": false,
     "rootDir": "./src",
     "moduleResolution": "node",
     "moduleDetection": "force",
@@ -13,7 +15,7 @@
     "allowJs": true,
     "checkJs": false,
     "strictNullChecks": false,
-    "strict": true
+    "strict": true,
   },
   "exclude": ["node_modules", "out", "flawuldragon-devkit", "integration"]
 }

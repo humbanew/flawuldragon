@@ -17,9 +17,9 @@ const vscode = require("vscode");
 class FileSize {
     /**
      * A status bar item that displays the file size in the Visual Studio Code editor.
-     * It is aligned to the left side of the status bar with a priority of 99.
+     * It is aligned to the left side of the status bar with a priority of 98.
      */
-    filesizeStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 99);
+    filesizeStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 98);
     /**
      * Retrieves the current file size of the active text editor's document and updates the provided status item with the file size.
      *
@@ -91,16 +91,16 @@ class FileSize {
             return `${size} B`;
         }
         else if (size >= 1024 && size < 1048576) {
-            return `${Math.floor(size / 10.24 / 100)} KB | ${size} B`;
+            return `${Math.floor(size / 10.24 / 100)} KB ◆ ${size} B`;
         }
         else if (size > 1048576) {
-            return `${Math.floor(size / 10485.76) / 100} MB | ${size} B`;
+            return `${Math.floor(size / 10485.76) / 100} MB ◆ ${size} B`;
         }
         else if (size > 1073741824) {
-            return `${Math.floor(size / 10737418.24) / 100} GB | ${size} B`;
+            return `${Math.floor(size / 10737418.24) / 100} GB ◆ ${size} B`;
         }
         else {
-            return `${Math.floor(size / 1099511627776) / 100} TB | ${size} B`;
+            return `${Math.floor(size / 1099511627776) / 100} TB ◆ ${size} B`;
         }
     }
     /**
@@ -134,6 +134,7 @@ class FileSize {
             vscode.window.showErrorMessage("An error occurred while activating the file size integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
             this.filesize_deactivate();
         }
+        finally { }
     }
     /**
      * Deactivates the file size functionality.

@@ -145,6 +145,7 @@ class JetbrainsMono {
             vscode.window.showErrorMessage("An error occurred while activating the jetbrains mono font pack integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
             this.jetbrainsMono_desactivate(context);
         }
+        finally { }
     }
     /**
      * Deactivates the JetBrains Mono Integration settings.

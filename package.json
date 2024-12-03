@@ -234,16 +234,6 @@
         "category": "Flawuldragon",
         "command": "fd_todohighlight.showOutputChannel",
         "title": "Show a output logs channel"
-      },
-      {
-        "category": "Flawuldragon",
-        "command": "fd_dateTime.show",
-        "title": "Show Date & Time"
-      },
-      {
-        "category": "Flawuldragon",
-        "command": "fd_dateTime.hide",
-        "title": "Hide Date & Time"
       }
     ],
     "icons": {
