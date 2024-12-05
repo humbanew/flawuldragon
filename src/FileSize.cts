@@ -17,7 +17,7 @@ export class FileSize {
    * A status bar item that displays the file size in the Visual Studio Code editor.
    * It is aligned to the left side of the status bar with a priority of 98.
    */
-  private filesizeStatusBar: vscode.StatusBarItem =
+  protected filesizeStatusBar: vscode.StatusBarItem =
     vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 98);
 
   /**
@@ -26,7 +26,7 @@ export class FileSize {
    * @param statusItem - An object containing a text property and a show method. The text property will be updated with the file size, and the show method will be called to display the status item.
    * @returns A promise that resolves when the file size has been retrieved and the status item has been updated.
    */
-  private filesize_getCurrentFileSize(statusItem: {
+  protected filesize_getCurrentFileSize(statusItem: {
     text: string | undefined;
     show: () => void;
   }) {
@@ -48,7 +48,7 @@ export class FileSize {
     });
   }
 
-  private filesize_getCurrentAdvancedFileSize(statusItem: {
+  protected filesize_getCurrentAdvancedFileSize(statusItem: {
     text: string | undefined;
     show: () => void;
   }) {
@@ -76,7 +76,7 @@ export class FileSize {
    * @param size - The size of the file in bytes.
    * @returns A string representing the file size in B, KB, MB, GB and TB.
    */
-  private filesize_convertSize(size: number) {
+  protected filesize_convertSize(size: number) {
     if (size < 1024) {
       return `${size} B`;
     } else if (size >= 1024 && size < 1048576) {
@@ -90,7 +90,7 @@ export class FileSize {
     }
   }
 
-  private filesize_convertAdvancedSize(size: number) {
+  protected filesize_convertAdvancedSize(size: number) {
     // brute size of bytes
     if (size < 1024) {
       return `${size} B`;
@@ -120,16 +120,28 @@ export class FileSize {
       this.filesizeStatusBar.tooltip = "Filesize of the current document";
   
       content.subscriptions.push(
-        vscode.commands.registerCommand("fd_filesize.toggleFileSizeAdvancedInfo", () => {
+        vscode.commands.registerCommand("flawuldragon.filesize.toggleFileSizeAdvancedInfo", () => {
           this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
-        }),
+        })
       );
   
       content.subscriptions.push(
-        vscode.commands.registerCommand("fd_filesize.toggleFileSizeInfo", () => {
+        vscode.commands.registerCommand("flawuldragon.filesize.toggleFileSizeInfo", () => {
           this.filesize_getCurrentFileSize(this.filesizeStatusBar);
-        }),
+        })
       );
+
+      content.subscriptions.push(
+        vscode.commands.registerCommand("flawuldragon.filesize.enableStatusBar", ()=>{
+          this.filesizeStatusBar.show();
+        })
+      )
+
+      content.subscriptions.push(
+        vscode.commands.registerCommand("flawuldragon.filesize.disableStatusBar", ()=>{
+          this.filesizeStatusBar.hide();
+        })
+      )
   
       vscode.window.onDidChangeActiveTextEditor(() => {
         this.filesize_getCurrentFileSize(this.filesizeStatusBar);

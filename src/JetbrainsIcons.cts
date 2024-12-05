@@ -19,32 +19,26 @@ export class JetbrainsIcons {
    * The absolute path to the current module's file.
    * This is derived from the `import.meta.url` using the `fileURLToPath` function.
    */
-  private __filename = fileURLToPath(require('url').pathToFileURL(__filename).toString());
+  protected __filename = fileURLToPath(require('url').pathToFileURL(__filename).toString());
 
   /**
    * The directory name of the current module's file.
    * This is equivalent to the `__dirname` global variable in Node.js.
    * It is determined using the `node_path.dirname` method on the current module's filename.
    */
-  private __dirname = path.dirname(this.__filename);
+  protected __dirname = path.dirname(this.__filename);
 
   /**
    * The path to the build directory where the output icons will be stored.
    * This path is constructed by joining the current directory with the relative path "../out/icons".
-   *
-   * @private
-   * @type {string}
    */
-  private BUILD_DIR_PATH = path.join(this.__dirname, "../out/icons");
+  protected BUILD_DIR_PATH = path.join(this.__dirname, "../out/icons");
 
   /**
    * The path to the source directory containing theme icons.
    * This path is constructed by joining the current directory with the relative path to the icons directory.
-   *
-   * @private
-   * @constant
    */
-  private SRC_DIR_PATH = path.join(this.__dirname, "../themes/icons");
+  protected SRC_DIR_PATH = path.join(this.__dirname, "../themes/icons");
 
   /**
    * Retrieves the icon paths from the given theme.
@@ -53,7 +47,7 @@ export class JetbrainsIcons {
    * @param themePath - The base path to the theme directory. Defaults to an empty string.
    * @returns An array of strings representing the paths to the icons.
    */
-  private jetbrainsIcons_getIconPaths(theme: Theme, themePath = ""): string[] {
+  protected jetbrainsIcons_getIconPaths(theme: Theme, themePath = ""): string[] {
     return Object.values(theme.iconDefinitions).map((iconDefinition) =>
       path.join(path.dirname(themePath), iconDefinition.iconPath),
     );
@@ -73,7 +67,7 @@ export class JetbrainsIcons {
    * 5. Copies each icon to the corresponding location in the build directory, maintaining the relative directory structure.
    * 6. Logs a warning if any icon does not exist.
    */
-  private jetbrainsIcons_buildTheme(themePath: string, buildPath: string) {
+  protected jetbrainsIcons_buildTheme(themePath: string, buildPath: string) {
     const theme = JSON.parse(fs.readFileSync(themePath, "utf-8"));
     const iconPaths = this.jetbrainsIcons_getIconPaths(theme, themePath);
 
@@ -106,7 +100,7 @@ export class JetbrainsIcons {
    * @param fileName - The name of the file from which to remove the extension.
    * @returns The file name without its extension.
    */
-  private jetbrainsIcons_removeExtension(fileName: string) {
+  protected jetbrainsIcons_removeExtension(fileName: string) {
     return path.basename(fileName, path.extname(fileName));
   }
 
@@ -120,7 +114,7 @@ export class JetbrainsIcons {
    * @param fileName - The name of the file from which to remove the suffix.
    * @returns The file name without its suffix.
    */
-  private jetbrainsIcons_removeSuffix(fileName: string) {
+  protected jetbrainsIcons_removeSuffix(fileName: string) {
     return this.jetbrainsIcons_removeExtension(fileName).split("_")[0];
   }
 
@@ -130,7 +124,7 @@ export class JetbrainsIcons {
    * @param fileName - The name of the file from which to extract the icon name.
    * @returns The icon name after removing the file extension and suffix.
    */
-  private jetbrainsIcons_getIconName(fileName: string) {
+  protected jetbrainsIcons_getIconName(fileName: string) {
     return this.jetbrainsIcons_removeSuffix(
       this.jetbrainsIcons_removeExtension(fileName),
     );
@@ -146,7 +140,7 @@ export class JetbrainsIcons {
    *   - `dark`: The parsed SVG node for the dark theme icon, or `null` if not available.
    *   - `iconName`: The name of the icon.
    */
-  private jetbrainsIcons_getIcons(lightTheme: Theme, darkTheme: Theme) {
+  protected jetbrainsIcons_getIcons(lightTheme: Theme, darkTheme: Theme) {
     const icons: {
       [key: string]: {
         light: svg.INode | null;
@@ -202,7 +196,7 @@ export class JetbrainsIcons {
    * @returns An SVG node that contains the light mode icon and optionally the dark mode icon,
    *          with appropriate CSS to switch between them based on the user's color scheme preference.
    */
-  private jetbrainsIcons_getAutoIconAst(
+  protected jetbrainsIcons_getAutoIconAst(
     lightIcon: svg.INode,
     darkIcon: svg.INode | null,
   ): svg.INode {
@@ -266,7 +260,7 @@ export class JetbrainsIcons {
    * @param buildDirPath - The directory path where the icons will be saved.
    * @returns An object containing icon definitions with their respective paths.
    */
-  private jetbrainsIcons_buildAutoIcons(
+  protected jetbrainsIcons_buildAutoIcons(
     lightTheme: Theme,
     darkTheme: Theme,
     buildDirPath: string,
@@ -304,7 +298,7 @@ export class JetbrainsIcons {
    * @param themePath - The file path to the theme, used to resolve the correct icon paths.
    * @returns The updated theme object with fixed icon paths.
    */
-  private jetbrainsIcons_fixIconPaths(theme: Theme, themePath: string) {
+  protected jetbrainsIcons_fixIconPaths(theme: Theme, themePath: string) {
     for (const iconDefinitionKey in theme.iconDefinitions) {
       const iconDefinition =
         theme.iconDefinitions[
@@ -332,7 +326,7 @@ export class JetbrainsIcons {
    * from both themes. The resulting auto theme is saved as a JSON file in the specified
    * build directory.
    */
-  private jetbrainsIcons_generate2023AutoTheme(
+  protected jetbrainsIcons_generate2023AutoTheme(
     lightThemePath: string,
     darkThemePath: string,
     buildDirPath: string,

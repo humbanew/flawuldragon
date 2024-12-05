@@ -18,37 +18,37 @@ export class IndentRainbow {
    * An array to hold the decoration types.
    * This array is used to store different types of decorations.
    */
-  private static decorationTypes: any[] = [];
+  protected static decorationTypes: any[] = [];
 
   /**
    * A static boolean property indicating whether the action should be performed.
    * Defaults to `false`.
    */
-  private static doIt = false;
+  protected static doIt = false;
 
   /**
    * A flag indicating whether the current instance should be cleared.
    */
-  private static clearMe = false;
+  protected static clearMe = false;
 
   /**
    * Stores the current language identifier.
    * This is used to keep track of the language currently being processed or highlighted.
    */
-  private static currentLanguageId: any = null;
+  protected static currentLanguageId: any = null;
 
   /**
    * A flag to indicate whether all errors should be skipped.
    * When set to `true`, the system will bypass error handling.
    * Defaults to `false`.
    */
-  private static skipAllErrors = false;
+  protected static skipAllErrors = false;
 
   /**
    * A reference to the currently active text editor in the Visual Studio Code window.
    * This property is static and can be accessed without instantiating the class.
    */
-  private static activeEditor = vscode.window.activeTextEditor;
+  protected static activeEditor = vscode.window.activeTextEditor;
 
   // Error color gets shown when tabs aren't right,
   //  e.g. when you have your tabs set to 2 spaces but the indent is 3 spaces
@@ -57,7 +57,7 @@ export class IndentRainbow {
    * This value is retrieved from the "indentRainbow" configuration in the workspace settings.
    * If the configuration is not set, it defaults to "rgba(128,32,32,0.3)".
    */
-  private static error_color =
+  protected static error_color =
     vscode.workspace.getConfiguration("indentRainbow")["errorColor"] ||
     "rgba(128,32,32,0.3)";
 
@@ -66,10 +66,10 @@ export class IndentRainbow {
    * It uses the `vscode.window.createTextEditorDecorationType` method to create a decoration type
    * with a background color specified by `this.error_color`.
    * 
-   * @private
+   * @protected
    * @static
    */
-  private static error_decoration_type = vscode.window.createTextEditorDecorationType({
+  protected static error_decoration_type = vscode.window.createTextEditorDecorationType({
     backgroundColor: this.error_color,
   });
 
@@ -78,7 +78,7 @@ export class IndentRainbow {
    * This value is retrieved from the user's workspace settings under the "indentRainbow" configuration.
    * If the "tabmixColor" setting is not defined, it defaults to an empty string.
    */
-  private static tabmix_color =
+  protected static tabmix_color =
     vscode.workspace.getConfiguration("indentRainbow")["tabmixColor"] || "";
 
   /**
@@ -86,7 +86,7 @@ export class IndentRainbow {
    * The decoration type is created with a background color specified by `tabmix_color`.
    * If `tabmix_color` is an empty string, the property is set to `null`.
    */
-  private static tabmix_decoration_type =
+  protected static tabmix_decoration_type =
     "" !== this.tabmix_color
       ? vscode.window.createTextEditorDecorationType({
           backgroundColor:this.tabmix_color,
@@ -98,7 +98,7 @@ export class IndentRainbow {
    * These patterns are retrieved from the "ignoreLinePatterns" configuration in the "indentRainbow" section
    * of the user's workspace settings. If no patterns are configured, an empty array is used by default.
    */
-  private static ignoreLinePatterns =
+  protected static ignoreLinePatterns =
     vscode.workspace.getConfiguration("indentRainbow")[
       "ignoreLinePatterns"
     ] || [];
@@ -111,7 +111,7 @@ export class IndentRainbow {
    * user's VSCode workspace settings. If the setting is not defined, it defaults
    * to `false`.
    */
-  private static colorOnWhiteSpaceOnly =
+  protected static colorOnWhiteSpaceOnly =
     vscode.workspace.getConfiguration("indentRainbow")[
       "colorOnWhiteSpaceOnly"
     ] || false;
@@ -123,7 +123,7 @@ export class IndentRainbow {
    * under the "indentRainbow" section. If the configuration is not set,
    * it defaults to "classic".
    */
-  private static indicatorStyle =
+  protected static indicatorStyle =
     vscode.workspace.getConfiguration("indentRainbow")["indicatorStyle"] ||
     "classic";
 
@@ -132,7 +132,7 @@ export class IndentRainbow {
    * "indentRainbow" settings in the VS Code workspace configuration. If the configuration
    * value is not set, it defaults to 1.
    */
-  private static lightIndicatorStyleLineWidth =
+  protected static lightIndicatorStyleLineWidth =
     vscode.workspace.getConfiguration("indentRainbow")[
       "lightIndicatorStyleLineWidth"
     ] || 1;
@@ -149,7 +149,7 @@ export class IndentRainbow {
    * - "rgba(255,127,255,0.07)" (light pink)
    * - "rgba(79,236,236,0.07)" (light cyan)
    */
-  private static colors = vscode.workspace.getConfiguration("indentRainbow")[
+  protected static colors = vscode.workspace.getConfiguration("indentRainbow")[
     "colors"
   ] || [
     "rgba(255,255,64,0.07)",
@@ -163,7 +163,7 @@ export class IndentRainbow {
    * It can be a string, a number, or a NodeJS.Timeout object.
    * Initially set to null.
    */
-  private static timeout: string | number | NodeJS.Timeout = null;
+  protected static timeout: string | number | NodeJS.Timeout = null;
 
   /**
    * Activates the Indent Rainbow feature for the VSCode extension.

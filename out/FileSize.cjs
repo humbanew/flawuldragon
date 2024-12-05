@@ -114,11 +114,17 @@ class FileSize {
             this.filesizeStatusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
             this.filesize_getCurrentFileSize(this.filesizeStatusBar);
             this.filesizeStatusBar.tooltip = "Filesize of the current document";
-            content.subscriptions.push(vscode.commands.registerCommand("fd_filesize.toggleFileSizeAdvancedInfo", () => {
+            content.subscriptions.push(vscode.commands.registerCommand("flawuldragon.filesize.toggleFileSizeAdvancedInfo", () => {
                 this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
             }));
-            content.subscriptions.push(vscode.commands.registerCommand("fd_filesize.toggleFileSizeInfo", () => {
+            content.subscriptions.push(vscode.commands.registerCommand("flawuldragon.filesize.toggleFileSizeInfo", () => {
                 this.filesize_getCurrentFileSize(this.filesizeStatusBar);
+            }));
+            content.subscriptions.push(vscode.commands.registerCommand("flawuldragon.filesize.enableStatusBar", () => {
+                this.filesizeStatusBar.show();
+            }));
+            content.subscriptions.push(vscode.commands.registerCommand("flawuldragon.filesize.disableStatusBar", () => {
+                this.filesizeStatusBar.hide();
             }));
             vscode.window.onDidChangeActiveTextEditor(() => {
                 this.filesize_getCurrentFileSize(this.filesizeStatusBar);

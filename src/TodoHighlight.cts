@@ -26,7 +26,7 @@ export class TodoHighlight {
    * @property {boolean} [manuallyCancel] - Indicates if a process was manually cancelled.
    * @property {vscode.OutputChannel} [outputChannel] - A custom output channel for logging.
    */
-  private window = vscode.window as typeof vscode.window & {
+  protected window = vscode.window as typeof vscode.window & {
     processing?: boolean;
     manuallyCancel?: boolean;
     outputChannel?: vscode.OutputChannel;
@@ -37,7 +37,7 @@ export class TodoHighlight {
    *
    * @default "$(checklist)"
    */
-  private defaultIcon = "$(checklist)";
+  protected defaultIcon = "$(checklist)";
 
   /**
    * Represents the icon for a zap action.
@@ -45,14 +45,14 @@ export class TodoHighlight {
    *
    * @default "$(zap)"
    */
-  private zapIcon = "$(zap)";
+  protected zapIcon = "$(zap)";
 
   /**
    * The default message to be displayed.
    *
    * @default "0"
    */
-  private defaultMsg = "0";
+  protected defaultMsg = "0";
 
   /**
    * A status bar item to display the current status of TODOs.
@@ -60,7 +60,7 @@ export class TodoHighlight {
    *
    * @type {vscode.StatusBarItem | undefined}
    */
-  private todoStatusBarItem: vscode.StatusBarItem | undefined;
+  protected todoStatusBarItem: vscode.StatusBarItem | undefined;
 
   /**
    * A collection of default keywords used for highlighting TODO comments in the code.
@@ -127,7 +127,7 @@ export class TodoHighlight {
    * @property {string} DEFAULT_KEYWORDS.TEST.backgroundColor - The background color.
    * @property {string} DEFAULT_KEYWORDS.TEST.overviewRulerColor - The color for the overview ruler.
    */
-  private DEFAULT_KEYWORDS = {
+  protected DEFAULT_KEYWORDS = {
     "TODO:": {
       text: "TODO:",
       color: "#fff",
@@ -196,7 +196,7 @@ export class TodoHighlight {
    * @property {string} color - The text color for the highlight.
    * @property {string} backgroundColor - The background color for the highlight.
    */
-  private DEFAULT_STYLE = {
+  protected DEFAULT_STYLE = {
     color: "#2196f3",
     backgroundColor: "#ffeb3b",
   };
@@ -209,7 +209,7 @@ export class TodoHighlight {
    * @param isCaseSensitive - A boolean indicating whether the keyword matching should be case sensitive.
    * @returns A dictionary where the keys are the keywords and the values are the corresponding styled keyword objects.
    */
-  private todoHighlight_getAssembledData(
+  protected todoHighlight_getAssembledData(
     keywords: ITHKeyword[],
     customDefaultStyle: any,
     isCaseSensitive: boolean,
@@ -270,7 +270,7 @@ export class TodoHighlight {
    * @param availableAnnotationTypes - An array of available annotation types to choose from.
    * @returns A promise that resolves to the selected annotation type or undefined if no selection was made.
    */
-  private todoHighlight_chooseAnnotationType(
+  protected todoHighlight_chooseAnnotationType(
     availableAnnotationTypes: ITHAnnotationType[],
   ): Thenable<ITHAnnotationType | undefined> {
     return this.window.showQuickPick(availableAnnotationTypes, {});
@@ -283,7 +283,7 @@ export class TodoHighlight {
    * @param config - The configuration paths, which can be either an array of strings or a single string.
    * @returns A string representation of the configuration paths. If the input is an array, the paths are joined with commas and enclosed in curly braces. If the input is a string, it is returned as is. If the input is neither, an empty string is returned.
    */
-  private todoHighlight_getPathes(config: ITHConfig | string): string {
+  protected todoHighlight_getPathes(config: ITHConfig | string): string {
     return Array.isArray(config)
       ? "{" + config.join(",") + "}"
       : typeof config === "string"
@@ -301,7 +301,7 @@ export class TodoHighlight {
    *   - `annotations`: An object containing the found annotations.
    *   - `annotationList`: A list of all found annotations.
    */
-  private todoHighlight_searchAnnotations(
+  protected todoHighlight_searchAnnotations(
     workspaceState: vscode.Memento,
     pattern: RegExp,
     callback: {
@@ -392,7 +392,7 @@ export class TodoHighlight {
    * @param annotationList - A list of all annotations found.
    * @param regexp - The regular expression to match annotations in the file.
    */
-  private todoHighlight_searchAnnotationInFile(
+  protected todoHighlight_searchAnnotationInFile(
     file: vscode.TextDocument,
     annotations: { [key: string]: ITHAnnotation[] },
     annotationList: ITHAnnotation[],
@@ -442,7 +442,7 @@ export class TodoHighlight {
    * @param annotations - The annotations object containing the found annotations.
    * @param annotationList - The list of individual annotations found.
    */
-  private todoHighlight_annotationsFound(
+  protected todoHighlight_annotationsFound(
     err: ITHAnnotationsFoundError,
     annotations: ITHAnnotations,
     annotationList: ITHAnnotation[],
@@ -488,7 +488,7 @@ export class TodoHighlight {
    *
    * The function also handles toggling the URI format based on the configuration settings.
    */
-  private todoHighlight_showOutputChannel(data: ITHAnnotation[]) {
+  protected todoHighlight_showOutputChannel(data: ITHAnnotation[]) {
     if (!this.window.outputChannel) return;
     this.window.outputChannel.clear();
 
@@ -551,7 +551,7 @@ export class TodoHighlight {
    * @param match - An array containing the match information, where the first element is the matched string.
    * @returns The substring of the line starting from the first occurrence of the match to the end of the line.
    */
-  private todoHighlight_getContent(lineText: string, match: any[]) {
+  protected todoHighlight_getContent(lineText: string, match: any[]) {
     return lineText.substring(lineText.indexOf(match[0]), lineText.length);
   }
 
@@ -565,7 +565,7 @@ export class TodoHighlight {
    * @param match - The match array containing the TODO item.
    * @returns An object containing the URI, absolute path, relative path, start column, and end column of the TODO item.
    */
-  private todoHighlight_getLocationInfo(
+  protected todoHighlight_getLocationInfo(
     fileInUri: string,
     pathWithoutFile: string,
     lineText: string | any[],
@@ -598,7 +598,7 @@ export class TodoHighlight {
    *
    * @returns {vscode.StatusBarItem} The created status bar item.
    */
-  private todoHighlight_createStatusBarItem(numNotations?: number) {
+  protected todoHighlight_createStatusBarItem(numNotations?: number) {
     let todoHighlightStatusBarItem = vscode.window.createStatusBarItem(
       vscode.StatusBarAlignment.Left,
       97,
@@ -609,7 +609,7 @@ export class TodoHighlight {
       todoHighlightStatusBarItem.text = this.defaultIcon + " " + numNotations;
     }
     todoHighlightStatusBarItem.tooltip = "Number of available annotations";
-    todoHighlightStatusBarItem.command = "fd_todohighlight.listAnnotations";
+    todoHighlightStatusBarItem.command = "flawuldragon.todohighlight.listAnnotations";
     todoHighlightStatusBarItem.backgroundColor = new vscode.ThemeColor(
       "statusBarItem.warningBackground",
     );
@@ -622,9 +622,9 @@ export class TodoHighlight {
    * Handles errors for the TodoHighlight component.
    *
    * @param err - The error object implementing the ITHErrorHandler interface.
-   * @private
+   * @protected
    */
-  private todoHighlight_errorHandler(err: ITHErrorHandler): void {
+  protected todoHighlight_errorHandler(err: ITHErrorHandler): void {
     this.window.processing = true;
     this.todoHighlight_setStatusMsg(
       this.defaultIcon,
@@ -641,7 +641,7 @@ export class TodoHighlight {
    * @param msg - The message to display in the status bar item.
    * @param tooltip - The tooltip to display when hovering over the status bar item. Can be a string or a `vscode.MarkdownString`.
    */
-  private todoHighlight_setStatusMsg(
+  protected todoHighlight_setStatusMsg(
     icon: string,
     msg: string,
     tooltip: string | vscode.MarkdownString,
@@ -665,7 +665,7 @@ export class TodoHighlight {
    * @param s - The string to escape.
    * @returns The escaped string, safe to use in a regular expression.
    */
-  private todoHighlight_escapeRegExp(s: string) {
+  protected todoHighlight_escapeRegExp(s: string) {
     return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
   }
 
@@ -836,7 +836,7 @@ export class TodoHighlight {
   
       context.subscriptions.push(
         vscode.commands.registerCommand(
-          "fd_todohighlight.toggleHighlight",
+          "flawuldragon.todohighlight.toggleHighlight",
           () => {
             settings
               .update("isEnable", !settings.get("isEnable"), true)
@@ -849,7 +849,7 @@ export class TodoHighlight {
   
       context.subscriptions.push(
         vscode.commands.registerCommand(
-          "fd_todohighlight.listAnnotations",
+          "flawuldragon.todohighlight.listAnnotations",
           () => {
             if (keywordsPattern?.trim()) {
               this.todoHighlight_searchAnnotations(
@@ -911,12 +911,24 @@ export class TodoHighlight {
   
       context.subscriptions.push(
         vscode.commands.registerCommand(
-          "fd_todohighlight.showOutputChannel",
+          "flawuldragon.todohighlight.showOutputChannel",
           () => {
             var annotationList = workspaceState.get("annotationList", []);
             new TodoHighlight().todoHighlight_showOutputChannel(annotationList);
           },
         ),
+      );
+
+      context.subscriptions.push(
+        vscode.commands.registerCommand("flawuldragon.todohighlight.enableStatusBar", ()=>{
+          this.todoStatusBarItem.show();
+        })
+      );
+
+      context.subscriptions.push(
+        vscode.commands.registerCommand("flawuldragon.todohighlight.disableStatusBar", ()=>{
+          this.todoStatusBarItem.hide();
+        })
       );
   
       if (activeEditor) {

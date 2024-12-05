@@ -20,11 +20,14 @@ class Vanilla {
     /**
      * A status bar item for the Flawuldragon extension.
      * This status bar item is aligned to the left with a priority of 100.
-     *
-     * @private
-     * @type {vscode.StatusBarItem}
      */
     flawuldragonStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
+    /**
+     * A status bar item that displays the date and time for the Flawuldragon extension.
+     *
+     * This status bar item is aligned to the left with a priority of 99.
+     * It is created using the `vscode.window.createStatusBarItem` method.
+     */
     flawuldragonDateTimeStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 99);
     /**
      * A unique identifier for the status bar item associated with the Flawuldragon extension.
@@ -65,17 +68,18 @@ class Vanilla {
             // update every second window to show the current time
             setInterval(() => {
                 let timer = new Date(), text;
+                let date = `${timer.getDay() + 1}-${timer.getMonth() + 1}-${timer.getFullYear()}`;
                 if (timer.getHours() < 10) {
-                    text = `${timer.getDay() + 1}-${timer.getMonth() + 1}-${timer.getFullYear()} ◆ 0${timer.getHours()}:${timer.getMinutes()}`;
+                    text = date + ` ◆ 0${timer.getHours()}:${timer.getMinutes()}`;
                 }
                 else if (timer.getMinutes() < 10) {
-                    text = `${timer.getDay() + 1}-${timer.getMonth() + 1}-${timer.getFullYear()} ◆ ${timer.getHours()}:0${timer.getMinutes()}`;
+                    text = date + ` ◆ ${timer.getHours()}:0${timer.getMinutes()}`;
                 }
                 else if (timer.getMinutes() < 10 && timer.getSeconds() < 10) {
-                    text = `${timer.getDay() + 1}-${timer.getMonth() + 1}-${timer.getFullYear()} ◆ 0${timer.getHours()}:0${timer.getMinutes()}`;
+                    text = date + ` ◆ 0${timer.getHours()}:0${timer.getMinutes()}`;
                 }
                 else {
-                    text = `${timer.getDay() + 1}-${timer.getMonth() + 1}-${timer.getFullYear()} ◆ ${timer.getHours()}:${timer.getMinutes()}`;
+                    text = date + ` ◆ ${timer.getHours()}:${timer.getMinutes()}`;
                 }
                 this.flawuldragonDateTimeStatusBar.text = text;
             }, 1000);
@@ -84,6 +88,17 @@ class Vanilla {
             this.flawuldragonDateTimeStatusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
             this.flawuldragonDateTimeStatusBar.show();
             context.subscriptions.push(this.flawuldragonDateTimeStatusBar);
+            vscode.commands.registerCommand("flawuldragon.vanillaDatetime.active", () => {
+                this.flawuldragonDateTimeStatusBar.show();
+            });
+            vscode.commands.registerCommand("flawuldragon.vanillaDatetime.deactive", () => {
+                this.flawuldragonDateTimeStatusBar.hide();
+            });
+            vscode.commands.registerCommand("flawuldragon.vanillaDatetime.12hFormat", () => { });
+            vscode.commands.registerCommand("flawuldragon.vanillaDatetime.24hFormat", () => { });
+            vscode.commands.registerCommand("flawuldragon.vanillaDatetime.toggleDate", () => { });
+            vscode.commands.registerCommand("flawuldragon.vanillaDatetime.untoggleDate", () => { });
+            vscode.commands.registerCommand("flawuldragon.vanillaDatetime.invertPosition", () => { });
             if (vscode.workspace.getConfiguration("flawuldragon").get("enable") === false) {
                 console.warn("Flawuldragon is disabled. Enable it in your settings.");
                 vscode.window.showWarningMessage("Flawuldragon is disabled. Enable it in your settings.");

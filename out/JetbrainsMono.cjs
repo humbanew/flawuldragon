@@ -136,8 +136,8 @@ class JetbrainsMono {
         try {
             console.log("Flawuldragon - Jetbrains Mono Font activated!");
             console.log(`Congratulations, your extension "${context.extension.packageJSON.displayName} - Jetbrains Mono Font installed!"`);
-            let activateCommand = vscode.commands.registerCommand("fd_jetbrainsmonofont.activate", () => this.jetbrainsMono_activation(context));
-            let deactivateCommand = vscode.commands.registerCommand("fd_jetbrainsmonofont.deactivate", () => this.jetbrainsMono_desactivate(context));
+            let activateCommand = vscode.commands.registerCommand("flawuldragon.jetbrainsmonofont.activate", () => this.jetbrainsMono_activation(context));
+            let deactivateCommand = vscode.commands.registerCommand("flawuldragon.jetbrainsmonofont.deactivate", () => this.jetbrainsMono_desactivate(context));
             context.subscriptions.push(activateCommand, deactivateCommand);
         }
         catch (error) {

@@ -20,7 +20,7 @@ export class JetbrainsMono {
    * @property {string} editor.fontFamily - The font family name.
    * @property {boolean} editor.fontLigatures - Whether font ligatures are enabled.
    */
-  private jetbrainsMono_defaultSettings = {
+  protected jetbrainsMono_defaultSettings = {
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontLigatures": true,
     "accessibility.signals.lineHasError": {"sound": "on"},
@@ -35,7 +35,7 @@ export class JetbrainsMono {
    * @param items A set of items that will be rendered as actions in the message.
    * @returns A promise that resolves to the selected item or `undefined` when being dismissed.
    */
-  private jetbrainsMono_showDialog = vscode.window.showInformationMessage;
+  protected jetbrainsMono_showDialog = vscode.window.showInformationMessage;
 
   /**
    * Resolves the path to the JetBrainsMono directory within the extension.
@@ -43,7 +43,7 @@ export class JetbrainsMono {
    * @param context - The context of the VSCode extension, which provides the extension's path.
    * @returns The resolved path to the "JetBrainsMono" directory.
    */
-  private jetbrainsMono_path = (context: vscode.ExtensionContext) =>
+  protected jetbrainsMono_path = (context: vscode.ExtensionContext) =>
     path.resolve(context.extensionPath, "JetBrainsMono");
 
   /**
@@ -52,7 +52,7 @@ export class JetbrainsMono {
    * @param settings - An object containing key-value pairs of settings to be updated.
    * @param remove - A boolean flag indicating whether to remove the settings. Defaults to false.
    */
-  private jetbrainsMono_updateUserSettings = (
+  protected jetbrainsMono_updateUserSettings = (
     settings: IJBMGeneralObject,
     remove = false,
   ) =>
@@ -77,7 +77,7 @@ export class JetbrainsMono {
    * - On Windows (win32), it uses the `explorer` command.
    * - On other platforms, it uses the `xdg-open` command.
    */
-  private jetbrainsMono_dirOpen(dirPath: string) {
+  protected jetbrainsMono_dirOpen(dirPath: string) {
     let command = "";
     switch (process.platform) {
       case "darwin":
@@ -105,7 +105,7 @@ export class JetbrainsMono {
    * 4. Displays a dialog indicating that the JetBrains Mono font is activated.
    * 5. Displays an important note reminding the user to install the fonts manually and restart VSCode.
    */
-  private jetbrainsMono_activation(context: vscode.ExtensionContext) {
+  protected jetbrainsMono_activation(context: vscode.ExtensionContext) {
     const JetBrainsMonoAddress = this.jetbrainsMono_path(context);
     this.jetbrainsMono_updateUserSettings(this.jetbrainsMono_defaultSettings);
     this.jetbrainsMono_dirOpen(JetBrainsMonoAddress);
@@ -170,11 +170,11 @@ export class JetbrainsMono {
         `Congratulations, your extension "${context.extension.packageJSON.displayName} - Jetbrains Mono Font installed!"`,
       );
       let activateCommand = vscode.commands.registerCommand(
-        "fd_jetbrainsmonofont.activate",
+        "flawuldragon.jetbrainsmonofont.activate",
         () => this.jetbrainsMono_activation(context),
       );
       let deactivateCommand = vscode.commands.registerCommand(
-        "fd_jetbrainsmonofont.deactivate",
+        "flawuldragon.jetbrainsmonofont.deactivate",
         () => this.jetbrainsMono_desactivate(context),
       );
       context.subscriptions.push(activateCommand, deactivateCommand);

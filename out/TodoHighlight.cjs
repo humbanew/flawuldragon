@@ -464,7 +464,7 @@ class TodoHighlight {
             todoHighlightStatusBarItem.text = this.defaultIcon + " " + numNotations;
         }
         todoHighlightStatusBarItem.tooltip = "Number of available annotations";
-        todoHighlightStatusBarItem.command = "fd_todohighlight.listAnnotations";
+        todoHighlightStatusBarItem.command = "flawuldragon.todohighlight.listAnnotations";
         todoHighlightStatusBarItem.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
         todoHighlightStatusBarItem.show();
         this.todoStatusBarItem = todoHighlightStatusBarItem;
@@ -626,14 +626,14 @@ class TodoHighlight {
                     pattern = new RegExp(pattern, "g");
                 }
             };
-            context.subscriptions.push(vscode.commands.registerCommand("fd_todohighlight.toggleHighlight", () => {
+            context.subscriptions.push(vscode.commands.registerCommand("flawuldragon.todohighlight.toggleHighlight", () => {
                 settings
                     .update("isEnable", !settings.get("isEnable"), true)
                     .then(() => {
                     triggerUpdateDecorations();
                 });
             }));
-            context.subscriptions.push(vscode.commands.registerCommand("fd_todohighlight.listAnnotations", () => {
+            context.subscriptions.push(vscode.commands.registerCommand("flawuldragon.todohighlight.listAnnotations", () => {
                 if (keywordsPattern?.trim()) {
                     this.todoHighlight_searchAnnotations(workspaceState, pattern, (err, annotations, annotationList = []) => this.todoHighlight_annotationsFound(err, annotations, annotationList));
                 }
@@ -660,9 +660,15 @@ class TodoHighlight {
                     });
                 }
             }));
-            context.subscriptions.push(vscode.commands.registerCommand("fd_todohighlight.showOutputChannel", () => {
+            context.subscriptions.push(vscode.commands.registerCommand("flawuldragon.todohighlight.showOutputChannel", () => {
                 var annotationList = workspaceState.get("annotationList", []);
                 new TodoHighlight().todoHighlight_showOutputChannel(annotationList);
+            }));
+            context.subscriptions.push(vscode.commands.registerCommand("flawuldragon.todohighlight.enableStatusBar", () => {
+                this.todoStatusBarItem.show();
+            }));
+            context.subscriptions.push(vscode.commands.registerCommand("flawuldragon.todohighlight.disableStatusBar", () => {
+                this.todoStatusBarItem.hide();
             }));
             if (activeEditor) {
                 triggerUpdateDecorations();
