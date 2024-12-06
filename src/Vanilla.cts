@@ -28,7 +28,7 @@ export class Vanilla {
    * This status bar item is aligned to the left with a priority of 99.
    * It is created using the `vscode.window.createStatusBarItem` method.
    */
-  protected flawuldragonDateTimeStatusBar: vscode.StatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 99);
+  protected flawuldragonDateTimeStatusBar: vscode.StatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 98);
 
   /**
    * A unique identifier for the status bar item associated with the Flawuldragon extension.
@@ -92,10 +92,6 @@ export class Vanilla {
           hours = 0+hours;
         }
         if(parseInt(minutes) < 10) {
-          minutes = 0+minutes;
-        }
-        if(parseInt(hours) < 10 && parseInt(minutes) < 10) {
-          hours = 0+hours;
           minutes = 0+minutes;
         }
         text = date + ` ◆ ${hours}:${minutes}`;

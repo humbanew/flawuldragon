@@ -3,6 +3,7 @@ import { IndentRainbow } from "./IndentRainbow.cjs";
 import { JetbrainsIcons } from "./JetbrainsIcons.cjs";
 import { JetbrainsMono } from "./JetbrainsMono.cjs";
 import { PomodoroClock } from "./PomodoroClock.cjs";
+import { ThemeSwitch } from "./ThemeSwitch.cjs";
 import { TodoHighlight } from "./TodoHighlight.cjs";
 import { Vanilla } from "./Vanilla.cjs";
 import * as vscode from "vscode";
@@ -14,6 +15,7 @@ const filesize = new FileSize();
 const todohighlight = new TodoHighlight();
 const indentrainbow = new IndentRainbow();
 const pomodoroClock = new PomodoroClock();
+const themeSwitch = new ThemeSwitch();
 
 /**
  * Activates the extension.
@@ -36,6 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
     todohighlight.todoHighlight_activate(context);
     indentrainbow.indentRainbow_activate(context);
     pomodoroClock.pomodoroClock_activate(context);
+    themeSwitch.themeSwitch_activate(context);
   } catch (error) {
     console.log("Flawuldragon core hub - Error: " + error);
     vscode.window.showErrorMessage(
@@ -60,6 +63,7 @@ export function deactivate(context: vscode.ExtensionContext) {
   todohighlight.todoHighlight_desactivate();
   indentrainbow.indentRainbow_deactivate();
   pomodoroClock.pomodoroClock_deactivate();
+  themeSwitch.themeSwitch_desactivate();
 }
 
 /**

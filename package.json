@@ -314,7 +314,22 @@
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.hideTypeStatusBar",
         "title": "Hide Pomodoro Type in status bar"
-      }
+      },
+      {
+        "category": "Flawuldragon",
+				"command": "flawuldragon.themeswitch.lighttheme",
+				"title": "Switch to Light Theme"
+			},
+			{
+        "category": "Flawuldragon",
+				"command": "flawuldragon.themeswitch.darktheme",
+				"title": "Switch to Dark Theme"
+			},
+			{
+        "category": "Flawuldragon",
+				"command": "flawuldragon.themeswitch.toggle",
+				"title": "Enable Switch Theme"
+			}
     ],
     "icons": {
       "flawuldragon-on": {
@@ -593,7 +608,17 @@
           "type": "boolean",
           "default": true,
           "description": "Whether to use countdown display"
-        }
+        },
+        "themeswitch.priority": {
+					"type": "number",
+					"description": "The priority for the statusbar toggle",
+					"default": 0
+				},
+				"themeswitch.toggleDefaultDark": {
+					"type": "boolean",
+					"description": "If your preferred light/dark theme is not the current theme and the toggle is triggered, switch to your dark theme",
+					"default": true
+				}
       }
     },
     "keybindings": [
@@ -688,6 +713,18 @@
       {
         "key": "alt+ctrl+s",
         "command": "flawuldragon.pomodoroClock.hideTypeStatusBar"
+      },
+      {
+        "key": "alt+1",
+        "command": "flawuldragon.themeswitch.lighttheme"
+      },
+      {
+        "key": "alt+2",
+        "command": "flawuldragon.themeswitch.darktheme"
+      },
+      {
+        "key": "alt+ctrl+h",
+        "command": "flawuldragon.themeswitch.toggle"
       }
     ]
   },
@@ -695,24 +732,7 @@
     "Flawuldragon",
     "Humbanew",
     "Theme",
-    "Color Theme",
-    "Icon Theme",
-    "Font Pack",
-    "JetBrains Mono",
-    "Advanced Circuits Theme",
-    "Blueprint Paper Theme",
-    "Winter Day Theme",
-    "Official",
-    "Todo",
-    "Fixme",
-    "Highlight",
-    "Keyword",
-    "Annotation",
-    "File",
-    "Size",
-    "Filesize",
-    "Status Bar",
-    "Info"
+    "Official"
   ],
   "devDependencies": {
     "@actions/core": "^1.10.1",

@@ -185,8 +185,8 @@ class PCPomodoroManager {
         this.vscodeContext = vscodeContext;
         // create status bar items
         if (!this._clockBarText) {
-            this._clockBarText = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 95);
-            this._typeBarText = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 96);
+            this._clockBarText = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 94);
+            this._typeBarText = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 95);
             this._clockBarText.command =
                 "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown";
             this._clockBarText.show();
