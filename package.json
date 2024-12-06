@@ -293,7 +293,27 @@
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown",
-        "title": "toggle Current Pomodoro Countdown"
+        "title": "Toggle Current Pomodoro Countdown"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.showClockStatusBar",
+        "title": "Show Pomodoro Clock in status bar"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.hideClockStatusBar",
+        "title": "Hide Pomodoro Clock in status bar"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.showTypeStatusBar",
+        "title": "Show Pomodoro Type in status bar"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.hideTypeStatusBar",
+        "title": "Hide Pomodoro Type in status bar"
       }
     ],
     "icons": {
@@ -578,7 +598,7 @@
     },
     "keybindings": [
       {
-        "key": "alt+c",
+        "key": "alt+n",
         "command": "flawuldragon.extension.infos"
       },
       {
@@ -628,6 +648,46 @@
       {
         "key": "alt+ctrl+shift+t",
         "command": "flawuldragon.todohighlight.disableStatusBar"
+      },
+      {
+        "key": "alt+p",
+        "command": "flawuldragon.pomodoroClock.startPomodoro"
+      },
+      {
+        "key": "alt+ctrl+p",
+        "command": "flawuldragon.pomodoroClock.pausePomodoro"
+      },
+      {
+        "key": "alt+shift+p",
+        "command": "flawuldragon.pomodoroClock.continuePomodoro"
+      },
+      {
+        "key": "alt+ctrl+shift+p",
+        "command": "flawuldragon.pomodoroClock.restartPomodoro"
+      },
+      {
+        "key": "alt+r",
+        "command": "flawuldragon.pomodoroClock.resetPomodoro"
+      },
+      {
+        "key": "alt+ctrl+r",
+        "command": "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown"
+      },
+      {
+        "key": "alt+shift+r",
+        "command": "flawuldragon.pomodoroClock.showClockStatusBar"
+      },
+      {
+        "key": "alt+ctrl+shift+r",
+        "command": "flawuldragon.pomodoroClock.hideClockStatusBar"
+      },
+      {
+        "key": "alt+s",
+        "command": "flawuldragon.pomodoroClock.showTypeStatusBar"
+      },
+      {
+        "key": "alt+ctrl+s",
+        "command": "flawuldragon.pomodoroClock.hideTypeStatusBar"
       }
     ]
   },

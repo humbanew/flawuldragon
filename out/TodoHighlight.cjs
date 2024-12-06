@@ -474,7 +474,7 @@ class TodoHighlight {
      * Handles errors for the TodoHighlight component.
      *
      * @param err - The error object implementing the ITHErrorHandler interface.
-     * @private
+     * @protected
      */
     todoHighlight_errorHandler(err) {
         this.window.processing = true;

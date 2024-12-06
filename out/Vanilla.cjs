@@ -46,7 +46,7 @@ class Vanilla {
      */
     vanilla_activate(context) {
         try {
-            console.log("Flawuldragon Vanilla activated!");
+            console.log("Flawuldragon - Vanilla activated!");
             context.subscriptions.push(vscode.commands.registerCommand(this.flawuldragonStatusbaritemId, () => {
                 let viewPanel = vscode.window.createWebviewPanel("flawuldragon", "Flawuldragon Notes", vscode.ViewColumn.One, {});
                 viewPanel.title = "Flawuldragon Notes";
@@ -59,7 +59,6 @@ class Vanilla {
             // flawuldragon development notes status bar item
             this.flawuldragonStatusBar.text = `$(flawuldragon-on) FD`;
             this.flawuldragonStatusBar.command = this.flawuldragonStatusbaritemId;
-            this.flawuldragonStatusBar.color = "darkblue";
             this.flawuldragonStatusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
             this.flawuldragonStatusBar.tooltip = "Click to view Flawuldragon Notes";
             this.flawuldragonStatusBar.show();
@@ -69,25 +68,26 @@ class Vanilla {
             setInterval(() => {
                 let timer = new Date(), text;
                 let date = `${timer.getDay() + 1}-${timer.getMonth() + 1}-${timer.getFullYear()}`;
-                if (timer.getHours() < 10) {
-                    text = date + ` ◆ 0${timer.getHours()}:${timer.getMinutes()}`;
+                let hours = timer.getHours().toString();
+                let minutes = timer.getMinutes().toString();
+                if (parseInt(hours) < 10) {
+                    hours = 0 + hours;
                 }
-                else if (timer.getMinutes() < 10) {
-                    text = date + ` ◆ ${timer.getHours()}:0${timer.getMinutes()}`;
+                if (parseInt(minutes) < 10) {
+                    minutes = 0 + minutes;
                 }
-                else if (timer.getMinutes() < 10 && timer.getSeconds() < 10) {
-                    text = date + ` ◆ 0${timer.getHours()}:0${timer.getMinutes()}`;
+                if (parseInt(hours) < 10 && parseInt(minutes) < 10) {
+                    hours = 0 + hours;
+                    minutes = 0 + minutes;
                 }
-                else {
-                    text = date + ` ◆ ${timer.getHours()}:${timer.getMinutes()}`;
-                }
+                text = date + ` ◆ ${hours}:${minutes}`;
                 this.flawuldragonDateTimeStatusBar.text = text;
             }, 1000);
             this.flawuldragonDateTimeStatusBar.tooltip = "Current time";
-            this.flawuldragonDateTimeStatusBar.color = "blue";
             this.flawuldragonDateTimeStatusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
             this.flawuldragonDateTimeStatusBar.show();
             context.subscriptions.push(this.flawuldragonDateTimeStatusBar);
+            // flawuldragon commands
             vscode.commands.registerCommand("flawuldragon.vanillaDatetime.active", () => {
                 this.flawuldragonDateTimeStatusBar.show();
             });
@@ -98,7 +98,10 @@ class Vanilla {
             vscode.commands.registerCommand("flawuldragon.vanillaDatetime.24hFormat", () => { });
             vscode.commands.registerCommand("flawuldragon.vanillaDatetime.toggleDate", () => { });
             vscode.commands.registerCommand("flawuldragon.vanillaDatetime.untoggleDate", () => { });
+            vscode.commands.registerCommand("flawuldragon.vanillaDatetime.toggleSeconds", () => { });
+            vscode.commands.registerCommand("flawuldragon.vanillaDatetime.untoggleSeconds", () => { });
             vscode.commands.registerCommand("flawuldragon.vanillaDatetime.invertPosition", () => { });
+            // check if the extension is enabled in the settings
             if (vscode.workspace.getConfiguration("flawuldragon").get("enable") === false) {
                 console.warn("Flawuldragon is disabled. Enable it in your settings.");
                 vscode.window.showWarningMessage("Flawuldragon is disabled. Enable it in your settings.");

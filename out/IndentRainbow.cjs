@@ -60,7 +60,7 @@ class IndentRainbow {
      * It uses the `vscode.window.createTextEditorDecorationType` method to create a decoration type
      * with a background color specified by `this.error_color`.
      *
-     * @private
+     * @protected
      * @static
      */
     static error_decoration_type = vscode.window.createTextEditorDecorationType({

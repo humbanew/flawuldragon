@@ -48,7 +48,7 @@ export class Vanilla {
    */
   public vanilla_activate(context: vscode.ExtensionContext) {
     try {
-      console.log("Flawuldragon Vanilla activated!");
+      console.log("Flawuldragon - Vanilla activated!");
 
       context.subscriptions.push(
         vscode.commands.registerCommand(this.flawuldragonStatusbaritemId, () => {
@@ -74,7 +74,6 @@ export class Vanilla {
       // flawuldragon development notes status bar item
       this.flawuldragonStatusBar.text = `$(flawuldragon-on) FD`;
       this.flawuldragonStatusBar.command = this.flawuldragonStatusbaritemId;
-      this.flawuldragonStatusBar.color = "darkblue";
       this.flawuldragonStatusBar.backgroundColor = new vscode.ThemeColor(
         "statusBarItem.warningBackground",
       );
@@ -87,19 +86,22 @@ export class Vanilla {
       setInterval(() =>{
         let timer: Date = new Date(), text: string;
         let date = `${timer.getDay()+1}-${timer.getMonth()+1}-${timer.getFullYear()}`;
-        if(timer.getHours() < 10) {
-          text = date + ` ◆ 0${timer.getHours()}:${timer.getMinutes()}`; 
-        } else if(timer.getMinutes() < 10) {
-          text = date + ` ◆ ${timer.getHours()}:0${timer.getMinutes()}`;
-        } else if(timer.getMinutes() < 10 && timer.getSeconds() < 10) {
-          text = date + ` ◆ 0${timer.getHours()}:0${timer.getMinutes()}`;
-        } else {
-          text = date + ` ◆ ${timer.getHours()}:${timer.getMinutes()}`;
+        let hours = timer.getHours().toString();
+        let minutes = timer.getMinutes().toString();
+        if(parseInt(hours) < 10) {
+          hours = 0+hours;
         }
+        if(parseInt(minutes) < 10) {
+          minutes = 0+minutes;
+        }
+        if(parseInt(hours) < 10 && parseInt(minutes) < 10) {
+          hours = 0+hours;
+          minutes = 0+minutes;
+        }
+        text = date + ` ◆ ${hours}:${minutes}`;
         this.flawuldragonDateTimeStatusBar.text = text;
       }, 1000);
       this.flawuldragonDateTimeStatusBar.tooltip = "Current time";
-      this.flawuldragonDateTimeStatusBar.color = "blue";
       this.flawuldragonDateTimeStatusBar.backgroundColor = new vscode.ThemeColor(
         "statusBarItem.warningBackground",
       );
@@ -114,10 +116,13 @@ export class Vanilla {
       vscode.commands.registerCommand("flawuldragon.vanillaDatetime.deactive", ()=>{
         this.flawuldragonDateTimeStatusBar.hide();
       });
+
       vscode.commands.registerCommand("flawuldragon.vanillaDatetime.12hFormat", ()=>{});
       vscode.commands.registerCommand("flawuldragon.vanillaDatetime.24hFormat", ()=>{});
       vscode.commands.registerCommand("flawuldragon.vanillaDatetime.toggleDate", ()=>{});
       vscode.commands.registerCommand("flawuldragon.vanillaDatetime.untoggleDate", ()=>{});
+      vscode.commands.registerCommand("flawuldragon.vanillaDatetime.toggleSeconds", ()=>{});
+      vscode.commands.registerCommand("flawuldragon.vanillaDatetime.untoggleSeconds", ()=>{});
       vscode.commands.registerCommand("flawuldragon.vanillaDatetime.invertPosition", ()=>{});
 
       // check if the extension is enabled in the settings
