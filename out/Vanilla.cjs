@@ -52,7 +52,7 @@ class Vanilla {
                 viewPanel.title = "Flawuldragon Notes";
                 viewPanel.iconPath = vscode.Uri.file(path.join(__dirname, "../", "assets", "icon.png"));
                 viewPanel.webview.html = fs
-                    .readFileSync(path.join(__dirname, "../", "assets", "flawuldragon.html"))
+                    .readFileSync(path.join(__dirname, "../", "webview", "flawuldragon.html"))
                     .toString();
                 return 0;
             }));

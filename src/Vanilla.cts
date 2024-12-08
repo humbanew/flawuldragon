@@ -64,7 +64,7 @@ export class Vanilla {
           );
           viewPanel.webview.html = fs
             .readFileSync(
-              path.join(__dirname, "../", "assets", "flawuldragon.html"),
+              path.join(__dirname, "../", "webview", "flawuldragon.html"),
             )
             .toString();
           return 0;
