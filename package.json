@@ -40,7 +40,8 @@
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
-    }
+    },
+    "virtualWorkspaces": true
   },
   "categories": [
     "Extension Packs",
@@ -317,19 +318,24 @@
       },
       {
         "category": "Flawuldragon",
-				"command": "flawuldragon.themeswitch.lighttheme",
-				"title": "Switch to Light Theme"
-			},
-			{
+        "command": "flawuldragon.themeswitch.lighttheme",
+        "title": "Switch to Light Theme"
+      },
+      {
         "category": "Flawuldragon",
-				"command": "flawuldragon.themeswitch.darktheme",
-				"title": "Switch to Dark Theme"
-			},
-			{
+        "command": "flawuldragon.themeswitch.darktheme",
+        "title": "Switch to Dark Theme"
+      },
+      {
         "category": "Flawuldragon",
-				"command": "flawuldragon.themeswitch.toggle",
-				"title": "Enable Switch Theme"
-			}
+        "command": "flawuldragon.themeswitch.toggle",
+        "title": "Enable Switch Theme"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.auto-close-tag.closeTag",
+        "title": "Close Tag"
+      }
     ],
     "icons": {
       "flawuldragon-on": {
@@ -610,121 +616,247 @@
           "description": "Whether to use countdown display"
         },
         "themeswitch.priority": {
-					"type": "number",
-					"description": "The priority for the statusbar toggle",
-					"default": 0
-				},
-				"themeswitch.toggleDefaultDark": {
-					"type": "boolean",
-					"description": "If your preferred light/dark theme is not the current theme and the toggle is triggered, switch to your dark theme",
-					"default": true
-				}
+          "type": "number",
+          "description": "The priority for the statusbar toggle",
+          "default": 0
+        },
+        "themeswitch.toggleDefaultDark": {
+          "type": "boolean",
+          "description": "If your preferred light/dark theme is not the current theme and the toggle is triggered, switch to your dark theme",
+          "default": true
+        },
+        "auto-close-tag.activationOnLanguage": {
+          "type": "array",
+          "default": [
+            "xml",
+            "php",
+            "blade",
+            "ejs",
+            "glimmer-js",
+            "glimmer-ts",
+            "jinja",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "plaintext",
+            "markdown",
+            "vue",
+            "liquid",
+            "erb",
+            "lang-cfml",
+            "cfml",
+            "HTML (EEx)",
+            "HTML (Eex)",
+            "plist"
+          ],
+          "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"]. Use [\"*\"] to activate for all languages.",
+          "scope": "resource"
+        },
+        "auto-close-tag.disableOnLanguage": {
+          "type": "array",
+          "default": [],
+          "description": "Set the languages where the extension will be disabled.  e.g. [\"html\",\"xml\",\"php\"].",
+          "scope": "resource"
+        },
+        "auto-close-tag.excludedTags": {
+          "type": "array",
+          "default": [
+            "area",
+            "base",
+            "br",
+            "col",
+            "command",
+            "embed",
+            "hr",
+            "img",
+            "input",
+            "keygen",
+            "link",
+            "meta",
+            "param",
+            "source",
+            "track",
+            "wbr"
+          ],
+          "description": "Set the tag list that would not be auto closed.",
+          "scope": "resource"
+        },
+        "auto-close-tag.SublimeText3Mode": {
+          "type": "boolean",
+          "default": false,
+          "description": "Auto close tag when </ is typed, same as Sublime Text 3",
+          "scope": "resource"
+        },
+        "auto-close-tag.enableAutoCloseTag": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to insert close tag automatically",
+          "scope": "resource"
+        },
+        "auto-close-tag.enableAutoCloseSelfClosingTag": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to close self-closing tag automatically",
+          "scope": "resource"
+        },
+        "auto-close-tag.insertSpaceBeforeSelfClosingTag": {
+          "type": "boolean",
+          "default": false,
+          "description": "Insert a space before the forward slash in a self-closing tag.",
+          "scope": "resource"
+        },
+        "auto-close-tag.fullMode": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable both Visual Studio and Sublime Text mode",
+          "scope": "resource"
+        },
+        "auto-rename-tag.activationOnLanguage": {
+          "type": "array",
+          "default": [
+            "*"
+          ],
+          "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"] By default, it is [\"*\"] and will be activated for all languages.",
+          "scope": "resource"
+        }
       }
     },
     "keybindings": [
       {
         "key": "alt+n",
+        "mac": "cmd+alt+n",
         "command": "flawuldragon.extension.infos"
       },
       {
         "key": "alt+d",
+        "mac": "cmd+alt+d",
         "command": "flawuldragon.vanillaDatetime.active"
       },
       {
         "key": "alt+ctrl+d",
+        "mac": "cmd+alt+ctrl+d",
         "command": "flawuldragon.vanillaDatetime.deactive"
       },
       {
         "key": "alt+j",
+        "mac": "cmd+alt+j",
         "command": "flawuldragon.jetbrainsmonofont.activate"
       },
       {
         "key": "alt+ctrl+j",
+        "mac": "cmd+alt+ctrl+j",
         "command": "flawuldragon.jetbrainsmonofont.deactivate"
       },
       {
         "key": "alt+f",
+        "mac": "cmd+alt+f",
         "command": "flawuldragon.filesize.toggleFileSizeInfo"
       },
       {
         "key": "alt+ctrl+f",
+        "mac": "cmd+alt+ctrl+f",
         "command": "flawuldragon.filesize.toggleFileSizeAdvancedInfo"
       },
       {
         "key": "alt+shift+f",
+        "mac": "cmd+alt+shift+f",
         "command": "flawuldragon.filesize.enableStatusBar"
       },
       {
         "key": "alt+ctrl+shift+f",
+        "mac": "cmd+alt+ctrl+shift+f",
         "command": "flawuldragon.filesize.disableStatusBar"
       },
       {
         "key": "alt+t",
+        "mac": "cmd+alt+t",
         "command": "flawuldragon.todohighlight.toggleHighlight"
       },
       {
         "key": "alt+ctrl+t",
+        "mac": "cmd+alt+ctrl+t",
         "command": "flawuldragon.todohighlight.listAnnotations"
       },
       {
         "key": "alt+shift+t",
+        "mac": "cmd+alt+shift+t",
         "command": "flawuldragon.todohighlight.enableStatusBar"
       },
       {
         "key": "alt+ctrl+shift+t",
+        "mac": "cmd+alt+ctrl+shift+t",
         "command": "flawuldragon.todohighlight.disableStatusBar"
       },
       {
         "key": "alt+p",
+        "mac": "cmd+alt+p",
         "command": "flawuldragon.pomodoroClock.startPomodoro"
       },
       {
         "key": "alt+ctrl+p",
+        "mac": "cmd+alt+ctrl+p",
         "command": "flawuldragon.pomodoroClock.pausePomodoro"
       },
       {
         "key": "alt+shift+p",
+        "mac": "cmd+alt+shift+p",
         "command": "flawuldragon.pomodoroClock.continuePomodoro"
       },
       {
         "key": "alt+ctrl+shift+p",
+        "mac": "cmd+alt+ctrl+shift+p",
         "command": "flawuldragon.pomodoroClock.restartPomodoro"
       },
       {
         "key": "alt+r",
+        "mac": "cmd+alt+r",
         "command": "flawuldragon.pomodoroClock.resetPomodoro"
       },
       {
         "key": "alt+ctrl+r",
+        "mac": "cmd+alt+ctrl+r",
         "command": "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown"
       },
       {
         "key": "alt+shift+r",
+        "mac": "cmd+alt+shift+r",
         "command": "flawuldragon.pomodoroClock.showClockStatusBar"
       },
       {
         "key": "alt+ctrl+shift+r",
+        "mac": "cmd+alt+ctrl+shift+r",
         "command": "flawuldragon.pomodoroClock.hideClockStatusBar"
       },
       {
         "key": "alt+s",
+        "mac": "cmd+alt+s",
         "command": "flawuldragon.pomodoroClock.showTypeStatusBar"
       },
       {
         "key": "alt+ctrl+s",
+        "mac": "cmd+alt+ctrl+s",
         "command": "flawuldragon.pomodoroClock.hideTypeStatusBar"
       },
       {
         "key": "alt+1",
+        "mac": "cmd+alt+1",
         "command": "flawuldragon.themeswitch.lighttheme"
       },
       {
         "key": "alt+2",
+        "mac": "cmd+alt+2",
         "command": "flawuldragon.themeswitch.darktheme"
       },
       {
         "key": "alt+ctrl+h",
+        "mac": "cmd+alt+ctrl+h",
         "command": "flawuldragon.themeswitch.toggle"
+      },
+      {
+        "key": "alt+.",
+        "mac": "cmd+alt+.",
+        "command": "flawuldragon.auto-close-tag.closeTag"
       }
     ]
   },
@@ -750,19 +882,21 @@
     "eslint": "^8.24.0",
     "follow-redirects": "^1.13.3",
     "fs": "^0.0.1-security",
+    "fs-extra": "^10.0.1",
     "glob": "^8.0.3",
     "inly": "^4.0.8",
+    "merge-options": "^3.0.4",
     "mocha": "^10.0.0",
     "os-browserify": "^0.3.0",
     "path": "^0.12.7",
+    "prettier": "^2.6.1",
     "semantic-release": "^21.0.6",
     "semantic-release-vsce": "^5.5.10",
     "svgson": "^5.3.1",
+    "ts-loader": "^9.2.8",
     "tsx": "^3.13.0",
-    "typescript": "^5.2.2",
-    "vscode-test": "^1.5.0",
-    "webpack": "^5.44.0",
-    "webpack-cli": "^4.7.2"
+    "typescript": "^5.7.2",
+    "vscode-test": "^1.5.0"
   },
   "dependencies": {
     "brotli-size": "^4.0.0",
@@ -774,9 +908,17 @@
     "gzip-size": "^7.0.0",
     "image-size": "^1.1.1",
     "mime": "^4.0.4",
+    "source-map-support": "^0.5.21",
+    "vscode-languageclient": "^7.0.0",
     "yo": "^5.0.0"
   },
   "resolutions": {
     "minimist": "^1.2.5"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "avoid"
   }
 }

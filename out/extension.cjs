@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = activate;
 exports.deactivate = deactivate;
 exports.activationPrompt = activationPrompt;
+const AutoCloseTag_cjs_1 = require("./AutoCloseTag.cjs");
+const AutoRenameTag_cjs_1 = require("./AutoRenameTag.cjs");
 const FileSize_cjs_1 = require("./FileSize.cjs");
 const IndentRainbow_cjs_1 = require("./IndentRainbow.cjs");
 const JetbrainsIcons_cjs_1 = require("./JetbrainsIcons.cjs");
@@ -18,8 +20,10 @@ const jetbrainsicons = new JetbrainsIcons_cjs_1.JetbrainsIcons();
 const filesize = new FileSize_cjs_1.FileSize();
 const todohighlight = new TodoHighlight_cjs_1.TodoHighlight();
 const indentrainbow = new IndentRainbow_cjs_1.IndentRainbow();
-const pomodoroClock = new PomodoroClock_cjs_1.PomodoroClock();
-const themeSwitch = new ThemeSwitch_cjs_1.ThemeSwitch();
+const pomodoroclock = new PomodoroClock_cjs_1.PomodoroClock();
+const themeswitch = new ThemeSwitch_cjs_1.ThemeSwitch();
+const autoclosetag = new AutoCloseTag_cjs_1.AutoCloseTag();
+const autorenametag = new AutoRenameTag_cjs_1.AutoRenameTag();
 /**
  * Activates the extension.
  *
@@ -39,11 +43,13 @@ function activate(context) {
         filesize.filesize_activate(context);
         todohighlight.todoHighlight_activate(context);
         indentrainbow.indentRainbow_activate(context);
-        pomodoroClock.pomodoroClock_activate(context);
-        themeSwitch.themeSwitch_activate(context);
+        pomodoroclock.pomodoroClock_activate(context);
+        themeswitch.themeSwitch_activate(context);
+        autoclosetag.autoCloseTag_activate(context);
+        autorenametag.autoRenameTag_activate(context);
     }
     catch (error) {
-        console.log("Flawuldragon core hub - Error: " + error);
+        console.log("Flawuldragon Core Hub - Error: " + error);
         vscode.window.showErrorMessage("An error occurred while activating the Flawuldragon core hub: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
         deactivate(context);
     }
@@ -64,8 +70,10 @@ function deactivate(context) {
     filesize.filesize_deactivate();
     todohighlight.todoHighlight_desactivate();
     indentrainbow.indentRainbow_deactivate();
-    pomodoroClock.pomodoroClock_deactivate();
-    themeSwitch.themeSwitch_desactivate();
+    pomodoroclock.pomodoroClock_deactivate();
+    themeswitch.themeSwitch_desactivate();
+    autoclosetag.autoCloseTag_desactivate();
+    autorenametag.autoRenameTag_desactivate();
 }
 /**
  * Activates the JetBrains Mono prompt within the given VS Code extension context.

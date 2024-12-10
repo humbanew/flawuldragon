@@ -1,3 +1,5 @@
+import { AutoCloseTag } from "./AutoCloseTag.cjs";
+import { AutoRenameTag } from "./AutoRenameTag.cjs";
 import { FileSize } from "./FileSize.cjs";
 import { IndentRainbow } from "./IndentRainbow.cjs";
 import { JetbrainsIcons } from "./JetbrainsIcons.cjs";
@@ -14,8 +16,10 @@ const jetbrainsicons = new JetbrainsIcons();
 const filesize = new FileSize();
 const todohighlight = new TodoHighlight();
 const indentrainbow = new IndentRainbow();
-const pomodoroClock = new PomodoroClock();
-const themeSwitch = new ThemeSwitch();
+const pomodoroclock = new PomodoroClock();
+const themeswitch = new ThemeSwitch();
+const autoclosetag = new AutoCloseTag();
+const autorenametag = new AutoRenameTag();
 
 /**
  * Activates the extension.
@@ -37,10 +41,12 @@ export function activate(context: vscode.ExtensionContext) {
     filesize.filesize_activate(context);
     todohighlight.todoHighlight_activate(context);
     indentrainbow.indentRainbow_activate(context);
-    pomodoroClock.pomodoroClock_activate(context);
-    themeSwitch.themeSwitch_activate(context);
+    pomodoroclock.pomodoroClock_activate(context);
+    themeswitch.themeSwitch_activate(context);
+    autoclosetag.autoCloseTag_activate(context);
+    autorenametag.autoRenameTag_activate(context);
   } catch (error) {
-    console.log("Flawuldragon core hub - Error: " + error);
+    console.log("Flawuldragon Core Hub - Error: " + error);
     vscode.window.showErrorMessage(
       "An error occurred while activating the Flawuldragon core hub: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
     deactivate(context);
@@ -62,8 +68,10 @@ export function deactivate(context: vscode.ExtensionContext) {
   filesize.filesize_deactivate();
   todohighlight.todoHighlight_desactivate();
   indentrainbow.indentRainbow_deactivate();
-  pomodoroClock.pomodoroClock_deactivate();
-  themeSwitch.themeSwitch_desactivate();
+  pomodoroclock.pomodoroClock_deactivate();
+  themeswitch.themeSwitch_desactivate();
+  autoclosetag.autoCloseTag_desactivate();
+  autorenametag.autoRenameTag_desactivate();
 }
 
 /**
