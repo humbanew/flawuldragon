@@ -85,7 +85,7 @@ export class Vanilla {
       // update every second window to show the current time
       setInterval(() =>{
         let timer: Date = new Date(), text: string;
-        let date = `${timer.getDay()+1}-${timer.getMonth()+1}-${timer.getFullYear()}`;
+        let date = `${timer.getUTCDate()}-${timer.getUTCMonth()+1}-${timer.getFullYear()}`;
         let hours = timer.getHours().toString();
         let minutes = timer.getMinutes().toString();
         if(parseInt(hours) < 10) {
@@ -112,14 +112,6 @@ export class Vanilla {
       vscode.commands.registerCommand("flawuldragon.vanillaDatetime.deactive", ()=>{
         this.flawuldragonDateTimeStatusBar.hide();
       });
-
-      vscode.commands.registerCommand("flawuldragon.vanillaDatetime.12hFormat", ()=>{});
-      vscode.commands.registerCommand("flawuldragon.vanillaDatetime.24hFormat", ()=>{});
-      vscode.commands.registerCommand("flawuldragon.vanillaDatetime.toggleDate", ()=>{});
-      vscode.commands.registerCommand("flawuldragon.vanillaDatetime.untoggleDate", ()=>{});
-      vscode.commands.registerCommand("flawuldragon.vanillaDatetime.toggleSeconds", ()=>{});
-      vscode.commands.registerCommand("flawuldragon.vanillaDatetime.untoggleSeconds", ()=>{});
-      vscode.commands.registerCommand("flawuldragon.vanillaDatetime.invertPosition", ()=>{});
 
       // check if the extension is enabled in the settings
       if (

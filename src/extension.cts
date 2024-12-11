@@ -1,3 +1,4 @@
+import * as vscode from "vscode";
 import { AutoCloseTag } from "./AutoCloseTag.cjs";
 import { AutoRenameTag } from "./AutoRenameTag.cjs";
 import { FileSize } from "./FileSize.cjs";
@@ -8,7 +9,6 @@ import { PomodoroClock } from "./PomodoroClock.cjs";
 import { ThemeSwitch } from "./ThemeSwitch.cjs";
 import { TodoHighlight } from "./TodoHighlight.cjs";
 import { Vanilla } from "./Vanilla.cjs";
-import * as vscode from "vscode";
 
 const vanilla = new Vanilla();
 const jetbrainsmono = new JetbrainsMono();

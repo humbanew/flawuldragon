@@ -5,17 +5,107 @@ const assert_1 = require("assert");
 require("source-map-support/register");
 const vscode = require("vscode");
 const node_1 = require("vscode-languageclient/node");
-class ARTServer {
-}
-class ARTService {
-}
+/**
+ * The `AutoRenameTag` class provides functionality for automatically renaming HTML and Handlebars tags
+ * within a Visual Studio Code extension. It includes methods for setting up a language client proxy,
+ * handling text document changes, and applying auto-completion results to the active text editor.
+ *
+ * The class maintains state information such as the latest cancellation token source, previous text,
+ * regular expressions for matching tag names, and a mapping of offsets to words that need to be renamed.
+ *
+ * Key methods include:
+ * - `autoRenameTag_createLanguageClientProxy`: Creates a language client proxy for communication with the language server.
+ * - `autoRenameTag_askServerForAutoCompletionsElementRenameTag`: Requests auto-completion suggestions from the server.
+ * - `autoRenameTag_applyResults`: Applies the results of the auto rename tag operation to the active text editor.
+ * - `autoRenameTag_updateWordsAtOffset`: Updates the words at specific offsets based on the provided tags.
+ * - `autoRenameTag_doAutoCompletionElementRenameTag`: Handles the auto-completion and renaming of tags within the active text editor.
+ * - `autoRenameTag_setPreviousText`: Sets the previous text from the provided text editor.
+ * - `autoRenameTag_activate`: Activates the Auto Rename Tag feature for the Flawuldragon extension.
+ * - `autoRenameTag_desactivate`: Deactivates the auto rename tag feature.
+ *
+ * The class also includes utility methods for asserting that values are defined and for managing the state of the auto rename tag feature.
+ *
+ * @class
+ * @example
+ * // Example usage:
+ * const autoRenameTag = new AutoRenameTag();
+ * autoRenameTag.autoRenameTag_activate(context);
+ */
 class AutoRenameTag {
+    /**
+     * A token source that can be used to cancel the latest operation.
+     * This property holds an instance of `vscode.CancellationTokenSource` or `undefined` if no operation is in progress.
+     */
     latestCancelTokenSource;
+    /**
+     * Stores the previous text value for comparison or other purposes.
+     * This property is protected and can be undefined if no previous text is set.
+     */
     previousText;
+    /**
+     * Regular expression to match the left part of an HTML tag name.
+     * This pattern matches the start of an HTML tag, including the opening angle bracket `<`
+     * and any characters that are not whitespace, backslashes, forward slashes, single quotes,
+     * double quotes, parentheses, backticks, curly braces, or square brackets.
+     *
+     * Example matches:
+     * - `<div`
+     * - `</span`
+     *
+     * Example non-matches:
+     * - `< div`
+     * - `<div>`
+     */
     tagNameReLeft = /<\/?[^<>\s\\\/\'\"\(\)\`\{\}\[\]]*$/;
+    /**
+     * Regular expression to match the right part of a tag name.
+     * This pattern matches any sequence of characters that are not
+     * angle brackets, whitespace, backslashes, forward slashes,
+     * single quotes, double quotes, parentheses, backticks, curly braces,
+     * or square brackets.
+     */
     tagNameRERight = /^[^<>\s\\\/\'\"\(\)\`\{\}\[\]]*/;
-    autoRenameTag_createIARTLanguageClientProxy = async (context, id, name, clientOptions) => {
-        const serverModule = context.asAbsolutePath('../server/dist/serverMain.js');
+    /**
+     * A request type for the auto-rename-tag feature.
+     *
+     * This request type is used to handle requests for automatically renaming tags.
+     * It takes parameters of type `IARTParams` and returns an array of `IARTResult`.
+     */
+    autoRenameTagRequestType = new node_1.RequestType('$/auto-rename-tag');
+    /**
+     * Utility variable that stores the last changed version (document.uri.fsPath and document.version)
+     * When a change was caused by auto-rename-tag, we can ignore that change, which is a simple performance improvement. One thing to take care of is undo, but that works now (and there are test cases).
+     */
+    lastChangeByAutoRenameTag = {
+        fsPath: '',
+        version: -1
+    };
+    /**
+     * A mapping of offsets to words that need to be renamed.
+     * Each offset is associated with an object containing the old word and the new word.
+     *
+     * @property {Object.<string, { oldWord: string, newWord: string }>} wordsAtOffsets
+     * - The key is the offset as a string.
+     * - The value is an object containing:
+     *   - `oldWord`: The original word at the given offset.
+     *   - `newWord`: The new word to replace the original word.
+     */
+    wordsAtOffsets = {};
+    /**
+     * Creates a language client proxy for the AutoRenameTag extension.
+     *
+     * @param context - The VS Code extension context.
+     * @param id - The unique identifier for the language client.
+     * @param name - The name of the language client.
+     * @param clientOptions - The options for the language client.
+     * @returns A promise that resolves to an `IARTLanguageClientProxy` instance.
+     *
+     * The function sets up the server module path, server options, and output channel for the language client.
+     * It then creates a new `LanguageClient` instance, registers proposed features, and starts the client.
+     * Once the client is ready, it returns a proxy object that allows sending requests to the language server.
+     */
+    autoRenameTag_createLanguageClientProxy = async (context, id, name, clientOptions) => {
+        const serverModule = context.asAbsolutePath('../out/ARTServer.ac.cjs');
         const serverOptions = {
             run: { module: serverModule, transport: node_1.TransportKind.ipc },
             debug: {
@@ -67,6 +157,14 @@ class AutoRenameTag {
         };
         return languageClientProxy;
     };
+    /**
+     * Asserts that the provided value is neither `undefined` nor `null`.
+     * Throws an `AssertionError` if the value is `undefined` or `null`.
+     *
+     * @template T - The type of the value to be asserted.
+     * @param value - The value to be checked.
+     * @throws {AssertionError} If the value is `undefined` or `null`.
+     */
     autoRenameTag_assertDefined = val => {
         if (val === undefined || val === null) {
             throw new assert_1.AssertionError({
@@ -74,24 +172,36 @@ class AutoRenameTag {
             });
         }
     };
-    autoRenameTag_autoRenameTagRequestType = new node_1.RequestType('$/auto-rename-tag');
     // TODO implement max concurrent requests
-    autoRenameTag_askServerForAutoCompletionsElementRenameIARTTag = async (languageClientProxy, document, tags) => {
+    /**
+     * Asks the server for auto-completions for renaming tags.
+     *
+     * @param languageClientProxy - The language client proxy to communicate with the server.
+     * @param document - The text document in which the tags are located.
+     * @param tags - The list of tags to be renamed.
+     * @returns A promise that resolves to an array of results containing the auto-completions.
+     */
+    autoRenameTag_askServerForAutoCompletionsElementRenameTag = async (languageClientProxy, document, tags) => {
         const params = {
             textDocument: languageClientProxy.code2ProtocolConverter.asVersionedTextDocumentIdentifier(document),
             tags
         };
-        return languageClientProxy.sendRequest(this.autoRenameTag_autoRenameTagRequestType, params);
+        return languageClientProxy.sendRequest(this.autoRenameTagRequestType, params);
     };
     /**
-     * Utility variable that stores the last changed version (document.uri.fsPath and document.version)
-     * When a change was caused by auto-rename-tag, we can ignore that change, which is a simple performance improvement. One thing to take care of is undo, but that works now (and there are test cases).
+     * Applies the results of the auto rename tag operation to the active text editor.
+     *
+     * @param results - An array of IARTResult objects containing the results of the auto rename tag operation.
+     * @returns A promise that resolves when the operation is complete.
+     *
+     * This method performs the following steps:
+     * 1. Asserts that there is an active text editor.
+     * 2. Stores the current version of the document.
+     * 3. Applies the edits to the document using the provided results.
+     * 4. Updates the last change information if the edits were successfully applied.
+     * 5. Adjusts the wordsAtOffsets mapping based on the results.
      */
-    autoRenameTag_lastChangeByAutoRenameTag = {
-        fsPath: '',
-        version: -1
-    };
-    autoRenameTag_applyIARTResults = async (results) => {
+    autoRenameTag_applyResults = async (results) => {
         this.autoRenameTag_assertDefined(vscode.window.activeTextEditor);
         const prev = vscode.window.activeTextEditor.document.version;
         const applied = await vscode.window.activeTextEditor.edit(editBuilder => {
@@ -110,7 +220,7 @@ class AutoRenameTag {
         if (!applied) {
             return;
         }
-        this.autoRenameTag_lastChangeByAutoRenameTag = {
+        this.lastChangeByAutoRenameTag = {
             fsPath: vscode.window.activeTextEditor.document.uri.fsPath,
             version: vscode.window.activeTextEditor.document.version
         };
@@ -130,7 +240,16 @@ class AutoRenameTag {
             };
         }
     };
-    wordsAtOffsets = {};
+    /**
+     * Updates the words at specific offsets based on the provided tags.
+     *
+     * This method updates the `wordsAtOffsets` property of the class. It first checks if the current
+     * offsets in `wordsAtOffsets` match the provided tags. If they do not match, it resets the
+     * `wordsAtOffsets` object. Then, it updates the `wordsAtOffsets` with the new offsets and words
+     * from the provided tags.
+     *
+     * @param tags - An array of tags containing offset information and words to update.
+     */
     autoRenameTag_updateWordsAtOffset = tags => {
         const keys = Object.keys(this.wordsAtOffsets);
         if (keys.length > 0) {
@@ -157,6 +276,29 @@ class AutoRenameTag {
             tag.oldWord = this.wordsAtOffsets[tag.offset].oldWord;
         }
     };
+    /**
+     * Handles the auto-completion and renaming of tags within the active text editor.
+     *
+     * @param languageClientProxy - The language client proxy used to communicate with the language server.
+     * @param tags - An array of tags to be processed for auto-completion and renaming.
+     * @returns A promise that resolves when the auto-completion and renaming process is complete.
+     *
+     * This method performs the following steps:
+     * 1. Cancels any ongoing auto-completion process if one exists.
+     * 2. Creates a new cancellation token source for the current operation.
+     * 3. Checks if there is an active text editor. If not, the process is aborted.
+     * 4. Captures the document version before making any changes.
+     * 5. Waits for any pending changes to be applied.
+     * 6. Checks if the last change was made by the auto rename tag feature. If so, the process is aborted.
+     * 7. Requests auto-completion suggestions from the server.
+     * 8. If the operation is cancelled during the request, the process is aborted.
+     * 9. If the current cancellation token source is still valid, it is disposed of.
+     * 10. If no results are returned, the process is aborted.
+     * 11. Checks if there is an active text editor. If not, the process is aborted.
+     * 12. Captures the document version after making changes.
+     * 13. If the document version has changed during the process, the results are not applied.
+     * 14. Applies the auto-completion results to the document.
+     */
     autoRenameTag_doAutoCompletionElementRenameTag = async (languageClientProxy, tags) => {
         if (this.latestCancelTokenSource) {
             this.latestCancelTokenSource.cancel();
@@ -172,16 +314,16 @@ class AutoRenameTag {
         if (!vscode.window.activeTextEditor) {
             return;
         }
-        if (this.autoRenameTag_lastChangeByAutoRenameTag.fsPath ===
+        if (this.lastChangeByAutoRenameTag.fsPath ===
             vscode.window.activeTextEditor.document.uri.fsPath &&
-            this.autoRenameTag_lastChangeByAutoRenameTag.version ===
+            this.lastChangeByAutoRenameTag.version ===
                 vscode.window.activeTextEditor.document.version) {
             return;
         }
         if (cancelTokenSource.token.isCancellationRequested) {
             return;
         }
-        const results = await this.autoRenameTag_askServerForAutoCompletionsElementRenameIARTTag(languageClientProxy, vscode.window.activeTextEditor.document, tags);
+        const results = await this.autoRenameTag_askServerForAutoCompletionsElementRenameTag(languageClientProxy, vscode.window.activeTextEditor.document, tags);
         if (cancelTokenSource.token.isCancellationRequested) {
             return;
         }
@@ -200,8 +342,14 @@ class AutoRenameTag {
         if (beforeVersion !== afterVersion) {
             return;
         }
-        await this.autoRenameTag_applyIARTResults(results);
+        await this.autoRenameTag_applyResults(results);
     };
+    /**
+     * Sets the previous text from the provided text editor.
+     * If the text editor is undefined, it sets the previous text to undefined.
+     *
+     * @param textEditor - The text editor from which to retrieve the text. If undefined, the previous text is set to undefined.
+     */
     autoRenameTag_setPreviousText = textEditor => {
         if (textEditor) {
             this.previousText = textEditor.document.getText();
@@ -210,6 +358,30 @@ class AutoRenameTag {
             this.previousText = undefined;
         }
     };
+    /**
+     * Activates the Auto Rename Tag feature for the Flawuldragon extension.
+     *
+     * This method sets up the necessary event listeners and configurations to enable
+     * the automatic renaming of HTML and Handlebars tags in the editor. It listens for
+     * changes in the text document and updates the tags accordingly.
+     *
+     * @param context - The extension context provided by VSCode.
+     *
+     * @throws Will show an error message if an error occurs during activation.
+     *
+     * @remarks
+     * - The method checks if the feature is enabled for the current document based on
+     *   the language ID and editor settings.
+     * - It sets up a change listener to handle text document changes and update tags.
+     * - It also listens for configuration changes to purge the cache for `vscode.workspace.getConfiguration`.
+     *
+     * @example
+     * ```typescript
+     * // Activate the Auto Rename Tag feature
+     * const context: vscode.ExtensionContext = ...;
+     * await autoRenameTag_activate(context);
+     * ```
+     */
     async autoRenameTag_activate(context) {
         try {
             vscode.workspace
@@ -244,7 +416,12 @@ class AutoRenameTag {
                     }
                 ]
             };
-            const languageClientProxy = await this.autoRenameTag_createIARTLanguageClientProxy(context, 'auto-rename-tag', 'Auto Rename Tag', clientOptions);
+            // const languageClientProxy = await this.autoRenameTag_createLanguageClientProxy(
+            //   context,
+            //   'auto-rename-tag',
+            //   'Auto Rename Tag',
+            //   clientOptions
+            // );
             let activeTextEditor = vscode.window.activeTextEditor;
             let changeListener;
             context.subscriptions.push({
@@ -292,25 +469,25 @@ class AutoRenameTag {
                         const lineChangeOffset = change.rangeOffset - lineStart;
                         const lineLeft = line.text.slice(0, lineChangeOffset + totalInserted);
                         const lineRight = line.text.slice(lineChangeOffset + totalInserted);
-                        const lineIARTTagNameLeft = lineLeft.match(this.tagNameReLeft);
-                        const lineIARTTagNameRight = lineRight.match(this.tagNameRERight);
+                        const lineTagNameLeft = lineLeft.match(this.tagNameReLeft);
+                        const lineTagNameRight = lineRight.match(this.tagNameRERight);
                         const previousTextRight = this.previousText.slice(change.rangeOffset);
-                        const previousIARTTagNameRight = previousTextRight.match(this.tagNameRERight);
+                        const previousTagNameRight = previousTextRight.match(this.tagNameRERight);
                         let newWord;
                         let oldWord;
-                        if (!lineIARTTagNameLeft) {
+                        if (!lineTagNameLeft) {
                             totalInserted += change.text.length - change.rangeLength;
                             continue;
                         }
-                        newWord = lineIARTTagNameLeft[0];
-                        oldWord = lineIARTTagNameLeft[0];
-                        if (lineIARTTagNameRight) {
-                            newWord += lineIARTTagNameRight[0];
+                        newWord = lineTagNameLeft[0];
+                        oldWord = lineTagNameLeft[0];
+                        if (lineTagNameRight) {
+                            newWord += lineTagNameRight[0];
                         }
-                        if (previousIARTTagNameRight) {
-                            oldWord += previousIARTTagNameRight[0];
+                        if (previousTagNameRight) {
+                            oldWord += previousTagNameRight[0];
                         }
-                        const offset = change.rangeOffset - lineIARTTagNameLeft[0].length + totalInserted;
+                        const offset = change.rangeOffset - lineTagNameLeft[0].length + totalInserted;
                         tags.push({
                             oldWord,
                             word: newWord,
@@ -326,7 +503,7 @@ class AutoRenameTag {
                     }
                     this.autoRenameTag_assertDefined(vscode.window.activeTextEditor);
                     this.previousText = currentText;
-                    this.autoRenameTag_doAutoCompletionElementRenameTag(languageClientProxy, tags);
+                    // this.autoRenameTag_doAutoCompletionElementRenameTag(languageClientProxy, tags);
                 });
             };
             this.autoRenameTag_setPreviousText(vscode.window.activeTextEditor);
@@ -346,14 +523,19 @@ class AutoRenameTag {
             }));
         }
         catch (error) {
-            console.log("Flawuldragon Auto Rename Tag - Error: " + error);
-            vscode.window.showErrorMessage("An error occurred while activating the Flawuldragon Auto Rename Tag: " +
+            console.log('Flawuldragon Auto Rename Tag - Error: ' + error);
+            vscode.window.showErrorMessage('An error occurred while activating the Flawuldragon Auto Rename Tag: ' +
                 error +
-                ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
+                '. Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)');
             this.autoRenameTag_desactivate();
         }
-        finally { }
+        finally {
+        }
     }
+    /**
+     * Deactivates the auto rename tag feature.
+     * Logs a message indicating that the auto rename tag is deactivated.
+     */
     autoRenameTag_desactivate() {
         console.log('Auto Rename Tag is desactivate.');
     }
