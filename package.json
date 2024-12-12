@@ -203,13 +203,13 @@
     "commands": [
       {
         "category": "Flawuldragon",
-        "command": "flawuldragon.vanillaDatetime.active",
-        "title": "Activate Vanilla Date & Time"
+        "command": "flawuldragon.extension.infos",
+        "title": "Show the Flawuldragon Notes"
       },
       {
         "category": "Flawuldragon",
-        "command": "flawuldragon.vanillaDatetime.deactive",
-        "title": "Deactivate Vanilla Date & Time"
+        "command": "flawuldragon.vanillaDateTime.ui.interruptorStatusBar",
+        "title": "Show or Hide the vanilla date and time status bar item"
       },
       {
         "category": "Flawuldragon",
@@ -731,12 +731,7 @@
       {
         "key": "alt+d",
         "mac": "cmd+alt+d",
-        "command": "flawuldragon.vanillaDatetime.active"
-      },
-      {
-        "key": "alt+ctrl+d",
-        "mac": "cmd+alt+ctrl+d",
-        "command": "flawuldragon.vanillaDatetime.deactive"
+        "command": "flawuldragon.vanillaDateTime.ui.interruptorStatusBar"
       },
       {
         "key": "alt+j",

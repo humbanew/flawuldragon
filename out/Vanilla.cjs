@@ -34,6 +34,23 @@ class Vanilla {
      * This ID is used to register and manage the status bar item within the extension.
      */
     flawuldragonStatusbaritemId = "flawuldragon.extension.infos";
+    vanilla_flawuldragonNotes() { }
+    vanilla_dateTime() { }
+    vanilla_interruptorStatusBarConstructor(statusBarItem, command) {
+        const interruptor = { on: true, off: false };
+        vscode.commands.registerCommand(command, () => {
+            if (interruptor.on == true) {
+                statusBarItem.hide();
+                interruptor.on = false;
+                interruptor.off = true;
+            }
+            else {
+                statusBarItem.show();
+                interruptor.on = true;
+                interruptor.off = false;
+            }
+        });
+    }
     /**
      * Activates the Flawuldragon extension.
      *
@@ -83,13 +100,16 @@ class Vanilla {
             this.flawuldragonDateTimeStatusBar.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
             this.flawuldragonDateTimeStatusBar.show();
             context.subscriptions.push(this.flawuldragonDateTimeStatusBar);
-            // flawuldragon commands
-            vscode.commands.registerCommand("flawuldragon.vanillaDatetime.active", () => {
-                this.flawuldragonDateTimeStatusBar.show();
-            });
-            vscode.commands.registerCommand("flawuldragon.vanillaDatetime.deactive", () => {
-                this.flawuldragonDateTimeStatusBar.hide();
-            });
+            const DateTimeInterruptor = { on: true, off: false };
+            // flawuldragon aprimored experimental commands
+            this.vanilla_interruptorStatusBarConstructor(this.flawuldragonDateTimeStatusBar, "flawuldragon.vanillaDateTime.ui.interruptorStatusBar"); // show or hide the status bar
+            const vanillaDateTime = class VDateTime extends Vanilla {
+            };
+            const vanillaExtensionIntelligence = class VExtensionIntelligence extends Vanilla {
+            };
+            vscode.commands.registerCommand("flawuldragon.vanillaDateTime.invertPosition", () => { });
+            vscode.commands.registerCommand("flawuldragon.vanillaDateTime.showSeconds", () => { });
+            vscode.commands.registerCommand("flawuldragon.vanillaDateTime.timeFormat", () => { });
             // check if the extension is enabled in the settings
             if (vscode.workspace.getConfiguration("flawuldragon").get("enable") === false) {
                 console.warn("Flawuldragon is disabled. Enable it in your settings.");
