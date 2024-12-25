@@ -122,6 +122,8 @@ export class Vanilla {
       console.log('Flawuldragon - Vanilla activated!');
       this.vanilla_flawuldragonNotes(context);
 
+      const vtimer = new VTimer(context);
+
       /** -------------------- Development Block ------------------------------- */
 
       // flawuldragon date and time status bar items
@@ -155,8 +157,6 @@ export class Vanilla {
         'flawuldragon.vanillaDateTime.ui.interruptorStatusBar'
       ); // show or hide the status bar
 
-      const vanillaDateTime = class VDateTime extends Vanilla {};
-      const vanillaExtensionIntelligence = class VExtensionIntelligence extends Vanilla {};
       vscode.commands.registerCommand(
         'flawuldragon.vanillaDateTime.invertPosition',
         () => {}
@@ -201,6 +201,17 @@ class VDateTime {
    */
   protected flawuldragonDateTimeStatusBar: vscode.StatusBarItem =
     vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 98);
+}
+
+class VTimer {
+  protected flawuldragonTimerStatusBar: vscode.StatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 97);
+
+  public constructor(context: vscode.ExtensionContext){
+    this.flawuldragonTimerStatusBar.text = "00:00:00 Elapsed (Placeholder)";
+    this.flawuldragonTimerStatusBar.backgroundColor = new vscode.ThemeColor('statusBarItem.warningBackground');
+    this.flawuldragonTimerStatusBar.show();
+    context.subscriptions.push(this.flawuldragonTimerStatusBar);
+  }
 }
 
 class VExtensionIntelligence {}

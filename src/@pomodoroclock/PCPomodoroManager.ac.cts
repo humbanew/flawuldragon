@@ -147,11 +147,11 @@ export class PCPomodoroManager {
     if (!this._clockBarText) {
       this._clockBarText = vscode.window.createStatusBarItem(
         vscode.StatusBarAlignment.Left,
-        94,
+        93,
       );
       this._typeBarText = vscode.window.createStatusBarItem(
         vscode.StatusBarAlignment.Left,
-        95,
+        94,
       );
       this._clockBarText.command =
         "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown";

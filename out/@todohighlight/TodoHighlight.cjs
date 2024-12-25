@@ -456,7 +456,7 @@ class TodoHighlight {
      * @returns {vscode.StatusBarItem} The created status bar item.
      */
     todoHighlight_createStatusBarItem(numNotations) {
-        let todoHighlightStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 96);
+        let todoHighlightStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 95);
         if (numNotations == 0) {
             todoHighlightStatusBarItem.text = this.defaultIcon + " " + this.defaultMsg;
         }

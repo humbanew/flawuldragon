@@ -1,13 +1,13 @@
 import * as vscode from "vscode";
-import { AutoCloseTag } from "./AutoCloseTag.cjs";
-import { AutoRenameTag } from "./AutoRenameTag.cjs";
-import { FileSize } from "./FileSize.cjs";
-import { IndentRainbow } from "./IndentRainbow.cjs";
-import { JetbrainsIcons } from "./JetbrainsIcons.cjs";
-import { JetbrainsMono } from "./JetbrainsMono.cjs";
-import { PomodoroClock } from "./PomodoroClock.cjs";
-import { ThemeSwitch } from "./ThemeSwitch.cjs";
-import { TodoHighlight } from "./TodoHighlight.cjs";
+import { AutoCloseTag } from "./@autoclosetag/AutoCloseTag.cjs";
+import { AutoRenameTag } from "./@autorenametag/AutoRenameTag.cjs";
+import { FileSize } from "./@filesize/FileSize.cjs";
+import { IndentRainbow } from "./@indentrainbow/IndentRainbow.cjs";
+import { JetbrainsIcons } from "./@jetbrainsicons/JetbrainsIcons.cjs";
+import { JetbrainsMono } from "./@jetbrainsmono/JetbrainsMono.cjs";
+import { PomodoroClock } from "./@pomodoroclock/PomodoroClock.cjs";
+import { ThemeSwitch } from "./@themeswitch/ThemeSwitch.cjs";
+import { TodoHighlight } from "./@todohighlight/TodoHighlight.cjs";
 import { Vanilla } from "./Vanilla.cjs";
 
 const vanilla = new Vanilla();

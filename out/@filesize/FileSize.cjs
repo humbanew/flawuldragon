@@ -19,7 +19,7 @@ class FileSize {
      * A status bar item that displays the file size in the Visual Studio Code editor.
      * It is aligned to the left side of the status bar with a priority of 98.
      */
-    filesizeStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 97);
+    filesizeStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 96);
     /**
      * Retrieves the current file size of the active text editor's document and updates the provided status item with the file size.
      *

@@ -32,13 +32,13 @@ export class JetbrainsIcons {
    * The path to the build directory where the output icons will be stored.
    * This path is constructed by joining the current directory with the relative path "../out/icons".
    */
-  protected BUILD_DIR_PATH = path.join(this.__dirname, "../out/icons");
+  protected BUILD_DIR_PATH = path.join(this.__dirname, "../../out/icons");
 
   /**
    * The path to the source directory containing theme icons.
    * This path is constructed by joining the current directory with the relative path to the icons directory.
    */
-  protected SRC_DIR_PATH = path.join(this.__dirname, "../themes/icons");
+  protected SRC_DIR_PATH = path.join(this.__dirname, "../../themes/icons");
 
   /**
    * Retrieves the icon paths from the given theme.
