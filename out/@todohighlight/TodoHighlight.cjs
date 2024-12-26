@@ -44,8 +44,6 @@ class TodoHighlight {
     /**
      * A status bar item to display the current status of TODOs.
      * This item is used to provide quick information and actions related to TODOs in the editor.
-     *
-     * @type {vscode.StatusBarItem | undefined}
      */
     todoStatusBarItem;
     /**
@@ -452,8 +450,6 @@ class TodoHighlight {
      * This status bar item is positioned on the left side of the status bar with a priority of 98.
      * It displays a default icon and message, and provides a tooltip and command for listing annotations.
      * The background color of the status bar item is set to a warning theme color.
-     *
-     * @returns {vscode.StatusBarItem} The created status bar item.
      */
     todoHighlight_createStatusBarItem(numNotations) {
         let todoHighlightStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 95);
@@ -664,12 +660,20 @@ class TodoHighlight {
                 var annotationList = workspaceState.get("annotationList", []);
                 new TodoHighlight().todoHighlight_showOutputChannel(annotationList);
             }));
-            context.subscriptions.push(vscode.commands.registerCommand("flawuldragon.todohighlight.enableStatusBar", () => {
-                this.todoStatusBarItem.show();
-            }));
-            context.subscriptions.push(vscode.commands.registerCommand("flawuldragon.todohighlight.disableStatusBar", () => {
-                this.todoStatusBarItem.hide();
-            }));
+            const statusBarCommand = "flawuldragon.todohighlight.ui.interruptorStatusBar";
+            const interruptor = { on: true, off: false };
+            vscode.commands.registerCommand(statusBarCommand, () => {
+                if (interruptor.on == true) {
+                    this.todoStatusBarItem.hide();
+                    interruptor.on = false;
+                    interruptor.off = true;
+                }
+                else {
+                    this.todoStatusBarItem.show();
+                    interruptor.on = true;
+                    interruptor.off = false;
+                }
+            });
             if (activeEditor) {
                 triggerUpdateDecorations();
             }

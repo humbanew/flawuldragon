@@ -89,7 +89,7 @@ export class Vanilla {
     }
   }
 
-  protected vanilla_interruptorStatusBarConstructor(
+  public vanilla_interruptorStatusBarConstructor(
     statusBarItem: vscode.StatusBarItem,
     command: string
   ): void {
@@ -121,8 +121,7 @@ export class Vanilla {
     try {
       console.log('Flawuldragon - Vanilla activated!');
       this.vanilla_flawuldragonNotes(context);
-
-      const vtimer = new VTimer(context);
+      // const vtimer = new VTimer(context);
 
       /** -------------------- Development Block ------------------------------- */
 
@@ -151,12 +150,12 @@ export class Vanilla {
       this.flawuldragonDateTimeStatusBar.show();
       context.subscriptions.push(this.flawuldragonDateTimeStatusBar);
 
-      // flawuldragon aprimored experimental commands
       this.vanilla_interruptorStatusBarConstructor(
         this.flawuldragonDateTimeStatusBar,
         'flawuldragon.vanillaDateTime.ui.interruptorStatusBar'
       ); // show or hide the status bar
-
+      
+      // flawuldragon dont applied commands
       vscode.commands.registerCommand(
         'flawuldragon.vanillaDateTime.invertPosition',
         () => {}
@@ -204,6 +203,27 @@ class VDateTime {
 }
 
 class VTimer {
+  protected horas = 0;
+  protected minutos = 0;
+  protected segundos = 0;
+  protected temporizador = setInterval(()=>{
+    this.segundos++;
+    if (this.segundos == 60){
+      this.segundos = 0;
+      this.minutos++;
+    }
+    if (this.minutos == 60){
+      this.minutos = 0;
+      this.horas++;
+    }
+  }, 1000);
+
+  protected escritorDeInformacoes(): void {
+    // write the timer information
+    // date, time, timer, etc.
+    // fs.writeFileSync('./timerInfos.txt', 'Timer: ' + this.horas + ':' + this.minutos + ':' + this.segundos);
+  }
+
   protected flawuldragonTimerStatusBar: vscode.StatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 97);
 
   public constructor(context: vscode.ExtensionContext){
@@ -212,6 +232,14 @@ class VTimer {
     this.flawuldragonTimerStatusBar.show();
     context.subscriptions.push(this.flawuldragonTimerStatusBar);
   }
+
+  protected vtimer_storageInformations(): void {
+    // store the timer information
+  }
 }
 
-class VExtensionIntelligence {}
+class VExtensionIntelligence {
+  public constructor(){
+    vscode.workspace.getConfiguration().get('extensions');
+  }
+}

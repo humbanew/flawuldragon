@@ -7,6 +7,7 @@ import { ITHErrorHandler } from "./ITHErrorHandler";
 import { ITHAnnotation } from "./ITHAnnotation";
 import { ITHAnnotationsFoundError } from "./ITHAnnotationsFoundError";
 import { ITHAnnotations } from "./ITHAnnotations";
+import { IVFDInterruptor } from "../IVFDInterruptor";
 
 /**
  * The `TodoHighlight` class provides functionality to highlight and manage TODO annotations within a Visual Studio Code workspace.
@@ -57,10 +58,8 @@ export class TodoHighlight {
   /**
    * A status bar item to display the current status of TODOs.
    * This item is used to provide quick information and actions related to TODOs in the editor.
-   *
-   * @type {vscode.StatusBarItem | undefined}
    */
-  protected todoStatusBarItem: vscode.StatusBarItem | undefined;
+  protected todoStatusBarItem: vscode.StatusBarItem;
 
   /**
    * A collection of default keywords used for highlighting TODO comments in the code.
@@ -595,8 +594,6 @@ export class TodoHighlight {
    * This status bar item is positioned on the left side of the status bar with a priority of 98.
    * It displays a default icon and message, and provides a tooltip and command for listing annotations.
    * The background color of the status bar item is set to a warning theme color.
-   *
-   * @returns {vscode.StatusBarItem} The created status bar item.
    */
   protected todoHighlight_createStatusBarItem(numNotations?: number) {
     let todoHighlightStatusBarItem = vscode.window.createStatusBarItem(
@@ -919,17 +916,19 @@ export class TodoHighlight {
         ),
       );
 
-      context.subscriptions.push(
-        vscode.commands.registerCommand("flawuldragon.todohighlight.enableStatusBar", ()=>{
-          this.todoStatusBarItem.show();
-        })
-      );
-
-      context.subscriptions.push(
-        vscode.commands.registerCommand("flawuldragon.todohighlight.disableStatusBar", ()=>{
+      const statusBarCommand = "flawuldragon.todohighlight.ui.interruptorStatusBar";
+      const interruptor: IVFDInterruptor = { on: true, off: false };
+      vscode.commands.registerCommand(statusBarCommand, () => {
+        if (interruptor.on == true) {
           this.todoStatusBarItem.hide();
-        })
-      );
+          interruptor.on = false;
+          interruptor.off = true;
+        } else {
+          this.todoStatusBarItem.show();
+          interruptor.on = true;
+          interruptor.off = false;
+        }
+      });
   
       if (activeEditor) {
         triggerUpdateDecorations();

@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FileSize = void 0;
 const fs = require("node:fs");
 const vscode = require("vscode");
+const Vanilla_cjs_1 = require("../Vanilla.cjs");
+const vanillaFeatures = new Vanilla_cjs_1.Vanilla();
 /**
  * A class that provides functionality to display the file size of the currently active text editor's document
  * in the Visual Studio Code status bar. It includes methods to retrieve and convert file sizes, as well as
@@ -120,12 +122,8 @@ class FileSize {
             content.subscriptions.push(vscode.commands.registerCommand("flawuldragon.filesize.toggleFileSizeInfo", () => {
                 this.filesize_getCurrentFileSize(this.filesizeStatusBar);
             }));
-            content.subscriptions.push(vscode.commands.registerCommand("flawuldragon.filesize.enableStatusBar", () => {
-                this.filesizeStatusBar.show();
-            }));
-            content.subscriptions.push(vscode.commands.registerCommand("flawuldragon.filesize.disableStatusBar", () => {
-                this.filesizeStatusBar.hide();
-            }));
+            let statusBarCommand = "flawuldragon.filesize.ui.interruptorStatusBar";
+            vanillaFeatures.vanilla_interruptorStatusBarConstructor(this.filesizeStatusBar, statusBarCommand);
             vscode.window.onDidChangeActiveTextEditor(() => {
                 this.filesize_getCurrentFileSize(this.filesizeStatusBar);
                 this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);

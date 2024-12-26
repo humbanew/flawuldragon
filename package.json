@@ -233,13 +233,8 @@
       },
       {
         "category": "Flawuldragon",
-        "command": "flawuldragon.filesize.enableStatusBar",
-        "title": "Enable file size info in status bar"
-      },
-      {
-        "category": "Flawuldragon",
-        "command": "flawuldragon.filesize.disableStatusBar",
-        "title": "Disable file size info in status bar"
+        "command": "flawuldragon.filesize.ui.interruptorStatusBar",
+        "title": "Show or Hide the file size status bar item"
       },
       {
         "category": "Flawuldragon",
@@ -258,13 +253,8 @@
       },
       {
         "category": "Flawuldragon",
-        "command": "flawuldragon.todohighlight.enableStatusBar",
-        "title": "Enable todo highlight info in status bar"
-      },
-      {
-        "category": "Flawuldragon",
-        "command": "flawuldragon.todohighlight.disableStatusBar",
-        "title": "Disable todo highlight info in status bar"
+        "command": "flawuldragon.todohighlight.ui.interruptorStatusBar",
+        "title": "Show or Hide the todo highlight status bar item"
       },
       {
         "category": "Flawuldragon",
@@ -298,23 +288,13 @@
       },
       {
         "category": "Flawuldragon",
-        "command": "flawuldragon.pomodoroClock.showClockStatusBar",
-        "title": "Show Pomodoro Clock in status bar"
+        "command": "flawuldragon.pomodoroClock.ui.interruptorClockStatusBar",
+        "title": "Show or Hide the Pomodoro Clock status bar item"
       },
       {
         "category": "Flawuldragon",
-        "command": "flawuldragon.pomodoroClock.hideClockStatusBar",
-        "title": "Hide Pomodoro Clock in status bar"
-      },
-      {
-        "category": "Flawuldragon",
-        "command": "flawuldragon.pomodoroClock.showTypeStatusBar",
-        "title": "Show Pomodoro Type in status bar"
-      },
-      {
-        "category": "Flawuldragon",
-        "command": "flawuldragon.pomodoroClock.hideTypeStatusBar",
-        "title": "Hide Pomodoro Type in status bar"
+        "command": "flawuldragon.pomodoroClock.ui.interruptorTypeStatusBar",
+        "title": "Show or Hide the Pomodoro Type status bar item"
       },
       {
         "category": "Flawuldragon",
@@ -719,6 +699,75 @@
           ],
           "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"] By default, it is [\"*\"] and will be activated for all languages.",
           "scope": "resource"
+        },
+        "color-highlight.enable": {
+          "default": true,
+          "description": "Controls if plugin is enabled",
+          "type": "boolean"
+        },
+        "color-highlight.languages": {
+          "default": [
+            "*"
+          ],
+          "description": "An array of language ids which should be highlighted by Color Highlight. \"*\" to trigger on any language; Prepend language id with \"!\" to exclude the language (i.e \"!typescript\", \"!javascript\")",
+          "type": "array"
+        },
+        "color-highlight.matchWords": {
+          "default": false,
+          "description": "Highlight color words in all files (grey, green, etc.)",
+          "type": "boolean"
+        },
+        "color-highlight.useARGB": {
+          "default": false,
+          "description": "Highlight HEX values using ARGB instead of RGBA (default)",
+          "type": "boolean"
+        },
+        "color-highlight.matchRgbWithNoFunction": {
+          "default": false,
+          "description": "Highlight rgb without functions like rgb() ('255, 255, 255', [255, 255, 255], '255 255 255', etc.)",
+          "type": "boolean"
+        },
+        "color-highlight.rgbWithNoFunctionLanguages": {
+          "default": [
+            "*"
+          ],
+          "description": "An array of language ids which should be highlighted by Color Highlight with the rgbWithNoFunction pattern. \"*\" to trigger on any language; Prepend language id with \"!\" to exclude the language (i.e \"!typescript\", \"!javascript\")",
+          "type": "array"
+        },
+        "color-highlight.matchHslWithNoFunction": {
+          "default": false,
+          "description": "Highlight hsl without functions like hsl() ('255, 100%, 80%', [255, 100%, 80%], '255 100% 80%', etc.)",
+          "type": "boolean"
+        },
+        "color-highlight.hslWithNoFunctionLanguages": {
+          "default": [
+            "*"
+          ],
+          "description": "An array of language ids which should be highlighted by Color Highlight with the rgbWithNoFunction pattern. \"*\" to trigger on any language; Prepend language id with \"!\" to exclude the language (i.e \"!typescript\", \"!javascript\")",
+          "type": "array"
+        },
+        "color-highlight.markerType": {
+          "default": "background",
+          "description": "Style of the highlight. Can be 'dot-before', 'dot-after', 'foreground', 'background', 'outline', 'underline'",
+          "type": "string",
+          "enum": [
+            "dot-before",
+            "dot-after",
+            "foreground",
+            "background",
+            "outline",
+            "underline"
+          ]
+        },
+        "color-highlight.markRuler": {
+          "default": true,
+          "description": "Highlight colors on the ruler (scroll bar), true/false",
+          "type": "boolean"
+        },
+        "color-highlight.sass.includePaths": {
+          "default": [],
+          "description": "Array of absolute paths to search while perform file lookups.",
+          "type": "array"
         }
       }
     },
@@ -756,12 +805,7 @@
       {
         "key": "alt+shift+f",
         "mac": "cmd+alt+shift+f",
-        "command": "flawuldragon.filesize.enableStatusBar"
-      },
-      {
-        "key": "alt+ctrl+shift+f",
-        "mac": "cmd+alt+ctrl+shift+f",
-        "command": "flawuldragon.filesize.disableStatusBar"
+        "command": "flawuldragon.filesize.ui.interruptorStatusBar"
       },
       {
         "key": "alt+t",
@@ -776,12 +820,7 @@
       {
         "key": "alt+shift+t",
         "mac": "cmd+alt+shift+t",
-        "command": "flawuldragon.todohighlight.enableStatusBar"
-      },
-      {
-        "key": "alt+ctrl+shift+t",
-        "mac": "cmd+alt+ctrl+shift+t",
-        "command": "flawuldragon.todohighlight.disableStatusBar"
+        "command": "flawuldragon.todohighlight.ui.interruptorStatusBar"
       },
       {
         "key": "alt+p",
@@ -814,24 +853,14 @@
         "command": "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown"
       },
       {
-        "key": "alt+shift+r",
-        "mac": "cmd+alt+shift+r",
-        "command": "flawuldragon.pomodoroClock.showClockStatusBar"
-      },
-      {
-        "key": "alt+ctrl+shift+r",
-        "mac": "cmd+alt+ctrl+shift+r",
-        "command": "flawuldragon.pomodoroClock.hideClockStatusBar"
+        "key": "alt+q",
+        "mac": "cmd+alt+q",
+        "command": "flawuldragon.pomodoroClock.ui.interruptorClockStatusBar"
       },
       {
         "key": "alt+s",
         "mac": "cmd+alt+s",
-        "command": "flawuldragon.pomodoroClock.showTypeStatusBar"
-      },
-      {
-        "key": "alt+ctrl+s",
-        "mac": "cmd+alt+ctrl+s",
-        "command": "flawuldragon.pomodoroClock.hideTypeStatusBar"
+        "command": "flawuldragon.pomodoroClock.ui.interruptorTypeStatusBar"
       },
       {
         "key": "alt+1",
@@ -852,6 +881,10 @@
         "key": "alt+.",
         "mac": "cmd+alt+.",
         "command": "flawuldragon.auto-close-tag.closeTag"
+      },
+      {
+        "command": "extension.colorHighlight",
+        "title": "Highlight colors in current file"
       }
     ]
   },

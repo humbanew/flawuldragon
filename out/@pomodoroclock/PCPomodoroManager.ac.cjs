@@ -5,6 +5,8 @@ const vscode = require("vscode");
 const EPCPomodoroType_cjs_1 = require("./EPCPomodoroType.cjs");
 const EPCPomodoroStatus_cjs_1 = require("./EPCPomodoroStatus.cjs");
 const PCPomodoro_ac_cjs_1 = require("./PCPomodoro.ac.cjs");
+const Vanilla_cjs_1 = require("../Vanilla.cjs");
+const vanillaFeatures = new Vanilla_cjs_1.Vanilla();
 /**
  * Manages the Pomodoro clock functionality within a Visual Studio Code extension.
  *
@@ -165,18 +167,10 @@ class PCPomodoroManager {
             this.currentPomodoro.isCountDown = this.isCountDown;
         });
         // comandos adicionais para habilitar e desabilitar status bar itens
-        vscode.commands.registerCommand("flawuldragon.pomodoroClock.showClockStatusBar", () => {
-            this._clockBarText.show();
-        });
-        vscode.commands.registerCommand("flawuldragon.pomodoroClock.hideClockStatusBar", () => {
-            this._clockBarText.hide();
-        });
-        vscode.commands.registerCommand("flawuldragon.pomodoroClock.showTypeStatusBar", () => {
-            this._typeBarText.show();
-        });
-        vscode.commands.registerCommand("flawuldragon.pomodoroClock.hideTypeStatusBar", () => {
-            this._typeBarText.hide();
-        });
+        let clockStatusBarCommand = "flawuldragon.pomodoroClock.ui.interruptorClockStatusBar";
+        let typeStatusBarCommand = "flawuldragon.pomodoroClock.ui.interruptorTypeStatusBar";
+        vanillaFeatures.vanilla_interruptorStatusBarConstructor(this._clockBarText, clockStatusBarCommand);
+        vanillaFeatures.vanilla_interruptorStatusBarConstructor(this._typeBarText, typeStatusBarCommand);
     }
     /**
      * Sets the parameters for the Pomodoro clock from the configuration.

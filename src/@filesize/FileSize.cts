@@ -1,5 +1,8 @@
 import * as fs from "node:fs";
 import * as vscode from "vscode";
+import { Vanilla } from "../Vanilla.cjs";
+
+const vanillaFeatures = new Vanilla();
 
 /**
  * A class that provides functionality to display the file size of the currently active text editor's document
@@ -131,18 +134,9 @@ export class FileSize {
         })
       );
 
-      content.subscriptions.push(
-        vscode.commands.registerCommand("flawuldragon.filesize.enableStatusBar", ()=>{
-          this.filesizeStatusBar.show();
-        })
-      )
+      let statusBarCommand = "flawuldragon.filesize.ui.interruptorStatusBar";
+      vanillaFeatures.vanilla_interruptorStatusBarConstructor(this.filesizeStatusBar, statusBarCommand);
 
-      content.subscriptions.push(
-        vscode.commands.registerCommand("flawuldragon.filesize.disableStatusBar", ()=>{
-          this.filesizeStatusBar.hide();
-        })
-      )
-  
       vscode.window.onDidChangeActiveTextEditor(() => {
         this.filesize_getCurrentFileSize(this.filesizeStatusBar);
         this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
