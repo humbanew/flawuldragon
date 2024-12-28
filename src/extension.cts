@@ -1,14 +1,14 @@
-import * as vscode from "vscode";
-import { AutoCloseTag } from "./@autoclosetag/AutoCloseTag.cjs";
-import { AutoRenameTag } from "./@autorenametag/AutoRenameTag.cjs";
-import { FileSize } from "./@filesize/FileSize.cjs";
-import { IndentRainbow } from "./@indentrainbow/IndentRainbow.cjs";
-import { JetbrainsIcons } from "./@jetbrainsicons/JetbrainsIcons.cjs";
-import { JetbrainsMono } from "./@jetbrainsmono/JetbrainsMono.cjs";
-import { PomodoroClock } from "./@pomodoroclock/PomodoroClock.cjs";
-import { ThemeSwitch } from "./@themeswitch/ThemeSwitch.cjs";
-import { TodoHighlight } from "./@todohighlight/TodoHighlight.cjs";
-import { Vanilla } from "./Vanilla.cjs";
+import * as vscode from 'vscode';
+import { AutoCloseTag } from './@autoclosetag/AutoCloseTag.cjs';
+import { AutoRenameTag } from './@autorenametag/AutoRenameTag.cjs';
+import { FileSize } from './@filesize/FileSize.cjs';
+import { IndentRainbow } from './@indentrainbow/IndentRainbow.cjs';
+import { JetbrainsIcons } from './@jetbrainsicons/JetbrainsIcons.cjs';
+import { JetbrainsMono } from './@jetbrainsmono/JetbrainsMono.cjs';
+import { PomodoroClock } from './@pomodoroclock/PomodoroClock.cjs';
+import { ThemeSwitch } from './@themeswitch/ThemeSwitch.cjs';
+import { TodoHighlight } from './@todohighlight/TodoHighlight.cjs';
+import { Vanilla } from './Vanilla.cjs';
 
 const vanilla = new Vanilla();
 const jetbrainsmono = new JetbrainsMono();
@@ -32,7 +32,7 @@ const autorenametag = new AutoRenameTag();
  */
 export function activate(context: vscode.ExtensionContext) {
   try {
-    console.log("Flawuldragon - Core Hub activated!");
+    console.log('Flawuldragon - Core Hub activated!');
 
     vanilla.vanilla_activate(context);
     jetbrainsmono.jetbrainsMono_activate(context);
@@ -46,11 +46,15 @@ export function activate(context: vscode.ExtensionContext) {
     autoclosetag.autoCloseTag_activate(context);
     autorenametag.autoRenameTag_activate(context);
   } catch (error) {
-    console.log("Flawuldragon Core Hub - Error: " + error);
+    console.log('Flawuldragon Core Hub - Error: ' + error);
     vscode.window.showErrorMessage(
-      "An error occurred while activating the Flawuldragon core hub: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
+      'An error occurred while activating the Flawuldragon core hub: ' +
+        error +
+        '. Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)'
+    );
     deactivate(context);
-  } finally {}
+  } finally {
+  }
 }
 
 /**

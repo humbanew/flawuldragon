@@ -35,7 +35,7 @@ const autorenametag = new AutoRenameTag_cjs_1.AutoRenameTag();
  */
 function activate(context) {
     try {
-        console.log("Flawuldragon - Core Hub activated!");
+        console.log('Flawuldragon - Core Hub activated!');
         vanilla.vanilla_activate(context);
         jetbrainsmono.jetbrainsMono_activate(context);
         jetbrainsmono.jetbrainsMono_firstTimeActivation(context);
@@ -49,11 +49,14 @@ function activate(context) {
         autorenametag.autoRenameTag_activate(context);
     }
     catch (error) {
-        console.log("Flawuldragon Core Hub - Error: " + error);
-        vscode.window.showErrorMessage("An error occurred while activating the Flawuldragon core hub: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
+        console.log('Flawuldragon Core Hub - Error: ' + error);
+        vscode.window.showErrorMessage('An error occurred while activating the Flawuldragon core hub: ' +
+            error +
+            '. Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)');
         deactivate(context);
     }
-    finally { }
+    finally {
+    }
 }
 /**
  * Deactivates the extension.

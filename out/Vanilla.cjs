@@ -92,7 +92,7 @@ class Vanilla {
         try {
             console.log('Flawuldragon - Vanilla activated!');
             this.vanilla_flawuldragonNotes(context);
-            const vtimer = new VTimer(context);
+            // const vtimer = new VTimer(context);
             /** -------------------- Development Block ------------------------------- */
             // flawuldragon date and time status bar items
             // update every second window to show the current time
@@ -115,9 +115,19 @@ class Vanilla {
                 new vscode.ThemeColor('statusBarItem.warningBackground');
             this.flawuldragonDateTimeStatusBar.show();
             context.subscriptions.push(this.flawuldragonDateTimeStatusBar);
-            // flawuldragon aprimored experimental commands
             this.vanilla_interruptorStatusBarConstructor(this.flawuldragonDateTimeStatusBar, 'flawuldragon.vanillaDateTime.ui.interruptorStatusBar'); // show or hide the status bar
-            vscode.commands.registerCommand('flawuldragon.vanillaDateTime.invertPosition', () => { });
+            // // flawuldragon dont applied commands
+            // vscode.commands.registerCommand(
+            //   'flawuldragon.vanillaDateTime.invertTextPosition',
+            //   () => {
+            //     // invert the text position
+            //     if(text == `${date} ◆ ${hours}:${minutes}`){
+            //       text = `${minutes}:${hours} ◆ ${date}`;
+            //     } else {
+            //       text = `${date} ◆ ${hours}:${minutes}`;
+            //     }
+            //   }
+            // );
             vscode.commands.registerCommand('flawuldragon.vanillaDateTime.showSeconds', () => { });
             vscode.commands.registerCommand('flawuldragon.vanillaDateTime.timeFormat', () => { });
             /** -------------------- End of Development Block --------------------------- */
@@ -151,6 +161,25 @@ class VDateTime {
     flawuldragonDateTimeStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 98);
 }
 class VTimer {
+    horas = 0;
+    minutos = 0;
+    segundos = 0;
+    temporizador = setInterval(() => {
+        this.segundos++;
+        if (this.segundos == 60) {
+            this.segundos = 0;
+            this.minutos++;
+        }
+        if (this.minutos == 60) {
+            this.minutos = 0;
+            this.horas++;
+        }
+    }, 1000);
+    escritorDeInformacoes() {
+        // write the timer information
+        // date, time, timer, etc.
+        // fs.writeFileSync('./timerInfos.txt', 'Timer: ' + this.horas + ':' + this.minutos + ':' + this.segundos);
+    }
     flawuldragonTimerStatusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 97);
     constructor(context) {
         this.flawuldragonTimerStatusBar.text = "00:00:00 Elapsed (Placeholder)";
@@ -158,6 +187,13 @@ class VTimer {
         this.flawuldragonTimerStatusBar.show();
         context.subscriptions.push(this.flawuldragonTimerStatusBar);
     }
+    vtimer_storageInformations() {
+        // store the timer information
+    }
 }
 class VExtensionIntelligence {
+    constructor() {
+        // desabilita as extensoes duplicadas
+        vscode.workspace.getConfiguration().get('installedExtensions');
+    }
 }

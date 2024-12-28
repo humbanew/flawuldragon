@@ -1,5 +1,31 @@
+/**
+ * ===================================
+ * Paleta de Cores
+ * ===================================
+ * Inspirado no Poemstorys 14
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ * #FFFFFF - Branco
+ * #F8F8F2 - Branco Sujo
+ * #000000 - Preto
+ * #0f0f0f - Preto Sujo
+ * #151515 - Cinza Escuro
+ * #1B1B1B - Cinza Escuro
+ * #272822 - Cinza Escuro
+ * #28251b - Beje Escuro
+ * #334eff - Azul
+ * #4133ff - Azul
+ * #6633ff - Azul Roxeado
+ * #8f33ff - Lavanda
+ * #be33ff - Lilás Escuro
+ * #ff33fc - Rosa
+ * #ff3385 - Rosa Choque
+ * #ff334e - Vermelho Rosado
+ * #ff3336 - Vermelho Claro
+ * #ff1100 - Vermelho
+ */
+
 {
-  "name": "Clear Code",
+  "name": "Humba01's Design Style",
   "semanticHighlighting": true,
   "colors": {},
 	"tokenColors": [

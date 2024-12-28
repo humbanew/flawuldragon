@@ -125,6 +125,9 @@ export class Vanilla {
 
       /** -------------------- Development Block ------------------------------- */
 
+      // arrumar todos os itens abaixo
+      let int_timer, int_date, int_hours, int_minutes, int_seconds, int_text;
+
       // flawuldragon date and time status bar items
       // update every second window to show the current time
       setInterval(() => {
@@ -154,12 +157,19 @@ export class Vanilla {
         this.flawuldragonDateTimeStatusBar,
         'flawuldragon.vanillaDateTime.ui.interruptorStatusBar'
       ); // show or hide the status bar
-      
-      // flawuldragon dont applied commands
-      vscode.commands.registerCommand(
-        'flawuldragon.vanillaDateTime.invertPosition',
-        () => {}
-      );
+    
+      // // flawuldragon dont applied commands
+      // vscode.commands.registerCommand(
+      //   'flawuldragon.vanillaDateTime.invertTextPosition',
+      //   () => {
+      //     // invert the text position
+      //     if(text == `${date} ◆ ${hours}:${minutes}`){
+      //       text = `${minutes}:${hours} ◆ ${date}`;
+      //     } else {
+      //       text = `${date} ◆ ${hours}:${minutes}`;
+      //     }
+      //   }
+      // );
       vscode.commands.registerCommand(
         'flawuldragon.vanillaDateTime.showSeconds',
         () => {}
@@ -240,6 +250,7 @@ class VTimer {
 
 class VExtensionIntelligence {
   public constructor(){
-    vscode.workspace.getConfiguration().get('extensions');
+    // desabilita as extensoes duplicadas
+    vscode.workspace.getConfiguration().get('installedExtensions');
   }
 }

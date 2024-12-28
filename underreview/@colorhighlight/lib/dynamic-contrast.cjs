@@ -1,124 +1,3 @@
-import * as vscode from 'vscode';
-
-export class ColorHighlight {
-
-  public colorHighlight_activate(context: vscode.ExtensionContext) {
-    try {} catch(error){} finally {}
-  }
-  public colorHighlight_desactivate() {}
-
-}
-
-/**
- * decoration-map.js
- */
-
-/**
- *
- * @export
- * @class DecorationMap
- *
- * @property {{
- *  markRuler: boolean,
- *  markerType: string
- * }} options
- */
-export class DecorationMap {
-  options: any;
-  _map: Map<any, any>;
-  _keys: any[];
-  /**
-   * Creates an instance of DecorationMap.
-   * @param {{
-   *  markRuler: boolean,
-   *  markerType: string
-   * }} options
-   *
-   * @memberOf DecorationMap
-   */
-  constructor(options: any) {
-    this.options = Object.assign({}, options);
-    this._map = new Map();
-    this._keys = [];
-  }
-
-  /**
-   * @param {string} color
-   * @returns vscode.TextEditorDecorationType
-   */
-  get(color: string) {
-    if (!this._map.has(color)) {
-      let rules: any = {};
-      if (this.options.markRuler) {
-        rules = {
-          overviewRulerColor: color
-        };
-      }
-
-      switch (this.options.markerType) {
-        case 'outline':
-          rules.border = `3px solid ${color}`;
-          break;
-        case 'foreground':
-          rules.color = color;
-          break;
-        case 'underline':
-          rules.color = 'invalid; border-bottom:solid 2px ' + color;
-          break;
-        case 'dot':
-        case 'dotafter':
-        case 'dot-after':
-        case 'dot_after':
-          rules.after = {
-            contentText: ' ',
-            margin: '0.1em 0.2em 0 0.2em',
-            width: '0.7em',
-            height: '0.7em',
-            backgroundColor: color,
-            borderRadius: '50%'
-          };
-          break;
-        case 'dotbefore':
-        case 'dot-before':
-        case 'dot_before':
-          rules.before = {
-            contentText: ' ',
-            margin: '0.1em 0.2em 0 0.2em',
-            width: '0.7em',
-            height: '0.7em',
-            backgroundColor: color,
-            borderRadius: '50%'
-          };
-          break;
-        case 'background':
-        default:
-          rules.backgroundColor = color;
-          rules.color = getColorContrast(color);
-          rules.border = `3px solid ${color}`;
-          rules.borderRadius = '3px';
-      }
-      this._map.set(color, vscode.window.createTextEditorDecorationType(rules));
-      this._keys.push(color);
-    }
-    return this._map.get(color);
-  }
-
-
-  keys() {
-    return this._keys.slice();
-  }
-
-  dispose() {
-    this._map.forEach((decoration: { dispose: () => void; }) => {
-      decoration.dispose();
-    });
-  }
-}
-
-/**
- * dynamic-contrast.js
- */
-
 // getColorContrast
 //     Return suggested contrast grey scale color for the color (hex/rgba) given.
 //     Uses the definitions of relative luminance and contrast ratio from
@@ -131,11 +10,12 @@ export class DecorationMap {
 //                         blue, green, red
 // @return      string of the form #RRGGBB
 import webColors from 'color-name';
-export function getColorContrast(color: string) {
+
+export function getColorContrast(color) {
   const rgbExp = /^rgba?[\s+]?\(\s*([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*(?:,\s*([\d.]+)\s*)?\)/im,
     hexExp = /^(?:#)|([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$/igm;
   let rgb = color.match(rgbExp),
-    hex: RegExpMatchArray|string = color.match(hexExp),
+    hex = color.match(hexExp),
     r, g, b;
   if (rgb) {
     r = parseInt(rgb[1], 10);
@@ -203,7 +83,7 @@ export function getColorContrast(color: string) {
  *                   inputs were in the correct range, this will be a number
  *                   between 1.0 and 21.0 (inclusive).
  */
-function contrastRatio(l1: number, l2: number) {
+function contrastRatio(l1, l2) {
   // Note: the denominator of the contrast ratio must be the darker (e.g. lower
   // relative luminance) color.
   if (l2 < l1) {
@@ -234,7 +114,7 @@ function contrastRatio(l1: number, l2: number) {
  * @returns  number  The relative luminance of the color, a number between 0.0
  *                   and 1.0 (inclusive).
  */
-function relativeLuminance(r8: any, g8: any, b8: any) {
+function relativeLuminance(r8, g8, b8) {
   const bigR = srgb8ToLinear(r8);
   const bigG = srgb8ToLinear(g8);
   const bigB = srgb8ToLinear(b8);
@@ -267,27 +147,10 @@ const srgb8ToLinear = (function() {
       : Math.pow((c + 0.055) / 1.055, 2.4);
   }
 
-  return function srgb8ToLinear(c8: number) {
+  return function srgb8ToLinear(c8) {
     // Input should be an integer between 0 and 255 already, but clamp if
     // for some reason it is not.
     const index = Math.min(Math.max(c8, 0), 255) & 0xff;
     return srgbLookupTable[index];
   };
 }());
-
-/**
- * sass-importer.js
- */
-
-import fileImporter from 'file-importer';
-export function parseImports(options: any) {
-  return new Promise((resolve, reject) => {
-    fileImporter.parse(options, (err: any, data: unknown) => {
-      if (err) {
-        return reject(err);
-      }
-
-      return resolve(data);
-    });
-  });
-}

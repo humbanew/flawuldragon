@@ -17,5 +17,5 @@
     "strictNullChecks": false,
     "strict": true,
   },
-  "exclude": ["node_modules", "out", "flawuldragon-devkit", "integration"]
+  "exclude": ["node_modules", "out", "flawuldragon-devkit", "integration", "underreview"]
 }
