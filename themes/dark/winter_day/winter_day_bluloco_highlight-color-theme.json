@@ -1,5 +1,5 @@
 {
-	"name": "Winter Day - Bluloco Italic Highlight",
+	"name": "Winter Day - Bluloco Highlight",
 	"semanticHighlighting": true,
 	"colors": {
 
@@ -73,6 +73,8 @@
     "editorError.border": "#ff3030",
     "editorWarning.foreground": "#ffdb4b",
     "editorWarning.border": "#ffdb4b",
+    "editorWarning.background": "#ffdb4b44",
+		"editorError.background": "#ff303044",
 
     // // editor marker
     "editorMarkerNavigation.background": "#492842",
@@ -318,10 +320,35 @@
 	},
   "tokenColors": [
     {
+      "name": "Source",
+      "scope": "source",
+      "settings": {
+        "foreground": "#abb2bf"
+      }
+    },
+    {
       "name": "Text",
       "scope": "comment.unused.elixir",
       "settings": {
         "foreground": "#abb2bf"
+      }
+    },
+    {
+      "name": "Modules",
+      "scope": [
+        "entity.name.namespace",
+        "entity.name.module",
+        "entity.name.type.module"
+      ],
+      "settings": {
+        "foreground": "#FF839B"
+      }
+    },
+    {
+      "name": "Label",
+      "scope": ["variable.other.label", "entity.name.function.decorator"],
+      "settings": {
+        "foreground": "#50acae"
       }
     },
     {
@@ -350,8 +377,7 @@
         "meta.other.type.phpdoc support class"
       ],
       "settings": {
-        "foreground": "#7c8495",
-        "fontStyle": ""
+        "foreground": "#7c8495"
       }
     },
     {
@@ -554,6 +580,7 @@
       "scope": [
         "constant",
         "variable.other.constant",
+        "punctuation.definition.constant",
         "constant.other.symbol",
         "constant.language.symbol",
         "support.constant",
@@ -601,6 +628,7 @@
         "markup.heading.setext"
       ],
       "settings": {
+        "fontStyle": "",
         "foreground": "#f9c859"
       }
     },
@@ -615,14 +643,15 @@
       "name": "Bold",
       "scope": ["markup.bold", "punctuation.definition.bold"],
       "settings": {
-        "foreground": "#ff6480",
-        "fontStyle": "bold"
+        "fontStyle": "bold",
+        "foreground": "#ff6480"
       }
     },
     {
-      "name": "Markup Italic",
+      "name": "Italic",
       "scope": ["markup.italic", "punctuation.definition.italic"],
       "settings": {
+        "fontStyle": "italic",
         "foreground": "#ff936a"
       }
     },
@@ -654,46 +683,6 @@
       "settings": {
         "foreground": "#636d83",
         "fontStyle": "bold strikethrough"
-      }
-    },
-    {
-      "name": "Italic",
-      "scope": [
-        "markup.italic",
-        "punctuation.definition.italic",
-        "comment",
-        "string.comment",
-        "comment.block.documentation",
-        "comment.block",
-        "keyword",
-        "keyword.operator.type.asserts",
-        "keyword.operator.expression",
-        "keyword.operator.new",
-        "variable.language",
-        "markup.quote",
-        "markup.inserted",
-        "markup.deleted",
-        "markup.changed",
-        "storage",
-        "constant.language",
-        "entity.name.class",
-        "entity.other.attribute-name"
-      ],
-      "settings": {
-        "fontStyle": "italic"
-      }
-    },
-    {
-      "name": "No Italic",
-      "scope": [
-        "keyword.operator",
-        "keyword.other.unit",
-        "support.type.property-name",
-        "keyword.other.special-method",
-        "entity.name.tag"
-      ],
-      "settings": {
-        "fontStyle": ""
       }
     },
     {

@@ -1,5 +1,5 @@
 {
-	"name": "Winter Day - One Dark Vivid Highlight",
+	"name": "Winter Day - One Dark Highlight",
 	"semanticHighlighting": true,
 	"colors": {
 
@@ -73,6 +73,8 @@
     "editorError.border": "#ff3030",
     "editorWarning.foreground": "#ffdb4b",
     "editorWarning.border": "#ffdb4b",
+    "editorWarning.background": "#ffdb4b44",
+		"editorError.background": "#ff303044",
 
     // // editor marker
     "editorMarkerNavigation.background": "#492842",
@@ -318,7 +320,7 @@
 	},
   "semanticTokenColors": {
     "enumMember": "#d19a66",
-    "property": "#ef596f",
+    "property": "#e06c75",
     "variable.defaultLibrary": "#e5c07b"
   },
   "tokenColors": [
@@ -359,7 +361,7 @@
         "variable.object.property",
         "variable.other.enummember"
       ],
-      "settings": { "foreground": "#ef596f" }
+      "settings": { "foreground": "#e06c75" }
     },
     {
       "name": "Cyan",
@@ -370,7 +372,7 @@
         "string.regexp",
         "string.url"
       ],
-      "settings": { "foreground": "#2bbac5" }
+      "settings": { "foreground": "#56b6c2" }
     },
     {
       "name": "Malibu",
@@ -393,7 +395,7 @@
         "punctuation.separator",
         "support.type.property-name.css"
       ],
-      "settings": { "foreground": "#bbbbbb" }
+      "settings": { "foreground": "#abb2bf" }
     },
     {
       "name": "Sage",
@@ -404,7 +406,7 @@
         "string.other.link.description",
         "string"
       ],
-      "settings": { "foreground": "#89ca78" }
+      "settings": { "foreground": "#98c379" }
     },
     {
       "name": "Stone",
@@ -421,7 +423,7 @@
         "storage.modifier",
         "storage.type"
       ],
-      "settings": { "foreground": "#d55fde" }
+      "settings": { "foreground": "#c678dd" }
     },
     {
       "name": "Whiskey",
