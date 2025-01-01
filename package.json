@@ -58,10 +58,28 @@
   "contributes": {
     "themes": [
       {
-        "id": "25",
-        "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Humba01's Design Style",
-        "path": "./themes/dark/humba01_design_style/humba01_design_style-color-theme.json"
+        "id": "33",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style (Light) [Experimental]",
+        "path": "./themes/light/humba01_design_style-light-color-theme.json"
+      },
+      {
+        "id": "34",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits (Light) [Experimental]",
+        "path": "./themes/light/advanced_circuits-light-color-theme.json"
+      },
+      {
+        "id": "35",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper (Light) [Experimental]",
+        "path": "./themes/light/blueprint_paper-light-color-theme.json"
+      },
+      {
+        "id": "36",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day (Light) [Experimental]",
+        "path": "./themes/light/winter_day-light-color-theme.json"
       },
       {
         "id": "1",
@@ -206,6 +224,54 @@
         "uiTheme": "vs-dark",
         "label": "Flawuldragon - Winter Day ■ One Dark Vivid Highlight",
         "path": "./themes/dark/winter_day/winter_day_onedark_vivid_highlight-color-theme.json"
+      },
+      {
+        "id": "25",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style-color-theme.json"
+      },
+      {
+        "id": "26",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_bluloco_highlight-color-theme.json"
+      },
+      {
+        "id": "27",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Italic Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_bluloco_italic_highlight-color-theme.json"
+      },
+      {
+        "id": "28",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_dracula_highlight-color-theme.json"
+      },
+      {
+        "id": "29",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Soft Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_dracula_soft_highlight-color-theme.json"
+      },
+      {
+        "id": "30",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ Monokai Dimmed Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_monokai_dimmed_highlight-color-theme.json"
+      },
+      {
+        "id": "31",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_onedark_highlight-color-theme.json"
+      },
+      {
+        "id": "32",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Vivid Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_onedark_vivid_highlight-color-theme.json"
       }
     ],
     "iconThemes": [

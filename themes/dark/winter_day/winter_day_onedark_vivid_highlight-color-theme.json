@@ -23,6 +23,15 @@
 		"breadcrumb.activeSelectionForeground": "#ffc940",
 		"breadcrumbPicker.background": "#63263D",
 
+		// button
+		"button.background": "#4d2235",
+		"button.foreground": "#ffeb7b",
+		"button.hoverBackground": "#63263d",
+		"button.border": "#4d2235",
+		"button.secondaryBackground": "#4d2235",
+		"button.secondaryForeground": "#ffeb7b",
+		"button.secondaryHoverBackground": "#63263d",
+
     // checkbox
     "checkbox.background": "#4d2235",
     "checkbox.foreground": "#ffc94d",
