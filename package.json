@@ -58,30 +58,6 @@
   "contributes": {
     "themes": [
       {
-        "id": "33",
-        "uiTheme": "vs",
-        "label": "Flawuldragon - Humba01's Design Style (Light) [Experimental]",
-        "path": "./themes/light/humba01_design_style-light-color-theme.json"
-      },
-      {
-        "id": "34",
-        "uiTheme": "vs",
-        "label": "Flawuldragon - Advanced Circuits (Light) [Experimental]",
-        "path": "./themes/light/advanced_circuits-light-color-theme.json"
-      },
-      {
-        "id": "35",
-        "uiTheme": "vs",
-        "label": "Flawuldragon - Blueprint Paper (Light) [Experimental]",
-        "path": "./themes/light/blueprint_paper-light-color-theme.json"
-      },
-      {
-        "id": "36",
-        "uiTheme": "vs",
-        "label": "Flawuldragon - Winter Day (Light) [Experimental]",
-        "path": "./themes/light/winter_day-light-color-theme.json"
-      },
-      {
         "id": "1",
         "uiTheme": "vs-dark",
         "label": "Flawuldragon - Advanced Circuits",
@@ -180,98 +156,290 @@
       {
         "id": "17",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day",
-        "path": "./themes/dark/winter_day/winter_day-color-theme.json"
-      },
-      {
-        "id": "18",
-        "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ Bluloco Highlight",
-        "path": "./themes/dark/winter_day/winter_day_bluloco_highlight-color-theme.json"
-      },
-      {
-        "id": "19",
-        "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ Bluloco Italic Highlight",
-        "path": "./themes/dark/winter_day/winter_day_bluloco_italic_highlight-color-theme.json"
-      },
-      {
-        "id": "20",
-        "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ Dracula Highlight",
-        "path": "./themes/dark/winter_day/winter_day_dracula_highlight-color-theme.json"
-      },
-      {
-        "id": "21",
-        "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ Dracula Soft Highlight",
-        "path": "./themes/dark/winter_day/winter_day_dracula_soft_highlight-color-theme.json"
-      },
-      {
-        "id": "22",
-        "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ Monokai Dimmed Highlight",
-        "path": "./themes/dark/winter_day/winter_day_monokai_dimmed_highlight-color-theme.json"
-      },
-      {
-        "id": "23",
-        "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ One Dark Highlight",
-        "path": "./themes/dark/winter_day/winter_day_onedark_highlight-color-theme.json"
-      },
-      {
-        "id": "24",
-        "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ One Dark Vivid Highlight",
-        "path": "./themes/dark/winter_day/winter_day_onedark_vivid_highlight-color-theme.json"
-      },
-      {
-        "id": "25",
-        "uiTheme": "vs-dark",
         "label": "Flawuldragon - Humba01's Design Style",
         "path": "./themes/dark/humba01_design_style/humba01_design_style-color-theme.json"
       },
       {
-        "id": "26",
+        "id": "18",
         "uiTheme": "vs-dark",
         "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_bluloco_highlight-color-theme.json"
       },
       {
-        "id": "27",
+        "id": "19",
         "uiTheme": "vs-dark",
         "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Italic Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_bluloco_italic_highlight-color-theme.json"
       },
       {
-        "id": "28",
+        "id": "20",
         "uiTheme": "vs-dark",
         "label": "Flawuldragon - Humba01's Design Style ■ Dracula Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_dracula_highlight-color-theme.json"
       },
       {
-        "id": "29",
+        "id": "21",
         "uiTheme": "vs-dark",
         "label": "Flawuldragon - Humba01's Design Style ■ Dracula Soft Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_dracula_soft_highlight-color-theme.json"
       },
       {
-        "id": "30",
+        "id": "22",
         "uiTheme": "vs-dark",
         "label": "Flawuldragon - Humba01's Design Style ■ Monokai Dimmed Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_monokai_dimmed_highlight-color-theme.json"
       },
       {
-        "id": "31",
+        "id": "23",
         "uiTheme": "vs-dark",
         "label": "Flawuldragon - Humba01's Design Style ■ One Dark Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_onedark_highlight-color-theme.json"
       },
       {
-        "id": "32",
+        "id": "24",
         "uiTheme": "vs-dark",
         "label": "Flawuldragon - Humba01's Design Style ■ One Dark Vivid Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_onedark_vivid_highlight-color-theme.json"
+      },
+      {
+        "id": "25",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day",
+        "path": "./themes/dark/winter_day/winter_day-color-theme.json"
+      },
+      {
+        "id": "26",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ Bluloco Highlight",
+        "path": "./themes/dark/winter_day/winter_day_bluloco_highlight-color-theme.json"
+      },
+      {
+        "id": "27",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ Bluloco Italic Highlight",
+        "path": "./themes/dark/winter_day/winter_day_bluloco_italic_highlight-color-theme.json"
+      },
+      {
+        "id": "28",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ Dracula Highlight",
+        "path": "./themes/dark/winter_day/winter_day_dracula_highlight-color-theme.json"
+      },
+      {
+        "id": "29",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ Dracula Soft Highlight",
+        "path": "./themes/dark/winter_day/winter_day_dracula_soft_highlight-color-theme.json"
+      },
+      {
+        "id": "30",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ Monokai Dimmed Highlight",
+        "path": "./themes/dark/winter_day/winter_day_monokai_dimmed_highlight-color-theme.json"
+      },
+      {
+        "id": "31",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ One Dark Highlight",
+        "path": "./themes/dark/winter_day/winter_day_onedark_highlight-color-theme.json"
+      },
+      {
+        "id": "32",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ One Dark Vivid Highlight",
+        "path": "./themes/dark/winter_day/winter_day_onedark_vivid_highlight-color-theme.json"
+      },
+      {
+        "id": "33",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits-light-color-theme.json"
+      },
+      {
+        "id": "34",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ Bluloco Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_bluloco_highlight-light-color-theme.json"
+      },
+      {
+        "id": "35",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ Bluloco Italic Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_bluloco_italic_highlight-light-color-theme.json"
+      },
+      {
+        "id": "36",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ Dracula Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_dracula_highlight-light-color-theme.json"
+      },
+      {
+        "id": "37",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ Dracula Soft Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_dracula_soft_highlight-light-color-theme.json"
+      },
+      {
+        "id": "38",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ Monokai Dimmed Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_monokai_dimmed_highlight-light-color-theme.json"
+      },
+      {
+        "id": "39",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ One Dark Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_onedark_highlight-light-color-theme.json"
+      },
+      {
+        "id": "40",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ One Dark Vivid Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_onedark_vivid_highlight-light-color-theme.json"
+      },
+      {
+        "id": "41",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper-light-color-theme.json"
+      },
+      {
+        "id": "42",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ Bluloco Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_bluloco_highlight-light-color-theme.json"
+      },
+      {
+        "id": "43",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ Bluloco Italic Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_bluloco_italic_highlight-light-color-theme.json"
+      },
+      {
+        "id": "44",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ Dracula Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_dracula_highlight-light-color-theme.json"
+      },
+      {
+        "id": "45",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ Dracula Soft Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_dracula_soft_highlight-light-color-theme.json"
+      },
+      {
+        "id": "46",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ Monokai Dimmed Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_monokai_dimmed_highlight-light-color-theme.json"
+      },
+      {
+        "id": "47",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ One Dark Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_onedark_highlight-light-color-theme.json"
+      },
+      {
+        "id": "48",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ One Dark Vivid Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_onedark_vivid_highlight-light-color-theme.json"
+      },
+      {
+        "id": "49",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style-light-color-theme.json"
+      },
+      {
+        "id": "50",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_bluloco_highlight-light-color-theme.json"
+      },
+      {
+        "id": "51",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Italic Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_bluloco_italic_highlight-light-color-theme.json"
+      },
+      {
+        "id": "52",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_dracula_highlight-light-color-theme.json"
+      },
+      {
+        "id": "53",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Soft Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_dracula_soft_highlight-light-color-theme.json"
+      },
+      {
+        "id": "54",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ Monokai Dimmed Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_monokai_dimmed_highlight-light-color-theme.json"
+      },
+      {
+        "id": "55",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_onedark_highlight-light-color-theme.json"
+      },
+      {
+        "id": "56",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Vivid Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_onedark_vivid_highlight-light-color-theme.json"
+      },
+      {
+        "id": "57",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day (Light)",
+        "path": "./themes/light/winter_day/winter_day-light-color-theme.json"
+      },
+      {
+        "id": "58",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ Bluloco Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_bluloco_highlight-light-color-theme.json"
+      },
+      {
+        "id": "59",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ Bluloco Italic Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_bluloco_italic_highlight-light-color-theme.json"
+      },
+      {
+        "id": "60",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ Dracula Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_dracula_highlight-light-color-theme.json"
+      },
+      {
+        "id": "61",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ Dracula Soft Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_dracula_soft_highlight-light-color-theme.json"
+      },
+      {
+        "id": "62",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ Monokai Dimmed Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_monokai_dimmed_highlight-light-color-theme.json"
+      },
+      {
+        "id": "63",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ One Dark Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_onedark_highlight-light-color-theme.json"
+      },
+      {
+        "id": "64",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ One Dark Vivid Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_onedark_vivid_highlight-light-color-theme.json"
       }
     ],
     "iconThemes": [
