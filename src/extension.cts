@@ -1,9 +1,6 @@
 import * as vscode from 'vscode';
-import { AutoCloseTag } from './@autoclosetag/AutoCloseTag.cjs';
-import { AutoRenameTag } from './@autorenametag/AutoRenameTag.cjs';
 import { FileSize } from './@filesize/FileSize.cjs';
 import { IndentRainbow } from './@indentrainbow/IndentRainbow.cjs';
-import { JetbrainsIcons } from './@jetbrainsicons/JetbrainsIcons.cjs';
 import { JetbrainsMono } from './@jetbrainsmono/JetbrainsMono.cjs';
 import { PomodoroClock } from './@pomodoroclock/PomodoroClock.cjs';
 import { ThemeSwitch } from './@themeswitch/ThemeSwitch.cjs';
@@ -12,14 +9,11 @@ import { Vanilla } from './Vanilla.cjs';
 
 const vanilla = new Vanilla();
 const jetbrainsmono = new JetbrainsMono();
-const jetbrainsicons = new JetbrainsIcons();
 const filesize = new FileSize();
 const todohighlight = new TodoHighlight();
 const indentrainbow = new IndentRainbow();
 const pomodoroclock = new PomodoroClock();
 const themeswitch = new ThemeSwitch();
-const autoclosetag = new AutoCloseTag();
-const autorenametag = new AutoRenameTag();
 
 /**
  * Activates the extension.
@@ -37,14 +31,11 @@ export function activate(context: vscode.ExtensionContext) {
     vanilla.vanilla_activate(context);
     jetbrainsmono.jetbrainsMono_activate(context);
     jetbrainsmono.jetbrainsMono_firstTimeActivation(context);
-    jetbrainsicons.jetbrainsIcons_activate(context);
     filesize.filesize_activate(context);
     todohighlight.todoHighlight_activate(context);
     indentrainbow.indentRainbow_activate(context);
     pomodoroclock.pomodoroClock_activate(context);
     themeswitch.themeSwitch_activate(context);
-    autoclosetag.autoCloseTag_activate(context);
-    autorenametag.autoRenameTag_activate(context);
   } catch (error) {
     console.log('Flawuldragon Core Hub - Error: ' + error);
     vscode.window.showErrorMessage(
@@ -68,14 +59,11 @@ export function activate(context: vscode.ExtensionContext) {
 export function deactivate(context: vscode.ExtensionContext) {
   vanilla.vanilla_desactivate();
   jetbrainsmono.jetbrainsMono_desactivate(context);
-  jetbrainsicons.jetbrainsIcons_deactivate();
   filesize.filesize_deactivate();
   todohighlight.todoHighlight_desactivate();
   indentrainbow.indentRainbow_deactivate();
   pomodoroclock.pomodoroClock_deactivate();
   themeswitch.themeSwitch_desactivate();
-  autoclosetag.autoCloseTag_desactivate();
-  autorenametag.autoRenameTag_desactivate();
 }
 
 /**

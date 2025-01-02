@@ -8,7 +8,6 @@ const AutoCloseTag_cjs_1 = require("./@autoclosetag/AutoCloseTag.cjs");
 const AutoRenameTag_cjs_1 = require("./@autorenametag/AutoRenameTag.cjs");
 const FileSize_cjs_1 = require("./@filesize/FileSize.cjs");
 const IndentRainbow_cjs_1 = require("./@indentrainbow/IndentRainbow.cjs");
-const JetbrainsIcons_cjs_1 = require("./@jetbrainsicons/JetbrainsIcons.cjs");
 const JetbrainsMono_cjs_1 = require("./@jetbrainsmono/JetbrainsMono.cjs");
 const PomodoroClock_cjs_1 = require("./@pomodoroclock/PomodoroClock.cjs");
 const ThemeSwitch_cjs_1 = require("./@themeswitch/ThemeSwitch.cjs");
@@ -16,7 +15,6 @@ const TodoHighlight_cjs_1 = require("./@todohighlight/TodoHighlight.cjs");
 const Vanilla_cjs_1 = require("./Vanilla.cjs");
 const vanilla = new Vanilla_cjs_1.Vanilla();
 const jetbrainsmono = new JetbrainsMono_cjs_1.JetbrainsMono();
-const jetbrainsicons = new JetbrainsIcons_cjs_1.JetbrainsIcons();
 const filesize = new FileSize_cjs_1.FileSize();
 const todohighlight = new TodoHighlight_cjs_1.TodoHighlight();
 const indentrainbow = new IndentRainbow_cjs_1.IndentRainbow();
@@ -39,7 +37,6 @@ function activate(context) {
         vanilla.vanilla_activate(context);
         jetbrainsmono.jetbrainsMono_activate(context);
         jetbrainsmono.jetbrainsMono_firstTimeActivation(context);
-        jetbrainsicons.jetbrainsIcons_activate(context);
         filesize.filesize_activate(context);
         todohighlight.todoHighlight_activate(context);
         indentrainbow.indentRainbow_activate(context);
@@ -69,7 +66,6 @@ function activate(context) {
 function deactivate(context) {
     vanilla.vanilla_desactivate();
     jetbrainsmono.jetbrainsMono_desactivate(context);
-    jetbrainsicons.jetbrainsIcons_deactivate();
     filesize.filesize_deactivate();
     todohighlight.todoHighlight_desactivate();
     indentrainbow.indentRainbow_deactivate();

@@ -94,19 +94,30 @@ class Vanilla {
             this.vanilla_flawuldragonNotes(context);
             // const vtimer = new VTimer(context);
             /** -------------------- Development Block ------------------------------- */
+            // arrumar todos os itens abaixo
+            let int_timer, int_date, int_hours, int_minutes, int_seconds, int_text;
             // flawuldragon date and time status bar items
             // update every second window to show the current time
             setInterval(() => {
                 let timer = new Date(), text;
                 let date = `${timer.getUTCDate()}-${timer.getUTCMonth() + 1}-${timer.getFullYear()}`;
+                let day = timer.getUTCDate().toString();
+                let month = (timer.getUTCMonth() + 1).toString();
                 let hours = timer.getHours().toString();
                 let minutes = timer.getMinutes().toString();
+                if (parseInt(day) < 10) {
+                    day = 0 + day;
+                }
+                if (parseInt(month) < 10) {
+                    month = 0 + month;
+                }
                 if (parseInt(hours) < 10) {
                     hours = 0 + hours;
                 }
                 if (parseInt(minutes) < 10) {
                     minutes = 0 + minutes;
                 }
+                date = `${day}-${month}-${timer.getFullYear()}`;
                 text = date + ` ◆ ${hours}:${minutes}`;
                 this.flawuldragonDateTimeStatusBar.text = text;
             }, 1000);
@@ -194,6 +205,51 @@ class VTimer {
 class VExtensionIntelligence {
     constructor() {
         // desabilita as extensoes duplicadas
+        /**
+         * [Auto Close Tag]
+         * Publisher 	Jun Han
+         * Unique Identifier 	formulahendry.auto-close-tag
+         *
+         * [Auto Complete Tag]
+         * Publisher 	Jun Han
+         * Unique Identifier 	formulahendry.auto-complete-tag
+         *
+         * [Auto Rename Tag]
+         * Publisher 	Jun Han
+         * Unique Identifier 	formulahendry.auto-rename-tag
+         *
+         * [Color Highlight]
+         * Publisher 	Sergii Naumov
+         * Unique Identifier 	naumovs.color-highlight
+         *
+         * [Error Lens]
+         * Publisher 	Phil Hutchinson
+         * Unique Identifier 	philhindle.errorlens
+         *
+         * [Filesize]
+         * Publisher 	Wei_ds
+         * Unique Identifier 	wei_ds.filesize
+         *
+         * [Indent Rainbow]
+         * Publisher 	oderwat
+         * Unique Identifier 	oderwat.indent-rainbow
+         *
+         * [Jetbrains Mono Font Pack]
+         * Publisher 	Narasima Pandiyan
+         * Unique Identifier 	NarasimaPandiyan.jetbrainsmono
+         *
+         * [Pomodoro Clock]
+         * Publisher 	jackluson
+         * Unique Identifier 	jackluson.pomodoro-clock
+         *
+         * [Theme Switch]
+         * Publisher 	Wei Wang
+         * Unique Identifier 	weiiwang.theme-switch
+         *
+         * [Todo Highlight]
+         * Publisher 	Wayou Liu
+         * Unique Identifier 	wayou.vscode-todo-highlight
+         */
         vscode.workspace.getConfiguration().get('installedExtensions');
     }
 }

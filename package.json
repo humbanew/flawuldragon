@@ -1410,5 +1410,13 @@
     "singleQuote": true,
     "trailingComma": "none",
     "arrowParens": "avoid"
+  },
+  "flags": {
+    "statusBars": {
+      "vanilla": {
+        "dateTime": 1
+      },
+      "filesize": 1
+    }
   }
 }

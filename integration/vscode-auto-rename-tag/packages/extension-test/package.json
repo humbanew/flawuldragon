@@ -1,0 +1,20 @@
+{
+  "name": "extension-test",
+  "version": "1.0.0-dev",
+  "scripts": {
+    "dev": "tsc -b -w",
+    "build": "tsc -b",
+    "e2e": "rimraf dist tsconfig.tsbuildinfo && npm run build && node dist/extensionTestMain"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^17.0.23",
+    "@types/vscode": "^1.65.0",
+    "@vscode/test-electron": "^2.1.3",
+    "fs-extra": "^10.0.1",
+    "mocha": "^9.2.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.3"
+  }
+}
