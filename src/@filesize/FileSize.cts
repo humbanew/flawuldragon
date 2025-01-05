@@ -1,6 +1,6 @@
 import * as fs from "node:fs";
 import * as vscode from "vscode";
-import { Vanilla } from "../Vanilla.cjs";
+import { Vanilla } from "../@vanilla/Vanilla.cjs";
 import { constants } from "../constants.cjs";
 
 const vanillaFeatures = new Vanilla();

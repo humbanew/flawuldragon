@@ -6,7 +6,7 @@ import { JetbrainsMono } from './@jetbrainsmono/JetbrainsMono.cjs';
 import { PomodoroClock } from './@pomodoroclock/PomodoroClock.cjs';
 import { ThemeSwitch } from './@themeswitch/ThemeSwitch.cjs';
 import { TodoHighlight } from './@todohighlight/TodoHighlight.cjs';
-import { Vanilla } from './Vanilla.cjs';
+import { Vanilla } from './@vanilla/Vanilla.cjs';
 
 const vanilla = new Vanilla();
 const jetbrainsmono = new JetbrainsMono();

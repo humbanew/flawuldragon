@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { EPCPomodoroType, EPCPomodoroStatus } from "./enums.cjs";
 import { TPCCommandStatus } from "./declares.js";
 import { PCPomodoro } from "./PCPomodoro.ac.cjs";
-import { Vanilla } from "../Vanilla.cjs";
+import { Vanilla } from "../@vanilla/Vanilla.cjs";
 import { constants } from "../constants.cjs";
 
 const vanillaFeatures = new Vanilla();

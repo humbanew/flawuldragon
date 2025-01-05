@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import * as os from "os";
 import { ITHKeyword, ITHAnnotationType, ITHConfig, ITHErrorHandler, ITHAnnotation, ITHAnnotationsFoundError, ITHAnnotations } from "./declares";
-import { IVFDInterruptor } from "../IVFDInterruptor";
+import { IVFDInterruptor } from "../@vanilla/IVFDInterruptor";
 import { constants } from "../constants.cjs";
 
 /**

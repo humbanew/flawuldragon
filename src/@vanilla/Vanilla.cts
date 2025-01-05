@@ -2,8 +2,8 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as vscode from 'vscode';
 import { IVFDInterruptor } from './IVFDInterruptor';
-import * as packageJson from '../package.json';
-import { constants } from './constants.cjs';
+import * as packageJson from '../../package.json';
+import { constants } from '../constants.cjs';
 
 /**
  * Interface Save Mode Display StatusBar
