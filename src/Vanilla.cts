@@ -3,6 +3,15 @@ import * as path from 'node:path';
 import * as vscode from 'vscode';
 import { IVFDInterruptor } from './IVFDInterruptor';
 import * as packageJson from '../package.json';
+import { constants } from './constants.cjs';
+
+/**
+ * Interface Save Mode Display StatusBar
+ * 1- Display datetime default visualization (date - time)
+ * 2- Display datetime invert position visualization (time - date)
+ * 3- Display datetime with seconds visualization
+ * 4- Display datetime with custom time format
+ */
 
 /**
  * Represents the Vanilla class which is responsible for managing the Flawuldragon extension's status bar item.
@@ -21,8 +30,7 @@ export class Vanilla {
    * A status bar item for the Flawuldragon extension.
    * This status bar item is aligned to the left with a priority of 100.
    */
-  protected flawuldragonStatusBar: vscode.StatusBarItem =
-    vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
+  protected flawuldragonStatusBar: vscode.StatusBarItem = constants.statusBar.positions.posA;
 
   /**
    * A status bar item that displays the date and time for the Flawuldragon extension.
@@ -30,14 +38,13 @@ export class Vanilla {
    * This status bar item is aligned to the left with a priority of 98.
    * It is created using the `vscode.window.createStatusBarItem` method.
    */
-  protected flawuldragonDateTimeStatusBar: vscode.StatusBarItem =
-    vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 98);
+  protected flawuldragonDateTimeStatusBar: vscode.StatusBarItem = constants.statusBar.positions.posC;
 
   /**
    * A unique identifier for the status bar item associated with the Flawuldragon extension.
    * This ID is used to register and manage the status bar item within the extension.
    */
-  protected flawuldragonStatusbaritemId = 'flawuldragon.extension.infos';
+  protected flawuldragonStatusbaritemId = constants.commands.vanilla.release.fdNotesViewPanel;
 
   protected vanilla_flawuldragonNotes(context: vscode.ExtensionContext): void {
     context.subscriptions.push(
@@ -109,7 +116,7 @@ export class Vanilla {
   }
 
   protected vanilla_dateTimeComponent(): void {
-    packageJson.flags.statusBars.vanilla.dateTime;
+    packageJson.flawuldragonFlags.statusBars.vanilla.dateTime;
 
     vscode.commands.registerCommand('flawuldragon.vanillaDateTime.invertPosition', ()=>{});
     vscode.commands.registerCommand('flawuldragon.vanillaDateTime.showSeconds', ()=>{});
@@ -141,11 +148,8 @@ export class Vanilla {
       setInterval(() => {
         let timer: Date = new Date(),
           text: string;
-        let date = `${timer.getUTCDate()}-${
-          timer.getUTCMonth() + 1
-        }-${timer.getFullYear()}`;
-        let day = timer.getUTCDate().toString();
-        let month = (timer.getUTCMonth() + 1).toString();
+        let day = timer.getDate().toString();
+        let month = (timer.getMonth() + 1).toString();
         let hours = timer.getHours().toString();
         let minutes = timer.getMinutes().toString();
         if (parseInt(day) < 10) {
@@ -160,7 +164,7 @@ export class Vanilla {
         if (parseInt(minutes) < 10) {
           minutes = 0 + minutes;
         }
-        date = `${day}-${month}-${timer.getFullYear()}`;
+        let date = `${day}-${month}-${timer.getFullYear()}`;
         text = date + ` ◆ ${hours}:${minutes}`;
         this.flawuldragonDateTimeStatusBar.text = text;
       }, 1000);
@@ -172,7 +176,7 @@ export class Vanilla {
 
       this.vanilla_interruptorStatusBarConstructor(
         this.flawuldragonDateTimeStatusBar,
-        'flawuldragon.vanillaDateTime.ui.interruptorStatusBar'
+        constants.commands.vanilla.release.fdDateTimeStatusbar
       ); // show or hide the status bar
     
       // // flawuldragon dont applied commands
@@ -187,14 +191,6 @@ export class Vanilla {
       //     }
       //   }
       // );
-      vscode.commands.registerCommand(
-        'flawuldragon.vanillaDateTime.showSeconds',
-        () => {}
-      );
-      vscode.commands.registerCommand(
-        'flawuldragon.vanillaDateTime.timeFormat',
-        () => {}
-      );
       /** -------------------- End of Development Block --------------------------- */
 
       this.vanilla_checkingIsOk();
@@ -225,8 +221,8 @@ class VDateTime {
    * This status bar item is aligned to the left with a priority of 98.
    * It is created using the `vscode.window.createStatusBarItem` method.
    */
-  protected flawuldragonDateTimeStatusBar: vscode.StatusBarItem =
-    vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 98);
+  // protected flawuldragonDateTimeStatusBar: vscode.StatusBarItem =
+  //   vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 98);
 }
 
 class VTimer {
@@ -251,7 +247,7 @@ class VTimer {
     // fs.writeFileSync('./timerInfos.txt', 'Timer: ' + this.horas + ':' + this.minutos + ':' + this.segundos);
   }
 
-  protected flawuldragonTimerStatusBar: vscode.StatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 97);
+  protected flawuldragonTimerStatusBar: vscode.StatusBarItem = constants.statusBar.positions.posD;
 
   public constructor(context: vscode.ExtensionContext){
     this.flawuldragonTimerStatusBar.text = "00:00:00 Elapsed (Placeholder)";
@@ -312,6 +308,31 @@ class VExtensionIntelligence {
      * [Todo Highlight]
      * Publisher 	Wayou Liu 	
      * Unique Identifier 	wayou.vscode-todo-highlight
+     * 
+     * [Fluent Icons]
+     * Publisher 	Miguel Solorio 	
+     * Unique Identifier 	miguelsolorio.fluent-icons
+     * 
+     * [Visual Studio Icons v1]
+     * Publisher 	Jordan Lowe 	
+     * Unique Identifier 	jtlowe.vscode-icon-theme
+     * 
+     * [Visual Studio Icons v2]
+     * Publisher 	vigan-abd 	
+     * Unique Identifier 	vigan-abd.vscode-icon-v2
+     * 
+     * [Visual Studio Icons Classic]
+     * Publisher 	jez9999 	
+     * Unique Identifier 	jez9999.vsclassic-icon-theme
+     * 
+     * [Visual Studio Code Icons]
+     * Publisher 	VSCode Icons Team 	
+     * Unique Identifier 	vscode-icons-team.vscode-icons
+     * 
+     * [Datapack Icons Minecraft]
+     * Publisher 	FuncFusion 	
+     * Unique Identifier 	SuperAnt.mc-dp-icons
+     * 
      */
     vscode.workspace.getConfiguration().get('installedExtensions');
   }

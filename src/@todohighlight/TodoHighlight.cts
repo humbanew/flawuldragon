@@ -1,13 +1,8 @@
 import * as vscode from "vscode";
 import * as os from "os";
-import { ITHKeyword } from "./ITHKeyboard";
-import { ITHAnnotationType } from "./ITHAnnotationType";
-import { ITHConfig } from "./ITHConfig";
-import { ITHErrorHandler } from "./ITHErrorHandler";
-import { ITHAnnotation } from "./ITHAnnotation";
-import { ITHAnnotationsFoundError } from "./ITHAnnotationsFoundError";
-import { ITHAnnotations } from "./ITHAnnotations";
+import { ITHKeyword, ITHAnnotationType, ITHConfig, ITHErrorHandler, ITHAnnotation, ITHAnnotationsFoundError, ITHAnnotations } from "./declares";
 import { IVFDInterruptor } from "../IVFDInterruptor";
+import { constants } from "../constants.cjs";
 
 /**
  * The `TodoHighlight` class provides functionality to highlight and manage TODO annotations within a Visual Studio Code workspace.
@@ -596,10 +591,7 @@ export class TodoHighlight {
    * The background color of the status bar item is set to a warning theme color.
    */
   protected todoHighlight_createStatusBarItem(numNotations?: number) {
-    let todoHighlightStatusBarItem = vscode.window.createStatusBarItem(
-      vscode.StatusBarAlignment.Left,
-      95,
-    );
+    let todoHighlightStatusBarItem = constants.statusBar.positions.posF;
     if(numNotations == 0) {
       todoHighlightStatusBarItem.text = this.defaultIcon + " " + this.defaultMsg;
     } else {
@@ -833,7 +825,7 @@ export class TodoHighlight {
   
       context.subscriptions.push(
         vscode.commands.registerCommand(
-          "flawuldragon.todohighlight.toggleHighlight",
+          constants.commands.todoHighlight.release.fdToggleTodoHighlight,
           () => {
             settings
               .update("isEnable", !settings.get("isEnable"), true)
@@ -846,7 +838,7 @@ export class TodoHighlight {
   
       context.subscriptions.push(
         vscode.commands.registerCommand(
-          "flawuldragon.todohighlight.listAnnotations",
+          constants.commands.todoHighlight.release.fdListAnnotations,
           () => {
             if (keywordsPattern?.trim()) {
               this.todoHighlight_searchAnnotations(
@@ -908,7 +900,7 @@ export class TodoHighlight {
   
       context.subscriptions.push(
         vscode.commands.registerCommand(
-          "flawuldragon.todohighlight.showOutputChannel",
+          constants.commands.todoHighlight.release.fdOutputPanel,
           () => {
             var annotationList = workspaceState.get("annotationList", []);
             new TodoHighlight().todoHighlight_showOutputChannel(annotationList);
@@ -916,7 +908,7 @@ export class TodoHighlight {
         ),
       );
 
-      const statusBarCommand = "flawuldragon.todohighlight.ui.interruptorStatusBar";
+      const statusBarCommand = constants.commands.todoHighlight.release.fdTodoHighlight;
       const interruptor: IVFDInterruptor = { on: true, off: false };
       vscode.commands.registerCommand(statusBarCommand, () => {
         if (interruptor.on == true) {

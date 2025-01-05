@@ -1,0 +1,184 @@
+{
+  "name": "mc-dp-icons",
+  "displayName": "Datapack Icons",
+  "description": "A fancy, minecraft-styled icon theme, designed specifically for datapack devs.",
+  "version": "4.0.0",
+  "publisher": "SuperAnt",
+  "author": {
+    "name": "FuncFusion"
+  },
+  "icon": "assets/2.0/logo.png",
+  "galleryBanner": {
+    "color": "#313338",
+    "theme": "dark"
+  },
+  "license": "GNU AFFERO GENERAL PUBLIC LICENSE",
+  "engines": {
+    "vscode": "^1.5.1"
+  },
+  "keywords": [
+    "minecraft",
+    "datapack",
+    "resourcepack",
+    "addon",
+    "bedrock",
+    "icons",
+    "theme",
+    "mc",
+    "dp",
+    "command",
+    "block",
+    "mcfunction",
+    "mcf"
+  ],
+  "categories": [
+    "Themes",
+    "Visualization"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FuncFusion/mc-dp-icons"
+  },
+  "homepage": "https://github.com/FuncFusion/mc-dp-icons",
+  "activationEvents": [
+    "onStartup",
+    "onWorkspaceFolderOpened",
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "browser": "./dist/web_extension.js",
+  "contributes": {
+    "iconThemes": [
+      {
+        "id": "mc-dp-icons",
+        "label": "Datapack Icons Theme",
+        "path": "./fileicons/mc-dp-icon-theme.json",
+        "_watch": true
+      }
+    ],
+    "configuration": [
+      {
+        "title": "Datapack Icons",
+        "order": 0,
+        "properties": {
+          "mc-dp-icons.enableNamespaceIcons": {
+            "type": "boolean",
+            "order": 0,
+            "title": "Changes namespace folders icons to an ender chest",
+            "default": true,
+            "markdownDescription": "If enabled, namespace folders (folders directly within `data` and `assets`) will change their icons to ender chests. Works only if there is `pack.mcmeta` in the same directory.\n\n*Warning: this feature is not currently supported for VS Code web.*"
+          },
+          "mc-dp-icons.enableSubfolderIcons": {
+            "type": "boolean",
+            "order": 0,
+            "title": "Enable subfolder icons",
+            "default": false,
+            "markdownDescription": "If enabled, json files inside namespace subfolders will also change their icons (e.g. `data/namespace/item_modifier/some_folder/file.json` will change its icon to a diamond pickaxe when this is enabled). Not recommended for large workspaces. Works only if there is `pack.mcmeta` in the same directory.\n\n*Warning: this feature is not currently supported for VS Code web.*"
+          },
+          "mc-dp-icons.enableChristmasIcons": {
+            "type": "string",
+            "order": 1,
+            "title": "Use Christmas icons",
+            "default": "Only on Christmas",
+            "enum": [
+              "Only on Christmas",
+              "Always",
+              "Disable"
+            ],
+            "markdownDescription": "Choose when to use Christmas icons.\n\n*Warning: this feature is not currently supported for VS Code web.*"
+          },
+          "mc-dp-icons.hideFolderArrows": {
+            "type": "boolean",
+            "order": 2,
+            "title": "Hide folder arrows",
+            "default": false,
+            "markdownDescription": "if enabled, the extension will hide folder arrows in the explorer.\n\n*Warning: this feature is not currently supported for VS Code web.*"
+          }
+        }
+      },
+      {
+        "title": "Dynamic theme change",
+        "order": 1,
+        "properties": {
+          "mc-dp-icons.enablePackMcmetaCheck": {
+            "type": "boolean",
+            "title": "Enable pack.mcmeta check",
+            "default": false,
+            "markdownDescription": "If enabled, the extension will check for `pack.mcmeta` in the workspace to set the theme to `mc-dp-icons`. If there is no `pack.mcmeta` in the workspace, icon theme will change to default one used.\nThis check happens every time on extension startup, on changing workspace folder, on renaming, creating and deleting files."
+          },
+          "mc-dp-icons.setDefaultIconTheme": {
+            "type": "string",
+            "title": "What icon theme will be set if pack.mcmeta check fails",
+            "default": "",
+            "markdownDescription": "**This works only if `#mc-dp-icons.enablePackMcmetaCheck#` is enabled**.\nPut an id of an icon theme you want to be set when there is no `pack.mcmeta` in the workspace.\nIf blank, the extension will remember the icon theme you launched the workspace with."
+          }
+        }
+      },
+      {
+        "id": "loadTick",
+        "title": "Dynamic load and tick functions",
+        "order": 2,
+        "properties": {
+          "mc-dp-icons.enableLoadTickAutoChange": {
+            "type": "boolean",
+            "title": "Dynamic icons for tick and load functions",
+            "default": true,
+            "markdownDescription": "If enabled, load and tick functions will change their icons to repeating and impulse command blocks accordingly, based on values provided in `tick.json` and `load.json` files found in the workspace.\n\nIf not enabled, load and tick icons will be set by their names, that are set by the user in the settings below.\n\n*Warning: this feature is not currently supported for VS Code web.*"
+          },
+          "mc-dp-icons.functionNamesForTick": {
+            "title": "Tick function names",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "markdownDescription": "**Only works if `#mc-dp-icons.enableLoadTickAutoChange#` is NOT enabled**. Put here all the names of function files (without `.mcfunction`) you'd like to have a repeating command block icon.\n\n*Warning: this feature is not currently supported for VS Code web.*"
+          },
+          "mc-dp-icons.functionNamesForLoad": {
+            "title": "Load function names",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "markdownDescription": "**Only works if `#mc-dp-icons.enableLoadTickAutoChange#` is NOT enabled**. Put here all the names of function files (without `.mcfunction`) you'd like to have an impulse command block icon.\n\n*Warning: this feature is not currently supported for VS Code web.*"
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "title": "Datapack Icons: Open extension settings",
+        "command": "mc-dp-icons.DpIconsOpenSettings"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "webpack": "webpack --mode development",
+    "webpack-dev": "webpack --mode development --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.5.1",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/test-web": "^0.0.63",
+    "eslint": "^8.54.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "path": "^0.12.7"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}

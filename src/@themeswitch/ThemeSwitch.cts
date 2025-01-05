@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import { constants } from '../constants.cjs';
 
 export class ThemeSwitch {
   /**
@@ -81,7 +82,7 @@ export class ThemeSwitch {
     this.themeSwitch_getTheme()
 
     // switch to the dark theme
-    this.themeSwitch_registerCommand('flawuldragon.themeswitch.darktheme', () => {
+    this.themeSwitch_registerCommand(constants.commands.themeSwitch.release.fdThemeSwitchDarkTheme, () => {
       if (!this.darkTheme) {
         // TODO: dropdown to select a theme
         return vscode.window.showInformationMessage('You have not yet selected a preferred dark theme.')
@@ -91,7 +92,7 @@ export class ThemeSwitch {
     })
 
     // switch to the light theme
-    this.themeSwitch_registerCommand('flawuldragon.themeswitch.lighttheme', () => {
+    this.themeSwitch_registerCommand(constants.commands.themeSwitch.release.fdThemeSwitchLightTheme, () => {
       if (!this.lightTheme) {
         // TODO: dropdown to select a theme
         return vscode.window.showInformationMessage('You have not yet selected a preferred light theme.')
@@ -101,7 +102,7 @@ export class ThemeSwitch {
     })
 
     // toggle between the themes
-    this.themeSwitch_registerCommand('flawuldragon.themeswitch.toggle', () => {
+    this.themeSwitch_registerCommand(constants.commands.themeSwitch.release.fdThemeSwitchToggle, () => {
       if (!this.lightTheme || !this.darkTheme) {
         // TODO: dropdown to select a theme
         return vscode.window.showInformationMessage('You have not yet selected a preferred light and/or dark theme.')
@@ -200,7 +201,7 @@ export class ThemeSwitch {
     // create the switch if it does not already exist
     if (this.switch === undefined || force) {
       this.switch?.dispose?.();
-      this.switch = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 99);
+      this.switch = constants.statusBar.positions.posB;
       this.switch.backgroundColor = new vscode.ThemeColor('statusBarItem.warningBackground');
       this.switch.command = 'flawuldragon.themeswitch.toggle';
       this.switch.text = '$(color-mode)';

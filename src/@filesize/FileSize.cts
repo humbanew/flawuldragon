@@ -1,8 +1,15 @@
 import * as fs from "node:fs";
 import * as vscode from "vscode";
 import { Vanilla } from "../Vanilla.cjs";
+import { constants } from "../constants.cjs";
 
 const vanillaFeatures = new Vanilla();
+
+/**
+ * Interface Save Mode Display StatusBar
+ * 1- Display filesize default info
+ * 2- Display filesize advanced info
+ */
 
 /**
  * A class that provides functionality to display the file size of the currently active text editor's document
@@ -18,10 +25,9 @@ const vanillaFeatures = new Vanilla();
 export class FileSize {
   /**
    * A status bar item that displays the file size in the Visual Studio Code editor.
-   * It is aligned to the left side of the status bar with a priority of 98.
+   * It is aligned to the left side of the status bar with a priority of 96.
    */
-  protected filesizeStatusBar: vscode.StatusBarItem =
-    vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 96);
+  protected filesizeStatusBar: vscode.StatusBarItem = constants.statusBar.positions.posE;
 
   /**
    * Retrieves the current file size of the active text editor's document and updates the provided status item with the file size.
@@ -51,6 +57,14 @@ export class FileSize {
     });
   }
 
+  /**
+   * Retrieves the current file size of the active text editor's file and updates the provided status item with the file size.
+   * If no file is open, the status item will display "No file".
+   *
+   * @param statusItem - An object containing a text property and a show method to update the status display.
+   * @param statusItem.text - The text to display in the status item.
+   * @param statusItem.show - A method to show the status item.
+   */
   protected filesize_getCurrentAdvancedFileSize(statusItem: {
     text: string | undefined;
     show: () => void;
@@ -93,6 +107,19 @@ export class FileSize {
     }
   }
 
+  /**
+   * Converts a file size in bytes to a more readable format with advanced size representation.
+   * 
+   * @param size - The file size in bytes.
+   * @returns A string representing the file size in a more readable format, including the original size in bytes.
+   * 
+   * The conversion follows these rules:
+   * - If the size is less than 1024 bytes, it returns the size in bytes (B).
+   * - If the size is between 1024 bytes and less than 1 MB, it returns the size in kilobytes (KB) and bytes (B).
+   * - If the size is greater than 1 MB, it returns the size in megabytes (MB) and bytes (B).
+   * - If the size is greater than 1 GB, it returns the size in gigabytes (GB) and bytes (B).
+   * - If the size is greater than 1 TB, it returns the size in terabytes (TB) and bytes (B).
+   */
   protected filesize_convertAdvancedSize(size: number) {
     // brute size of bytes
     if (size < 1024) {
@@ -123,18 +150,18 @@ export class FileSize {
       this.filesizeStatusBar.tooltip = "Filesize of the current document";
   
       content.subscriptions.push(
-        vscode.commands.registerCommand("flawuldragon.filesize.toggleFileSizeAdvancedInfo", () => {
+        vscode.commands.registerCommand(constants.commands.filesize.release.fdFilesizeAdvancedInfo, () => {
           this.filesize_getCurrentAdvancedFileSize(this.filesizeStatusBar);
         })
       );
   
       content.subscriptions.push(
-        vscode.commands.registerCommand("flawuldragon.filesize.toggleFileSizeInfo", () => {
+        vscode.commands.registerCommand(constants.commands.filesize.release.fdFilesizeInfo, () => {
           this.filesize_getCurrentFileSize(this.filesizeStatusBar);
         })
       );
 
-      let statusBarCommand = "flawuldragon.filesize.ui.interruptorStatusBar";
+      let statusBarCommand = constants.commands.filesize.release.fdFilesize;
       vanillaFeatures.vanilla_interruptorStatusBarConstructor(this.filesizeStatusBar, statusBarCommand);
 
       vscode.window.onDidChangeActiveTextEditor(() => {
@@ -149,7 +176,7 @@ export class FileSize {
     } catch (error) {
       console.error("Flawuldragon - File size error: " + error);
       vscode.window.showErrorMessage("An error occurred while activating the file size integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
-      this.filesize_deactivate();
+      this.filesize_desactivate();
     } finally {}
   }
 
@@ -159,7 +186,7 @@ export class FileSize {
    * This method is intended to be used to disable or deactivate any operations
    * or features related to file size within the application.
    */
-  public filesize_deactivate() {
+  public filesize_desactivate() {
     this.filesizeStatusBar.dispose();
   }
 }

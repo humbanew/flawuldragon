@@ -1,6 +1,7 @@
 import * as path from "node:path";
 import * as vscode from "vscode";
-import { IJBMGeneralObject } from "./IJBMGeneralObject";
+import { IJBMGeneralObject } from "./declares";
+import { constants } from "../constants.cjs";
 
 /**
  * The `JetbrainsMono` class provides methods to manage the JetBrains Mono font settings
@@ -170,11 +171,11 @@ export class JetbrainsMono {
         `Congratulations, your extension "${context.extension.packageJSON.displayName} - Jetbrains Mono Font installed!"`,
       );
       let activateCommand = vscode.commands.registerCommand(
-        "flawuldragon.jetbrainsmonofont.activate",
+        constants.commands.jetbrainsMono.release.fdActivate,
         () => this.jetbrainsMono_activation(context),
       );
       let deactivateCommand = vscode.commands.registerCommand(
-        "flawuldragon.jetbrainsmonofont.deactivate",
+        constants.commands.jetbrainsMono.release.fdDeactivate,
         () => this.jetbrainsMono_desactivate(context),
       );
       context.subscriptions.push(activateCommand, deactivateCommand);

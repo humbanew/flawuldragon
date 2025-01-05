@@ -1,5 +1,4 @@
-import { EPCPomodoroStatus } from "./EPCPomodoroStatus.cjs";
-import { EPCPomodoroType } from "./EPCPomodoroType.cjs";
+import { EPCPomodoroStatus, EPCPomodoroType } from "./enums.cjs";
 import { PCTimer } from "./PCTimer.ac.cjs";
 
 /**

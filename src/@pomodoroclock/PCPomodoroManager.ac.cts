@@ -1,9 +1,9 @@
 import * as vscode from "vscode";
-import { EPCPomodoroType } from "./EPCPomodoroType.cjs";
-import { EPCPomodoroStatus } from "./EPCPomodoroStatus.cjs";
-import { TPCCommandStatus } from "./TPCCommandStatus";
+import { EPCPomodoroType, EPCPomodoroStatus } from "./enums.cjs";
+import { TPCCommandStatus } from "./declares.js";
 import { PCPomodoro } from "./PCPomodoro.ac.cjs";
 import { Vanilla } from "../Vanilla.cjs";
+import { constants } from "../constants.cjs";
 
 const vanillaFeatures = new Vanilla();
 
@@ -148,16 +148,10 @@ export class PCPomodoroManager {
   constructor(public vscodeContext: vscode.ExtensionContext) {
     // create status bar items
     if (!this._clockBarText) {
-      this._clockBarText = vscode.window.createStatusBarItem(
-        vscode.StatusBarAlignment.Left,
-        93,
-      );
-      this._typeBarText = vscode.window.createStatusBarItem(
-        vscode.StatusBarAlignment.Left,
-        94,
-      );
+      this._clockBarText = constants.statusBar.positions.posH;
+      this._typeBarText = constants.statusBar.positions.posG;
       this._clockBarText.command =
-        "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown";
+        constants.commands.pomodoroClock.release.fdToggleCurrentPomodoroCountdown;
       this._clockBarText.show();
       this._clockBarText.backgroundColor = new vscode.ThemeColor(
         "statusBarItem.warningBackground",
@@ -169,51 +163,51 @@ export class PCPomodoroManager {
     this._commandMap = {
       start: {
         link: vscode.Uri.parse(
-          `command:flawuldragon.pomodoroClock.startPomodoro`,
+          `command:${constants.commands.pomodoroClock.release.fdPomodoroStartClock}`,
         ),
         imgSrc: vscode.Uri.joinPath(
           this.vscodeContext.extensionUri,
-          "assets/pmcl-assets/assets/imgs",
+          "assets/pomodoroClock/assets/imgs",
           "start.svg",
         ),
       },
       pause: {
         link: vscode.Uri.parse(
-          `command:flawuldragon.pomodoroClock.pausePomodoro`,
+          `command:${constants.commands.pomodoroClock.release.fdPomodoroPauseClock}`,
         ),
         imgSrc: vscode.Uri.joinPath(
           this.vscodeContext.extensionUri,
-          "assets/pmcl-assets/assets/imgs",
+          "assets/pomodoroClock/assets/imgs",
           "pause.svg",
         ),
       },
       continue: {
         link: vscode.Uri.parse(
-          `command:flawuldragon.pomodoroClock.continuePomodoro`,
+          `command:${constants.commands.pomodoroClock.release.fdPomodoroContinueClock}`,
         ),
         imgSrc: vscode.Uri.joinPath(
           this.vscodeContext.extensionUri,
-          "assets/pmcl-assets/assets/imgs",
+          "assets/pomodoroClock/assets/imgs",
           "continue.svg",
         ),
       },
       restart: {
         link: vscode.Uri.parse(
-          `command:flawuldragon.pomodoroClock.restartPomodoro`,
+          `command:${constants.commands.pomodoroClock.release.fdPomodoroRestartClock}`,
         ),
         imgSrc: vscode.Uri.joinPath(
           this.vscodeContext.extensionUri,
-          "assets/pmcl-assets/assets/imgs",
+          "assets/pomodoroClock/assets/imgs",
           "restart.svg",
         ),
       },
       reset: {
         link: vscode.Uri.parse(
-          `command:flawuldragon.pomodoroClock.resetPomodoro`,
+          `command:${constants.commands.pomodoroClock.release.fdPomodoroResetClock}`,
         ),
         imgSrc: vscode.Uri.joinPath(
           this.vscodeContext.extensionUri,
-          "assets/pmcl-assets/assets/imgs",
+          "assets/pomodoroClock/assets/imgs",
           "reset.svg",
         ),
       },
@@ -228,8 +222,8 @@ export class PCPomodoroManager {
 
     // comandos adicionais para habilitar e desabilitar status bar itens
 
-    let clockStatusBarCommand = "flawuldragon.pomodoroClock.ui.interruptorClockStatusBar";
-    let typeStatusBarCommand = "flawuldragon.pomodoroClock.ui.interruptorTypeStatusBar";
+    let clockStatusBarCommand = constants.commands.pomodoroClock.release.fdClockStatusBar;
+    let typeStatusBarCommand = constants.commands.pomodoroClock.release.fdTypeStatusBar;
     vanillaFeatures.vanilla_interruptorStatusBarConstructor(this._clockBarText, clockStatusBarCommand);
     vanillaFeatures.vanilla_interruptorStatusBarConstructor(this._typeBarText, typeStatusBarCommand);
   }

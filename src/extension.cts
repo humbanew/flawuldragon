@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import { ErrorLens } from './@errorlens/ErrorLens.cjs';
 import { FileSize } from './@filesize/FileSize.cjs';
 import { IndentRainbow } from './@indentrainbow/IndentRainbow.cjs';
 import { JetbrainsMono } from './@jetbrainsmono/JetbrainsMono.cjs';
@@ -14,6 +15,7 @@ const todohighlight = new TodoHighlight();
 const indentrainbow = new IndentRainbow();
 const pomodoroclock = new PomodoroClock();
 const themeswitch = new ThemeSwitch();
+const errorlens = new ErrorLens();
 
 /**
  * Activates the extension.
@@ -36,6 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
     indentrainbow.indentRainbow_activate(context);
     pomodoroclock.pomodoroClock_activate(context);
     themeswitch.themeSwitch_activate(context);
+    errorlens.errorLens_activate(context);
   } catch (error) {
     console.log('Flawuldragon Core Hub - Error: ' + error);
     vscode.window.showErrorMessage(
@@ -44,8 +47,7 @@ export function activate(context: vscode.ExtensionContext) {
         '. Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)'
     );
     deactivate(context);
-  } finally {
-  }
+  } finally {}
 }
 
 /**
@@ -59,11 +61,12 @@ export function activate(context: vscode.ExtensionContext) {
 export function deactivate(context: vscode.ExtensionContext) {
   vanilla.vanilla_desactivate();
   jetbrainsmono.jetbrainsMono_desactivate(context);
-  filesize.filesize_deactivate();
+  filesize.filesize_desactivate();
   todohighlight.todoHighlight_desactivate();
-  indentrainbow.indentRainbow_deactivate();
-  pomodoroclock.pomodoroClock_deactivate();
+  indentrainbow.indentRainbow_desactivate();
+  pomodoroclock.pomodoroClock_desactivate();
   themeswitch.themeSwitch_desactivate();
+  errorlens.errorLens_desactivate();
 }
 
 /**

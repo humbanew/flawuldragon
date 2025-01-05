@@ -1,21 +1,20 @@
 {
   "compilerOptions": {
-    "module": "ES2020",
+    "module": "NodeNext",
     "target": "ESNext",
-    "outDir": "./out",
-    "lib": ["es2020"],
+    "outDir": "./dist",
+    "declarationDir": "./dist",
+    "lib": ["es2024"],
     "sourceMap": false,
-    "declaration": false,
-    "declarationMap": false,
+    "declaration": true,
+    "declarationMap": true,
     "rootDir": "./src",
-    "moduleResolution": "node",
-    "moduleDetection": "force",
+    "moduleResolution": "nodenext",
+    "moduleDetection": "auto",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
-    "checkJs": false,
-    "strictNullChecks": false,
-    "strict": true,
+    "checkJs": true
   },
-  "exclude": ["node_modules", "out", "flawuldragon-devkit", "integration", "underreview"]
+  "exclude": ["node_modules", "dist", "flawuldragon-devkit", "integration", "underreview"]
 }

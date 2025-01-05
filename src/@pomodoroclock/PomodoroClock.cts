@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import { PCPomodoroManager } from "./PCPomodoroManager.ac.cjs";
+import { constants } from "../constants.cjs";
 
 /**
  * Represents a Pomodoro Clock extension for VS Code.
@@ -32,42 +33,42 @@ export class PomodoroClock {
       const pomodoroManager = new PCPomodoroManager(context);
       // list of commands
       const startDisposable = vscode.commands.registerCommand(
-        "flawuldragon.pomodoroClock.startPomodoro",
+        constants.commands.pomodoroClock.release.fdPomodoroStartClock,
         () => {
           pomodoroManager.start();
         },
       );
 
       const pauseDisposable = vscode.commands.registerCommand(
-        "flawuldragon.pomodoroClock.pausePomodoro",
+        constants.commands.pomodoroClock.release.fdPomodoroPauseClock,
         () => {
           pomodoroManager.pause();
         },
       );
 
       const continueDisposable = vscode.commands.registerCommand(
-        "flawuldragon.pomodoroClock.continuePomodoro",
+        constants.commands.pomodoroClock.release.fdPomodoroContinueClock,
         () => {
           pomodoroManager.continue();
         },
       );
 
       const restartDisposable = vscode.commands.registerCommand(
-        "flawuldragon.pomodoroClock.restartPomodoro",
+        constants.commands.pomodoroClock.release.fdPomodoroRestartClock,
         () => {
           pomodoroManager.restart();
         },
       );
 
       const resetDisposable = vscode.commands.registerCommand(
-        "flawuldragon.pomodoroClock.resetPomodoro",
+        constants.commands.pomodoroClock.release.fdPomodoroResetClock,
         () => {
           pomodoroManager.reset();
         },
       );
 
       const toggleDisposable = vscode.commands.registerCommand(
-        "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown",
+        constants.commands.pomodoroClock.release.fdToggleCurrentPomodoroCountdown,
         () => {
           pomodoroManager.toggleCountdown();
         },
@@ -90,7 +91,7 @@ export class PomodoroClock {
           error +
           ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)",
       );
-      this.pomodoroClock_deactivate();
+      this.pomodoroClock_desactivate();
     } finally {}
   }
 
@@ -98,7 +99,7 @@ export class PomodoroClock {
    * Deactivates the Pomodoro clock.
    * This method logs a message indicating that the Pomodoro clock has been deactivated.
    */
-  public pomodoroClock_deactivate() {
+  public pomodoroClock_desactivate() {
     console.log("pomodoro deactivate");
   }
 }

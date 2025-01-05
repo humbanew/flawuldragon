@@ -338,6 +338,22 @@ export class IndentRainbow {
           100;
           IndentRainbow.timeout = setTimeout(updateDecorations, updateDelay);
       }
+
+      function disableFeatures() {
+        vscode.commands.registerCommand("flawuldragon.indentRainbow.deactivate", () => {
+          IndentRainbow.decorationTypes.forEach((decorationType) => {
+            decorationType.dispose();
+          });
+          IndentRainbow.error_decoration_type.dispose();
+          IndentRainbow.tabmix_decoration_type && IndentRainbow.tabmix_decoration_type.dispose();
+        });
+      }
+
+      function enableFeatures() {
+        vscode.commands.registerCommand("flawuldragon.indentRainbow.activate", () => {
+          updateDecorations();
+        });
+      }
   
       function updateDecorations() {
         if (!IndentRainbow.activeEditor) {
@@ -484,7 +500,7 @@ export class IndentRainbow {
     } catch (error) {
       console.error("Flawuldragon - Indent Rainbow error: ", error);
       vscode.window.showErrorMessage("An error occurred while activating the indent rainbow integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
-      this.indentRainbow_deactivate();
+      this.indentRainbow_desactivate();
     } finally {}
   }
 
@@ -493,8 +509,8 @@ export class IndentRainbow {
    *
    * This function is called when the extension is deactivated. It can be used to perform any necessary cleanup tasks.
    */
-  public indentRainbow_deactivate() {
+  public indentRainbow_desactivate() {
     vscode.window.showInformationMessage("Indent Rainbow deactivated.");
-    vscode.commands.executeCommand("fd.indentRainbow.deactivate");
+    vscode.commands.executeCommand("flawuldragon.indentRainbow.deactivate");
   }
 }
