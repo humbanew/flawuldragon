@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ESNext",
+    "outDir": "./dist",
+    "declarationDir": "./dist",
+    "lib": ["es2024"],
+    "sourceMap": false,
+    "declaration": true,
+    "declarationMap": true,
+    "rootDir": "./src",
+    "moduleResolution": "nodenext",
+    "moduleDetection": "auto",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "checkJs": true
+  },
+  "exclude": ["node_modules", "dist", "integration"]
+}

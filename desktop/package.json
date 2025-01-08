@@ -1,0 +1,1210 @@
+{
+  "name": "flawuldragon",
+  "displayName": "Flawuldragon",
+  "description": "Humbanew Official Development Extension",
+  "version": "1.0.0",
+  "icon": "assets/icon.png",
+  "readme": "README.md",
+  "license": "Humbanew License v5, powered by MIT License",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/humbanew/flawuldragon"
+  },
+  "maintainers": [
+    {
+      "name": "Humba01",
+      "email": "development@humbanew.com.br",
+      "url": "https://www.humbanew.com.br"
+    }
+  ],
+  "galleryBanner": {
+    "color": "#451aff",
+    "theme": "dark"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "publisher": "humbanew",
+  "scripts": {
+    "fd:vscode:package": "npx vsce package",
+    "fd:vscode:publish": "npx vsce publish",
+    "fd:vscode:help": "npx vsce help",
+    "fd:compile": "tsc -p ./",
+    "fd:watch": "tsc -watch -p ./",
+    "fd:pretest": "yarn run compile && yarn run lint",
+    "fd:lint": "eslint src --ext ts",
+    "fd:test": "node ./dist/test/runTest.js"
+  },
+  "main": "./dist/extension.cjs",
+  "engines": {
+    "vscode": "^1.80.0",
+    "node": "^22.0.0"
+  },
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onTaskType:node",
+    "onTaskType:npm"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "id": "1",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Advanced Circuits",
+        "path": "./themes/dark/advanced_circuits/advanced_circuits-color-theme.json"
+      },
+      {
+        "id": "2",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Advanced Circuits ■ Bluloco Highlight",
+        "path": "./themes/dark/advanced_circuits/advanced_circuits_bluloco_highlight-color-theme.json"
+      },
+      {
+        "id": "3",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Advanced Circuits ■ Bluloco Italic Highlight",
+        "path": "./themes/dark/advanced_circuits/advanced_circuits_bluloco_italic_highlight-color-theme.json"
+      },
+      {
+        "id": "4",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Advanced Circuits ■ Dracula Highlight",
+        "path": "./themes/dark/advanced_circuits/advanced_circuits_dracula_highlight-color-theme.json"
+      },
+      {
+        "id": "5",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Advanced Circuits ■ Dracula Soft Highlight",
+        "path": "./themes/dark/advanced_circuits/advanced_circuits_dracula_soft_highlight-color-theme.json"
+      },
+      {
+        "id": "6",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Advanced Circuits ■ Monokai Dimmed Highlight",
+        "path": "./themes/dark/advanced_circuits/advanced_circuits_monokai_dimmed_highlight-color-theme.json"
+      },
+      {
+        "id": "7",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Advanced Circuits ■ One Dark Highlight",
+        "path": "./themes/dark/advanced_circuits/advanced_circuits_onedark_highlight-color-theme.json"
+      },
+      {
+        "id": "8",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Advanced Circuits ■ One Dark Vivid Highlight",
+        "path": "./themes/dark/advanced_circuits/advanced_circuits_onedark_vivid_highlight-color-theme.json"
+      },
+      {
+        "id": "9",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Blueprint Paper",
+        "path": "./themes/dark/blueprint_paper/blueprint_paper-color-theme.json"
+      },
+      {
+        "id": "10",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Blueprint Paper ■ Bluloco Highlight",
+        "path": "./themes/dark/blueprint_paper/blueprint_paper_bluloco_highlight-color-theme.json"
+      },
+      {
+        "id": "11",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Blueprint Paper ■ Bluloco Italic Highlight",
+        "path": "./themes/dark/blueprint_paper/blueprint_paper_bluloco_italic_highlight-color-theme.json"
+      },
+      {
+        "id": "12",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Blueprint Paper ■ Dracula Highlight",
+        "path": "./themes/dark/blueprint_paper/blueprint_paper_dracula_highlight-color-theme.json"
+      },
+      {
+        "id": "13",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Blueprint Paper ■ Dracula Soft Highlight",
+        "path": "./themes/dark/blueprint_paper/blueprint_paper_dracula_soft_highlight-color-theme.json"
+      },
+      {
+        "id": "14",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Blueprint Paper ■ Monokai Dimmed Highlight",
+        "path": "./themes/dark/blueprint_paper/blueprint_paper_monokai_dimmed_highlight-color-theme.json"
+      },
+      {
+        "id": "15",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Blueprint Paper ■ One Dark Highlight",
+        "path": "./themes/dark/blueprint_paper/blueprint_paper_onedark_highlight-color-theme.json"
+      },
+      {
+        "id": "16",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Blueprint Paper ■ One Dark Vivid Highlight",
+        "path": "./themes/dark/blueprint_paper/blueprint_paper_onedark_vivid_highlight-color-theme.json"
+      },
+      {
+        "id": "17",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style-color-theme.json"
+      },
+      {
+        "id": "18",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_bluloco_highlight-color-theme.json"
+      },
+      {
+        "id": "19",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Italic Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_bluloco_italic_highlight-color-theme.json"
+      },
+      {
+        "id": "20",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_dracula_highlight-color-theme.json"
+      },
+      {
+        "id": "21",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Soft Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_dracula_soft_highlight-color-theme.json"
+      },
+      {
+        "id": "22",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ Monokai Dimmed Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_monokai_dimmed_highlight-color-theme.json"
+      },
+      {
+        "id": "23",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_onedark_highlight-color-theme.json"
+      },
+      {
+        "id": "24",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Vivid Highlight",
+        "path": "./themes/dark/humba01_design_style/humba01_design_style_onedark_vivid_highlight-color-theme.json"
+      },
+      {
+        "id": "25",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day",
+        "path": "./themes/dark/winter_day/winter_day-color-theme.json"
+      },
+      {
+        "id": "26",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ Bluloco Highlight",
+        "path": "./themes/dark/winter_day/winter_day_bluloco_highlight-color-theme.json"
+      },
+      {
+        "id": "27",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ Bluloco Italic Highlight",
+        "path": "./themes/dark/winter_day/winter_day_bluloco_italic_highlight-color-theme.json"
+      },
+      {
+        "id": "28",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ Dracula Highlight",
+        "path": "./themes/dark/winter_day/winter_day_dracula_highlight-color-theme.json"
+      },
+      {
+        "id": "29",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ Dracula Soft Highlight",
+        "path": "./themes/dark/winter_day/winter_day_dracula_soft_highlight-color-theme.json"
+      },
+      {
+        "id": "30",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ Monokai Dimmed Highlight",
+        "path": "./themes/dark/winter_day/winter_day_monokai_dimmed_highlight-color-theme.json"
+      },
+      {
+        "id": "31",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ One Dark Highlight",
+        "path": "./themes/dark/winter_day/winter_day_onedark_highlight-color-theme.json"
+      },
+      {
+        "id": "32",
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Winter Day ■ One Dark Vivid Highlight",
+        "path": "./themes/dark/winter_day/winter_day_onedark_vivid_highlight-color-theme.json"
+      },
+      {
+        "id": "33",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits-light-color-theme.json"
+      },
+      {
+        "id": "34",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ Bluloco Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_bluloco_highlight-light-color-theme.json"
+      },
+      {
+        "id": "35",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ Bluloco Italic Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_bluloco_italic_highlight-light-color-theme.json"
+      },
+      {
+        "id": "36",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ Dracula Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_dracula_highlight-light-color-theme.json"
+      },
+      {
+        "id": "37",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ Dracula Soft Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_dracula_soft_highlight-light-color-theme.json"
+      },
+      {
+        "id": "38",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ Monokai Dimmed Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_monokai_dimmed_highlight-light-color-theme.json"
+      },
+      {
+        "id": "39",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ One Dark Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_onedark_highlight-light-color-theme.json"
+      },
+      {
+        "id": "40",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits ■ One Dark Vivid Highlight (Light)",
+        "path": "./themes/light/advanced_circuits/advanced_circuits_onedark_vivid_highlight-light-color-theme.json"
+      },
+      {
+        "id": "41",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper-light-color-theme.json"
+      },
+      {
+        "id": "42",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ Bluloco Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_bluloco_highlight-light-color-theme.json"
+      },
+      {
+        "id": "43",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ Bluloco Italic Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_bluloco_italic_highlight-light-color-theme.json"
+      },
+      {
+        "id": "44",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ Dracula Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_dracula_highlight-light-color-theme.json"
+      },
+      {
+        "id": "45",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ Dracula Soft Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_dracula_soft_highlight-light-color-theme.json"
+      },
+      {
+        "id": "46",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ Monokai Dimmed Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_monokai_dimmed_highlight-light-color-theme.json"
+      },
+      {
+        "id": "47",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ One Dark Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_onedark_highlight-light-color-theme.json"
+      },
+      {
+        "id": "48",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper ■ One Dark Vivid Highlight (Light)",
+        "path": "./themes/light/blueprint_paper/blueprint_paper_onedark_vivid_highlight-light-color-theme.json"
+      },
+      {
+        "id": "49",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style-light-color-theme.json"
+      },
+      {
+        "id": "50",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_bluloco_highlight-light-color-theme.json"
+      },
+      {
+        "id": "51",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Italic Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_bluloco_italic_highlight-light-color-theme.json"
+      },
+      {
+        "id": "52",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_dracula_highlight-light-color-theme.json"
+      },
+      {
+        "id": "53",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Soft Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_dracula_soft_highlight-light-color-theme.json"
+      },
+      {
+        "id": "54",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ Monokai Dimmed Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_monokai_dimmed_highlight-light-color-theme.json"
+      },
+      {
+        "id": "55",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_onedark_highlight-light-color-theme.json"
+      },
+      {
+        "id": "56",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Vivid Highlight (Light)",
+        "path": "./themes/light/humba01_design_style/humba01_design_style_onedark_vivid_highlight-light-color-theme.json"
+      },
+      {
+        "id": "57",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day (Light)",
+        "path": "./themes/light/winter_day/winter_day-light-color-theme.json"
+      },
+      {
+        "id": "58",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ Bluloco Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_bluloco_highlight-light-color-theme.json"
+      },
+      {
+        "id": "59",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ Bluloco Italic Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_bluloco_italic_highlight-light-color-theme.json"
+      },
+      {
+        "id": "60",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ Dracula Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_dracula_highlight-light-color-theme.json"
+      },
+      {
+        "id": "61",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ Dracula Soft Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_dracula_soft_highlight-light-color-theme.json"
+      },
+      {
+        "id": "62",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ Monokai Dimmed Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_monokai_dimmed_highlight-light-color-theme.json"
+      },
+      {
+        "id": "63",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ One Dark Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_onedark_highlight-light-color-theme.json"
+      },
+      {
+        "id": "64",
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Winter Day ■ One Dark Vivid Highlight (Light)",
+        "path": "./themes/light/winter_day/winter_day_onedark_vivid_highlight-light-color-theme.json"
+      }
+    ],
+    "iconThemes": [],
+    "commands": [
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.extension.infos",
+        "title": "Show the Flawuldragon Notes"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vanillaDateTime.ui.interruptorStatusBar",
+        "title": "Show or Hide the vanilla date and time status bar item"
+      },
+      {
+        "category": "Flawuldragon [Experimental]",
+        "command": "flawuldragon.vanillaDateTime.invertPosition",
+        "title": "Invert the position of the vanilla date and time status bar item"
+      },
+      {
+        "category": "Flawuldragon [Experimental]",
+        "command": "flawuldragon.vanillaDateTime.showSeconds",
+        "title": "Show seconds in the time format"
+      },
+      {
+        "category": "Flawuldragon [Experimental]",
+        "command": "flawuldragon.vanillaDateTime.timeFormat",
+        "title": "Change the time format"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.jetbrainsmonofont.activate",
+        "title": "Activate JetBrains Mono Font Pack for Flawuldragon"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.jetbrainsmonofont.deactivate",
+        "title": "Deactivate JetBrains Mono Font for Flawuldragon"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.filesize.toggleFileSizeInfo",
+        "title": "Toggle file size info"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.filesize.ui.interruptorStatusBar",
+        "title": "Show or Hide the file size status bar item"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.todohighlight.toggleHighlight",
+        "title": "Toggle highlight"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.todohighlight.listAnnotations",
+        "title": "List highlighted annotations"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.todohighlight.showOutputChannel",
+        "title": "Show a output logs channel"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.todohighlight.ui.interruptorStatusBar",
+        "title": "Show or Hide the todo highlight status bar item"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.startPomodoro",
+        "title": "Start Pomodoro"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.pausePomodoro",
+        "title": "Pause Pomodoro"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.continuePomodoro",
+        "title": "Continue Pomodoro"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.restartPomodoro",
+        "title": "Restart Pomodoro"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.resetPomodoro",
+        "title": "Reset Pomodoro"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown",
+        "title": "Toggle Current Pomodoro Countdown"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.ui.interruptorClockStatusBar",
+        "title": "Show or Hide the Pomodoro Clock status bar item"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.ui.interruptorTypeStatusBar",
+        "title": "Show or Hide the Pomodoro Type status bar item"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.themeswitch.lighttheme",
+        "title": "Switch to Light Theme"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.themeswitch.darktheme",
+        "title": "Switch to Dark Theme"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.themeswitch.toggle",
+        "title": "Enable Switch Theme"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.auto-close-tag.closeTag",
+        "title": "Close Tag"
+      }
+    ],
+    "icons": {
+      "flawuldragon-on": {
+        "description": "fd-on",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E900"
+        }
+      },
+      "flawuldragon-off": {
+        "description": "fd-off",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E901"
+        }
+      },
+      "auto-rcct-bdg-tag": {
+        "description": "auto-rename-close-complete-tag-badge",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E902"
+        }
+      },
+      "filesize-bdg-tag": {
+        "description": "filesize-badge",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E903"
+        }
+      },
+      "indent-rainbow-bdg-tag": {
+        "description": "indent-rainbow-badge",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E904"
+        }
+      },
+      "jetbrains-mono-bdg-tag": {
+        "description": "jetbrains-mono-font-pack-badge",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E905"
+        }
+      },
+      "pomodoro-clock-bdg-tag": {
+        "description": "pomodoro-clock-badge",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E906"
+        }
+      },
+      "theme-switch-bdg-tag": {
+        "description": "theme-switch-badge",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E907"
+        }
+      },
+      "todo-highlight-bdg-tag": {
+        "description": "todo-highlight-badge",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E908"
+        }
+      },
+      "vanilla-bdg-tag":{
+        "description": "vanilla-badge",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-icons.woff",
+          "fontCharacter": "\\E909"
+        }
+      }
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Flawuldragon Settings",
+      "order": 0,
+      "properties": {
+        "todohighlight.isEnable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable the highlight"
+        },
+        "todohighlight.isCaseSensitive": {
+          "type": "boolean",
+          "default": true,
+          "description": "Specify whether the keywords are case sensitive or not"
+        },
+        "todohighlight.toggleURI": {
+          "type": "boolean",
+          "default": false,
+          "description": "If the file path within the output channel not clickable, set this to true to toggle the path patten between `<path>#<line>` and `<path>:<line>:<column>`"
+        },
+        "todohighlight.keywords": {
+          "type": "array",
+          "description": "Customize keywords and colors. Any css color identifier is valid.",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Custom text to be highlighted"
+                  },
+                  "color": {
+                    "type": "string",
+                    "description": "The text color. Besides, you can play with all the string and boolean styling properties provied by VS Code API. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+                  },
+                  "backgroundColor": {
+                    "type": "string",
+                    "description": "The text background color. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+                  },
+                  "overviewRulerColor": {
+                    "type": "string",
+                    "description": "The color of the ruler mark on the scroll bar. Use rgba() and define transparent colors to play well with other decorations. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "todohighlight.keywordsPattern": {
+          "type": "string",
+          "default": "",
+          "description": "Specify keywords via RegExp instead of `todohighlight.keywords` one by one. NOTE that if this presents, `todohighlight.keywords` will be ignored. And REMEMBER to escapse the back slash if there's any in your regexp (using \\\\ instead of single back slash)"
+        },
+        "todohighlight.defaultStyle": {
+          "type": "object",
+          "description": "Default style for all customized keywords",
+          "properties": {
+            "color": {
+              "type": "string",
+              "description": "The text color. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+            },
+            "backgroundColor": {
+              "type": "string",
+              "description": "The text background color. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+            },
+            "overviewRulerColor": {
+              "type": "string",
+              "description": "The color of the ruler mark on the scroll bar. See all available properties on VSCode doc DecorationRenderOptions section: https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions"
+            }
+          }
+        },
+        "todohighlight.include": {
+          "type": "array",
+          "default": [
+            "**/*.js",
+            "**/*.jsx",
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.html",
+            "**/*.php",
+            "**/*.css",
+            "**/*.scss"
+          ],
+          "description": "Glob patterns that defines the files to search for. Only include files you need, DO NOT USE `{**/*.*}` for both permormance and avoiding binary files reason.",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "A glob pattern that defines the files to search for. Only include files you need, DO NOT USE `**/*.*` for both performance and avoiding binary files reason"
+              }
+            ]
+          }
+        },
+        "todohighlight.exclude": {
+          "type": "array",
+          "default": [
+            "**/node_modules/**",
+            "**/bower_components/**",
+            "**/dist/**",
+            "**/build/**",
+            "**/.vscode/**",
+            "**/.github/**",
+            "**/_output/**",
+            "**/*.min.*",
+            "**/*.map",
+            "**/.next/**"
+          ],
+          "description": "Glob pattern that defines files and folders to exclude while listing annotations.",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "A glob pattern that defines files and folders to exclude while listing annotations"
+              }
+            ]
+          }
+        },
+        "todohighlight.maxFilesForSearch": {
+          "type": "number",
+          "default": 5120,
+          "description": "Max files for searching"
+        },
+        "filesize.useDecimal": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, using IEC's representation. Set to true to get SI representation."
+        },
+        "filesize.use24HourFormat": {
+          "type": "boolean",
+          "default": true,
+          "description": "Defaults to true, using 24-hour format. Set to false to get 12-hour format."
+        },
+        "filesize.showGzip": {
+          "type": "boolean",
+          "default": true,
+          "description": "Defaults to true, whether to show gzip size in detailed view or not."
+        },
+        "filesize.showBrotli": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, whether to show brotli size in the detailed view."
+        },
+        "filesize.showRawInBytes": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, whether to show raw size in bytes in the detailed view."
+        },
+        "filesize.showGzipInStatusBar": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, whether to show gzip size in the status bar."
+        },
+        "filesize.showBrotliInStatusBar": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, whether to show brotli size in the status bar."
+        },
+        "filesize.displayInfoOnTheRightSideOfStatusBar": {
+          "type": "boolean",
+          "default": false,
+          "description": "Defaults to false, whether to show the filesize info on the right side of the status bar."
+        },
+        "indentRainbow.includedLanguages": {
+          "type": "array",
+          "default": [],
+          "description": "For which languages indent-rainbow should be activated. When empty will use for all languages."
+        },
+        "indentRainbow.excludedLanguages": {
+          "type": "array",
+          "default": [
+            "plaintext"
+          ],
+          "description": "For which languages indent-rainbow should be deactivated. When left empty will ignore."
+        },
+        "indentRainbow.ignoreErrorLanguages": {
+          "type": "array",
+          "default": [
+            "markdown"
+          ],
+          "description": "For which languages indent-rainbow should skip indent error detection (use '*' to deactivate errors for all languages)."
+        },
+        "indentRainbow.updateDelay": {
+          "type": "integer",
+          "default": 100,
+          "description": "The delay in ms until the editor gets updated."
+        },
+        "indentRainbow.errorColor": {
+          "type": "string",
+          "default": "rgba(128,32,32,0.6)",
+          "description": "Indent color for when there is an error in the indentation, for example if you have your tabs set to 2 spaces but the indent is 3 spaces. Can be any type of web based color format (hex, rgba, rgb)."
+        },
+        "indentRainbow.tabmixColor": {
+          "type": "string",
+          "default": "rgba(128,32,96,0.6)",
+          "description": "Indent color for when there is a mix between spaces and tabs in the indentation. Can be any type of web based color format (hex, rgba, rgb) or a empty string(to be disabled this coloring)."
+        },
+        "indentRainbow.ignoreLinePatterns": {
+          "type": "array",
+          "default": [
+            "/[ \t]* [*]/g",
+            "/[ \t]+[/]{2}/g"
+          ],
+          "description": "Skip error highlighting for RegEx patterns. Defaults to c/cpp decorated block and full line comments."
+        },
+        "indentRainbow.colors": {
+          "type": "array",
+          "default": [
+            "rgba(255,255,64,0.07)",
+            "rgba(127,255,127,0.07)",
+            "rgba(255,127,255,0.07)",
+            "rgba(79,236,236,0.07)"
+          ],
+          "description": "An array with color (hex, rgba, rgb) strings which are used as colors, can be any length."
+        },
+        "indentRainbow.colorOnWhiteSpaceOnly": {
+          "type": "boolean",
+          "default": false,
+          "description": "If error color is disabled, indent colors will be rendered until the length of rendered characters (white spaces, tabs, and other ones) is divisible by tabsize. Turn on this option to render white spaces and tabs only."
+        },
+        "indentRainbow.indicatorStyle": {
+          "type": "string",
+          "default": "classic",
+          "enum": [
+            "classic",
+            "light"
+          ],
+          "markdownDescription": "Classic mode uses a full colored tab to indicate the indendation. Light mode will only display a colored border similar to the default indent guide lines. You can disable the default indicators with `#editor.guides.indentation#`."
+        },
+        "indentRainbow.lightIndicatorStyleLineWidth": {
+          "type": "number",
+          "default": 1,
+          "description": "This property defines the indent indicator lineWidth when using light mode."
+        },
+        "pomodoroClock.workTime": {
+          "type": "number",
+          "default": 25,
+          "description": "Time of work, in minutes."
+        },
+        "pomodoroClock.breakTime": {
+          "type": "number",
+          "default": 5,
+          "description": "Time of break, in minutes"
+        },
+        "pomodoroClock.longBreakTime": {
+          "type": "number",
+          "default": 15,
+          "description": "Time of long break, in minutes"
+        },
+        "pomodoroClock.repeat": {
+          "type": "number",
+          "default": 4,
+          "description": "Number of repeat before long break"
+        },
+        "pomodoroClock.countdown": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to use countdown display"
+        },
+        "themeswitch.priority": {
+          "type": "number",
+          "description": "The priority for the statusbar toggle",
+          "default": 0
+        },
+        "themeswitch.toggleDefaultDark": {
+          "type": "boolean",
+          "description": "If your preferred light/dark theme is not the current theme and the toggle is triggered, switch to your dark theme",
+          "default": true
+        },
+        "auto-close-tag.activationOnLanguage": {
+          "type": "array",
+          "default": [
+            "xml",
+            "php",
+            "blade",
+            "ejs",
+            "glimmer-js",
+            "glimmer-ts",
+            "jinja",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "plaintext",
+            "markdown",
+            "vue",
+            "liquid",
+            "erb",
+            "lang-cfml",
+            "cfml",
+            "HTML (EEx)",
+            "HTML (Eex)",
+            "plist"
+          ],
+          "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"]. Use [\"*\"] to activate for all languages.",
+          "scope": "resource"
+        },
+        "auto-close-tag.disableOnLanguage": {
+          "type": "array",
+          "default": [],
+          "description": "Set the languages where the extension will be disabled.  e.g. [\"html\",\"xml\",\"php\"].",
+          "scope": "resource"
+        },
+        "auto-close-tag.excludedTags": {
+          "type": "array",
+          "default": [
+            "area",
+            "base",
+            "br",
+            "col",
+            "command",
+            "embed",
+            "hr",
+            "img",
+            "input",
+            "keygen",
+            "link",
+            "meta",
+            "param",
+            "source",
+            "track",
+            "wbr"
+          ],
+          "description": "Set the tag list that would not be auto closed.",
+          "scope": "resource"
+        },
+        "auto-close-tag.SublimeText3Mode": {
+          "type": "boolean",
+          "default": false,
+          "description": "Auto close tag when </ is typed, same as Sublime Text 3",
+          "scope": "resource"
+        },
+        "auto-close-tag.enableAutoCloseTag": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to insert close tag automatically",
+          "scope": "resource"
+        },
+        "auto-close-tag.enableAutoCloseSelfClosingTag": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to close self-closing tag automatically",
+          "scope": "resource"
+        },
+        "auto-close-tag.insertSpaceBeforeSelfClosingTag": {
+          "type": "boolean",
+          "default": false,
+          "description": "Insert a space before the forward slash in a self-closing tag.",
+          "scope": "resource"
+        },
+        "auto-close-tag.fullMode": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable both Visual Studio and Sublime Text mode",
+          "scope": "resource"
+        },
+        "auto-rename-tag.activationOnLanguage": {
+          "type": "array",
+          "default": [
+            "*"
+          ],
+          "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"] By default, it is [\"*\"] and will be activated for all languages.",
+          "scope": "resource"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "key": "alt+n",
+        "mac": "cmd+alt+n",
+        "command": "flawuldragon.extension.infos"
+      },
+      {
+        "key": "alt+d",
+        "mac": "cmd+alt+d",
+        "command": "flawuldragon.vanillaDateTime.ui.interruptorStatusBar"
+      },
+      {
+        "key": "alt+j",
+        "mac": "cmd+alt+j",
+        "command": "flawuldragon.jetbrainsmonofont.activate"
+      },
+      {
+        "key": "alt+ctrl+j",
+        "mac": "cmd+alt+ctrl+j",
+        "command": "flawuldragon.jetbrainsmonofont.deactivate"
+      },
+      {
+        "key": "alt+f",
+        "mac": "cmd+alt+f",
+        "command": "flawuldragon.filesize.toggleFileSizeInfo"
+      },
+      {
+        "key": "alt+shift+f",
+        "mac": "cmd+alt+shift+f",
+        "command": "flawuldragon.filesize.ui.interruptorStatusBar"
+      },
+      {
+        "key": "alt+t",
+        "mac": "cmd+alt+t",
+        "command": "flawuldragon.todohighlight.toggleHighlight"
+      },
+      {
+        "key": "alt+ctrl+t",
+        "mac": "cmd+alt+ctrl+t",
+        "command": "flawuldragon.todohighlight.listAnnotations"
+      },
+      {
+        "key": "alt+shift+t",
+        "mac": "cmd+alt+shift+t",
+        "command": "flawuldragon.todohighlight.ui.interruptorStatusBar"
+      },
+      {
+        "key": "alt+p",
+        "mac": "cmd+alt+p",
+        "command": "flawuldragon.pomodoroClock.startPomodoro"
+      },
+      {
+        "key": "alt+ctrl+p",
+        "mac": "cmd+alt+ctrl+p",
+        "command": "flawuldragon.pomodoroClock.pausePomodoro"
+      },
+      {
+        "key": "alt+shift+p",
+        "mac": "cmd+alt+shift+p",
+        "command": "flawuldragon.pomodoroClock.continuePomodoro"
+      },
+      {
+        "key": "alt+ctrl+shift+p",
+        "mac": "cmd+alt+ctrl+shift+p",
+        "command": "flawuldragon.pomodoroClock.restartPomodoro"
+      },
+      {
+        "key": "alt+r",
+        "mac": "cmd+alt+r",
+        "command": "flawuldragon.pomodoroClock.resetPomodoro"
+      },
+      {
+        "key": "alt+ctrl+r",
+        "mac": "cmd+alt+ctrl+r",
+        "command": "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown"
+      },
+      {
+        "key": "alt+q",
+        "mac": "cmd+alt+q",
+        "command": "flawuldragon.pomodoroClock.ui.interruptorClockStatusBar"
+      },
+      {
+        "key": "alt+s",
+        "mac": "cmd+alt+s",
+        "command": "flawuldragon.pomodoroClock.ui.interruptorTypeStatusBar"
+      },
+      {
+        "key": "alt+1",
+        "mac": "cmd+alt+1",
+        "command": "flawuldragon.themeswitch.lighttheme"
+      },
+      {
+        "key": "alt+2",
+        "mac": "cmd+alt+2",
+        "command": "flawuldragon.themeswitch.darktheme"
+      },
+      {
+        "key": "alt+ctrl+h",
+        "mac": "cmd+alt+ctrl+h",
+        "command": "flawuldragon.themeswitch.toggle"
+      },
+      {
+        "key": "alt+.",
+        "mac": "cmd+alt+.",
+        "command": "flawuldragon.auto-close-tag.closeTag"
+      },
+      {
+        "key": "alt+.",
+        "mac": "cmd+alt+.",
+        "command": "flawuldragon.auto-close-tag.closeTag"
+      }
+    ]
+  },
+  "keywords": [
+    "Flawuldragon",
+    "Humbanew",
+    "Humbanew Project",
+    "Official",
+    "Theme Pack",
+    "Icon Theme Pack",
+    "Font Pack",
+    "MCFunction",
+    "Starter Workspace Tools",
+    "Utils"
+  ],
+  "devDependencies": {
+    "@actions/core": "^1.10.1",
+    "@babel/code-frame": "^7.16.0",
+    "@types/babel__code-frame": "^7.0.6",
+    "@types/color": "^4.2.0",
+    "@types/color-name": "^2.0.0",
+    "@types/follow-redirects": "^1.13.0",
+    "@types/glob": "^8.0.0",
+    "@types/lodash": "^4.17.5",
+    "@types/mime": "^3.0.4",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^22.9.0",
+    "@types/vscode": "^1.95.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "@vscode/test-electron": "^2.1.5",
+    "@vscode/test-web": "0.0.15",
+    "@vscode/vsce": "^2.19.0",
+    "eslint": "^8.24.0",
+    "follow-redirects": "^1.13.3",
+    "fs": "^0.0.1-security",
+    "fs-extra": "^10.0.1",
+    "glob": "^8.0.3",
+    "inly": "^4.0.8",
+    "merge-options": "^3.0.4",
+    "mocha": "^10.0.0",
+    "os-browserify": "^0.3.0",
+    "path": "^0.12.7",
+    "prettier": "^2.6.1",
+    "semantic-release": "^21.0.6",
+    "semantic-release-vsce": "^5.5.10",
+    "svgson": "^5.3.1",
+    "ts-loader": "^9.2.8",
+    "tsx": "^3.13.0",
+    "typescript": "^5.7.2",
+    "vscode-test": "^1.5.0",
+    "webpack": "^5.85.0",
+    "webpack-cli": "^5.1.1",
+    "@types/webpack-env": "^1.18.1",
+    "assert": "^2.0.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "brotli-size": "^4.0.0",
+    "code-generator": "^1.0.7",
+    "color": "^1.0.3",
+    "color-name": "^1.1.4",
+    "electron": "^33.2.0",
+    "file-importer": "^1.0.0",
+    "gzip-size": "^7.0.0",
+    "image-size": "^1.1.1",
+    "mime": "^4.0.4",
+    "source-map-support": "^0.5.21",
+    "vscode-languageclient": "^7.0.0",
+    "vscode-languageserver": "^7.0.0",
+    "vscode-languageserver-textdocument": "^1.0.4",
+    "yo": "^5.0.0",
+    "lodash": "^4.17.21"
+  },
+  "resolutions": {
+    "minimist": "^1.2.5"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "avoid"
+  }
+}
