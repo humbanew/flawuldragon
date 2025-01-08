@@ -6,13 +6,13 @@
 	"version": "0.2.0",
     "configurations": [ 
         {
-            "name": "Extension - Desktop Version",
+            "name": "Flawuldragon extension",
             "type": "extensionHost",
             "request": "launch",
             "args": [
                 "--disable-extensions",
-                "--extensionDevelopmentPath=${workspaceFolder}/desktop/",
-                // "--extensionTestsPath=${workspaceFolder}/desktop/dist/test/suite/index.cjs",
+                "--extensionDevelopmentPath=${workspaceFolder}",
+                // "--extensionTestsPath=${workspaceFolder}dist/test/suite/index.cjs",
             ]
         }
     ]

@@ -18,11 +18,11 @@ const webExtensionConfig = {
 	target: 'webworker', // extensions run in a webworker context
 	entry: {
 		'extension': './src/web/extension.ts',
-		'test/suite/index': './src/web/test/suite/index.ts'
+		'test/suite/index': './src/web/test/suite/index.ts',
 	},
 	output: {
 		filename: '[name].js',
-		path: path.join(__dirname, './dist/web'),
+		path: path.join(__dirname, './dist/'),
 		libraryTarget: 'commonjs',
 		devtoolModuleFilenameTemplate: '../../[resource-path]'
 	},
@@ -42,11 +42,11 @@ const webExtensionConfig = {
 	module: {
 		rules: [{
 			test: /\.ts$/,
-			exclude: /node_modules/,
+			exclude: /\\node_modules\\|\\src\\/,
 			use: [{
 				loader: 'ts-loader'
 			}]
-		}]
+		}],
 	},
 	plugins: [
 		new webpack.optimize.LimitChunkCountPlugin({
