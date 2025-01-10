@@ -1,3 +1,12 @@
 [submodule "updates/sakai-icons"]
 	path = updates/sakai-icons
 	url = git@github.com:Sakai-UI/Sakai-Icons.git
+[submodule "updates/auto-close-tag"]
+	path = updates/auto-close-tag
+	url = git@github.com:formulahendry/vscode-auto-close-tag.git
+[submodule "updates/auto-rename-tag"]
+	path = updates/auto-rename-tag
+	url = git@github.com:formulahendry/vscode-auto-rename-tag.git
+[submodule "updates/auto-complete-tag"]
+	path = updates/auto-complete-tag
+	url = git@github.com:formulahendry/vscode-auto-complete-tag.git
