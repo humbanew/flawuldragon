@@ -45,6 +45,7 @@ const PomodoroClock_js_1 = require("./@pomodoroclock/PomodoroClock.js");
 const ThemeSwitch_js_1 = require("./@themeswitch/ThemeSwitch.js");
 const TodoHighlight_js_1 = require("./@todohighlight/TodoHighlight.js");
 const Vanilla_js_1 = require("./@vanilla/Vanilla.js");
+const BracketGuides_js_1 = require("./@bracketguides/BracketGuides.js");
 const vanilla = new Vanilla_js_1.Vanilla();
 // const vanillaExtInt = new VExtensionIntelligence();
 const jetbrainsmono = new JetbrainsMono_js_1.JetbrainsMono();
@@ -54,6 +55,7 @@ const indentrainbow = new IndentRainbow_js_1.IndentRainbow();
 const pomodoroclock = new PomodoroClock_js_1.PomodoroClock();
 const themeswitch = new ThemeSwitch_js_1.ThemeSwitch();
 const autorrctag = new AutoRCCTag_js_1.AutoRCCTag();
+const bracketGuides = new BracketGuides_js_1.BracketGuides();
 /**
  * Activates the extension.
  *
@@ -75,6 +77,7 @@ function activate(context) {
         pomodoroclock.pomodoroClock_activate(context);
         themeswitch.themeSwitch_activate(context);
         autorrctag.autoRCCTag_activate(context);
+        bracketGuides.bracketGuides_activate(context);
     }
     catch (error) {
         console.log('Flawuldragon Core Hub - Error: ' + error);
@@ -102,6 +105,7 @@ function deactivate(context) {
     pomodoroclock.pomodoroClock_desactivate();
     themeswitch.themeSwitch_desactivate();
     autorrctag.autoRCCTag_desactivate();
+    bracketGuides.bracketGuides_desactivate();
 }
 /**
  * Activates the JetBrains Mono prompt within the given VS Code extension context.

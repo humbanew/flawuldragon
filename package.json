@@ -449,23 +449,38 @@
     "iconThemes": [
       {
         "id": "1",
-        "label": "Jetbrains Icons Old UI Dark",
+        "label": "Jetbrains Icons OldUI Dark",
         "path": "./themes/icons/jetbrains/v1/dark/theme.json"
       },
       {
         "id": "2",
-        "label": "Jetbrains Icons Exp UI 2023 Auto",
+        "label": "Jetbrains Icons ExpUI 2023+ Auto",
         "path": "./themes/icons/jetbrains/2023/auto/theme.json"
       },
       {
         "id": "3",
-        "label": "Jetbrains Icons Exp UI 2023 Dark",
+        "label": "Jetbrains Icons ExpUI 2023+ Dark",
         "path": "./themes/icons/jetbrains/2023/dark/theme.json"
       },
       {
         "id": "4",
-        "label": "Jetbrains Icons Exp UI 2023 Light",
+        "label": "Jetbrains Icons ExpUI 2023+ Light",
         "path": "./themes/icons/jetbrains/2023/light/theme.json"
+      },
+      {
+        "id": "5",
+        "label": "Visual Studio Classic Icons 2012",
+        "path": "./themes/icons/vsclassic/theme.json"
+      },
+      {
+        "id": "6",
+        "label": "Visual Studio Modern v1 Icons",
+        "path": "./themes/icons/vsmodern/v1/theme.json"
+      },
+      {
+        "id": "7",
+        "label": "Visual Studio Modern v2 Icons",
+        "path": "./themes/icons/vsmodern/v2/theme.json"
       }
     ],
     "commands": [
@@ -593,6 +608,11 @@
         "category": "Flawuldragon",
         "command": "flawuldragon.auto-close-tag.closeTag",
         "title": "Close Tag"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.toggleBracketPairGuides",
+        "title": "Toggle Bracket Pair Guides"
       }
     ],
     "icons": {
@@ -1090,6 +1110,11 @@
         "key": "alt+.",
         "mac": "cmd+alt+.",
         "command": "flawuldragon.auto-close-tag.closeTag"
+      },
+      {
+        "key": "ctrl+shift+b",
+        "mac": "cmd+shift+b",
+        "command": "flawuldragon.toggleBracketPairGuides"
       }
     ]
   },

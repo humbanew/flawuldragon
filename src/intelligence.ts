@@ -13,9 +13,9 @@ class VExtensionIntelligence {
      * Publisher 	Jun Han
      * Unique Identifier 	formulahendry.auto-rename-tag
      * 
-     * [VS-Background]
-     * Publisher	Katsute	
-     * Unique Identifier	Katsute.code-background
+     * [Toggle Bracket Guides]
+     * Publisher	TGO Systems	
+     * Unique Identifier	TGOSystems.togglebracketguides
      * 
      * [Color Highlight]
      * Publisher	Sergii N	

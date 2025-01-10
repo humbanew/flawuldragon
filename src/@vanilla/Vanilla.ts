@@ -6,14 +6,6 @@ import { constants } from '../constants.js';
 import './flwdnDts.json';
 
 /**
- * Interface Save Mode Display StatusBar
- * 1- Display datetime default visualization (date - time)
- * 2- Display datetime invert position visualization (time - date)
- * 3- Display datetime with seconds visualization
- * 4- Display datetime with custom time format
- */
-
-/**
  * Represents the Vanilla class which is responsible for managing the Flawuldragon extension's status bar item.
  *
  * The Vanilla class provides methods to activate and deactivate the Flawuldragon extension, including setting up
