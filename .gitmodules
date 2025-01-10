@@ -10,3 +10,48 @@
 [submodule "updates/auto-complete-tag"]
 	path = updates/auto-complete-tag
 	url = git@github.com:formulahendry/vscode-auto-complete-tag.git
+[submodule "updates/toggle-brackets-guides"]
+	path = updates/toggle-brackets-guides
+	url = git@github.com:kissumisha/togglebracketsguides.git
+[submodule "updates/color-highlight"]
+	path = updates/color-highlight
+	url = git@github.com:enyancc/vscode-ext-color-highlight.git
+[submodule "updates/filesize"]
+	path = updates/filesize
+	url = git@github.com:wdskuki/vscode-extension-filesize.git
+[submodule "updates/indent-rainbow"]
+	path = updates/indent-rainbow
+	url = git@github.com:oderwat/vscode-indent-rainbow.git
+[submodule "updates/jetbrains-mono-fontpack"]
+	path = updates/jetbrains-mono-fontpack
+	url = git@github.com:NarasimaPandiyan/JetbrainsMono-vscode-extension.git
+[submodule "updates/jetbrains-icon-theme"]
+	path = updates/jetbrains-icon-theme
+	url = git@github.com:cadamsdev/vscode-jetbrains-icon-theme.git
+[submodule "updates/pomodoro-clock"]
+	path = updates/pomodoro-clock
+	url = git@github.com:jackluson/vscode-pomodoro-clock.git
+[submodule "updates/theme-switch"]
+	path = updates/theme-switch
+	url = git@github.com:Fooxly/themeswitch.git
+[submodule "updates/todo-highlight"]
+	path = updates/todo-highlight
+	url = git@github.com:wayou/vscode-todo-highlight.git
+[submodule "updates/todo-highlight-v2"]
+	path = updates/todo-highlight-v2
+	url = git@github.com:jgclark/vscode-todo-highlight.git
+[submodule "updates/fluent-icons"]
+	path = updates/fluent-icons
+	url = git@github.com:miguelsolorio/vscode-fluent-icons.git
+[submodule "updates/vs-icons-v2"]
+	path = updates/vs-icons-v2
+	url = git@github.com:vigan-abd/studio-icons-v2.git
+[submodule "updates/vs-icons"]
+	path = updates/vs-icons
+	url = git@github.com:jtlowe/studio-icons.git
+[submodule "updates/color-highlight-v2"]
+	path = updates/color-highlight-v2
+	url = git@github.com:enyancc/vscode-ext-color-highlight.git
+[submodule "updates/color-highlight-v3"]
+	path = updates/color-highlight-v3
+	url = git@github.com:mikekscholz/vscode-ext-color-highlight.git

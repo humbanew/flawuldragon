@@ -20,6 +20,14 @@ class VExtensionIntelligence {
      * [Color Highlight]
      * Publisher	Sergii N	
      * Unique Identifier	naumovs.color-highlight
+     * 
+     * [Color Highlight with decimals]
+     * Publisher	ps-george	
+     * Unique Identifier	ps-george.color-highlight-decimals
+     * 
+     * [Color Highlight-fork]
+     * Publisher	Michael K. Scholz	
+     * Unique Identifier	mikekscholz.color-highlight-fork
      *
      * [Filesize]
      * Publisher 	Wei_ds
@@ -32,6 +40,10 @@ class VExtensionIntelligence {
      * [Jetbrains Mono Font Pack]
      * Publisher 	Narasima Pandiyan
      * Unique Identifier 	NarasimaPandiyan.jetbrainsmono
+     * 
+     * [Jetbrains Icons Pack]
+     * Publisher	Chad Adams	
+     * Unique Identifier	chadalen.vscode-jetbrains-icon-theme	
      *
      * [Pomodoro Clock]
      * Publisher 	jackluson
