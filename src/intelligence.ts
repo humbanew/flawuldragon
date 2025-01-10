@@ -73,9 +73,33 @@ class VExtensionIntelligence {
      * Publisher	ardonplay	
      * Unique Identifier	ardonplay.jetbrains-idea-product-icon-theme
      * 
-     * [Feather Product Icons]
-     * Publisher	Matvey Melishev	
-     * Unique Identifier	melishev.feather-vscode
+     * [Charmed Icons]
+     * Publisher	littensy	
+     * Unique Identifier	littensy.charmed-icons
+     * 
+     * [Nomo Dark Icon Theme]
+     * Publisher	be5invis	
+     * Unique Identifier	be5invis.vscode-icontheme-nomo-dark
+     * 
+     * [VSCode Great Icons]
+     * Publisher	Emmanuel Béziat
+     * Unique Identifier	emmanuelbeziat.vscode-great-icons
+     * 
+     * [VSCode Icons Mac]
+     * Publisher	Wayou Liu	
+     * Unique Identifier	wayou.vscode-icons-mac
+     * 
+     * [VSCode Icons]
+     * Publisher	VSCode Icons Team	
+     * Unique Identifier	vscode-icons-team.vscode-icons
+     * 
+     * [Sakai Icons]
+     * Publisher	Sakai	
+     * Unique Identifier	Sakai.sakai-icons
+     * 
+     * [MaterialIconic Product Icons]
+     * Publisher	nyxb	
+     * Unique Identifier	nyxb.materialiconic-product-icons	
      * 
      * [VS2022 Icons]
      * Publisher	RespectMathias	

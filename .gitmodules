@@ -1,0 +1,3 @@
+[submodule "updates/sakai-icons"]
+	path = updates/sakai-icons
+	url = git@github.com:Sakai-UI/Sakai-Icons.git

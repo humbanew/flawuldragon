@@ -506,6 +506,21 @@
         "id": "12",
         "label": "Symbols Icons",
         "path": "./themes/icons/symbols/theme.json"
+      },
+      {
+        "id": "13",
+        "label": "Charmed Icons",
+        "path": "./themes/icons/charmed/theme.json"
+      },
+      {
+        "id": "14",
+        "label": "Visual Studio Code Great Icons",
+        "path": "./themes/icons/vscgreaticons/theme.json"
+      },
+      {
+        "id": "15",
+        "label": "Visual Studio Code Nomo Dark Icons",
+        "path": "./themes/icons/vscnomodark/theme.json"
       }
     ],
     "productIconThemes": [
@@ -518,6 +533,16 @@
         "id": "2",
         "label": "Jetbrains IDEA Product Icons",
         "path": "./themes/producticons/jetbrainsideaicons/theme.json"
+      },
+      {
+        "id": "3",
+        "label": "Carbon Product Icons",
+        "path": "./themes/producticons/carbonicons/theme.json"
+      },
+      {
+        "id": "4",
+        "label": "Material Iconic Product Icons",
+        "path": "./themes/producticons/materialiconicicons/theme.json"
       }
     ],
     "commands": [
