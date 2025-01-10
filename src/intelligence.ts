@@ -28,6 +28,14 @@ class VExtensionIntelligence {
      * [Color Highlight-fork]
      * Publisher	Michael K. Scholz	
      * Unique Identifier	mikekscholz.color-highlight-fork
+     * 
+     * [ErrorLens]
+     * Publisher	Alexander	
+     * Unique Identifier	usernamehw.errorlens
+     * 
+     * [ErrorLens Alt]
+     * Publisher	Phil Hindle	
+     * Unique Identifier	PhilHindle.errorlens
      *
      * [Filesize]
      * Publisher 	Wei_ds

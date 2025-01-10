@@ -26,14 +26,14 @@
   },
   "publisher": "humbanew",
   "scripts": {
-    "fd:vscode:package": "npx vsce package",
-    "fd:vscode:publish": "npx vsce publish",
-    "fd:vscode:help": "npx vsce help",
-    "fd:compile": "tsc -p ./",
-    "fd:watch": "tsc -watch -p ./",
-    "fd:pretest": "yarn run compile && yarn run lint",
-    "fd:lint": "eslint src --ext ts",
-    "fd:test": "node ./dist/test/runTest.js"
+    "vsc-package": "npx vsce package",
+    "vsc-publish": "npx vsce publish",
+    "vsc-help": "npx vsce help",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./dist/test/runTest.js"
   },
   "main": "./dist/extension.js",
   "browser": "./dist/extension-web.js",

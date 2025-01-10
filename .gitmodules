@@ -55,3 +55,21 @@
 [submodule "updates/color-highlight-v3"]
 	path = updates/color-highlight-v3
 	url = git@github.com:mikekscholz/vscode-ext-color-highlight.git
+[submodule "updates/errorlens"]
+	path = updates/errorlens
+	url = git@github.com:usernamehw/vscode-error-lens.git
+[submodule "updates/errorlens-alt"]
+	path = updates/errorlens-alt
+	url = git@github.com:phindle/error-lens.git
+[submodule "updates/vsclassic-icons"]
+	path = updates/vsclassic-icons
+	url = git@gitlab.com:jez9999/vsclassic-icon-theme.git
+[submodule "updates/carbon-icons"]
+	path = updates/carbon-icons
+	url = git@github.com:Alecton4/vscode-icons-carbon-tweaked.git
+[submodule "updates/jetbrains-idea-product-icontheme"]
+	path = updates/jetbrains-idea-product-icontheme
+	url = git@github.com:ardonplay/vscode-jetbrains-idea-product-icon-theme.git
+[submodule "updates/charmed-icons"]
+	path = updates/charmed-icons
+	url = git@github.com:littensy/charmed-icons.git
