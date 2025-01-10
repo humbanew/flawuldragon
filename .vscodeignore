@@ -1,8 +1,10 @@
 .vscode/**
 .vscode-test/**
+.git
 .gitignore
+.gitattributes
 # powered by Jetbrains Mono Font Pack Integration
-out/test/**
+dist/test/**
 src/**
 .yarnrc
 vsc-extension-quickstart.md
@@ -10,3 +12,6 @@ vsc-extension-quickstart.md
 **/.eslintrc.json
 **/*.map
 **/*.ts
+essentials/
+integration/
+code_env_setup.sh

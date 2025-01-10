@@ -1,9 +1,9 @@
 /// <reference types="node"/>
 
 import { VersionedTextDocumentIdentifier } from "vscode-languageserver";
-import { EARCCTSvcHSTokenTypeFast, EARCCTSvcHSScannerStateFast } from "./enums.cts";
+import { EARCCTSvcHSTokenTypeFast, EARCCTSvcHSScannerStateFast } from "./enums";
 import { Code2ProtocolConverter, RequestType } from "vscode-languageclient";
-import { ARTSvcHtmlScanner } from "./AutoSvcHtmlScanner.ac.cts";
+import { ARTSvcHtmlScanner } from "./AutoSvcHtmlScanner.ac";
 
 export declare interface IARCCTSvcHSScannerFast {
   readonly scan: () => EARCCTSvcHSTokenTypeFast;

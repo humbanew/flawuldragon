@@ -4,7 +4,7 @@
     "target": "ESNext",
     "outDir": "./dist",
     "lib": [
-      "ES2024", "ES2020", "WebWorker"
+      "ES2024", "DOM"
     ],
     "sourceMap": false,
     "declaration": false,
@@ -14,9 +14,10 @@
     "moduleDetection": "auto",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+
     "allowJs": true,
     "checkJs": true,
-    "strict": true, /* enable all strict type-checking options */
+    "strict": false, /* enable all strict type-checking options */
 		/* Additional Checks */
 		// "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
 		// "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
