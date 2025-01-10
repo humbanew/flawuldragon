@@ -61,14 +61,29 @@ class VExtensionIntelligence {
      * Publisher 	jez9999
      * Unique Identifier 	jez9999.vsclassic-icon-theme
      *
-     * [Visual Studio Code Icons]
-     * Publisher 	VSCode Icons Team
-     * Unique Identifier 	vscode-icons-team.vscode-icons
-     *
      * [Datapack Icons Minecraft]
      * Publisher 	FuncFusion
      * Unique Identifier 	SuperAnt.mc-dp-icons
+     * 
+     * [Carbon Product Icons]
+     * Publisher	Alyx Z	
+     * Unique Identifier	alyxz.icons-carbon-tweaked
      *
+     * [Jetbrains IDEA Product Icon Theme]
+     * Publisher	ardonplay	
+     * Unique Identifier	ardonplay.jetbrains-idea-product-icon-theme
+     * 
+     * [Feather Product Icons]
+     * Publisher	Matvey Melishev	
+     * Unique Identifier	melishev.feather-vscode
+     * 
+     * [VS2022 Icons]
+     * Publisher	RespectMathias	
+     * Unique Identifier	RespectMathias.VS2022-Icons
+     * 
+     * [CS Symbols Icons]
+     * Publisher	FreeIdom	
+     * Unique Identifier	FreeIdom.cs-symbols	
      */
     vscode.workspace.getConfiguration().get('installedExtensions');
     let toDisableExtensions = [
@@ -81,7 +96,6 @@ class VExtensionIntelligence {
       'weiiwang.theme-switch',
       'wayou.vscode-todo-highlight',
       'miguelsolorio.fluent-icons',
-      'jtlowe.vscode-icon-theme',
       'vigan-abd.vscode-icon-v2',
       'jez9999.vsclassic-icon-theme',
       'vscode-icons-team.vscode-icons',
@@ -107,7 +121,6 @@ class VExtensionIntelligence {
       'weiiwang.theme-switch',
       'wayou.vscode-todo-highlight',
       'miguelsolorio.fluent-icons',
-      'jtlowe.vscode-icon-theme',
       'vigan-abd.vscode-icon-v2',
       'jez9999.vsclassic-icon-theme',
       'vscode-icons-team.vscode-icons',

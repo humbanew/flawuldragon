@@ -481,6 +481,43 @@
         "id": "7",
         "label": "Visual Studio Modern v2 Icons",
         "path": "./themes/icons/vsmodern/v2/theme.json"
+      },
+      {
+        "id": "8",
+        "label": "Minecraft Datapack Icons Auto",
+        "path": "./themes/icons/mcdpicons/mc-dp-icon-theme.json"
+      },
+      {
+        "id": "9",
+        "label": "Minecraft Datapack Icons Default",
+        "path": "./themes/icons/mcdpicons/mc-dp-icon-theme-default.json"
+      },
+      {
+        "id": "10",
+        "label": "Minecraft Datapack Icons Xmas",
+        "path": "./themes/icons/mcdpicons/mc-dp-icon-theme-xmas.json"
+      },
+      {
+        "id": "11",
+        "label": "Visual Studio Modern 2022 Icons",
+        "path": "./themes/icons/vs2022/theme.json"
+      },
+      {
+        "id": "12",
+        "label": "Symbols Icons",
+        "path": "./themes/icons/symbols/theme.json"
+      }
+    ],
+    "productIconThemes": [
+      {
+        "id": "1",
+        "label": "Fluent Product Icons based by VSCode Icons",
+        "path": "./themes/producticons/fluenticons/theme.json"
+      },
+      {
+        "id": "2",
+        "label": "Jetbrains IDEA Product Icons",
+        "path": "./themes/producticons/jetbrainsideaicons/theme.json"
       }
     ],
     "commands": [
