@@ -521,6 +521,21 @@
         "id": "15",
         "label": "Visual Studio Code Nomo Dark Icons",
         "path": "./themes/icons/vscnomodark/theme.json"
+      },
+      {
+        "id": "16",
+        "label": "Sakai Icons Dark",
+        "path": "./themes/icons/sakaicons/sakai-icons-theme.json"
+      },
+      {
+        "id": "17",
+        "label": "Sakai Icons Light",
+        "path": "./themes/icons/sakaicons/sakai-icons-light-theme.json"
+      },
+      {
+        "id": "18",
+        "label": "Sakai Icons Expanded",
+        "path": "./themes/icons/sakaicons/sakai-icons-expanded-theme.json"
       }
     ],
     "productIconThemes": [
