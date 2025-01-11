@@ -519,7 +519,7 @@
       },
       {
         "id": "15",
-        "label": "Visual Studio Code Nomo Dark Icons",
+        "label": "Visual Studio Code Nomo Dark Icons Extended",
         "path": "./themes/icons/vscnomodark/theme.json"
       },
       {
@@ -536,6 +536,16 @@
         "id": "18",
         "label": "Sakai Icons Expanded",
         "path": "./themes/icons/sakaicons/sakai-icons-expanded-theme.json"
+      },
+      {
+        "id": "19",
+        "label": "Visual Studio Code Nomo Dark MacOS Icons",
+        "path": "./themes/icons/vscnomodarkmac/theme.json"
+      },
+      {
+        "id": "20",
+        "label": "Visual Studio Code Nomo Light Icons Extended",
+        "path": "./themes/icons/vscnomolight/theme.json"
       }
     ],
     "productIconThemes": [

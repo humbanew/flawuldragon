@@ -97,9 +97,17 @@ class VExtensionIntelligence {
      * Publisher	littensy	
      * Unique Identifier	littensy.charmed-icons
      * 
-     * [Nomo Dark Icon Theme]
+     * [Nomo Dark Icon Theme Extended]
      * Publisher	be5invis	
      * Unique Identifier	be5invis.vscode-icontheme-nomo-dark
+     * 
+     * [Nomo Dark macOS Icon Theme]
+     * Publisher	Tobias Punke	
+     * Unique Identifier	Gaulomatic.vscode-icontheme-nomo-dark-macos
+     * 
+     * [Nomo Light Icon Theme Extended]
+     * Publisher	MicroHobby	
+     * Unique Identifier	microhobby.nomo-light-extended
      * 
      * [VSCode Great Icons]
      * Publisher	Emmanuel Béziat

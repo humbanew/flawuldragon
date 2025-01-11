@@ -73,3 +73,30 @@
 [submodule "updates/charmed-icons"]
 	path = updates/charmed-icons
 	url = git@github.com:littensy/charmed-icons.git
+[submodule "updates/vsc-nomodark-icons"]
+	path = updates/vsc-nomodark-icons
+	url = git@github.com:Senko-The-Kitsune/Nomo-Dark-Extended.git
+[submodule "updates/vsc-nomodark-macos-icons"]
+	path = updates/vsc-nomodark-macos-icons
+	url = git@github.com:Gaulomatic/Vscode-IconTheme-Nomo-macOS-Dark.git
+[submodule "updates/vsc-nomolight-icons"]
+	path = updates/vsc-nomolight-icons
+	url = git@github.com:microhobby/Nomo-Light-Extended.git
+[submodule "updates/vsc-great-icons"]
+	path = updates/vsc-great-icons
+	url = git@github.com:EmmanuelBeziat/vscode-great-icons.git
+[submodule "updates/vsc-icons"]
+	path = updates/vsc-icons
+	url = git@github.com:vscode-icons/vscode-icons.git
+[submodule "updates/vsc-icons-macos"]
+	path = updates/vsc-icons-macos
+	url = git@github.com:wayou/vscode-icons.git
+[submodule "updates/materialiconic-product-icons"]
+	path = updates/materialiconic-product-icons
+	url = git@github.com:nyxb/materialiconic-product-icons.git
+[submodule "updates/vs-2022icons"]
+	path = updates/vs-2022icons
+	url = git@github.com:RespectMathias/VS2022-Icons.git
+[submodule "updates/vsc-symbols-icons"]
+	path = updates/vsc-symbols-icons
+	url = git@github.com:miguelsolorio/vscode-symbols.git
