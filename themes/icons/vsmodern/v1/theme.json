@@ -1,4 +1,5 @@
 {
+    "hideExplorerArrows": false,
     "iconDefinitions": {
         "AdobeIndesign_16x.svg": {
             "iconPath": "./icons/AdobeIndesign_16x.svg"

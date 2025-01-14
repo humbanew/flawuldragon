@@ -190,73 +190,76 @@ export class Vanilla {
   protected vanilla_dateTimeComponent(context: vscode.ExtensionContext): void {
     let text: string,
       divisor = ' ■ ';
-    setInterval(() => {
-      let timer: Date = new Date(),
-        day = timer.getDate().toString(),
-        month = (timer.getMonth() + 1).toString(),
-        hours = timer.getHours().toString(),
-        minutes = timer.getMinutes().toString(),
-        hours12hf =
-          timer.getHours() > 12 ? timer.getHours() - 12 : timer.getHours();
-
-      if (parseInt(day) < 10) day = 0 + day;
-      if (parseInt(month) < 10) month = 0 + month;
-      if (parseInt(hours) < 10) hours = 0 + hours;
-      if (parseInt(minutes) < 10) minutes = 0 + minutes;
-
-      switch(this.flwdnGstate) {
-        case 0:
-          switch(this.flwdnDstate) {
-            case 0:
-              switch(this.flwdnTstate) {
-                case 0:
-                  text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours}:${minutes}`;
-                  break;
-                case 1:
-                  text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
-                  break;
-              }
-              break;
-            case 1:
-              switch(this.flwdnTstate) {
-                case 0:
-                  text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours}:${minutes}`;
-                  break;
-                case 1:
-                  text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
-                  break;
-              }
-              break;
-          }
-          break;
-        case 1:
-          switch(this.flwdnDstate) {
-            case 0:
-              switch(this.flwdnTstate) {
-                case 0:
-                  text = `${hours}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}`;
-                  break;
-                case 1:
-                  text = `${hours12hf}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
-                  break;
-              }
-              break;
-            case 1:
-              switch(this.flwdnTstate) {
-                case 0:
-                  text = `${hours}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}`;
-                  break;
-                case 1:
-                  text = `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
-                  break;
-              }
-              break;
-          }
-          break;
-      }
-
-      this.flawuldragonDateTimeStatusBar.text = text;
-    }, 1000);
+    // pausa para o processador descansar um pouco
+    setTimeout(() => {
+      setInterval(() => {
+        let timer: Date = new Date(),
+          day = timer.getDate().toString(),
+          month = (timer.getMonth() + 1).toString(),
+          hours = timer.getHours().toString(),
+          minutes = timer.getMinutes().toString(),
+          hours12hf =
+            timer.getHours() > 12 ? timer.getHours() - 12 : timer.getHours();
+  
+        if (parseInt(day) < 10) day = 0 + day;
+        if (parseInt(month) < 10) month = 0 + month;
+        if (parseInt(hours) < 10) hours = 0 + hours;
+        if (parseInt(minutes) < 10) minutes = 0 + minutes;
+  
+        switch(this.flwdnGstate) {
+          case 0:
+            switch(this.flwdnDstate) {
+              case 0:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours}:${minutes}`;
+                    break;
+                  case 1:
+                    text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                    break;
+                }
+                break;
+              case 1:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours}:${minutes}`;
+                    break;
+                  case 1:
+                    text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                    break;
+                }
+                break;
+            }
+            break;
+          case 1:
+            switch(this.flwdnDstate) {
+              case 0:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    text = `${hours}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}`;
+                    break;
+                  case 1:
+                    text = `${hours12hf}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                    break;
+                }
+                break;
+              case 1:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    text = `${hours}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}`;
+                    break;
+                  case 1:
+                    text = `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                    break;
+                }
+                break;
+            }
+            break;
+        }
+  
+        this.flawuldragonDateTimeStatusBar.text = text;
+      }, 1000);
+    }, 100);
 
     this.flawuldragonDateTimeStatusBar.tooltip = 'Current time';
     this.flawuldragonDateTimeStatusBar.backgroundColor = new vscode.ThemeColor(

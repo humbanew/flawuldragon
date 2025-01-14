@@ -55,6 +55,22 @@ class VExtensionIntelligence {
          * Publisher	Sergii N
          * Unique Identifier	naumovs.color-highlight
          *
+         * [Color Highlight with decimals]
+         * Publisher	ps-george
+         * Unique Identifier	ps-george.color-highlight-decimals
+         *
+         * [Color Highlight-fork]
+         * Publisher	Michael K. Scholz
+         * Unique Identifier	mikekscholz.color-highlight-fork
+         *
+         * [ErrorLens]
+         * Publisher	Alexander
+         * Unique Identifier	usernamehw.errorlens
+         *
+         * [ErrorLens Alt]
+         * Publisher	Phil Hindle
+         * Unique Identifier	PhilHindle.errorlens
+         *
          * [Filesize]
          * Publisher 	Wei_ds
          * Unique Identifier 	wei_ds.filesize
@@ -66,6 +82,10 @@ class VExtensionIntelligence {
          * [Jetbrains Mono Font Pack]
          * Publisher 	Narasima Pandiyan
          * Unique Identifier 	NarasimaPandiyan.jetbrainsmono
+         *
+         * [Jetbrains Icons Pack]
+         * Publisher	Chad Adams
+         * Unique Identifier	chadalen.vscode-jetbrains-icon-theme
          *
          * [Pomodoro Clock]
          * Publisher 	jackluson
@@ -95,14 +115,61 @@ class VExtensionIntelligence {
          * Publisher 	jez9999
          * Unique Identifier 	jez9999.vsclassic-icon-theme
          *
-         * [Visual Studio Code Icons]
-         * Publisher 	VSCode Icons Team
-         * Unique Identifier 	vscode-icons-team.vscode-icons
-         *
          * [Datapack Icons Minecraft]
          * Publisher 	FuncFusion
          * Unique Identifier 	SuperAnt.mc-dp-icons
          *
+         * [Carbon Product Icons]
+         * Publisher	Alyx Z
+         * Unique Identifier	alyxz.icons-carbon-tweaked
+         *
+         * [Jetbrains IDEA Product Icon Theme]
+         * Publisher	ardonplay
+         * Unique Identifier	ardonplay.jetbrains-idea-product-icon-theme
+         *
+         * [Charmed Icons]
+         * Publisher	littensy
+         * Unique Identifier	littensy.charmed-icons
+         *
+         * [Nomo Dark Icon Theme Extended]
+         * Publisher	be5invis
+         * Unique Identifier	be5invis.vscode-icontheme-nomo-dark
+         *
+         * [Nomo Dark macOS Icon Theme]
+         * Publisher	Tobias Punke
+         * Unique Identifier	Gaulomatic.vscode-icontheme-nomo-dark-macos
+         *
+         * [Nomo Light Icon Theme Extended]
+         * Publisher	MicroHobby
+         * Unique Identifier	microhobby.nomo-light-extended
+         *
+         * [VSCode Great Icons]
+         * Publisher	Emmanuel Béziat
+         * Unique Identifier	emmanuelbeziat.vscode-great-icons
+         *
+         * [VSCode Icons Mac]
+         * Publisher	Wayou Liu
+         * Unique Identifier	wayou.vscode-icons-mac
+         *
+         * [VSCode Icons]
+         * Publisher	VSCode Icons Team
+         * Unique Identifier	vscode-icons-team.vscode-icons
+         *
+         * [Sakai Icons]
+         * Publisher	Sakai
+         * Unique Identifier	Sakai.sakai-icons
+         *
+         * [MaterialIconic Product Icons]
+         * Publisher	nyxb
+         * Unique Identifier	nyxb.materialiconic-product-icons
+         *
+         * [VS2022 Icons]
+         * Publisher	RespectMathias
+         * Unique Identifier	RespectMathias.VS2022-Icons
+         *
+         * [CS Symbols Icons]
+         * Publisher	FreeIdom
+         * Unique Identifier	FreeIdom.cs-symbols
          */
         vscode.workspace.getConfiguration().get('installedExtensions');
         let toDisableExtensions = [
@@ -115,7 +182,6 @@ class VExtensionIntelligence {
             'weiiwang.theme-switch',
             'wayou.vscode-todo-highlight',
             'miguelsolorio.fluent-icons',
-            'jtlowe.vscode-icon-theme',
             'vigan-abd.vscode-icon-v2',
             'jez9999.vsclassic-icon-theme',
             'vscode-icons-team.vscode-icons',
@@ -137,7 +203,6 @@ class VExtensionIntelligence {
             'weiiwang.theme-switch',
             'wayou.vscode-todo-highlight',
             'miguelsolorio.fluent-icons',
-            'jtlowe.vscode-icon-theme',
             'vigan-abd.vscode-icon-v2',
             'jez9999.vsclassic-icon-theme',
             'vscode-icons-team.vscode-icons',

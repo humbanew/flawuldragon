@@ -1,6 +1,5 @@
 {
 	"iconDefinitions": {
-		// File types
 		"file.json": {
 			"iconPath": "./src/file.json.svg"
 		},
@@ -175,7 +174,7 @@
 		"file.tex": {
 			"iconPath": "./src/file.tex.svg"
 		},
-		"file.ptl": { // this is ad.
+		"file.ptl": {
 			"iconPath": "./src/file.ptl.svg"
 		},
 		"file.erlang": {
@@ -220,7 +219,6 @@
 		"file.toml": {
 			"iconPath": "./src/file.toml.svg"
 		},
-		// Config files
 		"config.npm": {
 			"iconPath": "./src/config.npm.svg"
 		},
@@ -272,7 +270,6 @@
 		"config.yarn": {
 			"iconPath": "./src/config.yarn.svg"
 		},
-		// Folders
 		"folder.test.close": {
 			"iconPath": "./src/folder.test.close.svg"
 		},
@@ -327,7 +324,6 @@
 		"folder.ts.open": {
 			"iconPath": "./src/folder.ts.open.svg"
 		},
-		// General
 		"_folder_dark": {
 			"iconPath": "./src/folder.close.svg"
 		},

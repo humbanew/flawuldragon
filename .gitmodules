@@ -100,3 +100,12 @@
 [submodule "updates/vsc-symbols-icons"]
 	path = updates/vsc-symbols-icons
 	url = git@github.com:miguelsolorio/vscode-symbols.git
+[submodule "updates/takeabreak"]
+	path = updates/takeabreak
+	url = https://github.com/theHocineSaad/takeabreak.git
+[submodule "updates/codesnap"]
+	path = updates/codesnap
+	url = https://github.com/kufii/CodeSnap.git
+[submodule "updates/polacode"]
+	path = updates/polacode
+	url = https://github.com/octref/polacode.git

@@ -546,6 +546,16 @@
         "id": "20",
         "label": "Visual Studio Code Nomo Light Icons Extended",
         "path": "./themes/icons/vscnomolight/theme.json"
+      },
+      {
+        "id": "21",
+        "label": "Visual Studio Code Icons",
+        "path": "./themes/icons/vsicons/theme.json"
+      },
+      {
+        "id": "22",
+        "label": "Visual Studio Code MacOS Icons",
+        "path": "./themes/icons/vscmacos/theme.json"
       }
     ],
     "productIconThemes": [

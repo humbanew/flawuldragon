@@ -1,4 +1,5 @@
 {
+	"hidesExplorerArrows": false,
 	"iconDefinitions": {
 		"folder": {"iconPath": "./icons/folder.png"},
 		"folder-expanded": {"iconPath": "./icons/folder-expanded.png"},
@@ -250,7 +251,6 @@
 		"zip": "archive",
 		"zsh": "console"
 	},
-	"hidesExplorerArrows": true,
 	"languageIds": {
 		"asm": "assembly",
 		"bat": "console",

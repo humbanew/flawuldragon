@@ -1,4 +1,5 @@
 {
+	"hideExplorerArrows": true,
 	"iconDefinitions": {
 		"file.json": {
 			"iconPath": "./src/file.json.svg"
