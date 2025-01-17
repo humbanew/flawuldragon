@@ -1,72 +1,3 @@
-# [submodule "updates/pomodoro-clock"]
-# 	path = updates/pomodoro-clock
-# 	url = git@github.com:jackluson/vscode-pomodoro-clock.git
-# [submodule "updates/theme-switch"]
-# 	path = updates/theme-switch
-# 	url = git@github.com:Fooxly/themeswitch.git
-# [submodule "updates/todo-highlight"]
-# 	path = updates/todo-highlight
-# 	url = git@github.com:wayou/vscode-todo-highlight.git
-# [submodule "updates/todo-highlight-v2"]
-# 	path = updates/todo-highlight-v2
-# 	url = git@github.com:jgclark/vscode-todo-highlight.git
-# [submodule "updates/fluent-icons"]
-# 	path = updates/fluent-icons
-# 	url = git@github.com:miguelsolorio/vscode-fluent-icons.git
-# [submodule "updates/vs-icons-v2"]
-# 	path = updates/vs-icons-v2
-# 	url = git@github.com:vigan-abd/studio-icons-v2.git
-# [submodule "updates/vs-icons"]
-# 	path = updates/vs-icons
-# 	url = git@github.com:jtlowe/studio-icons.git
-# [submodule "updates/vsclassic-icons"]
-# 	path = updates/vsclassic-icons
-# 	url = git@gitlab.com:jez9999/vsclassic-icon-theme.git
-# [submodule "updates/carbon-icons"]
-# 	path = updates/carbon-icons
-# 	url = git@github.com:Alecton4/vscode-icons-carbon-tweaked.git
-# [submodule "updates/jetbrains-idea-product-icontheme"]
-# 	path = updates/jetbrains-idea-product-icontheme
-# 	url = git@github.com:ardonplay/vscode-jetbrains-idea-product-icon-theme.git
-# [submodule "updates/charmed-icons"]
-# 	path = updates/charmed-icons
-# 	url = git@github.com:littensy/charmed-icons.git
-# [submodule "updates/vsc-nomodark-icons"]
-# 	path = updates/vsc-nomodark-icons
-# 	url = git@github.com:Senko-The-Kitsune/Nomo-Dark-Extended.git
-# [submodule "updates/vsc-nomodark-macos-icons"]
-# 	path = updates/vsc-nomodark-macos-icons
-# 	url = git@github.com:Gaulomatic/Vscode-IconTheme-Nomo-macOS-Dark.git
-# [submodule "updates/vsc-nomolight-icons"]
-# 	path = updates/vsc-nomolight-icons
-# 	url = git@github.com:microhobby/Nomo-Light-Extended.git
-# [submodule "updates/vsc-great-icons"]
-# 	path = updates/vsc-great-icons
-# 	url = git@github.com:EmmanuelBeziat/vscode-great-icons.git
-# [submodule "updates/vsc-icons"]
-# 	path = updates/vsc-icons
-# 	url = git@github.com:vscode-icons/vscode-icons.git
-# [submodule "updates/vsc-icons-macos"]
-# 	path = updates/vsc-icons-macos
-# 	url = git@github.com:wayou/vscode-icons.git
-# [submodule "updates/materialiconic-product-icons"]
-# 	path = updates/materialiconic-product-icons
-# 	url = git@github.com:nyxb/materialiconic-product-icons.git
-# [submodule "updates/vs-2022icons"]
-# 	path = updates/vs-2022icons
-# 	url = git@github.com:RespectMathias/VS2022-Icons.git
-# [submodule "updates/vsc-symbols-icons"]
-# 	path = updates/vsc-symbols-icons
-# 	url = git@github.com:miguelsolorio/vscode-symbols.git
-# [submodule "updates/takeabreak"]
-# 	path = updates/takeabreak
-# 	url = https://github.com/theHocineSaad/takeabreak.git
-# [submodule "updates/codesnap"]
-# 	path = updates/codesnap
-# 	url = https://github.com/kufii/CodeSnap.git
-# [submodule "updates/polacode"]
-# 	path = updates/polacode
-# 	url = https://github.com/octref/polacode.git
 [submodule "updates/sakai-icons"]
 	path = updates/sakai-icons
 	url = git@github.com:Sakai-UI/Sakai-Icons.git
@@ -106,3 +37,72 @@
 [submodule "updates/jetbrains-icon-theme"]
 	path = updates/jetbrains-icon-theme
 	url = git@github.com:cadamsdev/vscode-jetbrains-icon-theme.git
+[submodule "updates/pomodoro-clock"]
+	path = updates/pomodoro-clock
+	url = git@github.com:jackluson/vscode-pomodoro-clock.git
+[submodule "updates/theme-switch"]
+	path = updates/theme-switch
+	url = git@github.com:Fooxly/themeswitch.git
+[submodule "updates/todo-highlight"]
+	path = updates/todo-highlight
+	url = git@github.com:wayou/vscode-todo-highlight.git
+[submodule "updates/todo-highlight-v2"]
+	path = updates/todo-highlight-v2
+	url = git@github.com:jgclark/vscode-todo-highlight.git
+[submodule "updates/fluent-icons"]
+	path = updates/fluent-icons
+	url = git@github.com:miguelsolorio/vscode-fluent-icons.git
+[submodule "updates/vs-icons-v2"]
+	path = updates/vs-icons-v2
+	url = git@github.com:vigan-abd/studio-icons-v2.git
+[submodule "updates/vs-icons"]
+	path = updates/vs-icons
+	url = git@github.com:jtlowe/studio-icons.git
+[submodule "updates/vsclassic-icons"]
+	path = updates/vsclassic-icons
+	url = git@gitlab.com:jez9999/vsclassic-icon-theme.git
+[submodule "updates/carbon-icons"]
+	path = updates/carbon-icons
+	url = git@github.com:Alecton4/vscode-icons-carbon-tweaked.git
+[submodule "updates/jetbrains-idea-product-icontheme"]
+	path = updates/jetbrains-idea-product-icontheme
+	url = git@github.com:ardonplay/vscode-jetbrains-idea-product-icon-theme.git
+[submodule "updates/charmed-icons"]
+	path = updates/charmed-icons
+	url = git@github.com:littensy/charmed-icons.git
+[submodule "updates/vsc-nomodark-icons"]
+	path = updates/vsc-nomodark-icons
+	url = git@github.com:Senko-The-Kitsune/Nomo-Dark-Extended.git
+[submodule "updates/vsc-nomodark-macos-icons"]
+	path = updates/vsc-nomodark-macos-icons
+	url = git@github.com:Gaulomatic/Vscode-IconTheme-Nomo-macOS-Dark.git
+[submodule "updates/vsc-nomolight-icons"]
+	path = updates/vsc-nomolight-icons
+	url = git@github.com:microhobby/Nomo-Light-Extended.git
+[submodule "updates/vsc-great-icons"]
+	path = updates/vsc-great-icons
+	url = git@github.com:EmmanuelBeziat/vscode-great-icons.git
+[submodule "updates/vsc-icons"]
+	path = updates/vsc-icons
+	url = git@github.com:vscode-icons/vscode-icons.git
+[submodule "updates/vsc-icons-macos"]
+	path = updates/vsc-icons-macos
+	url = git@github.com:wayou/vscode-icons.git
+[submodule "updates/materialiconic-product-icons"]
+	path = updates/materialiconic-product-icons
+	url = git@github.com:nyxb/materialiconic-product-icons.git
+[submodule "updates/vs-2022icons"]
+	path = updates/vs-2022icons
+	url = git@github.com:RespectMathias/VS2022-Icons.git
+[submodule "updates/vsc-symbols-icons"]
+	path = updates/vsc-symbols-icons
+	url = git@github.com:miguelsolorio/vscode-symbols.git
+[submodule "updates/takeabreak"]
+	path = updates/takeabreak
+	url = https://github.com/theHocineSaad/takeabreak.git
+[submodule "updates/codesnap"]
+	path = updates/codesnap
+	url = https://github.com/kufii/CodeSnap.git
+[submodule "updates/polacode"]
+	path = updates/polacode
+	url = https://github.com/octref/polacode.git
