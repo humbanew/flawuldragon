@@ -10,7 +10,7 @@
     "activityBarBadge.background": "#548a84",
     "activityBarBadge.foreground": "#423f3b",
     "activityBar.activeBorder": "#b7c89a",
-    "activityBar.activeBackground": "#005056",
+    "activityBar.activeBackground": "#007d73",
 
 		// badge
 		"badge.background": "#2f4858",

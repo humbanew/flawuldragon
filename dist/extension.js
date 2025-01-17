@@ -47,6 +47,7 @@ const TodoHighlight_js_1 = require("./@todohighlight/TodoHighlight.js");
 const Vanilla_js_1 = require("./@vanilla/Vanilla.js");
 const BracketGuides_js_1 = require("./@bracketguides/BracketGuides.js");
 const ErrorLens_js_1 = require("./@errorlens/ErrorLens.js");
+const Takeabreak_js_1 = require("./@takeabreak/Takeabreak.js");
 const vanilla = new Vanilla_js_1.Vanilla();
 // const vanillaExtInt = new VExtensionIntelligence();
 const jetbrainsmono = new JetbrainsMono_js_1.JetbrainsMono();
@@ -57,6 +58,7 @@ const pomodoroclock = new PomodoroClock_js_1.PomodoroClock();
 const themeswitch = new ThemeSwitch_js_1.ThemeSwitch();
 const autorrctag = new AutoRCCTag_js_1.AutoRCCTag();
 const bracketGuides = new BracketGuides_js_1.BracketGuides();
+const takeabreak = new Takeabreak_js_1.Takeabreak();
 // in development addings
 // const errorLensAlt = new Errorlens();
 const errorLens = new ErrorLens_js_1.ErrorLens();
@@ -83,6 +85,7 @@ function activate(context) {
         autorrctag.autoRCCTag_activate(context);
         bracketGuides.bracketGuides_activate(context);
         errorLens.errorLens_activate(context);
+        // takeabreak.takeabreak_activate(context);
     }
     catch (error) {
         console.log('Flawuldragon Core Hub - Error: ' + error);
@@ -112,6 +115,7 @@ function deactivate(context) {
     autorrctag.autoRCCTag_desactivate();
     bracketGuides.bracketGuides_desactivate();
     errorLens.errorLens_desactivate();
+    // takeabreak.takeabreak_desactivate();
 }
 /**
  * Activates the JetBrains Mono prompt within the given VS Code extension context.

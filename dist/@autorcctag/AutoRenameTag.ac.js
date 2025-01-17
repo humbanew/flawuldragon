@@ -102,7 +102,7 @@ class AutoRenameTag {
             });
         }
     };
-    autoRenameTagRequestType = new vscode_languageserver_1.RequestType('$/auto-rename-tag');
+    autoRenameTagRequestType = new vscode_languageserver_1.RequestType('$/flawuldragon');
     // TODO implement max concurrent requests
     askServerForAutoCompletionsElementRenameTag = async (languageClientProxy, document, tags) => {
         const params = {
@@ -243,138 +243,143 @@ class AutoRenameTag {
         }
     };
     activate = async (context) => {
-        vscode.workspace
-            .getConfiguration('auto-rename-tag')
-            .get('activationOnLanguage');
-        const isEnabled = (document) => {
-            if (!document) {
-                return false;
-            }
-            const languageId = document.languageId;
-            if (languageId === 'html' || languageId === 'handlebars') {
-                const editorSettings = vscode.workspace.getConfiguration('editor', document);
-                if (editorSettings.get('renameOnType') ||
-                    editorSettings.get('linkedEditing')) {
+        try {
+            vscode.workspace
+                .getConfiguration('auto-rename-tag')
+                .get('activationOnLanguage');
+            const isEnabled = (document) => {
+                if (!document) {
                     return false;
                 }
-            }
-            const config = vscode.workspace.getConfiguration('auto-rename-tag', document.uri);
-            const languages = config.get('activationOnLanguage', ['*']);
-            return languages.includes('*') || languages.includes(languageId);
-        };
-        context.subscriptions.push(vscode.workspace.onDidChangeConfiguration(event => {
-            // purges cache for `vscode.workspace.getConfiguration`
-            if (!event.affectsConfiguration('auto-rename-tag')) {
-                return;
-            }
-        }));
-        const clientOptions = {
-            documentSelector: [
-                {
-                    scheme: '*'
+                const languageId = document.languageId;
+                if (languageId === 'html' || languageId === 'handlebars') {
+                    const editorSettings = vscode.workspace.getConfiguration('editor', document);
+                    if (editorSettings.get('renameOnType') ||
+                        editorSettings.get('linkedEditing')) {
+                        return false;
+                    }
                 }
-            ]
-        };
-        const languageClientProxy = await this.createLanguageClientProxy(context, 'auto-rename-tag', 'Auto Rename Tag', clientOptions);
-        let activeTextEditor = vscode.window.activeTextEditor;
-        let changeListener;
-        context.subscriptions.push({
-            dispose() {
-                if (changeListener) {
-                    changeListener.dispose();
-                    changeListener = undefined;
-                }
-            }
-        });
-        const setupChangeListener = () => {
-            if (changeListener) {
-                return;
-            }
-            changeListener = vscode.workspace.onDidChangeTextDocument(async (event) => {
-                if (event.document !== activeTextEditor?.document) {
+                const config = vscode.workspace.getConfiguration('auto-rename-tag', document.uri);
+                const languages = config.get('activationOnLanguage', ['*']);
+                return languages.includes('*') || languages.includes(languageId);
+            };
+            context.subscriptions.push(vscode.workspace.onDidChangeConfiguration(event => {
+                // purges cache for `vscode.workspace.getConfiguration`
+                if (!event.affectsConfiguration('auto-rename-tag')) {
                     return;
                 }
-                if (!isEnabled(event.document)) {
-                    changeListener?.dispose();
-                    changeListener = undefined;
-                    return;
-                }
-                if (event.contentChanges.length === 0) {
-                    return;
-                }
-                const currentText = event.document.getText();
-                const tags = [];
-                let totalInserted = 0;
-                const sortedChanges = event.contentChanges
-                    .slice()
-                    .sort((a, b) => a.rangeOffset - b.rangeOffset);
-                const keys = Object.keys(this.wordsAtOffsets);
-                for (const change of sortedChanges) {
-                    for (const key of keys) {
-                        const parsedKey = parseInt(key, 10);
-                        if (change.rangeOffset <= parsedKey &&
-                            parsedKey <= change.rangeOffset + change.rangeLength) {
-                            delete this.wordsAtOffsets[key];
-                        }
+            }));
+            const clientOptions = {
+                documentSelector: [
+                    {
+                        scheme: '*'
                     }
-                    this.assertDefined(this.previousText);
-                    const line = event.document.lineAt(change.range.start.line);
-                    const lineStart = event.document.offsetAt(line.range.start);
-                    const lineChangeOffset = change.rangeOffset - lineStart;
-                    const lineLeft = line.text.slice(0, lineChangeOffset + totalInserted);
-                    const lineRight = line.text.slice(lineChangeOffset + totalInserted);
-                    const lineTagNameLeft = lineLeft.match(this.tagNameReLeft);
-                    const lineTagNameRight = lineRight.match(this.tagNameRERight);
-                    const previousTextRight = this.previousText.slice(change.rangeOffset);
-                    const previousTagNameRight = previousTextRight.match(this.tagNameRERight);
-                    let newWord;
-                    let oldWord;
-                    if (!lineTagNameLeft) {
-                        totalInserted += change.text.length - change.rangeLength;
-                        continue;
+                ]
+            };
+            const languageClientProxy = await this.createLanguageClientProxy(context, 'flawuldragon', 'Flawuldragon - ARCCTag', clientOptions);
+            let activeTextEditor = vscode.window.activeTextEditor;
+            let changeListener;
+            context.subscriptions.push({
+                dispose() {
+                    if (changeListener) {
+                        changeListener.dispose();
+                        changeListener = undefined;
                     }
-                    newWord = lineTagNameLeft[0];
-                    oldWord = lineTagNameLeft[0];
-                    if (lineTagNameRight) {
-                        newWord += lineTagNameRight[0];
-                    }
-                    if (previousTagNameRight) {
-                        oldWord += previousTagNameRight[0];
-                    }
-                    const offset = change.rangeOffset - lineTagNameLeft[0].length + totalInserted;
-                    tags.push({
-                        oldWord,
-                        word: newWord,
-                        offset,
-                        previousOffset: offset - totalInserted
-                    });
-                    totalInserted += change.text.length - change.rangeLength;
                 }
-                this.updateWordsAtOffset(tags);
-                if (tags.length === 0) {
-                    this.previousText = currentText;
-                    return;
-                }
-                this.assertDefined(vscode.window.activeTextEditor);
-                this.previousText = currentText;
-                this.doAutoCompletionElementRenameTag(languageClientProxy, tags);
             });
-        };
-        this.setPreviousText(vscode.window.activeTextEditor);
-        setupChangeListener();
-        context.subscriptions.push(vscode.window.onDidChangeActiveTextEditor(textEditor => {
-            activeTextEditor = textEditor;
-            const doument = activeTextEditor?.document;
-            if (!isEnabled(doument)) {
+            const setupChangeListener = () => {
                 if (changeListener) {
-                    changeListener.dispose();
-                    changeListener = undefined;
+                    return;
                 }
-                return;
-            }
-            this.setPreviousText(textEditor);
+                changeListener = vscode.workspace.onDidChangeTextDocument(async (event) => {
+                    if (event.document !== activeTextEditor?.document) {
+                        return;
+                    }
+                    if (!isEnabled(event.document)) {
+                        changeListener?.dispose();
+                        changeListener = undefined;
+                        return;
+                    }
+                    if (event.contentChanges.length === 0) {
+                        return;
+                    }
+                    const currentText = event.document.getText();
+                    const tags = [];
+                    let totalInserted = 0;
+                    const sortedChanges = event.contentChanges
+                        .slice()
+                        .sort((a, b) => a.rangeOffset - b.rangeOffset);
+                    const keys = Object.keys(this.wordsAtOffsets);
+                    for (const change of sortedChanges) {
+                        for (const key of keys) {
+                            const parsedKey = parseInt(key, 10);
+                            if (change.rangeOffset <= parsedKey &&
+                                parsedKey <= change.rangeOffset + change.rangeLength) {
+                                delete this.wordsAtOffsets[key];
+                            }
+                        }
+                        this.assertDefined(this.previousText);
+                        const line = event.document.lineAt(change.range.start.line);
+                        const lineStart = event.document.offsetAt(line.range.start);
+                        const lineChangeOffset = change.rangeOffset - lineStart;
+                        const lineLeft = line.text.slice(0, lineChangeOffset + totalInserted);
+                        const lineRight = line.text.slice(lineChangeOffset + totalInserted);
+                        const lineTagNameLeft = lineLeft.match(this.tagNameReLeft);
+                        const lineTagNameRight = lineRight.match(this.tagNameRERight);
+                        const previousTextRight = this.previousText.slice(change.rangeOffset);
+                        const previousTagNameRight = previousTextRight.match(this.tagNameRERight);
+                        let newWord;
+                        let oldWord;
+                        if (!lineTagNameLeft) {
+                            totalInserted += change.text.length - change.rangeLength;
+                            continue;
+                        }
+                        newWord = lineTagNameLeft[0];
+                        oldWord = lineTagNameLeft[0];
+                        if (lineTagNameRight) {
+                            newWord += lineTagNameRight[0];
+                        }
+                        if (previousTagNameRight) {
+                            oldWord += previousTagNameRight[0];
+                        }
+                        const offset = change.rangeOffset - lineTagNameLeft[0].length + totalInserted;
+                        tags.push({
+                            oldWord,
+                            word: newWord,
+                            offset,
+                            previousOffset: offset - totalInserted
+                        });
+                        totalInserted += change.text.length - change.rangeLength;
+                    }
+                    this.updateWordsAtOffset(tags);
+                    if (tags.length === 0) {
+                        this.previousText = currentText;
+                        return;
+                    }
+                    this.assertDefined(vscode.window.activeTextEditor);
+                    this.previousText = currentText;
+                    this.doAutoCompletionElementRenameTag(languageClientProxy, tags);
+                });
+            };
+            this.setPreviousText(vscode.window.activeTextEditor);
             setupChangeListener();
-        }));
+            context.subscriptions.push(vscode.window.onDidChangeActiveTextEditor(textEditor => {
+                activeTextEditor = textEditor;
+                const doument = activeTextEditor?.document;
+                if (!isEnabled(doument)) {
+                    if (changeListener) {
+                        changeListener.dispose();
+                        changeListener = undefined;
+                    }
+                    return;
+                }
+                this.setPreviousText(textEditor);
+                setupChangeListener();
+            }));
+        }
+        catch (error) {
+            return;
+        }
     };
 }
 exports.AutoRenameTag = AutoRenameTag;

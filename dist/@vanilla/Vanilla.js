@@ -187,7 +187,7 @@ class Vanilla {
      * to ensure it is disposed of properly when the extension is deactivated.
      */
     vanilla_dateTimeComponent(context) {
-        let text, divisor = ' ■ ';
+        let text, divisor = ' ◈ ';
         // pausa para o processador descansar um pouco
         setTimeout(() => {
             setInterval(() => {
@@ -297,6 +297,99 @@ class Vanilla {
             }));
         });
     }
+    vanilla_decorationLineStatus() {
+        vscode.window.onDidChangeActiveTextEditor((editor) => {
+            if (!editor) {
+                return;
+            }
+            const doc = editor.document;
+            const text = doc.getText();
+            const regex = /error/gi;
+            const decorations = [];
+            let match;
+            while ((match = regex.exec(text))) {
+                const startPos = doc.positionAt(match.index);
+                const endPos = doc.positionAt(match.index + match[0].length);
+                const decoration = { range: new vscode.Range(startPos, endPos) };
+                decorations.push(decoration);
+            }
+            editor.setDecorations(vscode.window.createTextEditorDecorationType({
+                after: {
+                    backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                    width: '100%'
+                }
+            }), decorations);
+        });
+        // warning
+        vscode.window.onDidChangeActiveTextEditor((editor) => {
+            if (!editor) {
+                return;
+            }
+            const doc = editor.document;
+            const text = doc.getText();
+            const regex = /warning/gi;
+            const decorations = [];
+            let match;
+            while ((match = regex.exec(text))) {
+                const startPos = doc.positionAt(match.index);
+                const endPos = doc.positionAt(match.index + match[0].length);
+                const decoration = { range: new vscode.Range(startPos, endPos) };
+                decorations.push(decoration);
+            }
+            editor.setDecorations(vscode.window.createTextEditorDecorationType({
+                after: {
+                    backgroundColor: 'rgba(255, 255, 0, 0.1)',
+                    width: '100%'
+                }
+            }), decorations);
+        });
+        // suggestion
+        vscode.window.onDidChangeActiveTextEditor((editor) => {
+            if (!editor) {
+                return;
+            }
+            const doc = editor.document;
+            const text = doc.getText();
+            const regex = /suggestion/gi;
+            const decorations = [];
+            let match;
+            while ((match = regex.exec(text))) {
+                const startPos = doc.positionAt(match.index);
+                const endPos = doc.positionAt(match.index + match[0].length);
+                const decoration = { range: new vscode.Range(startPos, endPos) };
+                decorations.push(decoration);
+            }
+            editor.setDecorations(vscode.window.createTextEditorDecorationType({
+                after: {
+                    backgroundColor: 'rgba(0, 255, 0, 0.1)',
+                    width: '100%'
+                }
+            }), decorations);
+        });
+        // info
+        vscode.window.onDidChangeActiveTextEditor((editor) => {
+            if (!editor) {
+                return;
+            }
+            const doc = editor.document;
+            const text = doc.getText();
+            const regex = /info/gi;
+            const decorations = [];
+            let match;
+            while ((match = regex.exec(text))) {
+                const startPos = doc.positionAt(match.index);
+                const endPos = doc.positionAt(match.index + match[0].length);
+                const decoration = { range: new vscode.Range(startPos, endPos) };
+                decorations.push(decoration);
+            }
+            editor.setDecorations(vscode.window.createTextEditorDecorationType({
+                after: {
+                    backgroundColor: 'rgba(0, 0, 255, 0.1)',
+                    width: '100%'
+                }
+            }), decorations);
+        });
+    }
     /**
      * Activates the Flawuldragon extension.
      *
@@ -313,6 +406,7 @@ class Vanilla {
             this.vanilla_flawuldragonNotes(context);
             this.vanilla_dateTimeComponent(context);
             this.vanilla_interruptorStatusBarConstructor(this.flawuldragonDateTimeStatusBar, constants_js_1.constants.commands.vanilla.release.fdDateTimeStatusbar); // show or hide the status bar
+            this.vanilla_decorationLineStatus();
             vscode.workspace
                 .getConfiguration()
                 .update('editor.inlayHints.enabled', true);

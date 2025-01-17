@@ -12,7 +12,7 @@ import { AutoRenameTagService } from './AutoRenameTagService.ac.js';
 
 export class AutoRenameTagServer {
   public autoRenameTagRequestType = new RequestType<IARCCTSParams, IARCCTSResult[], any>(
-    '$/auto-rename-tag'
+    '$/flawuldragon'
   );
   
   public NULL_AUTO_RENAME_TAG_RESULT: IARCCTSResult[] = [];
@@ -22,7 +22,7 @@ export class AutoRenameTagServer {
   ) => (params: IARCCTSParams) => Promise<IARCCTSResult[]> =
     documents =>
     async ({ textDocument, tags }) => {
-      await new Promise(r => setTimeout(r, 20));
+      await new Promise(r => setTimeout(r, 800));
       const document = documents.get(textDocument.uri);
       if (!document) {
         return this.NULL_AUTO_RENAME_TAG_RESULT;

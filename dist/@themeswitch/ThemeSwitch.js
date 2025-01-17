@@ -36,6 +36,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ThemeSwitch = void 0;
 const vscode = __importStar(require("vscode"));
 const constants_js_1 = require("../constants.js");
+/**
+ * The ThemeSwitch class provides functionality to switch between dark and light themes in Visual Studio Code.
+ * It interacts with the VS Code environment using the provided extension context and configuration settings.
+ *
+ * This class includes methods to initialize, update, and destroy the theme switch, as well as to handle configuration changes.
+ * It also registers commands for switching and toggling themes, and updates the status bar item accordingly.
+ *
+ * @class
+ * @example
+ * // Example usage:
+ * const themeswitch = new ThemeSwitch();
+ * themeswitch.themeswitch_activate(context);
+ */
 class ThemeSwitch {
     /**
      * The context provided by the Visual Studio Code extension API.

@@ -788,7 +788,22 @@
 				"command": "flawuldragon.errorLens.copyProblemCode",
 				"title": "Copy Problem Code",
 				"description": "Copy problem code to the clipboard (at the active cursor)."
-			}
+			},
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.takeabreak.Take a break: Start",
+        "title": "Take a break: Start"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.takeabreak.Take a break: Stop",
+        "title": "Take a break: Stop"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.takeabreak.ui.interruptorStatusBar",
+        "title": "Show or Hide the Take a break status bar item"
+      }
     ],
     "icons": {
       "flawuldragon-on": {
@@ -1908,6 +1923,17 @@
       },
       {
         "order": 6,
+        "title": "Take a Break",
+        "properties": {
+          "takeabreak.interval": {
+            "type": "number",
+            "default": 20,
+            "description": "Interval in minutes to remind you to take a break"
+          }
+        }
+      },
+      {
+        "order": 7,
         "title": "Todo Highlight",
         "properties": {
           "todohighlight.isEnable": {

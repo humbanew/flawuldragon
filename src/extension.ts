@@ -9,6 +9,7 @@ import { TodoHighlight } from './@todohighlight/TodoHighlight.js';
 import { Vanilla } from './@vanilla/Vanilla.js';
 import { BracketGuides } from './@bracketguides/BracketGuides.js';
 import { ErrorLens } from './@errorlens/ErrorLens.js';
+import { Takeabreak } from './@takeabreak/Takeabreak.js';
 
 const vanilla = new Vanilla();
 // const vanillaExtInt = new VExtensionIntelligence();
@@ -20,6 +21,7 @@ const pomodoroclock = new PomodoroClock();
 const themeswitch = new ThemeSwitch();
 const autorrctag = new AutoRCCTag();
 const bracketGuides = new BracketGuides();
+const takeabreak = new Takeabreak();
 
 // in development addings
 // const errorLensAlt = new Errorlens();
@@ -48,8 +50,8 @@ export function activate(context: vscode.ExtensionContext) {
     themeswitch.themeSwitch_activate(context);
     autorrctag.autoRCCTag_activate(context);
     bracketGuides.bracketGuides_activate(context);
-
     errorLens.errorLens_activate(context);
+    // takeabreak.takeabreak_activate(context);
   } catch (error) {
     console.log('Flawuldragon Core Hub - Error: ' + error);
     vscode.window.showErrorMessage(
@@ -79,8 +81,8 @@ export function deactivate(context: vscode.ExtensionContext) {
   themeswitch.themeSwitch_desactivate();
   autorrctag.autoRCCTag_desactivate();
   bracketGuides.bracketGuides_desactivate();
-
   errorLens.errorLens_desactivate();
+  // takeabreak.takeabreak_desactivate();
 }
 
 /**

@@ -37,9 +37,23 @@ exports.AutoRCCTag = void 0;
 const vscode = __importStar(require("vscode"));
 const AutoCloseTag_ac_js_1 = require("./AutoCloseTag.ac.js");
 const AutoRenameTag_ac_js_1 = require("./AutoRenameTag.ac.js");
+/**
+ * Class representing the AutoRCCTag functionality.
+ *
+ * @class
+ * @example
+ * // Example usage:
+ * const autorcctag = new AutoRCCTag();
+ * autorcctag.autoRCCTag_activate(context);
+ */
 class AutoRCCTag {
     autoCloseTag = new AutoCloseTag_ac_js_1.AutoCloseTag();
     autoRenameTag = new AutoRenameTag_ac_js_1.AutoRenameTag();
+    /**
+     * Activates the AutoRCCTag features.
+     *
+     * @param context - The VSCode extension context.
+     */
     autoRCCTag_activate(context) {
         try {
             this.autoCloseTag.activate(context);
@@ -52,6 +66,9 @@ class AutoRCCTag {
         }
         finally { }
     }
+    /**
+     * Deactivates the AutoRCCTag features.
+     */
     autoRCCTag_desactivate() {
         this.autoCloseTag.deactivate();
     }

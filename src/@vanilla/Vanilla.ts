@@ -189,7 +189,7 @@ export class Vanilla {
    */
   protected vanilla_dateTimeComponent(context: vscode.ExtensionContext): void {
     let text: string,
-      divisor = ' ■ ';
+      divisor = ' ◈ ';
     // pausa para o processador descansar um pouco
     setTimeout(() => {
       setInterval(() => {
@@ -324,6 +324,115 @@ export class Vanilla {
     );
   }
 
+  protected vanilla_decorationLineStatus() {
+    vscode.window.onDidChangeActiveTextEditor((editor) => {
+      if (!editor) {
+        return;
+      }
+      const doc = editor.document;
+      const text = doc.getText();
+      const regex = /error/gi;
+      const decorations = [];
+      let match: any;
+      while ((match = regex.exec(text))) {
+        const startPos = doc.positionAt(match.index);
+        const endPos = doc.positionAt(match.index + match[0].length);
+        const decoration = { range: new vscode.Range(startPos, endPos) };
+        decorations.push(decoration);
+      }
+      editor.setDecorations(
+        vscode.window.createTextEditorDecorationType({
+          after: {
+            backgroundColor: 'rgba(255, 0, 0, 0.1)',
+            width: '100%'
+          }
+        }),
+        decorations
+      );
+    });
+
+    // warning
+    vscode.window.onDidChangeActiveTextEditor((editor) => {
+      if (!editor) {
+        return;
+      }
+      const doc = editor.document;
+      const text = doc.getText();
+      const regex = /warning/gi;
+      const decorations = [];
+      let match: any;
+      while ((match = regex.exec(text))) {
+        const startPos = doc.positionAt(match.index);
+        const endPos = doc.positionAt(match.index + match[0].length);
+        const decoration = { range: new vscode.Range(startPos, endPos) };
+        decorations.push(decoration);
+      }
+      editor.setDecorations(
+        vscode.window.createTextEditorDecorationType({
+          after: {
+            backgroundColor: 'rgba(255, 255, 0, 0.1)',
+            width: '100%'
+          }
+        }),
+        decorations
+      );
+    });
+
+    // suggestion
+    vscode.window.onDidChangeActiveTextEditor((editor) => {
+      if (!editor) {
+        return;
+      }
+      const doc = editor.document;
+      const text = doc.getText();
+      const regex = /suggestion/gi;
+      const decorations = [];
+      let match: any;
+      while ((match = regex.exec(text))) {
+        const startPos = doc.positionAt(match.index);
+        const endPos = doc.positionAt(match.index + match[0].length);
+        const decoration = { range: new vscode.Range(startPos, endPos) };
+        decorations.push(decoration);
+      }
+      editor.setDecorations(
+        vscode.window.createTextEditorDecorationType({
+          after: {
+            backgroundColor: 'rgba(0, 255, 0, 0.1)',
+            width: '100%'
+          }
+        }),
+        decorations
+      );
+    });
+
+    // info
+    vscode.window.onDidChangeActiveTextEditor((editor) => {
+      if (!editor) {
+        return;
+      }
+      const doc = editor.document;
+      const text = doc.getText();
+      const regex = /info/gi;
+      const decorations = [];
+      let match: any;
+      while ((match = regex.exec(text))) {
+        const startPos = doc.positionAt(match.index);
+        const endPos = doc.positionAt(match.index + match[0].length);
+        const decoration = { range: new vscode.Range(startPos, endPos) };
+        decorations.push(decoration);
+      }
+      editor.setDecorations(
+        vscode.window.createTextEditorDecorationType({
+          after: {
+            backgroundColor: 'rgba(0, 0, 255, 0.1)',
+            width: '100%'
+          }
+        }),
+        decorations
+      );
+    });
+  }
+
   /**
    * Activates the Flawuldragon extension.
    *
@@ -343,6 +452,7 @@ export class Vanilla {
         this.flawuldragonDateTimeStatusBar,
         constants.commands.vanilla.release.fdDateTimeStatusbar
       ); // show or hide the status bar
+      this.vanilla_decorationLineStatus();
       vscode.workspace
         .getConfiguration()
         .update('editor.inlayHints.enabled', true);

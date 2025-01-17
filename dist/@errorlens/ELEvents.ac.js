@@ -52,50 +52,6 @@ class ELEvents {
     onDidChangeTextDocumentForOnSaveDisposable;
     onDidSaveTextDocumentDisposable;
     newDelay;
-    // Defina os tipos de decoração
-    errorDecorationType = vscode.window.createTextEditorDecorationType({
-        backgroundColor: 'rgba(255,0,0,0.3)', // Vermelho para erros
-    });
-    warningDecorationType = vscode.window.createTextEditorDecorationType({
-        backgroundColor: 'rgba(255,255,0,0.3)', // Amarelo para avisos
-    });
-    infoDecorationType = vscode.window.createTextEditorDecorationType({
-        backgroundColor: 'rgba(0,0,255,0.3)', // Azul para informações
-    });
-    hintDecorationType = vscode.window.createTextEditorDecorationType({
-        backgroundColor: 'rgba(0,255,0,0.3)', // Verde para dicas
-    });
-    // Função para aplicar decorações com base nos diagnósticos
-    applyDecorations(editor, diagnostics) {
-        const errorDecorations = [];
-        const warningDecorations = [];
-        const infoDecorations = [];
-        const hintDecorations = [];
-        for (const diagnostic of diagnostics) {
-            const decoration = {
-                range: diagnostic.range,
-                hoverMessage: diagnostic.message,
-            };
-            switch (diagnostic.severity) {
-                case vscode.DiagnosticSeverity.Error:
-                    errorDecorations.push(decoration);
-                    break;
-                case vscode.DiagnosticSeverity.Warning:
-                    warningDecorations.push(decoration);
-                    break;
-                case vscode.DiagnosticSeverity.Information:
-                    infoDecorations.push(decoration);
-                    break;
-                case vscode.DiagnosticSeverity.Hint:
-                    hintDecorations.push(decoration);
-                    break;
-            }
-        }
-        editor.setDecorations(this.errorDecorationType, errorDecorations);
-        editor.setDecorations(this.warningDecorationType, warningDecorations);
-        editor.setDecorations(this.infoDecorationType, infoDecorations);
-        editor.setDecorations(this.hintDecorationType, hintDecorations);
-    }
     /**
      * Update listener for when active editor changes.
      */
@@ -111,8 +67,6 @@ class ELEvents {
                     uri: editor.document.uri,
                     editor,
                 });
-                const diagnostics = vscode.languages.getDiagnostics(editor.document.uri);
-                this.applyDecorations(editor, diagnostics);
             }
             else {
                 ErrorLens_js_1.$state.statusBarMessage.clear();

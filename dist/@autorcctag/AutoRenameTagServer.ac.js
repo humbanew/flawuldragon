@@ -41,10 +41,10 @@ const node_1 = require("vscode-languageserver/node");
 const vscode_languageserver_textdocument_1 = require("vscode-languageserver-textdocument");
 const AutoRenameTagService_ac_js_1 = require("./AutoRenameTagService.ac.js");
 class AutoRenameTagServer {
-    autoRenameTagRequestType = new vscode_languageserver_1.RequestType('$/auto-rename-tag');
+    autoRenameTagRequestType = new vscode_languageserver_1.RequestType('$/flawuldragon');
     NULL_AUTO_RENAME_TAG_RESULT = [];
     autoRenameTag = documents => async ({ textDocument, tags }) => {
-        await new Promise(r => setTimeout(r, 20));
+        await new Promise(r => setTimeout(r, 800));
         const document = documents.get(textDocument.uri);
         if (!document) {
             return this.NULL_AUTO_RENAME_TAG_RESULT;
