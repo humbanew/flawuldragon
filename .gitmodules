@@ -1,33 +1,3 @@
-# [submodule "updates/sakai-icons"]
-# 	path = updates/sakai-icons
-# 	url = git@github.com:Sakai-UI/Sakai-Icons.git
-# [submodule "updates/auto-close-tag"]
-# 	path = updates/auto-close-tag
-# 	url = git@github.com:formulahendry/vscode-auto-close-tag.git
-# [submodule "updates/auto-rename-tag"]
-# 	path = updates/auto-rename-tag
-# 	url = git@github.com:formulahendry/vscode-auto-rename-tag.git
-# [submodule "updates/auto-complete-tag"]
-# 	path = updates/auto-complete-tag
-# 	url = git@github.com:formulahendry/vscode-auto-complete-tag.git
-# [submodule "updates/toggle-brackets-guides"]
-# 	path = updates/toggle-brackets-guides
-# 	url = git@github.com:kissumisha/togglebracketsguides.git
-# [submodule "updates/color-highlight"]
-# 	path = updates/color-highlight
-# 	url = git@github.com:enyancc/vscode-ext-color-highlight.git
-# [submodule "updates/filesize"]
-# 	path = updates/filesize
-# 	url = git@github.com:wdskuki/vscode-extension-filesize.git
-# [submodule "updates/indent-rainbow"]
-# 	path = updates/indent-rainbow
-# 	url = git@github.com:oderwat/vscode-indent-rainbow.git
-# [submodule "updates/jetbrains-mono-fontpack"]
-# 	path = updates/jetbrains-mono-fontpack
-# 	url = git@github.com:NarasimaPandiyan/JetbrainsMono-vscode-extension.git
-# [submodule "updates/jetbrains-icon-theme"]
-# 	path = updates/jetbrains-icon-theme
-# 	url = git@github.com:cadamsdev/vscode-jetbrains-icon-theme.git
 # [submodule "updates/pomodoro-clock"]
 # 	path = updates/pomodoro-clock
 # 	url = git@github.com:jackluson/vscode-pomodoro-clock.git
@@ -49,18 +19,6 @@
 # [submodule "updates/vs-icons"]
 # 	path = updates/vs-icons
 # 	url = git@github.com:jtlowe/studio-icons.git
-# [submodule "updates/color-highlight-v2"]
-# 	path = updates/color-highlight-v2
-# 	url = git@github.com:enyancc/vscode-ext-color-highlight.git
-# [submodule "updates/color-highlight-v3"]
-# 	path = updates/color-highlight-v3
-# 	url = git@github.com:mikekscholz/vscode-ext-color-highlight.git
-# [submodule "updates/errorlens"]
-# 	path = updates/errorlens
-# 	url = git@github.com:usernamehw/vscode-error-lens.git
-# [submodule "updates/errorlens-alt"]
-# 	path = updates/errorlens-alt
-# 	url = git@github.com:phindle/error-lens.git
 # [submodule "updates/vsclassic-icons"]
 # 	path = updates/vsclassic-icons
 # 	url = git@gitlab.com:jez9999/vsclassic-icon-theme.git
@@ -115,3 +73,36 @@
 [submodule "updates/auto-close-tag"]
 	path = updates/auto-close-tag
 	url = git@github.com:formulahendry/vscode-auto-close-tag.git
+[submodule "updates/auto-rename-tag"]
+	path = updates/auto-rename-tag
+	url = git@github.com:formulahendry/vscode-auto-rename-tag.git
+[submodule "updates/auto-complete-tag"]
+	path = updates/auto-complete-tag
+	url = git@github.com:formulahendry/vscode-auto-complete-tag.git
+[submodule "updates/toggle-brackets-guides"]
+	path = updates/toggle-brackets-guides
+	url = git@github.com:kissumisha/togglebracketsguides.git
+[submodule "updates/color-highlight"]
+	path = updates/color-highlight
+	url = git@github.com:enyancc/vscode-ext-color-highlight.git
+[submodule "updates/color-highlight-v2"]
+	path = updates/color-highlight-v2
+	url = git@github.com:mikekscholz/vscode-ext-color-highlight.git
+[submodule "updates/errorlens"]
+	path = updates/errorlens
+	url = git@github.com:usernamehw/vscode-error-lens.git
+[submodule "updates/errorlens-alt"]
+	path = updates/errorlens-alt
+	url = git@github.com:phindle/error-lens.git
+[submodule "updates/filesize"]
+	path = updates/filesize
+	url = git@github.com:wdskuki/vscode-extension-filesize.git
+[submodule "updates/indent-rainbow"]
+	path = updates/indent-rainbow
+	url = git@github.com:oderwat/vscode-indent-rainbow.git
+[submodule "updates/jetbrains-mono-fontpack"]
+	path = updates/jetbrains-mono-fontpack
+	url = git@github.com:NarasimaPandiyan/JetbrainsMono-vscode-extension.git
+[submodule "updates/jetbrains-icon-theme"]
+	path = updates/jetbrains-icon-theme
+	url = git@github.com:cadamsdev/vscode-jetbrains-icon-theme.git
