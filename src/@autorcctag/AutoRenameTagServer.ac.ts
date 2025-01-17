@@ -33,7 +33,7 @@ export class AutoRenameTagServer {
       const text = document.getText();
       const results: IARCCTSResult[] = tags
         .map(tag => {
-          const result = AutoRenameTagService.prototype.doAutoRenameTag(
+          const result = AutoRenameTagService.prototype?.doAutoRenameTag(
             text,
             tag.offset,
             tag.word,

@@ -55,7 +55,7 @@ class AutoRenameTagServer {
         const text = document.getText();
         const results = tags
             .map(tag => {
-            const result = AutoRenameTagService_ac_js_1.AutoRenameTagService.prototype.doAutoRenameTag(text, tag.offset, tag.word, tag.oldWord, document.languageId);
+            const result = AutoRenameTagService_ac_js_1.AutoRenameTagService.prototype?.doAutoRenameTag(text, tag.offset, tag.word, tag.oldWord, document.languageId);
             if (!result) {
                 return result;
             }

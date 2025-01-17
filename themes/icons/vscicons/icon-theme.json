@@ -344,7 +344,649 @@
     },
     "file_type_affectscript": {
       "iconPath": "./icons/file_type_affectscript.svg"
-    }
+    },
+    "file_type_affinitydesigner": {
+      "iconPath": "./icons/file_type_affinitydesigner.svg"
+    },
+    "file_type_affinityphoto": {
+      "iconPath": "./icons/file_type_affinityphoto.svg"
+    },
+    "file_type_affinitypublisher": {
+      "iconPath": "./icons/file_type_affinitypublisher.svg"
+    },
+    "file_type_ai": {
+      "iconPath": "./icons/file_type_ai.svg"
+    },
+    "file_type_ai2": {
+      "iconPath": "./icons/file_type_ai2.svg"
+    },
+    "file_type_al_dal": {
+      "iconPath": "./icons/file_type_al_dal.svg"
+    },
+    "file_type_al": {
+      "iconPath": "./icons/file_type_al.svg"
+    },
+    "file_type_allcontribuitors": {
+      "iconPath": "./icons/file_type_allcontribuitors.svg"
+    },
+    "file_type_angular": {
+      "iconPath": "./icons/file_type_angular.svg"
+    },
+    "file_type_ansible": {
+      "iconPath": "./icons/file_type_ansible.svg"
+    },
+    "file_type_antlers_html": {
+      "iconPath": "./icons/file_type_antlers_html.svg"
+    },
+    "file_type_antlr": {
+      "iconPath": "./icons/file_type_antlr.svg"
+    },
+    "file_type_anyscript": {
+      "iconPath": "./icons/file_type_anyscript.svg"
+    },
+    "file_type_apache": {
+      "iconPath": "./icons/file_type_apache.svg"
+    },
+    "file_type_apex": {
+      "iconPath": "./icons/file_type_apex.svg"
+    },
+    "file_type_api_extractor": {
+      "iconPath": "./icons/file_type_api_extractor.svg"
+    },
+    "file_type_apib": {
+      "iconPath": "./icons/file_type_apib.svg"
+    },
+    "file_type_apib2": {
+      "iconPath": "./icons/file_type_apib2.svg"
+    },
+    "file_type_apl": {
+      "iconPath": "./icons/file_type_apl.svg"
+    },
+    "file_type_applescript": {
+      "iconPath": "./icons/file_type_applescript.svg"
+    },
+    "file_type_appscript": {
+      "iconPath": "./icons/file_type_appscript.svg"
+    },
+    "file_type_appsemble": {
+      "iconPath": "./icons/file_type_appsemble.svg"
+    },
+    "file_type_appveyor": {
+      "iconPath": "./icons/file_type_appveyor.svg"
+    },
+    "file_type_arduino": {
+      "iconPath": "./icons/file_type_arduino.svg"
+    },
+    "file_type_asciidoc": {
+      "iconPath": "./icons/file_type_asciidoc.svg"
+    },
+    "file_type_asp": {
+      "iconPath": "./icons/file_type_asp.svg"
+    },
+    "file_type_aspx": {
+      "iconPath": "./icons/file_type_aspx.svg"
+    },
+    "file_type_assembly": {
+      "iconPath": "./icons/file_type_assembly.svg"
+    },
+    "file_type_astro": {
+      "iconPath": "./icons/file_type_astro.svg"
+    },
+    "file_type_astroconfig": {
+      "iconPath": "./icons/file_type_astroconfig.svg"
+    },
+    "file_type_atom": {
+      "iconPath": "./icons/file_type_atom.svg"
+    },
+    "file_type_ats": {
+      "iconPath": "./icons/file_type_ats.svg"
+    },
+    "file_type_attw": {
+      "iconPath": "./icons/file_type_attw.svg"
+    },
+    "file_type_audio": {
+      "iconPath": "./icons/file_type_audio.svg"
+    },
+    "file_type_aurelia": {
+      "iconPath": "./icons/file_type_aurelia.svg"
+    },
+    "file_type_autohotkey": {
+      "iconPath": "./icons/file_type_autohotkey.svg"
+    },
+    "file_type_autoit": {
+      "iconPath": "./icons/file_type_autoit.svg"
+    },
+    "file_type_avif": {
+      "iconPath": "./icons/file_type_avif.svg"
+    },
+    "file_type_avro": {
+      "iconPath": "./icons/file_type_avro.svg"
+    },
+    "file_type_awk": {
+      "iconPath": "./icons/file_type_awk.svg"
+    },
+    "file_type_azure": {
+      "iconPath": "./icons/file_type_azure.svg"
+    },
+    "file_type_azurepipelines": {
+      "iconPath": "./icons/file_type_azurepipelines.svg"
+    },
+    "file_type_babel": {
+      "iconPath": "./icons/file_type_babel.svg"
+    },
+    "file_type_babel2": {
+      "iconPath": "./icons/file_type_babel2.svg"
+    },
+    "file_type_ballerina": {
+      "iconPath": "./icons/file_type_ballerina.svg"
+    },
+    "file_type_bat": {
+      "iconPath": "./icons/file_type_bat.svg"
+    },
+    "file_type_bats": {
+      "iconPath": "./icons/file_type_bats.svg"
+    },
+    "file_type_bazaar": {
+      "iconPath": "./icons/file_type_bazaar.svg"
+    },
+    "file_type_bazel_ignore": {
+      "iconPath": "./icons/file_type_bazel_ignore.svg"
+    },
+    "file_type_bazel_version": {
+      "iconPath": "./icons/file_type_bazel_version.svg"
+    },
+    "file_type_bazel": {
+      "iconPath": "./icons/file_type_bazel.svg"
+    },
+    "file_type_befunge": {
+      "iconPath": "./icons/file_type_befunge.svg"
+    },
+    "file_type_bicep": {
+      "iconPath": "./icons/file_type_bicep.svg"
+    },
+    "file_type_biml": {
+      "iconPath": "./icons/file_type_biml.svg"
+    },
+    "file_type_binary": {
+      "iconPath": "./icons/file_type_binary.svg"
+    },
+    "file_type_biome": {
+      "iconPath": "./icons/file_type_biome.svg"
+    },
+    "file_type_bitbucketpipeline": {
+      "iconPath": "./icons/file_type_bitbucketpipeline.svg"
+    },
+    "file_type_bithound": {
+      "iconPath": "./icons/file_type_bithound.svg"
+    },
+    "file_type_blade": {
+      "iconPath": "./icons/file_type_blade.svg"
+    },
+    "file_type_blitzbasic": {
+      "iconPath": "./icons/file_type_blitzbasic.svg"
+    },
+    "file_type_bolt": {
+      "iconPath": "./icons/file_type_bolt.svg"
+    },
+    "file_type_bosque": {
+      "iconPath": "./icons/file_type_bosque.svg"
+    },
+    "file_type_bower": {
+      "iconPath": "./icons/file_type_bower.svg"
+    },
+    "file_type_bower2": {
+      "iconPath": "./icons/file_type_bower2.svg"
+    },
+    "file_type_browserslist": {
+      "iconPath": "./icons/file_type_browserslist.svg"
+    },
+    "file_type_bruno": {
+      "iconPath": "./icons/file_type_bruno.svg"
+    },
+    "file_type_buckbuild": {
+      "iconPath": "./icons/file_type_buckbuild.svg"
+    },
+    "file_type_buf": {
+      "iconPath": "./icons/file_type_buf.svg"
+    },
+    "file_type_bun": {
+      "iconPath": "./icons/file_type_bun.svg"
+    },
+    "file_type_bundlemon": {
+      "iconPath": "./icons/file_type_bundlemon.svg"
+    },
+    "file_type_bundler": {
+      "iconPath": "./icons/file_type_bundler.svg"
+    },
+    "file_type_bunfig": {
+      "iconPath": "./icons/file_type_bunfig.svg"
+    },
+    "file_type_c_al": {
+      "iconPath": "./icons/file_type_c_al.svg"
+    },
+    "file_type_c": {
+      "iconPath": "./icons/file_type_c.svg"
+    },
+    "file_type_c2": {
+      "iconPath": "./icons/file_type_c2.svg"
+    },
+    "file_type_c3": {
+      "iconPath": "./icons/file_type_c3.svg"
+    },
+    "file_type_cabal": {
+      "iconPath": "./icons/file_type_cabal.svg"
+    },
+    "file_type_caddy": {
+      "iconPath": "./icons/file_type_caddy.svg"
+    },
+    "file_type_cake": {
+      "iconPath": "./icons/file_type_cake.svg"
+    },
+    "file_type_cakephp": {
+      "iconPath": "./icons/file_type_cakephp.svg"
+    },
+    "file_type_capacitor": {
+      "iconPath": "./icons/file_type_capacitor.svg"
+    },
+    "file_type_capnp": {
+      "iconPath": "./icons/file_type_capnp.svg"
+    },
+    "file_type_cargo": {
+      "iconPath": "./icons/file_type_cargo.svg"
+    },
+    "file_type_casc": {
+      "iconPath": "./icons/file_type_casc.svg"
+    },
+    "file_type_cddl": {
+      "iconPath": "./icons/file_type_cddl.svg"
+    },
+    "file_type_cert": {
+      "iconPath": "./icons/file_type_cert.svg"
+    },
+    "file_type_ceylon": {
+      "iconPath": "./icons/file_type_ceylon.svg"
+    },
+    "file_type_cf": {
+      "iconPath": "./icons/file_type_cf.svg"
+    },
+    "file_type_cf2": {
+      "iconPath": "./icons/file_type_cf2.svg"
+    },
+    "file_type_cfc": {
+      "iconPath": "./icons/file_type_cfc.svg"
+    },
+    "file_type_cfc2": {
+      "iconPath": "./icons/file_type_cfc2.svg"
+    },
+    "file_type_cfm": {
+      "iconPath": "./icons/file_type_cfm.svg"
+    },
+    "file_type_cfm2": {
+      "iconPath": "./icons/file_type_cfm2.svg"
+    },
+    "file_type_cheader": {
+      "iconPath": "./icons/file_type_cheader.svg"
+    },
+    "file_type_chef": {
+      "iconPath": "./icons/file_type_chef.svg"
+    },
+    "file_type_chef_cookbook": {
+      "iconPath": "./icons/file_type_chef_cookbook.svg"
+    },
+    "file_type_circleci": {
+      "iconPath": "./icons/file_type_circleci.svg"
+    },
+    "file_type_class": {
+      "iconPath": "./icons/file_type_class.svg"
+    },
+    "file_type_clojure": {
+      "iconPath": "./icons/file_type_clojure.svg"
+    },
+    "file_type_clojurescript": {
+      "iconPath": "./icons/file_type_clojurescript.svg"
+    },
+    "file_type_cloudfoundry": {
+      "iconPath": "./icons/file_type_cloudfoundry.svg"
+    },
+    "file_type_cmake": {
+      "iconPath": "./icons/file_type_cmake.svg"
+    },
+    "file_type_cobol": {
+      "iconPath": "./icons/file_type_cobol.svg"
+    },
+    "file_type_codacy": {
+      "iconPath": "./icons/file_type_codacy.svg"
+    },
+    "file_type_codeclimate": {
+      "iconPath": "./icons/file_type_codeclimate.svg"
+    },
+    "file_type_codecov": {
+      "iconPath": "./icons/file_type_codecov.svg"
+    },
+    "file_type_codekit": {
+      "iconPath": "./icons/file_type_codekit.svg"
+    },
+    "file_type_codeowners": {
+      "iconPath": "./icons/file_type_codeowners.svg"
+    },
+    "file_type_codeql": {
+      "iconPath": "./icons/file_type_codeql.svg"
+    },
+    "file_type_coderabbit": {
+      "iconPath": "./icons/file_type_coderabbit.svg"
+    },
+    "file_type_coffeelint": {
+      "iconPath": "./icons/file_type_coffeelint.svg"
+    },
+    "file_type_coffeescript": {
+      "iconPath": "./icons/file_type_coffeescript.svg"
+    },
+    "file_type_commitzen": {
+      "iconPath": "./icons/file_type_commitzen.svg"
+    },
+    "file_type_commitlint": {
+      "iconPath": "./icons/file_type_commitlint.svg"
+    },
+    "file_type_compass": {
+      "iconPath": "./icons/file_type_compass.svg"
+    },
+    "file_type_composer": {
+      "iconPath": "./icons/file_type_composer.svg"
+    },
+    "file_type_conan": {
+      "iconPath": "./icons/file_type_conan.svg"
+    },
+    "file_type_conda": {
+      "iconPath": "./icons/file_type_conda.svg"
+    },
+    "file_type_config": {
+      "iconPath": "./icons/file_type_config.svg"
+    },
+    "file_type_confluence": {
+      "iconPath": "./icons/file_type_confluence.svg"
+    },
+    "file_type_coverage": {
+      "iconPath": "./icons/file_type_coverage.svg"
+    },
+    "file_type_coveralls": {
+      "iconPath": "./icons/file_type_coveralls.svg"
+    },
+    "file_type_cpp": {
+      "iconPath": "./icons/file_type_cpp.svg"
+    },
+    "file_type_cpp2": {
+      "iconPath": "./icons/file_type_cpp2.svg"
+    },
+    "file_type_cpp3": {
+      "iconPath": "./icons/file_type_cpp3.svg"
+    },
+    "file_type_cppheader": {
+      "iconPath": "./icons/file_type_cppheader.svg"
+    },
+    "file_type_craco": {
+      "iconPath": "./icons/file_type_craco.svg"
+    },
+    "file_type_crowdin": {
+      "iconPath": "./icons/file_type_crowdin.svg"
+    },
+    "file_type_crystal": {
+      "iconPath": "./icons/file_type_crystal.svg"
+    },
+    "file_type_csharp": {
+      "iconPath": "./icons/file_type_csharp.svg"
+    },
+    "file_type_csharp2": {
+      "iconPath": "./icons/file_type_csharp2.svg"
+    },
+    "file_type_cspell": {
+      "iconPath": "./icons/file_type_cspell.svg"
+    },
+    "file_type_csproj": {
+      "iconPath": "./icons/file_type_csproj.svg"
+    },
+    "file_type_css": {
+      "iconPath": "./icons/file_type_css.svg"
+    },
+    "file_type_css2": {
+      "iconPath": "./icons/file_type_css2.svg"
+    },
+    "file_type_css2map": {
+      "iconPath": "./icons/file_type_css2map.svg"
+    },
+    "file_type_csscomb": {
+      "iconPath": "./icons/file_type_csscomb.svg"
+    },
+    "file_type_csslint": {
+      "iconPath": "./icons/file_type_csslint.svg"
+    },
+    "file_type_cssmap": {
+      "iconPath": "./icons/file_type_cssmap.svg"
+    },
+    "file_type_cucumber": {
+      "iconPath": "./icons/file_type_cucumber.svg"
+    },
+    "file_type_cuda": {
+      "iconPath": "./icons/file_type_cuda.svg"
+    },
+    "file_type_cvs": {
+      "iconPath": "./icons/file_type_cvs.svg"
+    },
+    "file_type_cypress": {
+      "iconPath": "./icons/file_type_cypress.svg"
+    },
+    "file_type_cypress_spec": {
+      "iconPath": "./icons/file_type_cypress_spec.svg"
+    },
+    "file_type_cython": {
+      "iconPath": "./icons/file_type_cython.svg"
+    },
+    "file_type_dal": {
+      "iconPath": "./icons/file_type_dal.svg"
+    },
+    "file_type_darcs": {
+      "iconPath": "./icons/file_type_darcs.svg"
+    },
+    "file_type_dartlang_generated": {
+      "iconPath": "./icons/file_type_dartlang_generated.svg"
+    },
+    "file_type_dartlang_ignore": {
+      "iconPath": "./icons/file_type_dartlang_ignore.svg"
+    },
+    "file_type_dartlang": {
+      "iconPath": "./icons/file_type_dartlang.svg"
+    },
+    "file_type_datalang": {
+      "iconPath": "./icons/file_type_datalang.svg"
+    },
+    "file_type_datadog": {
+      "iconPath": "./icons/file_type_datadog.svg"
+    },
+    "file_type_db": {
+      "iconPath": "./icons/file_type_db.svg"
+    },
+    "file_type_debian": {
+      "iconPath": "./icons/file_type_debian.svg"
+    },
+    "file_type_delphi": {
+      "iconPath": "./icons/file_type_delphi.svg"
+    },
+    "file_type_deno": {
+      "iconPath": "./icons/file_type_deno.svg"
+    },
+    "file_type_denoify": {
+      "iconPath": "./icons/file_type_denoify.svg"
+    },
+    "file_type_dependabot": {
+      "iconPath": "./icons/file_type_dependabot.svg"
+    },
+    "file_type_dependencies": {
+      "iconPath": "./icons/file_type_dependencies.svg"
+    },
+    "file_type_devcontainer": {
+      "iconPath": "./icons/file_type_devcontainer.svg"
+    },
+    "file_type_dhall": {
+      "iconPath": "./icons/file_type_dhall.svg"
+    },
+    "file_type_diff": {
+      "iconPath": "./icons/file_type_diff.svg"
+    },
+    "file_type_django": {
+      "iconPath": "./icons/file_type_django.svg"
+    },
+    "file_type_dlang": {
+      "iconPath": "./icons/file_type_dlang.svg"
+    },
+    "file_type_docker": {
+      "iconPath": "./icons/file_type_docker.svg"
+    },
+    "file_type_docker2": {
+      "iconPath": "./icons/file_type_docker2.svg"
+    },
+    "file_type_dockertest": {
+      "iconPath": "./icons/file_type_dockertest.svg"
+    },
+    "file_type_dockertest2": {
+      "iconPath": "./icons/file_type_dockertest2.svg"
+    },
+    "file_type_docpad": {
+      "iconPath": "./icons/file_type_docpad.svg"
+    },
+    "file_type_docusaurus": {
+      "iconPath": "./icons/file_type_docusaurus.svg"
+    },
+    "file_type_docz": {
+      "iconPath": "./icons/file_type_docz.svg"
+    },
+    "file_type_dojo": {
+      "iconPath": "./icons/file_type_dojo.svg"
+    },
+    "file_type_doppler": {
+      "iconPath": "./icons/file_type_doppler.svg"
+    },
+    "file_type_dotenv": {
+      "iconPath": "./icons/file_type_dotenv.svg"
+    },
+    "file_type_dotjs": {
+      "iconPath": "./icons/file_type_dotjs.svg"
+    },
+    "file_type_doxygen": {
+      "iconPath": "./icons/file_type_doxygen.svg"
+    },
+    "file_type_drawio": {
+      "iconPath": "./icons/file_type_drawio.svg"
+    },
+    "file_type_drone": {
+      "iconPath": "./icons/file_type_drone.svg"
+    },
+    "file_type_drools": {
+      "iconPath": "./icons/file_type_drools.svg"
+    },
+    "file_type_dtd": {
+      "iconPath": "./icons/file_type_dtd.svg"
+    },
+    "file_type_dustjs": {
+      "iconPath": "./icons/file_type_dustjs.svg"
+    },
+    "file_type_dvc": {
+      "iconPath": "./icons/file_type_dvc.svg"
+    },
+    "file_type_dylan": {
+      "iconPath": "./icons/file_type_dylan.svg"
+    },
+    "file_type_earthly": {
+      "iconPath": "./icons/file_type_earthly.svg"
+    },
+    "file_type_eas-metadata": {
+      "iconPath": "./icons/file_type_eas-metadata.svg"
+    },
+    "file_type_edge": {
+      "iconPath": "./icons/file_type_edge.svg"
+    },
+    "file_type_edge2": {
+      "iconPath": "./icons/file_type_edge2.svg"
+    },
+    "file_type_editorconfig": {
+      "iconPath": "./icons/file_type_editorconfig.svg"
+    },
+    "file_type_eex": {
+      "iconPath": "./icons/file_type_eex.svg"
+    },
+    "file_type_ejs": {
+      "iconPath": "./icons/file_type_ejs.svg"
+    },
+    "file_type_elastic": {
+      "iconPath": "./icons/file_type_elastic.svg"
+    },
+    "file_type_elasticbeanstalk": {
+      "iconPath": "./icons/file_type_elasticbeanstalk.svg"
+    },
+    "file_type_eleventy": {
+      "iconPath": "./icons/file_type_eleventy.svg"
+    },
+    "file_type_eleventy2": {
+      "iconPath": "./icons/file_type_eleventy2.svg"
+    },
+    "file_type_elixir": {
+      "iconPath": "./icons/file_type_elixir.svg"
+    },
+    "file_type_elm": {
+      "iconPath": "./icons/file_type_elm.svg"
+    },
+    "file_type_elm2": {
+      "iconPath": "./icons/file_type_elm2.svg"
+    },
+    "file_type_emacs": {
+      "iconPath": "./icons/file_type_emacs.svg"
+    },
+    "file_type_ember": {
+      "iconPath": "./icons/file_type_ember.svg"
+    },
+    "file_type_ensime": {
+      "iconPath": "./icons/file_type_ensime.svg"
+    },
+    "file_type_eps": {
+      "iconPath": "./icons/file_type_eps.svg"
+    },
+    "file_type_epub": {
+      "iconPath": "./icons/file_type_epub.svg"
+    },
+    "file_type_erb": {
+      "iconPath": "./icons/file_type_erb.svg"
+    },
+    "file_type_erlang": {
+      "iconPath": "./icons/file_type_erlang.svg"
+    },
+    "file_type_erlang2": {
+      "iconPath": "./icons/file_type_erlang2.svg"
+    },
+    "file_type_esbuild": {
+      "iconPath": "./icons/file_type_esbuild.svg"
+    },
+    "file_type_eslint": {
+      "iconPath": "./icons/file_type_eslint.svg"
+    },
+    "file_type_eslint2": {
+      "iconPath": "./icons/file_type_eslint2.svg"
+    },
+    "file_type_esphome": {
+      "iconPath": "./icons/file_type_esphome.svg"
+    },
+    "file_type_excalidraw": {
+      "iconPath": "./icons/file_type_excalidraw.svg"
+    },
+    "file_type_excel": {
+      "iconPath": "./icons/file_type_excel.svg"
+    },
+    "file_type_excel2": {
+      "iconPath": "./icons/file_type_excel2.svg"
+    },
+    "file_type_expo": {
+      "iconPath": "./icons/file_type_expo.svg"
+    },
+    "file_type_falcon": {
+      "iconPath": "./icons/file_type_falcon.svg"
+    },
   },
   "fileExtensions": {},
   "light": {

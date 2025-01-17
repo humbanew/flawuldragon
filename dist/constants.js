@@ -103,6 +103,11 @@ exports.constants = {
                 fdTodoHighlight: 'flawuldragon.todohighlight.ui.interruptorStatusBar'
             },
             experimental: {}
+        },
+        bracketguides: {
+            release: {
+                fdBracketGuides: 'flawuldragon.toggleBracketPairGuides'
+            }, experimental: {}
         }
     }
 };

@@ -37,6 +37,9 @@
 		"checkbox.foreground": "#243f8f",
 		"checkbox.border": "#e9ebf3",
 
+		// dropdown
+		"dropdown.background": "#e9ebf3",
+
 		// editor e editor group
 		"editor.background": "#ffffff",
 		"editor.compositionBorder": "#ffffff",

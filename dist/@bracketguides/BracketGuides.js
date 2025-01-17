@@ -35,11 +35,12 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BracketGuides = void 0;
 const vscode = __importStar(require("vscode"));
+const constants_js_1 = require("../constants.js");
 class BracketGuides {
     bracketGuides_activate(context) {
         try {
             console.log('Flawuldragon - Toggle Bracket Guides is now active!');
-            let disposable = vscode.commands.registerCommand('flawuldragon.toggleBracketPairGuides', () => {
+            let disposable = vscode.commands.registerCommand(constants_js_1.constants.commands.bracketguides.release.fdBracketGuides, () => {
                 const config = vscode.workspace.getConfiguration();
                 const currentValue = config.get('editor.guides.bracketPairs');
                 let newValue;

@@ -36,6 +36,9 @@
     "checkbox.foreground": "#f0f0f0", // Preto Sujo --> #f0f0f0
     "checkbox.border": "#8855ff", // Azul Roxeado --> #8855ff
 
+		// dropdown
+		"dropdown.background": "#cccccc",
+
     // editor e editor group
     "editor.background": "#fffcf1",
     "editor.compositionBorder": "#556eff", // Azul --> #556eff

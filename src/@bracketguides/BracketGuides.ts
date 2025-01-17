@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import { constants } from '../constants.js';
 
 export class BracketGuides {
   public bracketGuides_activate(context: vscode.ExtensionContext) {
@@ -7,7 +8,7 @@ export class BracketGuides {
       console.log('Flawuldragon - Toggle Bracket Guides is now active!');
   
       let disposable = vscode.commands.registerCommand(
-        'flawuldragon.toggleBracketPairGuides',
+        constants.commands.bracketguides.release.fdBracketGuides,
         () => {
           const config = vscode.workspace.getConfiguration();
           const currentValue = config.get('editor.guides.bracketPairs');

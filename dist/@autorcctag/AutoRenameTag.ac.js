@@ -40,7 +40,7 @@ const node_1 = require("vscode-languageclient/node");
 const node_assert_1 = require("node:assert");
 class AutoRenameTag {
     createLanguageClientProxy = async (context, id, name, clientOptions) => {
-        const serverModule = context.asAbsolutePath('./AutoRenameTagServer.ac.cjs');
+        const serverModule = context.asAbsolutePath('./src/@errorlens/AutoRenameTagServer.ac.js');
         const serverOptions = {
             run: { module: serverModule, transport: node_1.TransportKind.ipc },
             debug: {

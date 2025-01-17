@@ -8,6 +8,7 @@ import { ThemeSwitch } from './@themeswitch/ThemeSwitch.js';
 import { TodoHighlight } from './@todohighlight/TodoHighlight.js';
 import { Vanilla } from './@vanilla/Vanilla.js';
 import { BracketGuides } from './@bracketguides/BracketGuides.js';
+import { ErrorLens } from './@errorlens/ErrorLens.js';
 
 const vanilla = new Vanilla();
 // const vanillaExtInt = new VExtensionIntelligence();
@@ -19,6 +20,10 @@ const pomodoroclock = new PomodoroClock();
 const themeswitch = new ThemeSwitch();
 const autorrctag = new AutoRCCTag();
 const bracketGuides = new BracketGuides();
+
+// in development addings
+// const errorLensAlt = new Errorlens();
+const errorLens = new ErrorLens();
 
 /**
  * Activates the extension.
@@ -43,6 +48,8 @@ export function activate(context: vscode.ExtensionContext) {
     themeswitch.themeSwitch_activate(context);
     autorrctag.autoRCCTag_activate(context);
     bracketGuides.bracketGuides_activate(context);
+
+    errorLens.errorLens_activate(context);
   } catch (error) {
     console.log('Flawuldragon Core Hub - Error: ' + error);
     vscode.window.showErrorMessage(
@@ -72,6 +79,8 @@ export function deactivate(context: vscode.ExtensionContext) {
   themeswitch.themeSwitch_desactivate();
   autorrctag.autoRCCTag_desactivate();
   bracketGuides.bracketGuides_desactivate();
+
+  errorLens.errorLens_desactivate();
 }
 
 /**

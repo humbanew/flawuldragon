@@ -37,6 +37,9 @@
     "checkbox.foreground": "#d7af7a",
     "checkbox.border": "#000000",
 
+		// dropdown
+		"dropdown.background": "#efefef",
+
     // editor e editor group
     "editor.background": "#ffffff",
     "editor.compositionBorder": "#000000",
@@ -180,11 +183,11 @@
 		"notificationLink.foreground": "#d7c7aa",
 
 		// panel
-		"panel.background": "#7a4a5e",
+		"panel.background": "#ffffff",
 		"panel.border": "#7a4a5e",
 		"panelTitle.activeBorder": "#d7c7aa",
 		"panelTitle.activeForeground": "#d7c7aa",
-		"panelTitle.inactiveForeground": "#81642f",
+		"panelTitle.inactiveForeground": "#d7c7aa",
 
 		// scrollbar
 		"scrollbar.shadow": "#7a4a5ecc",
