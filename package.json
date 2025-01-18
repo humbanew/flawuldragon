@@ -712,97 +712,100 @@
         "title": "Toggle Bracket Pair Guides"
       },
       {
-				"category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.toggle",
-				"title": "Toggle (Enable/Disable) Everything",
-				"description": "Toggle (Enable/Disable) Everything (toggle global setting `\"flawuldragon.errorLens.enabled\"`)"
-			},
-			{
         "category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.toggleError",
-				"title": "Toggle Errors",
-				"description": "Enable/Disable Errors in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
-			},
-			{
-				"category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.toggleWarning",
-				"title": "Toggle Warnings",
-				"description": "Enable/Disable Warnings in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
-			},
-			{
-				"category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.toggleInfo",
-				"title": "Toggle Info",
-				"description": "Enable/Disable Info in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
-			},
-			{
-				"category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.toggleHint",
-				"title": "Toggle Hint",
-				"description": "Enable/Disable Hint in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
-			},
-			{
-				"category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.toggleInlineMessage",
-				"title": "Toggle Inline Message",
-				"description": "Toggle global setting `\"flawuldragon.errorLens.messageEnabled\"`."
-			},
-			{
-				"category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.searchForProblem",
-				"title": "Search for problem",
-				"description": "Open problem in default browser (controlled by `flawuldragon.errorLens.searchForProblemQuery` setting)."
-			},
-			{
-				"category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.selectProblem",
-				"title": "Select Problem",
-				"description": "Set editor selection to the problem range (controlled by `flawuldragon.errorLens.selectProblemType` setting)."
-			},
-			{
+        "command": "flawuldragon.errorLens.toggle",
+        "title": "Toggle (Enable/Disable) Everything",
+        "description": "Toggle (Enable/Disable) Everything (toggle global setting `\"flawuldragon.errorLens.enabled\"`)"
+      },
+      {
         "category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.toggleWorkspace",
-				"title": "Toggle Workspace in Disabled List",
-				"description": "Exclude/Include current workspace by fs path."
-			},
-			{
-				"category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.disableLine",
-				"title": "Disable line",
-				"description": "Add a comment to disable line for linter rule. Comment format is controlled by `\"flawuldragon.errorLens.disableLineComments\"` setting."
-			},
-			{
+        "command": "flawuldragon.errorLens.toggleError",
+        "title": "Toggle Errors",
+        "description": "Enable/Disable Errors in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
+      },
+      {
         "category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.findLinterRuleDefinition",
-				"title": "Find Linter Rule Definition",
-				"description": "Search in local linter files (like `.eslintrc.json`) for the rule definition. Target files are controlled by \"flawuldragon.errorLens.lintFilePaths\" setting."
-			},
-			{
-				"category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.copyProblemMessage",
-				"title": "Copy Problem Message",
-				"description": "Copy problem message to the clipboard (at the active cursor)."
-			},
-			{
-				"category": "Flawuldragon",
-				"command": "flawuldragon.errorLens.copyProblemCode",
-				"title": "Copy Problem Code",
-				"description": "Copy problem code to the clipboard (at the active cursor)."
-			},
+        "command": "flawuldragon.errorLens.toggleWarning",
+        "title": "Toggle Warnings",
+        "description": "Enable/Disable Warnings in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.toggleInfo",
+        "title": "Toggle Info",
+        "description": "Enable/Disable Info in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.toggleHint",
+        "title": "Toggle Hint",
+        "description": "Enable/Disable Hint in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.toggleInlineMessage",
+        "title": "Toggle Inline Message",
+        "description": "Toggle global setting `\"flawuldragon.errorLens.messageEnabled\"`."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.searchForProblem",
+        "title": "Search for problem",
+        "description": "Open problem in default browser (controlled by `flawuldragon.errorLens.searchForProblemQuery` setting)."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.selectProblem",
+        "title": "Select Problem",
+        "description": "Set editor selection to the problem range (controlled by `flawuldragon.errorLens.selectProblemType` setting)."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.toggleWorkspace",
+        "title": "Toggle Workspace in Disabled List",
+        "description": "Exclude/Include current workspace by fs path."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.disableLine",
+        "title": "Disable line",
+        "description": "Add a comment to disable line for linter rule. Comment format is controlled by `\"flawuldragon.errorLens.disableLineComments\"` setting."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.findLinterRuleDefinition",
+        "title": "Find Linter Rule Definition",
+        "description": "Search in local linter files (like `.eslintrc.json`) for the rule definition. Target files are controlled by \"flawuldragon.errorLens.lintFilePaths\" setting."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.copyProblemMessage",
+        "title": "Copy Problem Message",
+        "description": "Copy problem message to the clipboard (at the active cursor)."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.copyProblemCode",
+        "title": "Copy Problem Code",
+        "description": "Copy problem code to the clipboard (at the active cursor)."
+      },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.takeabreak.Take a break: Start",
-        "title": "Take a break: Start"
+        "title": "Take a break: Start",
+        "description": "Start a take a break session"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.takeabreak.Take a break: Stop",
-        "title": "Take a break: Stop"
+        "title": "Take a break: Stop",
+        "description": "Stop the take a break session"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.takeabreak.ui.interruptorStatusBar",
-        "title": "Show or Hide the Take a break status bar item"
+        "title": "Show or Hide the Take a break status bar item",
+        "description": "Show or Hide the Take a break status bar item"
       }
     ],
     "icons": {
@@ -2077,277 +2080,277 @@
       }
     ],
     "colors": [
-			{
-				"id": "flawuldragon.errorLens.errorBackground",
-				"defaults": {
-					"dark": "#e454541b",
-					"light": "#e4545420",
-					"highContrast": "#e454541b"
-				},
-				"description": "Background color of the entire line containing error."
-			},
-			{
-				"id": "flawuldragon.errorLens.errorMessageBackground",
-				"defaults": {
-					"dark": "#e4545419",
-					"light": "#e4545419",
-					"highContrast": "#e4545419"
-				},
-				"description": "Background color of the error message."
-			},
-			{
-				"id": "flawuldragon.errorLens.errorRangeBackground",
-				"defaults": {
-					"dark": "#e4545419",
-					"light": "#e4545419",
-					"highContrast": "#e4545419"
-				},
-				"description": "Background color of the error range (when flawuldragon.errorLens.problemRangeDecorationEnabled setting enabled)."
-			},
-			{
-				"id": "flawuldragon.errorLens.errorBackgroundLight",
-				"defaults": {
-					"dark": "#e4545420",
-					"light": "#e4545420",
-					"highContrast": "#e4545420"
-				},
-				"description": "Background color of the entire line containing error (Only in light themes)."
-			},
-			{
-				"id": "flawuldragon.errorLens.errorForeground",
-				"defaults": {
-					"dark": "#ff6464",
-					"light": "#e45454",
-					"highContrast": "#ff6464"
-				},
-				"description": "Text color used to highlight lines containing errors."
-			},
-			{
-				"id": "flawuldragon.errorLens.errorForegroundLight",
-				"defaults": {
-					"dark": "#e45454",
-					"light": "#e45454",
-					"highContrast": "#e45454"
-				},
-				"description": "Text color used to highlight lines containing errors (Only in light themes)."
-			},
-			{
-				"id": "flawuldragon.errorLens.warningBackground",
-				"defaults": {
-					"dark": "#ff942f1b",
-					"light": "#ff942f20",
-					"highContrast": "#ff942f1b"
-				},
-				"description": "Background color used to highlight lines containing warnings."
-			},
-			{
-				"id": "flawuldragon.errorLens.warningMessageBackground",
-				"defaults": {
-					"dark": "#ff942f19",
-					"light": "#ff942f19",
-					"highContrast": "#ff942f19"
-				},
-				"description": "Background color of the warning message."
-			},
-			{
-				"id": "flawuldragon.errorLens.warningRangeBackground",
-				"defaults": {
-					"dark": "#ff942f19",
-					"light": "#ff942f19",
-					"highContrast": "#ff942f19"
-				},
-				"description": "Background color of the warning range (when flawuldragon.errorLens.problemRangeDecorationEnabled setting enabled)."
-			},
-			{
-				"id": "flawuldragon.errorLens.warningBackgroundLight",
-				"defaults": {
-					"dark": "#ff942f20",
-					"light": "#ff942f20",
-					"highContrast": "#ff942f20"
-				},
-				"description": "Background color used to highlight lines containing warnings (Only in light themes)."
-			},
-			{
-				"id": "flawuldragon.errorLens.warningForeground",
-				"defaults": {
-					"dark": "#fa973a",
-					"light": "#ff942f",
-					"highContrast": "#fa973a"
-				},
-				"description": "Text color used to highlight lines containing warnings."
-			},
-			{
-				"id": "flawuldragon.errorLens.warningForegroundLight",
-				"defaults": {
-					"dark": "#ff942f",
-					"light": "#ff942f",
-					"highContrast": "#ff942f"
-				},
-				"description": "Text color used to highlight lines containing warnings (Only in light themes)."
-			},
-			{
-				"id": "flawuldragon.errorLens.infoBackground",
-				"defaults": {
-					"dark": "#00b7e420",
-					"light": "#00b7e420",
-					"highContrast": "#00b7e420"
-				},
-				"description": "Background color used to highlight lines containing info."
-			},
-			{
-				"id": "flawuldragon.errorLens.infoMessageBackground",
-				"defaults": {
-					"dark": "#00b7e419",
-					"light": "#00b7e419",
-					"highContrast": "#00b7e419"
-				},
-				"description": "Background color of the info message."
-			},
-			{
-				"id": "flawuldragon.errorLens.infoRangeBackground",
-				"defaults": {
-					"dark": "#00b7e419",
-					"light": "#00b7e419",
-					"highContrast": "#00b7e419"
-				},
-				"description": "Background color of the info range (when flawuldragon.errorLens.problemRangeDecorationEnabled setting enabled)."
-			},
-			{
-				"id": "flawuldragon.errorLens.infoBackgroundLight",
-				"defaults": {
-					"dark": "#00b7e420",
-					"light": "#00b7e420",
-					"highContrast": "#00b7e420"
-				},
-				"description": "Background color used to highlight lines containing info (Only in light themes)."
-			},
-			{
-				"id": "flawuldragon.errorLens.infoForeground",
-				"defaults": {
-					"dark": "#00b7e4",
-					"light": "#00b7e4",
-					"highContrast": "#00b7e4"
-				},
-				"description": "Text color used to highlight lines containing info."
-			},
-			{
-				"id": "flawuldragon.errorLens.infoForegroundLight",
-				"defaults": {
-					"dark": "#00b7e4",
-					"light": "#00b7e4",
-					"highContrast": "#00b7e4"
-				},
-				"description": "Text color used to highlight lines containing info (Only in light themes)."
-			},
-			{
-				"id": "flawuldragon.errorLens.hintBackground",
-				"defaults": {
-					"dark": "#17a2a220",
-					"light": "#17a2a220",
-					"highContrast": "#17a2a220"
-				},
-				"description": "Background color used to highlight lines containing hints."
-			},
-			{
-				"id": "flawuldragon.errorLens.hintMessageBackground",
-				"defaults": {
-					"dark": "#17a2a219",
-					"light": "#17a2a219",
-					"highContrast": "#17a2a219"
-				},
-				"description": "Background color of the hint message."
-			},
-			{
-				"id": "flawuldragon.errorLens.hintRangeBackground",
-				"defaults": {
-					"dark": "#17a2a219",
-					"light": "#17a2a219",
-					"highContrast": "#17a2a219"
-				},
-				"description": "Background color of the hint range (when flawuldragon.errorLens.problemRangeDecorationEnabled setting enabled)."
-			},
-			{
-				"id": "flawuldragon.errorLens.hintBackgroundLight",
-				"defaults": {
-					"dark": "#17a2a220",
-					"light": "#17a2a220",
-					"highContrast": "#17a2a220"
-				},
-				"description": "Background color used to highlight lines containing hints (Only in light themes)."
-			},
-			{
-				"id": "flawuldragon.errorLens.hintForeground",
-				"defaults": {
-					"dark": "#2faf64",
-					"light": "#2faf64",
-					"highContrast": "#2faf64"
-				},
-				"description": "Text color used to highlight lines containing hints."
-			},
-			{
-				"id": "flawuldragon.errorLens.hintForegroundLight",
-				"defaults": {
-					"dark": "#2faf64",
-					"light": "#2faf64",
-					"highContrast": "#2faf64"
-				},
-				"description": "Text color used to highlight lines containing hints (Only in light themes)."
-			},
-			{
-				"id": "flawuldragon.errorLens.statusBarIconErrorForeground",
-				"defaults": {
-					"dark": "#ff6464",
-					"light": "#e45454",
-					"highContrast": "#ff6464"
-				},
-				"description": "Status bar icon item error color. Foreground is used when the `flawuldragon.errorLens.statusBarIconsUseBackground` setting is disabled."
-			},
-			{
-				"id": "flawuldragon.errorLens.statusBarIconWarningForeground",
-				"defaults": {
-					"dark": "#fa973a",
-					"light": "#ff942f",
-					"highContrast": "#fa973a"
-				},
-				"description": "Status bar icon item error color. Foreground is used when the `flawuldragon.errorLens.statusBarIconsUseBackground` setting is disabled."
-			},
-			{
-				"id": "flawuldragon.errorLens.statusBarErrorForeground",
-				"defaults": {
-					"dark": "#ff6464",
-					"light": "#e45454",
-					"highContrast": "#ff6464"
-				},
-				"description": "Status bar item error color."
-			},
-			{
-				"id": "flawuldragon.errorLens.statusBarWarningForeground",
-				"defaults": {
-					"dark": "#fa973a",
-					"light": "#ff942f",
-					"highContrast": "#fa973a"
-				},
-				"description": "Status bar item warning color."
-			},
-			{
-				"id": "flawuldragon.errorLens.statusBarInfoForeground",
-				"defaults": {
-					"dark": "#00b7e4",
-					"light": "#00b7e4",
-					"highContrast": "#00b7e4"
-				},
-				"description": "Status bar item info color."
-			},
-			{
-				"id": "flawuldragon.errorLens.statusBarHintForeground",
-				"defaults": {
-					"dark": "#2faf64",
-					"light": "#2faf64",
-					"highContrast": "#2faf64"
-				},
-				"description": "Status bar item hint color."
-			}
-		],
+      {
+        "id": "flawuldragon.errorLens.errorBackground",
+        "defaults": {
+          "dark": "#e454541b",
+          "light": "#e4545420",
+          "highContrast": "#e454541b"
+        },
+        "description": "Background color of the entire line containing error."
+      },
+      {
+        "id": "flawuldragon.errorLens.errorMessageBackground",
+        "defaults": {
+          "dark": "#e4545419",
+          "light": "#e4545419",
+          "highContrast": "#e4545419"
+        },
+        "description": "Background color of the error message."
+      },
+      {
+        "id": "flawuldragon.errorLens.errorRangeBackground",
+        "defaults": {
+          "dark": "#e4545419",
+          "light": "#e4545419",
+          "highContrast": "#e4545419"
+        },
+        "description": "Background color of the error range (when flawuldragon.errorLens.problemRangeDecorationEnabled setting enabled)."
+      },
+      {
+        "id": "flawuldragon.errorLens.errorBackgroundLight",
+        "defaults": {
+          "dark": "#e4545420",
+          "light": "#e4545420",
+          "highContrast": "#e4545420"
+        },
+        "description": "Background color of the entire line containing error (Only in light themes)."
+      },
+      {
+        "id": "flawuldragon.errorLens.errorForeground",
+        "defaults": {
+          "dark": "#ff6464",
+          "light": "#e45454",
+          "highContrast": "#ff6464"
+        },
+        "description": "Text color used to highlight lines containing errors."
+      },
+      {
+        "id": "flawuldragon.errorLens.errorForegroundLight",
+        "defaults": {
+          "dark": "#e45454",
+          "light": "#e45454",
+          "highContrast": "#e45454"
+        },
+        "description": "Text color used to highlight lines containing errors (Only in light themes)."
+      },
+      {
+        "id": "flawuldragon.errorLens.warningBackground",
+        "defaults": {
+          "dark": "#ff942f1b",
+          "light": "#ff942f20",
+          "highContrast": "#ff942f1b"
+        },
+        "description": "Background color used to highlight lines containing warnings."
+      },
+      {
+        "id": "flawuldragon.errorLens.warningMessageBackground",
+        "defaults": {
+          "dark": "#ff942f19",
+          "light": "#ff942f19",
+          "highContrast": "#ff942f19"
+        },
+        "description": "Background color of the warning message."
+      },
+      {
+        "id": "flawuldragon.errorLens.warningRangeBackground",
+        "defaults": {
+          "dark": "#ff942f19",
+          "light": "#ff942f19",
+          "highContrast": "#ff942f19"
+        },
+        "description": "Background color of the warning range (when flawuldragon.errorLens.problemRangeDecorationEnabled setting enabled)."
+      },
+      {
+        "id": "flawuldragon.errorLens.warningBackgroundLight",
+        "defaults": {
+          "dark": "#ff942f20",
+          "light": "#ff942f20",
+          "highContrast": "#ff942f20"
+        },
+        "description": "Background color used to highlight lines containing warnings (Only in light themes)."
+      },
+      {
+        "id": "flawuldragon.errorLens.warningForeground",
+        "defaults": {
+          "dark": "#fa973a",
+          "light": "#ff942f",
+          "highContrast": "#fa973a"
+        },
+        "description": "Text color used to highlight lines containing warnings."
+      },
+      {
+        "id": "flawuldragon.errorLens.warningForegroundLight",
+        "defaults": {
+          "dark": "#ff942f",
+          "light": "#ff942f",
+          "highContrast": "#ff942f"
+        },
+        "description": "Text color used to highlight lines containing warnings (Only in light themes)."
+      },
+      {
+        "id": "flawuldragon.errorLens.infoBackground",
+        "defaults": {
+          "dark": "#00b7e420",
+          "light": "#00b7e420",
+          "highContrast": "#00b7e420"
+        },
+        "description": "Background color used to highlight lines containing info."
+      },
+      {
+        "id": "flawuldragon.errorLens.infoMessageBackground",
+        "defaults": {
+          "dark": "#00b7e419",
+          "light": "#00b7e419",
+          "highContrast": "#00b7e419"
+        },
+        "description": "Background color of the info message."
+      },
+      {
+        "id": "flawuldragon.errorLens.infoRangeBackground",
+        "defaults": {
+          "dark": "#00b7e419",
+          "light": "#00b7e419",
+          "highContrast": "#00b7e419"
+        },
+        "description": "Background color of the info range (when flawuldragon.errorLens.problemRangeDecorationEnabled setting enabled)."
+      },
+      {
+        "id": "flawuldragon.errorLens.infoBackgroundLight",
+        "defaults": {
+          "dark": "#00b7e420",
+          "light": "#00b7e420",
+          "highContrast": "#00b7e420"
+        },
+        "description": "Background color used to highlight lines containing info (Only in light themes)."
+      },
+      {
+        "id": "flawuldragon.errorLens.infoForeground",
+        "defaults": {
+          "dark": "#00b7e4",
+          "light": "#00b7e4",
+          "highContrast": "#00b7e4"
+        },
+        "description": "Text color used to highlight lines containing info."
+      },
+      {
+        "id": "flawuldragon.errorLens.infoForegroundLight",
+        "defaults": {
+          "dark": "#00b7e4",
+          "light": "#00b7e4",
+          "highContrast": "#00b7e4"
+        },
+        "description": "Text color used to highlight lines containing info (Only in light themes)."
+      },
+      {
+        "id": "flawuldragon.errorLens.hintBackground",
+        "defaults": {
+          "dark": "#17a2a220",
+          "light": "#17a2a220",
+          "highContrast": "#17a2a220"
+        },
+        "description": "Background color used to highlight lines containing hints."
+      },
+      {
+        "id": "flawuldragon.errorLens.hintMessageBackground",
+        "defaults": {
+          "dark": "#17a2a219",
+          "light": "#17a2a219",
+          "highContrast": "#17a2a219"
+        },
+        "description": "Background color of the hint message."
+      },
+      {
+        "id": "flawuldragon.errorLens.hintRangeBackground",
+        "defaults": {
+          "dark": "#17a2a219",
+          "light": "#17a2a219",
+          "highContrast": "#17a2a219"
+        },
+        "description": "Background color of the hint range (when flawuldragon.errorLens.problemRangeDecorationEnabled setting enabled)."
+      },
+      {
+        "id": "flawuldragon.errorLens.hintBackgroundLight",
+        "defaults": {
+          "dark": "#17a2a220",
+          "light": "#17a2a220",
+          "highContrast": "#17a2a220"
+        },
+        "description": "Background color used to highlight lines containing hints (Only in light themes)."
+      },
+      {
+        "id": "flawuldragon.errorLens.hintForeground",
+        "defaults": {
+          "dark": "#2faf64",
+          "light": "#2faf64",
+          "highContrast": "#2faf64"
+        },
+        "description": "Text color used to highlight lines containing hints."
+      },
+      {
+        "id": "flawuldragon.errorLens.hintForegroundLight",
+        "defaults": {
+          "dark": "#2faf64",
+          "light": "#2faf64",
+          "highContrast": "#2faf64"
+        },
+        "description": "Text color used to highlight lines containing hints (Only in light themes)."
+      },
+      {
+        "id": "flawuldragon.errorLens.statusBarIconErrorForeground",
+        "defaults": {
+          "dark": "#ff6464",
+          "light": "#e45454",
+          "highContrast": "#ff6464"
+        },
+        "description": "Status bar icon item error color. Foreground is used when the `flawuldragon.errorLens.statusBarIconsUseBackground` setting is disabled."
+      },
+      {
+        "id": "flawuldragon.errorLens.statusBarIconWarningForeground",
+        "defaults": {
+          "dark": "#fa973a",
+          "light": "#ff942f",
+          "highContrast": "#fa973a"
+        },
+        "description": "Status bar icon item error color. Foreground is used when the `flawuldragon.errorLens.statusBarIconsUseBackground` setting is disabled."
+      },
+      {
+        "id": "flawuldragon.errorLens.statusBarErrorForeground",
+        "defaults": {
+          "dark": "#ff6464",
+          "light": "#e45454",
+          "highContrast": "#ff6464"
+        },
+        "description": "Status bar item error color."
+      },
+      {
+        "id": "flawuldragon.errorLens.statusBarWarningForeground",
+        "defaults": {
+          "dark": "#fa973a",
+          "light": "#ff942f",
+          "highContrast": "#fa973a"
+        },
+        "description": "Status bar item warning color."
+      },
+      {
+        "id": "flawuldragon.errorLens.statusBarInfoForeground",
+        "defaults": {
+          "dark": "#00b7e4",
+          "light": "#00b7e4",
+          "highContrast": "#00b7e4"
+        },
+        "description": "Status bar item info color."
+      },
+      {
+        "id": "flawuldragon.errorLens.statusBarHintForeground",
+        "defaults": {
+          "dark": "#2faf64",
+          "light": "#2faf64",
+          "highContrast": "#2faf64"
+        },
+        "description": "Status bar item hint color."
+      }
+    ],
     "keybindings": [
       {
         "key": "alt+n",
@@ -2515,6 +2518,9 @@
     "vscode-test": "^1.5.0"
   },
   "dependencies": {
+    "babel": "^5.8.38",
+    "babel-preset-minify": "^0.5.2",
+    "babel-preset-typescript": "^7.0.0-alpha.19",
     "brotli-size": "^4.0.0",
     "code-generator": "^1.0.7",
     "color": "^1.0.3",

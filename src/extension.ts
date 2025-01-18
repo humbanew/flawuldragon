@@ -51,7 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
     autorrctag.autoRCCTag_activate(context);
     bracketGuides.bracketGuides_activate(context);
     errorLens.errorLens_activate(context);
-    // takeabreak.takeabreak_activate(context);
+    takeabreak.takeabreak_activate(context);
   } catch (error) {
     console.log('Flawuldragon Core Hub - Error: ' + error);
     vscode.window.showErrorMessage(
@@ -82,7 +82,7 @@ export function deactivate(context: vscode.ExtensionContext) {
   autorrctag.autoRCCTag_desactivate();
   bracketGuides.bracketGuides_desactivate();
   errorLens.errorLens_desactivate();
-  // takeabreak.takeabreak_desactivate();
+  takeabreak.takeabreak_desactivate();
 }
 
 /**

@@ -6,7 +6,7 @@
 
 MIT License "adapted"
 
-Copyright (c) 2015-2025 Humbanew Project
+Copyright (c) 2019-2025 Humbanew Project
 
 ## A. Global Terms by MIT License
 
@@ -35,6 +35,8 @@ The text fonts _Space Grotesk, Space Mono, Quicksand_ made available open-source
 The text font _Heist_ designed by **Nyla Api**, and all rights reserved by the author, under commercial license and all topics mentioned above.
 
 ## C. Flawuldragon Annex - On the incorporations of third party projects and their terms of service and license associated
+
+Below is the table with all projects incorporated into the Flawuldragon project and their respective market and license pages.All copyright is attributed to the original creators of the projects.
 
   | Third Party Projects | Publisher | Marketplace Page | License Terms |
   |----|----|----|----|

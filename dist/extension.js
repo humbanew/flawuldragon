@@ -85,7 +85,7 @@ function activate(context) {
         autorrctag.autoRCCTag_activate(context);
         bracketGuides.bracketGuides_activate(context);
         errorLens.errorLens_activate(context);
-        // takeabreak.takeabreak_activate(context);
+        takeabreak.takeabreak_activate(context);
     }
     catch (error) {
         console.log('Flawuldragon Core Hub - Error: ' + error);
@@ -115,7 +115,7 @@ function deactivate(context) {
     autorrctag.autoRCCTag_desactivate();
     bracketGuides.bracketGuides_desactivate();
     errorLens.errorLens_desactivate();
-    // takeabreak.takeabreak_desactivate();
+    takeabreak.takeabreak_desactivate();
 }
 /**
  * Activates the JetBrains Mono prompt within the given VS Code extension context.

@@ -50,33 +50,33 @@ export class Takeabreak {
         );
       }
 
-      let interruptor = new Vanilla();
-      interruptor.vanilla_interruptorStatusBarConstructor(this.statusBarInterval, this.statusBarShowOrHideCmd);
-      this.statusBarInterval.backgroundColor = new vscode.ThemeColor('statusBarItem.warningBackground');
-      this.statusBarInterval.tooltip = "Take a break reminder interval";
-      this.statusBarInterval.text = `Take a break in ${this.interval} min`;
-      context.subscriptions.push(this.statusBarInterval);
-      this.statusBarInterval.show();
+      // let interruptor = new Vanilla();
+      // interruptor.vanilla_interruptorStatusBarConstructor(this.statusBarInterval, this.statusBarShowOrHideCmd);
+      // this.statusBarInterval.backgroundColor = new vscode.ThemeColor('statusBarItem.warningBackground');
+      // this.statusBarInterval.tooltip = "Take a break reminder interval";
+      // this.statusBarInterval.text = `Take a break in ${this.interval} min`;
+      // context.subscriptions.push(this.statusBarInterval);
+      // this.statusBarInterval.show();
 
-      let aux = this.interval;
-      setInterval(() => {
-        if(aux == 0) {
-          aux = this.interval;
-          setInterval(() => {
-            showReminder();
-          }, 20000);
-        }
-        aux = aux-1;
-        this.statusBarInterval.text = `Take a break in ${aux} min`;
-        // se o comando de parada for chamado, o intervalo vira "Off"
-        // executeCommand
-        if(vscode.commands.executeCommand('flawuldragon.takeabreak.Take a break: Stop')) {
-          this.statusBarInterval.text = `Take a break is off`;
-        }
-        if(vscode.commands.executeCommand('flawuldragon.takeabreak.Take a break: Start')) {
-          this.statusBarInterval.text = `Take a break in ${aux} min`;
-        }
-      }, 60000);
+      // let aux = this.interval;
+      // setInterval(() => {
+      //   if(aux == 0) {
+      //     aux = this.interval;
+      //     setInterval(() => {
+      //       showReminder();
+      //     }, 20000);
+      //   }
+      //   aux = aux-1;
+      //   this.statusBarInterval.text = `Take a break in ${aux} min`;
+      //   // se o comando de parada for chamado, o intervalo vira "Off"
+      //   // executeCommand
+      //   if(vscode.commands.executeCommand('flawuldragon.takeabreak.Take a break: Stop')) {
+      //     this.statusBarInterval.text = `Take a break is off`;
+      //   }
+      //   if(vscode.commands.executeCommand('flawuldragon.takeabreak.Take a break: Start')) {
+      //     this.statusBarInterval.text = `Take a break in ${aux} min`;
+      //   }
+      // }, 60000);
 
       /**
        * Starts showing the reminder message every 20 seconds.
@@ -89,12 +89,11 @@ export class Takeabreak {
           return;
         }
 
-        let internalInterval = this.interval * 60 * 1000;
         // Start the reminder by setting an interval to show the reminder message every 20 seconds.
-        this.interval = setInterval(showReminder, internalInterval);
+        this.interval = setInterval(showReminder, this.interval * 60 * 1000);
 
         // Show a notification or not, depends on "showNotification" parameter.
-        showNotification ?? vscode.window.showInformationMessage(`Take a break successfully started! We will notify you every ${internalInterval/60/1000} minutes to take a break.`);
+        showNotification ?? vscode.window.showInformationMessage(`Take a break successfully started! We will notify you every ${this.interval} minutes to take a break.`);
       }
 
       /**
