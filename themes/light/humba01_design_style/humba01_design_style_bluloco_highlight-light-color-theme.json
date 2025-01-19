@@ -9,7 +9,7 @@
     "activityBarBadge.background": "#de33ff", // Lilás Escuro --> #de33ff
     "activityBarBadge.foreground": "#000000", // Branco --> #000000
     "activityBar.activeBorder": "#de33ff", // Lilás Escuro --> #de33ff
-    "activityBar.activeBackground": "#8855ff", // Azul Roxeado --> #8855ff
+    "activityBar.activeBackground": "#9d76fa", // Azul Roxeado --> #8855ff
 
     // badge
     "badge.background": "#be33ff",
@@ -114,10 +114,10 @@
 		"icon.foreground": "#080808", // Branco Sujo --> #080808
 
 		// input
-		"input.background": "#d7d7d7", // Beje Escuro --> #d7d7d7
-		"input.foreground": "#000000", // Branco --> #000000
+		"input.background": "#8855ff", // Beje Escuro --> #d7d7d7
+		"input.foreground": "#ffffff", // Branco --> #ffffff
 		"input.border": "#d7d7d7", // Beje Escuro --> #d7d7d7
-		"input.placeholderForeground": "#000000", // Cinza Escuro --> #e5e5e5
+		"input.placeholderForeground": "#ffffff", // Branco --> #ffffff
 		"inputOption.activeBorder": "#6366ff", // Azul --> #6366ff
 		"inputValidation.errorBackground": "#ff5558", // Vermelho Claro --> #ff5558
 		"inputValidation.errorBorder": "#ff5558", // Vermelho Claro --> #ff5558
@@ -182,7 +182,7 @@
 		"notificationLink.foreground": "#af55ff", // Lavanda --> #af55ff
 
 		// panel
-		"panel.background": "#fffcf1", // Azul --> #556eff
+		"panel.background": "#fffcf1", // Branco #fffcf1
 		"panel.border": "#556eff", // Azul --> #556eff
 		"panelTitle.activeBorder": "#000000", // Branco --> #000000
 		"panelTitle.activeForeground": "#000000", // Branco --> #000000
@@ -211,9 +211,9 @@
 		"sideBySideEditor.horizontalBorder": "#8855ff", // Azul Roxeado --> #8855ff
 
 		// statusbar e statusbar item
-		"statusBar.background": "#eaeaea", // Cinza Escuro --> #eaeaea
+		"statusBar.background": "#ffffff", // Cinza Escuro --> #eaeaea
 		"statusBar.foreground": "#ff3385", // Rosa Choque --> #ff3385
-		"statusBar.border": "#eaeaea", // Cinza Escuro --> #eaeaea
+		"statusBar.border": "#acacac", // Cinza Escuro --> #eaeaea
 		"statusBar.noFolderBackground": "#000000", // Branco --> #000000
 		"statusBar.noFolderForeground": "#eaeaea", // Cinza Escuro --> #eaeaea
 		"statusBar.debuggingBackground": "#f0f0f0", // Preto Sujo --> #f0f0f0
@@ -238,13 +238,13 @@
 
 		// tab
 		"tab.activeBackground": "#8855ff", // Azul Roxeado --> #8855ff
-		"tab.activeForeground": "#000000", // Branco --> #000000
+		"tab.activeForeground": "#ffffff", // Branco --> #000000
 		"tab.border": "#6366ff", // Azul --> #6366ff
 		"tab.inactiveBackground": "#6366ff", // Azul --> #6366ff
 		"tab.inactiveForeground": "#e5e5e5", // Cinza Escuro --> #e5e5e5
 		"tab.hoverBackground": "#af55ff", // Lavanda --> #af55ff
 		"tab.unfocusedHoverBackground": "#af55ff", // Lavanda --> #af55ff
-		"tab.activeBorderTop": "#000000", // Branco --> #000000
+		"tab.activeBorderTop": "#d100f5", // Branco --> #000000
 		"tab.activeModifiedBorder": "#ff5558", // Vermelho Claro --> #ff5558
 		"tab.inactiveModifiedBorder": "#ff5558", // Vermelho Claro --> #ff5558
 		"tab.unfocusedActiveModifiedBorder": "#ff5558", // Vermelho Claro --> #ff5558
@@ -308,21 +308,21 @@
 		// settings
 		"settings.headerForeground": "#000000", // Branco --> #000000
 		"settings.modifiedItemIndicator": "#6366ff", // Azul --> #6366ff
-		"settings.dropdownBackground": "#6366ff", // Azul --> #6366ff
+		"settings.dropdownBackground": "#fcfcfc", // Azul --> #6366ff
 		"settings.dropdownForeground": "#000000", // Branco --> #000000
 		"settings.dropdownBorder": "#6366ff", // Azul --> #6366ff
 		"settings.dropdownListBorder": "#6366ff", // Azul --> #6366ff
 		"settings.checkboxBackground": "#6366ff", // Azul --> #6366ff
-		"settings.checkboxForeground": "#000000", // Branco --> #000000
+		"settings.checkboxForeground": "#ffffff", // Branco --> #000000
 		"settings.checkboxBorder": "#6366ff", // Azul --> #6366ff
-		"settings.textInputBackground": "#6366ff", // Azul --> #6366ff
+		"settings.textInputBackground": "#fcfcfc", // Azul --> #6366ff
 		"settings.textInputForeground": "#000000", // Branco --> #000000
 		"settings.textInputBorder": "#6366ff", // Azul --> #6366ff
-		"settings.numberInputBackground": "#6366ff", // Azul --> #6366ff
+		"settings.numberInputBackground": "#fcfcfc", // Azul --> #6366ff
 		"settings.numberInputForeground": "#000000", // Branco --> #000000
 		"settings.numberInputBorder": "#6366ff", // Azul --> #6366ff
-		"settings.focusedRowBackground": "#556eff", // Azul --> #556eff
-		"settings.focusedRowBorder": "#6366ff", // Azul --> #6366ff
+		"settings.focusedRowBackground": "#556eff44", // Azul --> #556eff
+		"settings.focusedRowBorder": "#6366ff44", // Azul --> #6366ff
 
 		// resize
 		"editorWidget.resizeBorder": "#000000", // Branco --> #000000
