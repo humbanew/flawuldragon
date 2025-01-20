@@ -15,9 +15,46 @@
   --> #e6e7ef
  */
 {
-  "name": "Visual Studio Inspired Blue",
+  "name": "[Light] Visual Studio Inspired Blue",
   "semanticHighlighting": true,
-  "colors": {},
+  "colors": {
+
+		// activitybar
+		"activityBar.background": "#5d6b99",
+		"activityBar.foreground": "#ffffff",
+		"activityBar.border": "#40568d",
+		"activityBarBadge.background": "#f5cc84",
+		"activityBarBadge.foreground": "#000000",
+		"activityBar.activeBorder": "#40568d",
+		"activityBar.activeBackground": "#40568d",
+
+		// statusbar e statusbar item
+		"statusBar.background": "#5d6b99",
+		"statusBar.foreground": "#ffffff",
+		"statusBar.border": "#5d6b99",
+		"statusBar.noFolderBackground": "#5d6b99",
+		"statusBar.noFolderForeground": "#ffffff",
+		"statusBar.debuggingBackground": "#ccd5f0",
+		"statusBar.debuggingForeground": "#000000",
+		"statusBarItem.activeBackground": "#ffffff",
+		"statusBarItem.hoverBackground": "#98a3c6",
+		// "statusBarItem.prominentBackground": "#ffffff",
+		// "statusBarItem.prominentHoverBackground": "#ffffff",
+		// "statusBarItem.compactHoverBackground": "#ffffff",
+		"statusBarItem.remoteBackground": "#5d6b99",
+		"statusBarItem.remoteForeground": "#ffffff",
+		// "statusBarItem.remoteHoverBackground": "#ffffff",
+		// "statusBarItem.offlineBackground": "#ffffff",
+		// "statusBarItem.offlineForeground": "#0e5364",
+		// "statusBarItem.offlineHoverBackground": "#ffffff",
+		// "statusBarItem.errorBackground": "#cccccc",
+		// "statusBarItem.errorForeground": "#0e5364",
+		// "statusBarItem.errorHoverBackground": "#cfcfcf",
+		"statusBarItem.warningBackground": "#40568d",
+		"statusBarItem.warningForeground": "#ffffff",
+		// "statusBarItem.warningHoverBackground": "#ffffff",
+
+	},
   "tokenColors": [
 		{
 			"settings": {
