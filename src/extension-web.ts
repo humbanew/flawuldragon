@@ -8,6 +8,7 @@ import { ThemeSwitch } from './@themeswitch/ThemeSwitch.js';
 import { TodoHighlight } from './@todohighlight/TodoHighlight.js';
 import { Vanilla } from './@vanilla/Vanilla.js';
 import { BracketGuides } from './@bracketguides/BracketGuides.js';
+import { activate as chActivate, deactivate as chDeactivate } from './@colorhighlight/main.js';
 
 const vanilla = new Vanilla();
 // const vanillaExtInt = new VExtensionIntelligence();
@@ -43,6 +44,8 @@ export function activate(context: vscode.ExtensionContext) {
     themeswitch.themeSwitch_activate(context);
     autorrctag.autoRCCTag_activate(context);
     bracketGuides.bracketGuides_activate(context);
+    // experimental - colorHighlight
+    chActivate(context);
   } catch (error) {
     console.log('Flawuldragon Core Hub - Error: ' + error);
     vscode.window.showErrorMessage(
@@ -72,6 +75,8 @@ export function deactivate(context: vscode.ExtensionContext) {
   themeswitch.themeSwitch_desactivate();
   autorrctag.autoRCCTag_desactivate();
   bracketGuides.bracketGuides_desactivate();
+  // experimental - colorHighlight
+  chDeactivate();
 }
 
 /**

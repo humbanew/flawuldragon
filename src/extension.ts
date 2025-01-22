@@ -10,7 +10,6 @@ import { Vanilla } from './@vanilla/Vanilla.js';
 import { BracketGuides } from './@bracketguides/BracketGuides.js';
 import { ErrorLens } from './@errorlens/ErrorLens.js';
 import { Takeabreak } from './@takeabreak/Takeabreak.js';
-// experimental - colorHighlight
 import { activate as chActivate, deactivate as chDeactivate } from './@colorhighlight/main.js';
 
 const vanilla = new Vanilla();
