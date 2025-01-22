@@ -47,7 +47,7 @@ export class FileSize {
         statusItem.show();
         return;
       }
-      let _size = fs.statSync(filepath as string).size;
+      let _size = fs?.statSync(filepath as string)?.size;
       let _sizeText = this.filesize_convertSize(_size);
       statusItem.text = _sizeText;
       statusItem.show();

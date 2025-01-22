@@ -1,12 +1,12 @@
 <div align="center">
 
-  ![Cabeçalho LICENSE md v5](./cabecalholicensev5.svg)
+  ![Cabeçalho LICENSE md v5](./documentation/markdown/cabecalholicensev5.svg)
 
 </div>
 
 MIT License "adapted"
 
-Copyright (c) 2019-2025 Humbanew Project
+Copyright (c) 2015-2025 Humbanew Project
 
 ## A. Global Terms by MIT License
 
@@ -64,6 +64,7 @@ Below is the table with all projects incorporated into the Flawuldragon project 
   | Nomo Light Icon Theme Extended | MicroHobby | [Project Page](https://marketplace.visualstudio.com/items/microhobby.nomo-light-extended) | [License Page](https://marketplace.visualstudio.com/items/microhobby.nomo-light-extended/license) |
   | Pomodoro Clock | jackluson | [Project Page](https://marketplace.visualstudio.com/items/jackluson.pomodoro-clock) | [License Page](https://marketplace.visualstudio.com/items/jackluson.pomodoro-clock/license) |
   | Sakai Icons | Sakai | [Project Page](https://marketplace.visualstudio.com/items/Sakai.sakai-icons) | [License Page](https://marketplace.visualstudio.com/items/Sakai.sakai-icons/license) |
+  | Takeabreak | theHocineSaad | [Project Page](https://marketplace.visualstudio.com/items/theHocineSaad.takeabreak-protect-your-eyes) | [License Page](https://marketplace.visualstudio.com/items/theHocineSaad.takeabreak-protect-your-eyes/license) |
   | Todo Highlight | Wayou Liu | [Project Page](https://marketplace.visualstudio.com/items/wayou.vscode-todo-highlight) | [License Page](https://marketplace.visualstudio.com/items/wayou.vscode-todo-highlight/license) |
   | Toggle Bracket Guides | TGO Systems | [Project Page](https://marketplace.visualstudio.com/items/TGOSystems.togglebracketguides) | [License Page](https://marketplace.visualstudio.com/items/TGOSystems.togglebracketguides/license) |
   | Theme Switch | Wei Wang | [Project Page](https://marketplace.visualstudio.com/items/weiiwang.theme-switch) | [License Page](https://marketplace.visualstudio.com/items/weiiwang.theme-switch/license) |

@@ -6,7 +6,12 @@
   <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name=”robots” content=”noai, noimageai”>
 </head>
+
+<style>
+  :root {}
+</style>
 
 <style>
   html, html>iframe {
@@ -16,14 +21,22 @@
   }
 
   body {
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(to bottom, #2c79c8, #121212);
     border: 0;
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body h2 {
+    height: 100%;
+    font-weight: 300;
+    padding: 2rem;
   }
 
   .flawuldragon-notes_display_titulo {
@@ -126,18 +139,20 @@
       <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M14 45.3678C14 45.9201 14.4477 46.3678 15 46.3678H24.7701C25.3224 46.3678 25.7701 45.9201 25.7701 45.3678V26.7701C25.7701 26.2178 26.2178 25.7701 26.7701 25.7701H39.146C39.5159 25.7701 39.8556 25.5659 40.0291 25.2393L45.2195 15.4692C45.5734 14.8031 45.0906 14 44.3364 14H14V45.3678Z"
-          fill="#2C282C" />
+          fill="#ffffff" />
         <path
           d="M14 14L25.0127 16.7532C25.4578 16.8645 25.7701 17.2644 25.7701 17.7233V34.0133C25.7701 34.6759 25.1373 35.1553 24.4994 34.9759L14.7293 32.2281C14.298 32.1068 14 31.7135 14 31.2654V14Z"
-          fill="#27272A" />
+          fill="#dfdfdf" />
         <path
           d="M21.1658 41.954C20.5153 41.954 20.0379 41.3426 20.1957 40.7115L22.6382 30.9414C22.7495 30.4962 23.1495 30.1839 23.6084 30.1839H39.8983C40.561 30.1839 41.0404 30.8167 40.861 31.4547L38.1131 41.2248C37.9919 41.656 37.5985 41.954 37.1505 41.954H21.1658Z"
-          fill="#2E272A" />
+          fill="#cccccc" />
       </svg>
       <h1> The Flawuldragon Notes</h1>
     </header>
 
-    <section class="flawuldragon-notes_display_categorias">
+    <h2>As notas do desenvolvedor e readme estarão disponíveis na versão final do projeto.</h2>
+
+    <!-- <section class="flawuldragon-notes_display_categorias">
       <div class="flawuldragon-notes_display_categorias__card">
         <h2>Keybindings</h2>
         <div class="flawuldragon-notes_display_categorias__card___conteudo">a</div>
@@ -162,7 +177,7 @@
         <h2>Extension Packs</h2>
         <div class="flawuldragon-notes_display_categorias__card___conteudo">f</div>
       </div>
-    </section>
+    </section> -->
 
     <footer class="flawuldragon-notes_display_rodape">
       <div class="flawuldragon-notes_display_rodape__card">

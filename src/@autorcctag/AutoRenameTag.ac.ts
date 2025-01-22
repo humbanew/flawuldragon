@@ -26,7 +26,7 @@ export class AutoRenameTag {
     name,
     clientOptions
   ) => {
-      const serverModule = context.asAbsolutePath('./src/@errorlens/AutoRenameTagServer.ac.js');
+      const serverModule = context.extensionPath + '/@autorcctag/AutoRenameTagServer.ac.js';
       const serverOptions: ServerOptions = {
         run: { module: serverModule, transport: TransportKind.ipc },
         debug: {

@@ -10,6 +10,8 @@ import { Vanilla } from './@vanilla/Vanilla.js';
 import { BracketGuides } from './@bracketguides/BracketGuides.js';
 import { ErrorLens } from './@errorlens/ErrorLens.js';
 import { Takeabreak } from './@takeabreak/Takeabreak.js';
+// experimental - colorHighlight
+import { activate as chActivate, deactivate as chDeactivate } from './@colorhighlight/main.js';
 
 const vanilla = new Vanilla();
 // const vanillaExtInt = new VExtensionIntelligence();
@@ -22,9 +24,6 @@ const themeswitch = new ThemeSwitch();
 const autorrctag = new AutoRCCTag();
 const bracketGuides = new BracketGuides();
 const takeabreak = new Takeabreak();
-
-// in development addings
-// const errorLensAlt = new Errorlens();
 const errorLens = new ErrorLens();
 
 /**
@@ -52,6 +51,8 @@ export function activate(context: vscode.ExtensionContext) {
     bracketGuides.bracketGuides_activate(context);
     errorLens.errorLens_activate(context);
     takeabreak.takeabreak_activate(context);
+    // experimental - colorHighlight
+    chActivate(context);
   } catch (error) {
     console.log('Flawuldragon Core Hub - Error: ' + error);
     vscode.window.showErrorMessage(
@@ -83,6 +84,8 @@ export function deactivate(context: vscode.ExtensionContext) {
   bracketGuides.bracketGuides_desactivate();
   errorLens.errorLens_desactivate();
   takeabreak.takeabreak_desactivate();
+  // experimental - colorHighlight
+  chDeactivate();
 }
 
 /**
