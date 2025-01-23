@@ -101,6 +101,7 @@ export const constants = {
       release: {
         fdBracketGuides: 'flawuldragon.toggleBracketPairGuides'
       }, experimental: {}
-    }
+    },
+    takeabreak: { release: '{}', experimental: '{}' },
   }
 };

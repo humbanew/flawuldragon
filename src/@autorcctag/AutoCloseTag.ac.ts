@@ -40,7 +40,7 @@ export class AutoCloseTag {
     }
 
     let config = vscode.workspace.getConfiguration(
-      'auto-close-tag',
+      'fd.auto-close-tag',
       editor.document.uri
     );
     if (!config.get<boolean>('enableAutoCloseTag', true)) {
@@ -175,7 +175,7 @@ export class AutoCloseTag {
     let selection = editor.selection;
     let originalPosition = selection.start;
     let config = vscode.workspace.getConfiguration(
-      'auto-close-tag',
+      'fd.auto-close-tag',
       editor.document.uri
     );
     let excludedTags = config.get<string[]>('excludedTags', []);

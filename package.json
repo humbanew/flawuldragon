@@ -2,9 +2,10 @@
   "name": "flawuldragon",
   "displayName": "Flawuldragon",
   "description": "Humbanew Official Development Extension",
-  "version": "1.0.0",
+  "version": "1.0.0-btb",
   "icon": "assets/icon.png",
   "readme": "README.md",
+  "publisher": "humbanew",
   "license": "Humbanew License v5, powered by MIT License",
   "repository": {
     "type": "git",
@@ -24,12 +25,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "publisher": "humbanew",
   "scripts": {
     "vsc-package": "npx vsce package",
     "vsc-publish": "npx vsce publish",
     "vsc-help": "npx vsce help",
     "compile": "tsc -p ./",
+    "compile-babel": "babel",
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
@@ -38,8 +39,8 @@
   "main": "./dist/extension.js",
   "browser": "./dist/extension-web.js",
   "engines": {
-    "vscode": ">=1.80.0",
-    "node": ">=20.0.0"
+    "vscode": "^1.95.0",
+    "node": "^22.0.0"
   },
   "extensionKind": [
     "ui",
@@ -590,228 +591,229 @@
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.extension.infos",
-        "title": "Show the Flawuldragon Notes"
+        "title": "-Flawuldragon Native- Show the Flawuldragon Notes"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.vanillaDateTime.americanFormat",
-        "title": "American Format for Vanilla Date and Time"
+        "title": "-Flawuldragon Native- American Format for Vanilla Date and Time"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.vanillaDateTime.12hFormat",
-        "title": "12h Format for Vanilla Date and Time"
+        "title": "-Flawuldragon Native- 12h Format for Vanilla Date and Time"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.vanillaDateTime.invertProps",
-        "title": "Invert Props for Vanilla Date and Time"
+        "title": "-Flawuldragon Native- Invert Props for Vanilla Date and Time"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.vanillaDateTime.ui.interruptorStatusBar",
-        "title": "Show or Hide the vanilla date and time status bar item"
+        "title": "-Flawuldragon Native- Show or Hide the vanilla date and time status bar item"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.jetbrainsmonofont.activate",
-        "title": "Activate JetBrains Mono Font Pack for Flawuldragon"
+        "title": "-Jetbrains Mono Font- Activate JetBrains Mono Font Pack for Flawuldragon"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.jetbrainsmonofont.deactivate",
-        "title": "Deactivate JetBrains Mono Font for Flawuldragon"
+        "title": "-Jetbrains Mono Font- Deactivate JetBrains Mono Font for Flawuldragon"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.filesize.toggleFileSizeInfo",
-        "title": "Toggle file size info"
+        "title": "-Filesize- Toggle file size info"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.filesize.ui.interruptorStatusBar",
-        "title": "Show or Hide the file size status bar item"
+        "title": "-Filesize- Show or Hide the file size status bar item"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.todohighlight.toggleHighlight",
-        "title": "Toggle highlight"
+        "title": "-Todo Highlight- Toggle highlight"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.todohighlight.listAnnotations",
-        "title": "List highlighted annotations"
+        "title": "-Todo Highlight- List highlighted annotations"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.todohighlight.showOutputChannel",
-        "title": "Show a output logs channel"
+        "title": "-Todo Highlight- Show a output logs channel"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.todohighlight.ui.interruptorStatusBar",
-        "title": "Show or Hide the todo highlight status bar item"
+        "title": "-Todo Highlight- Show or Hide the todo highlight status bar item"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.startPomodoro",
-        "title": "Start Pomodoro"
+        "title": "-Pomodoro Clock- Start Pomodoro"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.pausePomodoro",
-        "title": "Pause Pomodoro"
+        "title": "-Pomodoro Clock- Pause Pomodoro"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.continuePomodoro",
-        "title": "Continue Pomodoro"
+        "title": "-Pomodoro Clock- Continue Pomodoro"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.restartPomodoro",
-        "title": "Restart Pomodoro"
+        "title": "-Pomodoro Clock- Restart Pomodoro"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.resetPomodoro",
-        "title": "Reset Pomodoro"
+        "title": "-Pomodoro Clock- Reset Pomodoro"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown",
-        "title": "Toggle Current Pomodoro Countdown"
+        "title": "-Pomodoro Clock- Toggle Current Pomodoro Countdown"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.ui.interruptorClockStatusBar",
-        "title": "Show or Hide the Pomodoro Clock status bar item"
+        "title": "-Pomodoro Clock- Show or Hide the Pomodoro Clock status bar item"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.ui.interruptorTypeStatusBar",
-        "title": "Show or Hide the Pomodoro Type status bar item"
+        "title": "-Pomodoro Clock- Show or Hide the Pomodoro Type status bar item"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.themeswitch.lighttheme",
-        "title": "Switch to Light Theme"
+        "title": "-Theme Switch- Switch to Light Theme"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.themeswitch.darktheme",
-        "title": "Switch to Dark Theme"
+        "title": "-Theme Switch- Switch to Dark Theme"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.themeswitch.toggle",
-        "title": "Enable Switch Theme"
+        "title": "-Theme Switch- Enable Switch Theme"
       },
       {
         "category": "Flawuldragon",
-        "command": "flawuldragon.auto-close-tag.closeTag",
-        "title": "Close Tag"
+        "command": "flawuldragon.fd.auto-close-tag.closeTag",
+        "title": "-Auto Close Tag- Close Tag"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.toggleBracketPairGuides",
-        "title": "Toggle Bracket Pair Guides"
+        "title": "-Bracket Pair Guides- Toggle Bracket Pair Guides"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.toggle",
-        "title": "Toggle (Enable/Disable) Everything",
+        "title": "-ErrorLens- Toggle (Enable/Disable) Everything",
         "description": "Toggle (Enable/Disable) Everything (toggle global setting `\"flawuldragon.errorLens.enabled\"`)"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.toggleError",
-        "title": "Toggle Errors",
+        "title": "-ErrorLens- Toggle Errors",
         "description": "Enable/Disable Errors in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.toggleWarning",
-        "title": "Toggle Warnings",
+        "title": "-ErrorLens- Toggle Warnings",
         "description": "Enable/Disable Warnings in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.toggleInfo",
-        "title": "Toggle Info",
+        "title": "-ErrorLens- Toggle Info",
         "description": "Enable/Disable Info in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.toggleHint",
-        "title": "Toggle Hint",
+        "title": "-ErrorLens- Toggle Hint",
         "description": "Enable/Disable Hint in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.toggleInlineMessage",
-        "title": "Toggle Inline Message",
+        "title": "-ErrorLens- Toggle Inline Message",
         "description": "Toggle global setting `\"flawuldragon.errorLens.messageEnabled\"`."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.searchForProblem",
-        "title": "Search for problem",
+        "title": "-ErrorLens- Search for problem",
         "description": "Open problem in default browser (controlled by `flawuldragon.errorLens.searchForProblemQuery` setting)."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.selectProblem",
-        "title": "Select Problem",
+        "title": "-ErrorLens- Select Problem",
         "description": "Set editor selection to the problem range (controlled by `flawuldragon.errorLens.selectProblemType` setting)."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.toggleWorkspace",
-        "title": "Toggle Workspace in Disabled List",
+        "title": "-ErrorLens- Toggle Workspace in Disabled List",
         "description": "Exclude/Include current workspace by fs path."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.disableLine",
-        "title": "Disable line",
+        "title": "-ErrorLens- Disable line",
         "description": "Add a comment to disable line for linter rule. Comment format is controlled by `\"flawuldragon.errorLens.disableLineComments\"` setting."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.findLinterRuleDefinition",
-        "title": "Find Linter Rule Definition",
+        "title": "-ErrorLens- Find Linter Rule Definition",
         "description": "Search in local linter files (like `.eslintrc.json`) for the rule definition. Target files are controlled by \"flawuldragon.errorLens.lintFilePaths\" setting."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.copyProblemMessage",
-        "title": "Copy Problem Message",
+        "title": "-ErrorLens- Copy Problem Message",
         "description": "Copy problem message to the clipboard (at the active cursor)."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.errorLens.copyProblemCode",
-        "title": "Copy Problem Code",
+        "title": "-ErrorLens- Copy Problem Code",
         "description": "Copy problem code to the clipboard (at the active cursor)."
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.takeabreak.Take a break: Start",
-        "title": "Take a break: Start",
+        "title": "-Take a Break- Take a break: Start",
         "description": "Start a take a break session"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.takeabreak.Take a break: Stop",
-        "title": "Take a break: Stop",
+        "title": "-Take a Break- Take a break: Stop",
         "description": "Stop the take a break session"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.takeabreak.ui.interruptorStatusBar",
-        "title": "Show or Hide the Take a break status bar item",
-        "description": "Show or Hide the Take a break status bar item"
+        "title": "-Take a Break- Show or Hide the Take a break status bar item",
+        "description": "Show or Hide the Take a break status bar item",
+        "enablement": "dev"
       }
     ],
     "icons": {
@@ -835,7 +837,7 @@
         "order": 0,
         "title": "Auto Close Tag",
         "properties": {
-          "auto-close-tag.activationOnLanguage": {
+          "fd.auto-close-tag.activationOnLanguage": {
             "type": "array",
             "default": [
               "xml",
@@ -863,13 +865,13 @@
             "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"]. Use [\"*\"] to activate for all languages.",
             "scope": "resource"
           },
-          "auto-close-tag.disableOnLanguage": {
+          "fd.auto-close-tag.disableOnLanguage": {
             "type": "array",
             "default": [],
             "description": "Set the languages where the extension will be disabled.  e.g. [\"html\",\"xml\",\"php\"].",
             "scope": "resource"
           },
-          "auto-close-tag.excludedTags": {
+          "fd.auto-close-tag.excludedTags": {
             "type": "array",
             "default": [
               "area",
@@ -892,31 +894,31 @@
             "description": "Set the tag list that would not be auto closed.",
             "scope": "resource"
           },
-          "auto-close-tag.SublimeText3Mode": {
+          "fd.auto-close-tag.SublimeText3Mode": {
             "type": "boolean",
             "default": false,
             "description": "Auto close tag when </ is typed, same as Sublime Text 3",
             "scope": "resource"
           },
-          "auto-close-tag.enableAutoCloseTag": {
+          "fd.auto-close-tag.enableAutoCloseTag": {
             "type": "boolean",
             "default": true,
             "description": "Whether to insert close tag automatically",
             "scope": "resource"
           },
-          "auto-close-tag.enableAutoCloseSelfClosingTag": {
+          "fd.auto-close-tag.enableAutoCloseSelfClosingTag": {
             "type": "boolean",
             "default": true,
             "description": "Whether to close self-closing tag automatically",
             "scope": "resource"
           },
-          "auto-close-tag.insertSpaceBeforeSelfClosingTag": {
+          "fd.auto-close-tag.insertSpaceBeforeSelfClosingTag": {
             "type": "boolean",
             "default": false,
             "description": "Insert a space before the forward slash in a self-closing tag.",
             "scope": "resource"
           },
-          "auto-close-tag.fullMode": {
+          "fd.auto-close-tag.fullMode": {
             "type": "boolean",
             "default": false,
             "description": "Enable both Visual Studio and Sublime Text mode",
@@ -928,7 +930,7 @@
         "order": 1,
         "title": "Auto Rename Tag",
         "properties": {
-          "auto-rename-tag.activationOnLanguage": {
+          "fd.auto-rename-tag.activationOnLanguage": {
             "type": "array",
             "default": [
               "*"
@@ -942,53 +944,53 @@
         "order": 2,
         "title": "Color Highlight",
         "properties": {
-          "color-highlight.enable": {
+          "fd.color-highlight.enable": {
             "default": true,
             "description": "Controls if plugin is enabled",
             "type": "boolean"
           },
-          "color-highlight.languages": {
+          "fd.color-highlight.languages": {
             "default": [
               "*"
             ],
             "description": "An array of language ids which should be highlighted by Color Highlight. \"*\" to trigger on any language; Prepend language id with \"!\" to exclude the language (i.e \"!typescript\", \"!javascript\")",
             "type": "array"
           },
-          "color-highlight.matchWords": {
+          "fd.color-highlight.matchWords": {
             "default": false,
             "description": "Highlight color words in all files (grey, green, etc.)",
             "type": "boolean"
           },
-          "color-highlight.useARGB": {
+          "fd.color-highlight.useARGB": {
             "default": false,
             "description": "Highlight HEX values using ARGB instead of RGBA (default)",
             "type": "boolean"
           },
-          "color-highlight.matchRgbWithNoFunction": {
+          "fd.color-highlight.matchRgbWithNoFunction": {
             "default": false,
             "description": "Highlight rgb without functions like rgb() ('255, 255, 255', [255, 255, 255], '255 255 255', etc.)",
             "type": "boolean"
           },
-          "color-highlight.rgbWithNoFunctionLanguages": {
+          "fd.color-highlight.rgbWithNoFunctionLanguages": {
             "default": [
               "*"
             ],
             "description": "An array of language ids which should be highlighted by Color Highlight with the rgbWithNoFunction pattern. \"*\" to trigger on any language; Prepend language id with \"!\" to exclude the language (i.e \"!typescript\", \"!javascript\")",
             "type": "array"
           },
-          "color-highlight.matchHslWithNoFunction": {
+          "fd.color-highlight.matchHslWithNoFunction": {
             "default": false,
             "description": "Highlight hsl without functions like hsl() ('255, 100%, 80%', [255, 100%, 80%], '255 100% 80%', etc.)",
             "type": "boolean"
           },
-          "color-highlight.hslWithNoFunctionLanguages": {
+          "fd.color-highlight.hslWithNoFunctionLanguages": {
             "default": [
               "*"
             ],
             "description": "An array of language ids which should be highlighted by Color Highlight with the rgbWithNoFunction pattern. \"*\" to trigger on any language; Prepend language id with \"!\" to exclude the language (i.e \"!typescript\", \"!javascript\")",
             "type": "array"
           },
-          "color-highlight.markerType": {
+          "fd.color-highlight.markerType": {
             "default": "background",
             "description": "Style of the highlight. Can be 'dot-before', 'dot-after', 'foreground', 'background', 'outline', 'underline'",
             "type": "string",
@@ -1001,12 +1003,12 @@
               "underline"
             ]
           },
-          "color-highlight.markRuler": {
+          "fd.color-highlight.markRuler": {
             "default": true,
             "description": "Highlight colors on the ruler (scroll bar), true/false",
             "type": "boolean"
           },
-          "color-highlight.sass.includePaths": {
+          "fd.color-highlight.sass.includePaths": {
             "default": [],
             "description": "Array of absolute paths to search while perform file lookups.",
             "type": "array"
@@ -1017,12 +1019,12 @@
         "order": 3,
         "title": "Error Lens",
         "properties": {
-          "errorLens.enabled": {
+          "fd.errorLens.enabled": {
             "type": "boolean",
             "default": true,
             "description": "Controls all decorations and features (except commands)."
           },
-          "errorLens.respectUpstreamEnabled": {
+          "fd.errorLens.respectUpstreamEnabled": {
             "type": "object",
             "properties": {
               "enabled": {
@@ -1051,17 +1053,17 @@
             "markdownDescription": "When enabled - extension will take into account global VSCode setting `#problems.visibility#`. ([1.85.0 changelog](https://code.visualstudio.com/updates/v1_85#_hide-problem-decorations)).",
             "additionalProperties": false
           },
-          "errorLens.enabledInMergeConflict": {
+          "fd.errorLens.enabledInMergeConflict": {
             "type": "boolean",
             "default": true,
             "markdownDescription": "Controls if decorations are shown if the editor has git merge conflict indicators `<<<<<<<` or `=======` or `>>>>>>>`."
           },
-          "errorLens.fontFamily": {
+          "fd.errorLens.fontFamily": {
             "type": "string",
             "default": "",
             "description": "Font family of inline message."
           },
-          "errorLens.fontWeight": {
+          "fd.errorLens.fontWeight": {
             "type": "string",
             "enum": [
               "100",
@@ -1079,22 +1081,22 @@
             "default": "normal",
             "markdownDescription": "Font weight of inline message. `\"normal\"` is alias for 400, `\"bold\"` is alias for 700)."
           },
-          "errorLens.fontStyleItalic": {
+          "fd.errorLens.fontStyleItalic": {
             "type": "boolean",
             "default": false,
             "description": "When enabled - shows inline message in italic font style."
           },
-          "errorLens.fontSize": {
+          "fd.errorLens.fontSize": {
             "type": "string",
             "default": "",
             "markdownDescription": "Font size of inline message ([CSS units](https://developer.mozilla.org/en-US/docs/Web/CSS/length))."
           },
-          "errorLens.margin": {
+          "fd.errorLens.margin": {
             "type": "string",
             "default": "4ch",
             "markdownDescription": "Distance between the last word on the line and the start of inline message ([CSS units](https://developer.mozilla.org/en-US/docs/Web/CSS/length))."
           },
-          "errorLens.alignMessage": {
+          "fd.errorLens.alignMessage": {
             "type": "object",
             "properties": {
               "start": {
@@ -1126,7 +1128,7 @@
             "markdownDescription": "Align inline error message (either by starting position or ending position). Set \"start\" and \"end\" to **0** to disable.",
             "additionalProperties": false
           },
-          "errorLens.padding": {
+          "fd.errorLens.padding": {
             "type": "string",
             "default": "",
             "markdownDescription": "Padding of the inline message. Visible when `#errorLens.messageBackgroundMode#` is set to \"message\".",
@@ -1134,7 +1136,7 @@
               "2px 1ch"
             ]
           },
-          "errorLens.borderRadius": {
+          "fd.errorLens.borderRadius": {
             "type": "string",
             "default": "0.2em",
             "markdownDescription": "Border radius of the inline message. Visible when `#errorLens.messageBackgroundMode#` is set to \"message\".",
@@ -1144,7 +1146,7 @@
               "0px 5em 5em 0px"
             ]
           },
-          "errorLens.enabledDiagnosticLevels": {
+          "fd.errorLens.enabledDiagnosticLevels": {
             "type": "array",
             "items": {
               "type": "string",
@@ -1163,18 +1165,18 @@
               "info"
             ]
           },
-          "errorLens.messageTemplate": {
+          "fd.errorLens.messageTemplate": {
             "type": "string",
             "default": "$message",
             "markdownDescription": "Template used for all inline messages. Whitespace between items is important.\n\nList of variables:\n\n- `$message` - diagnostic message text\n\n- `$count` - Number of diagnostics on the line\n\n- `$severity` - Severity prefix taken from `#errorLens.severityText#`\n\n- `$source` - Source of diagnostic e.g. \"eslint\"\n\n- `$code` - Code of the diagnostic"
           },
-          "errorLens.messageMaxChars": {
+          "fd.errorLens.messageMaxChars": {
             "type": "integer",
             "default": 500,
             "minimum": 0,
             "markdownDescription": "Cut off inline message if it's longer than this value. (Improves performance when the diagnostic message is long)."
           },
-          "errorLens.severityText": {
+          "fd.errorLens.severityText": {
             "type": "array",
             "items": {
               "type": "string"
@@ -1189,12 +1191,12 @@
             "minItems": 4,
             "maxItems": 4
           },
-          "errorLens.messageEnabled": {
+          "fd.errorLens.messageEnabled": {
             "type": "boolean",
             "default": true,
             "description": "Controls whether inline message is shown or not (Including background highlight)."
           },
-          "errorLens.messageBackgroundMode": {
+          "fd.errorLens.messageBackgroundMode": {
             "type": "string",
             "default": "line",
             "enum": [
@@ -1209,12 +1211,12 @@
             ],
             "description": "Controls how inline message is highlighted in the editor (entire line / only message / none)."
           },
-          "errorLens.problemRangeDecorationEnabled": {
+          "fd.errorLens.problemRangeDecorationEnabled": {
             "type": "boolean",
             "default": false,
             "markdownDescription": "When checked - highlight the entire problem range."
           },
-          "errorLens.editorHoverPartsEnabled": {
+          "fd.errorLens.editorHoverPartsEnabled": {
             "type": "object",
             "properties": {
               "messageEnabled": {
@@ -1238,17 +1240,17 @@
             },
             "markdownDescription": "Controls which parts of the editor hover tooltip to show."
           },
-          "errorLens.statusBarIconsEnabled": {
+          "fd.errorLens.statusBarIconsEnabled": {
             "type": "boolean",
             "markdownDescription": "When enabled - shows highlighted error/warning icons in status bar.",
             "default": false
           },
-          "errorLens.statusBarIconsPriority": {
+          "fd.errorLens.statusBarIconsPriority": {
             "type": "integer",
             "markdownDescription": "Move status bar icons left or right by adjusting the number priority.",
             "default": 92
           },
-          "errorLens.statusBarIconsAlignment": {
+          "fd.errorLens.statusBarIconsAlignment": {
             "type": "string",
             "markdownDescription": "Choose on which side the icons status bar is on: left or right.",
             "enum": [
@@ -1257,7 +1259,7 @@
             ],
             "default": "left"
           },
-          "errorLens.statusBarIconsTargetProblems": {
+          "fd.errorLens.statusBarIconsTargetProblems": {
             "type": "string",
             "enum": [
               "all",
@@ -1272,12 +1274,12 @@
             "default": "all",
             "markdownDescription": "Which problems to use for counting problems at icons status bar."
           },
-          "errorLens.statusBarIconsUseBackground": {
+          "fd.errorLens.statusBarIconsUseBackground": {
             "type": "boolean",
             "markdownDescription": "When enabled - highlights status bar icons with background, when disabled - with foreground.",
             "default": true
           },
-          "errorLens.statusBarIconsAtZero": {
+          "fd.errorLens.statusBarIconsAtZero": {
             "type": "string",
             "markdownDescription": "What to do when there are 0 errors/warnings - hide the item or strip its background color.",
             "enum": [
@@ -1286,17 +1288,17 @@
             ],
             "default": "removeBackground"
           },
-          "errorLens.statusBarMessageEnabled": {
+          "fd.errorLens.statusBarMessageEnabled": {
             "type": "boolean",
             "markdownDescription": "When enabled - shows message in status bar.",
             "default": false
           },
-          "errorLens.statusBarMessagePriority": {
+          "fd.errorLens.statusBarMessagePriority": {
             "type": "integer",
             "markdownDescription": "Move status bar message left or right by adjusting the number priority.",
             "default": 91
           },
-          "errorLens.statusBarMessageAlignment": {
+          "fd.errorLens.statusBarMessageAlignment": {
             "type": "string",
             "markdownDescription": "Choose on which side the message status bar is on: left or right.",
             "enum": [
@@ -1305,12 +1307,12 @@
             ],
             "default": "left"
           },
-          "errorLens.statusBarColorsEnabled": {
+          "fd.errorLens.statusBarColorsEnabled": {
             "type": "boolean",
             "markdownDescription": "When enabled - use message decoration foreground as color of Status Bar text.",
             "default": false
           },
-          "errorLens.statusBarMessageType": {
+          "fd.errorLens.statusBarMessageType": {
             "type": "string",
             "markdownDescription": "Pick what to show in Status Bar: closest message or only message for the active line.",
             "enum": [
@@ -1327,7 +1329,7 @@
             ],
             "default": "activeLine"
           },
-          "errorLens.statusBarCommand": {
+          "fd.errorLens.statusBarCommand": {
             "type": "string",
             "markdownDescription": "Pick command that activates on click for Status Bar.",
             "enum": [
@@ -1337,12 +1339,12 @@
             ],
             "default": "goToProblem"
           },
-          "errorLens.statusBarMessageTemplate": {
+          "fd.errorLens.statusBarMessageTemplate": {
             "type": "string",
             "default": "",
             "markdownDescription": "Template for status bar message. Whitespace between items is important.\n\nList of variables:\n\n- `$message` - diagnostic message text\n\n- `$count` - Number of diagnostics on the line\n\n- `$severity` - Severity prefix taken from `#errorLens.severityText#`\n\n- `$source` - Source of diagnostic e.g. \"eslint\"\n\n- `$code` - Code of the diagnostic"
           },
-          "errorLens.replace": {
+          "fd.errorLens.replace": {
             "type": "array",
             "default": [],
             "items": {
@@ -1364,7 +1366,7 @@
             },
             "markdownDescription": "Specify message to transform. E.g. if this is configured to [{ matcher: 'foo (.*)', message: 'just $1' }], the message 'foo bar' would be displayed as 'just bar'."
           },
-          "errorLens.exclude": {
+          "fd.errorLens.exclude": {
             "type": "array",
             "default": [],
             "items": {
@@ -1372,7 +1374,7 @@
             },
             "markdownDescription": "Specify messages that should not be highlighted (RegExp). Strings passed to the RegExp constructor: `new RegExp(EXCLUDE_ITEM, 'i');`"
           },
-          "errorLens.excludeBySource": {
+          "fd.errorLens.excludeBySource": {
             "type": "array",
             "default": [],
             "items": {
@@ -1380,7 +1382,7 @@
             },
             "markdownDescription": "Specify `source` or `source(code)` pair to exclude. Examples: \n\n```json\n[\n\t\"eslint\",// exclude all problems from eslint linter\n\t\"eslint(padded-blocks)\",// exclude padded-blocks rule from eslint linter\n\t\"Pylance(reportUndefinedVariable)\",// exlude reportUndefinedVariable rule from Pylance linter\n]\n```"
           },
-          "errorLens.excludePatterns": {
+          "fd.errorLens.excludePatterns": {
             "type": "array",
             "default": [],
             "items": {
@@ -1388,7 +1390,7 @@
             },
             "markdownDescription": "Exclude files by using [glob](https://code.visualstudio.com/docs/editor/glob-patterns) pattern. Example `[\"**/*.{ts,js}\"]`"
           },
-          "errorLens.excludeWorkspaces": {
+          "fd.errorLens.excludeWorkspaces": {
             "type": "array",
             "default": [],
             "items": {
@@ -1396,7 +1398,7 @@
             },
             "markdownDescription": "Exclude workspaces by path."
           },
-          "errorLens.disableLineComments": {
+          "fd.errorLens.disableLineComments": {
             "type": "object",
             "markdownDescription": "Used for `errorLens.disableLine` command that adds a comment disabling linter rule for a line.\nTo force comment on the same line - add `SAME_LINE` to the message: `\"eslint\": \"// eslint-disable-line $code SAME_LINE\"`",
             "patternProperties": {
@@ -1409,7 +1411,7 @@
               "Stylelint": "/* stylelint-disable-next-line $code */"
             }
           },
-          "errorLens.lintFilePaths": {
+          "fd.errorLens.lintFilePaths": {
             "type": "object",
             "default": {
               "eslint": [
@@ -1443,12 +1445,12 @@
             },
             "markdownDescription": "Specify where to search for linter rule definitions by diagnostic source ([glob](https://code.visualstudio.com/docs/editor/glob-patterns) for local linter files). `node_modules` folder is excluded."
           },
-          "errorLens.searchForProblemQuery": {
+          "fd.errorLens.searchForProblemQuery": {
             "type": "string",
             "default": "https://duckduckgo.com/?q=$message",
             "markdownDescription": "Pick query to open in default browser when searching for problem with `errorLens.searchForProblem` command."
           },
-          "errorLens.selectProblemType": {
+          "fd.errorLens.selectProblemType": {
             "type": "string",
             "default": "closestProblem",
             "enum": [
@@ -1463,7 +1465,7 @@
             ],
             "markdownDescription": "Which problem to select (closest / active line) when executing `errorLens.selectProblem` command."
           },
-          "errorLens.light": {
+          "fd.errorLens.light": {
             "type": "object",
             "markdownDescription": "Specify color of decorations for when the light color theme is active.",
             "properties": {
@@ -1513,12 +1515,12 @@
               }
             }
           },
-          "errorLens.delay": {
+          "fd.errorLens.delay": {
             "type": "integer",
             "markdownDescription": "Delay (ms) before showing problem decorations (**0** to disable). Minimum delay of **500** is enforced by the extension. `#errorLens.delayMode#` controls how to handle the delay.",
             "default": 0
           },
-          "errorLens.delayMode": {
+          "fd.errorLens.delayMode": {
             "type": "string",
             "default": "new",
             "enum": [
@@ -1533,28 +1535,28 @@
             ],
             "markdownDescription": "Pick which version of the delay to use."
           },
-          "errorLens.onSave": {
+          "fd.errorLens.onSave": {
             "type": "boolean",
             "description": "When enabled - updates decorations only on document save (manual).",
             "default": false
           },
-          "errorLens.onSaveTimeout": {
+          "fd.errorLens.onSaveTimeout": {
             "type": "number",
             "description": "Time period (ms) that used for showing decorations after the document save (manual, not auto save).",
             "default": 1000,
             "minimum": 500
           },
-          "errorLens.onSaveUpdateOnActiveEditorChange": {
+          "fd.errorLens.onSaveUpdateOnActiveEditorChange": {
             "type": "boolean",
             "description": "When `#errorLens.onSave#` enabled - extension still draws decorations when active/visible editors change.",
             "default": true
           },
-          "errorLens.enableOnDiffView": {
+          "fd.errorLens.enableOnDiffView": {
             "type": "boolean",
             "markdownDescription": "Enable decorations when viewing a diff view in the editor (e.g. Git diff).",
             "default": false
           },
-          "errorLens.followCursor": {
+          "fd.errorLens.followCursor": {
             "type": "string",
             "enum": [
               "allLines",
@@ -1576,12 +1578,12 @@
             "description": "Highlight only portion of the problems.",
             "default": "allLines"
           },
-          "errorLens.followCursorMore": {
+          "fd.errorLens.followCursorMore": {
             "type": "number",
             "markdownDescription": "Augments `#errorLens.followCursor#`.\nAdds number of lines to top and bottom when `#errorLens.followCursor#` is set to `activeLine`.\n Adds number of closest problems when `#errorLens.followCursor#` is `closestProblem`",
             "default": 0
           },
-          "errorLens.multilineMessage": {
+          "fd.errorLens.multilineMessage": {
             "type": "object",
             "properties": {
               "decorationMaxNumberOfLines": {
@@ -1652,17 +1654,17 @@
             "additionalProperties": false,
             "markdownDescription": "EXPERIMENTAL. Not implemented."
           },
-          "errorLens.gutterIconsEnabled": {
+          "fd.errorLens.gutterIconsEnabled": {
             "type": "boolean",
             "description": "When enabled - shows gutter icons (In place of the debug breakpoint icon).",
             "default": false
           },
-          "errorLens.gutterIconsFollowCursorOverride": {
+          "fd.errorLens.gutterIconsFollowCursorOverride": {
             "type": "boolean",
             "markdownDescription": "When enabled and `#errorLens.followCursor#` setting is not `allLines`, then gutter icons would be rendered for all problems. But line decorations (background, message) only for active line.",
             "default": true
           },
-          "errorLens.gutterIconSize": {
+          "fd.errorLens.gutterIconSize": {
             "type": "string",
             "markdownDescription": "Change gutter icon size. Examples: `auto`, `contain`, `cover`, `50%`, `150%` ([CSS units](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)).",
             "examples": [
@@ -1674,7 +1676,7 @@
             ],
             "default": "100%"
           },
-          "errorLens.gutterIconSet": {
+          "fd.errorLens.gutterIconSet": {
             "type": "string",
             "description": "Change gutter icon style.",
             "enum": [
@@ -1699,7 +1701,7 @@
             ],
             "default": "default"
           },
-          "errorLens.gutterEmoji": {
+          "fd.errorLens.gutterEmoji": {
             "type": "object",
             "properties": {
               "error": {
@@ -1736,66 +1738,66 @@
             "additionalProperties": false,
             "markdownDescription": "Pick emoji symbol for gutter icon when `#errorLens.gutterIconSet#` is `emoji`."
           },
-          "errorLens.errorGutterIconPath": {
+          "fd.errorLens.errorGutterIconPath": {
             "type": "string",
             "description": "Absolute path to error gutter icon.",
             "default": ""
           },
-          "errorLens.warningGutterIconPath": {
+          "fd.errorLens.warningGutterIconPath": {
             "type": "string",
             "description": "Absolute path to warning gutter icon.",
             "default": ""
           },
-          "errorLens.infoGutterIconPath": {
+          "fd.errorLens.infoGutterIconPath": {
             "type": "string",
             "description": "Absolute path to info gutter icon.",
             "default": ""
           },
-          "errorLens.hintGutterIconPath": {
+          "fd.errorLens.hintGutterIconPath": {
             "type": "string",
             "description": "Absolute path to hint gutter icon.",
             "default": ""
           },
-          "errorLens.errorGutterIconColor": {
+          "fd.errorLens.errorGutterIconColor": {
             "type": "string",
             "default": "#e45454",
             "markdownDescription": "Error color of simple gutter icons (shapes and letters).",
             "format": "color"
           },
-          "errorLens.warningGutterIconColor": {
+          "fd.errorLens.warningGutterIconColor": {
             "type": "string",
             "default": "#ff942f",
             "markdownDescription": "Warning color of simple gutter icons (shapes and letters).",
             "format": "color"
           },
-          "errorLens.infoGutterIconColor": {
+          "fd.errorLens.infoGutterIconColor": {
             "type": "string",
             "default": "#00b7e4",
             "markdownDescription": "Info color of simple gutter icons (shapes and letters).",
             "format": "color"
           },
-          "errorLens.hintGutterIconColor": {
+          "fd.errorLens.hintGutterIconColor": {
             "type": "string",
             "default": "#2faf64",
             "markdownDescription": "Hint color of simple gutter icons (shapes and letters).",
             "format": "color"
           },
-          "errorLens.removeLinebreaks": {
+          "fd.errorLens.removeLinebreaks": {
             "type": "boolean",
             "default": true,
             "markdownDescription": "When enabled - replaces line breaks in inline diagnostic message with whitespaces."
           },
-          "errorLens.replaceLinebreaksSymbol": {
+          "fd.errorLens.replaceLinebreaksSymbol": {
             "type": "string",
             "default": "⏎",
             "markdownDescription": "Symbol to replace linebreaks. Requires enabling `#errorLens.removeLinebreaks#`."
           },
-          "errorLens.scrollbarHackEnabled": {
+          "fd.errorLens.scrollbarHackEnabled": {
             "type": "boolean",
             "default": false,
             "markdownDescription": "When enabled - prevents showing horizontal scrollbar in editor (caused by inline decorations). Also prevents mouse hover at inline message."
           },
-          "errorLens.decorations": {
+          "fd.errorLens.decorations": {
             "type": "object",
             "markdownDescription": "Advanced decoration tweaking. Possible keys: `errorRange`, `warningRange`, `infoRange`, `hintRange`.\n\n Possible properties: `backgroundColor`, `color`, `outline`, `border`, ...,",
             "default": {
@@ -1813,17 +1815,17 @@
             },
             "additionalProperties": false
           },
-          "errorLens.ignoreUntitled": {
+          "fd.errorLens.ignoreUntitled": {
             "type": "boolean",
             "default": false,
             "description": "Controls whether to run on untitled (unsaved) files."
           },
-          "errorLens.codeLensEnabled": {
+          "fd.errorLens.codeLensEnabled": {
             "type": "boolean",
             "default": false,
             "markdownDescription": "Controls whether to show the Error Lens as a Code Lens above the code. "
           },
-          "errorLens.codeLensLength": {
+          "fd.errorLens.codeLensLength": {
             "type": "object",
             "properties": {
               "min": {
@@ -1844,7 +1846,7 @@
             },
             "markdownDescription": "Enforce minimum length of the first code lens item and max length of subsequent items."
           },
-          "errorLens.codeLensTemplate": {
+          "fd.errorLens.codeLensTemplate": {
             "type": "string",
             "default": "$severity $message",
             "markdownDescription": "Template used for all messages appearing in the `#errorLens.codeLensEnabled#`. Whitespace between items is important.\n\nList of variables:\n\n- `$message` - diagnostic message text\n\n- `$count` - Number of diagnostics on the line\n\n- `$severity` - Severity prefix taken from `#errorLens.severityText#`\n\n- `$source` - Source of diagnostic e.g. \"eslint\"\n\n- `$code` - Code of the diagnostic"
@@ -1853,89 +1855,43 @@
       },
       {
         "order": 4,
-        "title": "Filesize",
-        "properties": {
-          "filesize.useDecimal": {
-            "type": "boolean",
-            "default": false,
-            "description": "Defaults to false, using IEC's representation. Set to true to get SI representation."
-          },
-          "filesize.use24HourFormat": {
-            "type": "boolean",
-            "default": true,
-            "description": "Defaults to true, using 24-hour format. Set to false to get 12-hour format."
-          },
-          "filesize.showGzip": {
-            "type": "boolean",
-            "default": true,
-            "description": "Defaults to true, whether to show gzip size in detailed view or not."
-          },
-          "filesize.showBrotli": {
-            "type": "boolean",
-            "default": false,
-            "description": "Defaults to false, whether to show brotli size in the detailed view."
-          },
-          "filesize.showRawInBytes": {
-            "type": "boolean",
-            "default": false,
-            "description": "Defaults to false, whether to show raw size in bytes in the detailed view."
-          },
-          "filesize.showGzipInStatusBar": {
-            "type": "boolean",
-            "default": false,
-            "description": "Defaults to false, whether to show gzip size in the status bar."
-          },
-          "filesize.showBrotliInStatusBar": {
-            "type": "boolean",
-            "default": false,
-            "description": "Defaults to false, whether to show brotli size in the status bar."
-          },
-          "filesize.displayInfoOnTheRightSideOfStatusBar": {
-            "type": "boolean",
-            "default": false,
-            "description": "Defaults to false, whether to show the filesize info on the right side of the status bar."
-          }
-        }
-      },
-      {
-        "order": 5,
         "title": "Indent Rainbow",
         "properties": {
-          "indentRainbow.includedLanguages": {
+          "fd.indentRainbow.includedLanguages": {
             "type": "array",
             "default": [],
             "description": "For which languages indent-rainbow should be activated. When empty will use for all languages."
           },
-          "indentRainbow.excludedLanguages": {
+          "fd.indentRainbow.excludedLanguages": {
             "type": "array",
             "default": [
               "plaintext"
             ],
             "description": "For which languages indent-rainbow should be deactivated. When left empty will ignore."
           },
-          "indentRainbow.ignoreErrorLanguages": {
+          "fd.indentRainbow.ignoreErrorLanguages": {
             "type": "array",
             "default": [
               "markdown"
             ],
             "description": "For which languages indent-rainbow should skip indent error detection (use '*' to deactivate errors for all languages)."
           },
-          "indentRainbow.updateDelay": {
+          "fd.indentRainbow.updateDelay": {
             "type": "integer",
             "default": 100,
             "description": "The delay in ms until the editor gets updated."
           },
-          "indentRainbow.errorColor": {
+          "fd.indentRainbow.errorColor": {
             "type": "string",
             "default": "rgba(128,32,32,0.6)",
             "description": "Indent color for when there is an error in the indentation, for example if you have your tabs set to 2 spaces but the indent is 3 spaces. Can be any type of web based color format (hex, rgba, rgb)."
           },
-          "indentRainbow.tabmixColor": {
+          "fd.indentRainbow.tabmixColor": {
             "type": "string",
             "default": "rgba(128,32,96,0.6)",
             "description": "Indent color for when there is a mix between spaces and tabs in the indentation. Can be any type of web based color format (hex, rgba, rgb) or a empty string(to be disabled this coloring)."
           },
-          "indentRainbow.ignoreLinePatterns": {
+          "fd.indentRainbow.ignoreLinePatterns": {
             "type": "array",
             "default": [
               "/[ \t]* [*]/g",
@@ -1943,7 +1899,7 @@
             ],
             "description": "Skip error highlighting for RegEx patterns. Defaults to c/cpp decorated block and full line comments."
           },
-          "indentRainbow.colors": {
+          "fd.indentRainbow.colors": {
             "type": "array",
             "default": [
               "rgba(255,255,64,0.07)",
@@ -1953,12 +1909,12 @@
             ],
             "description": "An array with color (hex, rgba, rgb) strings which are used as colors, can be any length."
           },
-          "indentRainbow.colorOnWhiteSpaceOnly": {
+          "fd.indentRainbow.colorOnWhiteSpaceOnly": {
             "type": "boolean",
             "default": false,
             "description": "If error color is disabled, indent colors will be rendered until the length of rendered characters (white spaces, tabs, and other ones) is divisible by tabsize. Turn on this option to render white spaces and tabs only."
           },
-          "indentRainbow.indicatorStyle": {
+          "fd.indentRainbow.indicatorStyle": {
             "type": "string",
             "default": "classic",
             "enum": [
@@ -1967,7 +1923,7 @@
             ],
             "markdownDescription": "Classic mode uses a full colored tab to indicate the indendation. Light mode will only display a colored border similar to the default indent guide lines. You can disable the default indicators with `#editor.guides.indentation#`."
           },
-          "indentRainbow.lightIndicatorStyleLineWidth": {
+          "fd.indentRainbow.lightIndicatorStyleLineWidth": {
             "type": "number",
             "default": 1,
             "description": "This property defines the indent indicator lineWidth when using light mode."
@@ -1975,30 +1931,30 @@
         }
       },
       {
-        "order": 6,
+        "order": 5,
         "title": "Pomodoro Clock",
         "properties": {
-          "pomodoroClock.workTime": {
+          "fd.pomodoroClock.workTime": {
             "type": "number",
             "default": 25,
             "description": "Time of work, in minutes."
           },
-          "pomodoroClock.breakTime": {
+          "fd.pomodoroClock.breakTime": {
             "type": "number",
             "default": 5,
             "description": "Time of break, in minutes"
           },
-          "pomodoroClock.longBreakTime": {
+          "fd.pomodoroClock.longBreakTime": {
             "type": "number",
             "default": 15,
             "description": "Time of long break, in minutes"
           },
-          "pomodoroClock.repeat": {
+          "fd.pomodoroClock.repeat": {
             "type": "number",
             "default": 4,
             "description": "Number of repeat before long break"
           },
-          "pomodoroClock.countdown": {
+          "fd.pomodoroClock.countdown": {
             "type": "boolean",
             "default": true,
             "description": "Whether to use countdown display"
@@ -2006,10 +1962,10 @@
         }
       },
       {
-        "order": 7,
+        "order": 6,
         "title": "Take a Break",
         "properties": {
-          "takeabreak.interval": {
+          "fd.takeabreak.interval": {
             "type": "number",
             "default": 20,
             "description": "Interval in minutes to remind you to take a break"
@@ -2017,25 +1973,30 @@
         }
       },
       {
+        "order": 7,
+        "title": "Theme Switch",
+        "properties": {}
+      },
+      {
         "order": 8,
         "title": "Todo Highlight",
         "properties": {
-          "todohighlight.isEnable": {
+          "fd.todohighlight.isEnable": {
             "type": "boolean",
             "default": true,
             "description": "Enable or disable the highlight"
           },
-          "todohighlight.isCaseSensitive": {
+          "fd.todohighlight.isCaseSensitive": {
             "type": "boolean",
             "default": true,
             "description": "Specify whether the keywords are case sensitive or not"
           },
-          "todohighlight.toggleURI": {
+          "fd.todohighlight.toggleURI": {
             "type": "boolean",
             "default": false,
             "description": "If the file path within the output channel not clickable, set this to true to toggle the path patten between `<path>#<line>` and `<path>:<line>:<column>`"
           },
-          "todohighlight.keywords": {
+          "fd.todohighlight.keywords": {
             "type": "array",
             "description": "Customize keywords and colors. Any css color identifier is valid.",
             "items": {
@@ -2067,12 +2028,12 @@
               ]
             }
           },
-          "todohighlight.keywordsPattern": {
+          "fd.todohighlight.keywordsPattern": {
             "type": "string",
             "default": "",
             "description": "Specify keywords via RegExp instead of `todohighlight.keywords` one by one. NOTE that if this presents, `todohighlight.keywords` will be ignored. And REMEMBER to escapse the back slash if there's any in your regexp (using \\\\ instead of single back slash)"
           },
-          "todohighlight.defaultStyle": {
+          "fd.todohighlight.defaultStyle": {
             "type": "object",
             "description": "Default style for all customized keywords",
             "properties": {
@@ -2090,7 +2051,7 @@
               }
             }
           },
-          "todohighlight.include": {
+          "fd.todohighlight.include": {
             "type": "array",
             "default": [
               "**/*.js",
@@ -2112,7 +2073,7 @@
               ]
             }
           },
-          "todohighlight.exclude": {
+          "fd.todohighlight.exclude": {
             "type": "array",
             "default": [
               "**/node_modules/**",
@@ -2136,7 +2097,7 @@
               ]
             }
           },
-          "todohighlight.maxFilesForSearch": {
+          "fd.todohighlight.maxFilesForSearch": {
             "type": "number",
             "default": 5120,
             "description": "Max files for searching"
@@ -2536,12 +2497,12 @@
       {
         "key": "alt+.",
         "mac": "cmd+alt+.",
-        "command": "flawuldragon.auto-close-tag.closeTag"
+        "command": "flawuldragon.fd.auto-close-tag.closeTag"
       },
       {
         "key": "alt+.",
         "mac": "cmd+alt+.",
-        "command": "flawuldragon.auto-close-tag.closeTag"
+        "command": "flawuldragon.fd.auto-close-tag.closeTag"
       },
       {
         "key": "ctrl+shift+b",
@@ -2573,7 +2534,7 @@
     "@typescript-eslint/parser": "^5.38.1",
     "@vscode/test-electron": "^2.1.5",
     "@vscode/test-web": "0.0.15",
-    "@vscode/vsce": "^2.19.0",
+    "@vscode/vsce": "^3.2.1",
     "assert": "^2.0.0",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",

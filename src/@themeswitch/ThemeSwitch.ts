@@ -81,15 +81,15 @@ export class ThemeSwitch {
    */
   protected themeSwitch_Initialize () {
     // convert old theming settings
-    const oldDark = this.config.get('themeswitch.nightTheme')
+    const oldDark = this.config.get('fd.themeswitch.nightTheme')
     if (oldDark && this.config.get('workbench.preferredDarkColorTheme') !== oldDark) {
       this.config.update('workbench.preferredDarkColorTheme', oldDark, true)
-      this.config.update('themeswitch.nightTheme', undefined, true)
+      this.config.update('fd.themeswitch.nightTheme', undefined, true)
     }
-    const oldLight = this.config.get('themeswitch.dayTheme')
+    const oldLight = this.config.get('fd.themeswitch.dayTheme')
     if (oldLight && this.config.get('workbench.preferredLightColorTheme') !== oldLight) {
       this.config.update('workbench.preferredLightColorTheme', oldLight, true)
-      this.config.update('themeswitch.dayTheme', undefined, true)
+      this.config.update('fd.themeswitch.dayTheme', undefined, true)
     }
 
     this.themeSwitch_getTheme()
@@ -177,25 +177,25 @@ export class ThemeSwitch {
    * Handles the configuration update event for the theme switcher.
    *
    * This method is triggered when there is a change in the configuration.
-   * It checks if the configuration change affects the 'themeswitch.priority' setting
+   * It checks if the configuration change affects the 'priority' setting
    * and updates the theme accordingly.
    *
    * @param ev - The configuration change event.
    */
   protected themeSwitch_configUpdate (ev: vscode.ConfigurationChangeEvent) {
     this.themeSwitch_getTheme()
-    ev.affectsConfiguration('themeswitch.priority') && this.themeSwitch_update(true)
+    ev.affectsConfiguration('fd.themeswitch.priority') && this.themeSwitch_update(true)
   }
 
   /**
-   * Switches the theme based on the configuration setting 'themeswitch.toggleDefaultDark'.
-   * If 'themeswitch.toggleDefaultDark' is set to true, it switches to the dark theme.
+   * Switches the theme based on the configuration setting 'toggleDefaultDark'.
+   * If 'toggleDefaultDark' is set to true, it switches to the dark theme.
    * Otherwise, it switches to the light theme.
    * 
    * @protected
    */
   protected themeSwitch_fallbackToTheme () {
-    const theme = this.config.get('themeswitch.toggleDefaultDark', true) ? this.darkTheme : this.lightTheme
+    const theme = this.config.get('fd.themeswitch.toggleDefaultDark', true) ? this.darkTheme : this.lightTheme
     this.config.update('workbench.colorTheme', theme, true)
   }
 

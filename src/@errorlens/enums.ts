@@ -40,11 +40,11 @@ export declare const enum EELConstants {
   /**
    * Extension unique id (publisher.name).
    */
-  ExtensionId = 'usernamehw.errorlens',
+  ExtensionId = 'humbanew.flawuldragon',
   /**
    * Prefix used for all settings of this extension.
    */
-  SettingsPrefix = 'errorLens',
+  SettingsPrefix = 'fd.errorLens',
   /**
    * Command id of vscode command to show problems view.
    */

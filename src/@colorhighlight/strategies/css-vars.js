@@ -1,7 +1,7 @@
-import { findHexRGBA } from './hex.cjs';
-import { findWords } from './words.cjs';
-import { findColorFunctionsInText, sortStringsInDescendingOrder } from './functions.cjs';
-import { findHwb } from './hwb.cjs';
+import { findHexRGBA } from './hex.js';
+import { findWords } from './words.js';
+import { findColorFunctionsInText, sortStringsInDescendingOrder } from './functions.js';
+import { findHwb } from './hwb.js';
 
 const setVariable = /^\s*(--[-\w]+)\s*:\s*(.*)$/gm;
 

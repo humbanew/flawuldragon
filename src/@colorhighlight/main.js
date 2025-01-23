@@ -1,5 +1,5 @@
 import vscode from 'vscode';
-import { DocumentHighlight } from './color-highlight.cjs';
+import { DocumentHighlight } from './color-highlight.js';
 
 const COMMAND_NAME = 'flawuldragon.colorHighlight';
 let instanceMap = null;
@@ -11,7 +11,7 @@ export function activate(context) {
   console.log('Congratulations, your extension "color-highlight" is now active!');
 
   instanceMap = [];
-  config = vscode.workspace.getConfiguration('color-highlight');
+  config = vscode.workspace.getConfiguration('fd.color-highlight');
 
   context.subscriptions.push(
 
@@ -106,7 +106,7 @@ async function doHighlight(documents = []) {
 }
 
 function onConfigurationChange() {
-  config = vscode.workspace.getConfiguration('color-highlight');
+  config = vscode.workspace.getConfiguration('fd.color-highlight');
 
   reactivate();
 }

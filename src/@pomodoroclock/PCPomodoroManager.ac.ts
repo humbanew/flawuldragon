@@ -243,7 +243,7 @@ export class PCPomodoroManager {
    * - `repeat`: The number of times the Pomodoro cycle should repeat.
    */
   private setParamsFromConfig() {
-    const config = vscode.workspace.getConfiguration("pomodoroClock");
+    const config = vscode.workspace.getConfiguration("fd.pomodoroClock");
     this.workTime = config.get("workTime");
     this.breakTime = config.get("breakTime");
     this.longBreakTime = config.get("longBreakTime");

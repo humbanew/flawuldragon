@@ -304,7 +304,7 @@ export class TodoHighlight {
       (arg0: { message: string }, arg1: {}, arg2: any[]): void;
     },
   ) {
-    var settings = vscode.workspace.getConfiguration("todohighlight");
+    var settings = vscode.workspace.getConfiguration("fd.todohighlight");
     var includePattern = this.todoHighlight_getPathes(
       settings.get("include") || "{**/*}",
     );
@@ -950,7 +950,7 @@ export class TodoHighlight {
   
       vscode.workspace.onDidChangeConfiguration(
         function () {
-          settings = vscode.workspace.getConfiguration("todohighlight");
+          settings = vscode.workspace.getConfiguration("fd.todohighlight");
           if (!settings.get("isEnable")) return;
           // NOTE: if disabled, do not re-initialize the data or we will not be able to clear the style immediatly via 'toggle highlight' command
           init(settings);

@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "babel-preset-typescript", 
+    "babel-preset-minify"
+  ],
+  "comments": false,
+  "sourceRoot": "./src",
+  "compact": true,
+  "plugins": [],
+  "code": true
+}

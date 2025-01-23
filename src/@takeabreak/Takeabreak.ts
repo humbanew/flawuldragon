@@ -16,7 +16,7 @@ export class Takeabreak {
    * A protected property that holds a reference to an interval timer.
    * This property is likely used to manage repeated actions at specified intervals.
    */
-  protected interval: number | any = vscode.workspace.getConfiguration('takeabreak').get('interval');
+  protected interval: number | any = vscode.workspace.getConfiguration('fd.takeabreak').get('interval');
 
   /**
    * A status bar item that displays interval information in the Visual Studio Code status bar.

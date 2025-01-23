@@ -1,6 +1,6 @@
 <div align="center">
 
-  ![Cabeçalho LICENSE md v5](./documentation/markdown/cabecalholicensev5.svg)
+<img src="assets/documentation/markdown/cabecalholicensev5.svg" alt="Cabecalho HN License v5"/>
 
 </div>
 

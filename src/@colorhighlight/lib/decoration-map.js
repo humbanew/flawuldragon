@@ -1,6 +1,6 @@
 'use strict';
 import vscode from 'vscode';
-import { getColorContrast } from './dynamic-contrast.cjs';
+import { getColorContrast } from './dynamic-contrast.js';
 
 /**
  *

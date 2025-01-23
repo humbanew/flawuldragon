@@ -461,7 +461,7 @@ export class ELCommands {
       arrayValue.splice(oldValueIndex, 1);
     }
   
-    await ELVSCodeUtils.prototype.updateGlobalSetting('errorLens.enabledDiagnosticLevels', arrayValue);
+    await ELVSCodeUtils.prototype.updateGlobalSetting('fd.errorLens.enabledDiagnosticLevels', arrayValue);
   }
 
   public async toggleWorkspaceCommand(): Promise<void> {
@@ -492,7 +492,7 @@ export class ELCommands {
       this.showResultNotification(`"${workspaceFsPath}" - Added to "errorLens.excludeWorkspaces" (now ignored)`);
     }
 
-    ELVSCodeUtils.prototype.updateGlobalSetting('errorLens.excludeWorkspaces', newExcludeWorkspaceList);
+    ELVSCodeUtils.prototype.updateGlobalSetting('fd.errorLens.excludeWorkspaces', newExcludeWorkspaceList);
   }
 
   // associated with toggleWorkspaceCommand
@@ -533,7 +533,7 @@ export class ELCommands {
     // ──── Global commands ───────────────────────────────────────
     // ────────────────────────────────────────────────────────────
     context.subscriptions.push(vscode.commands.registerCommand(EELCommandId.Toggle, () => {
-      ELVSCodeUtils.prototype.updateGlobalSetting('errorLens.enabled', !$config.enabled);
+      ELVSCodeUtils.prototype.updateGlobalSetting('fd.errorLens.enabled', !$config.enabled);
     }));
     context.subscriptions.push(vscode.commands.registerCommand(EELCommandId.ToggleError, () => {
       this.toggleEnabledLevels('error', $config.enabledDiagnosticLevels);
@@ -548,7 +548,7 @@ export class ELCommands {
       this.toggleEnabledLevels('hint', $config.enabledDiagnosticLevels);
     }));
     context.subscriptions.push(vscode.commands.registerCommand(EELCommandId.ToggleInlineMessage, () => {
-      ELVSCodeUtils.prototype.toggleGlobalBooleanSetting('errorLens.messageEnabled');
+      ELVSCodeUtils.prototype.toggleGlobalBooleanSetting('fd.errorLens.messageEnabled');
     }));
     context.subscriptions.push(vscode.commands.registerCommand(EELCommandId.ToggleWorkspace, this.toggleWorkspaceCommand));
     context.subscriptions.push(vscode.commands.registerCommand(EELCommandId.FindLinterRuleDefinition, this.findLinterRuleDefinitionCommand));

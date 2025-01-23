@@ -58,7 +58,7 @@ export class IndentRainbow {
    * If the configuration is not set, it defaults to "rgba(128,32,32,0.3)".
    */
   protected static error_color =
-    vscode.workspace.getConfiguration("indentRainbow")["errorColor"] ||
+    vscode.workspace.getConfiguration("fd.indentRainbow")["errorColor"] ||
     "rgba(128,32,32,0.3)";
 
   /**
@@ -79,7 +79,7 @@ export class IndentRainbow {
    * If the "tabmixColor" setting is not defined, it defaults to an empty string.
    */
   protected static tabmix_color =
-    vscode.workspace.getConfiguration("indentRainbow")["tabmixColor"] || "";
+    vscode.workspace.getConfiguration("fd.indentRainbow")["tabmixColor"] || "";
 
   /**
    * A static property that holds a `TextEditorDecorationType` instance if `tabmix_color` is not an empty string.
@@ -99,7 +99,7 @@ export class IndentRainbow {
    * of the user's workspace settings. If no patterns are configured, an empty array is used by default.
    */
   protected static ignoreLinePatterns =
-    vscode.workspace.getConfiguration("indentRainbow")[
+    vscode.workspace.getConfiguration("fd.indentRainbow")[
       "ignoreLinePatterns"
     ] || [];
 
@@ -112,7 +112,7 @@ export class IndentRainbow {
    * to `false`.
    */
   protected static colorOnWhiteSpaceOnly =
-    vscode.workspace.getConfiguration("indentRainbow")[
+    vscode.workspace.getConfiguration("fd.indentRainbow")[
       "colorOnWhiteSpaceOnly"
     ] || false;
 
@@ -124,7 +124,7 @@ export class IndentRainbow {
    * it defaults to "classic".
    */
   protected static indicatorStyle =
-    vscode.workspace.getConfiguration("indentRainbow")["indicatorStyle"] ||
+    vscode.workspace.getConfiguration("fd.indentRainbow")["indicatorStyle"] ||
     "classic";
 
   /**
@@ -133,7 +133,7 @@ export class IndentRainbow {
    * value is not set, it defaults to 1.
    */
   protected static lightIndicatorStyleLineWidth =
-    vscode.workspace.getConfiguration("indentRainbow")[
+    vscode.workspace.getConfiguration("fd.indentRainbow")[
       "lightIndicatorStyleLineWidth"
     ] || 1;
 
@@ -149,7 +149,7 @@ export class IndentRainbow {
    * - "rgba(255,127,255,0.07)" (light pink)
    * - "rgba(79,236,236,0.07)" (light cyan)
    */
-  protected static colors = vscode.workspace.getConfiguration("indentRainbow")[
+  protected static colors = vscode.workspace.getConfiguration("fd.indentRainbow")[
     "colors"
   ] || [
     "rgba(255,255,64,0.07)",
@@ -273,7 +273,7 @@ export class IndentRainbow {
   
       function indentConfig() {
         var skiplang =
-          vscode.workspace.getConfiguration("indentRainbow")[
+          vscode.workspace.getConfiguration("fd.indentRainbow")[
             "ignoreErrorLanguages"
           ] || [];
         IndentRainbow.skipAllErrors = false;
@@ -291,11 +291,11 @@ export class IndentRainbow {
         if (IndentRainbow.activeEditor) {
           if (IndentRainbow.currentLanguageId !== IndentRainbow.activeEditor.document.languageId) {
             var inclang =
-              vscode.workspace.getConfiguration("indentRainbow")[
+              vscode.workspace.getConfiguration("fd.indentRainbow")[
                 "includedLanguages"
               ] || [];
             var exclang =
-              vscode.workspace.getConfiguration("indentRainbow")[
+              vscode.workspace.getConfiguration("fd.indentRainbow")[
                 "excludedLanguages"
               ] || [];
   
@@ -348,12 +348,14 @@ export class IndentRainbow {
           IndentRainbow.tabmix_decoration_type && IndentRainbow.tabmix_decoration_type.dispose();
         });
       }
+      disableFeatures();
 
       function enableFeatures() {
         vscode.commands.registerCommand("flawuldragon.indentRainbow.activate", () => {
           updateDecorations();
         });
       }
+      enableFeatures();
   
       function updateDecorations() {
         if (!IndentRainbow.activeEditor) {

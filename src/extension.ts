@@ -13,7 +13,6 @@ import { Takeabreak } from './@takeabreak/Takeabreak.js';
 import { activate as chActivate, deactivate as chDeactivate } from './@colorhighlight/main.js';
 
 const vanilla = new Vanilla();
-// const vanillaExtInt = new VExtensionIntelligence();
 const jetbrainsmono = new JetbrainsMono();
 const filesize = new FileSize();
 const todohighlight = new TodoHighlight();
@@ -50,7 +49,6 @@ export function activate(context: vscode.ExtensionContext) {
     bracketGuides.bracketGuides_activate(context);
     errorLens.errorLens_activate(context);
     takeabreak.takeabreak_activate(context);
-    // experimental - colorHighlight
     chActivate(context);
   } catch (error) {
     console.log('Flawuldragon Core Hub - Error: ' + error);
@@ -83,7 +81,6 @@ export function deactivate(context: vscode.ExtensionContext) {
   bracketGuides.bracketGuides_desactivate();
   errorLens.errorLens_desactivate();
   takeabreak.takeabreak_desactivate();
-  // experimental - colorHighlight
   chDeactivate();
 }
 

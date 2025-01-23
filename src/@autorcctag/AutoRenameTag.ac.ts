@@ -298,7 +298,7 @@ export class AutoRenameTag {
     async context => {
       try {
         vscode.workspace
-          .getConfiguration('auto-rename-tag')
+          .getConfiguration('fd.auto-rename-tag')
           .get('activationOnLanguage');
         const isEnabled = (document: vscode.TextDocument | undefined) => {
           if (!document) {
@@ -321,7 +321,7 @@ export class AutoRenameTag {
           }
 
           const config = vscode.workspace.getConfiguration(
-            'auto-rename-tag',
+            'fd.auto-rename-tag',
             document.uri
           );
 
@@ -331,7 +331,7 @@ export class AutoRenameTag {
         context.subscriptions.push(
           vscode.workspace.onDidChangeConfiguration(event => {
             // purges cache for `vscode.workspace.getConfiguration`
-            if (!event.affectsConfiguration('auto-rename-tag')) {
+            if (!event.affectsConfiguration('fd.auto-rename-tag')) {
               return;
             }
           })
