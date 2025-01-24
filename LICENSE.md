@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/documentation/markdown/cabecalholicensev5.svg" alt="Cabecalho HN License v5"/>
+  <img src="assets/documentation/markdown/cabecalholicensev5.svg" alt="Humbanew License Header v5" />
 
 </div>
 
@@ -34,9 +34,9 @@ _Digital Desolution_ and _Digital Desolution Plus_ text fonts designed by **Hale
 The text fonts _Space Grotesk, Space Mono, Quicksand_ made available open-source by **Google**.<br>
 The text font _Heist_ designed by **Nyla Api**, and all rights reserved by the author, under commercial license and all topics mentioned above.
 
-## C. Flawuldragon Annex - On the incorporations of third party projects and their terms of service and license associated
+## C. Flawuldragon Notice License Annex - On the incorporations of third party projects and their terms of service and license associated
 
-Below is the table with all projects incorporated into the Flawuldragon project and their respective market and license pages.All copyright is attributed to the original creators of the projects.
+Below is the table with all projects incorporated into the Flawuldragon project and their respective market and license pages. All copyright is attributed to the original creators of the projects.
 
   | Third Party Projects | Publisher | Marketplace Page | License Terms |
   |----|----|----|----|
@@ -54,6 +54,7 @@ Below is the table with all projects incorporated into the Flawuldragon project 
   | ErrorLens Alt | Phil Hindle | [Project Page](https://marketplace.visualstudio.com/items/PhilHindle.errorlens) | [License Page](https://marketplace.visualstudio.com/items/PhilHindle.errorlens/license) |
   | Filesize | Wei_ds | [Project Page](https://marketplace.visualstudio.com/items/wei_ds.filesize) | [License Page](https://marketplace.visualstudio.com/items/wei_ds.filesize/license) |
   | Fluent Icons | Miguel Solorio | [Project Page](https://marketplace.visualstudio.com/items/miguelsolorio.fluent-icons) | [License Page](https://marketplace.visualstudio.com/items/miguelsolorio.fluent-icons/license) |
+  | HTML CSS Support | ecmel | [Project Page](https://marketplace.visualstudio.com/items/ecmel.vscode-html-css) | [License Page](https://marketplace.visualstudio.com/items/ecmel.vscode-html-css/license) |
   | Indent Rainbow | oderwat | [Project Page](https://marketplace.visualstudio.com/items/oderwat.indent-rainbow) | [License Page](https://marketplace.visualstudio.com/items/oderwat.indent-rainbow/license) |
   | Jetbrains Mono Font Pack | Narasima Pandiyan | [Project Page](https://marketplace.visualstudio.com/items/NarasimaPandiyan.jetbrainsmono) | [License Page](https://marketplace.visualstudio.com/items/NarasimaPandiyan.jetbrainsmono/license) |
   | Jetbrains Icons Pack | Chad Adams | [Project Page](https://marketplace.visualstudio.com/items/chadalen.vscode-jetbrains-icon-theme) | [License Page](https://marketplace.visualstudio.com/items/chadalen.vscode-jetbrains-icon-theme/license) |

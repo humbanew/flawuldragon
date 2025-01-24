@@ -30,7 +30,7 @@
     "vsc-publish": "npx vsce publish",
     "vsc-help": "npx vsce help",
     "compile": "tsc -p ./",
-    "compile-babel": "babel",
+    "esbabel": "babel --production --out-dir ./dist ./src",
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
@@ -71,43 +71,43 @@
       {
         "id": "2",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Advanced Circuits ■ Bluloco Highlight",
+        "label": "Flawuldragon - Advanced Circuits | Bluloco Highlight",
         "path": "./themes/dark/advanced_circuits/advanced_circuits_bluloco_highlight-color-theme.json"
       },
       {
         "id": "3",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Advanced Circuits ■ Bluloco Italic Highlight",
+        "label": "Flawuldragon - Advanced Circuits | Bluloco Italic Highlight",
         "path": "./themes/dark/advanced_circuits/advanced_circuits_bluloco_italic_highlight-color-theme.json"
       },
       {
         "id": "4",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Advanced Circuits ■ Dracula Highlight",
+        "label": "Flawuldragon - Advanced Circuits | Dracula Highlight",
         "path": "./themes/dark/advanced_circuits/advanced_circuits_dracula_highlight-color-theme.json"
       },
       {
         "id": "5",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Advanced Circuits ■ Dracula Soft Highlight",
+        "label": "Flawuldragon - Advanced Circuits | Dracula Soft Highlight",
         "path": "./themes/dark/advanced_circuits/advanced_circuits_dracula_soft_highlight-color-theme.json"
       },
       {
         "id": "6",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Advanced Circuits ■ Monokai Dimmed Highlight",
+        "label": "Flawuldragon - Advanced Circuits | Monokai Dimmed Highlight",
         "path": "./themes/dark/advanced_circuits/advanced_circuits_monokai_dimmed_highlight-color-theme.json"
       },
       {
         "id": "7",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Advanced Circuits ■ One Dark Highlight",
+        "label": "Flawuldragon - Advanced Circuits | One Dark Highlight",
         "path": "./themes/dark/advanced_circuits/advanced_circuits_onedark_highlight-color-theme.json"
       },
       {
         "id": "8",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Advanced Circuits ■ One Dark Vivid Highlight",
+        "label": "Flawuldragon - Advanced Circuits | One Dark Vivid Highlight",
         "path": "./themes/dark/advanced_circuits/advanced_circuits_onedark_vivid_highlight-color-theme.json"
       },
       {
@@ -119,43 +119,43 @@
       {
         "id": "10",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Blueprint Paper ■ Bluloco Highlight",
+        "label": "Flawuldragon - Blueprint Paper | Bluloco Highlight",
         "path": "./themes/dark/blueprint_paper/blueprint_paper_bluloco_highlight-color-theme.json"
       },
       {
         "id": "11",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Blueprint Paper ■ Bluloco Italic Highlight",
+        "label": "Flawuldragon - Blueprint Paper | Bluloco Italic Highlight",
         "path": "./themes/dark/blueprint_paper/blueprint_paper_bluloco_italic_highlight-color-theme.json"
       },
       {
         "id": "12",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Blueprint Paper ■ Dracula Highlight",
+        "label": "Flawuldragon - Blueprint Paper | Dracula Highlight",
         "path": "./themes/dark/blueprint_paper/blueprint_paper_dracula_highlight-color-theme.json"
       },
       {
         "id": "13",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Blueprint Paper ■ Dracula Soft Highlight",
+        "label": "Flawuldragon - Blueprint Paper | Dracula Soft Highlight",
         "path": "./themes/dark/blueprint_paper/blueprint_paper_dracula_soft_highlight-color-theme.json"
       },
       {
         "id": "14",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Blueprint Paper ■ Monokai Dimmed Highlight",
+        "label": "Flawuldragon - Blueprint Paper | Monokai Dimmed Highlight",
         "path": "./themes/dark/blueprint_paper/blueprint_paper_monokai_dimmed_highlight-color-theme.json"
       },
       {
         "id": "15",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Blueprint Paper ■ One Dark Highlight",
+        "label": "Flawuldragon - Blueprint Paper | One Dark Highlight",
         "path": "./themes/dark/blueprint_paper/blueprint_paper_onedark_highlight-color-theme.json"
       },
       {
         "id": "16",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Blueprint Paper ■ One Dark Vivid Highlight",
+        "label": "Flawuldragon - Blueprint Paper | One Dark Vivid Highlight",
         "path": "./themes/dark/blueprint_paper/blueprint_paper_onedark_vivid_highlight-color-theme.json"
       },
       {
@@ -167,43 +167,43 @@
       {
         "id": "18",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Highlight",
+        "label": "Flawuldragon - Humba01's Design Style | Bluloco Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_bluloco_highlight-color-theme.json"
       },
       {
         "id": "19",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Italic Highlight",
+        "label": "Flawuldragon - Humba01's Design Style | Bluloco Italic Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_bluloco_italic_highlight-color-theme.json"
       },
       {
         "id": "20",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Highlight",
+        "label": "Flawuldragon - Humba01's Design Style | Dracula Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_dracula_highlight-color-theme.json"
       },
       {
         "id": "21",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Soft Highlight",
+        "label": "Flawuldragon - Humba01's Design Style | Dracula Soft Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_dracula_soft_highlight-color-theme.json"
       },
       {
         "id": "22",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Humba01's Design Style ■ Monokai Dimmed Highlight",
+        "label": "Flawuldragon - Humba01's Design Style | Monokai Dimmed Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_monokai_dimmed_highlight-color-theme.json"
       },
       {
         "id": "23",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Highlight",
+        "label": "Flawuldragon - Humba01's Design Style | One Dark Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_onedark_highlight-color-theme.json"
       },
       {
         "id": "24",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Vivid Highlight",
+        "label": "Flawuldragon - Humba01's Design Style | One Dark Vivid Highlight",
         "path": "./themes/dark/humba01_design_style/humba01_design_style_onedark_vivid_highlight-color-theme.json"
       },
       {
@@ -215,43 +215,43 @@
       {
         "id": "26",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ Bluloco Highlight",
+        "label": "Flawuldragon - Winter Day | Bluloco Highlight",
         "path": "./themes/dark/winter_day/winter_day_bluloco_highlight-color-theme.json"
       },
       {
         "id": "27",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ Bluloco Italic Highlight",
+        "label": "Flawuldragon - Winter Day | Bluloco Italic Highlight",
         "path": "./themes/dark/winter_day/winter_day_bluloco_italic_highlight-color-theme.json"
       },
       {
         "id": "28",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ Dracula Highlight",
+        "label": "Flawuldragon - Winter Day | Dracula Highlight",
         "path": "./themes/dark/winter_day/winter_day_dracula_highlight-color-theme.json"
       },
       {
         "id": "29",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ Dracula Soft Highlight",
+        "label": "Flawuldragon - Winter Day | Dracula Soft Highlight",
         "path": "./themes/dark/winter_day/winter_day_dracula_soft_highlight-color-theme.json"
       },
       {
         "id": "30",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ Monokai Dimmed Highlight",
+        "label": "Flawuldragon - Winter Day | Monokai Dimmed Highlight",
         "path": "./themes/dark/winter_day/winter_day_monokai_dimmed_highlight-color-theme.json"
       },
       {
         "id": "31",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ One Dark Highlight",
+        "label": "Flawuldragon - Winter Day | One Dark Highlight",
         "path": "./themes/dark/winter_day/winter_day_onedark_highlight-color-theme.json"
       },
       {
         "id": "32",
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - Winter Day ■ One Dark Vivid Highlight",
+        "label": "Flawuldragon - Winter Day | One Dark Vivid Highlight",
         "path": "./themes/dark/winter_day/winter_day_onedark_vivid_highlight-color-theme.json"
       },
       {
@@ -263,43 +263,43 @@
       {
         "id": "34",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Advanced Circuits ■ Bluloco Highlight (Light)",
+        "label": "Flawuldragon - Advanced Circuits | Bluloco Highlight (Light)",
         "path": "./themes/light/advanced_circuits/advanced_circuits_bluloco_highlight-light-color-theme.json"
       },
       {
         "id": "35",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Advanced Circuits ■ Bluloco Italic Highlight (Light)",
+        "label": "Flawuldragon - Advanced Circuits | Bluloco Italic Highlight (Light)",
         "path": "./themes/light/advanced_circuits/advanced_circuits_bluloco_italic_highlight-light-color-theme.json"
       },
       {
         "id": "36",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Advanced Circuits ■ Dracula Highlight (Light)",
+        "label": "Flawuldragon - Advanced Circuits | Dracula Highlight (Light)",
         "path": "./themes/light/advanced_circuits/advanced_circuits_dracula_highlight-light-color-theme.json"
       },
       {
         "id": "37",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Advanced Circuits ■ Dracula Soft Highlight (Light)",
+        "label": "Flawuldragon - Advanced Circuits | Dracula Soft Highlight (Light)",
         "path": "./themes/light/advanced_circuits/advanced_circuits_dracula_soft_highlight-light-color-theme.json"
       },
       {
         "id": "38",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Advanced Circuits ■ Monokai Dimmed Highlight (Light)",
+        "label": "Flawuldragon - Advanced Circuits | Monokai Dimmed Highlight (Light)",
         "path": "./themes/light/advanced_circuits/advanced_circuits_monokai_dimmed_highlight-light-color-theme.json"
       },
       {
         "id": "39",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Advanced Circuits ■ One Dark Highlight (Light)",
+        "label": "Flawuldragon - Advanced Circuits | One Dark Highlight (Light)",
         "path": "./themes/light/advanced_circuits/advanced_circuits_onedark_highlight-light-color-theme.json"
       },
       {
         "id": "40",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Advanced Circuits ■ One Dark Vivid Highlight (Light)",
+        "label": "Flawuldragon - Advanced Circuits | One Dark Vivid Highlight (Light)",
         "path": "./themes/light/advanced_circuits/advanced_circuits_onedark_vivid_highlight-light-color-theme.json"
       },
       {
@@ -311,43 +311,43 @@
       {
         "id": "42",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Blueprint Paper ■ Bluloco Highlight (Light)",
+        "label": "Flawuldragon - Blueprint Paper | Bluloco Highlight (Light)",
         "path": "./themes/light/blueprint_paper/blueprint_paper_bluloco_highlight-light-color-theme.json"
       },
       {
         "id": "43",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Blueprint Paper ■ Bluloco Italic Highlight (Light)",
+        "label": "Flawuldragon - Blueprint Paper | Bluloco Italic Highlight (Light)",
         "path": "./themes/light/blueprint_paper/blueprint_paper_bluloco_italic_highlight-light-color-theme.json"
       },
       {
         "id": "44",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Blueprint Paper ■ Dracula Highlight (Light)",
+        "label": "Flawuldragon - Blueprint Paper | Dracula Highlight (Light)",
         "path": "./themes/light/blueprint_paper/blueprint_paper_dracula_highlight-light-color-theme.json"
       },
       {
         "id": "45",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Blueprint Paper ■ Dracula Soft Highlight (Light)",
+        "label": "Flawuldragon - Blueprint Paper | Dracula Soft Highlight (Light)",
         "path": "./themes/light/blueprint_paper/blueprint_paper_dracula_soft_highlight-light-color-theme.json"
       },
       {
         "id": "46",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Blueprint Paper ■ Monokai Dimmed Highlight (Light)",
+        "label": "Flawuldragon - Blueprint Paper | Monokai Dimmed Highlight (Light)",
         "path": "./themes/light/blueprint_paper/blueprint_paper_monokai_dimmed_highlight-light-color-theme.json"
       },
       {
         "id": "47",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Blueprint Paper ■ One Dark Highlight (Light)",
+        "label": "Flawuldragon - Blueprint Paper | One Dark Highlight (Light)",
         "path": "./themes/light/blueprint_paper/blueprint_paper_onedark_highlight-light-color-theme.json"
       },
       {
         "id": "48",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Blueprint Paper ■ One Dark Vivid Highlight (Light)",
+        "label": "Flawuldragon - Blueprint Paper | One Dark Vivid Highlight (Light)",
         "path": "./themes/light/blueprint_paper/blueprint_paper_onedark_vivid_highlight-light-color-theme.json"
       },
       {
@@ -359,43 +359,43 @@
       {
         "id": "50",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Highlight (Light)",
+        "label": "Flawuldragon - Humba01's Design Style | Bluloco Highlight (Light)",
         "path": "./themes/light/humba01_design_style/humba01_design_style_bluloco_highlight-light-color-theme.json"
       },
       {
         "id": "51",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Humba01's Design Style ■ Bluloco Italic Highlight (Light)",
+        "label": "Flawuldragon - Humba01's Design Style | Bluloco Italic Highlight (Light)",
         "path": "./themes/light/humba01_design_style/humba01_design_style_bluloco_italic_highlight-light-color-theme.json"
       },
       {
         "id": "52",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Highlight (Light)",
+        "label": "Flawuldragon - Humba01's Design Style | Dracula Highlight (Light)",
         "path": "./themes/light/humba01_design_style/humba01_design_style_dracula_highlight-light-color-theme.json"
       },
       {
         "id": "53",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Humba01's Design Style ■ Dracula Soft Highlight (Light)",
+        "label": "Flawuldragon - Humba01's Design Style | Dracula Soft Highlight (Light)",
         "path": "./themes/light/humba01_design_style/humba01_design_style_dracula_soft_highlight-light-color-theme.json"
       },
       {
         "id": "54",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Humba01's Design Style ■ Monokai Dimmed Highlight (Light)",
+        "label": "Flawuldragon - Humba01's Design Style | Monokai Dimmed Highlight (Light)",
         "path": "./themes/light/humba01_design_style/humba01_design_style_monokai_dimmed_highlight-light-color-theme.json"
       },
       {
         "id": "55",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Highlight (Light)",
+        "label": "Flawuldragon - Humba01's Design Style | One Dark Highlight (Light)",
         "path": "./themes/light/humba01_design_style/humba01_design_style_onedark_highlight-light-color-theme.json"
       },
       {
         "id": "56",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Humba01's Design Style ■ One Dark Vivid Highlight (Light)",
+        "label": "Flawuldragon - Humba01's Design Style | One Dark Vivid Highlight (Light)",
         "path": "./themes/light/humba01_design_style/humba01_design_style_onedark_vivid_highlight-light-color-theme.json"
       },
       {
@@ -407,43 +407,43 @@
       {
         "id": "58",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Winter Day ■ Bluloco Highlight (Light)",
+        "label": "Flawuldragon - Winter Day | Bluloco Highlight (Light)",
         "path": "./themes/light/winter_day/winter_day_bluloco_highlight-light-color-theme.json"
       },
       {
         "id": "59",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Winter Day ■ Bluloco Italic Highlight (Light)",
+        "label": "Flawuldragon - Winter Day | Bluloco Italic Highlight (Light)",
         "path": "./themes/light/winter_day/winter_day_bluloco_italic_highlight-light-color-theme.json"
       },
       {
         "id": "60",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Winter Day ■ Dracula Highlight (Light)",
+        "label": "Flawuldragon - Winter Day | Dracula Highlight (Light)",
         "path": "./themes/light/winter_day/winter_day_dracula_highlight-light-color-theme.json"
       },
       {
         "id": "61",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Winter Day ■ Dracula Soft Highlight (Light)",
+        "label": "Flawuldragon - Winter Day | Dracula Soft Highlight (Light)",
         "path": "./themes/light/winter_day/winter_day_dracula_soft_highlight-light-color-theme.json"
       },
       {
         "id": "62",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Winter Day ■ Monokai Dimmed Highlight (Light)",
+        "label": "Flawuldragon - Winter Day | Monokai Dimmed Highlight (Light)",
         "path": "./themes/light/winter_day/winter_day_monokai_dimmed_highlight-light-color-theme.json"
       },
       {
         "id": "63",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Winter Day ■ One Dark Highlight (Light)",
+        "label": "Flawuldragon - Winter Day | One Dark Highlight (Light)",
         "path": "./themes/light/winter_day/winter_day_onedark_highlight-light-color-theme.json"
       },
       {
         "id": "64",
         "uiTheme": "vs",
-        "label": "Flawuldragon - Winter Day ■ One Dark Vivid Highlight (Light)",
+        "label": "Flawuldragon - Winter Day | One Dark Vivid Highlight (Light)",
         "path": "./themes/light/winter_day/winter_day_onedark_vivid_highlight-light-color-theme.json"
       },
       {
@@ -456,134 +456,134 @@
     "iconThemes": [
       {
         "id": "1",
-        "label": "Jetbrains Icons OldUI Dark",
+        "label": "Flawuldragon - Jetbrains Icons OldUI Dark",
         "path": "./themes/icons/jetbrains/v1/dark/theme.json"
       },
       {
         "id": "2",
-        "label": "Jetbrains Icons ExpUI 2023+ Auto",
+        "label": "Flawuldragon - Jetbrains Icons ExpUI 2023+ Auto",
         "path": "./themes/icons/jetbrains/2023/auto/theme.json"
       },
       {
         "id": "3",
-        "label": "Jetbrains Icons ExpUI 2023+ Dark",
+        "label": "Flawuldragon - Jetbrains Icons ExpUI 2023+ Dark",
         "path": "./themes/icons/jetbrains/2023/dark/theme.json"
       },
       {
         "id": "4",
-        "label": "Jetbrains Icons ExpUI 2023+ Light",
+        "label": "Flawuldragon - Jetbrains Icons ExpUI 2023+ Light",
         "path": "./themes/icons/jetbrains/2023/light/theme.json"
       },
       {
         "id": "5",
-        "label": "Visual Studio Classic Icons 2012",
+        "label": "Flawuldragon - Visual Studio Classic Icons 2012",
         "path": "./themes/icons/vsclassic/theme.json"
       },
       {
         "id": "6",
-        "label": "Visual Studio Modern v1 Icons",
+        "label": "Flawuldragon - Visual Studio Modern v1 Icons",
         "path": "./themes/icons/vsmodern/v1/theme.json"
       },
       {
         "id": "7",
-        "label": "Visual Studio Modern v2 Icons",
+        "label": "Flawuldragon - Visual Studio Modern v2 Icons",
         "path": "./themes/icons/vsmodern/v2/theme.json"
       },
       {
         "id": "8",
-        "label": "Minecraft Datapack Icons Auto",
+        "label": "Flawuldragon - Minecraft Datapack Icons Auto",
         "path": "./themes/icons/mcdpicons/mc-dp-icon-theme.json"
       },
       {
         "id": "9",
-        "label": "Minecraft Datapack Icons Default",
+        "label": "Flawuldragon - Minecraft Datapack Icons Default",
         "path": "./themes/icons/mcdpicons/mc-dp-icon-theme-default.json"
       },
       {
         "id": "10",
-        "label": "Minecraft Datapack Icons Xmas",
+        "label": "Flawuldragon - Minecraft Datapack Icons Xmas",
         "path": "./themes/icons/mcdpicons/mc-dp-icon-theme-xmas.json"
       },
       {
         "id": "11",
-        "label": "Visual Studio Modern 2022 Icons",
+        "label": "Flawuldragon - Visual Studio Modern 2022 Icons",
         "path": "./themes/icons/vs2022/theme.json"
       },
       {
         "id": "12",
-        "label": "Symbols Icons",
+        "label": "Flawuldragon - Symbols Icons",
         "path": "./themes/icons/symbols/theme.json"
       },
       {
         "id": "13",
-        "label": "Charmed Icons",
+        "label": "Flawuldragon - Charmed Icons",
         "path": "./themes/icons/charmed/theme.json"
       },
       {
         "id": "14",
-        "label": "Visual Studio Code Great Icons",
+        "label": "Flawuldragon - Visual Studio Code Great Icons",
         "path": "./themes/icons/vscgreaticons/theme.json"
       },
       {
         "id": "15",
-        "label": "Visual Studio Code Nomo Dark Icons Extended",
+        "label": "Flawuldragon - Visual Studio Code Nomo Dark Icons Extended",
         "path": "./themes/icons/vscnomodark/theme.json"
       },
       {
         "id": "16",
-        "label": "Sakai Icons Dark",
+        "label": "Flawuldragon - Sakai Icons Dark",
         "path": "./themes/icons/sakaicons/sakai-icons-theme.json"
       },
       {
         "id": "17",
-        "label": "Sakai Icons Light",
+        "label": "Flawuldragon - Sakai Icons Light",
         "path": "./themes/icons/sakaicons/sakai-icons-light-theme.json"
       },
       {
         "id": "18",
-        "label": "Sakai Icons Expanded",
+        "label": "Flawuldragon - Sakai Icons Expanded",
         "path": "./themes/icons/sakaicons/sakai-icons-expanded-theme.json"
       },
       {
         "id": "19",
-        "label": "Visual Studio Code Nomo Dark MacOS Icons",
+        "label": "Flawuldragon - Visual Studio Code Nomo Dark MacOS Icons",
         "path": "./themes/icons/vscnomodarkmac/theme.json"
       },
       {
         "id": "20",
-        "label": "Visual Studio Code Nomo Light Icons Extended",
+        "label": "Flawuldragon - Visual Studio Code Nomo Light Icons Extended",
         "path": "./themes/icons/vscnomolight/theme.json"
       },
       {
         "id": "21",
-        "label": "Visual Studio Code Icons",
+        "label": "Flawuldragon - Visual Studio Code Icons",
         "path": "./themes/icons/vsicons/theme.json"
       },
       {
         "id": "22",
-        "label": "Visual Studio Code MacOS Icons",
+        "label": "Flawuldragon - Visual Studio Code MacOS Icons",
         "path": "./themes/icons/vscmacos/theme.json"
       }
     ],
     "productIconThemes": [
       {
         "id": "1",
-        "label": "Fluent Product Icons based by VSCode Icons",
+        "label": "Flawuldragon - Fluent Product Icons based by VSCode Icons",
         "path": "./themes/producticons/fluenticons/theme.json"
       },
       {
         "id": "2",
-        "label": "Jetbrains IDEA Product Icons",
+        "label": "Flawuldragon - Jetbrains IDEA Product Icons",
         "path": "./themes/producticons/jetbrainsideaicons/theme.json"
       },
       {
         "id": "3",
-        "label": "Carbon Product Icons",
+        "label": "Flawuldragon - Carbon Product Icons",
         "path": "./themes/producticons/carbonicons/theme.json"
       },
       {
         "id": "4",
-        "label": "Material Iconic Product Icons",
+        "label": "Flawuldragon - Material Iconic Product Icons",
         "path": "./themes/producticons/materialiconicicons/theme.json"
       }
     ],
@@ -814,6 +814,16 @@
         "title": "-Take a Break- Show or Hide the Take a break status bar item",
         "description": "Show or Hide the Take a break status bar item",
         "enablement": "dev"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vscode-html-css.validate",
+        "title": "-HTML CSS Support- CSS: Validate class selectors"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vscode-html-css.clear",
+        "title": "-HTML CSS Support- CSS: Clear style sheets cache"
       }
     ],
     "icons": {
@@ -1855,6 +1865,37 @@
       },
       {
         "order": 4,
+        "title": "HTML CSS Support",
+        "properties": {
+          "fd.css.enabledLanguages": {
+            "type": "array",
+            "scope": "application",
+            "description": "List of languages which suggestions are desired.",
+            "default": [
+              "html"
+            ]
+          },
+          "fd.css.styleSheets": {
+            "type": "array",
+            "scope": "resource",
+            "description": "List of local or remote style sheets for suggestions.",
+            "default": []
+          },
+          "fd.css.autoValidation": {
+            "type": "string",
+            "scope": "resource",
+            "description": "When to validate class selectors.",
+            "default": "Never",
+            "enum": [
+              "Never",
+              "Save",
+              "Always"
+            ]
+          }
+        }
+      },
+      {
+        "order": 5,
         "title": "Indent Rainbow",
         "properties": {
           "fd.indentRainbow.includedLanguages": {
@@ -1931,7 +1972,7 @@
         }
       },
       {
-        "order": 5,
+        "order": 6,
         "title": "Pomodoro Clock",
         "properties": {
           "fd.pomodoroClock.workTime": {
@@ -1962,7 +2003,7 @@
         }
       },
       {
-        "order": 6,
+        "order": 7,
         "title": "Take a Break",
         "properties": {
           "fd.takeabreak.interval": {
@@ -1973,12 +2014,23 @@
         }
       },
       {
-        "order": 7,
+        "order": 8,
         "title": "Theme Switch",
-        "properties": {}
+        "properties": {
+          "fd.themeswitch.priority": {
+            "type": "number",
+            "description": "The priority for the statusbar toggle",
+            "default": 0
+          },
+          "fd.themeswitch.toggleDefaultDark": {
+            "type": "boolean",
+            "description": "If your preferred light/dark theme is not the current theme and the toggle is triggered, switch to your dark theme",
+            "default": true
+          }
+        }
       },
       {
-        "order": 8,
+        "order": 9,
         "title": "Todo Highlight",
         "properties": {
           "fd.todohighlight.isEnable": {
@@ -2101,22 +2153,6 @@
             "type": "number",
             "default": 5120,
             "description": "Max files for searching"
-          }
-        }
-      },
-      {
-        "order": 7,
-        "title": "Theme Switch",
-        "properties": {
-          "themeswitch.priority": {
-            "type": "number",
-            "description": "The priority for the statusbar toggle",
-            "default": 0
-          },
-          "themeswitch.toggleDefaultDark": {
-            "type": "boolean",
-            "description": "If your preferred light/dark theme is not the current theme and the toggle is triggered, switch to your dark theme",
-            "default": true
           }
         }
       }
@@ -2515,6 +2551,29 @@
     "Flawuldragon",
     "Humbanew"
   ],
+  "dependencies": {
+    "babel": "^5.8.38",
+    "babel-preset-minify": "^0.5.2",
+    "babel-preset-typescript": "^7.0.0-alpha.19",
+    "brotli-size": "^4.0.0",
+    "code-generator": "^1.0.7",
+    "color": "^1.0.3",
+    "color-name": "^1.1.4",
+    "electron": "^33.2.0",
+    "file-importer": "^1.0.0",
+    "file-url": "^3.0.0",
+    "gzip-size": "^7.0.0",
+    "image-size": "^1.1.1",
+    "lodash": "^4.17.21",
+    "mime": "^4.0.4",
+    "node-fetch": "^2.0.0",
+    "source-map-support": "^0.5.21",
+    "uuid": "^8.3.2",
+    "vscode-languageclient": "^7.0.0",
+    "vscode-languageserver": "^7.0.0",
+    "vscode-languageserver-textdocument": "^1.0.4",
+    "yo": "^5.0.0"
+  },
   "devDependencies": {
     "@actions/core": "^1.10.1",
     "@babel/code-frame": "^7.16.0",
@@ -2543,6 +2602,7 @@
     "fs-extra": "^10.0.1",
     "glob": "^8.0.3",
     "inly": "^4.0.8",
+    "line-column": "^1.0.2",
     "merge-options": "^3.0.4",
     "mocha": "^10.0.0",
     "npm-force-resolutions": "0.0.10",
@@ -2558,29 +2618,6 @@
     "tsx": "^3.13.0",
     "typescript": "^5.7.2",
     "vscode-test": "^1.5.0"
-  },
-  "dependencies": {
-    "babel": "^5.8.38",
-    "babel-preset-minify": "^0.5.2",
-    "babel-preset-typescript": "^7.0.0-alpha.19",
-    "brotli-size": "^4.0.0",
-    "code-generator": "^1.0.7",
-    "color": "^1.0.3",
-    "color-name": "^1.1.4",
-    "electron": "^33.2.0",
-    "file-importer": "^1.0.0",
-    "file-url": "^3.0.0",
-    "gzip-size": "^7.0.0",
-    "image-size": "^1.1.1",
-    "lodash": "^4.17.21",
-    "mime": "^4.0.4",
-    "node-fetch": "^2.0.0",
-    "source-map-support": "^0.5.21",
-    "uuid": "^8.3.2",
-    "vscode-languageclient": "^7.0.0",
-    "vscode-languageserver": "^7.0.0",
-    "vscode-languageserver-textdocument": "^1.0.4",
-    "yo": "^5.0.0"
   },
   "resolutions": {
     "minimist": "^1.2.5"

@@ -106,3 +106,6 @@
 [submodule "updates/polacode"]
 	path = updates/polacode
 	url = https://github.com/octref/polacode.git
+[submodule "updates/html-css-support"]
+	path = updates/html-css-support
+	url = git@github.com:ecmel/vscode-html-css.git

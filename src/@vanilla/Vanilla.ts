@@ -4,6 +4,8 @@ import * as vscode from 'vscode';
 import { IVFDInterruptor } from './defines';
 import { constants } from '../constants.js';
 import './flwdnDts.json';
+import { activate, deactivate } from '../extension';
+import { activate as WebActivate, deactivate as WebDeactivate } from '../extension-web';
 
 /**
  * Represents the Vanilla class which is responsible for managing the Flawuldragon extension's status bar item.
@@ -22,7 +24,7 @@ export class Vanilla {
    * A status bar item for the Flawuldragon extension.
    * This status bar item is aligned to the left with a priority of 100.
    */
-  protected flawuldragonStatusBar: vscode.StatusBarItem =
+  public flawuldragonStatusBar: vscode.StatusBarItem =
     constants.statusBar.positions.posA;
 
   /**
@@ -121,33 +123,6 @@ export class Vanilla {
     this.flawuldragonStatusBar.tooltip = 'Click to view Flawuldragon Notes';
     this.flawuldragonStatusBar.show();
     context.subscriptions.push(this.flawuldragonStatusBar);
-  }
-
-  /**
-   * Checks if the Flawuldragon extension is enabled in the settings.
-   * If the extension is disabled, it logs a warning message to the console,
-   * shows a warning message to the user, and updates the status bar to indicate
-   * that the extension is disabled.
-   *
-   * @protected
-   * @returns {void}
-   */
-  protected vanilla_checkingIsOk(): void {
-    // check if the extension is enabled in the settings
-    if (
-      vscode.workspace.getConfiguration('flawuldragon').get('enable') === false
-    ) {
-      console.warn('Flawuldragon is disabled. Enable it in your settings.');
-      vscode.window.showWarningMessage(
-        'Flawuldragon is disabled. Enable it in your settings.'
-      );
-      this.flawuldragonStatusBar.text = `$(flawuldragon-off)`;
-      this.flawuldragonStatusBar.color = 'darkred';
-      this.flawuldragonStatusBar.backgroundColor = new vscode.ThemeColor(
-        'statusBarItem.errorBackground'
-      );
-      return;
-    }
   }
 
   /**
@@ -373,15 +348,14 @@ export class Vanilla {
           sound: 'on'
         });
 
-      this.vanilla_checkingIsOk();
     } catch (error) {
+      this.vanilla_desactivate();
       console.error('Flawuldragon vanilla error: ' + error);
       vscode.window.showErrorMessage(
         'An error occurred while activating the Flawuldragon vanilla features: ' +
           error +
           '. Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)'
       );
-      this.vanilla_desactivate();
     } finally {
     }
   }
@@ -391,5 +365,37 @@ export class Vanilla {
    */
   public vanilla_desactivate() {
     console.log('Flawuldragon - Vanilla deactivated!');
+
+    vscode.workspace
+      .getConfiguration()
+      .update('editor.inlayHints.enabled', false);
+
+    vscode.workspace
+      .getConfiguration()
+      .update('editor.inlayHints.fontFamily', 'Segoe UI');
+
+    vscode.workspace
+      .getConfiguration()
+      .update('editor.inlayHints.fontSize', 12);
+
+    vscode.workspace
+      .getConfiguration()
+      .update('accessibility.signals.lineHasError', { 
+        sound: 'off' 
+      });
+
+    vscode.workspace
+      .getConfiguration()
+      .update('accessibility.signals.lineHasWarning', {
+        sound: 'off',
+        announcement: 'auto'
+      });
+
+    vscode.workspace
+      .getConfiguration()
+      .update('accessibility.signals.lineHasInlineSuggestion', {
+        sound: 'off'
+      });
+
   }
 }

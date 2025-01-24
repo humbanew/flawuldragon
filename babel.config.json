@@ -7,5 +7,12 @@
   "sourceRoot": "./src",
   "compact": true,
   "plugins": [],
-  "code": true
+  "env": {
+    "production": {
+      "presets": [
+        "minify",
+        "typescript"
+      ]
+    }
+  }
 }
