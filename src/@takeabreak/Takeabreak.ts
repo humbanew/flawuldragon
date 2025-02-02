@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { Vanilla } from '../@vanilla/Vanilla';
+import { constants } from '../constants';
 
 /**
  * The `Takeabreak` class provides functionality to remind users to take breaks at regular intervals.
@@ -17,18 +18,6 @@ export class Takeabreak {
    * This property is likely used to manage repeated actions at specified intervals.
    */
   protected interval: number | any = vscode.workspace.getConfiguration('fd.takeabreak').get('interval');
-
-  /**
-   * A status bar item that displays interval information in the Visual Studio Code status bar.
-   * This item is protected and can be accessed or modified by subclasses.
-   */
-  protected statusBarInterval: vscode.StatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 90);
-
-  /**
-   * Command identifier for showing or hiding the status bar in the Takeabreak UI.
-   * This command is used to toggle the visibility of the status bar in the application.
-   */
-  protected statusBarShowOrHideCmd = "flawuldragon.takeabreak.ui.interruptorStatusBar";
 
   /**
    * @param {vscode.ExtensionContext} context - The context object representing the state of the extension.
@@ -80,9 +69,9 @@ export class Takeabreak {
 
       /**
        * Starts showing the reminder message every 20 seconds.
-       * @param {boolean} showNotification - Whether to show a notification when starting the reminder.
+       * @param showNotification - Whether to show a notification when starting the reminder.
        */
-      let startShowingTheReminder = (showNotification) => {
+      let startShowingTheReminder = (showNotification: boolean) => {
         // If the reminder is already active, display a message and return.
         if (this.interval) {
           vscode.window.showInformationMessage("Take a break is already doing its job! You're safe.");
@@ -115,11 +104,11 @@ export class Takeabreak {
       startShowingTheReminder(false);
 
       // Register commands for starting and stopping the reminder.
-      let startCommand = vscode.commands.registerCommand('flawuldragon.takeabreak.Take a break: Start', () => {
+      let startCommand = vscode.commands.registerCommand(constants.commands.takeabreak.release.fdTakeABreakStart, () => {
         startShowingTheReminder(true);
       });
 
-      let stopCommand = vscode.commands.registerCommand('flawuldragon.takeabreak.Take a break: Stop', () => {
+      let stopCommand = vscode.commands.registerCommand(constants.commands.takeabreak.release.fdTakeABreakStop, () => {
         stopShowingTheReminder();
       });
 

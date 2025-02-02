@@ -2,7 +2,7 @@
   "name": "flawuldragon",
   "displayName": "Flawuldragon",
   "description": "Humbanew Official Development Extension",
-  "version": "1.0.0-btb",
+  "version": "1.0.0-rc1",
   "icon": "assets/icon.png",
   "readme": "README.md",
   "publisher": "humbanew",
@@ -54,7 +54,12 @@
     "virtualWorkspaces": true
   },
   "categories": [
-    "Other"
+    "Other",
+    "Programming Languages",
+    "Snippets",
+    "Themes",
+    "Visualization",
+    "Extension Packs"
   ],
   "activationEvents": [
     "onStartupFinished",
@@ -592,132 +597,213 @@
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.extension.infos",
-        "title": "-Flawuldragon Native- Show the Flawuldragon Notes"
+        "title": "-Flawuldragon Native- Show the Flawuldragon Notes",
+        "description": "Show the notes of Flawuldragon extension"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.vanillaDateTime.americanFormat",
-        "title": "-Flawuldragon Native- American Format for Vanilla Date and Time"
+        "title": "-Flawuldragon Native- American Format for Vanilla Date and Time",
+        "description": "Change the date and time format to American format"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.vanillaDateTime.12hFormat",
-        "title": "-Flawuldragon Native- 12h Format for Vanilla Date and Time"
+        "title": "-Flawuldragon Native- 12h Format for Vanilla Date and Time",
+        "description": "Change the date and time format to 12h format"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.vanillaDateTime.invertProps",
-        "title": "-Flawuldragon Native- Invert Props for Vanilla Date and Time"
+        "title": "-Flawuldragon Native- Invert Props for Vanilla Date and Time",
+        "description": "Invert the props of the date and time"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vanillaDateTime.switchVisibilityDateOrTime",
+        "title": "-Flawuldragon Native- Switch Visibility of Date or Time for Vanilla Date and Time",
+        "description": "Switch the visibility of date or time"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vanillaDateTime.showSeconds",
+        "title": "-Flawuldragon Native- Show Seconds for Vanilla Date and Time",
+        "description": "Show seconds in the date and time"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vanillaDateTime.showDayOfWeek",
+        "title": "-Flawuldragon Native- Show Day of Week for Vanilla Date and Time",
+        "description": "Show day of week in the date and time"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.enabled",
+        "title": "-Flawuldragon Native ※ Accessibility- Enable Inlay Hints in editor",
+        "description": "Enable Inlay Hints in editor"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.fontFamily",
+        "title": "-Flawuldragon Native ※ Accessibility- Change the font family of Inlay Hints in editor",
+        "description": "Change the font family of Inlay Hints in editor"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.fontSize",
+        "title": "-Flawuldragon Native ※ Accessibility- Change the font size of Inlay Hints in editor",
+        "description": "Change the font size of Inlay Hints in editor"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasError",
+        "title": "-Flawuldragon Native ※ Accessibility- Change the signal of line has error in editor",
+        "description": "Change the signal of line has error in editor"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasWarning",
+        "title": "-Flawuldragon Native ※ Accessibility- Change the signal of line has warning in editor",
+        "description": "Change the signal of line has warning in editor"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasInlineSuggestion",
+        "title": "-Flawuldragon Native ※ Accessibility- Change the signal of line has inline suggestion in editor",
+        "description": "Change the signal of line has inline suggestion in editor"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.vanillaDateTime.ui.interruptorStatusBar",
-        "title": "-Flawuldragon Native- Show or Hide the vanilla date and time status bar item"
+        "title": "-Flawuldragon Native- Show or Hide the vanilla date and time status bar item",
+        "description": "Show or Hide the vanilla date and time status bar item"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.jetbrainsmonofont.activate",
-        "title": "-Jetbrains Mono Font- Activate JetBrains Mono Font Pack for Flawuldragon"
+        "title": "-Jetbrains Mono Font- Activate JetBrains Mono Font Pack for Flawuldragon",
+        "description": "Activate JetBrains Mono Font Pack for Flawuldragon"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.jetbrainsmonofont.deactivate",
-        "title": "-Jetbrains Mono Font- Deactivate JetBrains Mono Font for Flawuldragon"
+        "title": "-Jetbrains Mono Font- Deactivate JetBrains Mono Font for Flawuldragon",
+        "description": "Deactivate JetBrains Mono Font Pack for Flawuldragon"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.filesize.toggleFileSizeInfo",
-        "title": "-Filesize- Toggle file size info"
+        "title": "-Filesize- Toggle file size info",
+        "description": "Toggle file size info"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.filesize.ui.interruptorStatusBar",
-        "title": "-Filesize- Show or Hide the file size status bar item"
+        "title": "-Filesize- Show or Hide the file size status bar item",
+        "description": "Show or Hide the file size status bar item"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.todohighlight.toggleHighlight",
-        "title": "-Todo Highlight- Toggle highlight"
+        "title": "-Todo Highlight- Toggle highlight",
+        "description": "Toggle highlight"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.todohighlight.listAnnotations",
-        "title": "-Todo Highlight- List highlighted annotations"
+        "title": "-Todo Highlight- List highlighted annotations",
+        "description": "List highlighted annotations"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.todohighlight.showOutputChannel",
-        "title": "-Todo Highlight- Show a output logs channel"
+        "title": "-Todo Highlight- Show a output logs channel",
+        "description": "Show a output logs channel of todo highlight",
+        "enablement": "dev"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.todohighlight.ui.interruptorStatusBar",
-        "title": "-Todo Highlight- Show or Hide the todo highlight status bar item"
+        "title": "-Todo Highlight- Show or Hide the todo highlight status bar item",
+        "description": "Show or Hide the todo highlight status bar item"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.startPomodoro",
-        "title": "-Pomodoro Clock- Start Pomodoro"
+        "title": "-Pomodoro Clock- Start Pomodoro",
+        "description": "Start a Pomodoro Clock"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.pausePomodoro",
-        "title": "-Pomodoro Clock- Pause Pomodoro"
+        "title": "-Pomodoro Clock- Pause Pomodoro",
+        "description": "Pause the Pomodoro Clock"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.continuePomodoro",
-        "title": "-Pomodoro Clock- Continue Pomodoro"
+        "title": "-Pomodoro Clock- Continue Pomodoro",
+        "description": "Continue the Pomodoro Clock"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.restartPomodoro",
-        "title": "-Pomodoro Clock- Restart Pomodoro"
+        "title": "-Pomodoro Clock- Restart Pomodoro",
+        "description": "Restart the Pomodoro Clock"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.resetPomodoro",
-        "title": "-Pomodoro Clock- Reset Pomodoro"
+        "title": "-Pomodoro Clock- Reset Pomodoro",
+        "description": "Reset the Pomodoro Clock"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown",
-        "title": "-Pomodoro Clock- Toggle Current Pomodoro Countdown"
+        "title": "-Pomodoro Clock- Toggle Current Pomodoro Countdown",
+        "description": "Toggle Current Pomodoro Countdown"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.ui.interruptorClockStatusBar",
-        "title": "-Pomodoro Clock- Show or Hide the Pomodoro Clock status bar item"
+        "title": "-Pomodoro Clock- Show or Hide the Pomodoro Clock status bar item",
+        "description": "Show or Hide the Pomodoro Clock status bar item"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.pomodoroClock.ui.interruptorTypeStatusBar",
-        "title": "-Pomodoro Clock- Show or Hide the Pomodoro Type status bar item"
+        "title": "-Pomodoro Clock- Show or Hide the Pomodoro Type status bar item",
+        "description": "Show or Hide the Pomodoro Type status bar item"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.themeswitch.lighttheme",
-        "title": "-Theme Switch- Switch to Light Theme"
+        "title": "-Theme Switch- Switch to Light Theme",
+        "description": "Switch to Light Theme"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.themeswitch.darktheme",
-        "title": "-Theme Switch- Switch to Dark Theme"
+        "title": "-Theme Switch- Switch to Dark Theme",
+        "description": "Switch to Dark Theme"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.themeswitch.toggle",
-        "title": "-Theme Switch- Enable Switch Theme"
+        "title": "-Theme Switch- Enable Switch Theme",
+        "description": "Enable Switch Theme"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.fd.auto-close-tag.closeTag",
-        "title": "-Auto Close Tag- Close Tag"
+        "title": "-Auto Close Tag- Close Tag",
+        "description": "Close Tag"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.toggleBracketPairGuides",
-        "title": "-Bracket Pair Guides- Toggle Bracket Pair Guides"
+        "title": "-Bracket Pair Guides- Toggle Bracket Pair Guides",
+        "description": "Toggle Bracket Pair Guides"
       },
       {
         "category": "Flawuldragon",
@@ -811,20 +897,15 @@
       },
       {
         "category": "Flawuldragon",
-        "command": "flawuldragon.takeabreak.ui.interruptorStatusBar",
-        "title": "-Take a Break- Show or Hide the Take a break status bar item",
-        "description": "Show or Hide the Take a break status bar item",
-        "enablement": "dev"
-      },
-      {
-        "category": "Flawuldragon",
         "command": "flawuldragon.vscode-html-css.validate",
-        "title": "-HTML CSS Support- CSS: Validate class selectors"
+        "title": "-HTML CSS Support- CSS: Validate class selectors",
+        "description": "Validate class selectors in the workspace"
       },
       {
         "category": "Flawuldragon",
         "command": "flawuldragon.vscode-html-css.clear",
-        "title": "-HTML CSS Support- CSS: Clear style sheets cache"
+        "title": "-HTML CSS Support- CSS: Clear style sheets cache",
+        "description": "Clear style sheets cache"
       }
     ],
     "icons": {
@@ -2550,7 +2631,35 @@
   },
   "keywords": [
     "Flawuldragon",
-    "Humbanew"
+    "Humbanew",
+    "Auto Close Tag",
+    "Auto Complete Tag",
+    "Auto Rename Tag",
+    "Bracket Pair Colorizer",
+    "Bracket Pair Guides",
+    "Color Highlight",
+    "Color Picker",
+    "ErrorLens",
+    "File Size",
+    "FileSize",
+    "HTML CSS Support",
+    "HTML CSS Class Completion",
+    "Indent Rainbow",
+    "Jetbrains Mono Font",
+    "Pomodoro Clock",
+    "Take a Break",
+    "Theme Switch",
+    "Todo Highlight",
+    "Todo Highlighter",
+    "Product Icons Pack",
+    "Product Icons",
+    "Productivity",
+    "Starter Pack Extension",
+    "Starter Pack",
+    "Icons Themes",
+    "Icons",
+    "Themes",
+    "StatusBar Hub"
   ],
   "dependencies": {
     "brotli-size": "^4.0.0",

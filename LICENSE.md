@@ -76,3 +76,6 @@ Below is the table with all projects incorporated into the Flawuldragon project 
   | VSCode Icons Mac | Wayou Liu | [Project Page](https://marketplace.visualstudio.com/items/wayou.vscode-icons-mac) | [License Page](https://marketplace.visualstudio.com/items/wayou.vscode-icons-mac/license) |
   | VSCode Icons | VSCode Icons Team | [Project Page](https://marketplace.visualstudio.com/items/vscode-icons-team.vscode-icons) | [License Page](https://marketplace.visualstudio.com/items/vscode-icons-team.vscode-icons/license) |
   | VS2022 Icons | RespectMathias | [Project Page](https://marketplace.visualstudio.com/items/RespectMathias.VS2022-Icons) | [License Page](https://marketplace.visualstudio.com/items/RespectMathias.VS2022-Icons/license) |
+
+MICROSOFT VISUAL STUDIO 2015 IMAGE LIBRARY
+[MICROSOFT SOFTWARE LICENSE TERMS](http://download.microsoft.com/download/0/6/0/0607D8EA-9BB7-440B-A36A-A24EB8C9C67E/Visual%20Studio%202015%20Image%20Library%20EULA.docx)

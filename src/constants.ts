@@ -45,7 +45,16 @@ export const constants = {
           'flawuldragon.vanillaDateTime.ui.interruptorStatusBar',
         fdPropsAmericanFormat: 'flawuldragon.vanillaDateTime.americanFormat',
         fdProps12HourFormat: 'flawuldragon.vanillaDateTime.12hFormat',
-        fdPropsInvertPositions: 'flawuldragon.vanillaDateTime.invertProps'
+        fdPropsInvertPositions: 'flawuldragon.vanillaDateTime.invertProps',
+        fdPropsSwitchVisibility: 'flawuldragon.vanillaDateTime.switchVisibilityDateOrTime',
+        fdPropsShowSeconds: 'flawuldragon.vanillaDateTime.showSeconds',
+        fdPropsShowDayWeek: 'flawuldragon.vanillaDateTime.showDayOfWeek',
+        fdAccessibilityInlayHints: 'flawuldragon.vanilla.accessibility.inlayHints.enabled',
+        fdAccessibilityInlayHintsFontFamily: 'flawuldragon.vanilla.accessibility.inlayHints.fontFamily',
+        fdAccessibilityInlayHintsFontSize: 'flawuldragon.vanilla.accessibility.inlayHints.fontSize',
+        fdAccessibilitySignalsLineHasError: 'flawuldragon.vanilla.accessibility.signals.lineHasError',
+        fdAccessibilitySignalsLineHasWarning: 'flawuldragon.vanilla.accessibility.signals.lineHasWarning',
+        fdAccessibilitySignalsLineHasInlineSuggestion: 'flawuldragon.vanilla.accessibility.signals.lineHasInlineSuggestion'
       },
       experimental: {}
     },
@@ -102,6 +111,17 @@ export const constants = {
         fdBracketGuides: 'flawuldragon.toggleBracketPairGuides'
       }, experimental: {}
     },
-    takeabreak: { release: '{}', experimental: '{}' },
+    takeabreak: { 
+      release: {
+        fdTakeABreakStart: 'flawuldragon.takeabreak.Take a break: Start',
+        fdTakeABreakStop: 'flawuldragon.takeabreak.Take a break: Stop'
+      }, experimental: {} 
+    },
+    htmlCssSupport: {
+      release: {
+        fdHtmlCssSupportValidate: 'flawuldragon.vscode-html-css.validate',
+        fdHtmlCssSupportClear: 'flawuldragon.vscode-html-css.clear'
+      }, experimental: {}
+    }
   }
 };

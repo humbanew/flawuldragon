@@ -60,14 +60,14 @@ export class Vanilla {
   /**
    * Flawuldragon DateTime States
    * ___
-   * gstate: 0 - date first, 1 - time first
+   * gstate: 0 - [dayweek] [date] [time], 1 - [time] [date] [dayweek], 2 - [date] [dayweek] [time], 3 - [time] [dayweek] [date], 4 - [dayweek] [time] [date], 5 - [date] [time] [dayweek]
    */
   protected flwdnGstate = parseInt(this.flwdnDts[0]);
 
   /**
    * Flawuldragon DateTime States
    * ___
-   * dstate: 0 - american format, 1 - european format
+   * dstate: 0 - european format, 1 - american format
    */
   protected flwdnDstate = parseInt(this.flwdnDts[1]);
   
@@ -77,6 +77,27 @@ export class Vanilla {
    * tstate: 0 - 24-hour format, 1 - 12-hour format
    */
   protected flwdnTstate = parseInt(this.flwdnDts[2]);
+
+  /**
+   * Flawuldragon DateTime States
+   * ___
+   * hstate: 0 - show date and time, 1 - show only time, 2 - show only date
+   */
+  protected flwdnHstate = parseInt(this.flwdnDts[3]);
+
+  /**
+   * Flawuldragon DateTime States
+   * ___
+   * sstate: 0 - hide seconds in time, 1 - show seconds in time
+   */
+  protected flwdnSstate = parseInt(this.flwdnDts[4]);
+
+  /**
+   * Flawuldragon DateTime States
+   * ___
+   * wstate: 0 - hide day of the week, 1 - show day of the week
+   */
+  protected flwdnWstate = parseInt(this.flwdnDts[5]);
 
   /**
    * Registers a command to open a webview panel displaying Flawuldragon Notes and sets up a status bar item.
@@ -173,6 +194,8 @@ export class Vanilla {
           month = (timer.getMonth() + 1).toString(),
           hours = timer.getHours().toString(),
           minutes = timer.getMinutes().toString(),
+          seconds = timer.getSeconds().toString(),
+          dayofweek = timer.getDay().toString(),
           hours12hf =
             timer.getHours() > 12 ? timer.getHours() - 12 : timer.getHours();
   
@@ -180,27 +203,288 @@ export class Vanilla {
         if (parseInt(month) < 10) month = 0 + month;
         if (parseInt(hours) < 10) hours = 0 + hours;
         if (parseInt(minutes) < 10) minutes = 0 + minutes;
-  
-        switch(this.flwdnGstate) {
+        if (parseInt(seconds) < 10) seconds = 0 + seconds;
+
+        switch(this.flwdnGstate) { // #fff
           case 0:
             switch(this.flwdnDstate) {
               case 0:
                 switch(this.flwdnTstate) {
                   case 0:
-                    text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours}:${minutes}`;
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0: // 0-0-0-0-0-0
+                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours}:${minutes}`;
+                                break;
+                              case 1: // 0-0-0-0-0-1
+                                text = `${dayofweek}${divisor}${day}/${month}/${timer.getFullYear()}${divisor}${hours}:${minutes}`;
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0: // 0-0-0-0-1-0
+                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours}:${minutes}:${seconds}`;
+                                break;
+                              case 1: // 0-0-0-0-1-1
+                                text = `${dayofweek}${divisor}${day}/${month}/${timer.getFullYear()}${divisor}${hours}:${minutes}:${seconds}`;
+                                break; // 4
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0: // 0-0-0-1-0-0
+                                text = `${hours}:${minutes}`;
+                                break;
+                              case 1: // 0-0-0-1-0-1
+                                text = `${dayofweek}${divisor}${hours}:${minutes}`;
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0: // 0-0-0-1-1-0
+                                text = `${hours}:${minutes}:${seconds}`;
+                                break;
+                              case 1: // 0-0-0-1-1-1
+                                text = `${dayofweek}${divisor}${hours}:${minutes}:${seconds}`;
+                                break; // 8
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0: // 0-0-0-2-0-0
+                                text = `${day}/${month}/${timer.getFullYear()}`;
+                                break;
+                              case 1: // 0-0-0-2-0-1
+                                text = `${dayofweek}${divisor}${day}/${month}/${timer.getFullYear()}`;
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0: // 0-0-0-2-1-0
+                                text = `${day}/${month}/${timer.getFullYear()}`;
+                                break;
+                              case 1: // 0-0-0-2-1-1
+                                text = `${dayofweek}${divisor}${day}/${month}/${timer.getFullYear()}`;
+                                break; // 12
+                            }
+                            break;
+                        }
+                        break;
+                    }
                     break;
                   case 1:
-                    text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0: // 0-0-1-0-0-0
+                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes} ${timer.getHours() > 12 ? 'PM' : 'AM'}`;
+                                break;
+                              case 1: // 0-0-1-0-0-1
+                                text = `${dayofweek}${divisor}${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes} ${timer.getHours() > 12 ? 'PM' : 'AM'}`;
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0: // 0-0-1-0-1-0
+                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds} ${timer.getHours() > 12 ? 'PM' : 'AM'}`;
+                                break;
+                              case 1: // 0-0-1-0-1-1
+                                text = `${dayofweek}${divisor}${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds} ${timer.getHours() > 12 ? 'PM' : 'AM'}`;
+                                break; // 16
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
                     break;
                 }
                 break;
               case 1:
                 switch(this.flwdnTstate) {
                   case 0:
-                    text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours}:${minutes}`;
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
                     break;
                   case 1:
-                    text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
                     break;
                 }
                 break;
@@ -211,30 +495,1357 @@ export class Vanilla {
               case 0:
                 switch(this.flwdnTstate) {
                   case 0:
-                    text = `${hours}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}`;
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
                     break;
                   case 1:
-                    text = `${hours12hf}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
                     break;
                 }
                 break;
               case 1:
                 switch(this.flwdnTstate) {
                   case 0:
-                    text = `${hours}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}`;
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
                     break;
                   case 1:
-                    text = `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+            }
+            break;
+          case 2:
+            switch(this.flwdnDstate) {
+              case 0:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                  case 1:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+              case 1:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                  case 1:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+            }
+            break;
+          case 3:
+            switch(this.flwdnDstate) {
+              case 0:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                  case 1:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+              case 1:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                  case 1:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+            }
+            break;
+          case 4:
+            switch(this.flwdnDstate) {
+              case 0:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                  case 1:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+              case 1:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                  case 1:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+            }
+            break;
+          case 5:
+            switch(this.flwdnDstate) {
+              case 0:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                  case 1:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+              case 1:
+                switch(this.flwdnTstate) {
+                  case 0:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                  case 1:
+                    switch(this.flwdnHstate) {
+                      case 0:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 1:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                      case 2:
+                        switch(this.flwdnSstate) {
+                          case 0:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                          case 1:
+                            switch(this.flwdnWstate) {
+                              case 0:
+                                break;
+                              case 1:
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
                     break;
                 }
                 break;
             }
             break;
         }
-  
+
         this.flawuldragonDateTimeStatusBar.text = text;
       }, 1000);
     }, 100);
+
+    function generateJson(): string {
+      return JSON.stringify({
+        gstate: this.flwdnGstate,
+        dstate: this.flwdnDstate,
+        tstate: this.flwdnTstate,
+        hstate: this.flwdnHstate,
+        sstate: this.flwdnSstate,
+        wstate: this.flwdnWstate
+      });
+    }
 
     this.flawuldragonDateTimeStatusBar.tooltip = 'Current time';
     this.flawuldragonDateTimeStatusBar.backgroundColor = new vscode.ThemeColor(
@@ -242,6 +1853,36 @@ export class Vanilla {
     );
     this.flawuldragonDateTimeStatusBar.show();
     context.subscriptions.push(this.flawuldragonDateTimeStatusBar);
+
+    vscode.commands.registerCommand(
+      constants.commands.vanilla.release.fdPropsInvertPositions,
+      () => {
+        switch(this.flwdnGstate) {
+          case 0:
+            this.flwdnGstate = 1;
+            break;
+          case 1:
+            this.flwdnGstate = 2;
+            break;
+          case 2:
+            this.flwdnGstate = 3;
+            break;
+          case 3:
+            this.flwdnGstate = 4;
+            break;
+          case 4:
+            this.flwdnGstate = 5;
+            break;
+          case 5:
+            this.flwdnGstate = 0;
+            break;
+        }
+        fs.writeFileSync(
+          __dirname + '/flwdnDts.json',
+          generateJson()
+        );
+      }
+    );
 
     vscode.commands.registerCommand(
       constants.commands.vanilla.release.fdPropsAmericanFormat,
@@ -253,14 +1894,11 @@ export class Vanilla {
         }
         fs.writeFileSync(
           __dirname + '/flwdnDts.json',
-          JSON.stringify({
-            gstate: this.flwdnGstate,
-            dstate: this.flwdnDstate,
-            tstate: this.flwdnTstate
-          })
+          generateJson()
         );
       }
     );
+
     vscode.commands.registerCommand(
       constants.commands.vanilla.release.fdProps12HourFormat,
       () => {
@@ -271,32 +1909,61 @@ export class Vanilla {
         }
         fs.writeFileSync(
           __dirname + '/flwdnDts.json',
-          JSON.stringify({
-            gstate: this.flwdnGstate,
-            dstate: this.flwdnDstate,
-            tstate: this.flwdnTstate
-          })
+          generateJson()
         );
       }
     );
+
     vscode.commands.registerCommand(
-      constants.commands.vanilla.release.fdPropsInvertPositions,
+      constants.commands.vanilla.release.fdPropsSwitchVisibility,
       () => {
-        if (this.flwdnGstate == 1) {
-          this.flwdnGstate = 0;
-        } else {
-          this.flwdnGstate = 1;
+        switch(this.flwdnHstate) {
+          case 0:
+            this.flwdnHstate = 1;
+            break;
+          case 1:
+            this.flwdnHstate = 2;
+            break;
+          case 2:
+            this.flwdnHstate = 0;
+            break;
         }
         fs.writeFileSync(
           __dirname + '/flwdnDts.json',
-          JSON.stringify({
-            gstate: this.flwdnGstate,
-            dstate: this.flwdnDstate,
-            tstate: this.flwdnTstate
-          })
+          generateJson()
         );
       }
-    );
+    )
+
+    vscode.commands.registerCommand(
+      constants.commands.vanilla.release.fdPropsShowSeconds,
+      () => {
+        if (this.flwdnSstate == 1) {
+          this.flwdnSstate = 0;
+        } else {
+          this.flwdnSstate = 1;
+        }
+        fs.writeFileSync(
+          __dirname + '/flwdnDts.json',
+          generateJson()
+        );
+      }
+    )
+
+    vscode.commands.registerCommand(
+      constants.commands.vanilla.release.fdPropsShowDayWeek,
+      () => {
+        if (this.flwdnWstate == 1) {
+          this.flwdnWstate = 0;
+        } else {
+          this.flwdnWstate = 1;
+        }
+        fs.writeFileSync(
+          __dirname + '/flwdnDts.json',
+          generateJson()
+        );
+      }
+    )
   }
 
   /**
@@ -347,6 +2014,54 @@ export class Vanilla {
         .update('accessibility.signals.lineHasInlineSuggestion', {
           sound: 'on'
         });
+
+      vscode.commands.registerCommand(constants.commands.vanilla.release.fdAccessibilityInlayHints, ()=>{
+        if(vscode.workspace.getConfiguration().get('editor.inlayHints.enabled')){
+          vscode.workspace.getConfiguration().update('editor.inlayHints.enabled', false);
+        } else {
+          vscode.workspace.getConfiguration().update('editor.inlayHints.enabled', true);
+        }
+      });
+
+      vscode.commands.registerCommand(constants.commands.vanilla.release.fdAccessibilityInlayHintsFontFamily, ()=>{
+        if(vscode.workspace.getConfiguration().get('editor.inlayHints.fontFamily') == 'JetBrains Mono'){
+          vscode.workspace.getConfiguration().update('editor.inlayHints.fontFamily', 'Segoe UI');
+        } else {
+          vscode.workspace.getConfiguration().update('editor.inlayHints.fontFamily', 'JetBrains Mono');
+        }
+      });
+
+      vscode.commands.registerCommand(constants.commands.vanilla.release.fdAccessibilityInlayHintsFontSize, ()=>{
+        if(vscode.workspace.getConfiguration().get('editor.inlayHints.fontSize') == 12){
+          vscode.workspace.getConfiguration().update('editor.inlayHints.fontSize', 14);
+        } else {
+          vscode.workspace.getConfiguration().update('editor.inlayHints.fontSize', 12);
+        }
+      });
+
+      vscode.commands.registerCommand(constants.commands.vanilla.release.fdAccessibilitySignalsLineHasError, ()=>{
+        if((vscode.workspace.getConfiguration().get('accessibility.signals.lineHasError') as { sound: string }).sound == 'on'){
+          vscode.workspace.getConfiguration().update('accessibility.signals.lineHasError', { sound: 'off' });
+        } else {
+          vscode.workspace.getConfiguration().update('accessibility.signals.lineHasError', { sound: 'on' });
+        }
+      });
+
+      vscode.commands.registerCommand(constants.commands.vanilla.release.fdAccessibilitySignalsLineHasWarning, ()=>{
+        if((vscode.workspace.getConfiguration().get('accessibility.signals.lineHasError') as { sound: string }).sound == 'on'){
+          vscode.workspace.getConfiguration().update('accessibility.signals.lineHasWarning', { sound: 'off', announcement: 'off' });
+        } else {
+          vscode.workspace.getConfiguration().update('accessibility.signals.lineHasWarning', { sound: 'on', announcement: 'auto' });
+        }
+      });
+
+      vscode.commands.registerCommand(constants.commands.vanilla.release.fdAccessibilitySignalsLineHasInlineSuggestion, ()=>{
+        if((vscode.workspace.getConfiguration().get('accessibility.signals.lineHasError') as { sound: string }).sound == 'on'){
+          vscode.workspace.getConfiguration().update('accessibility.signals.lineHasInlineSuggestion', { sound: 'off' });
+        } else {
+          vscode.workspace.getConfiguration().update('accessibility.signals.lineHasInlineSuggestion', { sound: 'on' });
+        }
+      });
 
     } catch (error) {
       this.vanilla_desactivate();

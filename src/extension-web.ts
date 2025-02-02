@@ -2,16 +2,17 @@ import * as vscode from 'vscode';
 import { AutoRCCTag } from './@autorcctag/AutoRCCTag.js';
 import { FileSize } from './@filesize/FileSize.js';
 import { IndentRainbow } from './@indentrainbow/IndentRainbow.js';
-// import { JetbrainsMono } from './@jetbrainsmono/JetbrainsMono.cjs';
 import { PomodoroClock } from './@pomodoroclock/PomodoroClock.js';
 import { ThemeSwitch } from './@themeswitch/ThemeSwitch.js';
 import { TodoHighlight } from './@todohighlight/TodoHighlight.js';
 import { Vanilla } from './@vanilla/Vanilla.js';
 import { BracketGuides } from './@bracketguides/BracketGuides.js';
 import { activate as chActivate, deactivate as chDeactivate } from './@colorhighlight/main.js';
+import { ErrorLens } from './@errorlens/ErrorLens.js';
+import { HtmlCssSupport } from './@htmlcsssupport/HtmlCssSupport.js';
+import { Takeabreak } from './@takeabreak/Takeabreak.js';
 
 const vanilla = new Vanilla();
-// const jetbrainsmono = new JetbrainsMono();
 const filesize = new FileSize();
 const todohighlight = new TodoHighlight();
 const indentrainbow = new IndentRainbow();
@@ -19,6 +20,9 @@ const pomodoroclock = new PomodoroClock();
 const themeswitch = new ThemeSwitch();
 const autorrctag = new AutoRCCTag();
 const bracketGuides = new BracketGuides();
+const takeabreak = new Takeabreak();
+const errorLens = new ErrorLens();
+const htmlCssSupport = new HtmlCssSupport();
 
 /**
  * Activates the extension.
@@ -34,8 +38,6 @@ export function activate(context: vscode.ExtensionContext) {
     console.log('Flawuldragon - Core Hub activated!');
 
     vanilla.vanilla_activate(context);
-    // jetbrainsmono.jetbrainsMono_activate(context);
-    // jetbrainsmono.jetbrainsMono_firstTimeActivation(context);
     filesize.filesize_activate(context);
     todohighlight.todoHighlight_activate(context);
     indentrainbow.indentRainbow_activate(context);
@@ -43,6 +45,9 @@ export function activate(context: vscode.ExtensionContext) {
     themeswitch.themeSwitch_activate(context);
     autorrctag.autoRCCTag_activate(context);
     bracketGuides.bracketGuides_activate(context);
+    errorLens.errorLens_activate(context);
+    takeabreak.takeabreak_activate(context);
+    htmlCssSupport.htmlCssSupport_activate(context);
     chActivate(context);
   } catch (error) {
     console.log('Flawuldragon Core Hub - Error: ' + error);
@@ -65,7 +70,6 @@ export function activate(context: vscode.ExtensionContext) {
  */
 export function deactivate(context: vscode.ExtensionContext) {
   vanilla.vanilla_desactivate();
-  // jetbrainsmono.jetbrainsMono_desactivate(context);
   filesize.filesize_desactivate();
   todohighlight.todoHighlight_desactivate();
   indentrainbow.indentRainbow_desactivate();
@@ -73,6 +77,9 @@ export function deactivate(context: vscode.ExtensionContext) {
   themeswitch.themeSwitch_desactivate();
   autorrctag.autoRCCTag_desactivate();
   bracketGuides.bracketGuides_desactivate();
+  errorLens.errorLens_desactivate();
+  takeabreak.takeabreak_desactivate();
+  htmlCssSupport.htmlCssSupport_desactivate();
   chDeactivate();
 }
 

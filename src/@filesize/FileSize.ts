@@ -38,13 +38,13 @@ export class FileSize {
         ? vscode.window.activeTextEditor.document.fileName
         : "";
       resolve(_filepath);
-    }).then((filepath) => {
-      if (filepath == "") {
-        if(!fs.existsSync(filepath as string)) {
-          return;
-        }
+    }).then((filepath: any) => {
+      if (filepath == "" || filepath.includes("output:")) {
         statusItem.text = "No file";
         statusItem.show();
+        return;
+      }
+      if (!fs.existsSync(filepath as string)) {
         return;
       }
       let _size = fs?.statSync(filepath as string)?.size;
