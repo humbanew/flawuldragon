@@ -48,6 +48,9 @@
 		"editorGroupHeader.tabsBackground": "#ededed",
 		"editorGroupHeader.tabsBorder": "#0e536422",
 
+		// editor indent guide
+		"editorIndentGuide.background1": "#00000022",
+
 		// editor line highlight
 		"editor.lineHighlightBackground": "#ffffff",
 		"editor.lineHighlightBorder": "#dbf7fa",
@@ -58,7 +61,7 @@
 		"editor.selectionForeground": "#ffffff",
 		
 		// editor whitespace
-		"editorWhitespace.foreground": "#ffffff",
+		"editorWhitespace.foreground": "#fcfcfc",
 
 		// editor find match highlight
 		"editor.findMatchBackground": "#ffffff",
@@ -133,10 +136,10 @@
 		"list.focusBackground": "#b7c89a",
 		"list.focusForeground": "#ffffff",
 		"list.highlightForeground": "#0e5364",
-		"list.hoverBackground": "#ffffff",
-		"list.hoverForeground": "#0e5364",
-		"list.inactiveSelectionBackground": "#ffffff",
-		"list.inactiveSelectionForeground": "#0e5364",
+		"list.hoverBackground": "#efefef",
+		"list.hoverForeground": "#222222",
+		"list.inactiveSelectionBackground": "#efefefcc",
+		"list.inactiveSelectionForeground": "#0e5364cc",
 		"list.errorForeground": "#ff3030",
 		"list.warningForeground": "#ffdb4b",
 		"listFilterWidget.background": "#ffffff",

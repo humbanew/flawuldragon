@@ -48,6 +48,9 @@
 		"editorGroupHeader.tabsBackground": "#ffffff",
 		"editorGroupHeader.tabsBorder": "#e9ebf3",
 
+		// editor indent guide
+		"editorIndentGuide.background1": "#00000022",
+
 		// editor line highlight
 		"editor.lineHighlightBackground": "#e9ebf3",
 		"editor.lineHighlightBorder": "#e9ebf3",
@@ -128,15 +131,15 @@
 		"inputValidation.warningBorder": "#ffdb4b",
 
 		// list
-		"list.activeSelectionBackground": "#e9ebf3",
+		"list.activeSelectionBackground": "#cfcfcf",
 		"list.activeSelectionForeground": "#192c64",
-		"list.focusBackground": "#e9ebf3",
-		"list.focusForeground": "#192c64",
+		"list.focusBackground": "#cfcfcf",
+		"list.focusForeground": "#0f1a3b",
 		"list.highlightForeground": "#192c64",
 		"list.hoverBackground": "#ffffff",
 		"list.hoverForeground": "#192c64",
-		"list.inactiveSelectionBackground": "#e9ebf3",
-		"list.inactiveSelectionForeground": "#192c64",
+		"list.inactiveSelectionBackground": "#cfcfcfcc",
+		"list.inactiveSelectionForeground": "#192c64cc",
 		"list.errorForeground": "#ff3030",
 		"list.warningForeground": "#ffdb4b",
 		"listFilterWidget.background": "#ffffff",

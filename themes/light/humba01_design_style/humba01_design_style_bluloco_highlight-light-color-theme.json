@@ -47,6 +47,9 @@
     "editorGroupHeader.tabsBackground": "#556eff", // Azul --> #556eff
     "editorGroupHeader.tabsBorder": "#4a473d", // Beje Escuro --> #4a473d
 
+		// editor indent guide
+		"editorIndentGuide.background1": "#00000022",
+
     // editor line highlight
     "editor.lineHighlightBackground": "#fefefe",
     "editor.lineHighlightBorder": "#cccccc",
@@ -134,8 +137,8 @@
 		"list.highlightForeground": "#ff55fe", // Rosa --> #ff55fe
 		"list.hoverBackground": "#556eff", // Azul --> #556eff
 		"list.hoverForeground": "#ff55fe", // Rosa --> #ff55fe
-		"list.inactiveSelectionBackground": "#556eff", // Azul --> #556eff
-		"list.inactiveSelectionForeground": "#ff55fe", // Rosa --> #ff55fe
+		"list.inactiveSelectionBackground": "#556effcc", // Azul --> #556eff
+		"list.inactiveSelectionForeground": "#ff55fecc", // Rosa --> #ff55fe
 		"list.errorForeground": "#ff5558", // Vermelho Claro --> #ff5558
 		"list.warningForeground": "#ff55a7", // Rosa Choque --> #ff55a7
 		"listFilterWidget.background": "#8855ff", // Azul Roxeado --> #8855ff

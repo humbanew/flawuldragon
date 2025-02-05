@@ -27,7 +27,9 @@
 
 #### Workspace
 
-#### StatusBar
+#### Status Bar Hub
+
+<img src="./assets/documentation/flawuldragon-status-bar-hub-features.png" alt="Flawuldragon Status Bar Hub" />
 
 ### Keybindings
 

@@ -39,6 +39,9 @@
     "editorGroupHeader.tabsBackground": "#0c6370",
     "editorGroupHeader.tabsBorder": "#0e5364",
 
+		// editor indent guide
+		"editorIndentGuide.background1": "#ffffff22",
+
     // editor line highlight
     "editor.lineHighlightBackground": "#114c5b",
     "editor.lineHighlightBorder": "#005e66",
@@ -79,12 +82,12 @@
 		"editorWarning.background": "#ffdb4b44",
 		"editorError.background": "#ff303044",
 
-    // // editor marker
+		// editor marker
     "editorMarkerNavigation.background": "#0e5364",
     "editorMarkerNavigationError.background": "#ff3030",
     "editorMarkerNavigationWarning.background": "#ffdb4b",
 
-    // // editor minimap
+    // editor minimap
     "editorOverviewRuler.border": "#0e5364",
 
     // editor bracket highlight
@@ -119,14 +122,14 @@
 		"inputValidation.warningBorder": "#ffdb4b",
 
     // list
-    "list.activeSelectionBackground": "#00714c",
+    "list.activeSelectionBackground": "#004447",
     "list.activeSelectionForeground": "#ff8e38",
     "list.focusBackground": "#00714c",
     "list.focusForeground": "#ff8e38",
     "list.highlightForeground": "#ffc940",
-    "list.hoverBackground": "#005436",
-    "list.hoverForeground": "#fefefe",
-    "list.inactiveSelectionBackground": "#00714ccc",
+    "list.hoverBackground": "#00595e",
+    "list.hoverForeground": "#bebebe",
+    "list.inactiveSelectionBackground": "#004447cc",
     "list.inactiveSelectionForeground": "#ff8e38cc",
     "list.errorForeground": "#ff3030",
     "list.warningForeground": "#ffdb4b",

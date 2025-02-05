@@ -453,12 +453,6 @@
         "uiTheme": "vs",
         "label": "Flawuldragon - Winter Day | One Dark Vivid Highlight (Light)",
         "path": "./themes/light/winter_day/winter_day_onedark_vivid_highlight-light-color-theme.json"
-      },
-      {
-        "id": "65b",
-        "uiTheme": "vs",
-        "label": "Flawuldragon - Visual Studio Inspired Blue",
-        "path": "./themes/beta/visual_studio_inspired/blue/vs_inspired_blue-color-theme.json"
       }
     ],
     "iconThemes": [

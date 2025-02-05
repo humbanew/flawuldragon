@@ -47,6 +47,9 @@
     "editorGroupHeader.tabsBackground": "#002082",
     "editorGroupHeader.tabsBorder": "#192c64",
 
+		// editor indent guide
+		"editorIndentGuide.background1": "#ffffff22",
+
     // editor line highlight
     "editor.lineHighlightBackground": "#242f8f",
     "editor.lineHighlightBorder": "#242f8f",
@@ -127,15 +130,15 @@
     "inputValidation.warningBorder": "#ffdb4b",
 
     // list
-    "list.activeSelectionBackground": "#3057e1",
+    "list.activeSelectionBackground": "#4860a7",
     "list.activeSelectionForeground": "#ffeb7b",
-    "list.focusBackground": "#3057e1",
+    "list.focusBackground": "#4860a7",
     "list.focusForeground": "#ffeb7b",
     "list.highlightForeground": "#ffeb7b",
-    "list.hoverBackground": "#4a6de5",
+    "list.hoverBackground": "#495fa5",
     "list.hoverForeground": "#ffeb7b",
-    "list.inactiveSelectionBackground": "#3057e1",
-    "list.inactiveSelectionForeground": "#ffeb7b",
+    "list.inactiveSelectionBackground": "#4860a7cc",
+    "list.inactiveSelectionForeground": "#ffeb7bcc",
     "list.errorForeground": "#ff3030",
     "list.warningForeground": "#ffdb4b",
     "listFilterWidget.background": "#002082",
@@ -196,15 +199,15 @@
     "sideBar.border": "#ffffff44",
     "sideBar.dropBackground": "#192c64",
     "sideBarTitle.foreground": "#ffffff",
-    "sideBarSectionHeader.background": "#002082",
+    "sideBarSectionHeader.background": "#203882",
     "sideBarSectionHeader.foreground": "#ced8f7",
-    "sideBarActivityBarTop.border": "#243f8f",
+    "sideBarActivityBarTop.border" : "#243f8f",
     "sideBarSectionHeader.border": "#243f8f",
-    "sideBarStickyScroll.background": "#002082",
-    "sideBarStickyScroll.border": "#002082",
-    "sideBarStickyScroll.shadow": "#002082",
-    "sideBarTitle.background": "#002082",
-    "sideBySideEditor.horizontalBorder": "#002082",
+    "sideBarStickyScroll.background": "#203882",
+    "sideBarStickyScroll.border": "#203882",
+    "sideBarStickyScroll.shadow": "#203882",
+    "sideBarTitle.background": "#203882",
+    "sideBySideEditor.horizontalBorder": "#203882",
 
     // statusbar e statusbar item
     "statusBar.background": "#ffffff",

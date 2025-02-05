@@ -48,6 +48,9 @@
     "editorGroupHeader.tabsBackground": "#334eff",
     "editorGroupHeader.tabsBorder": "#28251b",
 
+		// editor indent guide
+		"editorIndentGuide.background1": "#ffffff22",
+
     // editor line highlight
     "editor.lineHighlightBackground": "#11100b",
     "editor.lineHighlightBorder": "#28251b",
@@ -135,8 +138,8 @@
     "list.highlightForeground": "#ffeb7b",
     "list.hoverBackground": "#4a6de5",
     "list.hoverForeground": "#ffeb7b",
-    "list.inactiveSelectionBackground": "#3057e1",
-    "list.inactiveSelectionForeground": "#ffeb7b",
+    "list.inactiveSelectionBackground": "#3057e1cc",
+    "list.inactiveSelectionForeground": "#ffeb7bcc",
     "list.errorForeground": "#ff3030",
     "list.warningForeground": "#ffdb4b",
     "listFilterWidget.background": "#6633ff",
