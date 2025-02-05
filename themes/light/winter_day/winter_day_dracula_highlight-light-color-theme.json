@@ -176,14 +176,14 @@
 		"peekViewTitleLabel.foreground": "#d7965b",
 
 		// notifications
-		"notificationCenter.border": "#7a4a5e",
-		"notificationCenterHeader.foreground": "#000000",
-		"notificationCenterHeader.background": "#7a4a5e",
-		"notificationToast.border": "#7a4a5e",
-		"notifications.background": "#7a4a5e",
-		"notifications.foreground": "#000000",
-		"notifications.border": "#7a4a5e",
-		"notificationLink.foreground": "#d7c7aa",
+    "notificationCenter.border": "#d7c7aa",
+    "notificationCenterHeader.foreground": "#d7c7aa",
+    "notificationCenterHeader.background": "#ffffff",
+    "notificationToast.border": "#d7c7aa",
+    "notifications.background": "#ffffff",
+    "notifications.foreground": "#d7c7aa",
+    "notifications.border": "#d7c7aa",
+    "notificationLink.foreground": "#7a4a5e",
 
 		// panel
 		"panel.background": "#ffffff",

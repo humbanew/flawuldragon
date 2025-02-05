@@ -16,3 +16,7 @@ essentials/
 integration/
 updates/
 code_env_setup.sh
+gulpfile.js
+.gitmodules
+.github/**
+changelog.md

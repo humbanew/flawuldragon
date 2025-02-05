@@ -196,6 +196,30 @@ export class Vanilla {
         if (parseInt(minutes) < 10) minutes = 0 + minutes;
         if (parseInt(seconds) < 10) seconds = 0 + seconds;
 
+        switch (dayofweek) {
+          case '0':
+            dayofweek = 'Sunday';
+            break;
+          case '1':
+            dayofweek = 'Monday';
+            break;
+          case '2':
+            dayofweek = 'Tuesday';
+            break;
+          case '3':
+            dayofweek = 'Wednesday';
+            break;
+          case '4':
+            dayofweek = 'Thursday';
+            break;
+          case '5':
+            dayofweek = 'Friday';
+            break;
+          case '6':
+            dayofweek = 'Saturday';
+            break;
+        }
+
         switch (this.flwdnGstate) {
           case 0:
             switch (this.flwdnDstate) {

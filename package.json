@@ -3,7 +3,7 @@
   "name": "flawuldragon",
   "displayName": "Flawuldragon",
   "description": "Humbanew Official Development Extension",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0",
   "icon": "assets/icon.png",
   "readme": "README.md",
   "license": "Humbanew License v5, powered by MIT License",
@@ -18,9 +18,6 @@
       "url": "https://www.humbanew.com.br"
     }
   ],
-  "sponsor": {
-    "url": ""
-  },
   "galleryBanner": {
     "color": "#451aff",
     "theme": "dark"
@@ -2772,7 +2769,7 @@
     "@typescript-eslint/parser": "^5.38.1",
     "@vscode/test-electron": "^2.1.5",
     "@vscode/test-web": "0.0.15",
-    "@vscode/vsce": "^3.2.1",
+    "@vscode/vsce": "^3.2.2",
     "assert": "^2.0.0",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",

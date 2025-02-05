@@ -1,6 +1,6 @@
 <div align="center"> 
 
-  <img src="assets/documentation/flawuldragon-readme-logo.png" alt="Flawuldragon Logo" />
+  <img src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-readme-logo.png" alt="Flawuldragon Logo" />
 
 </div>
 
@@ -12,6 +12,8 @@
 >
 
 </div>
+
+<div align="justify">
 
 ## Introduction
 
@@ -27,9 +29,14 @@
 
 #### Workspace
 
+<video width="1200" controls>
+  <source src="https:///strg.humbanew.com.br/projects/flawuldragon/documentation/hn-flawuldragon-extension-demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 #### Status Bar Hub
 
-<img src="./assets/documentation/flawuldragon-status-bar-hub-features.png" alt="Flawuldragon Status Bar Hub" />
+<img src="https:///strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-status-bar-hub-features.png" alt="Flawuldragon Status Bar Hub" />
 
 ### Keybindings
 
@@ -95,11 +102,11 @@
 >
 > After typing in the closing bracket of the opening tag, the closing tag will be inserted automatically.
 >
-> ![Usage](assets/documentation/integration/auto-close-tag/usage.gif)
+> ![Usage](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/auto-close-tag/usage.gif)
 >
 > To add close tag manually, use shortcut `Alt+.` (`Command+Alt+.` for Mac), or press `F1` and then select/type `Close Tag`
 > 
-> ![Usage](assets/documentation/integration/auto-close-tag/close-tag.gif)
+> ![Usage](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/auto-close-tag/close-tag.gif)
 > 
 > ## Sublime Text 3 Mode
 > 
@@ -111,7 +118,7 @@
 > ```
 > The setting is `false` by default.
 > 
-> ![Sublime Text 3](assets/documentation/integration/auto-close-tag/st3.gif)
+> ![Sublime Text 3](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/auto-close-tag/st3.gif)
 >
 > ## Configuration
 > 
@@ -163,7 +170,7 @@
 >}
 >```
 >
-> **Note:** The setting should be set with language id defined in [VS Code](https://github.com/Microsoft/vscode/tree/master/extensions). Taking [javascript definition](https://github.com/Microsoft/vscode/blob/master/extensions/javascript/package.json) as an example, we need to use `javascript` for `.js` and `.es6`, use `javascriptreact` for `.jsx`. So, if you want to enable this extension on `.js` file, you need to add `javascript` in settings.json.
+> **Note:** The setting should be set with language id defined in [VS Code](https://github.com/Microsoft/vscode/blob/master/extensions). Taking [javascript definition](https://github.com/Microsoft/vscode/blob/master/extensions/javascript/package.json) as an example, we need to use `javascript` for `.js` and `.es6`, use `javascriptreact` for `.jsx`. So, if you want to enable this extension on `.js` file, you need to add `javascript` in settings.json.
 >
 > Alternatively you could also exlude the languages where you don't want the extension to be activated. Below is an example:
 > ```json
@@ -211,7 +218,7 @@
 >
 > ## Usages
 >
-> ![Usage](assets/documentation/integration/auto-rename-tag/usage.gif)
+> ![Usage](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/auto-rename-tag/usage.gif)
 >
 > ## Configuration
 >
@@ -224,7 +231,7 @@
 > }
 > ```
 >
-> The setting should be set with language id defined in [VS Code](https://github.com/Microsoft/vscode/tree/master/extensions). Taking [javascript definition](https://github.com/Microsoft/vscode/blob/master/extensions/javascript/package.json) as an example, we need to use `javascript` for `.js` and `.es6`, use `javascriptreact` for `.jsx`. So, if you want to enable this extension on `.js` file, you need to add `javascript` in settings.json.
+> The setting should be set with language id defined in [VS Code](https://github.com/Microsoft/vscode/blob/master/extensions). Taking [javascript definition](https://github.com/Microsoft/vscode/blob/master/extensions/javascript/package.json) as an example, we need to use `javascript` for `.js` and `.es6`, use `javascriptreact` for `.jsx`. So, if you want to enable this extension on `.js` file, you need to add `javascript` in settings.json.
 
 ### Carbon Icons ``by Alyx Z``
 
@@ -295,9 +302,9 @@
 
 > ## Features
 >
-> <img src="assets/documentation/integration/charmed-icons/files.png" alt="Files" width="512" />
+> <img src="https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/charmed-icons/files.png" alt="Files" width="512" />
 > <br><br>
-> <img src="assets/documentation/integration/charmed-icons/folders.png" alt="Folders" width="512" />
+> <img src="https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/charmed-icons/folders.png" alt="Folders" width="512" />
 >
 
 ### Color Highlight ``by Sergii Naumov`` and Color Highlight Fork ``by mikekscholz``
@@ -468,7 +475,7 @@
 >
 > ErrorLens turbo-charges the language diagnostic features, by making diagnostics stand out more prominently, highlighting the entire line wherever a diagnostic is generated by the language and also prints the diagnostic message(s) in-line at the site of the line of code which is generating the diagnostic.
 >
-> ![ErrorLens example](assets/documentation/integration/errorlens-alt/Screenshot-1.png)
+> ![ErrorLens example](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/errorlens-alt/Screenshot-1.png)
 >
 > ## Features
 >
@@ -519,7 +526,7 @@
 
 > A product icon theme for Visual Studio Code
 >
-> ![Fluent icon preview](assets/documentation/integration/fluent-icons/preview.png)
+> ![Fluent icon preview](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/fluent-icons/preview.png)
 
 ### HTML CSS Support ``by Ecmel Ercan``
 
@@ -791,11 +798,11 @@
 >
 > *coming with Light, Dark and Auto variants*
 >
-> ![Preview v2](./assets/documentation/integration/jetbrains-icons/preview2023.png)
+> ![Preview v2](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/jetbrains-icons/preview2023.png)
 >
 > ### V1
 >
-> ![Preview v1](./assets/documentation/integration/jetbrains-icons/preview.png)
+> ![Preview v1](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/jetbrains-icons/preview.png)
 
 ### Jetbrains IDEA Product Icons ``by ardonplay``
 
@@ -809,7 +816,7 @@
 
 > # JetBrains Mono: a typeface made for developers
 >
-> ![Alt text](assets/documentation/integration/jetbrains-mono/main-img@2x.png)
+> ![Alt text](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/jetbrains-mono/main-img%402x.png)
 >
 > # How to install
 >
@@ -830,7 +837,7 @@
 >
 > There are 8 font styles available in JetBrains Mono, from Thin to ExtraBold, each coming with its own _italic_ version.
 >
-> ![Alt text](assets/documentation/integration/jetbrains-mono/font-styles@2x.png)
+> ![Alt text](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/jetbrains-mono/font-styles@2x.png)
 >
 > ## Font Features
 >
@@ -838,11 +845,11 @@
 >
 > While characters remain standard in width, the height of the lowercase is maximized. This approach keeps code lines to the length that developers expect, and it helps improve rendering in small size, since each symbol occupies more pixels.
 >
-> ![Alt text](assets/documentation/integration/jetbrains-mono/ff-increased-height@2x.png)
+> ![Alt text](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/jetbrains-mono/ff-increased-height@2x.png)
 >
 > ### Distinctiveness of symbols
 >
-> ![Alt text](assets/documentation/integration/jetbrains-mono/ff-distinctiveness-of-symbols@2x.gif)
+> ![Alt text](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/jetbrains-mono/ff-distinctiveness-of-symbols@2x.gif)
 >
 > ## Ligatures for Code
 >
@@ -850,15 +857,15 @@
 >
 > 1. To **reduce noise** by merging symbols and removing details so the eyes are processing less:
 >
-> ![Alt text](assets/documentation/integration/jetbrains-mono/ligatures-1@2x.gif)
+> ![Alt text](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/jetbrains-mono/ligatures-1@2x.gif)
 >
 > 2. To balance whitespace more efficiently by shifting the glyphs in certain cases:
 >
-> ![Alt text](assets/documentation/integration/jetbrains-mono/ligatures-2@2x.gif)
+> ![Alt text](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/jetbrains-mono/ligatures-2@2x.gif)
 >
 > ## Basic Character Set
 >
-> ![Alt text](assets/documentation/integration/jetbrains-mono/character-set@2x.png)
+> ![Alt text](https:///strg.humbanew.com.br/projects/flawuldragon/documentation/integration/jetbrains-mono/character-set@2x.png)
 >
 > You can find full JetBrains Mono character set on official [wiki page](https://github.com/JetBrains/JetBrainsMono/wiki/List-of-supported-symbols).
 >
@@ -937,15 +944,15 @@
 >
 >> Pomodoro clock and Pomodoro type info
 >
-> ![Demo](./assets/documentation/integration/pomodoro-clock/demo.gif)
+> ![Demo](https://strg.humbanew.com.br/projects/flawuldragon/documentation/integration/pomodoro-clock/demo.gif)
 >
 >> Notification when time up
 >
-> ![Demo](./assets/documentation/integration/pomodoro-clock/time-up.jpg)
+> ![Demo](https://strg.humbanew.com.br/projects/flawuldragon/documentation/integration/pomodoro-clock/time-up.jpg)
 >
 >> Pomodoro clock Extension Settings
 >
-> ![Demo](./assets/documentation/integration/pomodoro-clock/vscode-config.jpg)
+> ![Demo](https://strg.humbanew.com.br/projects/flawuldragon/documentation/integration/pomodoro-clock/vscode-config.jpg)
 >
 > ## Extension Settings
 > This extension contributes the following settings:
@@ -974,10 +981,10 @@
 
 > <h4>A Icons Theme for Visual Studio Code</h4>
 >
-> ![Extension preview](assets/documentation/integration/sakai-icons/preview.png)
+> ![Extension preview](https://strg.humbanew.com.br/projects/flawuldragon/documentation/integration/sakai-icons/preview.png)
 >
 > Pick your favorite theme and have fun! 🎉
-> ![Options of icons](assets/documentation/integration/sakai-icons/icon_theme.png)
+> ![Options of icons](https://strg.humbanew.com.br/projects/flawuldragon/documentation/integration/sakai-icons/icon_theme.png)
 >
 > ### Icon Previews
 >
@@ -1214,7 +1221,7 @@
 > ## Icon Sample 📷
 > ![Preview](https://raw.githubusercontent.com/RespectMathias/VS2022-Icons/refs/heads/main/images/comparison.webp)
 
-### Visual Studio ``by Jordan T. Lowe`` and Visual Studio Fork (v2) ``by vigan-abd``
+### Visual Studio Icons ``by Jordan T. Lowe`` and Visual Studio Icons Fork (v2) ``by vigan-abd``
 
 > # Studio Icons (Visual Studio Code Icon Theme)
 Featuring official icons from the [Visual Studio Image Library](https://msdn.microsoft.com/en-us/library/ms246582.aspx). These icons have been color optimized to work well for dark, light, and high contrast themes. I've tried to match Visual Studio's choice of icons as much as possible, and using other library icons for some files that would otherwise use the default file icon. I welcome any feedback or suggestions.
@@ -1342,9 +1349,9 @@ Featuring official icons from the [Visual Studio Image Library](https://msdn.mic
 >
 > ## Icon Preview
 >
-> ![Preview Dark](./assets/documentation/integration/vsc-nomo-icons/previewdark.png)
-> ![Preview Dark MacOS](./assets/documentation/integration/vsc-nomo-icons/previewdarkmacos.png)
-> ![Preview Light](./assets/documentation/integration/vsc-nomo-icons/previewlight.png)
+> ![Preview Dark](https://strg.humbanew.com.br/projects/flawuldragon/documentation/integration/vsc-nomo-icons/previewdark.png)
+> ![Preview Dark MacOS](https://strg.humbanew.com.br/projects/flawuldragon/documentation/integration/vsc-nomo-icons/previewdarkmacos.png)
+> ![Preview Light](https://strg.humbanew.com.br/projects/flawuldragon/documentation/integration/vsc-nomo-icons/previewlight.png)
 
 ### Visual Studio Code Symbols Icons ``by Miguel Solorio``
 
@@ -1403,7 +1410,7 @@ Featuring official icons from the [Visual Studio Image Library](https://msdn.mic
 >
 > ## Icon Preview
 >
-> You can preview the icons by reading the the [preview.md](./assets/documentation/integration/vsc-symbols-icons/preview/preview.md) file.
+> You can preview the icons by reading the the [preview.md](https://github.com/humbanew/flawuldragon/blob/37c644c48dead3e9ce7570565283d9a7b6fd6c0c/assets/documentation/integration/vsc-symbols-icons/preview/preview.md) file.
 >
 > ## React Symbols
 > [Pablo Hdez](https://github.com/pheralb) has graciously created [React-Symbols](https://react-symbols.vercel.app) ([pheralb/react-symbols](https://github.com/pheralb/react-symbols)) to allow you to embed Symbol icons for your React projects.
@@ -1482,3 +1489,11 @@ To contribute to the project, follow the steps below:
 At some point in the future will be available to patrons.
 
 ## Technical acknowledgments
+
+This project was built using object-oriented architecture, both with home-made features and third party projects that adopt open source and MIT standard.If any error occurs during the extension execution, only that module will be deactivated without affecting the operation of the others and the extension (root). Check out a simplified illustrative example of the final architecture.
+
+<img src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-archtecture-demonstration.png" alt="Flawuldragon Arch Demo" />
+</div>
+
+Enjoy! 🙂👌
+
