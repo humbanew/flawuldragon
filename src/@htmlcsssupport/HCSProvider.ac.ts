@@ -38,18 +38,18 @@ export class HCSProvider implements vscode.CompletionItemProvider, vscode.Defini
     if (!styles) {
       const content = await this.fetch(name);
       styles = HCSParser.prototype.parse(content);
-      this.cache.set(name, styles);
+      this.cache?.set(name, styles);
     }
     return styles;
   }
 
   private async getLocal(uri: vscode.Uri) {
     const name = uri.toString();
-    let styles = this.cache.get(name);
+    let styles = this.cache?.get(name);
     if (!styles) {
       const content = await vscode.workspace.fs.readFile(uri);
       styles = HCSParser.prototype.parse(content.toString());
-      this.cache.set(name, styles);
+      this.cache?.set(name, styles);
     }
     return styles;
   }
@@ -213,10 +213,10 @@ export class HCSProvider implements vscode.CompletionItemProvider, vscode.Defini
   
   public clear() {
     vscode.window.showInformationMessage(`Style sheets cache cleared: ${this.cache.size}`);
-    this.cache.clear();
+    this.cache?.clear();
   }
   
   public invalidate(name: string) {
-    this.cache.delete(name);
+    this.cache?.delete(name);
   }
 }

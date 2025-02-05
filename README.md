@@ -8,11 +8,7 @@
 <div align="justify">
 
 > # ⚠️ Resources unavailable in v1.0.0 release candidate 1 ⚠️
-> ⇒ **Visual Studio Inspired Dark Theme + 7 highlight variants**
-> ⇒ **Visual Studio Inspired Light Theme + 7 highlight variants**
-> ⇒ **Visual Studio Inspired Blue Dark Theme + 7 highlight variants**
-> ⇒ **Visual Studio Inspired Blue Theme + 7 highlight variants**
-> ⇒ **Alternate Position of Flawuldragon Status Bar Itens Configuration**
+> ⇒ The Flawuldragon Notes
 >
 
 </div>
@@ -26,6 +22,55 @@
 </div>
 
 ## Vanilla Features and Demo
+
+### Preview
+
+#### Workspace
+
+#### StatusBar
+
+### Keybindings
+
+  | Key Shortcut | Source | Action |
+  |-|-|-|
+  | `Alt + N` | Vanilla | Open Flawuldragon Infos |
+  | `Alt + D` `A` | Vanilla | Set American Date Format |
+  | `Alt + D` `B` | Vanilla | Set 12h Time Format |
+  | `Alt + D` `C` | Vanilla | Invert Date and Time Properties |
+  | `Alt + D` `D` | Vanilla | Switch Visibility Date or Time |
+  | `Alt + D` `E` | Vanilla | Show Seconds |
+  | `Alt + D` `F` | Vanilla | Show Day of Week |
+  | `Alt + D` `G` | Vanilla | Interruptor Vanilla DateTime Status Bar |
+  | `Alt + A` `A` | Vanilla | Enable Inlay Hints |
+  | `Alt + A` `B` | Vanilla | Set Inlay Hints Font Family |
+  | `Alt + A` `C` | Vanilla | Set Inlay Hints Font Size |
+  | `Alt + A` `D` | Vanilla | Line Has Error Signal |
+  | `Alt + A` `E` | Vanilla | Line Has Warning Signal |
+  | `Alt + A` `F` | Vanilla | Line Has Inline Suggestion Signal |
+  | `Alt + J` | Jetbrains Mono | Activate JetBrains Mono Font |
+  | `Alt + J` `D` | Jetbrains Mono | Deactivate JetBrains Mono Font |
+  | `Alt + T` `L` | Theme Switch | Switch to Light Theme |
+  | `Alt + T` `D` | Theme Swtich | Switch to Dark Theme |
+  | `Alt + T` `T` | Theme Switch | Toggle Theme |
+  | `Alt + C` `L` | Auto Close Tag | Enable/Disable Auto Close Tag |
+  | `Alt + P` | Bracket Pair Guides | Enable/Disable Toggle Bracket Pair Guides |
+  | `Alt + E` | ErrorLens | Enable/Disable Error Lens |
+  | `Alt + E` `E` | ErrorLens | Enable/Disable Error Lens Errors |
+  | `Alt + E` `W` | ErrorLens | Enable/Disable Error Lens Warnings |
+  | `Alt + E` `I` | ErrorLens | Enable/Disable Error Lens Infos |
+  | `Alt + E` `H` | ErrorLens | Enable/Disable Error Lens Hints |
+  | `Alt + E` `M` | ErrorLens | Error Lens Toggle Inline Message |
+  | `Alt + E` `S` | ErrorLens | Error Lens Search for Problem |
+  | `Alt + E` `N` | ErrorLens | Error Lens Select Problem |
+  | `Alt + E` `P` | ErrorLens | Error Lens Toggle Workspace |
+  | `Alt + E` `C` | ErrorLens | Error Lens Disable Line |
+  | `Alt + E` `X` | ErrorLens | Error Lens Find Linter Rule Definition |
+  | `Alt + E` `A` | ErrorLens | Error Lens Copy Problem Message |
+  | `Alt + E` `B` | ErrorLens | Error Lens Copy Problem Code |
+  | `Alt + Q` | Take a Break | Start Take a Break |
+  | `Alt + Q` `T` | Take a Break | Stop Take a Break |
+  | `Alt + V` `V` | HTML CSS Support | Validate HTML CSS |
+  | `Alt + V` `C` | HTML CSS Support | Clear HTML CSS |
 
 ## Incorporations
 
@@ -1431,5 +1476,7 @@ To contribute to the project, follow the steps below:
 5. Create a new Pull Request
 
 ## Sponsorship
+
+At some point in the future will be available to patrons.
 
 ## Technical acknowledgments

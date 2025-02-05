@@ -1,11 +1,11 @@
 {
+  "publisher": "humbanew",
   "name": "flawuldragon",
   "displayName": "Flawuldragon",
   "description": "Humbanew Official Development Extension",
   "version": "1.0.0-rc1",
   "icon": "assets/icon.png",
   "readme": "README.md",
-  "publisher": "humbanew",
   "license": "Humbanew License v5, powered by MIT License",
   "repository": {
     "type": "git",
@@ -18,6 +18,9 @@
       "url": "https://www.humbanew.com.br"
     }
   ],
+  "sponsor": {
+    "url": ""
+  },
   "galleryBanner": {
     "color": "#451aff",
     "theme": "dark"
@@ -40,8 +43,7 @@
   "main": "./dist/extension.js",
   "browser": "./dist/extension-web.js",
   "engines": {
-    "vscode": "^1.95.0",
-    "node": "^22.0.0"
+    "vscode": "^1.95.0"
   },
   "extensionKind": [
     "ui",
@@ -638,6 +640,12 @@
       },
       {
         "category": "Flawuldragon",
+        "command": "flawuldragon.vanillaDateTime.ui.interruptorStatusBar",
+        "title": "-Flawuldragon Native- Show or Hide the vanilla date and time status bar item",
+        "description": "Show or Hide the vanilla date and time status bar item"
+      },
+      {
+        "category": "Flawuldragon",
         "command": "flawuldragon.vanilla.accessibility.inlayHints.enabled",
         "title": "-Flawuldragon Native ※ Accessibility- Enable Inlay Hints in editor",
         "description": "Enable Inlay Hints in editor"
@@ -671,12 +679,6 @@
         "command": "flawuldragon.vanilla.accessibility.signals.lineHasInlineSuggestion",
         "title": "-Flawuldragon Native ※ Accessibility- Change the signal of line has inline suggestion in editor",
         "description": "Change the signal of line has inline suggestion in editor"
-      },
-      {
-        "category": "Flawuldragon",
-        "command": "flawuldragon.vanillaDateTime.ui.interruptorStatusBar",
-        "title": "-Flawuldragon Native- Show or Hide the vanilla date and time status bar item",
-        "description": "Show or Hide the vanilla date and time status bar item"
       },
       {
         "category": "Flawuldragon",
@@ -795,7 +797,7 @@
       },
       {
         "category": "Flawuldragon",
-        "command": "flawuldragon.fd.auto-close-tag.closeTag",
+        "command": "flawuldragon.auto-close-tag.closeTag",
         "title": "-Auto Close Tag- Close Tag",
         "description": "Close Tag"
       },
@@ -2518,9 +2520,69 @@
         "command": "flawuldragon.extension.infos"
       },
       {
-        "key": "alt+d",
-        "mac": "cmd+alt+d",
+        "key": "alt+d a",
+        "mac": "cmd+alt+d a",
+        "command": "flawuldragon.vanillaDateTime.americanFormat"
+      },
+      {
+        "key": "alt+d b",
+        "mac": "cmd+alt+d b",
+        "command": "flawuldragon.vanillaDateTime.12hFormat"
+      },
+      {
+        "key": "alt+d c",
+        "mac": "cmd+alt+d c",
+        "command": "flawuldragon.vanillaDateTime.invertProps"
+      },
+      {
+        "key": "alt+d d",
+        "mac": "cmd+alt+d d",
+        "command": "flawuldragon.vanillaDateTime.switchVisibilityDateOrTime"
+      },
+      {
+        "key": "alt+d e",
+        "mac": "cmd+alt+d e",
+        "command": "flawuldragon.vanillaDateTime.showSeconds"
+      },
+      {
+        "key": "alt+d f",
+        "mac": "cmd+alt+d f",
+        "command": "flawuldragon.vanillaDateTime.showDayOfWeek"
+      },
+      {
+        "key": "alt+d g",
+        "mac": "cmd+alt+d g",
         "command": "flawuldragon.vanillaDateTime.ui.interruptorStatusBar"
+      },
+      {
+        "key": "alt+a a",
+        "mac": "cmd+alt+a a",
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.enabled"
+      },
+      {
+        "key": "alt+a b",
+        "mac": "cmd+alt+a b",
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.fontFamily"
+      },
+      {
+        "key": "alt+a c",
+        "mac": "cmd+alt+a c",
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.fontSize"
+      },
+      {
+        "key": "alt+a d",
+        "mac": "cmd+alt+a d",
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasError"
+      },
+      {
+        "key": "alt+a e",
+        "mac": "cmd+alt+a e",
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasWarning"
+      },
+      {
+        "key": "alt+a f",
+        "mac": "cmd+alt+a f",
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasInlineSuggestion"
       },
       {
         "key": "alt+j",
@@ -2528,104 +2590,119 @@
         "command": "flawuldragon.jetbrainsmonofont.activate"
       },
       {
-        "key": "alt+ctrl+j",
-        "mac": "cmd+alt+ctrl+j",
+        "key": "alt+j d",
+        "mac": "cmd+alt+j d",
         "command": "flawuldragon.jetbrainsmonofont.deactivate"
       },
       {
-        "key": "alt+f",
-        "mac": "cmd+alt+f",
-        "command": "flawuldragon.filesize.toggleFileSizeInfo"
+        "key": "alt+t l",
+        "mac": "cmd+alt+t l",
+        "command": "flawuldragon.themeswitch.lighttheme"
       },
       {
-        "key": "alt+shift+f",
-        "mac": "cmd+alt+shift+f",
-        "command": "flawuldragon.filesize.ui.interruptorStatusBar"
+        "key": "alt+t d",
+        "mac": "cmd+alt+t d",
+        "command": "flawuldragon.themeswitch.darktheme"
       },
       {
-        "key": "alt+t",
-        "mac": "cmd+alt+t",
-        "command": "flawuldragon.todohighlight.toggleHighlight"
+        "key": "alt+t t",
+        "mac": "cmd+alt+t t",
+        "command": "flawuldragon.themeswitch.toggle"
       },
       {
-        "key": "alt+ctrl+t",
-        "mac": "cmd+alt+ctrl+t",
-        "command": "flawuldragon.todohighlight.listAnnotations"
-      },
-      {
-        "key": "alt+shift+t",
-        "mac": "cmd+alt+shift+t",
-        "command": "flawuldragon.todohighlight.ui.interruptorStatusBar"
+        "key": "alt+c r",
+        "mac": "cmd+alt+c r",
+        "command": "flawuldragon.auto-close-tag.closeTag"
       },
       {
         "key": "alt+p",
         "mac": "cmd+alt+p",
-        "command": "flawuldragon.pomodoroClock.startPomodoro"
-      },
-      {
-        "key": "alt+ctrl+p",
-        "mac": "cmd+alt+ctrl+p",
-        "command": "flawuldragon.pomodoroClock.pausePomodoro"
-      },
-      {
-        "key": "alt+shift+p",
-        "mac": "cmd+alt+shift+p",
-        "command": "flawuldragon.pomodoroClock.continuePomodoro"
-      },
-      {
-        "key": "alt+ctrl+shift+p",
-        "mac": "cmd+alt+ctrl+shift+p",
-        "command": "flawuldragon.pomodoroClock.restartPomodoro"
-      },
-      {
-        "key": "alt+r",
-        "mac": "cmd+alt+r",
-        "command": "flawuldragon.pomodoroClock.resetPomodoro"
-      },
-      {
-        "key": "alt+ctrl+r",
-        "mac": "cmd+alt+ctrl+r",
-        "command": "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown"
-      },
-      {
-        "key": "alt+q",
-        "mac": "cmd+alt+q",
-        "command": "flawuldragon.pomodoroClock.ui.interruptorClockStatusBar"
-      },
-      {
-        "key": "alt+s",
-        "mac": "cmd+alt+s",
-        "command": "flawuldragon.pomodoroClock.ui.interruptorTypeStatusBar"
-      },
-      {
-        "key": "alt+1",
-        "mac": "cmd+alt+1",
-        "command": "flawuldragon.themeswitch.lighttheme"
-      },
-      {
-        "key": "alt+2",
-        "mac": "cmd+alt+2",
-        "command": "flawuldragon.themeswitch.darktheme"
-      },
-      {
-        "key": "alt+ctrl+h",
-        "mac": "cmd+alt+ctrl+h",
-        "command": "flawuldragon.themeswitch.toggle"
-      },
-      {
-        "key": "alt+.",
-        "mac": "cmd+alt+.",
-        "command": "flawuldragon.fd.auto-close-tag.closeTag"
-      },
-      {
-        "key": "alt+.",
-        "mac": "cmd+alt+.",
-        "command": "flawuldragon.fd.auto-close-tag.closeTag"
-      },
-      {
-        "key": "ctrl+shift+b",
-        "mac": "cmd+shift+b",
         "command": "flawuldragon.toggleBracketPairGuides"
+      },
+      {
+        "key": "alt+e",
+        "mac": "cmd+alt+e",
+        "command": "flawuldragon.errorLens.toggle"
+      },
+      {
+        "key": "alt+e e",
+        "mac": "cmd+alt+e e",
+        "command": "flawuldragon.errorLens.toggleError"
+      },
+      {
+        "key": "alt+e w",
+        "mac": "cmd+alt+e w",
+        "command": "flawuldragon.errorLens.toggleWarning"
+      },
+      {
+        "key": "alt+e i",
+        "mac": "cmd+alt+e i",
+        "command": "flawuldragon.errorLens.toggleInfo"
+      },
+      {
+        "key": "alt+e h",
+        "mac": "cmd+alt+e h",
+        "command": "flawuldragon.errorLens.toggleHint"
+      },
+      {
+        "key": "alt+e m",
+        "mac": "cmd+alt+e m",
+        "command": "flawuldragon.errorLens.toggleInlineMessage"
+      },
+      {
+        "key": "alt+e s",
+        "mac": "cmd+alt+e s",
+        "command": "flawuldragon.errorLens.searchForProblem"
+      },
+      {
+        "key": "alt+e n",
+        "mac": "cmd+alt+e n",
+        "command": "flawuldragon.errorLens.selectProblem"
+      },
+      {
+        "key": "alt+e p",
+        "mac": "cmd+alt+e p",
+        "command": "flawuldragon.errorLens.toggleWorkspace"
+      },
+      {
+        "key": "alt+e c",
+        "mac": "cmd+alt+e c",
+        "command": "flawuldragon.errorLens.disableLine"
+      },
+      {
+        "key": "alt+e x",
+        "mac": "cmd+alt+e x",
+        "command": "flawuldragon.errorLens.findLinterRuleDefinition"
+      },
+      {
+        "key": "alt+e a",
+        "mac": "cmd+alt+e a",
+        "command": "flawuldragon.errorLens.copyProblemMessage"
+      },
+      {
+        "key": "alt+e b",
+        "mac": "cmd+alt+e b",
+        "command": "flawuldragon.errorLens.copyProblemCode"
+      },
+      {
+        "key": "alt+q s",
+        "mac": "cmd+alt+q s",
+        "command": "flawuldragon.takeabreak.Take a break: Start"
+      },
+      {
+        "key": "alt+q t",
+        "mac": "cmd+alt+q t",
+        "command": "flawuldragon.takeabreak.Take a break: Stop"
+      },
+      {
+        "key": "alt+v v",
+        "mac": "cmd+alt+v v",
+        "command": "flawuldragon.vscode-html-css.validate"
+      },
+      {
+        "key": "alt+v c",
+        "mac": "cmd+alt+v c",
+        "command": "flawuldragon.vscode-html-css.clear"
       }
     ]
   },
