@@ -1,111 +1,111 @@
-[submodule "updates/sakai-icons"]
-	path = updates/sakai-icons
+[submodule "main/updates/sakai-icons"]
+	path = main/updates/sakai-icons
 	url = git@github.com:Sakai-UI/Sakai-Icons.git
-[submodule "updates/auto-close-tag"]
-	path = updates/auto-close-tag
+[submodule "main/updates/auto-close-tag"]
+	path = main/updates/auto-close-tag
 	url = git@github.com:formulahendry/vscode-auto-close-tag.git
-[submodule "updates/auto-rename-tag"]
-	path = updates/auto-rename-tag
+[submodule "main/updates/auto-rename-tag"]
+	path = main/updates/auto-rename-tag
 	url = git@github.com:formulahendry/vscode-auto-rename-tag.git
-[submodule "updates/auto-complete-tag"]
-	path = updates/auto-complete-tag
+[submodule "main/updates/auto-complete-tag"]
+	path = main/updates/auto-complete-tag
 	url = git@github.com:formulahendry/vscode-auto-complete-tag.git
-[submodule "updates/toggle-brackets-guides"]
-	path = updates/toggle-brackets-guides
+[submodule "main/updates/toggle-brackets-guides"]
+	path = main/updates/toggle-brackets-guides
 	url = git@github.com:kissumisha/togglebracketsguides.git
-[submodule "updates/color-highlight"]
-	path = updates/color-highlight
+[submodule "main/updates/color-highlight"]
+	path = main/updates/color-highlight
 	url = git@github.com:enyancc/vscode-ext-color-highlight.git
-[submodule "updates/color-highlight-v2"]
-	path = updates/color-highlight-v2
+[submodule "main/updates/color-highlight-v2"]
+	path = main/updates/color-highlight-v2
 	url = git@github.com:mikekscholz/vscode-ext-color-highlight.git
-[submodule "updates/errorlens"]
-	path = updates/errorlens
+[submodule "main/updates/errorlens"]
+	path = main/updates/errorlens
 	url = git@github.com:usernamehw/vscode-error-lens.git
-[submodule "updates/errorlens-alt"]
-	path = updates/errorlens-alt
+[submodule "main/updates/errorlens-alt"]
+	path = main/updates/errorlens-alt
 	url = git@github.com:phindle/error-lens.git
-[submodule "updates/filesize"]
-	path = updates/filesize
+[submodule "main/updates/filesize"]
+	path = main/updates/filesize
 	url = git@github.com:wdskuki/vscode-extension-filesize.git
-[submodule "updates/indent-rainbow"]
-	path = updates/indent-rainbow
+[submodule "main/updates/indent-rainbow"]
+	path = main/updates/indent-rainbow
 	url = git@github.com:oderwat/vscode-indent-rainbow.git
-[submodule "updates/jetbrains-mono-fontpack"]
-	path = updates/jetbrains-mono-fontpack
+[submodule "main/updates/jetbrains-mono-fontpack"]
+	path = main/updates/jetbrains-mono-fontpack
 	url = git@github.com:NarasimaPandiyan/JetbrainsMono-vscode-extension.git
-[submodule "updates/jetbrains-icon-theme"]
-	path = updates/jetbrains-icon-theme
+[submodule "main/updates/jetbrains-icon-theme"]
+	path = main/updates/jetbrains-icon-theme
 	url = git@github.com:cadamsdev/vscode-jetbrains-icon-theme.git
-[submodule "updates/pomodoro-clock"]
-	path = updates/pomodoro-clock
+[submodule "main/updates/pomodoro-clock"]
+	path = main/updates/pomodoro-clock
 	url = git@github.com:jackluson/vscode-pomodoro-clock.git
-[submodule "updates/theme-switch"]
-	path = updates/theme-switch
+[submodule "main/updates/theme-switch"]
+	path = main/updates/theme-switch
 	url = git@github.com:Fooxly/themeswitch.git
-[submodule "updates/todo-highlight"]
-	path = updates/todo-highlight
+[submodule "main/updates/todo-highlight"]
+	path = main/updates/todo-highlight
 	url = git@github.com:wayou/vscode-todo-highlight.git
-[submodule "updates/todo-highlight-v2"]
-	path = updates/todo-highlight-v2
+[submodule "main/updates/todo-highlight-v2"]
+	path = main/updates/todo-highlight-v2
 	url = git@github.com:jgclark/vscode-todo-highlight.git
-[submodule "updates/fluent-icons"]
-	path = updates/fluent-icons
+[submodule "main/updates/fluent-icons"]
+	path = main/updates/fluent-icons
 	url = git@github.com:miguelsolorio/vscode-fluent-icons.git
-[submodule "updates/vs-icons-v2"]
-	path = updates/vs-icons-v2
+[submodule "main/updates/vs-icons-v2"]
+	path = main/updates/vs-icons-v2
 	url = git@github.com:vigan-abd/studio-icons-v2.git
-[submodule "updates/vs-icons"]
-	path = updates/vs-icons
+[submodule "main/updates/vs-icons"]
+	path = main/updates/vs-icons
 	url = git@github.com:jtlowe/studio-icons.git
-[submodule "updates/vsclassic-icons"]
-	path = updates/vsclassic-icons
+[submodule "main/updates/vsclassic-icons"]
+	path = main/updates/vsclassic-icons
 	url = git@gitlab.com:jez9999/vsclassic-icon-theme.git
-[submodule "updates/carbon-icons"]
-	path = updates/carbon-icons
+[submodule "main/updates/carbon-icons"]
+	path = main/updates/carbon-icons
 	url = git@github.com:Alecton4/vscode-icons-carbon-tweaked.git
-[submodule "updates/jetbrains-idea-product-icontheme"]
-	path = updates/jetbrains-idea-product-icontheme
+[submodule "main/updates/jetbrains-idea-product-icontheme"]
+	path = main/updates/jetbrains-idea-product-icontheme
 	url = git@github.com:ardonplay/vscode-jetbrains-idea-product-icon-theme.git
-[submodule "updates/charmed-icons"]
-	path = updates/charmed-icons
+[submodule "main/updates/charmed-icons"]
+	path = main/updates/charmed-icons
 	url = git@github.com:littensy/charmed-icons.git
-[submodule "updates/vsc-nomodark-icons"]
-	path = updates/vsc-nomodark-icons
+[submodule "main/updates/vsc-nomodark-icons"]
+	path = main/updates/vsc-nomodark-icons
 	url = git@github.com:Senko-The-Kitsune/Nomo-Dark-Extended.git
-[submodule "updates/vsc-nomodark-macos-icons"]
-	path = updates/vsc-nomodark-macos-icons
+[submodule "main/updates/vsc-nomodark-macos-icons"]
+	path = main/updates/vsc-nomodark-macos-icons
 	url = git@github.com:Gaulomatic/Vscode-IconTheme-Nomo-macOS-Dark.git
-[submodule "updates/vsc-nomolight-icons"]
-	path = updates/vsc-nomolight-icons
+[submodule "main/updates/vsc-nomolight-icons"]
+	path = main/updates/vsc-nomolight-icons
 	url = git@github.com:microhobby/Nomo-Light-Extended.git
-[submodule "updates/vsc-great-icons"]
-	path = updates/vsc-great-icons
+[submodule "main/updates/vsc-great-icons"]
+	path = main/updates/vsc-great-icons
 	url = git@github.com:EmmanuelBeziat/vscode-great-icons.git
-[submodule "updates/vsc-icons"]
-	path = updates/vsc-icons
+[submodule "main/updates/vsc-icons"]
+	path = main/updates/vsc-icons
 	url = git@github.com:vscode-icons/vscode-icons.git
-[submodule "updates/vsc-icons-macos"]
-	path = updates/vsc-icons-macos
+[submodule "main/updates/vsc-icons-macos"]
+	path = main/updates/vsc-icons-macos
 	url = git@github.com:wayou/vscode-icons.git
-[submodule "updates/materialiconic-product-icons"]
-	path = updates/materialiconic-product-icons
+[submodule "main/updates/materialiconic-product-icons"]
+	path = main/updates/materialiconic-product-icons
 	url = git@github.com:nyxb/materialiconic-product-icons.git
-[submodule "updates/vs-2022icons"]
-	path = updates/vs-2022icons
+[submodule "main/updates/vs-2022icons"]
+	path = main/updates/vs-2022icons
 	url = git@github.com:RespectMathias/VS2022-Icons.git
-[submodule "updates/vsc-symbols-icons"]
-	path = updates/vsc-symbols-icons
+[submodule "main/updates/vsc-symbols-icons"]
+	path = main/updates/vsc-symbols-icons
 	url = git@github.com:miguelsolorio/vscode-symbols.git
-[submodule "updates/takeabreak"]
-	path = updates/takeabreak
+[submodule "main/updates/takeabreak"]
+	path = main/updates/takeabreak
 	url = https://github.com/theHocineSaad/takeabreak.git
-[submodule "updates/codesnap"]
-	path = updates/codesnap
+[submodule "main/updates/codesnap"]
+	path = main/updates/codesnap
 	url = https://github.com/kufii/CodeSnap.git
-[submodule "updates/polacode"]
-	path = updates/polacode
+[submodule "main/updates/polacode"]
+	path = main/updates/polacode
 	url = https://github.com/octref/polacode.git
-[submodule "updates/html-css-support"]
-	path = updates/html-css-support
+[submodule "main/updates/html-css-support"]
+	path = main/updates/html-css-support
 	url = git@github.com:ecmel/vscode-html-css.git
