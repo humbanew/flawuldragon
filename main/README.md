@@ -7,14 +7,6 @@
 <br><br>
 <div align="justify">
 
-> # ⚠️ Resources unavailable in v1.0.0 release candidate 1 ⚠️
-> ⇒ The Flawuldragon Notes
->
-
-</div>
-
-<div align="justify">
-
 ## Introduction
 
 <div align="justify">
@@ -40,46 +32,46 @@
 
 ### Keybindings
 
-  | Key Shortcut | Source | Action |
-  |-|-|-|
-  | `Alt + N` | Vanilla | Open Flawuldragon Infos |
-  | `Alt + D` `A` | Vanilla | Set American Date Format |
-  | `Alt + D` `B` | Vanilla | Set 12h Time Format |
-  | `Alt + D` `C` | Vanilla | Invert Date and Time Properties |
-  | `Alt + D` `D` | Vanilla | Switch Visibility Date or Time |
-  | `Alt + D` `E` | Vanilla | Show Seconds |
-  | `Alt + D` `F` | Vanilla | Show Day of Week |
-  | `Alt + D` `G` | Vanilla | Interruptor Vanilla DateTime Status Bar |
-  | `Alt + A` `A` | Vanilla | Enable Inlay Hints |
-  | `Alt + A` `B` | Vanilla | Set Inlay Hints Font Family |
-  | `Alt + A` `C` | Vanilla | Set Inlay Hints Font Size |
-  | `Alt + A` `D` | Vanilla | Line Has Error Signal |
-  | `Alt + A` `E` | Vanilla | Line Has Warning Signal |
-  | `Alt + A` `F` | Vanilla | Line Has Inline Suggestion Signal |
-  | `Alt + J` | Jetbrains Mono | Activate JetBrains Mono Font |
-  | `Alt + J` `D` | Jetbrains Mono | Deactivate JetBrains Mono Font |
-  | `Alt + T` `L` | Theme Switch | Switch to Light Theme |
-  | `Alt + T` `D` | Theme Swtich | Switch to Dark Theme |
-  | `Alt + T` `T` | Theme Switch | Toggle Theme |
-  | `Alt + C` `L` | Auto Close Tag | Enable/Disable Auto Close Tag |
-  | `Alt + P` | Bracket Pair Guides | Enable/Disable Toggle Bracket Pair Guides |
-  | `Alt + E` | ErrorLens | Enable/Disable Error Lens |
-  | `Alt + E` `E` | ErrorLens | Enable/Disable Error Lens Errors |
-  | `Alt + E` `W` | ErrorLens | Enable/Disable Error Lens Warnings |
-  | `Alt + E` `I` | ErrorLens | Enable/Disable Error Lens Infos |
-  | `Alt + E` `H` | ErrorLens | Enable/Disable Error Lens Hints |
-  | `Alt + E` `M` | ErrorLens | Error Lens Toggle Inline Message |
-  | `Alt + E` `S` | ErrorLens | Error Lens Search for Problem |
-  | `Alt + E` `N` | ErrorLens | Error Lens Select Problem |
-  | `Alt + E` `P` | ErrorLens | Error Lens Toggle Workspace |
-  | `Alt + E` `C` | ErrorLens | Error Lens Disable Line |
-  | `Alt + E` `X` | ErrorLens | Error Lens Find Linter Rule Definition |
-  | `Alt + E` `A` | ErrorLens | Error Lens Copy Problem Message |
-  | `Alt + E` `B` | ErrorLens | Error Lens Copy Problem Code |
-  | `Alt + Q` | Take a Break | Start Take a Break |
-  | `Alt + Q` `T` | Take a Break | Stop Take a Break |
-  | `Alt + V` `V` | HTML CSS Support | Validate HTML CSS |
-  | `Alt + V` `C` | HTML CSS Support | Clear HTML CSS |
+  | Key Shortcut | Mac OS Key Shortcut | Source | Action |
+  |-|-|-|-|
+  | `Alt + N` | `Cmd + Alt + N` | Vanilla | Open Flawuldragon Infos |
+  | `Alt + D` `A` | `Cmd + Alt + D` `A` | Vanilla | Set American Date Format |
+  | `Alt + D` `B` | `Cmd + Alt + D` `B` | Vanilla | Set 12h Time Format |
+  | `Alt + D` `C` | `Cmd + Alt + D` `C` | Vanilla | Invert Date and Time Properties |
+  | `Alt + D` `D` | `Cmd + Alt + D` `D` | Vanilla | Switch Visibility Date or Time |
+  | `Alt + D` `E` | `Cmd + Alt + D` `E` | Vanilla | Show Seconds |
+  | `Alt + D` `F` | `Cmd + Alt + D` `F` | Vanilla | Show Day of Week |
+  | `Alt + D` `G` | `Cmd + Alt + D` `G` | Vanilla | Interruptor Vanilla DateTime Status Bar |
+  | `Alt + A` `A` | `Cmd + Alt + A` `A` | Vanilla | Enable Inlay Hints |
+  | `Alt + A` `B` | `Cmd + Alt + A` `B` | Vanilla | Set Inlay Hints Font Family |
+  | `Alt + A` `C` | `Cmd + Alt + A` `C` | Vanilla | Set Inlay Hints Font Size |
+  | `Alt + A` `D` | `Cmd + Alt + A` `D` | Vanilla | Line Has Error Signal |
+  | `Alt + A` `E` | `Cmd + Alt + A` `E` | Vanilla | Line Has Warning Signal |
+  | `Alt + A` `F` | `Cmd + Alt + A` `F` | Vanilla | Line Has Inline Suggestion Signal |
+  | `Alt + J` | `Cmd + Alt + J` | Jetbrains Mono | Activate JetBrains Mono Font |
+  | `Alt + J` `D` | `Cmd + Alt + J` `D` | Jetbrains Mono | Deactivate JetBrains Mono Font |
+  | `Alt + T` `L` | `Cmd + Alt + T` `L` | Theme Switch | Switch to Light Theme |
+  | `Alt + T` `D` | `Cmd + Alt + T` `D` | Theme Swtich | Switch to Dark Theme |
+  | `Alt + T` `T` | `Cmd + Alt + T` `T` | Theme Switch | Toggle Theme |
+  | `Alt + C` `L` | `Cmd + Alt + C` `L` | Auto Close Tag | Enable/Disable Auto Close Tag |
+  | `Alt + P` | `Cmd + Alt + P` | Bracket Pair Guides | Enable/Disable Toggle Bracket Pair Guides |
+  | `Alt + E` | `Cmd + Alt + E` | ErrorLens | Enable/Disable Error Lens |
+  | `Alt + E` `E` | `Cmd + Alt + E` `E` | ErrorLens | Enable/Disable Error Lens Errors |
+  | `Alt + E` `W` | `Cmd + Alt + E` `W` | ErrorLens | Enable/Disable Error Lens Warnings |
+  | `Alt + E` `I` | `Cmd + Alt + E` `I` | ErrorLens | Enable/Disable Error Lens Infos |
+  | `Alt + E` `H` | `Cmd + Alt + E` `H` | ErrorLens | Enable/Disable Error Lens Hints |
+  | `Alt + E` `M` | `Cmd + Alt + E` `M` | ErrorLens | Error Lens Toggle Inline Message |
+  | `Alt + E` `S` | `Cmd + Alt + E` `S` | ErrorLens | Error Lens Search for Problem |
+  | `Alt + E` `N` | `Cmd + Alt + E` `N` | ErrorLens | Error Lens Select Problem |
+  | `Alt + E` `P` | `Cmd + Alt + E` `P` | ErrorLens | Error Lens Toggle Workspace |
+  | `Alt + E` `C` | `Cmd + Alt + E` `C` | ErrorLens | Error Lens Disable Line |
+  | `Alt + E` `X` | `Cmd + Alt + E` `X` | ErrorLens | Error Lens Find Linter Rule Definition |
+  | `Alt + E` `A` | `Cmd + Alt + E` `A` | ErrorLens | Error Lens Copy Problem Message |
+  | `Alt + E` `B` | `Cmd + Alt + E` `B` | ErrorLens | Error Lens Copy Problem Code |
+  | `Alt + Q` | `Cmd + Alt + Q` | Take a Break | Start Take a Break |
+  | `Alt + Q` `T` | `Cmd + Alt + Q` `T` | Take a Break | Stop Take a Break |
+  | `Alt + V` `V` | `Cmd + Alt + Q` `V` | HTML CSS Support | Validate HTML CSS |
+  | `Alt + V` `C` | `Cmd + Alt + V` `C` | HTML CSS Support | Clear HTML CSS |
 
 ## Incorporations
 

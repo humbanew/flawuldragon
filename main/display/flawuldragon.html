@@ -9,134 +9,8 @@
   <meta name=”robots” content=”noai, noimageai”>
 </head>
 
-<style>
-  :root {}
-</style>
-
-<style>
-  html,
-  html>iframe {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(to bottom, #2c79c8, #121212);
-    border: 0;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100%;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  body h2 {
-    height: 100%;
-    font-weight: 300;
-    padding: 2rem;
-  }
-
-  .flawuldragon-notes_display_titulo {
-    align-items: center;
-    background: linear-gradient(to right, #2c79c8cc, #0f64bbcc, #105ba7cc);
-    display: flex;
-    gap: 0.2rem;
-    padding-left: 1rem;
-    width: calc(100% - 1rem);
-    box-shadow: #12121244 0px 0px 10px;
-
-    position: sticky;
-    position-try: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .flawuldragon-notes_display_titulo svg {
-    width: 50px;
-    height: 50px;
-  }
-
-  .flawuldragon-notes_display_categorias {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: calc(100%-2rem);
-  }
-
-  .flawuldragon-notes_display_categorias__card {
-    box-shadow: 0px 4px 12px #00000066;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1rem;
-    width: 80%;
-  }
-
-  .flawuldragon-notes_display_categorias__card:nth-child(1) {
-    background-color: #7cbdff;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    margin-top: 2rem;
-  }
-
-  .flawuldragon-notes_display_categorias__card:nth-child(2) {
-    background-color: #5eafff;
-  }
-
-  .flawuldragon-notes_display_categorias__card:nth-child(3) {
-    background-color: #409ffd;
-  }
-
-  .flawuldragon-notes_display_categorias__card:nth-child(4) {
-    background-color: #2892fc;
-  }
-
-  .flawuldragon-notes_display_categorias__card:nth-child(5) {
-    background-color: #0075eb;
-  }
-
-  .flawuldragon-notes_display_categorias__card:nth-child(6) {
-    background-color: #0052a3;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
-
-  .flawuldragon-notes_display_categorias__card___conteudo {
-    width: 100%;
-  }
-
-  .flawuldragon-notes_display_rodape {
-    display: flex;
-    vertical-align: bottom;
-    justify-content: center;
-    margin-top: 2rem;
-    width: calc(100%-2rem);
-  }
-
-  .flawuldragon-notes_display_rodape__card {
-    align-items: baseline;
-    background-color: #0f64bb55;
-    box-shadow: #cccccc44 0px -2px 6px;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    position: sticky;
-    bottom: 0;
-    gap: 0.5rem;
-    width: 94%;
-  }
-
-  .flawuldragon-notes_display_rodape__card>svg {
-    width: 85px;
-    height: 14px;
-  }
-</style>
-
-<body>
-  <header class="flawuldragon-notes_display_titulo">
+<body class="flawuldragon-notes_display">
+  <header class="flawuldragon-notes_display__titulo">
     <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M14 45.3678C14 45.9201 14.4477 46.3678 15 46.3678H24.7701C25.3224 46.3678 25.7701 45.9201 25.7701 45.3678V26.7701C25.7701 26.2178 26.2178 25.7701 26.7701 25.7701H39.146C39.5159 25.7701 39.8556 25.5659 40.0291 25.2393L45.2195 15.4692C45.5734 14.8031 45.0906 14 44.3364 14H14V45.3678Z"
@@ -148,41 +22,30 @@
         d="M21.1658 41.954C20.5153 41.954 20.0379 41.3426 20.1957 40.7115L22.6382 30.9414C22.7495 30.4962 23.1495 30.1839 23.6084 30.1839H39.8983C40.561 30.1839 41.0404 30.8167 40.861 31.4547L38.1131 41.2248C37.9919 41.656 37.5985 41.954 37.1505 41.954H21.1658Z"
         fill="#cccccc" />
     </svg>
-    <h1> The Flawuldragon Notes</h1>
+    <h1> Flawuldragon's Notes</h1>
   </header>
 
-  <h2>The Flawuldragon Notes will be available in the launch version of the project. See the readme on the extension
-    page at Visual Studio Marketplace or the tab "Extensions>Flawuldragon".</h2>
+  <section class="flawuldragon-notes_display__container">
 
-  <!-- <section class="flawuldragon-notes_display_categorias">
-      <div class="flawuldragon-notes_display_categorias__card">
-        <h2>Keybindings</h2>
-        <div class="flawuldragon-notes_display_categorias__card___conteudo">a</div>
-      </div>
-      <div class="flawuldragon-notes_display_categorias__card">
-        <h2>Incorporations</h2>
-        <div class="flawuldragon-notes_display_categorias__card___conteudo">b</div>
-      </div>
-      <div class="flawuldragon-notes_display_categorias__card">
-        <h2>Features</h2>
-        <div class="flawuldragon-notes_display_categorias__card___conteudo">c</div>
-      </div>
-      <div class="flawuldragon-notes_display_categorias__card">
-        <h2>Changelog</h2>
-        <div class="flawuldragon-notes_display_categorias__card___conteudo">d</div>
-      </div>
-      <div class="flawuldragon-notes_display_categorias__card">
-        <h2>Parent Extensions</h2>
-        <div class="flawuldragon-notes_display_categorias__card___conteudo">e</div>
-      </div>
-      <div class="flawuldragon-notes_display_categorias__card">
-        <h2>Extension Packs</h2>
-        <div class="flawuldragon-notes_display_categorias__card___conteudo">f</div>
-      </div>
-    </section> -->
+    <div class="flawuldragon-notes_display__container___card">
+      <h2 class="flawuldragon-notes_display__container___card____titulo">Incorporations</h2>
+      <div class="flawuldragon-notes_display__container___card____conteudo" id="inc"></div>
+    </div>
+    <div class="flawuldragon-notes_display__container___card">
+      <h2 class="flawuldragon-notes_display__container___card____titulo">Keybindings</h2>
+      <div class="flawuldragon-notes_display__container___card____conteudo" id="key"></div>
+    </div>
+    <div class="flawuldragon-notes_display__container___card">
+      <h2 class="flawuldragon-notes_display__container___card____titulo">Features</h2>
+      <div class="flawuldragon-notes_display__container___card____conteudo" id="fea"></div>
+    </div>
+    <div class="flawuldragon-notes_display__container___card">
+      <h2 class="flawuldragon-notes_display__container___card____titulo">Changelog</h2>
+      <div class="flawuldragon-notes_display__container___card____conteudo" id="cha"></div>
+  </section>
 
-  <footer class="flawuldragon-notes_display_rodape">
-    <div class="flawuldragon-notes_display_rodape__card">
+  <footer class="flawuldragon-notes_display__rodape">
+    <div class="flawuldragon-notes_display__rodape___card">
       <svg width="63" height="10" viewBox="0 0 63 10" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M52 2.01114C52 2.00849 51.9989 2.00595 51.9971 2.00407L51.9959 2.00293C51.9941 2.00105 51.9915 2 51.9889 2H46.0111C46.0085 2 46.0059 2.00105 46.0041 2.00293L46.0029 2.00407C46.0011 2.00595 46 2.00849 46 2.01114V9.98886C46 9.99152 46.0011 9.99406 46.0029 9.99593L46.0041 9.99708C46.0059 9.99895 46.0085 10 46.0111 10H51.9889C51.9915 10 51.9941 9.99895 51.9959 9.99708L51.9971 9.99593C51.9989 9.99406 52 9.99152 52 9.98886V8.01115C52 8.0085 51.9989 8.00595 51.9971 8.00408L51.9959 8.00293C51.9941 8.00106 51.9915 8.00001 51.9889 8.00001H48.0111C48.0085 8.00001 48.0059 7.99895 48.0041 7.99708L48.0029 7.99593C48.0011 7.99406 48 7.99152 48 7.98886V6.02338C48 6.01946 48.0024 6.01593 48.006 6.01443C48.0096 6.01293 48.0138 6.01375 48.0165 6.01652L49 6.99708C49.0019 6.99895 49.0044 7 49.007 7H51.9889C51.9915 7 51.9941 6.99895 51.9959 6.99708L51.9971 6.99593C51.9989 6.99406 52 6.99151 52 6.98886V2.01114ZM49.9889 5C49.9915 5 49.9941 4.99895 49.9959 4.99707L49.9971 4.99593C49.999 4.99406 50 4.99151 50 4.98886V4.01114C50 4.00849 49.999 4.00595 49.9971 4.00407L49.9959 4.00293C49.9941 4.00106 49.9915 4 49.9889 4H48.0111C48.0085 4 48.0059 4.00106 48.0041 4.00293L48.0029 4.00407C48.0011 4.00595 48 4.00849 48 4.01115V4.98886C48 4.99151 48.0011 4.99406 48.0029 4.99593L48.0041 4.99708C48.0059 4.99895 48.0085 5 48.0111 5H49.9889Z"
@@ -212,956 +75,658 @@
       <span id="copyright-description"></span>
     </div>
   </footer>
-
-  <script defer>
-    const footerCopyright = document.getElementById('copyright-description');
-    const currentYear = new Date().getFullYear();
-    footerCopyright.textContent = `© 2015-${currentYear}. Todos os direitos reservados.`;
-  </script>
-
 </body>
 
-<!-- 
-<body class="flawuldragon-notes_display_conteiner">
-
-  <div class="flawuldragon-notes_display_titulo">
-    <h1>Flawuldragon Notes</h1>
-  </div>
-
-  <section class="flawuldragon-notes_display_layout">
-
-    <section class="flawuldragon-notes_display_layout__coluna">
-
-      <div class="flawuldragon-notes_display_layout__card addon-incorporations">
-
-        <h2 class="flawuldragon-notes_display_layout__card___titulo">Incorporations</h2>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status included"></span> Jetbrains Mono Font Pack</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Narasima Pandiyan</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=NarasimaPandiyan.jetbrainsmono">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/NarasimaPandiyan.jetbrainsmono/license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status included"></span> Jetbrains Icons Pack</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Chaladen</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=chadalen.vscode-jetbrains-icon-theme">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/chadalen.vscode-jetbrains-icon-theme/license">License
-              Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status included"></span> Filesize</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by weids</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=weids.filesize">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status included"></span> Indent Rainbow</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Oderwat</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/oderwat.indent-rainbow/license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status included"></span> TODO Highlight</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Wayou</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/wayou.vscode-todo-highlight/license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status next-update"></span> Color Highlight</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Naumovs</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/naumovs.color-highlight/license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status included"></span> Pomodoro Clock</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Jackluson</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=jackluson.pomodoro-clock">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/jackluson.pomodoro-clock/license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status included"></span> Theme Switch</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Fooxly</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=Fooxly.themeswitch">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/Fooxly.themeswitch/license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status next-update"></span> ErrorLens</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Alexander</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/usernamehw.errorlens/license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status included"></span> Auto Rename Tag</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Jun Han</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/formulahendry.auto-rename-tag/license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status included"></span> Auto Close Tag</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Jun Han</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/formulahendry.auto-close-tag/license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status next-update"></span> Todo Tree</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Gruntfuggly</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=gruntfuggly.todo-tree">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/gruntfuggly.todo-tree/license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status next-update"></span> Chrome Tabs</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by xabikos</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=xabikos.chrome-tabs">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/xabikos.chrome-tabs/license">License Terms</a>
-          </p>
-        </div>
-
-        <div class="flawuldragon-notes_display_layout__subcard">
-          <div class="flawuldragon-notes_display_layout__subcard_title_cont">
-            <span class="flawuldragon-notes_display_layout__subcard_title">
-              <span class="status analising"></span> Music Time for Spotify</span>
-            <span class="flawuldragon-notes_display_layout__subcard_creator">by Softwaredotcom</span>
-          </div>
-          <p class="flawuldragon-notes_display_layout__subcard_terms">
-            <a class="flawuldragon-notes_display_layout__subcard_about"
-              href="https://marketplace.visualstudio.com/items?itemName=softwaredotcom.music-time">About</a>
-            <a class="flawuldragon-notes_display_layout__subcard_license"
-              href="https://marketplace.visualstudio.com/items/softwaredotcom.music-time/license">License Terms</a>
-          </p>
-        </div>
-
-      </div>
-
-      <div class="flawuldragon-notes_display_layout__card addon-features">
-
-        <h2 class="flawuldragon-notes_display_layout__card___titulo">Features</h2>
-
-        <h3 class="flawuldragon-notes_display_layout__card___titulo_w">Themes</h3>
-        <div class="flawuldragon-notes_resources_list">
-          <span id="advanced_circuits" title="Light and Dark">Advanced Circuits</span>
-          <span id="blueprint_paper" title="Light and Dark">Blueprint Paper</span>
-          <span id="clear_code" title="Light and Dark">Clear Code</span>
-          <span id="winter_day" title="Light and Dark">Winter Day</span>
-        </div>
-
-        <h3 class="flawuldragon-notes_display_layout__card___titulo_w">Icon Themes</h3>
-        <div class="flawuldragon-notes_resources_list">
-          <span>JB Classic</span>
-          <span>JB 2023 Auto</span>
-          <span>JB 2023 Light</span>
-          <span>JB 2023 Dark</span>
-        </div>
-
-        <h3 class="flawuldragon-notes_display_layout__card___titulo_w">Commentary Docs</h3>
-        <div class="flawuldragon-notes_resources_list">
-          <span id="todo">"TODO:"</span>
-          <span id="fixme">"FIXME:"</span>
-          <span id="note">"NOTE:"</span>
-          <span id="hack">"HACK:"</span>
-          <span id="bug">"BUG:"</span>
-          <span id="idea">"IDEA:"</span>
-          <span id="review">"REVIEW:"</span>
-          <span id="question">"QUESTION:"</span>
-          <span id="example">"EXAMPLE:"</span>
-          <span id="test">"TEST:"</span>
-        </div>
-
-        <h3 class="flawuldragon-notes_display_layout__card___titulo_w">Cosmetics</h3>
-        <div class="flawuldragon-notes_resources_list">
-          <span>Filesize Display</span>
-          <span>Colorized Indent</span>
-          <span>Switch between Themes</span>
-          <span>Date and Time Display</span>
-          <span>Todo Flags</span>
-          <span>Lens of Errors and Warnings</span>
-          <span>Color Highlighted</span>
-          <span>Countdown Clock</span>
-        </div>
-
-        <h3 class="flawuldragon-notes_display_layout__card___titulo_w">Pros Attributes</h3>
-        <div class="flawuldragon-notes_resources_list">
-          <span>Robust</span>
-          <span>User Friendly</span>
-          <span>Extensions Management</span>
-        </div>
-
-
-      </div>
-
-    </section>
-    <section class="flawuldragon-notes_display_layout__coluna">
-
-      <div class="flawuldragon-notes_display_layout__card addon-keybindings">
-        
-        <h2 class="flawuldragon-notes_display_layout__card___titulo">Keybindings</h2>
-        
-        <div class="fdnotes_section_kb_card" id="first">
-          <span>View Flawuldragon Notes</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">N</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Activate Vanilla Datetime</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">D</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Deactivate Vanilla Datetime</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">D</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Activate Jetbrains Mono Font</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">J</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Deactivate Jetbrains Mono Font</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">J</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Toggle Filesize Info</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">F</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Toggle Filesize Advanced Info</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">F</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Enable Filesize Status Bar</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Shift</span> + <span class="fdnotes_section_kb_card_key">F</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Disable Filesize Status Bar</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">Shift</span> +
-            <span class="fdnotes_section_kb_card_key">F</span>
-          </p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Toggle Todo Highlight</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">T</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>List Todo Annotations</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">T</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Enable Todo Highlight Status Bar</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Shift</span> + <span class="fdnotes_section_kb_card_key">T</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Disable Todo Highlight Status Bar</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">Shift</span> +
-            <span class="fdnotes_section_kb_card_key">T</span>
-          </p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Start Pomodoro Clock</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">P</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Pause Pomodoro Clock</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">P</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Continue Pomodoro Clock</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Shift</span> + <span class="fdnotes_section_kb_card_key">P</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Restart Pomodoro Clock</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">Shift</span> +
-            <span class="fdnotes_section_kb_card_key">P</span>
-          </p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Reset Pomodoro Clock</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">R</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Toggle Pomodoro Clock Countdown</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">R</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Show Pomodoro Clock Status Bar</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Shift</span> + <span class="fdnotes_section_kb_card_key">R</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Hide Pomodoro Clock Status Bar</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">Shift</span> +
-            <span class="fdnotes_section_kb_card_key">R</span>
-          </p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Show Pomodoro Clock Type Status Bar</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">S</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Hide Pomodoro Clock Type Status Bar</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">S</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Switch to Light Theme</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">1</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Switch to Dark Theme</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">2</span></p>
-        </div>
-
-        <div class="fdnotes_section_kb_card">
-          <span>Toggle Switch Theme</span>
-          <p class="fdnotes_section_kb_card_key_cont"><span class="fdnotes_section_kb_card_key">Alt</span> + <span
-              class="fdnotes_section_kb_card_key">Ctrl</span> + <span class="fdnotes_section_kb_card_key">H</span></p>
-        </div>
-
-
-      </div>
-
-      <div class="flawuldragon-notes_display_layout__card addon-changelog">
-
-        <h2 class="flawuldragon-notes_display_layout__card___titulo">Changelog</h2>
-
-        <h3 class="flawuldragon-notes_display_layout__card___titulo_w">v1.0.0</h3>
-
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Flawuldragon Notes View Panel.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Flawuldragon Core Hub in Status Bar.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Flawuldragon Vanilla Extension
-          Intelligence.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Flawuldragon Vanilla Date and Time.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Incorporation of Jetbrains Mono Font
-          Pack.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Incorporation of Jetbrains Icons Pack.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Incorporation of Filesize.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Incorporation of Indent Rainbow.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Incorporation of TODO Highlight.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Incorporation of Pomodoro Clock.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Incorporation of Theme Switch.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Incorporation of ErrorLens.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Incorporation of Auto Rename Tag.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Incorporation of Auto Close Tag.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> Incorporation of Color Highlight.
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> 16 Advanced Circuits Themes. (8
-          Light/8 Dark)
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> 16 Blueprint Paper Themes. (8 Light/8
-          Dark)
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> 16 Clear Code Themes. (8 Light/8 Dark)
-        </p>
-        <p class="flawuldragon-notes_display_changelog__item">
-          <span class="flawuldragon-notes_display_changelog__badge added"></span> 16 Winter Day Themes. (8 Light/8 Dark)
-        </p>
-
-      </div>
-
-      <div class="flawuldragon-notes_display_layout__card addon-parent-extensions">
-        <h2 class="flawuldragon-notes_display_layout__card___titulo">Parent Extensions</h2>
-
-        <p class="info">Shortly still unavailable.</p>
-      </div>
-
-      <div class="flawuldragon-notes_display_layout__card addon-extension-packs">
-        <h2 class="flawuldragon-notes_display_layout__card___titulo">Extension Packs</h2>
-
-        <p class="info">Shortly still unavailable.</p>
-      </div>
-
-    </section>
-
-  </section>
-
-  <footer class="flawuldragon-notes_display_rodape">The Flawuldragon. Humbanew Project © 2023-2024.</footer>
-
-  <style>
-    @media screen and (max-width: 768px) {
-      .flawuldragon-notes_display_conteiner {
-        justify-content: center;
-      }
-
-      .flawuldragon-notes_display_layout {
-        flex-wrap: wrap;
-      }
-    }
-
-    * {
-      border: 0;
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      overflow-x: hidden;
-    }
-
-    .flawuldragon-notes_display_conteiner {
-      background-color: #0f0f0f;
-      display: flex;
-      flex-direction: column;
-      width: 100vw;
-    }
-
-    .flawuldragon-notes_display_titulo {
-      background: linear-gradient(to right, #2c79c8cc, #0f64bbcc, #105ba7cc);
-      display: inline;
-      padding: 6px;
-      width: 100%;
-      box-shadow: #105ba7cc 0px 0px 10px;
-
-      position: sticky;
-      position-try: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .flawuldragon-notes_display_layout {
-      display: flex;
-      flex-direction: row;
-      margin-top: 1rem;
-      width: 100%;
-    }
-
-    .flawuldragon-notes_display_layout__coluna {
-      display: flex;
-      flex-direction: column;
-      margin: 0.5rem;
-      width: 50%;
-    }
-
-    .flawuldragon-notes_display_layout__card {
-      border: #082b4e 2px solid;
-      border-radius: 3px;
-      width: auto;
-      margin-bottom: 1rem;
-    }
-
-    .flawuldragon-notes_display_layout__card .info {
-      color: lightgray;
-      font-size: larger;
-      font-weight: 600;
-      font-style: italic;
-      padding: 0.6rem;
-      text-align: center;
-    }
-
-    .flawuldragon-notes_display_layout__card___titulo,
-    .flawuldragon-notes_display_layout__card___titulo_w {
-      padding: 0.5rem;
-    }
-
-    .flawuldragon-notes_display_layout__subcard {
-      display: flex;
-      flex-direction: column;
-      background-color: #105ba722;
-      margin: 0 0.6rem;
-      margin-bottom: 1rem;
-    }
-
-    .flawuldragon-notes_display_layout__subcard_title_cont {
-      display: flex;
-      padding: 1rem;
-      padding-left: 0.5rem;
-      padding-bottom: 0;
-    }
-
-    .flawuldragon-notes_display_layout__subcard_creator {
-      font-size: 0.8rem;
-      color: #105ba7;
-      margin-left: 0.5rem;
-      align-content: end;
-    }
-
-    .flawuldragon-notes_display_layout__subcard_terms {
-      display: flex;
-      justify-content: center;
-      padding-top: 1rem;
-    }
-
-    .flawuldragon-notes_display_layout__subcard_about,
-    .flawuldragon-notes_display_layout__subcard_license {
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      text-align: center;
-      padding: 0.6rem;
-      margin-bottom: 0;
-      transition: ease-in-out 0.3s;
-      width: 50%;
-    }
-
-    .flawuldragon-notes_display_layout__subcard_about {
-      background-color: #105ba7;
-    }
-
-    .flawuldragon-notes_display_layout__subcard_license {
-      background-color: #325ea7;
-    }
-
-    .flawuldragon-notes_display_layout__subcard_about:hover {
-      background-color: #082b4e;
-      transform: translateY(-2px);
-    }
-
-    .flawuldragon-notes_display_layout__subcard_license:hover {
-      background-color: #082b4e;
-      transform: translateY(-2px);
-    }
-
-    .flawuldragon-notes_display_rodape {
-      background-color: #051a30;
-      display: inline-block;
-      font-weight: 600;
-      text-align: center;
-      padding: 0.5rem;
-      margin: 0.4rem;
-    }
-  </style>
-
-  <style>
-    .addon-incorporations {
-      border: #037ef8cc 2px solid;
-    }
-
-    .addon-incorporations h2 {
-      color: #037ef8cc;
-    }
-
-    .addon-features {
-      border: #3191f0cc 2px solid;
-    }
-
-    .addon-features h2 {
-      color: #3191f0cc;
-    }
-
-    .addon-keybindings {
-      border: #83bdf8cc 2px solid;
-    }
-
-    .addon-keybindings h2 {
-      color: #83bdf8cc;
-    }
-
-    .addon-changelog {
-      border: #c9e2fccc 2px solid;
-    }
-
-    .addon-changelog h2 {
-      color: #c9e2fccc;
-    }
-
-    .addon-parent-extensions {
-      border: #f1eb67cc 2px solid;
-    }
-
-    .addon-parent-extensions h2 {
-      color: #f1eb67cc;
-    }
-
-    .addon-extension-packs {
-      border: #67f1c8cc 2px solid;
-    }
-
-    .addon-extension-packs h2 {
-      color: #67f1c8cc;
-    }
-
-    /* badges das incorporacoes */
-    .status {
-      font-weight: 800;
-      font-size: 0.8rem;
-      background-color: #2c79c899;
-      color: white;
-      padding: 0.2rem;
-      border-radius: 4px;
-      text-shadow: #000000 0px 3px 5px;
-    }
-
-    .included {
-      background-color: #037ef8cc;
-    }
-
-    .included::before {
-      content: "Included";
-    }
-
-    .non-included {
-      background-color: #f44336cc;
-    }
-
-    .non-included::before {
-      content: "Non-Included";
-    }
-
-    .next-update {
-      background-color: #67f1eb99;
-    }
-
-    .next-update::before {
-      content: "Next Update";
-    }
-
-    .analising {
-      background-color: #f1eb6799;
-    }
-
-    .analising::before {
-      content: "Under Analising";
-    }
-  </style>
-
-  <style>
-    .flawuldragon-notes_resources_list {
-      align-self: center;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: left;
-      margin-left: 0.7rem;
-      margin-bottom: 0.4rem;
-      width: 100%;
-    }
-
-    .flawuldragon-notes_resources_list span {
-      align-content: center;
-      background-color: #082b4e;
-      padding: 0.55rem;
-      text-align: center;
-      transition: ease-in-out 0.3s;
-      row-gap: 0;
-      width: 21.5%;
-    }
-
-    .flawuldragon-notes_resources_list span:hover {
-      background-color: #0f64bb;
-      box-shadow: #0f64bbcc 0px 2px 2px;
-      transform: translateY(-2px);
-    }
-
-    span#advanced_circuits:hover {
-      background: linear-gradient(to left, #0c6370, #3e9561, #f9f871);
-      box-shadow: #0c6370cc 0px 2px 2px;
-    }
-
-    span#blueprint_paper:hover {
-      background: linear-gradient(to left, #192c64, #3057e1, #ffffff);
-      box-shadow: #3057e1cc 0px 2px 2px;
-    }
-
-    span#clear_code:hover {
-      background: linear-gradient(to left, #121212, #65009f, #5e00f6);
-      box-shadow: #121212cc 0px 2px 2px;
-    }
-
-    span#winter_day:hover {
-      background: linear-gradient(to left, #63263D, #be423c, #ff8e38);
-      box-shadow: #63263Dcc 0px 2px 2px;
-    }
-
-    span#todo:hover {
-      background-color: #ffbd2a;
-      box-shadow: #ffbd2acc 0px 2px 2px;
-    }
-
-    span#fixme:hover {
-      background-color: #f06292;
-      box-shadow: #f06292cc 0px 2px 2px;
-    }
-
-    span#note:hover {
-      background-color: #4caf50;
-      box-shadow: #4caf50cc 0px 2px 2px;
-    }
-
-    span#hack:hover {
-      background-color: #ff5722;
-      box-shadow: #ff5722cc 0px 2px 2px;
-    }
-
-    span#bug:hover {
-      background-color: #f44336;
-      box-shadow: #f44336cc 0px 2px 2px;
-    }
-
-    span#idea:hover {
-      background-color: #2196f3;
-      box-shadow: #2196f3cc 0px 2px 2px;
-    }
-
-    span#review:hover {
-      background-color: #673ab7;
-      box-shadow: #673ab7cc 0px 2px 2px;
-    }
-
-    span#question:hover {
-      background-color: #9c27b0;
-      box-shadow: #9c27b0cc 0px 2px 2px;
-    }
-
-    span#example:hover {
-      background-color: #00bcd4;
-      box-shadow: #00bcd4cc 0px 2px 2px;
-    }
-
-    span#test:hover {
-      background-color: #009688;
-      box-shadow: #009688cc 0px 2px 2px;
-    }
-  </style>
-
-  <style>
-    .fdnotes_section_kb_card {
-      align-items: center;
-      background-color: #0f64bb33;
-      display: flex;
-      margin: 0.7rem;
-      margin-top: 0;
-      justify-content: space-between;
-      padding: 0.4rem;
-    }
-
-    .fdnotes_section_kb_card_key_cont {
-      color: darkgray;
-      font-weight: 400;
-    }
-
-    .fdnotes_section_kb_card_key {
-      background-color: #2c4aceaa;
-      border-radius: 1px;
-      color: white;
-      font-weight: 700;
-      padding: 0.2rem;
-    }
-  </style>
-
-  <style>
-    .flawuldragon-notes_display_changelog__item {
-      padding: 0.6rem;
-      padding-left: 0.9rem;
-    }
-
-    .flawuldragon-notes_display_changelog__badge {
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 0.8rem;
-      padding: 0.3rem;
-      background-color: #037ef822;
-      text-shadow: #000000 0px 3px 5px;
-    }
-
-    .flawuldragon-notes_display_changelog__badge.added {
-      background-color: #00968866;
-    }
-
-    .added::before {
-      content: "Added";
-    }
-
-    .flawuldragon-notes_display_changelog__badge.fixed {
-      background-color: #e1f43666;
-    }
-
-    .fixed::before {
-      content: "Fixed";
-    }
-
-    .flawuldragon-notes_display_changelog__badge.changed {
-      background-color: #ff980066;
-    }
-
-    .changed::before {
-      content: "Changed";
-    }
-
-    .flawuldragon-notes_display_changelog__badge.removed {
-      background-color: #f0180866;
-    }
-
-    .removed::before {
-      content: "Removed";
-    }
-  </style>
-
-</body> -->
+<style>
+  /*scrollbar*/
+  *::-webkit-scrollbar-track-piece {
+    background-color: #0f64bb00;
+    height: 4px;
+    width: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #0f64bb00;
+    border-radius: 3px;
+  }
+
+  section::-webkit-scrollbar-thumb,
+  div::-webkit-scrollbar-thumb {
+    transition: ease-in-out 0.4s;
+  }
+
+  *::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+
+  section:hover::-webkit-scrollbar-thumb,
+  div:hover::-webkit-scrollbar-thumb,
+  section:focus::-webkit-scrollbar-thumb,
+  div:focus::-webkit-scrollbar-thumb,
+  section:active::-webkit-scrollbar-thumb,
+  div:active::-webkit-scrollbar-thumb {
+    background-color: #0f64bb;
+  }
+
+  /*html e iframe do visual studio code*/
+  html,
+  html>iframe {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /*cabecalho*/
+  .flawuldragon-notes_display__titulo {
+    align-items: center;
+    background: linear-gradient(to right, #2c79c8cc, #0f64bbcc, #105ba7cc);
+    display: flex;
+    gap: 0.2rem;
+    padding-left: 1rem;
+    width: calc(100% - 1rem);
+    box-shadow: #12121244 0px 0px 10px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .flawuldragon-notes_display__titulo svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  /*corpo*/
+  .flawuldragon-notes_display {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #2c79c8, #121212) no-repeat;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  /*corpo container*/
+  #key {
+    background-color: #2c282c;
+  }
+
+  #fea {
+    background-color: #2e272a;
+  }
+
+  #cha {
+    background-color: #3c302f;
+  }
+
+  .flawuldragon-notes_display__container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    overflow-x: scroll;
+    margin: 0 1.6rem;
+    padding-bottom: 1rem;
+    height: 100%;
+  }
+
+  .flawuldragon-notes_display__container___card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flawuldragon-notes_display__container___card____titulo {
+    font-weight: 300;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo {
+    background-color: #27272a;
+    border-radius: 3px;
+    box-shadow: 0px 0px 8px #1f1f1f88;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 0.5rem;
+    width: 400px;
+    vertical-align: top;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  /*corpo container incorporacoes*/
+  .flawuldragon-notes_display__container___card____conteudo_card_int_item {
+    background-color: #2c79c855;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_int_item__titulo {
+    margin-left: 0.5rem;
+    width: 96%;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_int_item__subtitulo {
+    font-weight: 100;
+    font-size: 0.8rem;
+    margin-left: 0.2rem;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container_anchor {
+    text-align: center;
+    align-items: center;
+    width: 50%;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container___mkpc,
+  .flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container___lctm {
+    padding: 1rem;
+    transition: ease-in-out 0.4s;
+    margin: 0;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container___mkpc {
+    background-color: #2c79c8;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container___lctm {
+    background-color: #2c79c8cc;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container___mkpc:hover,
+  .flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container___lctm:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 2px 4px #1f1f1f88;
+    font-weight: 500;
+  }
+
+  /*corpo container keybindings*/
+  .flawuldragon-notes_display__container___card____conteudo#key {
+    display: flex;
+    align-items: center;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_key_item {
+    align-items: left;
+    background-color: #27272fcc;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_key_item__teclas {
+    margin: 0.5rem 1rem;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_key_item__ambiente {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #95baff;
+    border: 1px solid #95baff;
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+    border-radius: 10px;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_card_key_item__descricao {
+    margin: 0 1rem 1rem 1rem;
+  }
+
+  /*corpo container features*/
+  .flawuldragon-notes_display__container___card____conteudo_card_fea_item {
+    background-color: #0f64bb55;
+    border-radius: 0.1rem;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  /*corpo container changelog*/
+  .flawuldragon-notes_display__container___card____conteudo_changelog__card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 0.4rem;
+    margin-top: 0.1rem;
+    padding-top: 0;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_changelog__card_titulo,
+  .flawuldragon-notes_display__container___card____conteudo_changelog__card_subtitulo {
+    color: #99c0e7cc;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_changelog__card_titulo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_changelog__card_subtitulo {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 0.1rem;
+    margin-left: 0.4rem;
+    padding: 0;
+  }
+
+  .flawuldragon-notes_display__container___card____conteudo_changelog__card_lista {
+    list-style-type: "⫗ ";
+    margin: 0;
+    padding-left: 1.8rem;
+    text-align: left;
+    margin-bottom: 0.4rem;
+  }
+
+  /* rodape */
+  .flawuldragon-notes_display__rodape {
+    display: flex;
+    vertical-align: bottom;
+    justify-content: center;
+    margin-top: 2rem;
+    width: calc(100%-2rem);
+  }
+
+  .flawuldragon-notes_display__rodape___card {
+    align-items: baseline;
+    background-color: #0f64bb55;
+    box-shadow: #1f1f1f44 0px 0px 6px;
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    position: sticky;
+    bottom: 0;
+    gap: 0.5rem;
+    width: 96%;
+  }
+
+  .flawuldragon-notes_display__rodape___card>svg {
+    width: 85px;
+    height: 14px;
+  }
+</style>
+
+<script defer>
+  // automações das informações das notas do projeto
+  /* Incorporações */
+  function Incorporacao(extensao, criador, linkMkpc) {
+    this.extensao = extensao;
+    this.criador = criador;
+    this.linkMkpc = linkMkpc;
+    this.linkLcs = linkMkpc + "/license";
+  }
+
+  const seccaoRaizInc = document.getElementById("inc");
+  let incorporacoes = [];
+  incorporacoes.push(new Incorporacao("Auto Close Tag", "Jun Han", "https://marketplace.visualstudio.com/items/formulahendry.auto-close-tag"));
+  incorporacoes.push(new Incorporacao("Auto Complete Tag", "Jun Han", "https://marketplace.visualstudio.com/items/formulahendry.auto-complete-tag"));
+  incorporacoes.push(new Incorporacao("Auto Rename Tag", "Jun Han", "https://marketplace.visualstudio.com/items/formulahendry.auto-rename-tag"));
+  incorporacoes.push(new Incorporacao("Color Highlight", "Sergii Naumov", "https://marketplace.visualstudio.com/items/naumovs.color-highlight"));
+  incorporacoes.push(new Incorporacao("Color Highlight Decimals", "George", "https://marketplace.visualstudio.com/items/ps-george.color-highlight-decimals"));
+  incorporacoes.push(new Incorporacao("Color Highlight Fork", "Mike Scholz", "https://marketplace.visualstudio.com/items/mikekscholz.color-highlight-fork"));
+  incorporacoes.push(new Incorporacao("Carbon Icons Tweaked", "Alyx Z", "https://marketplace.visualstudio.com/items/alyxz.icons-carbon-tweaked"));
+  incorporacoes.push(new Incorporacao("Charmed Icons", "Littensy", "https://marketplace.visualstudio.com/items/littensy.charmed-icons"));
+  incorporacoes.push(new Incorporacao("CS Symbols Icons", "FreeIdom", "https://marketplace.visualstudio.com/items/FreeIdom.cs-symbols"));
+  incorporacoes.push(new Incorporacao("Datapack Minecraft Icons", "SuperAnt", "https://marketplace.visualstudio.com/items/SuperAnt.mc-dp-icons"));
+  incorporacoes.push(new Incorporacao("Error Lens", "Alexander", "https://marketplace.visualstudio.com/items/usernamehw.errorlens"));
+  incorporacoes.push(new Incorporacao("Error Lens", "Phil Hindle", "https://marketplace.visualstudio.com/items/PhilHindle.errorlens"));
+  incorporacoes.push(new Incorporacao("Filesize", "Wei Ds", "https://marketplace.visualstudio.com/items/wei_ds.filesize"));
+  incorporacoes.push(new Incorporacao("Fluent Icons", "Miguel Solorio", "https://marketplace.visualstudio.com/items/miguelsolorio.fluent-icons"));
+  incorporacoes.push(new Incorporacao("HTML CSS Support", "ecmel", "https://marketplace.visualstudio.com/items/ecmel.vscode-html-css"));
+  incorporacoes.push(new Incorporacao("Indent Rainbow", "oderwat", "https://marketplace.visualstudio.com/items/oderwat.indent-rainbow"));
+  incorporacoes.push(new Incorporacao("JetBrains Mono Font Pack", "Narasima Pandiyan", "https://marketplace.visualstudio.com/items/NarasimaPandiyan.jetbrainsmono"));
+  incorporacoes.push(new Incorporacao("JetBrains Icons", "Chad Alen", "https://marketplace.visualstudio.com/items/chadalen.vscode-jetbrains-icon-theme"));
+  incorporacoes.push(new Incorporacao("JetBrains IDEA Product Icons", "Ardon", "https://marketplace.visualstudio.com/items/ardonplay.jetbrains-idea-product-icon-theme"));
+  incorporacoes.push(new Incorporacao("Material Iconic Product Icons", "Nyxb", "https://marketplace.visualstudio.com/items/nyxb.materialiconic-product-icons"));
+  incorporacoes.push(new Incorporacao("Nomo Icon Theme Dark", "Be5invis", "https://marketplace.visualstudio.com/items/be5invis.vscode-icontheme-nomo-dark"));
+  incorporacoes.push(new Incorporacao("Nomo Icon Theme Dark MacOS", "Gaulomatic", "https://marketplace.visualstudio.com/items/Gaulomatic.vscode-icontheme-nomo-dark-macos"));
+  incorporacoes.push(new Incorporacao("Nomo Icon Theme Light Extended", "Microhobby", "https://marketplace.visualstudio.com/items/microhobby.nomo-light-extended"));
+  incorporacoes.push(new Incorporacao("Pomodoro Clock", "Jackluson", "https://marketplace.visualstudio.com/items/jackluson.pomodoro-clock"));
+  incorporacoes.push(new Incorporacao("Sakai Icons", "Sakai", "https://marketplace.visualstudio.com/items/Sakai.sakai-icons"));
+  incorporacoes.push(new Incorporacao("Take a Break", "TheHocineSaad", "https://marketplace.visualstudio.com/items/theHocineSaad.takeabreak-protect-your-eyes"));
+  incorporacoes.push(new Incorporacao("Todo Highlight", "Wayou", "https://marketplace.visualstudio.com/items/wayou.vscode-todo-highlight"));
+  incorporacoes.push(new Incorporacao("Toggle Bracket Guides", "TGO Systems", "https://marketplace.visualstudio.com/items/TGOSystems.togglebracketguides"));
+  incorporacoes.push(new Incorporacao("Theme Switch", "Weii Wang", "https://marketplace.visualstudio.com/items/weiiwang.theme-switch"));
+  incorporacoes.push(new Incorporacao("Visual Studio Icons", "jtlowe", "https://marketplace.visualstudio.com/items/jtlowe.vscode-icon-theme"));
+  incorporacoes.push(new Incorporacao("Visual Studio Icons v2", "Vigan Abd", "https://marketplace.visualstudio.com/items/vigan-abd.vscode-icon-v2"));
+  incorporacoes.push(new Incorporacao("Visual Studio Classic Icons", "Jez9999", "https://marketplace.visualstudio.com/items/jez9999.vsclassic-icon-theme"));
+  incorporacoes.push(new Incorporacao("Visual Studio Code Great Icons", "Emmanuel Beziat", "https://marketplace.visualstudio.com/items/emmanuelbeziat.vscode-great-icons"));
+  incorporacoes.push(new Incorporacao("Visual Studio Icons Mac", "Wayou", "https://marketplace.visualstudio.com/items/wayou.vscode-icons-mac"));
+  incorporacoes.push(new Incorporacao("Visual Studio Code Icons", "VS Code Icons Team", "https://marketplace.visualstudio.com/items/vscode-icons-team.vscode-icons"));
+  incorporacoes.push(new Incorporacao("Visual Studio 2022 Icons", "RespectMathias", "https://marketplace.visualstudio.com/items/RespectMathias.VS2022-Icons"));
+  function IncorporacaoCard() {
+    incorporacoes.forEach(incorporacao => {
+      let card = document.createElement("div");
+      card.classList.add("flawuldragon-notes_display__container___card____conteudo_card_int_item");
+
+      let titulo = document.createElement("h3");
+      titulo.classList.add("flawuldragon-notes_display__container___card____conteudo_card_int_item__titulo");
+      titulo.textContent = incorporacao.extensao;
+
+      let subtitulo = document.createElement("span");
+      subtitulo.classList.add("flawuldragon-notes_display__container___card____conteudo_card_int_item__subtitulo");
+      subtitulo.textContent = " by " + incorporacao.criador;
+      titulo.appendChild(subtitulo);
+
+      let btnContainer = document.createElement("div");
+      btnContainer.classList.add("flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container");
+
+      let mkpc = document.createElement("p");
+      mkpc.classList.add("flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container___mkpc");
+      mkpc.textContent = "Marketplace";
+      let mkpcLink = document.createElement("a");
+      mkpcLink.classList.add("flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container_anchor");
+      mkpcLink.href = incorporacao.linkMkpc;
+      mkpcLink.appendChild(mkpc);
+
+      let lctm = document.createElement("p");
+      lctm.classList.add("flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container___lctm");
+      lctm.textContent = "License Terms";
+      let lctmLink = document.createElement("a");
+      lctmLink.classList.add("flawuldragon-notes_display__container___card____conteudo_card_int_item__btn_container_anchor");
+      lctmLink.href = incorporacao.linkLcs;
+      lctmLink.appendChild(lctm);
+
+      btnContainer.appendChild(mkpcLink);
+      btnContainer.appendChild(lctmLink);
+
+      card.appendChild(titulo);
+      card.appendChild(btnContainer);
+
+      seccaoRaizInc.appendChild(card);
+    });
+  } IncorporacaoCard();
+
+  /* Keybindings */
+  function Keybinding(teclas, descricao) {
+    this.teclas = teclas;
+    this.teclasMac = "⌘ + " + teclas;
+    this.descricao = descricao;
+  }
+  const seccaoRaizKey = document.getElementById("key");
+  let keybindings = [];
+  keybindings.push(new Keybinding("Alt + N", "Open Flawuldragon's Notes"));
+  keybindings.push(new Keybinding("Alt + D and A", "Set American Date Format"));
+  keybindings.push(new Keybinding("Alt + D and B", "Set 12h Time Format"));
+  keybindings.push(new Keybinding("Alt + D and C", "Invert Date and Time Properties"));
+  keybindings.push(new Keybinding("Alt + D and D", "Switch Visibility Date or Time"));
+  keybindings.push(new Keybinding("Alt + D and E", "Show Seconds"));
+  keybindings.push(new Keybinding("Alt + D and F", "Show Day of Week"));
+  keybindings.push(new Keybinding("Alt + D and G", "Interruptor Vanilla DateTime Status Bar"));
+  keybindings.push(new Keybinding("Alt + A and A", "Enable Inlay Hints"));
+  keybindings.push(new Keybinding("Alt + A and B", "Set Inlay Hints Font Family"));
+  keybindings.push(new Keybinding("Alt + A and C", "Set Inlay Hints Font Size"));
+  keybindings.push(new Keybinding("Alt + A and D", "Line Has Error Signal"));
+  keybindings.push(new Keybinding("Alt + A and E", "Line Has Warning Signal"));
+  keybindings.push(new Keybinding("Alt + A and F", "Line Has Inline Suggestion Signal"));
+  keybindings.push(new Keybinding("Alt + J", "Activate JetBrains Mono Font"));
+  keybindings.push(new Keybinding("Alt + J and D", "Deactivate JetBrains Mono Font"));
+  keybindings.push(new Keybinding("Alt + T and L", "Switch to Light Theme"));
+  keybindings.push(new Keybinding("Alt + T and D", "Switch to Dark Theme"));
+  keybindings.push(new Keybinding("Alt + T and T", "Toggle Theme"));
+  keybindings.push(new Keybinding("Alt + C and L", "Enable/Disable Auto Close Tag"));
+  keybindings.push(new Keybinding("Alt + P", "Enable/Disable Toggle Bracket Pair Guides"));
+  keybindings.push(new Keybinding("Alt + E", "Enable/Disable Error Lens"));
+  keybindings.push(new Keybinding("Alt + E and E", "Enable/Disable Error Lens Errors"));
+  keybindings.push(new Keybinding("Alt + E and W", "Enable/Disable Error Lens Warnings"));
+  keybindings.push(new Keybinding("Alt + E and I", "Enable/Disable Error Lens Infos"));
+  keybindings.push(new Keybinding("Alt + E and H", "Enable/Disable Error Lens Hints"));
+  keybindings.push(new Keybinding("Alt + E and M", "Error Lens Toggle Inline Message"));
+  keybindings.push(new Keybinding("Alt + E and S", "Error Lens Search for Problem"));
+  keybindings.push(new Keybinding("Alt + E and N", "Error Lens Select Problem"));
+  keybindings.push(new Keybinding("Alt + E and P", "Error Lens Toggle Workspace"));
+  keybindings.push(new Keybinding("Alt + E and C", "Error Lens Disable Line"));
+  keybindings.push(new Keybinding("Alt + E and X", "Error Lens Find Linter Rule Definition"));
+  keybindings.push(new Keybinding("Alt + E and A", "Error Lens Copy Problem Message"));
+  keybindings.push(new Keybinding("Alt + E and B", "Error Lens Copy Problem Code"));
+  keybindings.push(new Keybinding("Alt + Q", "Start Take a Break"));
+  keybindings.push(new Keybinding("Alt + Q and T", "Stop Take a Break"));
+  keybindings.push(new Keybinding("Alt + V and V", "Validate HTML CSS"));
+  keybindings.push(new Keybinding("Alt + V and C", "Clear HTML CSS"));
+  function KeybindingCard() {
+    keybindings.forEach(keybinding => {
+      let card = document.createElement("div");
+      card.classList.add("flawuldragon-notes_display__container___card____conteudo_card_key_item");
+
+      let teclas = document.createElement("h3");
+      teclas.classList.add("flawuldragon-notes_display__container___card____conteudo_card_key_item__teclas");
+      teclas.textContent = keybinding.teclas;
+      let ambiente = document.createElement("span");
+      ambiente.classList.add("flawuldragon-notes_display__container___card____conteudo_card_key_item__ambiente");
+      ambiente.textContent = "Default";
+      teclas.appendChild(ambiente);
+
+      let teclasMac = document.createElement("h3");
+      teclasMac.classList.add("flawuldragon-notes_display__container___card____conteudo_card_key_item__teclas");
+      teclasMac.textContent = keybinding.teclasMac;
+      let ambienteMac = document.createElement("span");
+      ambienteMac.classList.add("flawuldragon-notes_display__container___card____conteudo_card_key_item__ambiente");
+      ambienteMac.textContent = "MacOS";
+      teclasMac.appendChild(ambienteMac);
+
+      let descricao = document.createElement("p");
+      descricao.classList.add("flawuldragon-notes_display__container___card____conteudo_card_key_item__descricao");
+      descricao.textContent = keybinding.descricao;
+
+      card.appendChild(teclas);
+      card.appendChild(teclasMac);
+      card.appendChild(descricao);
+
+      seccaoRaizKey.appendChild(card);
+    });
+  } KeybindingCard();
+
+  /* Features */
+  function Feature(info) {
+    this.info = info;
+  }
+  const seccaoRaizFea = document.getElementById("fea");
+  let features = [];
+  features.push(new Feature("Color Themes"));
+  features.push(new Feature("Product Icon Themes"));
+  features.push(new Feature("Icon Themes"));
+  features.push(new Feature("Accessibility tools"));
+  features.push(new Feature("Switch between color themes"));
+  features.push(new Feature("Flawuldragon Status Bar Hub"));
+  features.push(new Feature("Lens yours errors in source code"));
+  features.push(new Feature("Highlight the annotations in comentaries"));
+  features.push(new Feature("Highlight any colors in any languages"));
+  features.push(new Feature("Take a Break for administrate your time"));
+  function FeatureCard() {
+    features.forEach(feature => {
+      let card = document.createElement("p");
+      card.classList.add("flawuldragon-notes_display__container___card____conteudo_card_fea_item");
+      card.textContent = feature.info;
+      seccaoRaizFea.appendChild(card);
+    });
+  } FeatureCard();
+
+  /* Changelog */
+  function ChangelogVersion(versao, data) {
+    this.versao = versao;
+    this.data = data;
+  }
+  function ChangelogNote(nota) {
+    this.nota = nota;
+  }
+  const seccaoRaizCha = document.getElementById("cha");
+  let changelogVersions = [];
+  let changelogNotes = [];
+  changelogVersions.push(new ChangelogVersion("v1.0.1", "February 14, 2025"));
+  changelogNotes.push([
+    new ChangelogNote("Updated README file."),
+    new ChangelogNote("Updated LICENSE file."),
+    new ChangelogNote("Updated CHANGELOG file."),
+    new ChangelogNote("Updated statusBarItem.remoteBackground of all appearance themes."),
+    new ChangelogNote("Updated statusBarItem.remoteForeground of all appearance themes."),
+    new ChangelogNote("Updated statusBarItem.remoteActiveBackground of all appearance themes."),
+    new ChangelogNote("Added total Webview Panel Flawuldragon's Notes.")
+  ]);
+  changelogVersions.push(new ChangelogVersion("v1.0.0", "February 5, 2025"));
+  changelogNotes.push([
+    new ChangelogNote("Added incorporation and logical support of Auto Close Tag."),
+    new ChangelogNote("Added incorporation and logical support of Auto Complete Tag."),
+    new ChangelogNote("Added incorporation and logical support of Auto Rename Tag."),
+    new ChangelogNote("Added incorporation and logical support of Bracket Pair Guides."),
+    new ChangelogNote("Added incorporation and logical support of Color Highlight."),
+    new ChangelogNote("Added incorporation and logical support of Error Lens."),
+    new ChangelogNote("Added incorporation and logical support of Filesize."),
+    new ChangelogNote("Added incorporation and logical support of HTML CSS Support."),
+    new ChangelogNote("Added incorporation and logical support of Indent Rainbow."),
+    new ChangelogNote("Added incorporation and logical support of JetBrains Mono Font Pack."),
+    new ChangelogNote("Added incorporation and logical support of Pomodoro Clock."),
+    new ChangelogNote("Added incorporation and logical support of Takeabreak."),
+    new ChangelogNote("Added incorporation and logical support of Theme Switch."),
+    new ChangelogNote("Added miscellaneous features by incorporations demonstrated by README file."),
+    new ChangelogNote("Added dark appearance theme Advanced Circuits default."),
+    new ChangelogNote("Added dark appearance theme Advanced Circuits Bluloco Highlight."),
+    new ChangelogNote("Added dark appearance theme Advanced Circuits Bluloco Italic Highlight."),
+    new ChangelogNote("Added dark appearance theme Advanced Circuits Dracula Highlight."),
+    new ChangelogNote("Added dark appearance theme Advanced Circuits Dracula Soft Highlight."),
+    new ChangelogNote("Added dark appearance theme Advanced Circuits Monokai Dimmed Highlight."),
+    new ChangelogNote("Added dark appearance theme Advanced Circuits One Dark Highlight."),
+    new ChangelogNote("Added dark appearance theme Advanced Circuits One Dark Vivid Highlight."),
+    new ChangelogNote("Added dark appearance theme Blueprint Paper default."),
+    new ChangelogNote("Added dark appearance theme Blueprint Paper Bluloco Highlight."),
+    new ChangelogNote("Added dark appearance theme Blueprint Paper Bluloco Italic Highlight."),
+    new ChangelogNote("Added dark appearance theme Blueprint Paper Dracula Highlight."),
+    new ChangelogNote("Added dark appearance theme Blueprint Paper Dracula Soft Highlight."),
+    new ChangelogNote("Added dark appearance theme Blueprint Paper Monokai Dimmed Highlight."),
+    new ChangelogNote("Added dark appearance theme Blueprint Paper One Dark Highlight."),
+    new ChangelogNote("Added dark appearance theme Blueprint Paper One Dark Vivid Highlight."),
+    new ChangelogNote("Added dark appearance theme Humba01's Design Style default."),
+    new ChangelogNote("Added dark appearance theme Humba01's Design Style Bluloco Highlight."),
+    new ChangelogNote("Added dark appearance theme Humba01's Design Style Bluloco Italic Highlight."),
+    new ChangelogNote("Added dark appearance theme Humba01's Design Style Dracula Highlight."),
+    new ChangelogNote("Added dark appearance theme Humba01's Design Style Dracula Soft Highlight."),
+    new ChangelogNote("Added dark appearance theme Humba01's Design Style Monokai Dimmed Highlight."),
+    new ChangelogNote("Added dark appearance theme Humba01's Design Style One Dark Highlight."),
+    new ChangelogNote("Added dark appearance theme Humba01's Design Style One Dark Vivid Highlight."),
+    new ChangelogNote("Added dark appearance theme Winter Day default."),
+    new ChangelogNote("Added dark appearance theme Winter Day Bluloco Highlight."),
+    new ChangelogNote("Added dark appearance theme Winter Day Bluloco Italic Highlight."),
+    new ChangelogNote("Added dark appearance theme Winter Day Dracula Highlight."),
+    new ChangelogNote("Added dark appearance theme Winter Day Dracula Soft Highlight."),
+    new ChangelogNote("Added dark appearance theme Winter Day Monokai Dimmed Highlight."),
+    new ChangelogNote("Added dark appearance theme Winter Day One Dark Highlight."),
+    new ChangelogNote("Added dark appearance theme Winter Day One Dark Vivid Highlight."),
+    new ChangelogNote("Added light appearance theme Advanced Circuits default."),
+    new ChangelogNote("Added light appearance theme Advanced Circuits Bluloco Highlight."),
+    new ChangelogNote("Added light appearance theme Advanced Circuits Bluloco Italic Highlight."),
+    new ChangelogNote("Added light appearance theme Advanced Circuits Dracula Highlight."),
+    new ChangelogNote("Added light appearance theme Advanced Circuits Dracula Soft Highlight."),
+    new ChangelogNote("Added light appearance theme Advanced Circuits Monokai Dimmed Highlight."),
+    new ChangelogNote("Added light appearance theme Advanced Circuits One Dark Highlight."),
+    new ChangelogNote("Added light appearance theme Advanced Circuits One Dark Vivid Highlight."),
+    new ChangelogNote("Added light appearance theme Blueprint Paper default."),
+    new ChangelogNote("Added light appearance theme Blueprint Paper Bluloco Highlight."),
+    new ChangelogNote("Added light appearance theme Blueprint Paper Bluloco Italic Highlight."),
+    new ChangelogNote("Added light appearance theme Blueprint Paper Dracula Highlight."),
+    new ChangelogNote("Added light appearance theme Blueprint Paper Dracula Soft Highlight."),
+    new ChangelogNote("Added light appearance theme Blueprint Paper Monokai Dimmed Highlight."),
+    new ChangelogNote("Added light appearance theme Blueprint Paper One Dark Highlight."),
+    new ChangelogNote("Added light appearance theme Blueprint Paper One Dark Vivid Highlight."),
+    new ChangelogNote("Added light appearance theme Humba01's Design Style default."),
+    new ChangelogNote("Added light appearance theme Humba01's Design Style Bluloco Highlight."),
+    new ChangelogNote("Added light appearance theme Humba01's Design Style Bluloco Italic Highlight."),
+    new ChangelogNote("Added light appearance theme Humba01's Design Style Dracula Highlight."),
+    new ChangelogNote("Added light appearance theme Humba01's Design Style Dracula Soft Highlight."),
+    new ChangelogNote("Added light appearance theme Humba01's Design Style Monokai Dimmed Highlight."),
+    new ChangelogNote("Added light appearance theme Humba01's Design Style One Dark Highlight."),
+    new ChangelogNote("Added light appearance theme Humba01's Design Style One Dark Vivid Highlight."),
+    new ChangelogNote("Added light appearance theme Winter Day default."),
+    new ChangelogNote("Added light appearance theme Winter Day Bluloco Highlight."),
+    new ChangelogNote("Added light appearance theme Winter Day Bluloco Italic Highlight."),
+    new ChangelogNote("Added light appearance theme Winter Day Dracula Highlight."),
+    new ChangelogNote("Added light appearance theme Winter Day Dracula Soft Highlight."),
+    new ChangelogNote("Added light appearance theme Winter Day Monokai Dimmed Highlight."),
+    new ChangelogNote("Added light appearance theme Winter Day One Dark Highlight."),
+    new ChangelogNote("Added light appearance theme Winter Day One Dark Vivid Highlight."),
+    new ChangelogNote("Added icon theme JetBrains Icons OldUI Dark."),
+    new ChangelogNote("Added icon theme JetBrains Icons ExpUI 2023+ Auto."),
+    new ChangelogNote("Added icon theme JetBrains Icons ExpUI 2023+ Dark."),
+    new ChangelogNote("Added icon theme JetBrains Icons ExpUI 2023+ Light."),
+    new ChangelogNote("Added icon theme Visual Studio Classic Icons 2012."),
+    new ChangelogNote("Added icon theme Visual Studio Modern v1 Icons."),
+    new ChangelogNote("Added icon theme Visual Studio Modern v2 Icons."),
+    new ChangelogNote("Added icon theme Minecraft Datapack Icons Auto."),
+    new ChangelogNote("Added icon theme Minecraft Datapack Icons Default."),
+    new ChangelogNote("Added icon theme Minecraft Datapack Icons Xmas."),
+    new ChangelogNote("Added icon theme Visual Studio Modern 2022 Icons."),
+    new ChangelogNote("Added icon theme Symbols Icons."),
+    new ChangelogNote("Added icon theme Charmed Icons."),
+    new ChangelogNote("Added icon theme Visual Studio Code Great Icons."),
+    new ChangelogNote("Added icon theme Visual Studio Code Nomo Dark Icons Extended."),
+    new ChangelogNote("Added icon theme Sakai Icons Dark."),
+    new ChangelogNote("Added icon theme Sakai Icons Light."),
+    new ChangelogNote("Added icon theme Sakai Icons Expanded."),
+    new ChangelogNote("Added icon theme Visual Studio Code Nomo Dark MacOS Icons."),
+    new ChangelogNote("Added icon theme Visual Studio Code Nomo Light Icons Extended."),
+    new ChangelogNote("Added icon theme Visual Studio Code Icons."),
+    new ChangelogNote("Added icon theme Visual Studio Code MacOS Icons."),
+    new ChangelogNote("Added product icon theme Fluent Product Icons based by VSCode Icons."),
+    new ChangelogNote("Added product icon theme JetBrains IDEA Product Icons."),
+    new ChangelogNote("Added product icon theme Carbon Product Icons."),
+    new ChangelogNote("Added product icon theme Material Iconic Product Icons.")
+  ]);
+
+  function ChangelogCard() {
+    changelogVersions.forEach((version, index) => {
+      let card = document.createElement("div");
+      card.classList.add("flawuldragon-notes_display__container___card____conteudo_changelog__card");
+
+      let titulo = document.createElement("h3");
+      titulo.classList.add("flawuldragon-notes_display__container___card____conteudo_changelog__card_titulo");
+      titulo.textContent = version.versao;
+
+      let subtitulo = document.createElement("span");
+      subtitulo.classList.add("flawuldragon-notes_display__container___card____conteudo_changelog__card_subtitulo");
+      subtitulo.textContent = version.data;
+      titulo.appendChild(subtitulo);
+
+      let lista = document.createElement("ul");
+      lista.classList.add("flawuldragon-notes_display__container___card____conteudo_changelog__card_lista");
+
+      changelogNotes[index].forEach(nota => {
+        let item = document.createElement("li");
+        item.classList.add("flawuldragon-notes_display__container___card____conteudo_changelog__card_lista__item");
+        item.textContent = nota.nota;
+        lista.appendChild(item);
+      });
+
+      card.appendChild(titulo);
+      card.appendChild(lista);
+
+      seccaoRaizCha.appendChild(card);
+    });
+  } ChangelogCard();
+
+  // automações do rodapé
+  const footerCopyright = document.getElementById('copyright-description');
+  const currentYear = new Date().getFullYear();
+  footerCopyright.textContent = `© 2015-${currentYear}. Todos os direitos reservados.`;
+</script>
 
 </html>
