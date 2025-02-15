@@ -2,6 +2,10 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
+## v1.0.4 (February 15, 2025)
+
+- Fixed extension problems.
+
 ## v1.0.3 (February 15, 2025)
 
 - Fixed extension problems.
