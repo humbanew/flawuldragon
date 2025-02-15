@@ -2,7 +2,15 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
-## v1.0.0 (February 14, 2025)
+## v1.0.3 (February 15, 2025)
+
+- Fixed extension problems.
+
+## v1.0.2 (February 14, 2025)
+
+- Fixed marketplace properties.
+
+## v1.0.1 (February 14, 2025)
 
 - Updated README file.
 - Updated LICENSE file.
@@ -10,7 +18,7 @@ All changes to the "flawuldragon" extension will be documented in this file.
 - Updated ``statusBarItem.remoteBackground``, ``statusBarItem.remoteForeground`` and ``statusBarItem.remoteActiveBackground`` colors of all appearance themes.
 - Added total Webview Panel Flawuldragon's Notes.
 
-## v1.0.0 Release Candidate 1 (February 5, 2025)
+## v1.0.0 (February 5, 2025)
 
 - Added incorporation and logical support of Auto Close Tag.
 - Added incorporation and logical support of Auto Complete Tag.
