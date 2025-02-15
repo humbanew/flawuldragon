@@ -3,7 +3,7 @@
   "name": "flawuldragon",
   "displayName": "Flawuldragon",
   "description": "Humbanew Official Development Extension",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "icon": "assets/icon.png",
   "readme": "README.md",
   "license": "Humbanew License v5, powered by MIT License",
@@ -57,8 +57,7 @@
     "Programming Languages",
     "Snippets",
     "Themes",
-    "Visualization",
-    "Extension Packs"
+    "Visualization"
   ],
   "activationEvents": [
     "onStartupFinished",
