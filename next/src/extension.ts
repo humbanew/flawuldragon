@@ -22,6 +22,15 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Hello World from next!');
 	});
 
+	let statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
+	statusBarItem.text = "$(flawuldragon-badge) Notes";
+	statusBarItem.show();
+	statusBarItem.tooltip = "This is a tooltip";
+	statusBarItem.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
+	// statusBarItems
+	context.subscriptions.push(statusBarItem);
+
+	// commands
 	context.subscriptions.push(disposable);
 	context.subscriptions.push(Teste());
 }

@@ -1,6 +1,6 @@
 {
   "name": "flawuldragon",
-  "displayName": "flawuldragon",
+  "displayName": "Flawuldragon",
   "publisher": "humbanew",
   "description": "Humbanew development extension",
   "version": "0.0.5",
@@ -41,7 +41,16 @@
         "command": "next.helloWorld2",
         "title": "Hello World in Function file"
       }
-    ]
+    ],
+    "icons": {
+      "flawuldragon-badge": {
+        "description": "flawuldragon badge",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon.woff",
+          "fontCharacter": "\\E501"
+        }
+      }
+    }
   },
   "main": "./dist/extension.js",
   "scripts": {

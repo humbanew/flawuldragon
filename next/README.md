@@ -1,5 +1,5 @@
 <div align="center">
 
-  ![flawuldragon-logo](./flawuldragon-readme-logo.png)
+  ![flawuldragon-logo](https://strg.humbanew.com.br/projects/flawuldragon/docs/flawuldragon-readme-logo.png)
 
 </div>
