@@ -2,7 +2,7 @@
   "name": "flawuldragon",
   "displayName": "Flawuldragon",
   "publisher": "humbanew",
-  "description": "Humbanew development extension",
+  "description": "Humbanew starterkit development extension",
   "version": "0.0.5",
   "engines": {
     "vscode": "^1.97.0"
@@ -33,13 +33,20 @@
     "commands": [
       {
         "category": "Flawuldragon Neo",
-        "command": "next.helloWorld",
+        "command": "flawuldragon.helloWorld",
         "title": "Hello World"
       },
       {
         "category": "Flawuldragon Neo",
-        "command": "next.helloWorld2",
-        "title": "Hello World in Function file"
+        "command": "flawuldragon.notes",
+        "title": "Notes"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "flawuldragon.notes",
+        "key": "alt+n",
+        "mac": "cmd+alt+n"
       }
     ],
     "icons": {
