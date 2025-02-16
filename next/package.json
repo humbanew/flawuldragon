@@ -5,7 +5,7 @@
   "description": "Humbanew development extension",
   "version": "0.0.5",
   "engines": {
-    "vscode": "^1.95.0"
+    "vscode": "^1.97.0"
   },
   "author": {
     "name": "Humba01",
@@ -24,9 +24,24 @@
     "Themes",
     "Snippets"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/humbanew/flawuldragon"
+  },
   "activationEvents": [],
   "contributes": {
-    "commands": []
+    "commands": [
+      {
+        "category": "Flawuldragon Neo",
+        "command": "next.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "category": "Flawuldragon Neo",
+        "command": "next.helloWorld2",
+        "title": "Hello World in Function file"
+      }
+    ]
   },
   "main": "./dist/extension.js",
   "scripts": {
