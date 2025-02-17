@@ -60,6 +60,7 @@
     }
   },
   "main": "./dist/extension.js",
+  "browser": "./dist/extension-web.js",
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
