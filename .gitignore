@@ -1,5 +1,5 @@
-main/node_modules/
-next/node_modules/
 *.vsix
 main/dist/
-next/dist/
+main/node_modules/
+extension/dist/
+extension/node_modules/
