@@ -34,7 +34,7 @@ export class AutoRenameTag {
     name,
     clientOptions
   ) => {
-      const serverModule = context.extensionPath + '/@autorcctag/AutoRenameTagServer.ac.js';
+      const serverModule = context.extensionPath + '/extension.js';
       const serverOptions: ServerOptions = {
         run: { module: serverModule, transport: TransportKind.ipc },
         debug: {
@@ -340,7 +340,7 @@ export class AutoRenameTag {
         context.subscriptions.push(
           vscode.workspace.onDidChangeConfiguration(event => {
             // purges cache for `vscode.workspace.getConfiguration`
-            if (!event.affectsConfiguration('fd.auto-rename-tag')) {
+            if (!event.affectsConfiguration('fd.auto-rename-tag.activationOnLanguage')) {
               return;
             }
           })

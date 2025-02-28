@@ -9,7 +9,29 @@
 import * as vscode from 'vscode';
 import { Global } from '../globalDefs';
 
+/**
+ * Represents the Flawuldragon Bracket Guides feature.
+ * 
+ * This class provides methods to activate and deactivate the bracket guides feature in the editor.
+ * It allows users to toggle the visibility of bracket pair guides and updates the editor settings accordingly.
+ *
+ * @class
+ * @example
+ * // Example usage:
+ * const bracketGuides = new FDBracketGuides();
+ * bracketGuides.activate(context);
+ */
 export class FDBracketGuides {
+  /**
+   * Activates the Flawuldragon - Toggle Bracket Guides extension.
+   * 
+   * This method registers a command that toggles the visibility of bracket pair guides in the editor.
+   * It updates the `editor.guides.bracketPairs` setting based on its current value and provides feedback to the user.
+   * 
+   * @param {vscode.ExtensionContext} context - The context in which the extension is activated.
+   * 
+   * @throws Will throw an error if there is an issue during activation.
+   */
   public activate(context: vscode.ExtensionContext) {
     try {
 
@@ -54,6 +76,10 @@ export class FDBracketGuides {
     } finally {}
   }
 
+  /**
+   * Deactivates the Bracket Guides feature.
+   * Logs a message indicating that the Bracket Guides are now inactive.
+   */
   public desactivate() {
     console.log('Flawuldragon - Toggle Bracket Guides is now inactive!');
   }

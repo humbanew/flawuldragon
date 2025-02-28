@@ -17,7 +17,7 @@ import { AutoRenameTag } from './AutoRenameTag';
  * @example
  * // Example usage:
  * const autorcctag = new AutoRCCTag();
- * autorcctag.autoRCCTag_activate(context);
+ * autorcctag.activate(context);
  */
 export class FDAutoRCCTag {
   protected autoCloseTag = new AutoCloseTag();
@@ -32,7 +32,7 @@ export class FDAutoRCCTag {
     try {
       console.log('Flawuldragon - Auto Rename Close Complete Tag is now active!');
       this.autoCloseTag.activate(context);
-      this.autoRenameTag.activate(context);
+      // this.autoRenameTag.activate(context);
     } catch (error) {
       console.error("Flawuldragon - Auto Rename Close Complete Tag error: " + error);
       vscode.window.showErrorMessage("An error occurred while activating the auto rename close complete tag integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");

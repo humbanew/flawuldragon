@@ -40,83 +40,298 @@
       },
       {
         "category": "Flawuldragon",
-        "title": "Flawuldragon's Notes",
-        "command": "flawuldragon.vanilla.notes"
+        "title": "-Native- Flawuldragon's Notes",
+        "command": "flawuldragon.vanilla.notes",
+        "description": "Open a new tab with Flawuldragon's notes"
       },
       {
         "category": "Flawuldragon",
-        "title": "Show/Hide the status bar datetime",
-        "command": "flawuldragon.vanilla.datetime"
+        "title": "-Native- Show/Hide the status bar datetime",
+        "command": "flawuldragon.vanilla.datetime",
+        "description": "Show/Hide the status bar datetime"
       },
       {
         "category": "Flawuldragon",
-        "title": "Show/Hide the status bar datetime with American format",
-        "command": "flawuldragon.vanilla.datetime.americanFormat"
+        "title": "-Native- Show/Hide the status bar datetime with American format",
+        "command": "flawuldragon.vanilla.datetime.americanFormat",
+        "description": "Show/Hide the status bar datetime with American format"
       },
       {
         "category": "Flawuldragon",
-        "title": "Show/Hide the status bar datetime with 12 hours format",
-        "command": "flawuldragon.vanilla.datetime.12hFormat"
+        "title": "-Native- Show/Hide the status bar datetime with 12 hours format",
+        "command": "flawuldragon.vanilla.datetime.12hFormat",
+        "description": "Show/Hide the status bar datetime with 12 hours format"
       },
       {
         "category": "Flawuldragon",
-        "title": "Show/Hide the status bar datetime with different positions",
-        "command": "flawuldragon.vanilla.datetime.invertProps"
+        "title": "-Native- Show/Hide the status bar datetime with different positions",
+        "command": "flawuldragon.vanilla.datetime.invertProps",
+        "description": "Show/Hide the status bar datetime with different positions"
       },
       {
         "category": "Flawuldragon",
-        "title": "Show/Hide the status bar datetime with different visibilities",
-        "command": "flawuldragon.vanilla.datetime.switchVisibilityDateOrTime"
+        "title": "-Native- Show/Hide the status bar datetime with different visibilities",
+        "command": "flawuldragon.vanilla.datetime.switchVisibilityDateOrTime",
+        "description": "Show/Hide the status bar datetime with different visibilities"
       },
       {
         "category": "Flawuldragon",
-        "title": "Show/Hide the status bar datetime with seconds",
-        "command": "flawuldragon.vanilla.datetime.showSeconds"
+        "title": "-Native- Show/Hide the status bar datetime with seconds",
+        "command": "flawuldragon.vanilla.datetime.showSeconds",
+        "description": "Show/Hide the status bar datetime with seconds"
       },
       {
         "category": "Flawuldragon",
-        "title": "Show/Hide the status bar datetime with day of week",
-        "command": "flawuldragon.vanilla.datetime.showDayOfWeek"
+        "title": "-Native- Show/Hide the status bar datetime with day of week",
+        "command": "flawuldragon.vanilla.datetime.showDayOfWeek",
+        "description": "Show/Hide the status bar datetime with day of week"
       },
       {
         "category": "Flawuldragon",
-        "title": "Enabled/Disabled the inlay hints",
-        "command": "flawuldragon.vanilla.accessibility.inlayHints.enabled"
+        "title": "-Native- Enabled/Disabled the inlay hints",
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.enabled",
+        "description": "Enabled/Disabled the inlay hints"
       },
       {
         "category": "Flawuldragon",
-        "title": "Change the inlay hints font family by default or Jetbrains Mono",
-        "command": "flawuldragon.vanilla.accessibility.inlayHints.fontFamily"
+        "title": "-Native- Change the inlay hints font family by default or Jetbrains Mono",
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.fontFamily",
+        "description": "Change the inlay hints font family by default or Jetbrains Mono"
       },
       {
         "category": "Flawuldragon",
-        "title": "Change the inlay hints font size by default or 14px",
-        "command": "flawuldragon.vanilla.accessibility.inlayHints.fontSize"
+        "title": "-Native- Change the inlay hints font size by default or 14px",
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.fontSize",
+        "description": "Change the inlay hints font size by default or 14px"
       },
       {
         "category": "Flawuldragon",
-        "title": "Enabled/Disabled the line has error signals",
-        "command": "flawuldragon.vanilla.accessibility.signals.lineHasError"
+        "title": "-Native- Enabled/Disabled the line has error signals",
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasError",
+        "description": "Enabled/Disabled the line has error signals"
       },
       {
         "category": "Flawuldragon",
-        "title": "Enabled/Disabled the line has warning signals",
-        "command": "flawuldragon.vanilla.accessibility.signals.lineHasWarning"
+        "title": "-Native- Enabled/Disabled the line has warning signals",
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasWarning",
+        "description": "Enabled/Disabled the line has warning signals"
       },
       {
         "category": "Flawuldragon",
-        "title": "Enabled/Disabled the line has inline suggestion signals",
-        "command": "flawuldragon.vanilla.accessibility.signals.lineHasInlineSuggestion"
+        "title": "-Native- Enabled/Disabled the line has inline suggestion signals",
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasInlineSuggestion",
+        "description": "Enabled/Disabled the line has inline suggestion signals"
       },
       {
         "category": "Flawuldragon",
-        "title": "Enabled/Disabled the auto close tag",
-        "command": "flawuldragon.autoclosetag"
+        "title": "-Auto CCR Tag- Enabled/Disabled the auto close tag",
+        "command": "flawuldragon.autoclosetag",
+        "description": "Enabled/Disabled the auto close tag"
       },
       {
         "category": "Flawuldragon",
-        "title": "Enabled/Disabled the color highlight",
-        "command": "flawuldragon.colorhighlight"
+        "title": "-Color Highlight- Enabled/Disabled the color highlight",
+        "command": "flawuldragon.colorhighlight",
+        "description": "Enabled/Disabled the color highlight"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.toggle",
+        "title": "-ErrorLens- Toggle (Enable/Disable) Everything",
+        "description": "Toggle (Enable/Disable) Everything (toggle global setting `\"flawuldragon.errorLens.enabled\"`)"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.toggleError",
+        "title": "-ErrorLens- Toggle Errors",
+        "description": "Enable/Disable Errors in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.toggleWarning",
+        "title": "-ErrorLens- Toggle Warnings",
+        "description": "Enable/Disable Warnings in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.toggleInfo",
+        "title": "-ErrorLens- Toggle Info",
+        "description": "Enable/Disable Info in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.toggleHint",
+        "title": "-ErrorLens- Toggle Hint",
+        "description": "Enable/Disable Hint in `\"flawuldragon.errorLens.enabledDiagnosticLevels\"` setting."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.toggleInlineMessage",
+        "title": "-ErrorLens- Toggle Inline Message",
+        "description": "Toggle global setting `\"flawuldragon.errorLens.messageEnabled\"`."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.searchForProblem",
+        "title": "-ErrorLens- Search for problem",
+        "description": "Open problem in default browser (controlled by `flawuldragon.errorLens.searchForProblemQuery` setting)."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.selectProblem",
+        "title": "-ErrorLens- Select Problem",
+        "description": "Set editor selection to the problem range (controlled by `flawuldragon.errorLens.selectProblemType` setting)."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.toggleWorkspace",
+        "title": "-ErrorLens- Toggle Workspace in Disabled List",
+        "description": "Exclude/Include current workspace by fs path."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.disableLine",
+        "title": "-ErrorLens- Disable line",
+        "description": "Add a comment to disable line for linter rule. Comment format is controlled by `\"flawuldragon.errorLens.disableLineComments\"` setting."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.findLinterRuleDefinition",
+        "title": "-ErrorLens- Find Linter Rule Definition",
+        "description": "Search in local linter files (like `.eslintrc.json`) for the rule definition. Target files are controlled by \"flawuldragon.errorLens.lintFilePaths\" setting."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.copyProblemMessage",
+        "title": "-ErrorLens- Copy Problem Message",
+        "description": "Copy problem message to the clipboard (at the active cursor)."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.errorLens.copyProblemCode",
+        "title": "-ErrorLens- Copy Problem Code",
+        "description": "Copy problem code to the clipboard (at the active cursor)."
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vscode-html-css.validate",
+        "title": "-HTML CSS Support- CSS: Validate class selectors",
+        "description": "Validate class selectors in the workspace"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vscode-html-css.clear",
+        "title": "-HTML CSS Support- CSS: Clear style sheets cache",
+        "description": "Clear style sheets cache"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.jetbrainsmonofont.activate",
+        "title": "-Jetbrains Mono Font- Activate JetBrains Mono Font Pack for Flawuldragon",
+        "description": "Activate JetBrains Mono Font Pack for Flawuldragon"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.jetbrainsmonofont.deactivate",
+        "title": "-Jetbrains Mono Font- Deactivate JetBrains Mono Font for Flawuldragon",
+        "description": "Deactivate JetBrains Mono Font Pack for Flawuldragon"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.startPomodoro",
+        "title": "-Pomodoro Clock- Start Pomodoro",
+        "description": "Start a Pomodoro Clock"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.pausePomodoro",
+        "title": "-Pomodoro Clock- Pause Pomodoro",
+        "description": "Pause the Pomodoro Clock"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.continuePomodoro",
+        "title": "-Pomodoro Clock- Continue Pomodoro",
+        "description": "Continue the Pomodoro Clock"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.restartPomodoro",
+        "title": "-Pomodoro Clock- Restart Pomodoro",
+        "description": "Restart the Pomodoro Clock"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.resetPomodoro",
+        "title": "-Pomodoro Clock- Reset Pomodoro",
+        "description": "Reset the Pomodoro Clock"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown",
+        "title": "-Pomodoro Clock- Toggle Current Pomodoro Countdown",
+        "description": "Toggle Current Pomodoro Countdown"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroclock.csb",
+        "title": "-Pomodoro Clock- Show or Hide the Pomodoro Clock status bar item",
+        "description": "Show or Hide the Pomodoro Clock status bar item"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.pomodoroclock.tsb",
+        "title": "-Pomodoro Clock- Show or Hide the Pomodoro Type status bar item",
+        "description": "Show or Hide the Pomodoro Type status bar item"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.takeabreak.Take a break: Start",
+        "title": "-Take a Break- Take a break: Start",
+        "description": "Start a take a break session"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.takeabreak.Take a break: Stop",
+        "title": "-Take a Break- Take a break: Stop",
+        "description": "Stop the take a break session"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.themeswitch.lighttheme",
+        "title": "-Theme Switch- Switch to Light Theme",
+        "description": "Switch to Light Theme"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.themeswitch.darktheme",
+        "title": "-Theme Switch- Switch to Dark Theme",
+        "description": "Switch to Dark Theme"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.todohighlight.toggleHighlight",
+        "title": "-Todo Highlight- Toggle highlight",
+        "description": "Toggle highlight"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.todohighlight.listAnnotations",
+        "title": "-Todo Highlight- List highlighted annotations",
+        "description": "List highlighted annotations"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.todohighlight.showOutputChannel",
+        "title": "-Todo Highlight- Show a output logs channel",
+        "description": "Show a output logs channel of todo highlight",
+        "enablement": "dev"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.todohighlight.sb",
+        "title": "-Todo Highlight- Show or Hide the todo highlight status bar item",
+        "description": "Show or Hide the todo highlight status bar item"
       }
     ],
     "configuration": [
@@ -350,24 +565,6 @@
             "default": "",
             "description": "Font family of inline message."
           },
-          "fd.errorLens.fontWeight": {
-            "type": "string",
-            "enum": [
-              "100",
-              "200",
-              "300",
-              "400",
-              "normal",
-              "500",
-              "600",
-              "700",
-              "bold",
-              "800",
-              "900"
-            ],
-            "default": "normal",
-            "markdownDescription": "Font weight of inline message. `\"normal\"` is alias for 400, `\"bold\"` is alias for 700)."
-          },
           "fd.errorLens.fontStyleItalic": {
             "type": "boolean",
             "default": false,
@@ -532,20 +729,6 @@
             "markdownDescription": "When enabled - shows highlighted error/warning icons in status bar.",
             "default": false
           },
-          "fd.errorLens.statusBarIconsPriority": {
-            "type": "integer",
-            "markdownDescription": "Move status bar icons left or right by adjusting the number priority.",
-            "default": 92
-          },
-          "fd.errorLens.statusBarIconsAlignment": {
-            "type": "string",
-            "markdownDescription": "Choose on which side the icons status bar is on: left or right.",
-            "enum": [
-              "left",
-              "right"
-            ],
-            "default": "left"
-          },
           "fd.errorLens.statusBarIconsTargetProblems": {
             "type": "string",
             "enum": [
@@ -579,20 +762,6 @@
             "type": "boolean",
             "markdownDescription": "When enabled - shows message in status bar.",
             "default": false
-          },
-          "fd.errorLens.statusBarMessagePriority": {
-            "type": "integer",
-            "markdownDescription": "Move status bar message left or right by adjusting the number priority.",
-            "default": 91
-          },
-          "fd.errorLens.statusBarMessageAlignment": {
-            "type": "string",
-            "markdownDescription": "Choose on which side the message status bar is on: left or right.",
-            "enum": [
-              "left",
-              "right"
-            ],
-            "default": "left"
           },
           "fd.errorLens.statusBarColorsEnabled": {
             "type": "boolean",
@@ -1874,8 +2043,11 @@
   "devDependencies": {
     "@types/babel__code-frame": "^7.0.6",
     "@types/glob": "^8.1.0",
+    "@types/line-column": "^1.0.2",
+    "@types/lodash": "^4.17.15",
     "@types/mocha": "^10.0.1",
     "@types/node": "20.2.5",
+    "@types/node-fetch": "^2.6.12",
     "@types/vscode": "^1.97.0",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
@@ -1888,7 +2060,10 @@
     "eslint": "^8.41.0",
     "file-importer": "^1.0.0",
     "glob": "^8.1.0",
+    "line-column": "^1.0.2",
+    "lodash": "^4.17.21",
     "mocha": "^10.2.0",
+    "node-fetch": "^3.3.2",
     "ts-loader": "^9.4.3",
     "typescript": "^5.1.3",
     "vscode-languageclient": "^9.0.1",

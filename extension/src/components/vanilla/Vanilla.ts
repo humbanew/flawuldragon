@@ -27,9 +27,9 @@ import './flwdnDts.json';
  *
  * @class
  * @example
- * const fdVanilla = new FDVanilla();
- * fdVanilla.interruptorStatusBarConstructor(statusBarItem, command);
- * fdVanilla.activate(context);
+ * const vanilla = new FDVanilla();
+ * vanilla.interruptorStatusBarConstructor(statusBarItem, command);
+ * vanilla.activate(context);
  */
 export class FDVanilla {
 
@@ -119,11 +119,11 @@ export class FDVanilla {
     const interruptor: IVFDInterruptor = { on: true, off: false };
     vscode.commands.registerCommand(command, () => {
       if (interruptor.on == true) {
-        statusBarItem.hide();
+        statusBarItem?.hide();
         interruptor.on = false;
         interruptor.off = true;
       } else {
-        statusBarItem.show();
+        statusBarItem?.show();
         interruptor.on = true;
         interruptor.off = false;
       }

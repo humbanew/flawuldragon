@@ -67,6 +67,34 @@ export const Global = {
     },
     statusBar: null
   },
+  errorLens: {
+    comandos: {
+      'root': 'flawuldragon.errorLens',
+      'toggle': 'flawuldragon.errorLens.toggle',
+      'toggle-error': 'flawuldragon.errorLens.toggleError',
+      'toggle-warning': 'flawuldragon.errorLens.toggleWarning',
+      'toggle-info': 'flawuldragon.errorLens.toggleInfo',
+      'toggle-hint': 'flawuldragon.errorLens.toggleHint',
+      'toggle-inline-message': 'flawuldragon.errorLens.toggleInlineMessage',
+      'toggle-workspace': 'flawuldragon.errorLens.toggleWorkspace',
+      'copy-problem-message': 'flawuldragon.errorLens.copyProblemMessage',
+      'copy-problem-code': 'flawuldragon.errorLens.copyProblemCode',
+      'select-problem': 'flawuldragon.errorLens.selectProblem',
+      'find-linter-rule-definition': 'flawuldragon.errorLens.findLinterRuleDefinition',
+      'search-for-problem': 'flawuldragon.errorLens.searchForProblem',
+      'disable-line': 'flawuldragon.errorLens.disableLine',
+      'status-bar-command': 'flawuldragon.errorLens.statusBarCommand',
+      'reveal-line': 'flawuldragon.errorLens.revealLine',
+      'exclude-problem': 'flawuldragon.errorLens.excludeProblem',
+      'code-lens-on-click': 'flawuldragon.errorLens.codeLensOnClick'
+    },
+    statusBar: {
+      posicao: {
+        error: vscode.window.createStatusBarItem('errorLensError', vscode.StatusBarAlignment.Left, 2493),
+        warning: vscode.window.createStatusBarItem('errorLensWarning', vscode.StatusBarAlignment.Left, 2492)
+      }
+    }
+  },
   filesize: {
     comandos: {
       'status-bar': 'flawuldragon.filesize.sb',

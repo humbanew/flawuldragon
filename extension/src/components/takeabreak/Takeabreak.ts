@@ -1,0 +1,140 @@
+/**
+ * ========================================================================================
+ * Humbanew Project ©️ 2023-2025
+ * All rights reserved.
+ * Licensed under the MIT License, adapted.
+ * ========================================================================================
+ */
+
+import * as vscode from 'vscode';
+import { Global } from '../globalDefs';
+
+/**
+ * The `Takeabreak` class provides functionality to remind users to take breaks at regular intervals.
+ * It integrates with the Visual Studio Code extension API to display notifications and manage commands.
+ *
+ * @class
+ * @example
+ * // Example usage:
+ * const takeabreak = new Takeabreak();
+ * takeabreak.activate(context);
+ */
+export class FDTakeabreak {
+  /**
+   * A protected property that holds a reference to an interval timer.
+   * This property is likely used to manage repeated actions at specified intervals.
+   */
+  protected interval: number | any = vscode.workspace.getConfiguration('fd.takeabreak').get('interval');
+
+  /**
+   * @param {vscode.ExtensionContext} context - The context object representing the state of the extension.
+   */
+  public activate(context: vscode.ExtensionContext) {
+    try {
+      console.log("Flawuldragon - Take a break activated!");
+
+      /**
+       * Displays the reminder message to take a break.
+       */
+      let showReminder = () => {
+        vscode.window.showWarningMessage(
+          "It's time to take a break!",
+          {
+            modal: true,
+            detail: "Blink your eyes quickly 25 times, close and roll them around in circular motions, and look at a distant object for " + this.interval + " seconds or more."
+          }
+        );
+      }
+
+      // let interruptor = new Vanilla();
+      // interruptor.vanilla_interruptorStatusBarConstructor(this.statusBarInterval, this.statusBarShowOrHideCmd);
+      // this.statusBarInterval.backgroundColor = new vscode.ThemeColor('statusBarItem.warningBackground');
+      // this.statusBarInterval.tooltip = "Take a break reminder interval";
+      // this.statusBarInterval.text = `Take a break in ${this.interval} min`;
+      // context.subscriptions.push(this.statusBarInterval);
+      // this.statusBarInterval.show();
+
+      // let aux = this.interval;
+      // setInterval(() => {
+      //   if(aux == 0) {
+      //     aux = this.interval;
+      //     setInterval(() => {
+      //       showReminder();
+      //     }, 20000);
+      //   }
+      //   aux = aux-1;
+      //   this.statusBarInterval.text = `Take a break in ${aux} min`;
+      //   // se o comando de parada for chamado, o intervalo vira "Off"
+      //   // executeCommand
+      //   if(vscode.commands.executeCommand('flawuldragon.takeabreak.Take a break: Stop')) {
+      //     this.statusBarInterval.text = `Take a break is off`;
+      //   }
+      //   if(vscode.commands.executeCommand('flawuldragon.takeabreak.Take a break: Start')) {
+      //     this.statusBarInterval.text = `Take a break in ${aux} min`;
+      //   }
+      // }, 60000);
+
+      /**
+       * Starts showing the reminder message every 20 seconds.
+       * @param showNotification - Whether to show a notification when starting the reminder.
+       */
+      let startShowingTheReminder = (showNotification: boolean) => {
+        // If the reminder is already active, display a message and return.
+        if (this.interval) {
+          vscode.window.showInformationMessage("Take a break is already doing its job! You're safe.");
+          return;
+        }
+
+        // Start the reminder by setting an interval to show the reminder message every 20 seconds.
+        this.interval = setInterval(showReminder, this.interval * 60 * 1000);
+
+        // Show a notification or not, depends on "showNotification" parameter.
+        showNotification ?? vscode.window.showInformationMessage(`Take a break successfully started! We will notify you every ${this.interval} minutes to take a break.`);
+      }
+
+      /**
+       * Stops showing the reminder message.
+       */
+      let stopShowingTheReminder = () => {
+        // If the reminder is active, stop it and display a confirmation message.
+        if (this.interval) {
+          clearInterval(this.interval);
+          this.interval = undefined;
+          vscode.window.showInformationMessage("Take a break is now stopped! We will not notify you to take a break. We hope you know what you're doing 😞");
+        } else {
+          // If the reminder is already stopped, display a message indicating that.
+          vscode.window.showInformationMessage("Take a break is already stopped.");
+        }
+      }
+
+      // Automatically start showing the reminder without showing a notification.
+      startShowingTheReminder(false);
+
+      // Register commands for starting and stopping the reminder.
+      let startCommand = vscode.commands.registerCommand(Global.takeabreak.comandos.start, () => {
+        startShowingTheReminder(true);
+      });
+
+      let stopCommand = vscode.commands.registerCommand(Global.takeabreak.comandos.stop, () => {
+        stopShowingTheReminder();
+      });
+
+      // Add the commands to the context subscriptions.
+      context.subscriptions.push(startCommand, stopCommand);
+    } catch (error) {
+      console.error("Flawuldragon - Take a break error: " + error);
+      vscode.window.showErrorMessage("An error occurred while activating the take a break feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
+    } finally { }
+  }
+
+  /**
+   * This method is called when your extension is deactivated.
+   */
+  public desactivate() {
+    // If the reminder is active, stop it when the extension is deactivated.
+    if (this.interval) {
+      clearInterval(this.interval);
+      this.interval = undefined;
+    }
+  }
+}

@@ -13,15 +13,33 @@ import { FDVanilla } from './components/vanilla/Vanilla';
 import { FDAutoRCCTag } from './components/autorcctag/AutoRCCTag';
 import { FDBracketGuides } from './components/bracketguides/BracketGuides';
 import { activate as chActivate, deactivate as chDeactivate } from './components/colorhighlight/main';
+import { FDErrorLens } from './components/errorlens/ErrorLens';
+import { FDFileSize } from './components/filesize/FileSize';
+import { FDHtmlCssSupport } from './components/htmlcsssupport/HtmlCssSupport';
+import { FDIndentRainbow } from './components/indentrainbow/IndentRainbow';
+import { FDJetbrainsMono } from './components/jetbrainsmono/JetbrainsMono';
+import { FDPomodoroClock } from './components/pomodoroclock/PomodoroClock';
+import { FDTakeabreak } from './components/takeabreak/Takeabreak';
+import { FDThemeSwitch } from './components/themeswitch/ThemeSwitch';
+import { FDTodoHighlight } from './components/todohighlight/TodoHighlight';
 
 // variáveis
 const vanilla = new FDVanilla();
 const autoCloseCompleteRenameTag = new FDAutoRCCTag();
-const bracketguides = new FDBracketGuides();
+const bracketGuides = new FDBracketGuides();
 const colorHightlight = {
 	activate: chActivate,
 	deactivate: chDeactivate
 }
+const errorLens = new FDErrorLens();
+const filesize = new FDFileSize();
+const htmlCssSupport = new FDHtmlCssSupport();
+const indentRainbow = new FDIndentRainbow();
+const jetbrainsMono = new FDJetbrainsMono();
+const pomodoroClock = new FDPomodoroClock();
+const takeabreak = new FDTakeabreak();
+const themeSwitch = new FDThemeSwitch();
+const todoHighlight = new FDTodoHighlight();
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -32,8 +50,18 @@ export function activate(context: vscode.ExtensionContext) {
 		// componentes
 		vanilla.activate(context);
 		autoCloseCompleteRenameTag.activate(context);
-		bracketguides.activate(context);
+		bracketGuides.activate(context);
 		colorHightlight.activate(context);
+		errorLens.activate(context);
+		filesize.activate(context);
+		htmlCssSupport.activate(context);
+		indentRainbow.activate(context);
+		jetbrainsMono.activate(context);
+		jetbrainsMono.firstTimeActivation(context);
+		pomodoroClock.activate(context);
+		takeabreak.activate(context);
+		themeSwitch.activate(context);
+		todoHighlight.activate(context);
 
 		// comando de testes
 		// comando de depuração
@@ -48,15 +76,24 @@ export function activate(context: vscode.ExtensionContext) {
 			error +
 			'. Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)'
 		);
-		deactivate();
+		deactivate(context);
 	}
 }
 
 // This method is called when your extension is deactivated
-export function deactivate() {
+export function deactivate(context: vscode.ExtensionContext) {
 	console.log("Flawuldragon deactivated!");
 	vanilla.deactivate();
 	autoCloseCompleteRenameTag.desactivate();
-	bracketguides.desactivate();
+	bracketGuides.desactivate();
 	colorHightlight.deactivate();
+	errorLens.desactivate();
+	filesize.desactivate();
+	htmlCssSupport.desactivate();
+	indentRainbow.desactivate();
+	jetbrainsMono.desactivate(context);
+	pomodoroClock.desactivate();
+	takeabreak.desactivate();
+	themeSwitch.desactivate();
+	todoHighlight.desactivate();
 }
