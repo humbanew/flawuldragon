@@ -228,7 +228,7 @@ export class FDThemeSwitch {
       this.switch?.dispose?.();
       this.switch = Global.themeSwitch.statusBar.posicao;
       this.switch.backgroundColor = new vscode.ThemeColor('statusBarItem.warningBackground');
-      this.switch.command = 'flawuldragon.themeswitch.toggle';
+      this.switch.command = Global.themeSwitch.comandos.toggle;
       this.switch.text = '$(color-mode)';
       this.switch.tooltip = 'Switch theme';
       this.context?.subscriptions.push(this.switch);

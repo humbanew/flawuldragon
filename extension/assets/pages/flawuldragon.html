@@ -33,6 +33,10 @@
       <h2 class="flawuldragon-notes_display__container___card____titulo">Features</h2>
       <div class="flawuldragon-notes_display__container___card____conteudo" id="fea"></div>
     </div>
+    <!-- <div class="flawuldragon-notes_display__container___card">
+      <h2 class="flawuldragon-notes_display__container___card____titulo">Extension Packs</h2>
+      <div class="flawuldragon-notes_display__container___card____conteudo" id="ext"></div>
+    </div> -->
     <div class="flawuldragon-notes_display__container___card">
       <h2 class="flawuldragon-notes_display__container___card____titulo">Changelog</h2>
       <div class="flawuldragon-notes_display__container___card____conteudo" id="cha"></div>
@@ -462,7 +466,55 @@
   }
   const seccaoRaizKey = document.getElementById("key");
   let keybindings = [];
-  keybindings.push(new Keybinding("Alt + N", "Open Flawuldragon's Notes"));
+  keybindings.push(new Keybinding("alt + n", "View the Flawuldragon's Notes"));
+  keybindings.push(new Keybinding("alt + d", "Show/Hide the status bar datetime"));
+  keybindings.push(new Keybinding("alt + d a", "Show/Hide the status bar datetime with american format"));
+  keybindings.push(new Keybinding("alt + d 1", "Show/Hide the status bar datetime with 12 hours format"));
+  keybindings.push(new Keybinding("alt + d i", "Show/Hide the status bar datetime with different positions"));
+  keybindings.push(new Keybinding("alt + d v", "Show/Hide the status bar datetime with different visibilities"));
+  keybindings.push(new Keybinding("alt + d s", "Show/Hide the status bar datetime with seconds"));
+  keybindings.push(new Keybinding("alt + d w", "Show/Hide the status bar datetime with day of week"));
+  keybindings.push(new Keybinding("alt + i", "Enabled/Disabled the inlay hints"));
+  keybindings.push(new Keybinding("alt + i f", "Change the inlay hints font family by default or Jetbrains Mono"));
+  keybindings.push(new Keybinding("alt + i s", "Change the inlay hints font size by default or 14px"));
+  keybindings.push(new Keybinding("alt + e", "Enabled/Disabled the line has error signals"));
+  keybindings.push(new Keybinding("alt + w", "Enabled/Disabled the line has warning signals"));
+  keybindings.push(new Keybinding("alt + s", "Enabled/Disabled the line has inline suggestion signals"));
+  keybindings.push(new Keybinding("alt + ;", "Enabled/Disabled the auto close tag"));
+  keybindings.push(new Keybinding("alt + c", "Enabled/Disabled the color highlight"));
+  keybindings.push(new Keybinding("alt + e", "Errorlens: Toggle (Enable/Disable) Everything"));
+  keybindings.push(new Keybinding("alt + e e", "Errorlens: Toggle Errors"));
+  keybindings.push(new Keybinding("alt + e w", "Errorlens: Toggle Warnings"));
+  keybindings.push(new Keybinding("alt + e i", "Errorlens: Toggle Infos"));
+  keybindings.push(new Keybinding("alt + e h", "Errorlens: Toggle Hints"));
+  keybindings.push(new Keybinding("alt + e m", "Errorlens: Toggle Inline Messages"));
+  keybindings.push(new Keybinding("alt + e s", "Errorlens: Search for Problem"));
+  keybindings.push(new Keybinding("alt + e p", "Errorlens: Select Problem"));
+  keybindings.push(new Keybinding("alt + e w", "Errorlens: Toggle Workspace in Disabled List"));
+  keybindings.push(new Keybinding("alt + e d", "Errorlens: Disable Line"));
+  keybindings.push(new Keybinding("alt + e r", "Errorlens: Find Linter Rule Definition"));
+  keybindings.push(new Keybinding("alt + e c", "Errorlens: Copy Problem Message"));
+  keybindings.push(new Keybinding("alt + e k", "Errorlens: Copy Problem Code"));
+  keybindings.push(new Keybinding("alt + v", "CSS: Validate class selectors"));
+  keybindings.push(new Keybinding("alt + c", "CSS: Clear style sheets cache"));
+  keybindings.push(new Keybinding("alt + j", "Activate JetBrains Mono Font Pack"));
+  keybindings.push(new Keybinding("alt + j d", "Deactivate JetBrains Mono Font"));
+  keybindings.push(new Keybinding("alt + p", "Start Pomodoro"));
+  keybindings.push(new Keybinding("alt + p p", "Pause Pomodoro"));
+  keybindings.push(new Keybinding("alt + p c", "Continue Pomodoro"));
+  keybindings.push(new Keybinding("alt + p r", "Restart Pomodoro"));
+  keybindings.push(new Keybinding("alt + p x", "Reset Pomodoro"));
+  keybindings.push(new Keybinding("alt + p t", "Toggle Current Pomodoro Countdown"));
+  keybindings.push(new Keybinding("alt + p b", "Show or Hide the Pomodoro Clock status bar item"));
+  keybindings.push(new Keybinding("alt + p s", "Show or Hide the Pomodoro Type status bar item"));
+  keybindings.push(new Keybinding("alt + b", "Take a break: Start"));
+  keybindings.push(new Keybinding("alt + b s", "Take a break: Stop"));
+  keybindings.push(new Keybinding("alt + t l", "Switch to Light Theme"));
+  keybindings.push(new Keybinding("alt + t d", "Switch to Dark Theme"));
+  keybindings.push(new Keybinding("alt + t t", "Enable/Disable Theme Switch"));
+  keybindings.push(new Keybinding("alt + h", "Toggle Highlight"));
+  keybindings.push(new Keybinding("alt + h l", "List highlighted annotations"));
+  keybindings.push(new Keybinding("alt + h b", "Show or Hide the todo highlight status bar item"));
   function KeybindingCard() {
     keybindings.forEach(keybinding => {
       let card = document.createElement("div");
@@ -532,6 +584,10 @@
   const seccaoRaizCha = document.getElementById("cha");
   let changelogVersions = [];
   let changelogNotes = [];
+  changelogVersions.push(new ChangelogVersion("v0.0.5", "March 7, 2025"));
+  changelogNotes.push([
+    new ChangelogNote("Solved problems with the built software architecture.")
+  ]);
   changelogVersions.push(new ChangelogVersion("v0.0.4-4", "February 15, 2025 (Unpublished)"));
   changelogNotes.push([
     new ChangelogNote("Trying to fix a extension problems.")

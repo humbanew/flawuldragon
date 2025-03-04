@@ -35,103 +35,104 @@
     "commands": [
       {
         "category": "Flawuldragon",
+        "command": "flawuldragon.helloWorld",
         "title": "Hello World",
-        "command": "flawuldragon.helloWorld"
+        "enablement": "dev"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Flawuldragon's Notes",
         "command": "flawuldragon.vanilla.notes",
+        "title": "-Native- Flawuldragon's Notes",
         "description": "Open a new tab with Flawuldragon's notes"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Show/Hide the status bar datetime",
         "command": "flawuldragon.vanilla.datetime",
+        "title": "-Native- Show/Hide the status bar datetime",
         "description": "Show/Hide the status bar datetime"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Show/Hide the status bar datetime with American format",
         "command": "flawuldragon.vanilla.datetime.americanFormat",
-        "description": "Show/Hide the status bar datetime with American format"
+        "title": "-Native- Show/Hide the status bar datetime with american format",
+        "description": "Show/Hide the status bar datetime with american format"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Show/Hide the status bar datetime with 12 hours format",
         "command": "flawuldragon.vanilla.datetime.12hFormat",
+        "title": "-Native- Show/Hide the status bar datetime with 12 hours format",
         "description": "Show/Hide the status bar datetime with 12 hours format"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Show/Hide the status bar datetime with different positions",
         "command": "flawuldragon.vanilla.datetime.invertProps",
+        "title": "-Native- Show/Hide the status bar datetime with different positions",
         "description": "Show/Hide the status bar datetime with different positions"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Show/Hide the status bar datetime with different visibilities",
         "command": "flawuldragon.vanilla.datetime.switchVisibilityDateOrTime",
+        "title": "-Native- Show/Hide the status bar datetime with different visibilities",
         "description": "Show/Hide the status bar datetime with different visibilities"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Show/Hide the status bar datetime with seconds",
         "command": "flawuldragon.vanilla.datetime.showSeconds",
+        "title": "-Native- Show/Hide the status bar datetime with seconds",
         "description": "Show/Hide the status bar datetime with seconds"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Show/Hide the status bar datetime with day of week",
         "command": "flawuldragon.vanilla.datetime.showDayOfWeek",
+        "title": "-Native- Show/Hide the status bar datetime with day of week",
         "description": "Show/Hide the status bar datetime with day of week"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Enabled/Disabled the inlay hints",
         "command": "flawuldragon.vanilla.accessibility.inlayHints.enabled",
+        "title": "-Native- Enabled/Disabled the inlay hints",
         "description": "Enabled/Disabled the inlay hints"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Change the inlay hints font family by default or Jetbrains Mono",
         "command": "flawuldragon.vanilla.accessibility.inlayHints.fontFamily",
+        "title": "-Native- Change the inlay hints font family by default or Jetbrains Mono",
         "description": "Change the inlay hints font family by default or Jetbrains Mono"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Change the inlay hints font size by default or 14px",
         "command": "flawuldragon.vanilla.accessibility.inlayHints.fontSize",
+        "title": "-Native- Change the inlay hints font size by default or 14px",
         "description": "Change the inlay hints font size by default or 14px"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Enabled/Disabled the line has error signals",
         "command": "flawuldragon.vanilla.accessibility.signals.lineHasError",
+        "title": "-Native- Enabled/Disabled the line has error signals",
         "description": "Enabled/Disabled the line has error signals"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Enabled/Disabled the line has warning signals",
         "command": "flawuldragon.vanilla.accessibility.signals.lineHasWarning",
+        "title": "-Native- Enabled/Disabled the line has warning signals",
         "description": "Enabled/Disabled the line has warning signals"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Native- Enabled/Disabled the line has inline suggestion signals",
         "command": "flawuldragon.vanilla.accessibility.signals.lineHasInlineSuggestion",
+        "title": "-Native- Enabled/Disabled the line has inline suggestion signals",
         "description": "Enabled/Disabled the line has inline suggestion signals"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Auto CCR Tag- Enabled/Disabled the auto close tag",
         "command": "flawuldragon.autoclosetag",
+        "title": "-Auto CCR Tag- Enabled/Disabled the auto close tag",
         "description": "Enabled/Disabled the auto close tag"
       },
       {
         "category": "Flawuldragon",
-        "title": "-Color Highlight- Enabled/Disabled the color highlight",
         "command": "flawuldragon.colorhighlight",
+        "title": "-Color Highlight- Enabled/Disabled the color highlight",
         "description": "Enabled/Disabled the color highlight"
       },
       {
@@ -307,6 +308,12 @@
         "command": "flawuldragon.themeswitch.darktheme",
         "title": "-Theme Switch- Switch to Dark Theme",
         "description": "Switch to Dark Theme"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.themeswitch.toggle",
+        "title": "-Theme Switch- Enable/Disable Theme Switch",
+        "description": "Enable/Disable Theme Switch"
       },
       {
         "category": "Flawuldragon",
@@ -1880,6 +1887,246 @@
         "command": "flawuldragon.vanilla.notes",
         "key": "alt+n",
         "mac": "cmd+alt+n"
+      },
+      {
+        "command": "flawuldragon.vanilla.datetime",
+        "key": "alt+d",
+        "mac": "cmd+alt+d"
+      },
+      {
+        "command": "flawuldragon.vanilla.datetime.americanFormat",
+        "key": "alt+d a",
+        "mac": "cmd+alt+d a"
+      },
+      {
+        "command": "flawuldragon.vanilla.datetime.12hFormat",
+        "key": "alt+d 1",
+        "mac": "cmd+alt+d 1"
+      },
+      {
+        "command": "flawuldragon.vanilla.datetime.invertProps",
+        "key": "alt+d i",
+        "mac": "cmd+alt+d i"
+      },
+      {
+        "command": "flawuldragon.vanilla.datetime.switchVisibilityDateOrTime",
+        "key": "alt+d v",
+        "mac": "cmd+alt+d v"
+      },
+      {
+        "command": "flawuldragon.vanilla.datetime.showSeconds",
+        "key": "alt+d s",
+        "mac": "cmd+alt+d s"
+      },
+      {
+        "command": "flawuldragon.vanilla.datetime.showDayOfWeek",
+        "key": "alt+d w",
+        "mac": "cmd+alt+d w"
+      },
+      {
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.enabled",
+        "key": "alt+i",
+        "mac": "cmd+alt+i"
+      },
+      {
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.fontFamily",
+        "key": "alt+i f",
+        "mac": "cmd+alt+i f"
+      },
+      {
+        "command": "flawuldragon.vanilla.accessibility.inlayHints.fontSize",
+        "key": "alt+i s",
+        "mac": "cmd+alt+i s"
+      },
+      {
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasError",
+        "key": "alt+e",
+        "mac": "cmd+alt+e"
+      },
+      {
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasWarning",
+        "key": "alt+w",
+        "mac": "cmd+alt+w"
+      },
+      {
+        "command": "flawuldragon.vanilla.accessibility.signals.lineHasInlineSuggestion",
+        "key": "alt+s",
+        "mac": "cmd+alt+s"
+      },
+      {
+        "command": "flawuldragon.autoclosetag",
+        "key": "alt+;",
+        "mac": "cmd+alt+;"
+      },
+      {
+        "command": "flawuldragon.colorhighlight",
+        "key": "alt+c",
+        "mac": "cmd+alt+c"
+      },
+      {
+        "command": "flawuldragon.errorLens.toggle",
+        "key": "alt+e",
+        "mac": "cmd+alt+e"
+      },
+      {
+        "command": "flawuldragon.errorLens.toggleError",
+        "key": "alt+e e",
+        "mac": "cmd+alt+e e"
+      },
+      {
+        "command": "flawuldragon.errorLens.toggleWarning",
+        "key": "alt+e w",
+        "mac": "cmd+alt+e w"
+      },
+      {
+        "command": "flawuldragon.errorLens.toggleInfo",
+        "key": "alt+e i",
+        "mac": "cmd+alt+e i"
+      },
+      {
+        "command": "flawuldragon.errorLens.toggleHint",
+        "key": "alt+e h",
+        "mac": "cmd+alt+e h"
+      },
+      {
+        "command": "flawuldragon.errorLens.toggleInlineMessage",
+        "key": "alt+e m",
+        "mac": "cmd+alt+e m"
+      },
+      {
+        "command": "flawuldragon.errorLens.searchForProblem",
+        "key": "alt+e s",
+        "mac": "cmd+alt+e s"
+      },
+      {
+        "command": "flawuldragon.errorLens.selectProblem",
+        "key": "alt+e p",
+        "mac": "cmd+alt+e p"
+      },
+      {
+        "command": "flawuldragon.errorLens.toggleWorkspace",
+        "key": "alt+e w",
+        "mac": "cmd+alt+e w"
+      },
+      {
+        "command": "flawuldragon.errorLens.disableLine",
+        "key": "alt+e d",
+        "mac": "cmd+alt+e d"
+      },
+      {
+        "command": "flawuldragon.errorLens.findLinterRuleDefinition",
+        "key": "alt+e r",
+        "mac": "cmd+alt+e r"
+      },
+      {
+        "command": "flawuldragon.errorLens.copyProblemMessage",
+        "key": "alt+e c",
+        "mac": "cmd+alt+e c"
+      },
+      {
+        "command": "flawuldragon.errorLens.copyProblemCode",
+        "key": "alt+e k",
+        "mac": "cmd+alt+e k"
+      },
+      {
+        "command": "flawuldragon.vscode-html-css.validate",
+        "key": "alt+v",
+        "mac": "cmd+alt+v"
+      },
+      {
+        "command": "flawuldragon.vscode-html-css.clear",
+        "key": "alt+c",
+        "mac": "cmd+alt+c"
+      },
+      {
+        "command": "flawuldragon.jetbrainsmonofont.activate",
+        "key": "alt+j",
+        "mac": "cmd+alt+j"
+      },
+      {
+        "command": "flawuldragon.jetbrainsmonofont.deactivate",
+        "key": "alt+j d",
+        "mac": "cmd+alt+j d"
+      },
+      {
+        "command": "flawuldragon.pomodoroClock.startPomodoro",
+        "key": "alt+p",
+        "mac": "cmd+alt+p"
+      },
+      {
+        "command": "flawuldragon.pomodoroClock.pausePomodoro",
+        "key": "alt+p p",
+        "mac": "cmd+alt+p p"
+      },
+      {
+        "command": "flawuldragon.pomodoroClock.continuePomodoro",
+        "key": "alt+p c",
+        "mac": "cmd+alt+p c"
+      },
+      {
+        "command": "flawuldragon.pomodoroClock.restartPomodoro",
+        "key": "alt+p r",
+        "mac": "cmd+alt+p r"
+      },
+      {
+        "command": "flawuldragon.pomodoroClock.resetPomodoro",
+        "key": "alt+p x",
+        "mac": "cmd+alt+p x"
+      },
+      {
+        "command": "flawuldragon.pomodoroClock.toggleCurrentPomodoroCountdown",
+        "key": "alt+p t",
+        "mac": "cmd+alt+p t"
+      },
+      {
+        "command": "flawuldragon.pomodoroclock.csb",
+        "key": "alt+p b",
+        "mac": "cmd+alt+p b"
+      },
+      {
+        "command": "flawuldragon.pomodoroclock.tsb",
+        "key": "alt+p s",
+        "mac": "cmd+alt+p s"
+      },
+      {
+        "command": "flawuldragon.takeabreak.Take a break: Start",
+        "key": "alt+b",
+        "mac": "cmd+alt+b"
+      },
+      {
+        "command": "flawuldragon.takeabreak.Take a break: Stop",
+        "key": "alt+b s",
+        "mac": "cmd+alt+b s"
+      },
+      {
+        "command": "flawuldragon.themeswitch.lighttheme",
+        "key": "alt+t l",
+        "mac": "cmd+alt+t l"
+      },
+      {
+        "command": "flawuldragon.themeswitch.darktheme",
+        "key": "alt+t d",
+        "mac": "cmd+alt+t d"
+      },
+      {
+        "command": "flawuldragon.themeswitch.toggle",
+        "key": "alt+t t",
+        "mac": "cmd+alt+t t"
+      },
+      {
+        "command": "flawuldragon.todohighlight.toggleHighlight",
+        "key": "alt+h",
+        "mac": "cmd+alt+h"
+      },
+      {
+        "command": "flawuldragon.todohighlight.listAnnotations",
+        "key": "alt+h l",
+        "mac": "cmd+alt+h l"
+      },
+      {
+        "command": "flawuldragon.todohighlight.sb",
+        "key": "alt+h b",
+        "mac": "cmd+alt+h b"
       }
     ],
     "icons": {
@@ -1891,7 +2138,28 @@
         }
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Advanced Circuits",
+        "path": "./themes/appearance/dark/advanced-circuits/a/advanced_circuits-color-theme.json"
+      },
+      {
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - Blueprint Paper",
+        "path": "./themes/appearance/dark/blueprint-paper/a/blueprint_paper-color-theme.json"
+      },
+      {
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Advanced Circuits [Light]",
+        "path": "./themes/appearance/light/advanced-circuits/a/advanced_circuits-light-color-theme.json"
+      },
+      {
+        "uiTheme": "vs",
+        "label": "Flawuldragon - Blueprint Paper [Light]",
+        "path": "./themes/appearance/light/blueprint-paper/a/blueprint_paper-light-color-theme.json"
+      }
+    ],
     "iconThemes": [
       {
         "id": "1-jetbrains-icons-oldui-dark",
