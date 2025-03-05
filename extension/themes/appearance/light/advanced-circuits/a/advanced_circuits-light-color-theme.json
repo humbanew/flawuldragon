@@ -2,6 +2,10 @@
 	"name": "[Light] Advanced Circuits",
 	"semanticHighlighting": true,
 	"colors": {
+		
+		// v0.0.5 - text block quote
+		"textBlockQuote.background": "#f0f0f0cc",
+		"textBlockQuote.border": "#f0f0f0",
 
 		// activitybar
 		// "activityBar.background": "#b7c89a",
