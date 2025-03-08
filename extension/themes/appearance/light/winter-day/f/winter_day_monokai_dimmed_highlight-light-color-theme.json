@@ -774,7 +774,7 @@
 			"scope": "meta.diff, meta.diff.header",
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "#E0EDDD"
+				"foreground": "#c3ebbb"
 			}
 		},
 		{
@@ -856,7 +856,7 @@
 			"scope": "markup.quote.markdown",
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "#fefefe"
+				"foreground": "#3d3d3d"
 			}
 		},
 		{
@@ -877,7 +877,7 @@
 			"name": "Markdown Underline Link/Image",
 			"scope": "markup.underline.link.markdown,markup.underline.link.image.markdown",
 			"settings": {
-				"foreground": "#fefefe"
+				"foreground": "#111111"
 			}
 		},
 		{
@@ -897,7 +897,7 @@
 			"name": "Markdown Punctuation Definition Link",
 			"scope": "markup.list.unnumbered.markdown, markup.list.numbered.markdown",
 			"settings": {
-				"foreground": "#fefefe"
+				"foreground": "#1f1f1f"
 			}
 		},
 		{
@@ -906,7 +906,7 @@
 				"punctuation.definition.list.begin.markdown"
 			],
 			"settings": {
-				"foreground": "#fefefe"
+				"foreground": "#1a1a1a"
 			}
 		},
 		{
