@@ -1505,18 +1505,6 @@ To contribute to the project, follow the steps below:
 4. Push the changes (`git push origin feature-[feature-name]`)
 5. Create a new Pull Request
 
-## Sponsorship
-
-At some point in the future will be available to patrons.
-
-## Technical acknowledgments
-
-This project was built using object-oriented architecture, both with home-made features and third party projects that adopt open source and MIT standard.If any error occurs during the extension execution, only that module will be deactivated without affecting the operation of the others and the extension (root). Check out a simplified illustrative example of the final architecture.
-
-<img src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-archtecture-demonstration.png" alt="Flawuldragon Arch Demo" />
-</div>
-
-Enjoy! 🙂👌
 
 ## Sponsorship
 
@@ -1538,3 +1526,12 @@ If you want to give additional support to my work and my projects, here are some
 <img src="https://strg.humbanew.com.br/projects/rodape-readme-projects.png" alt="Humbanew Readme Footer"/>
 
 </div>
+
+## Technical acknowledgments
+
+This project was built using object-oriented architecture, both with home-made features and third party projects that adopt open source and MIT standard.If any error occurs during the extension execution, only that module will be deactivated without affecting the operation of the others and the extension (root). Check out a simplified illustrative example of the final architecture.
+
+<img src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-archtecture-demonstration.png" alt="Flawuldragon Arch Demo" />
+</div>
+
+Enjoy! 🙂👌
