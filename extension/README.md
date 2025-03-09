@@ -1505,7 +1505,6 @@ To contribute to the project, follow the steps below:
 4. Push the changes (`git push origin feature-[feature-name]`)
 5. Create a new Pull Request
 
-
 ## Sponsorship
 
 If you want to give additional support to my work and my projects, here are some of the options available for financial support. Since now, thank you for your support. 😁🍀🌟
