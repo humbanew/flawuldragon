@@ -1521,9 +1521,6 @@ If you want to give additional support to my work and my projects, here are some
 <img alt="" border="0" src="https://www.paypal.com/en_BR/i/scr/pixel.gif" width="1" height="1" />
 </form>
 
-<br><br>
-<img src="https://strg.humbanew.com.br/projects/rodape-readme-projects.png" alt="Humbanew Readme Footer"/>
-
 </div>
 
 ## Technical acknowledgments
@@ -1534,3 +1531,10 @@ This project was built using object-oriented architecture, both with home-made f
 </div>
 
 Enjoy! 🙂👌
+
+<br><br>
+<div align="center">
+  
+  <img src="https://strg.humbanew.com.br/projects/rodape-readme-projects.png" alt="Humbanew Readme Footer"/>
+
+</div>
