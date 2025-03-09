@@ -1,3 +1,11 @@
+/**
+ * ========================================================================================
+ * Humbanew Project ©️ 2023-2025
+ * All rights reserved.
+ * Licensed under the MIT License, adapted.
+ * ========================================================================================
+ */
+
 /*
  * Light Theme
   --> #eeeef2
@@ -15,6 +23,10 @@
   "name": "[Light] Visual Studio Inspired Light",
   "semanticHighlighting": true,
   "colors": {
+
+		// text block quote
+		"textBlockQuote.background": "#f0f0f0cc",
+		"textBlockQuote.border": "#f0f0f0",
 
 		// // activitybar
 		// "activityBar.background": "#b7c89a",
