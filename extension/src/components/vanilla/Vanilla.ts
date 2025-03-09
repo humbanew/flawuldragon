@@ -2283,6 +2283,10 @@ export class FDVanilla {
         sound: 'on'
       });
 
+    vscode.workspace
+      .getConfiguration()
+      .update('workbench.statusBar.visible', true);
+
     vscode.commands.registerCommand(Global.vanilla.accessibilities.comandos.inlayHints.enabled, () => {
       if (vscode.workspace.getConfiguration().get('editor.inlayHints.enabled')) {
         vscode.workspace.getConfiguration().update('editor.inlayHints.enabled', false);
@@ -2330,6 +2334,16 @@ export class FDVanilla {
         vscode.workspace.getConfiguration().update('accessibility.signals.lineHasInlineSuggestion', { sound: 'on' });
       }
     });
+
+    vscode.commands.registerCommand(Global.vanilla.accessibilities.comandos.visibility.statusBar,
+      () => {
+        if (vscode.workspace.getConfiguration().get('workbench.statusBar.visible')) {
+          vscode.workspace.getConfiguration().update('workbench.statusBar.visible', false);
+        } else {
+          vscode.workspace.getConfiguration().update('workbench.statusBar.visible', true);
+        }
+      }
+    );
 
   }
 

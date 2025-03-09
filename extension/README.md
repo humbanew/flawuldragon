@@ -33,13 +33,17 @@
 #### Workspace
 
 <video width="1200" controls>
-  <source src="https:///strg.humbanew.com.br/projects/flawuldragon/documentation/hn-flawuldragon-extension-demo.mp4" type="video/mp4">
+  <source src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/hn-flawuldragon-extension-demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 #### Status Bar Hub
 
-<img src="https:///strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-status-bar-hub-features.png" alt="Flawuldragon Status Bar Hub" />
+<img src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-status-bar-hub-features.png" alt="Flawuldragon Status Bar Hub" />
+
+#### Themes Feature Board
+
+<img src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/themes-feature-board.png" alt="Flawuldragon Feature Board" />
 
 ### Keybindings
 
@@ -59,6 +63,7 @@
   | `alt + e` | `cmd + alt + e` | Vanilla | Line Has Error Signal |
   | `alt + w` | `cmd + alt + w` | Vanilla | Line Has Warning Signal |
   | `alt + s` | `cmd + alt + s` | Vanilla | Line Has Inline Suggestion Signal |
+  | `alt + v`| `cmd + alt + v` | Vanilla | Show or Hide the Status Bar component |
   | `alt + ;` | `cmd + alt + ;` | Auto Close Tag | Enable or disable auto close tag |
   | `alt + c` | `cmd + alt + c` | Color Highlight | Enable or disable color highlight |
   | `alt + e` | `cmd + alt + e` | ErrorLens | Enable or disable ErrorLens |

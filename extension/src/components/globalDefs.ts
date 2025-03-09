@@ -50,9 +50,12 @@ export const Global = {
           'line-has-error': 'flawuldragon.vanilla.accessibility.signals.lineHasError',
           'line-has-warning': 'flawuldragon.vanilla.accessibility.signals.lineHasWarning',
           'line-has-inline-suggestion': 'flawuldragon.vanilla.accessibility.signals.lineHasInlineSuggestion'
+        },
+        visibility: {
+          'statusBar': 'flawuldragon.vanilla.accessibility.visibility.statusBar'
         }
       }
-    }
+    },
   },
   // incorporations
   autoccrtag: {

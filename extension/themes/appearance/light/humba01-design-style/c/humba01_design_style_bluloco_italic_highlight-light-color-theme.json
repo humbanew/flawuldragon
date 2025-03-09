@@ -134,24 +134,24 @@
 		"inputValidation.warningBackground": "#ff55a7", // Rosa Choque --> #ff55a7
 		"inputValidation.warningBorder": "#ff55a7", // Rosa Choque --> #ff55a7
 
-		// list
+    // list
 		"list.activeSelectionBackground": "#556effcc", // Azul --> #556eff
-		"list.activeSelectionForeground": "#cfa1ca", // Rosa --> #cfa1ca
+		"list.activeSelectionForeground": "#fcfafc", // Rosa --> #cfa1ca
 		"list.focusBackground": "#556effcc", // Azul --> #556eff
-		"list.focusForeground": "#cfa1ca", // Rosa --> #cfa1ca
-		"list.highlightForeground": "#ffa8f5", // Rosa --> #cfa1ca
+		"list.focusForeground": "#fcfafc", // Rosa --> #cfa1ca
+		"list.highlightForeground": "#fcfafc", // Rosa --> #cfa1ca
 		"list.hoverBackground": "#556effcc", // Azul --> #556eff
-		"list.hoverForeground": "#cfa1ca", // Rosa --> #cfa1ca
+		"list.hoverForeground": "#fcfafc", // Rosa --> #cfa1ca
 		"list.inactiveSelectionBackground": "#556effcc", // Azul --> #556eff
-		"list.inactiveSelectionForeground": "#cfa1cacc", // Rosa --> #cfa1ca
+		"list.inactiveSelectionForeground": "#fcfafccc", // Rosa --> #cfa1ca
 		"list.errorForeground": "#ff5558", // Vermelho Claro --> #ff5558
 		"list.warningForeground": "#ff55a7", // Rosa Choque --> #ff55a7
 		"listFilterWidget.background": "#8855ff", // Azul Roxeado --> #8855ff
 		"listFilterWidget.outline": "#8855ff", // Azul Roxeado --> #8855ff
 		"listFilterWidget.noMatchesOutline": "#ff5558", // Vermelho Claro --> #ff5558
-		"list.filterMatchBackground": "#cfa1ca", // Rosa --> #cfa1ca
+		"list.filterMatchBackground": "#8f718b", // Rosa --> #cfa1ca
 		"list.filterMatchBorder": "#cfa1ca", // Rosa --> #cfa1ca
-		"list.deemphasizedForeground": "#cfa1ca", // Rosa --> #cfa1ca
+		"list.deemphasizedForeground": "#fcfafc", // Rosa --> #cfa1ca
 
 		// more settings drop list
 		"list.dropBackground": "#556eff",

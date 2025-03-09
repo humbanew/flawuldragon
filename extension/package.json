@@ -125,6 +125,12 @@
       },
       {
         "category": "Flawuldragon",
+        "command": "flawuldragon.vanilla.accessibility.visibility.statusBar",
+        "title": "-Native- Show/Hide the status bar",
+        "description": "Show or Hide the status bar component"
+      },
+      {
+        "category": "Flawuldragon",
         "command": "flawuldragon.autoclosetag",
         "title": "-Auto CCR Tag- Enabled/Disabled the auto close tag",
         "description": "Enabled/Disabled the auto close tag"
@@ -1954,6 +1960,11 @@
         "mac": "cmd+alt+s"
       },
       {
+        "command": "flawuldragon.vanilla.accessibility.visibility.statusBar",
+        "key": "alt+v",
+        "mac": "cmd+alt+v"
+      },
+      {
         "command": "flawuldragon.autoclosetag",
         "key": "alt+;",
         "mac": "cmd+alt+;"
@@ -2139,6 +2150,28 @@
       }
     },
     "themes": [
+      {
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - (Beta) Flawuldragon - Visual Studio Inspired",
+        "path": "./themes/appearance/dark/vs-inspired-dark/vs_inspired-color-theme.json"
+      },
+      {
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - (Beta) Flawuldragon - Visual Studio Inspired Blue",
+        "path": "./themes/appearance/dark/vs-inspired-blue/vs_inspired_blue-color-theme.json"
+      },
+      {
+        "uiTheme": "vs",
+        "label": "Flawuldragon - (Beta) Flawuldragon - Visual Studio Inspired [Light]",
+        "path": "./themes/appearance/light/vs-inspired-light/vs_inspired_light-color-theme.json"
+      },
+      {
+        "uiTheme": "vs",
+        "label": "Flawuldragon - (Beta) Flawuldragon - Visual Studio Inspired Blue [Light]",
+        "path": "./themes/appearance/light/vs-inspired-blue/vs_inspired_blue_light-color-theme.json"
+      },
+
+
       {
         "uiTheme": "vs-dark",
         "label": "Flawuldragon - Advanced Circuits",
