@@ -73,7 +73,7 @@
     "editor.selectionForeground": "#ffffff",
 
     // editor whitespace
-    "editorWhitespace.foreground": "#ffffff55",
+    "editorWhitespace.foreground": "#cccccc",
 
     // editor find match highlight
     "editor.findMatchBackground": "#ff55fe", // Rosa --> #ff55fe
@@ -302,20 +302,6 @@
 		// debug
 		"debugToolBar.background": "#6366ff", // Azul --> #6366ff
 		"debugToolBar.border": "#8855ff", // Azul Roxeado --> #8855ff
-		"debugIcon.breakpointForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.breakpointDisabledForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.breakpointUnverifiedForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.breakpointCurrentStackframeForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.breakpointStackframeForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.startForeground": "#00b84d",
-		"debugIcon.pauseForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.stopForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.disconnectForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.restartForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.stepOverForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.stepIntoForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.stepOutForeground": "#ff5558", // Vermelho Claro --> #ff5558
-		"debugIcon.continueForeground": "#ff5558", // Vermelho Claro --> #ff5558
 
 		// tree
 		"tree.indentGuidesStroke": "#6366ff", // Azul --> #6366ff

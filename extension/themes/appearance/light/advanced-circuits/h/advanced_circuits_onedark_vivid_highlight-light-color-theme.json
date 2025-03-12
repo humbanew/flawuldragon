@@ -70,12 +70,12 @@
 		"editor.lineHighlightBorder": "#dbf7fa",
 
 		// editor selection
-		"editor.selectionBackground": "#3e9561",
+		"editor.selectionBackground": "#3e956144",
 		"editor.selectionHighlightBorder": "#18541dcc",
 		"editor.selectionForeground": "#ffffff",
 		
 		// editor whitespace
-		"editorWhitespace.foreground": "#fcfcfc",
+		"editorWhitespace.foreground": "#33333344",
 
 		// editor find match highlight
 		"editor.findMatchBackground": "#ffffff",
@@ -300,20 +300,6 @@
 		// debug
 		"debugToolBar.background": "#2f4858",
 		"debugToolBar.border": "#0e5364",
-		"debugIcon.breakpointForeground": "#ffffff",
-		"debugIcon.breakpointDisabledForeground": "#ffffff",
-		"debugIcon.breakpointUnverifiedForeground": "#ffffff",
-		"debugIcon.breakpointCurrentStackframeForeground": "#ffffff",
-		"debugIcon.breakpointStackframeForeground": "#ffffff",
-		"debugIcon.startForeground": "#ffffff",
-		"debugIcon.pauseForeground": "#ffffff",
-		"debugIcon.stopForeground": "#ffffff",
-		"debugIcon.disconnectForeground": "#ffffff",
-		"debugIcon.restartForeground": "#ffffff",
-		"debugIcon.stepOverForeground": "#ffffff",
-		"debugIcon.stepIntoForeground": "#ffffff",
-		"debugIcon.stepOutForeground": "#ffffff",
-		"debugIcon.continueForeground": "#ffffff",
 
 		// tree
 		"tree.indentGuidesStroke": "#ffffff",

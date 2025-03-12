@@ -298,20 +298,6 @@
 		// debug
 		"debugToolBar.background": "#ffffff",
 		"debugToolBar.border": "#bdc5dd",
-		"debugIcon.breakpointForeground": "#ff3030",
-		"debugIcon.breakpointDisabledForeground": "#ff3030",
-		"debugIcon.breakpointUnverifiedForeground": "#ff3030",
-		"debugIcon.breakpointCurrentStackframeForeground": "#ff3030",
-		"debugIcon.breakpointStackframeForeground": "#ff3030",
-		"debugIcon.startForeground": "#00b84d",
-		"debugIcon.pauseForeground": "#ff3030",
-		"debugIcon.stopForeground": "#ff3030",
-		"debugIcon.disconnectForeground": "#ff3030",
-		"debugIcon.restartForeground": "#ff3030",
-		"debugIcon.stepOverForeground": "#ff3030",
-		"debugIcon.stepIntoForeground": "#ff3030",
-		"debugIcon.stepOutForeground": "#ff3030",
-		"debugIcon.continueForeground": "#ff3030",
 
 		// tree
 		"tree.indentGuidesStroke": "#192c64",

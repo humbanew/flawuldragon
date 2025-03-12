@@ -2152,28 +2152,6 @@
     "themes": [
       {
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon - (Beta) Flawuldragon - Visual Studio Inspired",
-        "path": "./themes/appearance/dark/vs-inspired-dark/vs_inspired-color-theme.json"
-      },
-      {
-        "uiTheme": "vs-dark",
-        "label": "Flawuldragon - (Beta) Flawuldragon - Visual Studio Inspired Blue",
-        "path": "./themes/appearance/dark/vs-inspired-blue/vs_inspired_blue-color-theme.json"
-      },
-      {
-        "uiTheme": "vs",
-        "label": "Flawuldragon - (Beta) Flawuldragon - Visual Studio Inspired [Light]",
-        "path": "./themes/appearance/light/vs-inspired-light/vs_inspired_light-color-theme.json"
-      },
-      {
-        "uiTheme": "vs",
-        "label": "Flawuldragon - (Beta) Flawuldragon - Visual Studio Inspired Blue [Light]",
-        "path": "./themes/appearance/light/vs-inspired-blue/vs_inspired_blue_light-color-theme.json"
-      },
-
-
-      {
-        "uiTheme": "vs-dark",
         "label": "Flawuldragon - Advanced Circuits",
         "path": "./themes/appearance/dark/advanced-circuits/a/advanced_circuits-color-theme.json"
       },

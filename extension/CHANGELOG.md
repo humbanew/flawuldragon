@@ -5,10 +5,6 @@ All changes to the "flawuldragon" extension will be documented in this file.
 ## v0.0.5 (March 12, 2025) - Published
 
 - Added Status Bar Editor hide or show command and keybinding to execute the command. 
-- Added Visual Studio Inspired Blue family appearance theme.
-- Added Visual Studio Inspired Blue Dark family appearance theme.
-- Added Visual Studio Inspired Dark family appearance theme.
-- Added Visual Studio Inspired Light family appearance theme.
 - Solved problems with the built software architecture.
 
 ## v0.0.4-4 (February 15, 2025) - Unpublished

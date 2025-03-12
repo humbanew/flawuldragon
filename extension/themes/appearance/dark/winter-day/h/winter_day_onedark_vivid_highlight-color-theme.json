@@ -68,17 +68,17 @@
     "editor.lineHighlightBorder": "#49284255",
 
     // editor selection
-    "editor.selectionBackground": "#a7384d",
-    "editor.selectionHighlightBorder": "#a7384dcc",
+    "editor.selectionBackground": "#a7384d66",
+    "editor.selectionHighlightBorder": "#a7384d66",
     "editor.selectionForeground": "#be423c",
     
     // editor whitespace
-    "editorWhitespace.foreground": "#4d2235",
+    "editorWhitespace.foreground": "#be423c88",
 
     // editor find match highlight
-    "editor.findMatchBackground": "#a7384d",
-    "editor.findMatchBorder": "#a7384d",
-    "editor.findMatchHighlightBorder": "#a7384d",
+    "editor.findMatchBackground": "#63263D",
+    "editor.findMatchBorder": "#63263D",
+    "editor.findMatchHighlightBorder": "#63263D",
     
     // editor hover
     "editorHoverWidget.background": "#4d2235",

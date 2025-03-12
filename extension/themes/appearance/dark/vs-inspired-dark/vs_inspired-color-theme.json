@@ -26,6 +26,10 @@
   "semanticHighlighting": true,
   "colors": {
 
+		// text block quote
+		"textBlockQuote.background": "#111111cc",
+		"textBlockQuote.border": "#111111",
+
     // // activitybar
     // "activityBar.background": "#0e5364",
     // "activityBar.foreground": "#b7c89a",

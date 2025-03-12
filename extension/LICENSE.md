@@ -4,9 +4,12 @@
 
 </div>
 
-MIT License "adapted"
+MIT License
+*adapted version*
 
 Copyright (c) 2015-2025 Humbanew Project
+
+The Flawuldragon, SPECTRE CYAN PRISM CODENAME
 
 ## A. Global Terms by MIT License
 
