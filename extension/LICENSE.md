@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://strg.humbanew.com.br/projects/cabecalholicensev5.svg" alt="Humbanew License Header v5" />
+  <img src="https://strg.humbanew.com.br/projects/cabecalholicensev5.png" alt="Humbanew License Header v5" />
 
 </div>
 
