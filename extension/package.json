@@ -3,7 +3,7 @@
   "displayName": "Flawuldragon",
   "publisher": "humbanew",
   "description": "Humbanew starterkit development extension",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.97.0"
   },
@@ -23,6 +23,33 @@
     "Other",
     "Themes",
     "Snippets"
+  ],
+  "keywords": [
+    "color-theme",
+    "icon-theme",
+    "keybindings",
+    "product-icon-theme",
+    "theme",
+    "integrations",
+    "auto-close-tag",
+    "auto-complete-tag",
+    "auto-rename-tag",
+    "bracket-guides",
+    "color-highlight",
+    "error-lens",
+    "filesize",
+    "html-css-support",
+    "indent-rainbow",
+    "jetbrains-mono-font",
+    "jetbrains-mono",
+    "pomodoro-clock",
+    "take-a-break",
+    "theme-switch",
+    "todo-highlight",
+    "statusbar-hub",
+    "starter-kit",
+    "web-extension",
+    "desktop-extension"
   ],
   "repository": {
     "type": "git",
