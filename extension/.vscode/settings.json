@@ -9,5 +9,19 @@
         "dist": true // set this to false to include "dist" folder in search results
     },
     // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
-    "typescript.tsc.autoDetect": "off"
+    "typescript.tsc.autoDetect": "off",
+    "editor.inlayHints.enabled": true,
+    "editor.inlayHints.fontFamily": "JetBrains Mono",
+    "editor.inlayHints.fontSize": 12,
+    "accessibility.signals.lineHasError": {
+        "sound": "on"
+    },
+    "accessibility.signals.lineHasWarning": {
+        "sound": "on",
+        "announcement": "auto"
+    },
+    "accessibility.signals.lineHasInlineSuggestion": {
+        "sound": "on"
+    },
+    "workbench.statusBar.visible": true
 }
