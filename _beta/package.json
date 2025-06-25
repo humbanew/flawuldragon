@@ -1,0 +1,34 @@
+{
+  "name": "flawul",
+  "displayName": "Flawul",
+  "description": "",
+  "version": "0.1.0",
+  "publisher": "humbanew-project",
+  "license": "HNLUT-3.0",
+  "repository": {
+    "url": "git@github.com:Humba01/flawul-chaosdragon.git",
+    "directory": ".",
+    "type": "git"
+  },
+  "scripts": {
+    "buildprj": "vsce package"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Flawul",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Flawul-color-theme.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "@vscode/vsce": "^2.20.1"
+  }
+}
