@@ -289,15 +289,15 @@
 		"welcomePage.tileBorder": "#4a473d", // Beje Escuro --> #4a473d
 
 		// git
-		"gitDecoration.addedResourceForeground": "#34d058", // Light Green
-		"gitDecoration.modifiedResourceForeground": "#004ba0", // Light Blue
-		"gitDecoration.deletedResourceForeground": "#f85149", // Light Red
-		"gitDecoration.untrackedResourceForeground": "#d0b7ff", // Light Purple
-		"gitDecoration.ignoredResourceForeground": "#d1d5da", // Light Grey
-		"gitDecoration.conflictingResourceForeground": "#fb8c00", // Light Orange
-		"gitDecoration.submoduleResourceForeground": "#b392f0", // Light Purple
-		"gitDecoration.stageModifiedResourceForeground": "#004ba0", // Light Blue
-		"gitDecoration.stageDeletedResourceForeground": "#f85149", // Light Red
+		"gitDecoration.addedResourceForeground": "#2e7d32", // Verde escuro para bom contraste
+		"gitDecoration.modifiedResourceForeground": "#1565c0", // Azul escuro para bom contraste
+		"gitDecoration.deletedResourceForeground": "#c62828", // Vermelho escuro para bom contraste
+		"gitDecoration.untrackedResourceForeground": "#6a1b9a", // Roxo escuro para bom contraste
+		"gitDecoration.ignoredResourceForeground": "#757575", // Cinza médio para contraste
+		"gitDecoration.conflictingResourceForeground": "#ef6c00", // Laranja escuro para contraste
+		"gitDecoration.submoduleResourceForeground": "#4527a0", // Roxo profundo para contraste
+		"gitDecoration.stageModifiedResourceForeground": "#1565c0", // Azul escuro para contraste
+		"gitDecoration.stageDeletedResourceForeground": "#c62828", // Vermelho escuro para contraste
 
 		// debug
 		"debugToolBar.background": "#6366ff", // Azul --> #6366ff

@@ -284,16 +284,16 @@
     "welcomePage.tileHoverBackground": "#0018a1",
     "welcomePage.tileBorder": "#192c64",
 
-    // git
-    "gitDecoration.addedResourceForeground": "#00b84d",
-    "gitDecoration.modifiedResourceForeground": "#ffdb4b",
-    "gitDecoration.deletedResourceForeground": "#ff3030",
-    "gitDecoration.untrackedResourceForeground": "#ffdb4b",
-    "gitDecoration.ignoredResourceForeground": "#ffeb7b",
-    "gitDecoration.conflictingResourceForeground": "#ff3030",
-    "gitDecoration.submoduleResourceForeground": "#ffeb7b",
-    "gitDecoration.stageModifiedResourceForeground": "#ffdb4b",
-    "gitDecoration.stageDeletedResourceForeground": "#ff3030",
+		// git
+		"gitDecoration.addedResourceForeground": "#4ae8a7",         // verde claro, bom contraste com azul
+		"gitDecoration.modifiedResourceForeground": "#ffe066",      // amarelo claro, visível no azul
+		"gitDecoration.deletedResourceForeground": "#ff6f6f",       // vermelho claro, destaca no azul
+		"gitDecoration.untrackedResourceForeground": "#66d9ff",     // azul claro, mas diferente do fundo
+		"gitDecoration.ignoredResourceForeground": "#bfcfff",       // lilás claro, sutil mas visível
+		"gitDecoration.conflictingResourceForeground": "#ff6f6f",   // igual ao deleted, para destaque
+		"gitDecoration.submoduleResourceForeground": "#bfcfff",     // igual ao ignored, para consistência
+		"gitDecoration.stageModifiedResourceForeground": "#ffe066", // igual ao modified,para consistência
+		"gitDecoration.stageDeletedResourceForeground": "#ff6f6f",  // igual ao deleted, para consistência
 
     // debug
     "debugToolBar.background": "#243f8f",

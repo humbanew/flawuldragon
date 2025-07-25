@@ -276,15 +276,15 @@
     "welcomePage.tileBorder": "#00534a",
 
     // git
-    "gitDecoration.addedResourceForeground": "#005021",
-    "gitDecoration.modifiedResourceForeground": "#ffdb4b",
-    "gitDecoration.deletedResourceForeground": "#ff3030",
-    "gitDecoration.untrackedResourceForeground": "#ffdb4b",
-    "gitDecoration.ignoredResourceForeground": "#ffeb7b",
-    "gitDecoration.conflictingResourceForeground": "#ff3030",
-    "gitDecoration.submoduleResourceForeground": "#ffeb7b",
-    "gitDecoration.stageModifiedResourceForeground": "#ffdb4b",
-    "gitDecoration.stageDeletedResourceForeground": "#ff3030",
+		"gitDecoration.addedResourceForeground": "#7fffd4", // aqua - bom contraste com verde escuro
+		"gitDecoration.modifiedResourceForeground": "#ffd700", // amarelo ouro - destaca bem
+		"gitDecoration.deletedResourceForeground": "#ff3030", // vermelho - mantém destaque
+		"gitDecoration.untrackedResourceForeground": "#00bfff", // azul claro - bom contraste
+		"gitDecoration.ignoredResourceForeground": "#b7c89a", // verde claro - mais sutil
+		"gitDecoration.conflictingResourceForeground": "#ff4500", // laranja forte - alerta
+		"gitDecoration.submoduleResourceForeground": "#ffeb7b", // amarelo claro - mantém padrão
+		"gitDecoration.stageModifiedResourceForeground": "#ffd700", // amarelo ouro
+		"gitDecoration.stageDeletedResourceForeground": "#ff3030", // vermelho
 
     // debug
     "debugToolBar.background": "#0e5364",

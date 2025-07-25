@@ -284,16 +284,16 @@
     "welcomePage.tileHoverBackground": "#4b253c",
     "welcomePage.tileBorder": "#4b253c",
 
-    // git
-    "gitDecoration.addedResourceForeground": "#005021",
-    "gitDecoration.modifiedResourceForeground": "#ffdb4b",
-    "gitDecoration.deletedResourceForeground": "#ff3030",
-    "gitDecoration.untrackedResourceForeground": "#ffdb4b",
-    "gitDecoration.ignoredResourceForeground": "#ffeb7b",
-    "gitDecoration.conflictingResourceForeground": "#ff3030",
-    "gitDecoration.submoduleResourceForeground": "#ffeb7b",
-    "gitDecoration.stageModifiedResourceForeground": "#ffdb4b",
-    "gitDecoration.stageDeletedResourceForeground": "#ff3030",
+		// git
+		"gitDecoration.addedResourceForeground": "#8fff8f", // verde claro para bom contraste
+		"gitDecoration.modifiedResourceForeground": "#ffc940", // amarelo forte
+		"gitDecoration.deletedResourceForeground": "#ff6e6e", // vermelho claro
+		"gitDecoration.untrackedResourceForeground": "#b3e5ff", // azul claro
+		"gitDecoration.ignoredResourceForeground": "#cfcfcf", // cinza claro
+		"gitDecoration.conflictingResourceForeground": "#ff3030", // vermelho padrão
+		"gitDecoration.submoduleResourceForeground": "#ffeb7b", // amarelo padrão
+		"gitDecoration.stageModifiedResourceForeground": "#ffc940", // amarelo forte
+		"gitDecoration.stageDeletedResourceForeground": "#ff6e6e", // vermelho claro
 
     // debug
     "debugToolBar.background": "#492842",

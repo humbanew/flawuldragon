@@ -3,7 +3,7 @@
   "displayName": "Flawuldragon",
   "publisher": "humbanew",
   "description": "Humbanew starterkit development extension",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "engines": {
     "vscode": "^1.97.0"
   },
@@ -1429,15 +1429,15 @@
           "fd.indentRainbow.colors": {
             "type": "array",
             "default": [
-              "rgba(5, 42, 80, 0.07)",
-              "rgba(12, 67, 122, 0.07)",
-              "rgba(20, 92, 163, 0.07)",
-              "rgba(27, 116, 205, 0.07)",
-              "rgba(35, 141, 247, 0.07)",
-              "rgba(60, 154, 249, 0.07)",
-              "rgba(85, 168, 251, 0.07)",
-              "rgba(110, 181, 253, 0.07)",
-              "rgba(135, 195, 255, 0.07)"
+              "rgba(5, 42, 80, 0.35)",
+              "rgba(12, 67, 122, 0.35)",
+              "rgba(20, 92, 163, 0.35)",
+              "rgba(27, 116, 205, 0.35)",
+              "rgba(35, 141, 247, 0.35)",
+              "rgba(60, 154, 249, 0.35)",
+              "rgba(85, 168, 251, 0.35)",
+              "rgba(110, 181, 253, 0.35)",
+              "rgba(135, 195, 255, 0.35)"
             ],
             "description": "An array with color (hex, rgba, rgb) strings which are used as colors, can be any length."
           },
