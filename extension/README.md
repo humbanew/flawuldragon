@@ -5,8 +5,6 @@
   <br><br>
   
   ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/humbanew/flawuldragon?style=flat-square&color=2c79c8)
-  ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/humbanew/flawuldragon/develop?style=flat-square&label=develop%20commits&color=0f64bb)
-  ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/humbanew/flawuldragon/indev25?style=flat-square&label=indev25%20commits&color=105ba7)
   ![GitHub Repo stars](https://img.shields.io/github/stars/humbanew/flawuldragon?style=flat-square&label=github%20stars&color=111111)
   ![GitHub last commit](https://img.shields.io/github/last-commit/humbanew/flawuldragon?display_timestamp=committer&style=flat-square&color=ffcf94)
   ![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/humbanew.flawuldragon?include_prereleases&style=flat-square&label=vs%20mkpc%20version)

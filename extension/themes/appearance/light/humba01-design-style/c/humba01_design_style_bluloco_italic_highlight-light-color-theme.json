@@ -238,7 +238,7 @@
 		"statusBarItem.hoverBackground": "#ced8f7",
 		"statusBarItem.prominentBackground": "#eaeaea", // Cinza Escuro --> #eaeaea
 		"statusBarItem.prominentHoverBackground": "#e5e5e5", // Cinza Escuro --> #e5e5e5
-		"statusBarItem.compactHoverBackground": "#000000", // Branco --> #000000
+		"statusBarItem.compactHoverBackground": "#ffffff", // Branco --> #ffffff
 		"statusBarItem.remoteBackground": "#eaeaea", // Cinza Escuro --> #eaeaea
 		"statusBarItem.remoteForeground": "#ff334e", // Vermelho Rosado --> #ff334e
 		"statusBarItem.remoteHoverBackground": "#e5e5e5", // Cinza Escuro --> #e5e5e5
