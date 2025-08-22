@@ -194,14 +194,14 @@
       "scope": "invalid",
       "settings": {
         "fontStyle": "",
-        "foreground": "#F44747"
+        "foreground": "#F90716"
       }
     },
     {
       "name": "Invalid deprecated",
       "scope": "invalid.deprecated",
       "settings": {
-        "foreground": "#F44747"
+        "foreground": "#F90716"
       }
     },
     {
@@ -374,7 +374,7 @@
     {
       "scope": "token.error-token",
       "settings": {
-        "foreground": "#f44747"
+        "foreground": "#F90716"
       }
     },
     {
