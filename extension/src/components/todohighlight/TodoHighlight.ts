@@ -996,9 +996,7 @@ export class FDTodoHighlight {
     }
     todoHighlightStatusBarItem.tooltip = "Number of available annotations";
     todoHighlightStatusBarItem.command = "flawuldragon.todohighlight.listAnnotations";
-    todoHighlightStatusBarItem.backgroundColor = new vscode.ThemeColor(
-      "statusBarItem.warningBackground",
-    );
+    todoHighlightStatusBarItem.color = "gold";
     todoHighlightStatusBarItem.show();
     this.todoStatusBarItem = todoHighlightStatusBarItem;
     return todoHighlightStatusBarItem;

@@ -160,15 +160,11 @@ export class PCPomodoroManager {
     if (this._clockBarText) {
       this._clockBarText = Global.pomodoroClock.statusBar.posicao;
       this._typeBarText = Global.pomodoroClock.statusBar.posicaoType;
+      this._clockBarText.color = "gold";
+      this._typeBarText.color = "gold";
       this._clockBarText.command =
         Global.pomodoroClock.comandos["toggle-current-pomodoro-countdown"];
       this._clockBarText.show();
-      this._clockBarText.backgroundColor = new vscode.ThemeColor(
-        "statusBarItem.warningBackground",
-      );
-      this._typeBarText.backgroundColor = new vscode.ThemeColor(
-        "statusBarItem.warningBackground",
-      );
     }
     this._commandMap = {
       start: {

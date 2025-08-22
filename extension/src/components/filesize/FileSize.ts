@@ -90,12 +90,10 @@ export class FDFileSize {
   public activate(content: vscode.ExtensionContext) {
     try {
       console.log("Flawuldragon - File size activated!");
-      this.filesizeStatusBar.backgroundColor = new vscode.ThemeColor(
-        "statusBarItem.warningBackground",
-      );
       this.getCurrentFileSize(this.filesizeStatusBar);
       this.filesizeStatusBar.tooltip = "Filesize of the current document";
-  
+      this.filesizeStatusBar.color = "gold";
+
       content.subscriptions.push(
         vscode.commands.registerCommand(Global.filesize.comandos["toggle-file-size-info"], () => {
           this.getCurrentFileSize(this.filesizeStatusBar);

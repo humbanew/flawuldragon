@@ -3,7 +3,7 @@
   "displayName": "Flawuldragon",
   "publisher": "humbanew",
   "description": "Humbanew starterkit development extension",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "engines": {
     "vscode": "^1.97.0"
   },
@@ -13,7 +13,7 @@
   },
   "icon": "assets/icon.png",
   "galleryBanner": {
-    "color": "#481aff",
+    "color": "#1c0965",
     "theme": "dark"
   },
   "publishConfig": {
@@ -2173,15 +2173,27 @@
       }
     ],
     "icons": {
-      "flawuldragon-badge": {
-        "description": "flawuldragon badge",
+      "flawuldragon-enabled": {
+        "description": "flawuldragon badge - enabled",
         "default": {
           "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\E501"
+          "fontCharacter": "\\e901"
+        }
+      },
+      "flawuldragon-disabled": {
+        "description": "flawuldragon badge - disabled",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-font.woff",
+          "fontCharacter": "\\e900"
         }
       }
     },
     "themes": [
+      {
+        "uiTheme": "vs-dark",
+        "label": "Flawuldragon - New",
+        "path": "./themes/appearance/new-color-theme.json"
+      },
       {
         "uiTheme": "vs-dark",
         "label": "Flawuldragon - Advanced Circuits",

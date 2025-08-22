@@ -1,4 +1,5 @@
 <div align="center">
+  <br><br>
 
   ![flawuldragon-logo](https://strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-readme-logo.png)
 
@@ -41,7 +42,9 @@
 
 #### Themes Feature Board
 
-<img src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/themes-feature-board.png" alt="Flawuldragon Feature Board" />
+* 22 Icon Themes
+
+* 04 Product Icon Themes
 
 ### Keybindings
 

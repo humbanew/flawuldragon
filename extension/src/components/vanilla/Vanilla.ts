@@ -11,7 +11,7 @@ import * as path from "node:path";
 import * as vscode from "vscode";
 import { Global } from "../globalDefs";
 import { IVFDInterruptor } from "./defines";
-import './flwdnDts.json';
+import "./flwdnDts.json";
 
 /**
  * The `FDVanilla` class provides functionality for managing status bar items and displaying date and time
@@ -32,13 +32,13 @@ import './flwdnDts.json';
  * vanilla.activate(context);
  */
 export class FDVanilla {
-
   /**
    * A status bar item for the flawuldragon extension.
    * This status bar item is aligned to the left with a priority of 2500.
    * It is shown by default. And not be disabled, reference to Development Project Notes.
    */
-  protected notesStatusBarItem: vscode.StatusBarItem = Global.vanilla.notes.statusBar.posicao;
+  protected notesStatusBarItem: vscode.StatusBarItem =
+    Global.vanilla.notes.statusBar.posicao;
 
   /**
    * A unique identifier for the status bar item above, reference a Notes Webview Tab.
@@ -51,13 +51,14 @@ export class FDVanilla {
    * This status bar item is aligned to the left with a priority of 2498.
    * It is created using the `vscode.window.createStatusBarItem` method.
    */
-  protected dateTimeStatusBarItem: vscode.StatusBarItem = Global.vanilla.dateTime.statusBar.posicao;
+  protected dateTimeStatusBarItem: vscode.StatusBarItem =
+    Global.vanilla.dateTime.statusBar.posicao;
 
-  /** 
+  /**
    * Flawuldragon DateTime States ⌁ Global Getter
    */
   protected flwdnDts = fs
-    .readFileSync(__dirname + '/flwdnDts.json', 'utf-8')
+    .readFileSync(__dirname + "/flwdnDts.json", "utf-8")
     .toString()
     .match(/\d/gi);
 
@@ -66,52 +67,64 @@ export class FDVanilla {
    * ___
    * gstate: 0 - [dayweek] [date] [time], 1 - [time] [date] [dayweek], 2 - [date] [dayweek] [time], 3 - [time] [dayweek] [date], 4 - [dayweek] [time] [date], 5 - [date] [time] [dayweek]
    */
-  protected flwdnGstate: number = this.flwdnDts ? parseInt(this.flwdnDts[0]) : 0;
+  protected flwdnGstate: number = this.flwdnDts
+    ? parseInt(this.flwdnDts[0])
+    : 0;
 
   /**
    * Flawuldragon DateTime States
    * ___
    * dstate: 0 - european format, 1 - american format
    */
-  protected flwdnDstate: number = this.flwdnDts ? parseInt(this.flwdnDts[1]) : 0;
+  protected flwdnDstate: number = this.flwdnDts
+    ? parseInt(this.flwdnDts[1])
+    : 0;
 
   /**
    * Flawuldragon DateTime States
    * ___
    * tstate: 0 - 24-hour format, 1 - 12-hour format
    */
-  protected flwdnTstate: number = this.flwdnDts ? parseInt(this.flwdnDts[2]) : 0;
+  protected flwdnTstate: number = this.flwdnDts
+    ? parseInt(this.flwdnDts[2])
+    : 0;
 
   /**
    * Flawuldragon DateTime States
    * ___
    * hstate: 0 - show date and time, 1 - show only time, 2 - show only date
    */
-  protected flwdnHstate: number = this.flwdnDts ? parseInt(this.flwdnDts[3]) : 0;
+  protected flwdnHstate: number = this.flwdnDts
+    ? parseInt(this.flwdnDts[3])
+    : 0;
 
   /**
    * Flawuldragon DateTime States
    * ___
    * sstate: 0 - hide seconds in time, 1 - show seconds in time
    */
-  protected flwdnSstate: number = this.flwdnDts ? parseInt(this.flwdnDts[4]) : 0;
+  protected flwdnSstate: number = this.flwdnDts
+    ? parseInt(this.flwdnDts[4])
+    : 0;
 
   /**
    * Flawuldragon DateTime States
    * ___
    * wstate: 0 - hide day of the week, 1 - show day of the week
    */
-  protected flwdnWstate: number = this.flwdnDts ? parseInt(this.flwdnDts[5]) : 0;
+  protected flwdnWstate: number = this.flwdnDts
+    ? parseInt(this.flwdnDts[5])
+    : 0;
 
   /**
- * Constructs a status bar item interruptor that toggles the visibility of the status bar item.
- *
- * @param statusBarItem - The status bar item to be controlled.
- * @param command - The command identifier to register for toggling the status bar item.
- *
- * This method registers a command that toggles the visibility of the provided status bar item.
- * When the command is executed, the status bar item is either shown or hidden based on its current state.
- */
+   * Constructs a status bar item interruptor that toggles the visibility of the status bar item.
+   *
+   * @param statusBarItem - The status bar item to be controlled.
+   * @param command - The command identifier to register for toggling the status bar item.
+   *
+   * This method registers a command that toggles the visibility of the provided status bar item.
+   * When the command is executed, the status bar item is either shown or hidden based on its current state.
+   */
   public interruptorStatusBarConstructor(
     statusBarItem: vscode.StatusBarItem,
     command: string
@@ -130,7 +143,6 @@ export class FDVanilla {
     });
   }
 
-
   /**
    * Registers a command to open a webview panel displaying Flawuldragon Notes and sets up a status bar item.
    *
@@ -144,40 +156,44 @@ export class FDVanilla {
    */
   protected notes(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand(this.notesWebviewCommand, () => {
-      let notes = vscode.window.createWebviewPanel("flawuldragon", "Flawuldragon Notes", vscode.ViewColumn.One, { enableForms: true, enableScripts: true });
-      notes.title = 'Flawuldragon Notes';
+      let notes = vscode.window.createWebviewPanel(
+        "flawuldragon",
+        "Flawuldragon Notes",
+        vscode.ViewColumn.One,
+        { enableForms: true, enableScripts: true }
+      );
+      notes.title = "Flawuldragon Notes";
       notes.iconPath = vscode.Uri.file(
-        path.join(__dirname, '../', 'assets', 'icon.png')
+        path.join(__dirname, "../", "assets", "icon.png")
       );
       notes.webview.html = fs
         .readFileSync(
-          path.join(__dirname, '../', 'assets', 'pages', 'flawuldragon.html')
+          path.join(__dirname, "../", "assets", "pages", "flawuldragon.html")
         )
         .toString();
       context.subscriptions.push(notes);
       return 0;
     });
 
-    this.notesStatusBarItem.text = "$(flawuldragon-badge) Notes";
+    this.notesStatusBarItem.text = "$(flawuldragon-enabled) Notes";
     this.notesStatusBarItem.show();
     this.notesStatusBarItem.tooltip = "The Flawuldragon's Notes";
     this.notesStatusBarItem.command = this.notesWebviewCommand;
-    this.notesStatusBarItem.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
   }
 
   /**
- * Updates the status bar with the current date and time every second.
- *
- * @param context - The VS Code extension context.
- *
- * This method sets up an interval that updates the status bar item with the current date and time
- * formatted as `DW - DD/MM/YYYY - HH:MM:SS` initial form. It also sets the tooltip and background color of the status bar item,
- * and ensures it is shown in the status bar. The status bar item is added to the extension's subscriptions
- * to ensure it is disposed of properly when the extension is deactivated.
- */
+   * Updates the status bar with the current date and time every second.
+   *
+   * @param context - The VS Code extension context.
+   *
+   * This method sets up an interval that updates the status bar item with the current date and time
+   * formatted as `DW - DD/MM/YYYY - HH:MM:SS` initial form. It also sets the tooltip and background color of the status bar item,
+   * and ensures it is shown in the status bar. The status bar item is added to the extension's subscriptions
+   * to ensure it is disposed of properly when the extension is deactivated.
+   */
   protected dateTime(context: vscode.ExtensionContext): void {
     let text: string,
-      divisor = ' ◈ ';
+      divisor = " ◈ ";
     // pausa para o processador descansar um pouco
     setTimeout(() => {
       setInterval(() => {
@@ -188,7 +204,8 @@ export class FDVanilla {
           minutes = timer.getMinutes().toString(),
           seconds = timer.getSeconds().toString(),
           dayofweek = timer.getDay().toString(),
-          hours12hf = timer.getHours() > 12 ? timer.getHours() - 12 : timer.getHours();
+          hours12hf =
+            timer.getHours() > 12 ? timer.getHours() - 12 : timer.getHours();
 
         if (parseInt(day) < 10) day = 0 + day;
         if (parseInt(month) < 10) month = 0 + month;
@@ -197,26 +214,26 @@ export class FDVanilla {
         if (parseInt(seconds) < 10) seconds = 0 + seconds;
 
         switch (dayofweek) {
-          case '0':
-            dayofweek = 'Sunday';
+          case "0":
+            dayofweek = "Sunday";
             break;
-          case '1':
-            dayofweek = 'Monday';
+          case "1":
+            dayofweek = "Monday";
             break;
-          case '2':
-            dayofweek = 'Tuesday';
+          case "2":
+            dayofweek = "Tuesday";
             break;
-          case '3':
-            dayofweek = 'Wednesday';
+          case "3":
+            dayofweek = "Wednesday";
             break;
-          case '4':
-            dayofweek = 'Thursday';
+          case "4":
+            dayofweek = "Thursday";
             break;
-          case '5':
-            dayofweek = 'Friday';
+          case "5":
+            dayofweek = "Friday";
             break;
-          case '6':
-            dayofweek = 'Saturday';
+          case "6":
+            dayofweek = "Saturday";
             break;
         }
 
@@ -308,20 +325,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 0-0-1-0-0-0
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 0-0-1-0-0-1
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${dayofweek}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${dayofweek}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 0-0-1-0-1-0
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 0-0-1-0-1-1
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 016
                             }
                             break;
@@ -332,20 +357,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 0-0-1-1-0-0
-                                text = `${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 0-0-1-1-0-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 0-0-1-1-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 0-0-1-1-1-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 020
                             }
                             break;
@@ -464,20 +497,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 0-1-1-0-0-0
-                                text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 0-1-1-0-0-1
-                                text = `${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 0-1-1-0-1-0
-                                text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 0-1-1-0-1-1
-                                text = `${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 040
                             }
                             break;
@@ -488,20 +529,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 0-1-1-1-0-0
-                                text = `${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 0-1-1-1-0-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 0-1-1-1-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 0-1-1-1-1-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 044
                             }
                             break;
@@ -780,20 +829,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 1-1-1-0-0-0
-                                text = `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 1-1-1-0-0-1
-                                text = `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 1-1-1-0-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 1-1-1-0-1-1
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 088
                             }
                             break;
@@ -804,20 +861,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 1-1-1-1-0-0
-                                text = `${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 1-1-1-1-0-1
-                                text = `${hours12hf}:${minutes}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 1-1-1-1-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 1-1-1-1-1-1
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 092
                             }
                             break;
@@ -940,20 +1005,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 2-0-1-0-0-0
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 2-0-1-0-0-1
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${dayofweek}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${dayofweek}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 2-0-1-0-1-0
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 2-0-1-0-1-1
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 112
                             }
                             break;
@@ -964,20 +1037,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 2-0-1-1-0-0
-                                text = `${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 2-0-1-1-0-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 2-0-1-1-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 2-0-1-1-1-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 116
                             }
                             break;
@@ -1096,20 +1177,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 2-1-1-0-0-0
-                                text = `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 2-1-1-0-0-1
-                                text = `${hours12hf}:${minutes}${divisor}${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 2-1-1-0-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 2-1-1-0-1-1
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 136
                             }
                             break;
@@ -1120,20 +1209,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 2-1-1-1-0-0
-                                text = `${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 2-1-1-1-0-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 2-1-1-1-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 2-1-1-1-1-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 140
                             }
                             break;
@@ -1256,20 +1353,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 3-0-1-0-0-0
-                                text = `${hours12hf}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 3-0-1-0-0-1
-                                text = `${hours12hf}:${minutes}${divisor}${dayofweek}${divisor}${day}/${month}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${dayofweek}${divisor}${day}/${month}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 3-0-1-0-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${day}/${month}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${day}/${month}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 3-0-1-0-1-1
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}${divisor}${day}/${month}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}${divisor}${day}/${month}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 160
                             }
                             break;
@@ -1280,20 +1385,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 3-0-1-1-0-0
-                                text = `${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 3-0-1-1-0-1
-                                text = `${hours12hf}:${minutes}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 3-0-1-1-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 3-0-1-1-1-1
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 164
                             }
                             break;
@@ -1412,20 +1525,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 3-1-1-0-0-0
-                                text = `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 3-1-1-0-0-1
-                                text = `${hours12hf}:${minutes}${divisor}${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 3-1-1-0-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 3-1-1-0-1-1
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 184
                             }
                             break;
@@ -1436,20 +1557,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 3-1-1-1-0-0
-                                text = `${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 3-1-1-1-0-1
-                                text = `${hours12hf}:${minutes}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 3-1-1-1-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 3-1-1-1-1-1
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 188
                             }
                             break;
@@ -1572,20 +1701,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 4-0-1-0-0-0
-                                text = `${hours12hf}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 4-0-1-0-0-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}${divisor}${day}/${month}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 4-0-1-0-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${day}/${month}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${day}/${month}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 4-0-1-0-1-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}${divisor}${day}/${month}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}${divisor}${day}/${month}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 208
                             }
                             break;
@@ -1596,20 +1733,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 4-0-1-1-0-0
-                                text = `${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 4-0-1-1-0-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 4-0-1-1-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 4-0-1-1-1-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 212
                             }
                             break;
@@ -1728,20 +1873,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 4-1-1-0-0-0
-                                text = `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 4-1-1-0-0-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 4-1-1-0-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 4-1-1-0-1-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}${divisor}${month}/${day}/${timer.getFullYear()}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 232
                             }
                             break;
@@ -1752,20 +1905,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 4-1-1-1-0-0
-                                text = `${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 4-1-1-1-0-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 4-1-1-1-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 4-1-1-1-1-1
-                                text = `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${dayofweek}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 236
                             }
                             break;
@@ -1888,20 +2049,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 5-0-1-0-0-0
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 5-0-1-0-0-1
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 5-0-1-0-1-0
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 5-0-1-0-1-1
-                                text = `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${day}/${month}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 256
                             }
                             break;
@@ -1912,20 +2081,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 5-0-1-1-0-0
-                                text = `${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 5-0-1-1-0-1
-                                text = `${hours12hf}:${minutes}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 5-0-1-1-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 5-0-1-1-1-1
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 260
                             }
                             break;
@@ -2044,20 +2221,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 5-1-1-0-0-0
-                                text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 5-1-1-0-0-1
-                                text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 5-1-1-0-1-0
-                                text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 5-1-1-0-1-1
-                                text = `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${month}/${day}/${timer.getFullYear()}${divisor}${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 280
                             }
                             break;
@@ -2068,20 +2253,28 @@ export class FDVanilla {
                           case 0:
                             switch (this.flwdnWstate) {
                               case 0: // 5-1-1-1-0-0
-                                text = `${hours12hf}:${minutes}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 5-1-1-1-0-1
-                                text = `${hours12hf}:${minutes}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                             }
                             break;
                           case 1:
                             switch (this.flwdnWstate) {
                               case 0: // 5-1-1-1-1-0
-                                text = `${hours12hf}:${minutes}:${seconds}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break;
                               case 1: // 5-1-1-1-1-1
-                                text = `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` + (timer.getHours() > 12 ? ' PM' : ' AM');
+                                text =
+                                  `${hours12hf}:${minutes}:${seconds}${divisor}${dayofweek}` +
+                                  (timer.getHours() > 12 ? " PM" : " AM");
                                 break; // 284
                             }
                             break;
@@ -2130,14 +2323,11 @@ export class FDVanilla {
         tstate: this.flwdnTstate,
         hstate: this.flwdnHstate,
         sstate: this.flwdnSstate,
-        wstate: this.flwdnWstate
+        wstate: this.flwdnWstate,
       });
-    }
+    };
 
-    this.dateTimeStatusBarItem.tooltip = 'Current time';
-    this.dateTimeStatusBarItem.backgroundColor = new vscode.ThemeColor(
-      'statusBarItem.warningBackground'
-    );
+    this.dateTimeStatusBarItem.tooltip = "Current time";
     this.dateTimeStatusBarItem.show();
 
     vscode.commands.registerCommand(
@@ -2163,10 +2353,7 @@ export class FDVanilla {
             this.flwdnGstate = 0;
             break;
         }
-        fs.writeFileSync(
-          __dirname + '/flwdnDts.json',
-          generateJson()
-        );
+        fs.writeFileSync(__dirname + "/flwdnDts.json", generateJson());
       }
     );
 
@@ -2178,10 +2365,7 @@ export class FDVanilla {
         } else {
           this.flwdnDstate = 1;
         }
-        fs.writeFileSync(
-          __dirname + '/flwdnDts.json',
-          generateJson()
-        );
+        fs.writeFileSync(__dirname + "/flwdnDts.json", generateJson());
       }
     );
 
@@ -2193,10 +2377,7 @@ export class FDVanilla {
         } else {
           this.flwdnTstate = 1;
         }
-        fs.writeFileSync(
-          __dirname + '/flwdnDts.json',
-          generateJson()
-        );
+        fs.writeFileSync(__dirname + "/flwdnDts.json", generateJson());
       }
     );
 
@@ -2214,12 +2395,9 @@ export class FDVanilla {
             this.flwdnHstate = 0;
             break;
         }
-        fs.writeFileSync(
-          __dirname + '/flwdnDts.json',
-          generateJson()
-        );
+        fs.writeFileSync(__dirname + "/flwdnDts.json", generateJson());
       }
-    )
+    );
 
     vscode.commands.registerCommand(
       Global.vanilla.dateTime.comandos["show-seconds"],
@@ -2229,12 +2407,9 @@ export class FDVanilla {
         } else {
           this.flwdnSstate = 1;
         }
-        fs.writeFileSync(
-          __dirname + '/flwdnDts.json',
-          generateJson()
-        );
+        fs.writeFileSync(__dirname + "/flwdnDts.json", generateJson());
       }
-    )
+    );
 
     vscode.commands.registerCommand(
       Global.vanilla.dateTime.comandos["show-day-of-week"],
@@ -2244,107 +2419,191 @@ export class FDVanilla {
         } else {
           this.flwdnWstate = 1;
         }
-        fs.writeFileSync(
-          __dirname + '/flwdnDts.json',
-          generateJson()
-        );
+        fs.writeFileSync(__dirname + "/flwdnDts.json", generateJson());
       }
-    )
+    );
   }
 
   protected accessibilities() {
+    vscode.workspace
+      .getConfiguration()
+      .update("editor.inlayHints.enabled", true);
 
     vscode.workspace
       .getConfiguration()
-      .update('editor.inlayHints.enabled', true);
+      .update("editor.inlayHints.fontFamily", "JetBrains Mono");
 
     vscode.workspace
       .getConfiguration()
-      .update('editor.inlayHints.fontFamily', 'JetBrains Mono');
+      .update("editor.inlayHints.fontSize", 12);
 
     vscode.workspace
       .getConfiguration()
-      .update('editor.inlayHints.fontSize', 12);
+      .update("accessibility.signals.lineHasError", { sound: "on" });
 
     vscode.workspace
       .getConfiguration()
-      .update('accessibility.signals.lineHasError', { sound: 'on' });
-
-    vscode.workspace
-      .getConfiguration()
-      .update('accessibility.signals.lineHasWarning', {
-        sound: 'on',
-        announcement: 'auto'
+      .update("accessibility.signals.lineHasWarning", {
+        sound: "on",
+        announcement: "auto",
       });
 
     vscode.workspace
       .getConfiguration()
-      .update('accessibility.signals.lineHasInlineSuggestion', {
-        sound: 'on'
+      .update("accessibility.signals.lineHasInlineSuggestion", {
+        sound: "on",
       });
 
     vscode.workspace
       .getConfiguration()
-      .update('workbench.statusBar.visible', true);
+      .update("workbench.statusBar.visible", true);
 
-    vscode.commands.registerCommand(Global.vanilla.accessibilities.comandos.inlayHints.enabled, () => {
-      if (vscode.workspace.getConfiguration().get('editor.inlayHints.enabled')) {
-        vscode.workspace.getConfiguration().update('editor.inlayHints.enabled', false);
-      } else {
-        vscode.workspace.getConfiguration().update('editor.inlayHints.enabled', true);
-      }
-    });
-
-    vscode.commands.registerCommand(Global.vanilla.accessibilities.comandos.inlayHints["font-family"], () => {
-      if (vscode.workspace.getConfiguration().get('editor.inlayHints.fontFamily') == 'JetBrains Mono') {
-        vscode.workspace.getConfiguration().update('editor.inlayHints.fontFamily', 'Segoe UI');
-      } else {
-        vscode.workspace.getConfiguration().update('editor.inlayHints.fontFamily', 'JetBrains Mono');
-      }
-    });
-
-    vscode.commands.registerCommand(Global.vanilla.accessibilities.comandos.inlayHints["font-size"], () => {
-      if (vscode.workspace.getConfiguration().get('editor.inlayHints.fontSize') == 12) {
-        vscode.workspace.getConfiguration().update('editor.inlayHints.fontSize', 14);
-      } else {
-        vscode.workspace.getConfiguration().update('editor.inlayHints.fontSize', 12);
-      }
-    });
-
-    vscode.commands.registerCommand(Global.vanilla.accessibilities.comandos.signals["line-has-error"], () => {
-      if ((vscode.workspace.getConfiguration().get('accessibility.signals.lineHasError') as { sound: string }).sound == 'on') {
-        vscode.workspace.getConfiguration().update('accessibility.signals.lineHasError', { sound: 'off' });
-      } else {
-        vscode.workspace.getConfiguration().update('accessibility.signals.lineHasError', { sound: 'on' });
-      }
-    });
-
-    vscode.commands.registerCommand(Global.vanilla.accessibilities.comandos.signals["line-has-warning"], () => {
-      if ((vscode.workspace.getConfiguration().get('accessibility.signals.lineHasError') as { sound: string }).sound == 'on') {
-        vscode.workspace.getConfiguration().update('accessibility.signals.lineHasWarning', { sound: 'off', announcement: 'off' });
-      } else {
-        vscode.workspace.getConfiguration().update('accessibility.signals.lineHasWarning', { sound: 'on', announcement: 'auto' });
-      }
-    });
-
-    vscode.commands.registerCommand(Global.vanilla.accessibilities.comandos.signals["line-has-inline-suggestion"], () => {
-      if ((vscode.workspace.getConfiguration().get('accessibility.signals.lineHasError') as { sound: string }).sound == 'on') {
-        vscode.workspace.getConfiguration().update('accessibility.signals.lineHasInlineSuggestion', { sound: 'off' });
-      } else {
-        vscode.workspace.getConfiguration().update('accessibility.signals.lineHasInlineSuggestion', { sound: 'on' });
-      }
-    });
-
-    vscode.commands.registerCommand(Global.vanilla.accessibilities.comandos.visibility.statusBar,
+    vscode.commands.registerCommand(
+      Global.vanilla.accessibilities.comandos.inlayHints.enabled,
       () => {
-        if (vscode.workspace.getConfiguration().get('workbench.statusBar.visible')) {
-          vscode.workspace.getConfiguration().update('workbench.statusBar.visible', false);
+        if (
+          vscode.workspace.getConfiguration().get("editor.inlayHints.enabled")
+        ) {
+          vscode.workspace
+            .getConfiguration()
+            .update("editor.inlayHints.enabled", false);
         } else {
-          vscode.workspace.getConfiguration().update('workbench.statusBar.visible', true);
+          vscode.workspace
+            .getConfiguration()
+            .update("editor.inlayHints.enabled", true);
         }
       }
     );
 
+    vscode.commands.registerCommand(
+      Global.vanilla.accessibilities.comandos.inlayHints["font-family"],
+      () => {
+        if (
+          vscode.workspace
+            .getConfiguration()
+            .get("editor.inlayHints.fontFamily") == "JetBrains Mono"
+        ) {
+          vscode.workspace
+            .getConfiguration()
+            .update("editor.inlayHints.fontFamily", "Segoe UI");
+        } else {
+          vscode.workspace
+            .getConfiguration()
+            .update("editor.inlayHints.fontFamily", "JetBrains Mono");
+        }
+      }
+    );
+
+    vscode.commands.registerCommand(
+      Global.vanilla.accessibilities.comandos.inlayHints["font-size"],
+      () => {
+        if (
+          vscode.workspace
+            .getConfiguration()
+            .get("editor.inlayHints.fontSize") == 12
+        ) {
+          vscode.workspace
+            .getConfiguration()
+            .update("editor.inlayHints.fontSize", 14);
+        } else {
+          vscode.workspace
+            .getConfiguration()
+            .update("editor.inlayHints.fontSize", 12);
+        }
+      }
+    );
+
+    vscode.commands.registerCommand(
+      Global.vanilla.accessibilities.comandos.signals["line-has-error"],
+      () => {
+        if (
+          (
+            vscode.workspace
+              .getConfiguration()
+              .get("accessibility.signals.lineHasError") as { sound: string }
+          ).sound == "on"
+        ) {
+          vscode.workspace
+            .getConfiguration()
+            .update("accessibility.signals.lineHasError", { sound: "off" });
+        } else {
+          vscode.workspace
+            .getConfiguration()
+            .update("accessibility.signals.lineHasError", { sound: "on" });
+        }
+      }
+    );
+
+    vscode.commands.registerCommand(
+      Global.vanilla.accessibilities.comandos.signals["line-has-warning"],
+      () => {
+        if (
+          (
+            vscode.workspace
+              .getConfiguration()
+              .get("accessibility.signals.lineHasError") as { sound: string }
+          ).sound == "on"
+        ) {
+          vscode.workspace
+            .getConfiguration()
+            .update("accessibility.signals.lineHasWarning", {
+              sound: "off",
+              announcement: "off",
+            });
+        } else {
+          vscode.workspace
+            .getConfiguration()
+            .update("accessibility.signals.lineHasWarning", {
+              sound: "on",
+              announcement: "auto",
+            });
+        }
+      }
+    );
+
+    vscode.commands.registerCommand(
+      Global.vanilla.accessibilities.comandos.signals[
+        "line-has-inline-suggestion"
+      ],
+      () => {
+        if (
+          (
+            vscode.workspace
+              .getConfiguration()
+              .get("accessibility.signals.lineHasError") as { sound: string }
+          ).sound == "on"
+        ) {
+          vscode.workspace
+            .getConfiguration()
+            .update("accessibility.signals.lineHasInlineSuggestion", {
+              sound: "off",
+            });
+        } else {
+          vscode.workspace
+            .getConfiguration()
+            .update("accessibility.signals.lineHasInlineSuggestion", {
+              sound: "on",
+            });
+        }
+      }
+    );
+
+    vscode.commands.registerCommand(
+      Global.vanilla.accessibilities.comandos.visibility.statusBar,
+      () => {
+        if (
+          vscode.workspace.getConfiguration().get("workbench.statusBar.visible")
+        ) {
+          vscode.workspace
+            .getConfiguration()
+            .update("workbench.statusBar.visible", false);
+        } else {
+          vscode.workspace
+            .getConfiguration()
+            .update("workbench.statusBar.visible", true);
+        }
+      }
+    );
   }
 
   protected subscriptions(context: vscode.ExtensionContext) {
@@ -2364,7 +2623,7 @@ export class FDVanilla {
    */
   public activate(context: vscode.ExtensionContext) {
     try {
-      console.log('Flawuldragon - Vanilla activated!');
+      console.log("Flawuldragon - Vanilla activated!");
       this.notes(context);
       this.dateTime(context);
       this.accessibilities();
@@ -2373,53 +2632,57 @@ export class FDVanilla {
         this.dateTimeStatusBarItem,
         Global.vanilla.dateTime.comandos.root
       ); // show or hide the status bar
+      this.notesStatusBarItem.color = "gold";
+      this.dateTimeStatusBarItem.color = "gold";
+
     } catch (error) {
       this.deactivate();
-      console.error('Flawuldragon vanilla error: ' + error);
+      console.error("Flawuldragon vanilla error: " + error);
       vscode.window.showErrorMessage(
-        'An error occurred while activating the Flawuldragon vanilla features: ' +
-        error +
-        '. Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)'
+        "An error occurred while activating the Flawuldragon vanilla features: " +
+          error +
+          ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)"
       );
-    } finally { }
+    } finally {
+    }
   }
 
   /**
    * Deactivates the vanilla feature by disposing of the flawuldragon status bar.
    */
   public deactivate() {
-    console.log('Flawuldragon - Vanilla deactivated!');
+    this.notesStatusBarItem.text = "$(flawuldragon-disabled) Notes";
+    console.log("Flawuldragon - Vanilla deactivated!");
 
     vscode.workspace
       .getConfiguration()
-      .update('editor.inlayHints.enabled', false);
+      .update("editor.inlayHints.enabled", false);
 
     vscode.workspace
       .getConfiguration()
-      .update('editor.inlayHints.fontFamily', 'Segoe UI');
+      .update("editor.inlayHints.fontFamily", "Segoe UI");
 
     vscode.workspace
       .getConfiguration()
-      .update('editor.inlayHints.fontSize', 12);
+      .update("editor.inlayHints.fontSize", 12);
 
     vscode.workspace
       .getConfiguration()
-      .update('accessibility.signals.lineHasError', {
-        sound: 'off'
+      .update("accessibility.signals.lineHasError", {
+        sound: "off",
       });
 
     vscode.workspace
       .getConfiguration()
-      .update('accessibility.signals.lineHasWarning', {
-        sound: 'off',
-        announcement: 'auto'
+      .update("accessibility.signals.lineHasWarning", {
+        sound: "off",
+        announcement: "auto",
       });
 
     vscode.workspace
       .getConfiguration()
-      .update('accessibility.signals.lineHasInlineSuggestion', {
-        sound: 'off'
+      .update("accessibility.signals.lineHasInlineSuggestion", {
+        sound: "off",
       });
   }
-
 }

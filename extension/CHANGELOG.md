@@ -2,6 +2,37 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
+## v0.0.11 (August 30, 2025) - Beta
+
+- Updated CHANGELOG.md.
+- Updated README.md.
+- Updated logo of project.
+- Updated the Flawuldragon Notes.
+
+## v0.0.10 (August 1, 2025) - Published
+
+- Updated the README extension.
+- Updated the Flawuldragon Notes.
+- Adjusted the contrasts of the colors between texts and backgrounds of the editor's themes.
+
+## v0.0.9 (July 24, 2025) - Published
+
+- Improving the patterns of the IndentRainbow module with the project colors.
+- Updated the Flawuldragon Notes.
+- Adjusting the contrasts of the colors between texts and backgrounds of the editor's themes.
+
+## v0.0.8 (June 25, 2025) - Published
+
+- Improving the patterns of the IndentRainbow module with the project colors.
+
+## v0.0.7 (June 25, 2025) - Published
+
+- Updating the package.json correctly from the previously released version.
+
+## v0.0.6 (March 12, 2025) - Published
+
+- Solved the keywords of project.
+
 ## v0.0.5 (March 12, 2025) - Published
 
 - Added Status Bar Editor hide or show command and keybinding to execute the command. 
