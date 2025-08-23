@@ -47,8 +47,8 @@
       }
     },
     {
-      "name": "String",
-      "scope": "string",
+      "name": "String and Punctuation",
+      "scope": "string, punctuation",
       "settings": {
         "foreground": "#D2FF72"
       }
@@ -368,7 +368,7 @@
     {
       "scope": "token.warn-token",
       "settings": {
-        "foreground": "#cd9731"
+        "foreground": "#fc905e"
       }
     },
     {
