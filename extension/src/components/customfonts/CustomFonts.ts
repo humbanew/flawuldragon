@@ -20,20 +20,26 @@ import { Global } from "../globalDefs";
  * @class
  * @example
  * // Example usage:
- * const jetbrainsMono = new FDJetbrainsMono();
- * jetbrainsMono.activate(context);
+ * const customFonts = new FDCustomFonts();
+ * customFonts.activate(context);
  */
-export class FDJetbrainsMono {
+export class FDCustomFonts {
   /**
-   * Default settings for the JetBrains Mono font.
+   * Default settings for the custom font.
    * @property {string} editor.fontFamily - The font family name.
    * @property {boolean} editor.fontLigatures - Whether font ligatures are enabled.
    */
   protected defaultSettings = {
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontLigatures": true,
-    "accessibility.signals.lineHasError": {"sound": "on"},
+    "accessibility.signals.lineHasError": { sound: "on" },
   };
+
+  /**
+   * Status bar item for switching custom fonts.
+   */
+  protected switchCustomFontsStatusBar: vscode.StatusBarItem =
+    Global.customFonts.statusBar;
 
   /**
    * Displays an information message to the user.
@@ -53,7 +59,7 @@ export class FDJetbrainsMono {
    * @returns The resolved path to the "JetBrainsMono" directory.
    */
   protected path = (context: vscode.ExtensionContext) =>
-    path.resolve(context.extensionPath, "assets/jetBrains-mono");
+    path.resolve(context.extensionPath, "assets/customfonts");
 
   /**
    * Updates the user settings in the JetBrains Mono configuration.
@@ -63,7 +69,7 @@ export class FDJetbrainsMono {
    */
   protected updateUserSettings = (
     settings: IJBMGeneralObject,
-    remove = false,
+    remove = false
   ) =>
     Object.entries(settings).forEach(([key, value]) =>
       vscode.workspace
@@ -71,8 +77,8 @@ export class FDJetbrainsMono {
         .update(
           key,
           remove ? undefined : value,
-          vscode.ConfigurationTarget.Global,
-        ),
+          vscode.ConfigurationTarget.Global
+        )
     );
 
   /**
@@ -119,10 +125,10 @@ export class FDJetbrainsMono {
     this.updateUserSettings(this.defaultSettings);
     this.dirOpen(JetBrainsMonoAddress);
     this.showDialog(
-      `${context.extension.packageJSON.displayName} - Jetbrains Mono Font is activated!`,
+      `${context.extension.packageJSON.displayName} - Jetbrains Mono Font is activated!`
     );
     this.showDialog(
-      `Important Note - Don't forget to install fonts! Font Directory will open, once you have manually installed fonts, restart VSCODE - ${JetBrainsMonoAddress}`,
+      `Important Note - Don't forget to install fonts! Font Directory will open, once you have manually installed fonts, restart VSCODE - ${JetBrainsMonoAddress}`
     );
   }
 
@@ -138,15 +144,15 @@ export class FDJetbrainsMono {
    */
   public activationPrompt = (context: vscode.ExtensionContext) =>
     this.showDialog(
-      "Activate JetBrains Mono Font for Flawuldragon?",
+      "Activate Custom Fonts for Flawuldragon?",
       "Yes",
-      "No",
+      "No"
     ).then((value) =>
       value === "Yes"
         ? this.activation(context)
         : (this.showDialog(
-            "You can activate JetBrains Mono later by running 'JetBrainsMono' or 'JetBrainsMono' in command palette.",
-          ) as any),
+            "You can activate JetBrains Mono later by running 'JetBrainsMono' or 'JetBrainsMono' in command palette."
+          ) as any)
     );
 
   /**
@@ -160,7 +166,7 @@ export class FDJetbrainsMono {
    *                  information about the extension's environment and state.
    */
   public firstTimeActivation(context: vscode.ExtensionContext) {
-    const version = context.extension.packageJSON.version ?? "0.0.5";
+    const version = context.extension.packageJSON.version ?? "0.0.11";
     const previousVersion = context.globalState.get(context.extension.id);
     if (previousVersion === version) return;
 
@@ -174,24 +180,53 @@ export class FDJetbrainsMono {
    */
   public activate(context: vscode.ExtensionContext) {
     try {
-      console.log("Flawuldragon - Jetbrains Mono Font activated!");
+      console.log("Flawuldragon - Custom Fonts activated!");
       console.log(
-        `Congratulations, your extension "${context.extension.packageJSON.displayName} - Jetbrains Mono Font installed!"`,
+        `Congratulations, your extension "${context.extension.packageJSON.displayName} - Custom Fonts installed!"`
       );
       let activateCommand = vscode.commands.registerCommand(
-        Global.jetbrainsMono.comandos.activate,
-        () => this.activation(context),
+        Global.customFonts.comandos.activate,
+        () => this.activation(context)
       );
       let deactivateCommand = vscode.commands.registerCommand(
-        Global.jetbrainsMono.comandos.deactivate,
-        () => this.desactivate(context),
+        Global.customFonts.comandos.deactivate,
+        () => this.desactivate(context)
       );
-      context.subscriptions.push(activateCommand, deactivateCommand);
+      let switchCommand = vscode.commands.registerCommand(
+        Global.customFonts.comandos.switch,
+        () => this.switchCustomFonts()
+      );
+
+      context.subscriptions.push(activateCommand, deactivateCommand, switchCommand);
+      this.switchCustomFontsStatusBar.text = "CF";
+      this.switchCustomFontsStatusBar.tooltip = "Switch Editor Font";
+      this.switchCustomFontsStatusBar.command = Global.customFonts.comandos.switch;
+      this.switchCustomFontsStatusBar.show();
+      this.switchCustomFontsStatusBar.color = "gold";
     } catch (error) {
-      console.log("Flawuldragon - Jetbrains Mono Font error: " + error);
-      vscode.window.showErrorMessage("An error occurred while activating the jetbrains mono font pack integration feature: " + error + ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)");
+      console.log("Flawuldragon - Custom Fonts error: " + error);
+      vscode.window.showErrorMessage(
+        "An error occurred while activating the custom fonts integration feature: " +
+          error +
+          ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)"
+      );
       this.desactivate(context);
-    } finally {}
+    } finally {
+    }
+  }
+
+  protected switchCustomFonts(): any {
+    vscode.window.showQuickPick(["Microsoft Font", "Default VS Code", "JetBrains Mono", "Fira Mono", "Intel One Mono", "PT Mono", "Space Mono", "Ubuntu Mono"]).then((selectedFont) => {
+      if (selectedFont) {
+        if (selectedFont === "Microsoft Font") {
+          this.updateUserSettings({ "editor.fontFamily": "Segoe UI" });
+        } else if (selectedFont === "Default VS Code") {
+          this.updateUserSettings({ "editor.fontFamily": "monospace" });
+        } else {
+          this.updateUserSettings({ "editor.fontFamily": selectedFont });
+        }
+      }
+    });
   }
 
   /**
@@ -199,12 +234,9 @@ export class FDJetbrainsMono {
    */
   public desactivate(context: vscode.ExtensionContext) {
     // context.globalState.update(context.extension.id, undefined);
-    this.updateUserSettings(
-      this.defaultSettings,
-      true,
-    );
+    this.updateUserSettings(this.defaultSettings, true);
     this.showDialog(
-      `${context.extension.packageJSON.displayName} is deactivated!`,
+      `${context.extension.packageJSON.displayName} is deactivated!`
     );
   }
 }

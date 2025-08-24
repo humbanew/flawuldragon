@@ -260,15 +260,21 @@
       },
       {
         "category": "Flawuldragon",
-        "command": "flawuldragon.jetbrainsmonofont.activate",
-        "title": "-Jetbrains Mono Font- Activate JetBrains Mono Font Pack for Flawuldragon",
-        "description": "Activate JetBrains Mono Font Pack for Flawuldragon"
+        "command": "flawuldragon.customfonts.activate",
+        "title": "-Custom Fonts- Activate Custom Fonts for Flawuldragon",
+        "description": "Activate Custom Fonts for Flawuldragon"
       },
       {
         "category": "Flawuldragon",
-        "command": "flawuldragon.jetbrainsmonofont.deactivate",
-        "title": "-Jetbrains Mono Font- Deactivate JetBrains Mono Font for Flawuldragon",
-        "description": "Deactivate JetBrains Mono Font Pack for Flawuldragon"
+        "command": "flawuldragon.customfonts.deactivate",
+        "title": "-Custom Fonts- Deactivate Custom Fonts for Flawuldragon",
+        "description": "Deactivate Custom Fonts for Flawuldragon"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.customfonts.switch",
+        "title": "-Custom Fonts- Switch Custom Fonts for Flawuldragon",
+        "description": "Switch Custom Fonts for Flawuldragon"
       },
       {
         "category": "Flawuldragon",
@@ -2082,14 +2088,19 @@
         "mac": "cmd+alt+c"
       },
       {
-        "command": "flawuldragon.jetbrainsmonofont.activate",
+        "command": "flawuldragon.customfonts.activate",
         "key": "alt+j",
         "mac": "cmd+alt+j"
       },
       {
-        "command": "flawuldragon.jetbrainsmonofont.deactivate",
+        "command": "flawuldragon.customfonts.deactivate",
         "key": "alt+j d",
         "mac": "cmd+alt+j d"
+      },
+      {
+        "command": "flawuldragon.customfonts.switch",
+        "key": "alt+j s",
+        "mac": "cmd+alt+j s"
       },
       {
         "command": "flawuldragon.pomodoroClock.startPomodoro",
@@ -2177,90 +2188,22 @@
         "description": "flawuldragon badge - enabled",
         "default": {
           "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\e901"
+          "fontCharacter": "\\e900"
         }
       },
       "flawuldragon-disabled":{
         "description": "flawuldragon badge - disabled",
         "default": {
           "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "flawuldragon-bluloco-highlight":{
-        "description": "flawuldragon bluloco highlight icon",
-        "default": {
-          "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\e902"
-        }
-      },
-      "flawuldragon-bluloco-italic-highlight":{
-        "description": "flawuldragon bluloco highlight icon",
-        "default": {
-          "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\e903"
-        }
-      },
-      "flawuldragon-dracula-highlight":{
-        "description": "flawuldragon dracula highlight icon",
-        "default": {
-          "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\e906"
-        }
-      },
-      "flawuldragon-dracula-soft-highlight":{
-        "description": "flawuldragon dracula soft highlight icon",
-        "default": {
-          "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\e909"
-        }
-      },
-      "flawuldragon-monokai-highlight":{
-        "description": "flawuldragon monokai highlight icon",
-        "default": {
-          "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\e90c"
-        }
-      },
-      "flawuldragon-monokai-dimmed-highlight":{
-        "description": "flawuldragon monokai dimmed highlight icon",
-        "default": {
-          "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\e90f"
-        }
-      },
-      "flawuldragon-onedark-highlight":{
-        "description": "flawuldragon onedark highlight icon",
-        "default": {
-          "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\e912"
-        }
-      },
-      "flawuldragon-onedark-vivid-highlight":{
-        "description": "flawuldragon onedark vivid highlight icon",
-        "default": {
-          "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\e915"
-        }
-      },
-      "flawuldragon-original-highlight":{
-        "description": "flawuldragon original highlight icon",
-        "default": {
-          "fontPath": "assets/fonts/flawuldragon-font.woff",
-          "fontCharacter": "\\e918"
+          "fontCharacter": "\\e901"
         }
       }
     },
     "themes": [
       {
         "uiTheme": "vs-dark",
-        "label": "Flawuldragon Theme",
+        "label": "Flawuldragon Dynamic Theme",
         "path": "./themes/appearance/dynamic-color-theme.json"
-      },
-      {
-        "uiTheme": "vs",
-        "label": "Flawuldragon Theme [Light]",
-        "path": "./themes/appearance/dynamic-light-color-theme.json"
       }
     ],
     "iconThemes": [

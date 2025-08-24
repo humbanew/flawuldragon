@@ -17,14 +17,16 @@ import { FDErrorLens } from './components/errorlens/ErrorLens';
 import { FDFileSize } from './components/filesize/FileSize';
 import { FDHtmlCssSupport } from './components/htmlcsssupport/HtmlCssSupport';
 import { FDIndentRainbow } from './components/indentrainbow/IndentRainbow';
-import { FDJetbrainsMono } from './components/jetbrainsmono/JetbrainsMono';
+import { FDCustomFonts } from './components/customfonts/CustomFonts';
 import { FDPomodoroClock } from './components/pomodoroclock/PomodoroClock';
 import { FDTakeabreak } from './components/takeabreak/Takeabreak';
 import { FDThemeSwitch } from './components/themeswitch/ThemeSwitch';
 import { FDTodoHighlight } from './components/todohighlight/TodoHighlight';
+import { FDVanillaTheme } from './components/vanillaTheme/VanillaTheme';
 
 // variáveis
 const vanilla = new FDVanilla();
+const vanillaThemes = new FDVanillaTheme();
 const autoCloseCompleteRenameTag = new FDAutoRCCTag();
 const bracketGuides = new FDBracketGuides();
 const colorHightlight = {
@@ -35,7 +37,7 @@ const errorLens = new FDErrorLens();
 const filesize = new FDFileSize();
 const htmlCssSupport = new FDHtmlCssSupport();
 const indentRainbow = new FDIndentRainbow();
-const jetbrainsMono = new FDJetbrainsMono();
+const customFonts = new FDCustomFonts();
 const pomodoroClock = new FDPomodoroClock();
 const takeabreak = new FDTakeabreak();
 const themeSwitch = new FDThemeSwitch();
@@ -49,6 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		// componentes
 		vanilla.activate(context);
+		vanillaThemes.activate(context);
 		autoCloseCompleteRenameTag.activate(context);
 		bracketGuides.activate(context);
 		colorHightlight.activate(context);
@@ -56,8 +59,8 @@ export function activate(context: vscode.ExtensionContext) {
 		filesize.activate(context);
 		htmlCssSupport.activate(context);
 		indentRainbow.activate(context);
-		jetbrainsMono.activate(context);
-		jetbrainsMono.firstTimeActivation(context);
+		customFonts.activate(context);
+		customFonts.firstTimeActivation(context);
 		pomodoroClock.activate(context);
 		takeabreak.activate(context);
 		themeSwitch.activate(context);
@@ -84,6 +87,7 @@ export function activate(context: vscode.ExtensionContext) {
 export function deactivate(context: vscode.ExtensionContext) {
 	console.log("Flawuldragon deactivated!");
 	vanilla.deactivate();
+	vanillaThemes.deactivate();
 	autoCloseCompleteRenameTag.desactivate();
 	bracketGuides.desactivate();
 	colorHightlight.deactivate();
@@ -91,7 +95,7 @@ export function deactivate(context: vscode.ExtensionContext) {
 	filesize.desactivate();
 	htmlCssSupport.desactivate();
 	indentRainbow.desactivate();
-	jetbrainsMono.desactivate(context);
+	customFonts.desactivate(context);
 	pomodoroClock.desactivate();
 	takeabreak.desactivate();
 	themeSwitch.desactivate();

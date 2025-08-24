@@ -23,6 +23,19 @@ export const Global = {
         posicao: vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 2500),
       }
     },
+    // flawuldragon vanilla dynamic theme and highlight
+    dynamicTheme: {
+      comandos: {
+        'dynamic-theme': 'flawuldragon.vanilla.dynamicTheme',
+        'dynamic-highlight': 'flawuldragon.vanilla.dynamicHighlight',
+        'dynamic-mode': 'flawuldragon.vanilla.dynamicMode'
+      },
+      statusBar: {
+        highlight: vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 2491),
+        theme: vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 2490),
+        mode: vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 2489),
+      }
+    },
     // flawuldragon date and time
     dateTime: {
       comandos: {
@@ -111,12 +124,13 @@ export const Global = {
     comandos: null,
     statusBar: null
   },
-  jetbrainsMono: {
+  customFonts: {
     comandos: {
-      'activate': 'flawuldragon.jetbrainsmonofont.activate',
-      'deactivate': 'flawuldragon.jetbrainsmonofont.deactivate'
+      'activate': 'flawuldragon.customfonts.activate',
+      'deactivate': 'flawuldragon.customfonts.deactivate',
+      'switch': 'flawuldragon.customfonts.switch'
     },
-    statusBar: null
+    statusBar: vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 2488)
   },
   pomodoroClock: {
     comandos: {

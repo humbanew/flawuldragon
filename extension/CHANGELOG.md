@@ -1,13 +1,54 @@
-# Change Log
+# Changelog
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
-## v0.0.11 (August 30, 2025) - Beta
+## v0.0.11 (September 1, 2025) - Beta
 
 - Updated CHANGELOG.md.
 - Updated README.md.
 - Updated logo of project.
 - Updated the Flawuldragon Notes.
+- Renamed Module `Jetbrains Mono` to `Custom Fonts`.
+- Added support for additional fonts.
+- Added status bar items for the custom fonts options.
+  - with option Microsoft Font; 
+  - with option Default VS Code; 
+  - with option Fira Mono; 
+  - with option Jetbrains Mono; 
+  - with option Intel One Mono; 
+  - with option PT Mono; 
+  - with option Space Mono; 
+  - with option Ubuntu Mono;
+- Added status bar for dynamic theme switching.
+- Added status bar for dynamic mode theme switching.
+  - with option Advanced Circuits (dark and light).
+  - with option Blueprint Paper (dark and light).
+  - with option Humba01 Design Style (dark and light).
+  - with option Winter Day (dark and light).
+  - with option Cappuccino (dark and light).
+  - with option Red Velvet (dark and light).
+  - with option Sunshine (dark and light).
+  - with option RI Visual Studio (dark and light).
+  - with option RI Visual Studio Blue (dark and light).
+- All themes are writed in JSON Dark Visual Studio Code Theme.
+- Added status bar for dynamic highlight switching.
+  - with option Monokai Highlight.
+  - with option Monokai Dimmed Highlight.
+  - with option Bluloco Highlight.
+  - with option Bluloco Italic Highlight.
+  - with option Dracula Highlight.
+  - with option Dracula Soft Highlight.
+  - with option One Dark Highlight.
+  - with option One Dark Vivid Highlight.
+  - with option Original Highlight.
+- Refactored code for better readability and maintainability.
+- Revised the appearance of the status bar items.
+- Revised the icon and product themes.
+- Relocated all appearance themes to 2 dynamic appearance themes.
+- Renamed command `flawuldragon.jetbrainsmonofont.activate` to `flawuldragon.customfonts.activate`.
+- Renamed command `flawuldragon.jetbrainsmonofont.deactivate` to `flawuldragon.customfonts.deactivate`.
+- Added new command `flawuldragon.customfonts.switch`.
+- Added keybindings for the new command `alt+j s` or `cmd+alt+j s`.
 
 ## v0.0.10 (August 1, 2025) - Published
 

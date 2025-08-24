@@ -22,9 +22,11 @@ import { FDPomodoroClock } from './components/pomodoroclock/PomodoroClock';
 import { FDTakeabreak } from './components/takeabreak/Takeabreak';
 import { FDThemeSwitch } from './components/themeswitch/ThemeSwitch';
 import { FDTodoHighlight } from './components/todohighlight/TodoHighlight';
+import { FDVanillaTheme } from './components/vanillaTheme/VanillaTheme';
 
 // variáveis
 const vanilla = new FDVanilla();
+const vanillaThemes = new FDVanillaTheme();
 const autoCloseCompleteRenameTag = new FDAutoRCCTag();
 const bracketGuides = new FDBracketGuides();
 const colorHightlight = {
@@ -49,6 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		// componentes
 		vanilla.activate(context);
+		vanillaThemes.activate(context);
 		autoCloseCompleteRenameTag.activate(context);
 		bracketGuides.activate(context);
 		colorHightlight.activate(context);
@@ -84,6 +87,7 @@ export function activate(context: vscode.ExtensionContext) {
 export function deactivate(context: vscode.ExtensionContext) {
 	console.log("Flawuldragon deactivated!");
 	vanilla.deactivate();
+	vanillaThemes.deactivate();
 	autoCloseCompleteRenameTag.desactivate();
 	bracketGuides.desactivate();
 	colorHightlight.deactivate();
