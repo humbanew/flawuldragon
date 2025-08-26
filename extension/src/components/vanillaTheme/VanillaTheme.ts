@@ -60,6 +60,7 @@ export class FDVanillaTheme {
 
   protected configHighlightStatusBar() {
     vscode.window.showQuickPick([
+      "Visual Studio Code",
       "Monokai",
       "Monokai Dimmed",
       "Bluloco",
@@ -111,33 +112,14 @@ export class FDVanillaTheme {
     FDVanillaTheme.actualJSON.name = "Flawuldragon Dynamic Theme";
     FDVanillaTheme.actualJSON.type = "dark";
     FDVanillaTheme.actualJSON.colors = {
-      "editorBracketHighlight.foreground1": "#ffcc00",
-      "editorBracketHighlight.foreground2": "#ffcc00",
-      "editorBracketHighlight.foreground3": "#ffcc00",
-      "editorBracketHighlight.foreground4": "#ffcc00",
-      "editorBracketHighlight.foreground5": "#ffcc00",
-      "editorBracketHighlight.foreground6": "#ffcc00",
+      "editorBracketHighlight.foreground1": "#6787b7",
+      "editorBracketHighlight.foreground2": "#426da9",
+      "editorBracketHighlight.foreground3": "#385e9d",
+      "editorBracketHighlight.foreground4": "#2c5697",
+      "editorBracketHighlight.foreground5": "#1d4f91",
+      "editorBracketHighlight.foreground6": "#1d4289",
     };
   }
-
-  protected theme_advanced_circuits() {}
-  protected theme_blueprint_paper() {}
-  protected theme_humba01_design_style() {}
-  protected theme_winter_day() {}
-  protected theme_cappuccino() {}
-  protected theme_red_velvet() {}
-  protected theme_sunshine() {}
-  protected theme_ri_visual_studio() {}
-  protected theme_ri_visual_studio_blue() {}
-  protected highlight_monokai() {}
-  protected highlight_monokai_dimmed() {}
-  protected highlight_bluloco() {}
-  protected highlight_bluloco_italic() {}
-  protected highlight_dracula() {}
-  protected highlight_dracula_soft() {}
-  protected highlight_one_dark() {}
-  protected highlight_one_dark_vivid() {}
-  protected highlight_original() {}
 
   public activate(context: vscode.ExtensionContext) {
     try {

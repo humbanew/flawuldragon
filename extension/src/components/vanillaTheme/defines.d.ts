@@ -6,9 +6,28 @@
  * ========================================================================================
  */
 
-export type TFDVTTheme = "Advanced Circuits" | "Blueprint Paper" | "Humba01 Design Style" | "Winter Day" | "Cappuccino" | "Red Velvet" | "Sunshine" | "RI Visual Studio" | "RI Visual Studio Blue";
+export type TFDVTTheme =
+  | "Advanced Circuits"
+  | "Blueprint Paper"
+  | "Humba01 Design Style"
+  | "Winter Day"
+  | "Cappuccino"
+  | "Red Velvet"
+  | "Sunshine"
+  | "RI Visual Studio"
+  | "RI Visual Studio Blue";
 
-export type TFDVTHighlight = "Monokai" | "Monokai Dimmed" | "Bluloco" | "Bluloco Italic" | "Dracula" | "Dracula Soft" | "One Dark" | "One Dark Vivid" | "Original";
+export type TFDVTHighlight =
+  | "Visual Studio Code"
+  | "Monokai"
+  | "Monokai Dimmed"
+  | "Bluloco"
+  | "Bluloco Italic"
+  | "Dracula"
+  | "Dracula Soft"
+  | "One Dark"
+  | "One Dark Vivid"
+  | "Original";
 
 export type TFDVTMode = "Light" | "Dark";
 
@@ -362,7 +381,7 @@ export interface VscodeColorTheme {
     "editorWidget.border"?: string;
     "editorWidget.foreground"?: string;
     "editorWidget.resizeBorder"?: string;
-    "errorForeground"?: string;
+    errorForeground?: string;
     "chat.requestBubbleHoverBackground"?: string;
     "editorStickyScrollGutter.background"?: string;
     "extensionBadge.remoteBackground"?: string;

@@ -25,30 +25,161 @@
     "Snippets"
   ],
   "keywords": [
+    "Color Theme",
     "color-theme",
+    "Color Themes",
+    "color-themes",
+    "Icon Theme",
     "icon-theme",
+    "Icon Themes",
+    "icon-themes",
+    "Keybindings",
     "keybindings",
+    "Product Icon Theme",
     "product-icon-theme",
+    "Product Icon Themes",
+    "product-icon-themes",
+    "Theme",
     "theme",
+    "Light Mode",
+    "light-mode",
+    "Light Theme",
+    "light-theme",
+    "Light Themes",
+    "light-themes",
+    "Dark Mode",
+    "dark-mode",
+    "Dark Theme",
+    "dark-theme",
+    "Dark Themes",
+    "dark-themes",
+    "Dynamic Theme",
+    "dynamic-theme",
+    "Dynamic Themes",
+    "dynamic-themes",
+    "Advanced Circuits",
+    "advanced-circuits",
+    "Advanced Circuits Theme",
+    "advanced-circuits-theme",
+    "Blueprint Paper",
+    "blueprint-paper",
+    "Blueprint Paper Theme",
+    "blueprint-paper-theme",
+    "Humba01 Design Style",
+    "humba01-design-style",
+    "Humba01 Design Style Theme",
+    "humba01-design-style-theme",
+    "Winter Day",
+    "winter-day",
+    "Winter Day Theme",
+    "winter-day-theme",
+    "Cappuccino",
+    "cappuccino",
+    "Cappuccino Theme",
+    "cappuccino-theme",
+    "Red Velvet",
+    "red-velvet",
+    "Red Velvet Theme",
+    "red-velvet-theme",
+    "Sunshine",
+    "sunshine",
+    "Sunshine Theme",
+    "sunshine-theme",
+    "RI Visual Studio",
+    "ri-visual-studio",
+    "RI Visual Studio Theme",
+    "ri-visual-studio-theme",
+    "RI Visual Studio Blue",
+    "ri-visual-studio-blue",
+    "RI Visual Studio Blue Theme",
+    "ri-visual-studio-blue-theme",
+    "Dynamic Highlight",
+    "dynamic-highlight",
+    "Visual Studio Code Highlight",
+    "visual-studio-code-highlight",
+    "Monokai Highlight",
+    "monokai-highlight",
+    "Monokai Dimmed Highlight",
+    "monokai-dimmed-highlight",
+    "Bluloco Highlight",
+    "bluloco-highlight",
+    "Bluloco Italic Highlight",
+    "bluloco-italic-highlight",
+    "Dracula Highlight",
+    "dracula-highlight",
+    "Dracula Soft Highlight",
+    "dracula-soft-highlight",
+    "One Dark Highlight",
+    "one-dark-highlight",
+    "One Dark Vivid Highlight",
+    "one-dark-vivid-highlight",
+    "Original Highlight",
+    "original-highlight",
+    "Dynamic Mode",
+    "dynamic-mode",
+    "Integrations",
     "integrations",
+    "Auto Close Tag",
     "auto-close-tag",
+    "Auto Complete Tag",
     "auto-complete-tag",
+    "Auto Rename Tag",
     "auto-rename-tag",
+    "Bracket Guides",
     "bracket-guides",
+    "Color Highlight",
     "color-highlight",
+    "Error Lens",
     "error-lens",
-    "filesize",
+    "File Size",
+    "file-size",
+    "HTML CSS Support",
     "html-css-support",
+    "Indent Rainbow",
     "indent-rainbow",
+    "Microsoft Font",
+    "microsoft-font",
+    "Visual Studio Code Font",
+    "visual-studio-code-font",
+    "JetBrains Mono Font",
     "jetbrains-mono-font",
+    "JetBrains Mono",
     "jetbrains-mono",
+    "Fira Mono Font",
+    "fira-mono-font",
+    "Fira Mono",
+    "fira-mono",
+    "Intel One Mono Font",
+    "intel-one-mono-font",
+    "Intel One Mono",
+    "intel-one-mono",
+    "PT Mono Font",
+    "pt-mono-font",
+    "PT Mono",
+    "pt-mono",
+    "Space Mono Font",
+    "space-mono-font",
+    "Space Mono",
+    "space-mono",
+    "Ubuntu Mono Font",
+    "ubuntu-mono-font",
+    "Ubuntu Mono",
+    "ubuntu-mono",
+    "Pomodoro Clock",
     "pomodoro-clock",
+    "Take a Break",
     "take-a-break",
+    "Theme Switch",
     "theme-switch",
+    "Todo Highlight",
     "todo-highlight",
+    "Status Bar Hub",
     "statusbar-hub",
+    "Starter Kit",
     "starter-kit",
+    "Web Extension",
     "web-extension",
+    "Desktop Extension",
     "desktop-extension"
   ],
   "repository": {
@@ -1933,6 +2064,21 @@
         "mac": "cmd+alt+n"
       },
       {
+        "command": "flawuldragon.vanilla.dynamicTheme",
+        "key": "alt+x",
+        "mac": "cmd+alt+x"
+      },
+      {
+        "command": "flawuldragon.vanilla.dynamicHighlight",
+        "key": "alt+x h",
+        "mac": "cmd+alt+x h"
+      },
+      {
+        "command": "flawuldragon.vanilla.dynamicMode",
+        "key": "alt+x m",
+        "mac": "cmd+alt+x m"
+      },
+      {
         "command": "flawuldragon.vanilla.datetime",
         "key": "alt+d",
         "mac": "cmd+alt+d"
@@ -2208,114 +2354,114 @@
     ],
     "iconThemes": [
       {
-        "id": "1-jetbrains-icons-oldui-dark",
-        "label": "Flawuldragon - Jetbrains Icons OldUI Dark",
-        "path": "./themes/icon/jetbrains/v1/dark/theme.json"
-      },
-      {
-        "id": "2-jetbrains-icons-expui-auto",
-        "label": "Flawuldragon - Jetbrains Icons ExpUI 2023+ Auto",
-        "path": "./themes/icon/jetbrains/2023/auto/theme.json"
-      },
-      {
-        "id": "3-jetbrains-icons-expui-dark",
-        "label": "Flawuldragon - Jetbrains Icons ExpUI 2023+ Dark",
-        "path": "./themes/icon/jetbrains/2023/dark/theme.json"
-      },
-      {
-        "id": "4-jetbrains-icons-expui-light",
-        "label": "Flawuldragon - Jetbrains Icons ExpUI 2023+ Light",
-        "path": "./themes/icon/jetbrains/2023/light/theme.json"
-      },
-      {
-        "id": "5-vsclassic-icons",
-        "label": "Flawuldragon - Visual Studio Classic Icons 2012",
-        "path": "./themes/icon/vsclassic/theme.json"
-      },
-      {
-        "id": "6-vsmodern-icons-v1",
-        "label": "Flawuldragon - Visual Studio Modern v1 Icons",
-        "path": "./themes/icon/vsmodern/v1/theme.json"
-      },
-      {
-        "id": "7-vsmodern-icons-v2",
-        "label": "Flawuldragon - Visual Studio Modern v2 Icons",
-        "path": "./themes/icon/vsmodern/v2/theme.json"
-      },
-      {
-        "id": "8-minecraft-datapack-icons-auto",
-        "label": "Flawuldragon - Minecraft Datapack Icons Auto",
-        "path": "./themes/icon/mcdpicons/mc-dp-icon-theme.json"
-      },
-      {
-        "id": "9-minecraft-datapack-icons-default",
-        "label": "Flawuldragon - Minecraft Datapack Icons Default",
-        "path": "./themes/icon/mcdpicons/mc-dp-icon-theme-default.json"
-      },
-      {
-        "id": "10-minecraft-datapack-icons-xmas",
-        "label": "Flawuldragon - Minecraft Datapack Icons Xmas",
-        "path": "./themes/icon/mcdpicons/mc-dp-icon-theme-xmas.json"
-      },
-      {
-        "id": "11-vs2022-icons",
-        "label": "Flawuldragon - Visual Studio Modern 2022 Icons",
-        "path": "./themes/icon/vs2022/theme.json"
-      },
-      {
-        "id": "12-symbols-icons",
-        "label": "Flawuldragon - Symbols Icons",
-        "path": "./themes/icon/symbols/theme.json"
-      },
-      {
-        "id": "13-charmed-icons",
+        "id": "01-charmed-icons",
         "label": "Flawuldragon - Charmed Icons",
         "path": "./themes/icon/charmed/theme.json"
       },
       {
-        "id": "14-vscgreaticons-icons",
+        "id": "02-jetbrains-icons-a",
+        "label": "Flawuldragon - Jetbrains Icons 2023+ UI (Auto)",
+        "path": "./themes/icon/jetbrains/2023/auto/theme.json"
+      },
+      {
+        "id": "03-jetbrains-icons-b",
+        "label": "Flawuldragon - Jetbrains Icons 2023+ UI (Light)",
+        "path": "./themes/icon/jetbrains/2023/light/theme.json"
+      },
+      {
+        "id": "04-jetbrains-icons-c",
+        "label": "Flawuldragon - Jetbrains Icons 2023+ UI (Dark)",
+        "path": "./themes/icon/jetbrains/2023/dark/theme.json"
+      },
+      {
+        "id": "05-jetbrains-icons-d",
+        "label": "Flawuldragon - Jetbrains Icons v1 UI",
+        "path": "./themes/icon/jetbrains/v1/dark/theme.json"
+      },
+      {
+        "id": "06-minecraft-datapack-icons-a",
+        "label": "Flawuldragon - Minecraft Datapack Icons (Default)",
+        "path": "./themes/icon/mcdpicons/mc-dp-icon-theme-default.json"
+      },
+      {
+        "id": "07-minecraft-datapack-icons-b",
+        "label": "Flawuldragon - Minecraft Datapack Icons (Dark)",
+        "path": "./themes/icon/mcdpicons/mc-dp-icon-theme.json"
+      },
+      {
+        "id": "08-minecraft-datapack-icons-c",
+        "label": "Flawuldragon - Minecraft Datapack Icons (Xmas)",
+        "path": "./themes/icon/mcdpicons/mc-dp-icon-theme-xmas.json"
+      },
+      {
+        "id": "09-sakai-icons-a",
+        "label": "Flawuldragon - Sakai Icons",
+        "path": "./themes/icon/sakaicons/sakai-icons-theme.json"
+      },
+      {
+        "id": "10-sakai-icons-b",
+        "label": "Flawuldragon - Sakai Icons (Light)",
+        "path": "./themes/icon/sakaicons/sakai-icons-light-theme.json"
+      },
+      {
+        "id": "11-sakai-icons-c",
+        "label": "Flawuldragon - Sakai Icons (Expanded)",
+        "path": "./themes/icon/sakaicons/sakai-icons-expanded-theme.json"
+      },
+      {
+        "id": "12-symbols",
+        "label": "Flawuldragon - Symbols Icons",
+        "path": "./themes/icon/symbols/theme.json"
+      },
+      {
+        "id": "13-vs2022",
+        "label": "Flawuldragon - Visual Studio 2022 Icons",
+        "path": "./themes/icon/vs2022/theme.json"
+      },
+      {
+        "id": "14-vscgreaticons",
         "label": "Flawuldragon - Visual Studio Code Great Icons",
         "path": "./themes/icon/vscgreaticons/theme.json"
       },
       {
-        "id": "15-vscnomodark-icons",
-        "label": "Flawuldragon - Visual Studio Code Nomo Dark Icons Extended",
-        "path": "./themes/icon/vscnomodark/theme.json"
-      },
-      {
-        "id": "16-sakai-icons-dark",
-        "label": "Flawuldragon - Sakai Icons Dark",
-        "path": "./themes/icon/sakaicons/sakai-icons-theme.json"
-      },
-      {
-        "id": "17-sakai-icons-light",
-        "label": "Flawuldragon - Sakai Icons Light",
-        "path": "./themes/icon/sakaicons/sakai-icons-light-theme.json"
-      },
-      {
-        "id": "18-sakai-icons-expanded",
-        "label": "Flawuldragon - Sakai Icons Expanded",
-        "path": "./themes/icon/sakaicons/sakai-icons-expanded-theme.json"
-      },
-      {
-        "id": "19-vscnomodark-macos-icons",
-        "label": "Flawuldragon - Visual Studio Code Nomo Dark MacOS Icons",
-        "path": "./themes/icon/vscnomodarkmac/theme.json"
-      },
-      {
-        "id": "20-vscnomolight-icons",
-        "label": "Flawuldragon - Visual Studio Code Nomo Light Icons Extended",
-        "path": "./themes/icon/vscnomolight/theme.json"
-      },
-      {
-        "id": "21-vsc-icons",
+        "id": "15-vscicons",
         "label": "Flawuldragon - Visual Studio Code Icons",
-        "path": "./themes/icon/vsicons/theme.json"
+        "path": "./themes/icon/vscicons/theme.json"
       },
       {
-        "id": "22-vsc-macos-icons",
-        "label": "Flawuldragon - Visual Studio Code MacOS Icons",
-        "path": "./themes/icon/vscmacos/theme.json"
+        "id": "15-vsciconsmac",
+        "label": "Flawuldragon - Visual Studio Code Icons (MacOS)",
+        "path": "./themes/icon/vsciconsmac/theme.json"
+      },
+      {
+        "id": "16-vsclassic",
+        "label": "Flawuldragon - Visual Studio Classic Icons",
+        "path": "./themes/icon/vsclassic/theme.json"
+      },
+      {
+        "id": "17-vsnomodark",
+        "label": "Flawuldragon - Visual Studio Nomo Dark Icons",
+        "path": "./themes/icon/vsnomodark/theme.json"
+      },
+      {
+        "id": "18-vsnomodarkmac",
+        "label": "Flawuldragon - Visual Studio Nomo Dark Icons (MacOS)",
+        "path": "./themes/icon/vsnomodarkmac/theme.json"
+      },
+      {
+        "id": "19-vsnomolight",
+        "label": "Flawuldragon - Visual Studio Nomo Light Icons",
+        "path": "./themes/icon/vsnomolight/theme.json"
+      },
+      {
+        "id": "20-vsmodern-a",
+        "label": "Flawuldragon - Visual Studio v1 Modern Icons",
+        "path": "./themes/icon/vsmodern/v1/theme.json"
+      },
+      {
+        "id": "21-vsmodern-b",
+        "label": "Flawuldragon - Visual Studio v2 Modern Icons",
+        "path": "./themes/icon/vsmodern/v2/theme.json"
       }
     ],
     "productIconThemes": [

@@ -8,6 +8,8 @@ All changes to the "flawuldragon" extension will be documented in this file.
 - Updated README.md.
 - Updated logo of project.
 - Updated the Flawuldragon Notes.
+- Updated Keywords of the project.
+- Updated Keybindings of the project.
 - Renamed Module `Jetbrains Mono` to `Custom Fonts`.
 - Added support for additional fonts.
 - Added status bar items for the custom fonts options.
@@ -32,6 +34,7 @@ All changes to the "flawuldragon" extension will be documented in this file.
   - with option RI Visual Studio Blue (dark and light).
 - All themes are writed in JSON Dark Visual Studio Code Theme.
 - Added status bar for dynamic highlight switching.
+  - with option Visual Studio Code Highlight.
   - with option Monokai Highlight.
   - with option Monokai Dimmed Highlight.
   - with option Bluloco Highlight.
