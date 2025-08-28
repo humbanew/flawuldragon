@@ -99,7 +99,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
       "editorGroupHeader.tabsBorder": theme_color_advanced_circuits["2"],
       "editorGutter.addedBackground": "#2EA043",
       "editorGutter.deletedBackground": "#F85149",
-      "editorGutter.modifiedBackground": theme_color_advanced_circuits["1"],
+      "editorGutter.modifiedBackground": "#ffffff",
       "editorLineNumber.activeForeground": "#CCCCCC",
       "editorLineNumber.foreground": "#6E7681",
       "editorOverviewRuler.border": "#010409",
@@ -241,7 +241,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
       "editorGroupHeader.tabsBorder": theme_color_blueprint_paper["2"],
       "editorGutter.addedBackground": "#2EA043",
       "editorGutter.deletedBackground": "#F85149",
-      "editorGutter.modifiedBackground": theme_color_blueprint_paper["1"],
+      "editorGutter.modifiedBackground": "#ffffff",
       "editorLineNumber.activeForeground": "#CCCCCC",
       "editorLineNumber.foreground": "#6E7681",
       "editorOverviewRuler.border": "#010409",
@@ -382,7 +382,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
       "editorGroupHeader.tabsBorder": theme_color_humba01_design_style["2"],
       "editorGutter.addedBackground": "#2EA043",
       "editorGutter.deletedBackground": "#F85149",
-      "editorGutter.modifiedBackground": theme_color_humba01_design_style["1"],
+      "editorGutter.modifiedBackground": "#ffffff",
       "editorLineNumber.activeForeground": "#CCCCCC",
       "editorLineNumber.foreground": "#6E7681",
       "editorOverviewRuler.border": "#010409",
@@ -525,7 +525,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
       "editorGroupHeader.tabsBorder": theme_color_winter_day["2"],
       "editorGutter.addedBackground": "#2EA043",
       "editorGutter.deletedBackground": "#F85149",
-      "editorGutter.modifiedBackground": theme_color_winter_day["1"],
+      "editorGutter.modifiedBackground": "#ffffff",
       "editorLineNumber.activeForeground": "#CCCCCC",
       "editorLineNumber.foreground": "#6E7681",
       "editorOverviewRuler.border": "#010409",
@@ -665,7 +665,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
       "editorGroupHeader.tabsBorder": theme_color_cappuccino["2"],
       "editorGutter.addedBackground": "#2EA043",
       "editorGutter.deletedBackground": "#F85149",
-      "editorGutter.modifiedBackground": theme_color_cappuccino["1"],
+      "editorGutter.modifiedBackground": "#ffffff",
       "editorLineNumber.activeForeground": "#CCCCCC",
       "editorLineNumber.foreground": "#6E7681",
       "editorOverviewRuler.border": "#010409",
@@ -805,7 +805,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
       "editorGroupHeader.tabsBorder": theme_color_red_velvet["2"],
       "editorGutter.addedBackground": "#2EA043",
       "editorGutter.deletedBackground": "#F85149",
-      "editorGutter.modifiedBackground": theme_color_red_velvet["1"],
+      "editorGutter.modifiedBackground": "#ffffff",
       "editorLineNumber.activeForeground": "#CCCCCC",
       "editorLineNumber.foreground": "#6E7681",
       "editorOverviewRuler.border": "#010409",
@@ -945,7 +945,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
       "editorGroupHeader.tabsBorder": theme_color_sunshine["2"],
       "editorGutter.addedBackground": "#2EA043",
       "editorGutter.deletedBackground": "#F85149",
-      "editorGutter.modifiedBackground": theme_color_sunshine["1"],
+      "editorGutter.modifiedBackground": "#ffffff",
       "editorLineNumber.activeForeground": "#CCCCCC",
       "editorLineNumber.foreground": "#6E7681",
       "editorOverviewRuler.border": "#010409",
@@ -1085,7 +1085,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
       "editorGroupHeader.tabsBorder": theme_color_midnight["2"],
       "editorGutter.addedBackground": "#2EA043",
       "editorGutter.deletedBackground": "#F85149",
-      "editorGutter.modifiedBackground": theme_color_midnight["1"],
+      "editorGutter.modifiedBackground": "#ffffff",
       "editorLineNumber.activeForeground": "#CCCCCC",
       "editorLineNumber.foreground": "#6E7681",
       "editorOverviewRuler.border": "#010409",
@@ -3591,11 +3591,15 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
     };
   };
 
-const THEME_GALAXY = () => {}
+const THEME_BIG_BANG = () => {}
 ,THEME_SUBLIME = () => {}
 ,THEME_SOLDMETAL = () => {}
 ,THEME_ROYALE = () => {};
-const HIGHLIGHT_ABSENT = () => {} 
+const HIGHLIGHT_BLULOCO_ITALIC = () => {}
+,HIGHLIGHT_DRACULA_SOFT = () => {} 
+,HIGHLIGHT_MONOKAI_DIMMED = () => {} 
+,HIGHLIGHT_ONE_DARK_VIVID = () => {} 
+,HIGHLIGHT_ABSENT = () => {} 
 ,HIGHLIGHT_ALLURE = () => {}
 ,HIGHLIGHT_ARSTOTZKA = () => {}
 ,HIGHLIGHT_AZURE = () => {}

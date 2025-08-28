@@ -40,13 +40,15 @@
 
 <img src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-status-bar-hub-features-v2.png" alt="Flawuldragon Status Bar Hub" />
 
-#### Themes Feature Board
+#### Themes Features
 
 * 21 Icon Themes
 
 * 04 Product Icon Themes
 
-* 48 Appearance Themes (8 Themes x 6 Highlights)
+* 04 Appearance High Contrast Themes
+
+* 72 Appearance Themes (12 Themes x 6 Highlights)
 
 * 42 TODO Highlights
 
