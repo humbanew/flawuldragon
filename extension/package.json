@@ -205,6 +205,18 @@
       },
       {
         "category": "Flawuldragon",
+        "command": "flawuldragon.vanilla.dynamicTheme",
+        "title": "-Native- Switch a theme of IDE",
+        "description": "Switch a theme of IDE"
+      },
+      {
+        "category": "Flawuldragon",
+        "command": "flawuldragon.vanilla.dynamicHighlight",
+        "title": "-Native- Switch a highlight of IDE",
+        "description": "Switch a highlight of IDE"
+      },
+      {
+        "category": "Flawuldragon",
         "command": "flawuldragon.vanilla.datetime",
         "title": "-Native- Show/Hide the status bar datetime",
         "description": "Show/Hide the status bar datetime"
@@ -2074,11 +2086,6 @@
         "mac": "cmd+alt+x h"
       },
       {
-        "command": "flawuldragon.vanilla.dynamicMode",
-        "key": "alt+x m",
-        "mac": "cmd+alt+x m"
-      },
-      {
         "command": "flawuldragon.vanilla.datetime",
         "key": "alt+d",
         "mac": "cmd+alt+d"
@@ -2330,14 +2337,14 @@
       }
     ],
     "icons": {
-      "flawuldragon-enabled":{
+      "flawuldragon-enabled": {
         "description": "flawuldragon badge - enabled",
         "default": {
           "fontPath": "assets/fonts/flawuldragon-font.woff",
           "fontCharacter": "\\e900"
         }
       },
-      "flawuldragon-disabled":{
+      "flawuldragon-disabled": {
         "description": "flawuldragon badge - disabled",
         "default": {
           "fontPath": "assets/fonts/flawuldragon-font.woff",
@@ -2350,6 +2357,26 @@
         "uiTheme": "vs-dark",
         "label": "Flawuldragon Dynamic Theme",
         "path": "./themes/appearance/dynamic-color-theme.json"
+      },
+      {
+        "uiTheme": "hc-light",
+        "label": "Flawuldragon Paper Theme",
+        "path": "./themes/appearance/high-contrast/paper-color-theme.json"
+      },
+      {
+        "uiTheme": "hc-light",
+        "label": "Flawuldragon Old Paper Theme",
+        "path": "./themes/appearance/high-contrast/old-paper-color-theme.json"
+      },
+      {
+        "uiTheme": "hc-black",
+        "label": "Flawuldragon Paper Dark Theme",
+        "path": "./themes/appearance/high-contrast/paper-dark-color-theme.json"
+      },
+      {
+        "uiTheme": "hc-black",
+        "label": "Flawuldragon Tales from The Script Theme",
+        "path": "./themes/appearance/high-contrast/tales-from-the-script-color-theme.json"
       }
     ],
     "iconThemes": [

@@ -2,7 +2,7 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
-## v0.0.11 (September 1, 2025) - Beta
+## v0.0.11 (August 28, 2025) - Published
 
 - Updated CHANGELOG.md.
 - Updated README.md.
@@ -23,27 +23,22 @@ All changes to the "flawuldragon" extension will be documented in this file.
   - with option Ubuntu Mono;
 - Added status bar for dynamic theme switching.
 - Added status bar for dynamic mode theme switching.
-  - with option Advanced Circuits (dark and light).
-  - with option Blueprint Paper (dark and light).
-  - with option Humba01 Design Style (dark and light).
-  - with option Winter Day (dark and light).
-  - with option Cappuccino (dark and light).
-  - with option Red Velvet (dark and light).
-  - with option Sunshine (dark and light).
-  - with option RI Visual Studio (dark and light).
-  - with option RI Visual Studio Blue (dark and light).
+  - with option Advanced Circuits.
+  - with option Blueprint Paper.
+  - with option Humba01 Design Style.
+  - with option Winter Day.
+  - with option Cappuccino.
+  - with option Red Velvet.
+  - with option Sunshine.
+  - with option Midnight.
 - All themes are writed in JSON Dark Visual Studio Code Theme.
 - Added status bar for dynamic highlight switching.
   - with option Visual Studio Code Highlight.
   - with option Monokai Highlight.
-  - with option Monokai Dimmed Highlight.
   - with option Bluloco Highlight.
-  - with option Bluloco Italic Highlight.
   - with option Dracula Highlight.
-  - with option Dracula Soft Highlight.
   - with option One Dark Highlight.
-  - with option One Dark Vivid Highlight.
-  - with option Original Highlight.
+  - with option Iceberg Highlight.
 - Refactored code for better readability and maintainability.
 - Revised the appearance of the status bar items.
 - Revised the icon and product themes.
@@ -52,6 +47,11 @@ All changes to the "flawuldragon" extension will be documented in this file.
 - Renamed command `flawuldragon.jetbrainsmonofont.deactivate` to `flawuldragon.customfonts.deactivate`.
 - Added new command `flawuldragon.customfonts.switch`.
 - Added keybindings for the new command `alt+j s` or `cmd+alt+j s`.
+- Added new high contrast appearance theme `Flawuldragon Old Paper Theme`.
+- Added new high contrast appearance theme `Flawuldragon Paper Theme`.
+- Added new high contrast appearance theme `Flawuldragon Paper Dark Theme`.
+- Added new high contrast appearance theme `Flawuldragon Tales from The Script Theme`.
+- Added new TODO Highlight tokens `DEVELOP:` and `PROBLEM:`.
 
 ## v0.0.10 (August 1, 2025) - Published
 
@@ -77,7 +77,7 @@ All changes to the "flawuldragon" extension will be documented in this file.
 
 - Solved the keywords of project.
 
-## v0.0.5 (March 12, 2025) - Published
+## v0.0.5 (March 12, 2025) - Unpublished
 
 - Added Status Bar Editor hide or show command and keybinding to execute the command. 
 - Solved problems with the built software architecture.

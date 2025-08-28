@@ -9,21 +9,41 @@
 import * as vscode from "vscode";
 import { Global } from "../globalDefs";
 import {
+  TFDDynamicThemeConfig,
   TFDVTHighlight,
-  TFDVTMode,
   TFDVTTheme,
   VscodeColorTheme,
 } from "./defines";
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
+import {
+  HIGHLIGHT_BLULOCO,
+  HIGHLIGHT_DRACULA,
+  HIGHLIGHT_MONOKAI,
+  HIGHLIGHT_ONE_DARK,
+  HIGHLIGHT_ICEBERG,
+  HIGHLIGHT_VISUAL_STUDIO_CODE,
+  SEMANTIC_TOKEN_COLORS,
+  THEME_ADVANCED_CIRCUITS,
+  THEME_BLUEPRINT_PAPER,
+  THEME_CAPPUCCINO,
+  THEME_HUMBA01_DESIGN_STYLE,
+  THEME_MIDNIGHT,
+  THEME_RED_VELVET,
+  THEME_SUNSHINE,
+  THEME_WINTER_DAY,
+} from "./constants";
 
 export class FDVanillaTheme {
-  protected modeStatusBar: vscode.StatusBarItem | undefined;
-  protected themeStatusBar: vscode.StatusBarItem | undefined;
-  protected highlightThemeStatusBar: vscode.StatusBarItem | undefined;
-  protected static JSONPath = __dirname.split("\\").slice(0, -1).join("\\") + "\\themes\\appearance\\dynamic-color-theme.json";
-  protected static actualTheme: TFDVTTheme;
-  protected static actualHighlight: TFDVTHighlight;
-  protected static actualMode: TFDVTMode;
+  protected themeStatusBar: vscode.StatusBarItem =
+    Global.vanilla.dynamicTheme.statusBar.theme;
+  protected highlightThemeStatusBar: vscode.StatusBarItem =
+    Global.vanilla.dynamicTheme.statusBar.highlight;
+  protected static JSONPath =
+    __dirname.split("\\").slice(0, -1).join("\\") +
+    "\\themes\\appearance\\dynamic-color-theme.json";
+  protected static actualConfig = JSON.parse(
+    readFileSync(__dirname + "/themeConfig.json", "utf-8")
+  );
   protected static actualJSON: VscodeColorTheme = JSON.parse(
     readFileSync(FDVanillaTheme.JSONPath, "utf-8")
   );
@@ -38,95 +58,142 @@ export class FDVanillaTheme {
         "Cappuccino",
         "Red Velvet",
         "Sunshine",
-        "RI Visual Studio",
-        "RI Visual Studio Blue",
+        "Midnight",
       ])
       .then((selectedTheme) => {
         if (selectedTheme) {
-          FDVanillaTheme.actualTheme = selectedTheme as TFDVTTheme;
-          this.updateJSONThemeFile();
+          let actualTheme = selectedTheme as TFDVTTheme;
+          this.updateJSONThemeFile(actualTheme, undefined);
         }
       });
+  }
 
+  protected configHighlightStatusBar() {
+    vscode.window
+      .showQuickPick([
+        "Visual Studio Code",
+        "Monokai",
+        "Bluloco",
+        "Dracula",
+        "One Dark",
+        "Iceberg",
+      ])
+      .then((selectedHighlight) => {
+        if (selectedHighlight) {
+          let actualHighlight = selectedHighlight as TFDVTHighlight;
+          this.updateJSONThemeFile(undefined, actualHighlight);
+        }
+      });
+  }
+
+  // NOTE: This function is a placeholder for updating the JSON theme file.
+  protected updateJSONThemeFile(
+    theme?: TFDVTTheme,
+    highlight?: TFDVTHighlight
+  ) {
+    // Implementation goes here
+    FDVanillaTheme.actualJSON.name = "Flawuldragon Dynamic Theme";
+    FDVanillaTheme.actualJSON.type = "dark";
+    FDVanillaTheme.actualJSON.semanticHighlighting = true;
+    FDVanillaTheme.actualJSON.semanticTokenColors = SEMANTIC_TOKEN_COLORS();
+
+    vscode.window.showWarningMessage(
+      'The options of theme and highlight will only be applied if the "Flawuldragon Dynamic Theme" is selected as the current theme. Please select it to see the changes applied.'
+    );
+
+    switch (theme) {
+      case "Advanced Circuits":
+        FDVanillaTheme.actualJSON.colors = THEME_ADVANCED_CIRCUITS();
+        break;
+      case "Blueprint Paper":
+        FDVanillaTheme.actualJSON.colors = THEME_BLUEPRINT_PAPER();
+        break;
+      case "Humba01 Design Style":
+        FDVanillaTheme.actualJSON.colors = THEME_HUMBA01_DESIGN_STYLE();
+        break;
+      case "Winter Day":
+        FDVanillaTheme.actualJSON.colors = THEME_WINTER_DAY();
+        break;
+      case "Cappuccino":
+        FDVanillaTheme.actualJSON.colors = THEME_CAPPUCCINO();
+        break;
+      case "Red Velvet":
+        FDVanillaTheme.actualJSON.colors = THEME_RED_VELVET();
+        break;
+      case "Sunshine":
+        FDVanillaTheme.actualJSON.colors = THEME_SUNSHINE();
+        break;
+      case "Midnight":
+        FDVanillaTheme.actualJSON.colors = THEME_MIDNIGHT();
+        break;
+      case undefined:
+        break;
+    }
+    switch (highlight) {
+      case "Visual Studio Code":
+        FDVanillaTheme.actualJSON.tokenColors = HIGHLIGHT_VISUAL_STUDIO_CODE();
+        break;
+      case "Monokai":
+        FDVanillaTheme.actualJSON.tokenColors = HIGHLIGHT_MONOKAI();
+        break;
+      case "Bluloco":
+        FDVanillaTheme.actualJSON.tokenColors = HIGHLIGHT_BLULOCO();
+        break;
+      case "Dracula":
+        FDVanillaTheme.actualJSON.tokenColors = HIGHLIGHT_DRACULA();
+        break;
+      case "One Dark":
+        FDVanillaTheme.actualJSON.tokenColors = HIGHLIGHT_ONE_DARK();
+        break;
+      case "Iceberg":
+        FDVanillaTheme.actualJSON.tokenColors = HIGHLIGHT_ICEBERG();
+        break;
+      case undefined:
+        break;
+    }
+
+    if (theme) {
+      FDVanillaTheme.actualConfig["actual-theme"] = theme;
+    }
+    if (highlight) {
+      FDVanillaTheme.actualConfig["actual-highlight"] = highlight;
+    }
+
+    writeFileSync(
+      FDVanillaTheme.JSONPath,
+      JSON.stringify(FDVanillaTheme.actualJSON, null, 2),
+      "utf-8"
+    );
+
+    writeFileSync(
+      __dirname + "/themeConfig.json",
+      JSON.stringify(FDVanillaTheme.actualConfig, null, 2),
+      "utf-8"
+    );
+  }
+
+  protected statusBarItens(): void {
     // Status bar for dynamic theme switching
-    this.themeStatusBar = Global.vanilla.dynamicTheme.statusBar.theme;
     this.themeStatusBar.command =
       Global.vanilla.dynamicTheme.comandos["dynamic-theme"];
     this.themeStatusBar.color = "gold";
     this.themeStatusBar.text = "TH";
     this.themeStatusBar.tooltip = "Switch Editor Theme";
-    this.themeStatusBar.show();
-  }
-
-  protected configHighlightStatusBar() {
-    vscode.window.showQuickPick([
-      "Visual Studio Code",
-      "Monokai",
-      "Monokai Dimmed",
-      "Bluloco",
-      "Bluloco Italic",
-      "Dracula",
-      "Dracula Soft",
-      "One Dark",
-      "One Dark Vivid",
-      "Original",
-    ]).then((selectedHighlight) => {
-      if (selectedHighlight) {
-        FDVanillaTheme.actualHighlight = selectedHighlight as TFDVTHighlight;
-        this.updateJSONThemeFile();
-      }
-    });
+    this.highlightThemeStatusBar.show();
 
     // Status bar for dynamic highlight switching
-    this.highlightThemeStatusBar =
-      Global.vanilla.dynamicTheme.statusBar.highlight;
     this.highlightThemeStatusBar.command =
       Global.vanilla.dynamicTheme.comandos["dynamic-highlight"];
     this.highlightThemeStatusBar.color = "gold";
     this.highlightThemeStatusBar.text = "HL";
     this.highlightThemeStatusBar.tooltip = "Switch Editor Highlight";
-    this.highlightThemeStatusBar.show();
-  }
-
-  protected configModeStatusBar() {
-    vscode.window.showQuickPick(["Light", "Dark"]).then((selectedMode) => {
-      if (selectedMode) {
-        FDVanillaTheme.actualMode = selectedMode as TFDVTMode;
-        this.updateJSONThemeFile();
-      }
-    });
-
-    // Status bar for dynamic mode switching
-    this.modeStatusBar = Global.vanilla.dynamicTheme.statusBar.mode;
-    this.modeStatusBar.command =
-      Global.vanilla.dynamicTheme.comandos["dynamic-mode"];
-    this.modeStatusBar.color = "gold";
-    this.modeStatusBar.text = "MD";
-    this.modeStatusBar.tooltip = "Switch Editor Mode";
-    this.modeStatusBar.show();
-  }
-
-  // NOTE: This function is a placeholder for updating the JSON theme file.
-  protected updateJSONThemeFile() {
-    // Implementation goes here
-    FDVanillaTheme.actualJSON.name = "Flawuldragon Dynamic Theme";
-    FDVanillaTheme.actualJSON.type = "dark";
-    FDVanillaTheme.actualJSON.colors = {
-      "editorBracketHighlight.foreground1": "#6787b7",
-      "editorBracketHighlight.foreground2": "#426da9",
-      "editorBracketHighlight.foreground3": "#385e9d",
-      "editorBracketHighlight.foreground4": "#2c5697",
-      "editorBracketHighlight.foreground5": "#1d4f91",
-      "editorBracketHighlight.foreground6": "#1d4289",
-    };
+    this.themeStatusBar.show();
   }
 
   public activate(context: vscode.ExtensionContext) {
     try {
-      this.configThemeStatusBar();
-      this.configHighlightStatusBar();
-      this.configModeStatusBar();
-  
+      this.statusBarItens();
+
       let switchThemeCommand = vscode.commands.registerCommand(
         Global.vanilla.dynamicTheme.comandos["dynamic-theme"],
         () => this.configThemeStatusBar()
@@ -135,15 +202,7 @@ export class FDVanillaTheme {
         Global.vanilla.dynamicTheme.comandos["dynamic-highlight"],
         () => this.configHighlightStatusBar()
       );
-      let switchModeCommand = vscode.commands.registerCommand(
-        Global.vanilla.dynamicTheme.comandos["dynamic-mode"],
-        () => this.configModeStatusBar()
-      );
-      context.subscriptions.push(
-        switchThemeCommand,
-        switchHighlightCommand,
-        switchModeCommand
-      );
+      context.subscriptions.push(switchThemeCommand, switchHighlightCommand);
     } catch (error) {
       this.deactivate();
       console.error("Flawuldragon vanilla themes error: " + error);
@@ -152,12 +211,12 @@ export class FDVanillaTheme {
           error +
           ". Contact the Humbanew support team for assistance. [Report the problem](https://github.com/humbanew/flawuldragon/discussions/categories/issues-and-bugs)"
       );
-    } finally {}
+    } finally {
+    }
   }
 
   public deactivate() {
     this.themeStatusBar?.dispose();
     this.highlightThemeStatusBar?.dispose();
-    this.modeStatusBar?.dispose();
   }
 }

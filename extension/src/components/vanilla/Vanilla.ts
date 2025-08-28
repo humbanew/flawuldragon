@@ -11,7 +11,6 @@ import * as path from "node:path";
 import * as vscode from "vscode";
 import { Global } from "../globalDefs";
 import { IVFDInterruptor } from "./defines";
-import "./flwdnDts.json";
 
 /**
  * The `FDVanilla` class provides functionality for managing status bar items and displaying date and time

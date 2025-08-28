@@ -42,9 +42,13 @@
 
 #### Themes Feature Board
 
-* 22 Icon Themes
+* 21 Icon Themes
 
 * 04 Product Icon Themes
+
+* 48 Appearance Themes (8 Themes x 6 Highlights)
+
+* 42 TODO Highlights
 
 ### Keybindings
 

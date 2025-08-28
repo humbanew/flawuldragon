@@ -51,7 +51,7 @@ const extensionConfig = {
     new CopyPlugin({
       patterns: [
         { from: "src/components/vanilla/flwdnDts.json", to: "[name].json" },
-        { from: "src/components/vanilla/injection.css", to: "[name].css" }
+        { from: "src/components/vanillaTheme/themeConfig.json", to: "[name].json" }
       ]
     })
   ]

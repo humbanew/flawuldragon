@@ -14,22 +14,27 @@ export type TFDVTTheme =
   | "Cappuccino"
   | "Red Velvet"
   | "Sunshine"
-  | "RI Visual Studio"
-  | "RI Visual Studio Blue";
+  | "Midnight";
 
 export type TFDVTHighlight =
   | "Visual Studio Code"
   | "Monokai"
-  | "Monokai Dimmed"
   | "Bluloco"
-  | "Bluloco Italic"
   | "Dracula"
-  | "Dracula Soft"
   | "One Dark"
-  | "One Dark Vivid"
-  | "Original";
+  | "Iceberg";
 
-export type TFDVTMode = "Light" | "Dark";
+export interface TFDColorPalette {
+  "1": string;
+  "2": string;
+  "3": string;
+  "4": string;
+}
+
+export interface TFDDynamicThemeConfig {
+  "actual-theme": TFDVTTheme;
+  "actual-highlight": TFDVTHighlight;
+}
 
 /** Código pego da Wertsfy, usado temporariamente para a construção dessa versão. */
 export interface VscodeColorTheme {
@@ -983,13 +988,14 @@ export interface VscodeColorTheme {
     type?: string;
     typeParameter?: string;
     variable?: string;
+    [key: string]: string | undefined;
   };
   tokenColors: {
-    name: string;
-    scope: string;
+    name?: string;
+    scope?: string | string[];
     settings: {
-      foreground: string;
-      fontStyle: string;
+      foreground?: string;
+      fontStyle?: string;
     };
   }[];
 }

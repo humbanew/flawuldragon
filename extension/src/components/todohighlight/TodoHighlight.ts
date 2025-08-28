@@ -147,6 +147,18 @@ export class FDTodoHighlight {
    * @property {string} DEFAULT_KEYWORDS.DEPRECATED.backgroundColor - The background color.
    * @property {string} DEFAULT_KEYWORDS.DEPRECATED.overviewRulerColor - The color for the overview ruler.
    * 
+   * @property {Object} DEFAULT_KEYWORDS.DEVELOP - Configuration for "DEVELOP:" keyword.
+   * @property {string} DEFAULT_KEYWORDS.DEVELOP.text - The text to highlight.
+   * @property {string} DEFAULT_KEYWORDS.DEVELOP.color - The text color.
+   * @property {string} DEFAULT_KEYWORDS.DEVELOP.backgroundColor - The background color.
+   * @property {string} DEFAULT_KEYWORDS.DEVELOP.overviewRulerColor - The color for the overview ruler.
+   * 
+   * @property {Object} DEFAULT_KEYWORDS.PROBLEM - Configuration for "PROBLEM:" keyword.
+   * @property {string} DEFAULT_KEYWORDS.PROBLEM.text - The text to highlight.
+   * @property {string} DEFAULT_KEYWORDS.PROBLEM.color - The text color.
+   * @property {string} DEFAULT_KEYWORDS.PROBLEM.backgroundColor - The background color.
+   * @property {string} DEFAULT_KEYWORDS.PROBLEM.overviewRulerColor - The color for the overview ruler.
+   * 
    * @property {Object} DEFAULT_KEYWORDS.INFO - Configuration for "INFO:" keyword.
    * @property {string} DEFAULT_KEYWORDS.INFO.text - The text to highlight.
    * @property {string} DEFAULT_KEYWORDS.INFO.color - The text color.
@@ -387,6 +399,18 @@ export class FDTodoHighlight {
       backgroundColor: "#795548",
       overviewRulerColor: "rgba(121,85,72,0.8)",
     },
+    "DEVELOP:": {
+      text: "DEVELOP:",
+      color: "#fff",
+      backgroundColor: "#48795dff",
+      overviewRulerColor: "rgba(72, 121, 93, 0.8)",
+    },
+    "PROBLEM:": {
+      text: "PROBLEM:",
+      color: "#fff",
+      backgroundColor: "#484f79ff",
+      overviewRulerColor: "rgba(72, 79, 121, 0.8)",
+    },
     "INFO:": {
       text: "INFO:",
       color: "#fff",
@@ -603,6 +627,8 @@ export class FDTodoHighlight {
         text == "REFACTOR:" ||
         text == "OPTIMIZE:" ||
         text == "DEPRECATED:" ||
+        text == "DEVELOP:" ||
+        text == "PROBLEM:" ||
         text == "INFO:" ||
         text == "WARNING:" ||
         text == "ERROR:" ||
@@ -888,7 +914,7 @@ export class FDTodoHighlight {
       return;
     }
 
-    var settings = vscode.workspace.getConfiguration("todohighlight");
+    var settings = vscode.workspace.getConfiguration("fd.todohighlight");
     var toggleURI = settings.get("toggleURI", false);
 
     interface AnnotationData {
@@ -1095,7 +1121,7 @@ export class FDTodoHighlight {
         keywordsPattern: string;
       var workspaceState = context.workspaceState;
   
-      var settings = vscode.workspace.getConfiguration("todohighlight");
+      var settings = vscode.workspace.getConfiguration("fd.todohighlight");
   
       let triggerUpdateDecorations = () => {
         timeout && clearTimeout(timeout);

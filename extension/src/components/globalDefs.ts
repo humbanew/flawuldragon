@@ -28,12 +28,10 @@ export const Global = {
       comandos: {
         'dynamic-theme': 'flawuldragon.vanilla.dynamicTheme',
         'dynamic-highlight': 'flawuldragon.vanilla.dynamicHighlight',
-        'dynamic-mode': 'flawuldragon.vanilla.dynamicMode'
       },
       statusBar: {
         highlight: vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 2491),
         theme: vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 2490),
-        mode: vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 2489),
       }
     },
     // flawuldragon date and time
