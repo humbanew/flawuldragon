@@ -2,10 +2,20 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
+## v0.0.12 (August 28, 2025) - Beta
+
+- Updated CHANGELOG.md.
+- Updated README.md.
+- Updated package.json.
+- Updated Keywords of the project.
+- Updated module of Vanilla Dynamic Themes.
+- Updated the Flawuldragon Notes.
+
 ## v0.0.11 (August 28, 2025) - Published
 
 - Updated CHANGELOG.md.
 - Updated README.md.
+- Updated package.json.
 - Updated logo of project.
 - Updated the Flawuldragon Notes.
 - Updated Keywords of the project.
