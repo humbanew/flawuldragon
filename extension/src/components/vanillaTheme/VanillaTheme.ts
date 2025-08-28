@@ -170,6 +170,8 @@ export class FDVanillaTheme {
       JSON.stringify(FDVanillaTheme.actualConfig, null, 2),
       "utf-8"
     );
+
+    vscode.commands.executeCommand('workbench.action.reloadWindow');
   }
 
   protected statusBarItens(): void {

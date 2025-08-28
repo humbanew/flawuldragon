@@ -3,7 +3,7 @@
   "displayName": "Flawuldragon",
   "publisher": "humbanew",
   "description": "Humbanew starterkit development extension",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "engines": {
     "vscode": "^1.97.0"
   },
