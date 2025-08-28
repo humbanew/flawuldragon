@@ -86,8 +86,9 @@
   | `alt + e` `k` | `cmd + alt + e` `k` | ErrorLens | Copy Problem Code |
   | `alt + v` | `cmd + alt + v` | HTML CSS Support | Validate CSS Selectors |
   | `alt + c` | `cmd + alt + c` | HTML CSS Support | Clear Style Sheets Cache |
-  | `alt + j` | `cmd + alt + j` | JetBrains Mono Font Pack | Activate JetBrains Mono Font Pack |
-  | `alt + j` `d` | `cmd + alt + j` `d` | JetBrains Mono Font Pack | Deactivate JetBrains Mono Font |
+  | `alt + j` | `cmd + alt + j` | Vanilla Custom Fonts | Activate Custom Fonts |
+  | `alt + j` `d` | `cmd + alt + j` `d` | Vanilla Custom Fonts | Deactivate Custom Fonts |
+  | `alt + j` `s` | `cmd + alt + j` `s` | Vanilla Custom Fonts | Switch Custom Font |
   | `alt + p` | `cmd + alt + p` | Pomodoro | Start Pomodoro |
   | `alt + p` `p` | `cmd + alt + p` `p` | Pomodoro | Pause Pomodoro |
   | `alt + p` `c` | `cmd + alt + p` `c` | Pomodoro | Continue Pomodoro |
