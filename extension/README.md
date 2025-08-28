@@ -38,7 +38,7 @@
 
 #### Status Bar Hub
 
-<img src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-status-bar-hub-features.png" alt="Flawuldragon Status Bar Hub" />
+<img src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-status-bar-hub-features-v2.png" alt="Flawuldragon Status Bar Hub" />
 
 #### Themes Feature Board
 
