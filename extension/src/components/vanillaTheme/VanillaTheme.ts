@@ -31,6 +31,22 @@ import {
   THEME_RED_VELVET,
   THEME_SUNSHINE,
   THEME_WINTER_DAY,
+  THEME_BIG_BANG,
+  THEME_SUBLIME,
+  THEME_SOLDMETAL,
+  THEME_ROYALE,
+  THEME_CARMESIM,
+  THEME_WARPED,
+  THEME_MYSTICAL,
+  THEME_QUARTZ,
+  THEME_ELECTRIC,
+  THEME_BUBBLEGUN,
+  THEME_DEEP_FLOREST,
+  THEME_CARROT,
+  HIGHLIGHT_BLULOCO_ITALIC,
+  HIGHLIGHT_DRACULA_SOFT,
+  HIGHLIGHT_MONOKAI_DIMMED,
+  HIGHLIGHT_ONE_DARK_VIVID,
 } from "./constants";
 
 export class FDVanillaTheme {
@@ -59,6 +75,18 @@ export class FDVanillaTheme {
         "Red Velvet",
         "Sunshine",
         "Midnight",
+        "Big Bang",
+        "Sublime",
+        "Sold Metal",
+        "Royale",
+        "Carmesim",
+        "Warped",
+        "Mystical",
+        "Quartz",
+        "Electric",
+        "Bubblegun",
+        "Deep Forest",
+        "Carrot"
       ])
       .then((selectedTheme) => {
         if (selectedTheme) {
@@ -77,6 +105,10 @@ export class FDVanillaTheme {
         "Dracula",
         "One Dark",
         "Iceberg",
+        "Bluloco Italic",
+        "Dracula Soft",
+        "Monokai Dimmed",
+        "One Dark Vivid"
       ])
       .then((selectedHighlight) => {
         if (selectedHighlight) {
@@ -126,6 +158,42 @@ export class FDVanillaTheme {
       case "Midnight":
         FDVanillaTheme.actualJSON.colors = THEME_MIDNIGHT();
         break;
+      case "Big Bang":
+        FDVanillaTheme.actualJSON.colors = THEME_BIG_BANG();
+        break;
+      case "Sublime":
+        FDVanillaTheme.actualJSON.colors = THEME_SUBLIME();
+        break;
+      case "Soldmetal":
+        FDVanillaTheme.actualJSON.colors = THEME_SOLDMETAL();
+        break;
+      case "Royale":
+        FDVanillaTheme.actualJSON.colors = THEME_ROYALE();
+        break;
+      case "Carmesim":
+        FDVanillaTheme.actualJSON.colors = THEME_CARMESIM();
+        break;
+      case "Warped":
+        FDVanillaTheme.actualJSON.colors = THEME_WARPED();
+        break;
+      case "Mystical":
+        FDVanillaTheme.actualJSON.colors = THEME_MYSTICAL();
+        break;
+      case "Quartz":
+        FDVanillaTheme.actualJSON.colors = THEME_QUARTZ();
+        break;
+      case "Electric":
+        FDVanillaTheme.actualJSON.colors = THEME_ELECTRIC();
+        break;
+      case "Bubblegun":
+        FDVanillaTheme.actualJSON.colors = THEME_BUBBLEGUN();
+        break;
+      case "Deep Florest":
+        FDVanillaTheme.actualJSON.colors = THEME_DEEP_FLOREST();
+        break;
+      case "Carrot":
+        FDVanillaTheme.actualJSON.colors = THEME_CARROT();
+        break;
       case undefined:
         break;
     }
@@ -147,6 +215,18 @@ export class FDVanillaTheme {
         break;
       case "Iceberg":
         FDVanillaTheme.actualJSON.tokenColors = HIGHLIGHT_ICEBERG();
+        break;
+      case "Bluloco Italic":
+        FDVanillaTheme.actualJSON.tokenColors = HIGHLIGHT_BLULOCO_ITALIC();
+        break;
+      case "Dracula Soft":
+        FDVanillaTheme.actualJSON.tokenColors = HIGHLIGHT_DRACULA_SOFT();
+        break;
+      case "Monokai Dimmed":
+        FDVanillaTheme.actualJSON.tokenColors = HIGHLIGHT_MONOKAI_DIMMED();
+        break;
+      case "One Dark Vivid":
+        FDVanillaTheme.actualJSON.tokenColors = HIGHLIGHT_ONE_DARK_VIVID();
         break;
       case undefined:
         break;

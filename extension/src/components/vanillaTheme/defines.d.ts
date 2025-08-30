@@ -14,7 +14,19 @@ export type TFDVTTheme =
   | "Cappuccino"
   | "Red Velvet"
   | "Sunshine"
-  | "Midnight";
+  | "Midnight"
+  | "Big Bang"
+  | "Sublime"
+  | "Soldmetal"
+  | "Royale"
+  | "Carmesim"
+  | "Warped"
+  | "Mystical"
+  | "Quartz"
+  | "Electric"
+  | "Bubblegun"
+  | "Deep Florest"
+  | "Carrot";
 
 export type TFDVTHighlight =
   | "Visual Studio Code"
@@ -22,13 +34,26 @@ export type TFDVTHighlight =
   | "Bluloco"
   | "Dracula"
   | "One Dark"
-  | "Iceberg";
+  | "Iceberg"
+  | "Bluloco Italic"
+  | "Dracula Soft"
+  | "Monokai Dimmed"
+  | "One Dark Vivid";
 
 export interface TFDColorPalette {
   "1": string;
   "2": string;
   "3": string;
   "4": string;
+}
+
+export interface TFDColorBracketsPalette {
+  "1": string;
+  "2": string;
+  "3": string;
+  "4": string;
+  "5": string;
+  "6": string;
 }
 
 export interface TFDDynamicThemeConfig {

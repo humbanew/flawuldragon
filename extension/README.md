@@ -40,7 +40,9 @@
 
 <img src="https://strg.humbanew.com.br/projects/flawuldragon/documentation/flawuldragon-status-bar-hub-features-v2.png" alt="Flawuldragon Status Bar Hub" />
 
-#### Themes Features
+#### Themes and Source Features
+
+* 20 Custom Fonts
 
 * 21 Icon Themes
 
@@ -48,7 +50,7 @@
 
 * 04 Appearance High Contrast Themes
 
-* 72 Appearance Themes (12 Themes x 6 Highlights)
+* 200 Appearance Dynamic Dark Themes (20 Themes x 10 Highlights)
 
 * 42 TODO Highlights
 

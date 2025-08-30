@@ -125,7 +125,7 @@ export class FDCustomFonts {
     this.updateUserSettings(this.defaultSettings);
     this.dirOpen(JetBrainsMonoAddress);
     this.showDialog(
-      `${context.extension.packageJSON.displayName} - Jetbrains Mono Font is activated!`
+      `${context.extension.packageJSON.displayName} - Custom Fonts is activated!`
     );
     this.showDialog(
       `Important Note - Don't forget to install fonts! Font Directory will open, once you have manually installed fonts, restart VSCODE - ${JetBrainsMonoAddress}`
@@ -151,7 +151,7 @@ export class FDCustomFonts {
       value === "Yes"
         ? this.activation(context)
         : (this.showDialog(
-            "You can activate JetBrains Mono later by running 'JetBrainsMono' or 'JetBrainsMono' in command palette."
+            "You can activate Custom Fonts later by running 'CustomFonts' or 'CustomFonts' in command palette."
           ) as any)
     );
 
@@ -216,7 +216,7 @@ export class FDCustomFonts {
   }
 
   protected switchCustomFonts(): any {
-    vscode.window.showQuickPick(["Microsoft Font", "Default VS Code", "JetBrains Mono", "Fira Mono", "Intel One Mono", "PT Mono", "Space Mono", "Ubuntu Mono"]).then((selectedFont) => {
+    vscode.window.showQuickPick(["Microsoft Font", "Default VS Code", "JetBrains Mono", "Fira Mono", "Intel One Mono", "PT Mono", "Space Mono", "Ubuntu Mono", "Martian Mono", "Reddit Mono", "Cascadia Code", "Google Sans Code", "Red Hat Mono", "Sometype Mono", "Ubuntu Sans Mono", "Azeret Mono", "Chivo Mono", "Fragment Mono", "Overpass Mono", "Oxygen Mono"]).then((selectedFont) => {
       if (selectedFont) {
         if (selectedFont === "Microsoft Font") {
           this.updateUserSettings({ "editor.fontFamily": "Segoe UI" });

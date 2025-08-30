@@ -2,12 +2,57 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
-## v0.0.13 (August 29-30, 2025) - Beta
+## v0.0.13 (August 30, 2025) - Published
 
 - Updated CHANGELOG.md.
 - Updated README.md.
 - Updated package.json.
+- Updated Keywords of the project.
+- Updated the Flawuldragon Notes.
 - Updated module of Vanilla Dynamic Themes.
+- Revised the `Visual Studio Code` dynamic highlight.
+- Revised the `Monokai` dynamic highlight.
+- Revised the `Bluloco` dynamic highlight.
+- Revised the `Dracula` dynamic highlight.
+- Revised the `One Dark` dynamic highlight.
+- Revised the `Iceberg` dynamic highlight.
+- Added the `Bluloco Italic` dynamic highlight.
+- Added the `Dracula Soft` dynamic highlight.
+- Added the `Monokai Dimmed` dynamic highlight.
+- Added the `One Dark Vivid` dynamic highlight.
+- Revised the `Advanced Circuits` dynamic theme.
+- Revised the `Blueprint Paper` dynamic theme.
+- Revised the `Humba01 Design Style` dynamic theme.
+- Revised the `Winter Day` dynamic theme.
+- Revised the `Cappuccino` dynamic theme.
+- Revised the `Red Velvet` dynamic theme.
+- Revised the `Sunshine` dynamic theme.
+- Revised the `Midnight` dynamic theme.
+- Added the `Big Bang` dynamic theme.
+- Added the `Sublime` dynamic theme.
+- Added the `Soldmetal` dynamic theme.
+- Added the `Royale` dynamic theme.
+- Added the `Carmesim` dynamic theme.
+- Added the `Warped` dynamic theme.
+- Added the `Mystical` dynamic theme.
+- Added the `Quartz` dynamic theme.
+- Added the `Electric` dynamic theme.
+- Added the `Bubblegum` dynamic theme.
+- Added the `Deep Forest` dynamic theme.
+- Added the `Carrot` dynamic theme.
+- Updated module of Custom Fonts.
+- Added to module of Custom Fonts the `Martian Mono` font.
+- Added to module of Custom Fonts the `Reddit Mono` font.
+- Added to module of Custom Fonts the `Cascadia Code` font.
+- Added to module of Custom Fonts the `Google Sans Code` font.
+- Added to module of Custom Fonts the `Red Hat Mono` font.
+- Added to module of Custom Fonts the `Sometype Mono` font.
+- Added to module of Custom Fonts the `Ubuntu Sans Mono` font.
+- Added to module of Custom Fonts the `Azeret Mono` font.
+- Added to module of Custom Fonts the `Chivo Mono` font.
+- Added to module of Custom Fonts the `Fragment Mono` font.
+- Added to module of Custom Fonts the `Overpass Mono` font.
+- Added to module of Custom Fonts the `Oxygen Mono` font.
 
 ## v0.0.12 (August 28, 2025) - Published
 
