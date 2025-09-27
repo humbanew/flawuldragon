@@ -1,159 +1,270 @@
-const color_theme_light_advanced_circuits = {}
-,color_theme_light_blueprint_circuits = {}
-,color_theme_light_humba01_design_style = {}
-,color_theme_light_winter_day = {}
-,color_theme_light_cappuccino = {}
-,color_theme_light_red_velvet = {}
-,color_theme_light_sunshine = {}
-,color_theme_light_midnight = {}
-,color_theme_light_big_bang = {}
-,color_theme_light_sublime = {}
-,color_theme_light_soldmetal = {}
-,color_theme_light_royale = {}
-,color_theme_light_carmesim = {}
-,color_theme_light_warped = {}
-,color_theme_light_mystical = {}
-,color_theme_light_quartz = {}
-,color_theme_light_electric = {}
-,color_theme_light_bubblegun = {}
-,color_theme_light_deep_florest = {}
-,color_theme_light_carrot = {};
-const THEME_LIGHT_ADVANCED_CIRCUITS = () => {}
-,THEME_LIGHT_BLUEPRINT_PAPER = () => {}
-,THEME_LIGHT_HUMBA01_DESIGN_STYLE = () => {}
-,THEME_LIGHT_WINTER_DAY = () => {}
-,THEME_LIGHT_CAPPUCCINO = () => {}
-,THEME_LIGHT_RED_VELVET = () => {}
-,THEME_LIGHT_SUNSHINE = () => {}
-,THEME_LIGHT_MIDNIGHT = () => {}
-,THEME_LIGHT_BIG_BANG = () => {}
-,THEME_LIGHT_SUBLIME = () => {}
-,THEME_LIGHT_SOLDMETAL = () => {}
-,THEME_LIGHT_ROYALE = () => {}
-,THEME_LIGHT_CARMESIM = () => {}
-,THEME_LIGHT_WARPED = () => {}
-,THEME_LIGHT_MYSTICAL = () => {}
-,THEME_LIGHT_QUARTZ = () => {}
-,THEME_LIGHT_ELECTRIC = () => {}
-,THEME_LIGHT_BUBBLEGUN = () => {}
-,THEME_LIGHT_DEEP_FLOREST = () => {}
-,THEME_LIGHT_CARROT = () => {};
-const HIGHLIGHT_LIGHT_VISUAL_STUDIO_CODE = () => {}
-,HIGHLIGHT_LIGHT_MONOKAI = () => {}
-,HIGHLIGHT_LIGHT_MONOKAI_DIMMED = () => {}
-,HIGHLIGHT_LIGHT_BLULOCO = () => {}
-,HIGHLIGHT_LIGHT_BLULOCO_ITALIC = () => {}
-,HIGHLIGHT_LIGHT_DRACULA = () => {}
-,HIGHLIGHT_LIGHT_DRACULA_SOFT = () => {}
-,HIGHLIGHT_LIGHT_ONE_DARK = () => {}
-,HIGHLIGHT_LIGHT_ONE_DARK_VIVID = () => {}
-,HIGHLIGHT_LIGHT_ICEBERG = () => {}
-,HIGHLIGHT_LIGHT_ABSENT = () => {}
-,HIGHLIGHT_LIGHT_ALLURE = () => {}
-,HIGHLIGHT_LIGHT_ARSTOTZKA = () => {}
-,HIGHLIGHT_LIGHT_AZURE = () => {}
-,HIGHLIGHT_LIGHT_BANNER = () => {}
-,HIGHLIGHT_LIGHT_BLINK = () => {}
-,HIGHLIGHT_LIGHT_BOLD = () => {}
-,HIGHLIGHT_LIGHT_BOXUK = () => {}
-,HIGHLIGHT_LIGHT_BRAVE = () => {}
-,HIGHLIGHT_LIGHT_CARBONIGHT = () => {}
-,HIGHLIGHT_LIGHT_CHOCOLATE = () => {}
-,HIGHLIGHT_LIGHT_CODECOURSE = () => {}
-,HIGHLIGHT_LIGHT_COFFEE = () => {}
-,HIGHLIGHT_LIGHT_COMRADE = () => {}
-,HIGHLIGHT_LIGHT_CRACKPOT = () => {}
-,HIGHLIGHT_LIGHT_CRISP = () => {}
-,HIGHLIGHT_LIGHT_DARE = () => {}
-,HIGHLIGHT_LIGHT_DARKSIDE = () => {}
-,HIGHLIGHT_LIGHT_DOWNPOUR = () => {}
-,HIGHLIGHT_LIGHT_EARTHSONG = () => {}
-,HIGHLIGHT_LIGHT_FODDER = () => {}
-,HIGHLIGHT_LIGHT_FRANTIC = () => {}
-,HIGHLIGHT_LIGHT_FRESHCUT = () => {}
-,HIGHLIGHT_LIGHT_FRICTION = () => {}
-,HIGHLIGHT_LIGHT_FRONTIER = () => {}
-,HIGHLIGHT_LIGHT_GITHUB = () => {}
-,HIGHLIGHT_LIGHT_GLANCE = () => {}
-,HIGHLIGHT_LIGHT_GLOOM = () => {}
-,HIGHLIGHT_LIGHT_GLOWFISH = () => {}
-,HIGHLIGHT_LIGHT_GOLDFISH = () => {}
-,HIGHLIGHT_LIGHT_GRUNGE = () => {}
-,HIGHLIGHT_LIGHT_HALFLIFE = () => {}
-,HIGHLIGHT_LIGHT_HAWAII = () => {}
-,HIGHLIGHT_LIGHT_HEROKU = () => {}
-,HIGHLIGHT_LIGHT_HIVE = () => {}
-,HIGHLIGHT_LIGHT_HORIZON = () => {}
-,HIGHLIGHT_LIGHT_HUB = () => {}
-,HIGHLIGHT_LIGHT_HYRULE = () => {}
-,HIGHLIGHT_LIGHT_ICEBERG_TWO = () => {}
-,HIGHLIGHT_LIGHT_ISOTOPE = () => {}
-,HIGHLIGHT_LIGHT_JEWEL = () => {}
-,HIGHLIGHT_LIGHT_JINGLE = () => {}
-,HIGHLIGHT_LIGHT_JOKER = () => {}
-,HIGHLIGHT_LIGHT_JUICY = () => {}
-,HIGHLIGHT_LIGHT_JUMPER = () => {}
-,HIGHLIGHT_LIGHT_KEEN = () => {}
-,HIGHLIGHT_LIGHT_KIWI = () => {}
-,HIGHLIGHT_LIGHT_LARACASTS = () => {}
-,HIGHLIGHT_LIGHT_LARAVEL = () => {}
-,HIGHLIGHT_LIGHT_LAVENDER = () => {}
-,HIGHLIGHT_LIGHT_LEGACY = () => {}
-,HIGHLIGHT_LIGHT_LICHEN = () => {}
-,HIGHLIGHT_LIGHT_LOYAL = () => {}
-,HIGHLIGHT_LIGHT_MAUVE = () => {}
-,HIGHLIGHT_LIGHT_MELLOW = () => {}
-,HIGHLIGHT_LIGHT_MINTCHOC = () => {}
-,HIGHLIGHT_LIGHT_MONZO = () => {}
-,HIGHLIGHT_LIGHT_MORASS = () => {}
-,HIGHLIGHT_LIGHT_MUD = () => {}
-,HIGHLIGHT_LIGHT_NEWTON = () => {}
-,HIGHLIGHT_LIGHT_OTAKON = () => {}
-,HIGHLIGHT_LIGHT_OVERFLOW = () => {}
-,HIGHLIGHT_LIGHT_PASTEL = () => {}
-,HIGHLIGHT_LIGHT_PATRIOT = () => {}
-,HIGHLIGHT_LIGHT_PEACOCK = () => {}
-,HIGHLIGHT_LIGHT_PEACOCKS_IN_SPACE = () => {}
-,HIGHLIGHT_LIGHT_PEEL = () => {}
-,HIGHLIGHT_LIGHT_PENITENT = () => {}
-,HIGHLIGHT_LIGHT_PIGGY = () => {}
-,HIGHLIGHT_LIGHT_PLEASURE = () => {}
-,HIGHLIGHT_LIGHT_POTPOURRI = () => {}
-,HIGHLIGHT_LIGHT_PRIME = () => {}
-,HIGHLIGHT_LIGHT_RAINBOW = () => {}
-,HIGHLIGHT_LIGHT_REBELLION = () => {}
-,HIGHLIGHT_LIGHT_REVELATION = () => {}
-,HIGHLIGHT_LIGHT_SCORCH = () => {}
-,HIGHLIGHT_LIGHT_SERVICE = () => {}
-,HIGHLIGHT_LIGHT_SHREK = () => {}
-,HIGHLIGHT_LIGHT_SLATE = () => {}
-,HIGHLIGHT_LIGHT_SLIME = () => {}
-,HIGHLIGHT_LIGHT_SNAPPY = () => {}
-,HIGHLIGHT_LIGHT_SOLARFLARE = () => {}
-,HIGHLIGHT_LIGHT_SOUP = () => {}
-,HIGHLIGHT_LIGHT_SOURLICK = () => {}
-,HIGHLIGHT_LIGHT_SPEARMINT = () => {}
-,HIGHLIGHT_LIGHT_SPITFIRE = () => {}
-,HIGHLIGHT_LIGHT_STACK = () => {}
-,HIGHLIGHT_LIGHT_STASIS = () => {}
-,HIGHLIGHT_LIGHT_STEALTH = () => {}
-,HIGHLIGHT_LIGHT_STORM = () => {}
-,HIGHLIGHT_LIGHT_SUPER = () => {}
-,HIGHLIGHT_LIGHT_TAME = () => {}
-,HIGHLIGHT_LIGHT_TETRA = () => {}
-,HIGHLIGHT_LIGHT_TICKLE = () => {}
-,HIGHLIGHT_LIGHT_TONIC = () => {}
-,HIGHLIGHT_LIGHT_TRIBAL = () => {}
-,HIGHLIGHT_LIGHT_TRON = () => {}
-,HIGHLIGHT_LIGHT_TURNIP = () => {}
-,HIGHLIGHT_LIGHT_TWEED = () => {}
-,HIGHLIGHT_LIGHT_USERSCAPE = () => {}
-,HIGHLIGHT_LIGHT_VEGETABLE = () => {}
-,HIGHLIGHT_LIGHT_VIOLACEOUS = () => {}
-,HIGHLIGHT_LIGHT_VISION = () => {}
-,HIGHLIGHT_LIGHT_VOLATILE = () => {}
-,HIGHLIGHT_LIGHT_WARLOCK = () => {}
-,HIGHLIGHT_LIGHT_WASTE = () => {}
-,HIGHLIGHT_LIGHT_YITZCHOK = () => {}
-,HIGHLIGHT_LIGHT_YULE = () => {}
-,HIGHLIGHT_LIGHT_ZACKS = () => {};
+const color_theme_light_advanced_circuits = {},
+  color_theme_light_blueprint_circuits = {},
+  color_theme_light_humba01_design_style = {},
+  color_theme_light_winter_day = {},
+  color_theme_light_cappuccino = {},
+  color_theme_light_red_velvet = {},
+  color_theme_light_sunshine = {},
+  color_theme_light_midnight = {},
+  color_theme_light_big_bang = {},
+  color_theme_light_sublime = {},
+  color_theme_light_soldmetal = {},
+  color_theme_light_royale = {},
+  color_theme_light_carmesim = {},
+  color_theme_light_warped = {},
+  color_theme_light_mystical = {},
+  color_theme_light_quartz = {},
+  color_theme_light_electric = {},
+  color_theme_light_bubblegun = {},
+  color_theme_light_deep_florest = {},
+  color_theme_light_carrot = {};
+const THEME_LIGHT_ADVANCED_CIRCUITS = () => {},
+  THEME_LIGHT_BLUEPRINT_PAPER = () => {},
+  THEME_LIGHT_HUMBA01_DESIGN_STYLE = () => {},
+  THEME_LIGHT_WINTER_DAY = () => {},
+  THEME_LIGHT_CAPPUCCINO = () => {},
+  THEME_LIGHT_RED_VELVET = () => {},
+  THEME_LIGHT_SUNSHINE = () => {},
+  THEME_LIGHT_MIDNIGHT = () => {},
+  THEME_LIGHT_BIG_BANG = () => {},
+  THEME_LIGHT_SUBLIME = () => {},
+  THEME_LIGHT_SOLDMETAL = () => {},
+  THEME_LIGHT_ROYALE = () => {},
+  THEME_LIGHT_CARMESIM = () => {},
+  THEME_LIGHT_WARPED = () => {},
+  THEME_LIGHT_MYSTICAL = () => {},
+  THEME_LIGHT_QUARTZ = () => {},
+  THEME_LIGHT_ELECTRIC = () => {},
+  THEME_LIGHT_BUBBLEGUN = () => {},
+  THEME_LIGHT_DEEP_FLOREST = () => {},
+  THEME_LIGHT_CARROT = () => {};
+const HIGHLIGHT_LIGHT_VISUAL_STUDIO_CODE = () => {},
+  HIGHLIGHT_LIGHT_MONOKAI = () => {},
+  HIGHLIGHT_LIGHT_MONOKAI_DIMMED = () => {},
+  HIGHLIGHT_LIGHT_BLULOCO = () => {},
+  HIGHLIGHT_LIGHT_BLULOCO_ITALIC = () => {},
+  HIGHLIGHT_LIGHT_DRACULA = () => {},
+  HIGHLIGHT_LIGHT_DRACULA_SOFT = () => {},
+  HIGHLIGHT_LIGHT_ONE_DARK = () => {},
+  HIGHLIGHT_LIGHT_ONE_DARK_VIVID = () => {},
+  HIGHLIGHT_LIGHT_ICEBERG = () => {},
+  HIGHLIGHT_LIGHT_ABSENT = () => {},
+  HIGHLIGHT_LIGHT_ALLURE = () => {},
+  HIGHLIGHT_LIGHT_ARSTOTZKA = () => {},
+  HIGHLIGHT_LIGHT_AZURE = () => {},
+  HIGHLIGHT_LIGHT_BANNER = () => {},
+  HIGHLIGHT_LIGHT_BLINK = () => {},
+  HIGHLIGHT_LIGHT_BOLD = () => {},
+  HIGHLIGHT_LIGHT_BOXUK = () => {},
+  HIGHLIGHT_LIGHT_BRAVE = () => {},
+  HIGHLIGHT_LIGHT_CARBONIGHT = () => {},
+  HIGHLIGHT_LIGHT_CHOCOLATE = () => {},
+  HIGHLIGHT_LIGHT_CODECOURSE = () => {},
+  HIGHLIGHT_LIGHT_COFFEE = () => {},
+  HIGHLIGHT_LIGHT_COMRADE = () => {},
+  HIGHLIGHT_LIGHT_CRACKPOT = () => {},
+  HIGHLIGHT_LIGHT_CRISP = () => {},
+  HIGHLIGHT_LIGHT_DARE = () => {},
+  HIGHLIGHT_LIGHT_DARKSIDE = () => {},
+  HIGHLIGHT_LIGHT_DOWNPOUR = () => {},
+  HIGHLIGHT_LIGHT_EARTHSONG = () => {},
+  HIGHLIGHT_LIGHT_FODDER = () => {},
+  HIGHLIGHT_LIGHT_FRANTIC = () => {},
+  HIGHLIGHT_LIGHT_FRESHCUT = () => {},
+  HIGHLIGHT_LIGHT_FRICTION = () => {},
+  HIGHLIGHT_LIGHT_FRONTIER = () => {},
+  HIGHLIGHT_LIGHT_GITHUB = () => {},
+  HIGHLIGHT_LIGHT_GLANCE = () => {},
+  HIGHLIGHT_LIGHT_GLOOM = () => {},
+  HIGHLIGHT_LIGHT_GLOWFISH = () => {},
+  HIGHLIGHT_LIGHT_GOLDFISH = () => {},
+  HIGHLIGHT_LIGHT_GRUNGE = () => {},
+  HIGHLIGHT_LIGHT_HALFLIFE = () => {},
+  HIGHLIGHT_LIGHT_HAWAII = () => {},
+  HIGHLIGHT_LIGHT_HEROKU = () => {},
+  HIGHLIGHT_LIGHT_HIVE = () => {},
+  HIGHLIGHT_LIGHT_HORIZON = () => {},
+  HIGHLIGHT_LIGHT_HUB = () => {},
+  HIGHLIGHT_LIGHT_HYRULE = () => {},
+  HIGHLIGHT_LIGHT_ICEBERG_TWO = () => {},
+  HIGHLIGHT_LIGHT_ISOTOPE = () => {},
+  HIGHLIGHT_LIGHT_JEWEL = () => {},
+  HIGHLIGHT_LIGHT_JINGLE = () => {},
+  HIGHLIGHT_LIGHT_JOKER = () => {},
+  HIGHLIGHT_LIGHT_JUICY = () => {},
+  HIGHLIGHT_LIGHT_JUMPER = () => {},
+  HIGHLIGHT_LIGHT_KEEN = () => {},
+  HIGHLIGHT_LIGHT_KIWI = () => {},
+  HIGHLIGHT_LIGHT_LARACASTS = () => {},
+  HIGHLIGHT_LIGHT_LARAVEL = () => {},
+  HIGHLIGHT_LIGHT_LAVENDER = () => {},
+  HIGHLIGHT_LIGHT_LEGACY = () => {},
+  HIGHLIGHT_LIGHT_LICHEN = () => {},
+  HIGHLIGHT_LIGHT_LOYAL = () => {},
+  HIGHLIGHT_LIGHT_MAUVE = () => {},
+  HIGHLIGHT_LIGHT_MELLOW = () => {},
+  HIGHLIGHT_LIGHT_MINTCHOC = () => {},
+  HIGHLIGHT_LIGHT_MONZO = () => {},
+  HIGHLIGHT_LIGHT_MORASS = () => {},
+  HIGHLIGHT_LIGHT_MUD = () => {},
+  HIGHLIGHT_LIGHT_NEWTON = () => {},
+  HIGHLIGHT_LIGHT_OTAKON = () => {},
+  HIGHLIGHT_LIGHT_OVERFLOW = () => {},
+  HIGHLIGHT_LIGHT_PASTEL = () => {},
+  HIGHLIGHT_LIGHT_PATRIOT = () => {},
+  HIGHLIGHT_LIGHT_PEACOCK = () => {},
+  HIGHLIGHT_LIGHT_PEACOCKS_IN_SPACE = () => {},
+  HIGHLIGHT_LIGHT_PEEL = () => {},
+  HIGHLIGHT_LIGHT_PENITENT = () => {},
+  HIGHLIGHT_LIGHT_PIGGY = () => {},
+  HIGHLIGHT_LIGHT_PLEASURE = () => {},
+  HIGHLIGHT_LIGHT_POTPOURRI = () => {},
+  HIGHLIGHT_LIGHT_PRIME = () => {},
+  HIGHLIGHT_LIGHT_RAINBOW = () => {},
+  HIGHLIGHT_LIGHT_REBELLION = () => {},
+  HIGHLIGHT_LIGHT_REVELATION = () => {},
+  HIGHLIGHT_LIGHT_SCORCH = () => {},
+  HIGHLIGHT_LIGHT_SERVICE = () => {},
+  HIGHLIGHT_LIGHT_SHREK = () => {},
+  HIGHLIGHT_LIGHT_SLATE = () => {},
+  HIGHLIGHT_LIGHT_SLIME = () => {},
+  HIGHLIGHT_LIGHT_SNAPPY = () => {},
+  HIGHLIGHT_LIGHT_SOLARFLARE = () => {},
+  HIGHLIGHT_LIGHT_SOUP = () => {},
+  HIGHLIGHT_LIGHT_SOURLICK = () => {},
+  HIGHLIGHT_LIGHT_SPEARMINT = () => {},
+  HIGHLIGHT_LIGHT_SPITFIRE = () => {},
+  HIGHLIGHT_LIGHT_STACK = () => {},
+  HIGHLIGHT_LIGHT_STASIS = () => {},
+  HIGHLIGHT_LIGHT_STEALTH = () => {},
+  HIGHLIGHT_LIGHT_STORM = () => {},
+  HIGHLIGHT_LIGHT_SUPER = () => {},
+  HIGHLIGHT_LIGHT_TAME = () => {},
+  HIGHLIGHT_LIGHT_TETRA = () => {},
+  HIGHLIGHT_LIGHT_TICKLE = () => {},
+  HIGHLIGHT_LIGHT_TONIC = () => {},
+  HIGHLIGHT_LIGHT_TRIBAL = () => {},
+  HIGHLIGHT_LIGHT_TRON = () => {},
+  HIGHLIGHT_LIGHT_TURNIP = () => {},
+  HIGHLIGHT_LIGHT_TWEED = () => {},
+  HIGHLIGHT_LIGHT_USERSCAPE = () => {},
+  HIGHLIGHT_LIGHT_VEGETABLE = () => {},
+  HIGHLIGHT_LIGHT_VIOLACEOUS = () => {},
+  HIGHLIGHT_LIGHT_VISION = () => {},
+  HIGHLIGHT_LIGHT_VOLATILE = () => {},
+  HIGHLIGHT_LIGHT_WARLOCK = () => {},
+  HIGHLIGHT_LIGHT_WASTE = () => {},
+  HIGHLIGHT_LIGHT_YITZCHOK = () => {},
+  HIGHLIGHT_LIGHT_YULE = () => {},
+  HIGHLIGHT_LIGHT_ZACKS = () => {};
+
+// v0.0.16
+const HIGHLIGHT_ABSENT = () => {},
+  HIGHLIGHT_ALLURE = () => {},
+  HIGHLIGHT_ARSTOTZKA = () => {},
+  HIGHLIGHT_AZURE = () => {},
+  HIGHLIGHT_BANNER = () => {},
+  HIGHLIGHT_BLINK = () => {},
+  HIGHLIGHT_BOLD = () => {},
+  HIGHLIGHT_BOXUK = () => {},
+  HIGHLIGHT_BRAVE = () => {},
+  HIGHLIGHT_CARBONIGHT = () => {},
+  HIGHLIGHT_CHOCOLATE = () => {},
+  HIGHLIGHT_CODECOURSE = () => {},
+  HIGHLIGHT_COFFEE = () => {},
+  HIGHLIGHT_COMRADE = () => {},
+  HIGHLIGHT_CRACKPOT = () => {},
+  HIGHLIGHT_CRISP = () => {},
+  HIGHLIGHT_DARE = () => {},
+  HIGHLIGHT_DARKSIDE = () => {},
+  HIGHLIGHT_DOWNPOUR = () => {},
+  HIGHLIGHT_EARTHSONG = () => {},
+  HIGHLIGHT_FODDER = () => {},
+  HIGHLIGHT_FRANTIC = () => {},
+  HIGHLIGHT_FRESHCUT = () => {},
+  HIGHLIGHT_FRICTION = () => {},
+  HIGHLIGHT_FRONTIER = () => {},
+  HIGHLIGHT_GITHUB = () => {},
+  HIGHLIGHT_GLANCE = () => {},
+  HIGHLIGHT_GLOOM = () => {},
+  HIGHLIGHT_GLOWFISH = () => {},
+  HIGHLIGHT_GOLDFISH = () => {},
+  HIGHLIGHT_GRUNGE = () => {},
+  HIGHLIGHT_HALFLIFE = () => {},
+  HIGHLIGHT_HAWAII = () => {},
+  HIGHLIGHT_HEROKU = () => {},
+  HIGHLIGHT_HIVE = () => {},
+  HIGHLIGHT_HORIZON = () => {},
+  HIGHLIGHT_HUB = () => {},
+  HIGHLIGHT_HYRULE = () => {},
+  HIGHLIGHT_ICEBERG_TWO = () => {},
+  HIGHLIGHT_ISOTOPE = () => {},
+  HIGHLIGHT_JEWEL = () => {},
+  HIGHLIGHT_JINGLE = () => {},
+  HIGHLIGHT_JOKER = () => {},
+  HIGHLIGHT_JUICY = () => {},
+  HIGHLIGHT_JUMPER = () => {},
+  HIGHLIGHT_KEEN = () => {},
+  HIGHLIGHT_KIWI = () => {},
+  HIGHLIGHT_LARACASTS = () => {},
+  HIGHLIGHT_LARAVEL = () => {},
+  HIGHLIGHT_LAVENDER = () => {},
+  HIGHLIGHT_LEGACY = () => {},
+  HIGHLIGHT_LICHEN = () => {},
+  HIGHLIGHT_LOYAL = () => {},
+  HIGHLIGHT_MAUVE = () => {},
+  HIGHLIGHT_MELLOW = () => {},
+  HIGHLIGHT_MINTCHOC = () => {},
+  HIGHLIGHT_MONZO = () => {},
+  HIGHLIGHT_MORASS = () => {},
+  HIGHLIGHT_MUD = () => {},
+  HIGHLIGHT_NEWTON = () => {},
+  HIGHLIGHT_OTAKON = () => {},
+  HIGHLIGHT_OVERFLOW = () => {},
+  HIGHLIGHT_PASTEL = () => {},
+  HIGHLIGHT_PATRIOT = () => {},
+  HIGHLIGHT_PEACOCK = () => {},
+  HIGHLIGHT_PEACOCKS_IN_SPACE = () => {},
+  HIGHLIGHT_PEEL = () => {},
+  HIGHLIGHT_PENITENT = () => {},
+  HIGHLIGHT_PIGGY = () => {},
+  HIGHLIGHT_PLEASURE = () => {},
+  HIGHLIGHT_POTPOURRI = () => {},
+  HIGHLIGHT_PRIME = () => {},
+  HIGHLIGHT_RAINBOW = () => {},
+  HIGHLIGHT_REBELLION = () => {},
+  HIGHLIGHT_REVELATION = () => {},
+  HIGHLIGHT_SCORCH = () => {},
+  HIGHLIGHT_SERVICE = () => {},
+  HIGHLIGHT_SHREK = () => {},
+  HIGHLIGHT_SLATE = () => {},
+  HIGHLIGHT_SLIME = () => {},
+  HIGHLIGHT_SNAPPY = () => {},
+  HIGHLIGHT_SOLARFLARE = () => {},
+  HIGHLIGHT_SOUP = () => {},
+  HIGHLIGHT_SOURLICK = () => {},
+  HIGHLIGHT_SPEARMINT = () => {},
+  HIGHLIGHT_SPITFIRE = () => {},
+  HIGHLIGHT_STACK = () => {},
+  HIGHLIGHT_STASIS = () => {},
+  HIGHLIGHT_STEALTH = () => {},
+  HIGHLIGHT_STORM = () => {},
+  HIGHLIGHT_SUPER = () => {},
+  HIGHLIGHT_TAME = () => {},
+  HIGHLIGHT_TETRA = () => {},
+  HIGHLIGHT_TICKLE = () => {},
+  HIGHLIGHT_TONIC = () => {},
+  HIGHLIGHT_TRIBAL = () => {},
+  HIGHLIGHT_TRON = () => {},
+  HIGHLIGHT_TURNIP = () => {},
+  HIGHLIGHT_TWEED = () => {},
+  HIGHLIGHT_USERSCAPE = () => {},
+  HIGHLIGHT_VEGETABLE = () => {},
+  HIGHLIGHT_VIOLACEOUS = () => {},
+  HIGHLIGHT_VISION = () => {},
+  HIGHLIGHT_VOLATILE = () => {},
+  HIGHLIGHT_WARLOCK = () => {},
+  HIGHLIGHT_WASTE = () => {},
+  HIGHLIGHT_YITZCHOK = () => {},
+  HIGHLIGHT_YULE = () => {},
+  HIGHLIGHT_ZACKS = () => {};
