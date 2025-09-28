@@ -2,32 +2,19 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
+## v0.0.16 (September 27, 2025) - Published
+- Hotfix: Fixed problem with the menu selection color.
+- Updated CHANGELOG.md.
+- Updated package.json.
+- Updated the Flawuldragon Notes.
+- Updated module of Vanilla Dynamic Themes.
+
 ## v0.0.15 (September 27, 2025) - Published
 - Hotfix: Fixed problem with the menu hover color.
 - Updated CHANGELOG.md.
 - Updated package.json.
 - Updated the Flawuldragon Notes.
 - Updated module of Vanilla Dynamic Themes.
-- Revised the `Advanced Circuits` dynamic theme.
-- Revised the `Blueprint Paper` dynamic theme.
-- Revised the `Humba01 Design Style` dynamic theme.
-- Revised the `Winter Day` dynamic theme.
-- Revised the `Cappuccino` dynamic theme.
-- Revised the `Red Velvet` dynamic theme.
-- Revised the `Sunshine` dynamic theme.
-- Revised the `Midnight` dynamic theme.
-- Revised the `Big Bang` dynamic theme.
-- Revised the `Sublime` dynamic theme.
-- Revised the `Soldmetal` dynamic theme.
-- Revised the `Royale` dynamic theme.
-- Revised the `Carmesim` dynamic theme.
-- Revised the `Warped` dynamic theme.
-- Revised the `Mystical` dynamic theme.
-- Revised the `Quartz` dynamic theme.
-- Revised the `Electric` dynamic theme.
-- Revised the `Bubblegum` dynamic theme.
-- Revised the `Deep Forest` dynamic theme.
-- Revised the `Carrot` dynamic theme.
 
 ## v0.0.14 (September 27, 2025) - Published
 - Hotfix: Fixed problem with the list colors in the dropdown menu of the settings.
