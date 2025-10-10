@@ -2,6 +2,18 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
+## v0.0.17 (October 10, 2025) - Published
+- Updated CHANGELOG.md.
+- Updated package.json.
+- Updated the Flawuldragon Notes.
+- Fixed file ``VanillaTheme.ts`` in module of Vanilla Dynamic Themes.
+- Fixed file ``constants.ts`` in module of Vanilla Dynamic Themes.
+- Fixed file ``defines.d.ts`` in module of Vanilla Dynamic Themes.
+- Updated and Fixed module of Vanilla Dynamic Themes.
+- Added Representation of Custom Fonts in Status Bar.
+- Added Representation of Dynamic Themes in Status Bar.
+- Added Representation of Dynamic Highlights in Status Bar.
+
 ## v0.0.16 (September 27, 2025) - Published
 - Hotfix: Fixed problem with the menu selection color.
 - Updated CHANGELOG.md.

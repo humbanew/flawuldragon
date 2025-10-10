@@ -17,7 +17,7 @@ export type TFDVTTheme =
   | "Midnight"
   | "Big Bang"
   | "Sublime"
-  | "Soldmetal"
+  | "Sold Metal"
   | "Royale"
   | "Carmesim"
   | "Warped"

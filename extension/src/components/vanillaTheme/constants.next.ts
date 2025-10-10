@@ -158,7 +158,7 @@ const HIGHLIGHT_LIGHT_VISUAL_STUDIO_CODE = () => {},
   HIGHLIGHT_LIGHT_YULE = () => {},
   HIGHLIGHT_LIGHT_ZACKS = () => {};
 
-// v0.0.16
+// v0.0.18
 const HIGHLIGHT_ABSENT = () => {},
   HIGHLIGHT_ALLURE = () => {},
   HIGHLIGHT_ARSTOTZKA = () => {},

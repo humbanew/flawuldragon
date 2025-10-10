@@ -9,7 +9,6 @@
 import * as vscode from "vscode";
 import { Global } from "../globalDefs";
 import {
-  TFDDynamicThemeConfig,
   TFDVTHighlight,
   TFDVTTheme,
   VscodeColorTheme,
@@ -164,7 +163,7 @@ export class FDVanillaTheme {
       case "Sublime":
         FDVanillaTheme.actualJSON.colors = THEME_SUBLIME();
         break;
-      case "Soldmetal":
+      case "Sold Metal":
         FDVanillaTheme.actualJSON.colors = THEME_SOLDMETAL();
         break;
       case "Royale":

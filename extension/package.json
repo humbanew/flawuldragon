@@ -3,7 +3,7 @@
   "displayName": "Flawuldragon",
   "publisher": "humbanew",
   "description": "Humbanew starterkit development extension",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "engines": {
     "vscode": "^1.97.0"
   },
@@ -2442,17 +2442,164 @@
     ],
     "icons": {
       "flawuldragon-enabled": {
-        "description": "flawuldragon badge - enabled",
+        "description": "Flawuldragon Badge - Enabled",
         "default": {
           "fontPath": "assets/fonts/flawuldragon-font.woff",
           "fontCharacter": "\\e900"
         }
       },
       "flawuldragon-disabled": {
-        "description": "flawuldragon badge - disabled",
+        "description": "Flawuldragon Badge - Disabled",
         "default": {
           "fontPath": "assets/fonts/flawuldragon-font.woff",
           "fontCharacter": "\\e901"
+        }
+      },
+      "jetbrains-mono-cf-icon": {
+        "description": "Jetbrains Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "martian-mono-condensed-cf-icon": {
+        "description": "Martian Mono Condensed Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e901"
+        }
+      },
+      "martian-mono-cf-icon": {
+        "description": "Martian Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e902"
+        }
+      },
+      "martian-mono-semicondensed-cf-icon": {
+        "description": "Martian Mono Semicondensed Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e903"
+        }
+      },
+      "martian-mono-semiexpanded-cf-icon": {
+        "description": "Martian Mono Semiexpanded Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e904"
+        }
+      },
+      "overpass-mono-cf-icon": {
+        "description": "Overpass Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e905"
+        }
+      },
+      "oxygen-mono-cf-icon": {
+        "description": "Oxygen Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e906"
+        }
+      },
+      "pt-mono-cf-icon": {
+        "description": "PT Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e907"
+        }
+      },
+      "reddit-mono-cf-icon": {
+        "description": "Reddit Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e908"
+        }
+      },
+      "redhat-mono-cf-icon": {
+        "description": "Redhat Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e909"
+        }
+      },
+      "sometype-mono-cf-icon": {
+        "description": "Sometype Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e90a"
+        }
+      },
+      "space-mono-cf-icon": {
+        "description": "Space Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e90b"
+        }
+      },
+      "ubuntu-mono-cf-icon": {
+        "description": "Ubuntu Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e90c"
+        }
+      },
+      "ubuntu-sans-mono-cf-icon": {
+        "description": "Ubuntu Sans Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e90d"
+        }
+      },
+      "azeret-mono-cf-icon": {
+        "description": "Azeret Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e90e"
+        }
+      },
+      "cascadia-code-cf-icon": {
+        "description": "Cascadia Code Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e90f"
+        }
+      },
+      "chivo-mono-cf-icon": {
+        "description": "Chivo Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e910"
+        }
+      },
+      "fira-mono-cf-icon": {
+        "description": "Fira Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e911"
+        }
+      },
+      "fragment-mono-cf-icon": {
+        "description": "Fragment Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e912"
+        }
+      },
+      "google-sans-code-cf-icon": {
+        "description": "Google Sans Code Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e913"
+        }
+      },
+      "intel-one-mono-cf-icon": {
+        "description": "Intel One Mono Custom Font Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontCharacter": "\\e914"
         }
       }
     },
