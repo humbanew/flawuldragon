@@ -6,6 +6,9 @@ All changes to the "flawuldragon" extension will be documented in this file.
 - Updated CHANGELOG.md.
 - Updated package.json.
 - Updated the Flawuldragon Notes.
+- Updated the README.md.
+- Fixed file ``Vanilla.ts`` in module of Vanilla Dynamic Themes.
+- Updated and Fixed module of Vanilla.
 - Fixed file ``VanillaTheme.ts`` in module of Vanilla Dynamic Themes.
 - Fixed file ``constants.ts`` in module of Vanilla Dynamic Themes.
 - Fixed file ``defines.d.ts`` in module of Vanilla Dynamic Themes.

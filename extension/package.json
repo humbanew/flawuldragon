@@ -2601,6 +2601,216 @@
           "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
           "fontCharacter": "\\e914"
         }
+      },
+      "bluloco-dynamic-highlight-icon": {
+        "description": "Bluloco Dynamic Highlight Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/bluloco-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "bluloco-italic-dynamic-highlight-icon": {
+        "description": "Bluloco Italic Dynamic Highlight Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/blulocoitalic-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "dracula-dynamic-highlight-icon": {
+        "description": "Dracula Dynamic Highlight Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/dracula-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "dracula-soft-dynamic-highlight-icon": {
+        "description": "Dracula Soft Dynamic Highlight Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/draculasoft-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "iceberg-dynamic-highlight-icon": {
+        "description": "Iceberg Dynamic Highlight Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/iceberg-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "monokai-dynamic-highlight-icon": {
+        "description": "Monokai Dynamic Highlight Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/monokai-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "monokai-dimmed-dynamic-highlight-icon": {
+        "description": "Monokai Dimmed Dynamic Highlight Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/monokaidimmed-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "one-dark-dynamic-highlight-icon": {
+        "description": "One Dark Dynamic Highlight Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/onedark-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "one-dark-vivid-dynamic-highlight-icon": {
+        "description": "One Dark Vivid Dynamic Highlight Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/onedarkvivid-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "visual-studio-code-dynamic-highlight-icon": {
+        "description": "Visual Studio Code Dynamic Highlight Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/visualstudiocode-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "advanced-circuits-dynamic-theme-icon": {
+        "description": "Advanced Circuits Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/advancedcircuits-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "big-bang-dynamic-theme-icon": {
+        "description": "Big Bang Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/bigbang-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "blueprint-paper-dynamic-theme-icon": {
+        "description": "Blueprint Paper Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/blueprintpaper-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "bubblegun-dynamic-theme-icon": {
+        "description": "Bubblegun Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/bubblegun-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "cappuccino-dynamic-theme-icon": {
+        "description": "Cappuccino Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/cappuccino-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "carmesim-dynamic-theme-icon": {
+        "description": "Carmesim Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/carmesim-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "carrot-dynamic-theme-icon": {
+        "description": "Carrot Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/carrot-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "deep-forest-dynamic-theme-icon": {
+        "description": "Deep Forest Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/deepforest-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "electric-dynamic-theme-icon": {
+        "description": "Electric Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/electric-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "humba01s-design-style-dynamic-theme-icon": {
+        "description": "Humba01s Design Style Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/humba01designstyle-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "midnight-dynamic-theme-icon": {
+        "description": "Midnight Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/midnight-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "mystical-dynamic-theme-icon": {
+        "description": "Mystical Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/mystical-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "quartz-dynamic-theme-icon": {
+        "description": "Quartz Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/quartz-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "red-velvet-dynamic-theme-icon": {
+        "description": "Red Velvet Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/redvelvet-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "royale-dynamic-theme-icon": {
+        "description": "Royale Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/royale-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "sold-metal-dynamic-theme-icon": {
+        "description": "Sold Metal Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/soldmetal-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "sublime-dynamic-theme-icon": {
+        "description": "Sublime Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/sublime-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "sunshine-dynamic-theme-icon": {
+        "description": "Sunshine Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/sunshine-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "warped-dynamic-theme-icon": {
+        "description": "Warped Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/warped-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
+      },
+      "winter-day-dynamic-theme-icon": {
+        "description": "Winter Day Dynamic Theme Icon Representation",
+        "default": {
+          "fontPath": "assets/fonts/highlights/winterday-dyhlic.woff",
+          "fontCharacter": "\\e900"
+        }
       }
     },
     "themes": [

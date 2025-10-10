@@ -2457,6 +2457,18 @@ export class FDVanilla {
       .getConfiguration()
       .update("workbench.statusBar.visible", true);
 
+    vscode.workspace
+      .getConfiguration()
+      .update("editor.bracketPairColorization.enabled", true);
+
+    vscode.workspace
+      .getConfiguration()
+      .update("editor.bracketPairColorization.independentColorPoolPerBracketType", true);
+
+    vscode.workspace
+      .getConfiguration()
+      .update("editor.guides.bracketPairs", true);
+
     vscode.commands.registerCommand(
       Global.vanilla.accessibilities.comandos.inlayHints.enabled,
       () => {
@@ -2683,5 +2695,17 @@ export class FDVanilla {
       .update("accessibility.signals.lineHasInlineSuggestion", {
         sound: "off",
       });
+
+    vscode.workspace
+      .getConfiguration()
+      .update("editor.bracketPairColorization.enabled", false);
+
+    vscode.workspace
+      .getConfiguration()
+      .update("editor.bracketPairColorization.independentColorPoolPerBracketType", false);
+
+    vscode.workspace
+      .getConfiguration()
+      .update("editor.guides.bracketPairs", false);
   }
 }
