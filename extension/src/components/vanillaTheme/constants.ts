@@ -7,12 +7,12 @@
  */
 
 import {
-    TFDColorBracketsPalette,
-    TFDColorPalette,
-    VscodeColorTheme,
+    IFDColorBracketsPalette,
+    IFDColorPalette,
+    IVscodeColorTheme,
 } from "./defines";
 
-const theme_color_brackets_palette: TFDColorBracketsPalette = {
+const theme_color_brackets_palette: IFDColorBracketsPalette = {
     "1": "#e6c9fd",
     "2": "#ecd4ff",
     "3": "#f1e0ff",
@@ -21,128 +21,128 @@ const theme_color_brackets_palette: TFDColorBracketsPalette = {
     "6": "#ffffff",
 };
 
-const theme_color_advanced_circuits: TFDColorPalette = {
+const theme_color_advanced_circuits: IFDColorPalette = {
         "1": "#34744d",
         "2": "#2f6845",
         "3": "#2a5d3e",
         "4": "#245136",
     },
-    theme_color_blueprint_paper: TFDColorPalette = {
+    theme_color_blueprint_paper: IFDColorPalette = {
         "1": "#192c64",
         "2": "#16285a",
         "3": "#142350",
         "4": "#111f46",
     },
-    theme_color_humba01_design_style: TFDColorPalette = {
+    theme_color_humba01_design_style: IFDColorPalette = {
         "1": "#25038d",
         "2": "#21037f",
         "3": "#1e0271",
         "4": "#1a0263",
     },
-    theme_color_winter_day: TFDColorPalette = {
+    theme_color_winter_day: IFDColorPalette = {
         "1": "#632f3f",
         "2": "#592a39",
         "3": "#4f2632",
         "4": "#45212c",
     },
-    theme_color_cappuccino: TFDColorPalette = {
+    theme_color_cappuccino: IFDColorPalette = {
         "1": "#66553b",
         "2": "#5c4c35",
         "3": "#52442f",
         "4": "#473c29",
     },
-    theme_color_red_velvet: TFDColorPalette = {
+    theme_color_red_velvet: IFDColorPalette = {
         "1": "#741a24",
         "2": "#681720",
         "3": "#5d151d",
         "4": "#511219",
     },
-    theme_color_sunshine: TFDColorPalette = {
+    theme_color_sunshine: IFDColorPalette = {
         "1": "#6e4028",
         "2": "#633a24",
         "3": "#583320",
         "4": "#4d2d1c",
     },
-    theme_color_midnight: TFDColorPalette = {
+    theme_color_midnight: IFDColorPalette = {
         "1": "#091d3b",
         "2": "#081a35",
         "3": "#07172f",
         "4": "#061429",
     },
-    theme_color_big_bang: TFDColorPalette = {
+    theme_color_big_bang: IFDColorPalette = {
         "1": "#194465",
         "2": "#163d5b",
         "3": "#143651",
         "4": "#113047",
     },
-    theme_color_sublime: TFDColorPalette = {
+    theme_color_sublime: IFDColorPalette = {
         "1": "#191b1f",
         "2": "#16181c",
         "3": "#141619",
         "4": "#111316",
     },
-    theme_color_soldmetal: TFDColorPalette = {
+    theme_color_soldmetal: IFDColorPalette = {
         "1": "#373737",
         "2": "#313131",
         "3": "#2c2c2c",
         "4": "#262626",
     },
-    theme_color_royale: TFDColorPalette = {
+    theme_color_royale: IFDColorPalette = {
         "1": "#2e59d7",
         "2": "#2950c1",
         "3": "#2547ac",
         "4": "#203e97",
     },
-    theme_color_carmesim: TFDColorPalette = {
+    theme_color_carmesim: IFDColorPalette = {
         "1": "#ac2121",
         "2": "#9b1e1e",
         "3": "#8a1a1a",
         "4": "#781717",
     },
-    theme_color_warped: TFDColorPalette = {
+    theme_color_warped: IFDColorPalette = {
         "1": "#007892",
         "2": "#006c83",
         "3": "#006075",
         "4": "#005466",
     },
-    theme_color_mystical: TFDColorPalette = {
+    theme_color_mystical: IFDColorPalette = {
         "1": "#49007d",
         "2": "#420071",
         "3": "#3a0064",
         "4": "#330058",
     },
-    theme_color_quartz: TFDColorPalette = {
+    theme_color_quartz: IFDColorPalette = {
         "1": "#9c7a84",
         "2": "#8c6e77",
         "3": "#7d626a",
         "4": "#6d555c",
     },
-    theme_color_electric: TFDColorPalette = {
+    theme_color_electric: IFDColorPalette = {
         "1": "#af7800",
         "2": "#9d6c00",
         "3": "#8c6000",
         "4": "#7a5400",
     },
-    theme_color_bubblegun: TFDColorPalette = {
+    theme_color_bubblegun: IFDColorPalette = {
         "1": "#7d032a",
         "2": "#710326",
         "3": "#640222",
         "4": "#58021d",
     },
-    theme_color_deep_florest: TFDColorPalette = {
+    theme_color_deep_florest: IFDColorPalette = {
         "1": "#2b6300",
         "2": "#275900",
         "3": "#224f00",
         "4": "#1e4500",
     },
-    theme_color_carrot: TFDColorPalette = {
+    theme_color_carrot: IFDColorPalette = {
         "1": "#b94202",
         "2": "#a73b02",
         "3": "#943502",
         "4": "#812e01",
     };
 
-export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
+export const THEME_ADVANCED_CIRCUITS = (): IVscodeColorTheme["colors"] => {
         return {
             "editor.background": theme_color_advanced_circuits["1"],
             "activityBar.activeBorder": "#ffffff",
@@ -305,7 +305,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
                 theme_color_brackets_palette["6"],
         };
     },
-    THEME_BLUEPRINT_PAPER = (): VscodeColorTheme["colors"] => {
+    THEME_BLUEPRINT_PAPER = (): IVscodeColorTheme["colors"] => {
         return {
             "editor.background": theme_color_blueprint_paper["1"],
             "activityBar.activeBorder": "#ffffff",
@@ -463,7 +463,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
                 theme_color_brackets_palette["6"],
         };
     },
-    THEME_HUMBA01_DESIGN_STYLE = (): VscodeColorTheme["colors"] => {
+    THEME_HUMBA01_DESIGN_STYLE = (): IVscodeColorTheme["colors"] => {
         return {
             "editor.background": theme_color_humba01_design_style["1"],
             "activityBar.activeBorder": "#ffffff",
@@ -635,7 +635,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
                 theme_color_brackets_palette["6"],
         };
     },
-    THEME_WINTER_DAY = (): VscodeColorTheme["colors"] => {
+    THEME_WINTER_DAY = (): IVscodeColorTheme["colors"] => {
         return {
             "editor.background": theme_color_winter_day["1"],
             "activityBar.activeBorder": "#ffffff",
@@ -789,7 +789,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
                 theme_color_brackets_palette["6"],
         };
     },
-    THEME_CAPPUCCINO = (): VscodeColorTheme["colors"] => {
+    THEME_CAPPUCCINO = (): IVscodeColorTheme["colors"] => {
         return {
             "editor.background": theme_color_cappuccino["1"],
             "activityBar.activeBorder": "#ffffff",
@@ -943,7 +943,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
                 theme_color_brackets_palette["6"],
         };
     },
-    THEME_RED_VELVET = (): VscodeColorTheme["colors"] => {
+    THEME_RED_VELVET = (): IVscodeColorTheme["colors"] => {
         return {
             "editor.background": theme_color_red_velvet["1"],
             "activityBar.activeBorder": "#ffffff",
@@ -1097,7 +1097,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
                 theme_color_brackets_palette["6"],
         };
     },
-    THEME_SUNSHINE = (): VscodeColorTheme["colors"] => {
+    THEME_SUNSHINE = (): IVscodeColorTheme["colors"] => {
         return {
             "editor.background": theme_color_sunshine["1"],
             "activityBar.activeBorder": "#ffffff",
@@ -1250,7 +1250,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
                 theme_color_brackets_palette["6"],
         };
     },
-    THEME_MIDNIGHT = (): VscodeColorTheme["colors"] => {
+    THEME_MIDNIGHT = (): IVscodeColorTheme["colors"] => {
         return {
             "editor.background": theme_color_midnight["1"],
             "activityBar.activeBorder": "#ffffff",
@@ -3239,7 +3239,7 @@ export const THEME_ADVANCED_CIRCUITS = (): VscodeColorTheme["colors"] => {
     };
 
 export const HIGHLIGHT_VISUAL_STUDIO_CODE =
-        (): VscodeColorTheme["tokenColors"] => {
+        (): IVscodeColorTheme["tokenColors"] => {
             return [
                 {
                     name: "Function declarations",
@@ -3430,7 +3430,7 @@ export const HIGHLIGHT_VISUAL_STUDIO_CODE =
                 },
             ];
         },
-    HIGHLIGHT_MONOKAI = (): VscodeColorTheme["tokenColors"] => {
+    HIGHLIGHT_MONOKAI = (): IVscodeColorTheme["tokenColors"] => {
         return [
             {
                 settings: {
@@ -3812,7 +3812,7 @@ export const HIGHLIGHT_VISUAL_STUDIO_CODE =
             },
         ];
     },
-    HIGHLIGHT_BLULOCO = (): VscodeColorTheme["tokenColors"] => {
+    HIGHLIGHT_BLULOCO = (): IVscodeColorTheme["tokenColors"] => {
         return [
             {
                 name: "Source",
@@ -4412,7 +4412,7 @@ export const HIGHLIGHT_VISUAL_STUDIO_CODE =
             },
         ];
     },
-    HIGHLIGHT_DRACULA = (): VscodeColorTheme["tokenColors"] => {
+    HIGHLIGHT_DRACULA = (): IVscodeColorTheme["tokenColors"] => {
         return [
             {
                 scope: ["emphasis"],
@@ -5238,7 +5238,7 @@ export const HIGHLIGHT_VISUAL_STUDIO_CODE =
             },
         ];
     },
-    HIGHLIGHT_ONE_DARK = (): VscodeColorTheme["tokenColors"] => {
+    HIGHLIGHT_ONE_DARK = (): IVscodeColorTheme["tokenColors"] => {
         return [
             {
                 name: "Chalky",
@@ -5366,7 +5366,7 @@ export const HIGHLIGHT_VISUAL_STUDIO_CODE =
             },
         ];
     },
-    HIGHLIGHT_ICEBERG = (): VscodeColorTheme["tokenColors"] => {
+    HIGHLIGHT_ICEBERG = (): IVscodeColorTheme["tokenColors"] => {
         return [
             {
                 scope: "comment",
@@ -7815,7 +7815,7 @@ export const HIGHLIGHT_VISUAL_STUDIO_CODE =
     };
 
 export const SEMANTIC_TOKEN_COLORS =
-    (): VscodeColorTheme["semanticTokenColors"] => {
+    (): IVscodeColorTheme["semanticTokenColors"] => {
         return {
             newOperator: "#C586C0",
             stringLiteral: "#ce9178",

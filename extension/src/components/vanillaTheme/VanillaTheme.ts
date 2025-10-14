@@ -9,9 +9,11 @@
 import * as vscode from "vscode";
 import { Global } from "../globalDefs";
 import {
+  IFDDynamicSetupThemeConfig,
+  IFDDynamicThemeConfig,
   TFDVTHighlight,
   TFDVTTheme,
-  VscodeColorTheme,
+  IVscodeColorTheme,
 } from "./defines";
 import { readFileSync, writeFileSync } from "fs";
 import {
@@ -59,38 +61,355 @@ export class FDVanillaTheme {
   protected static actualConfig = JSON.parse(
     readFileSync(__dirname + "/themeConfig.json", "utf-8")
   );
-  protected static actualJSON: VscodeColorTheme = JSON.parse(
+  protected static actualSetupConfig = JSON.parse(
+    readFileSync(__dirname + "/setupThemeConfig.json", "utf-8")
+  );
+  protected static actualJSON: IVscodeColorTheme = JSON.parse(
     readFileSync(FDVanillaTheme.JSONPath, "utf-8")
   );
+  protected static dynamicThemeConfig: IFDDynamicThemeConfig = {
+    "actual-theme": FDVanillaTheme.actualConfig["actual-theme"] as TFDVTTheme,
+    "actual-highlight": FDVanillaTheme.actualConfig["actual-highlight"] as TFDVTHighlight,
+  }
+  protected static dynamicSetupThemeConfig: IFDDynamicSetupThemeConfig = {
+    "actual-theme-statusbar-text": FDVanillaTheme.actualSetupConfig["actual-theme-statusbar-text"] as string,
+    "actual-theme-statusbar-tooltip": FDVanillaTheme.actualSetupConfig["actual-theme-statusbar-tooltip"] as string,
+    "actual-highlight-statusbar-text": FDVanillaTheme.actualSetupConfig["actual-highlight-statusbar-text"] as string,
+    "actual-highlight-statusbar-tooltip": FDVanillaTheme.actualSetupConfig["actual-highlight-statusbar-tooltip"] as string,
+  }
 
   protected configThemeStatusBar() {
     vscode.window
       .showQuickPick([
-        "Advanced Circuits",
-        "Blueprint Paper",
-        "Humba01 Design Style",
-        "Winter Day",
-        "Cappuccino",
-        "Red Velvet",
-        "Sunshine",
-        "Midnight",
-        "Big Bang",
-        "Sublime",
-        "Sold Metal",
-        "Royale",
-        "Carmesim",
-        "Warped",
-        "Mystical",
-        "Quartz",
-        "Electric",
-        "Bubblegun",
-        "Deep Forest",
-        "Carrot"
+        "$(advanced-circuits-dynamic-theme-icon) Advanced Circuits",
+        "$(blueprint-paper-dynamic-theme-icon) Blueprint Paper",
+        "$(humba01s-design-style-dynamic-theme-icon) Humba01 Design Style",
+        "$(winter-day-dynamic-theme-icon) Winter Day",
+        "$(cappuccino-dynamic-theme-icon) Cappuccino",
+        "$(red-velvet-dynamic-theme-icon) Red Velvet",
+        "$(sunshine-dynamic-theme-icon) Sunshine",
+        "$(midnight-dynamic-theme-icon) Midnight",
+        "$(big-bang-dynamic-theme-icon) Big Bang",
+        "$(sublime-dynamic-theme-icon) Sublime",
+        "$(sold-metal-dynamic-theme-icon) Sold Metal",
+        "$(royale-dynamic-theme-icon) Royale",
+        "$(carmesim-dynamic-theme-icon) Carmesim",
+        "$(warped-dynamic-theme-icon) Warped",
+        "$(mystical-dynamic-theme-icon) Mystical",
+        "$(quartz-dynamic-theme-icon) Quartz",
+        "$(electric-dynamic-theme-icon) Electric",
+        "$(bubblegun-dynamic-theme-icon) Bubblegun",
+        "$(deep-florest-dynamic-theme-icon) Deep Florest",
+        "$(carrot-dynamic-theme-icon) Carrot"
       ])
       .then((selectedTheme) => {
         if (selectedTheme) {
-          let actualTheme = selectedTheme as TFDVTTheme;
-          this.updateJSONThemeFile(actualTheme, undefined);
+          let Text, Tooltip;
+          switch (selectedTheme) {
+            case "$(advanced-circuits-dynamic-theme-icon) Advanced Circuits":
+              selectedTheme = "Advanced Circuits";
+              Text = "$(advanced-circuits-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Advanced Circuits";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(blueprint-paper-dynamic-theme-icon) Blueprint Paper":
+              selectedTheme = "Blueprint Paper";
+              Text = "$(blueprint-paper-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Blueprint Paper";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(humba01s-design-style-dynamic-theme-icon) Humba01 Design Style":
+              selectedTheme = "Humba01 Design Style";
+              Text = "$(humba01s-design-style-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Humba01 Design Style";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(winter-day-dynamic-theme-icon) Winter Day":
+              selectedTheme = "Winter Day";
+              Text = "$(winter-day-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Winter Day";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(cappuccino-dynamic-theme-icon) Cappuccino":
+              selectedTheme = "Cappuccino";
+              Text = "$(cappuccino-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Cappuccino";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(red-velvet-dynamic-theme-icon) Red Velvet":
+              selectedTheme = "Red Velvet";
+              Text = "$(red-velvet-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Red Velvet";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(sunshine-dynamic-theme-icon) Sunshine":
+              selectedTheme = "Sunshine";
+              Text = "$(sunshine-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Sunshine";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(midnight-dynamic-theme-icon) Midnight":
+              selectedTheme = "Midnight";
+              Text = "$(midnight-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Midnight";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(big-bang-dynamic-theme-icon) Big Bang":
+              selectedTheme = "Big Bang";
+              Text = "$(big-bang-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Big Bang";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(sublime-dynamic-theme-icon) Sublime":
+              selectedTheme = "Sublime";
+              Text = "$(sublime-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Sublime";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(sold-metal-dynamic-theme-icon) Sold Metal":
+              selectedTheme = "Sold Metal";
+              Text = "$(sold-metal-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Sold Metal";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(royale-dynamic-theme-icon) Royale":
+              selectedTheme = "Royale";
+              Text = "$(royale-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Royale";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(carmesim-dynamic-theme-icon) Carmesim":
+              selectedTheme = "Carmesim";
+              Text = "$(carmesim-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Carmesim";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(warped-dynamic-theme-icon) Warped":
+              selectedTheme = "Warped";
+              Text = "$(warped-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Warped";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(mystical-dynamic-theme-icon) Mystical":
+              selectedTheme = "Mystical";
+              Text = "$(mystical-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Mystical";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(quartz-dynamic-theme-icon) Quartz":
+              selectedTheme = "Quartz";
+              Text = "$(quartz-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Quartz";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(electric-dynamic-theme-icon) Electric":
+              selectedTheme = "Electric";
+              Text = "$(electric-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Electric";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(bubblegun-dynamic-theme-icon) Bubblegun":
+              selectedTheme = "Bubblegun";
+              Text = "$(bubblegun-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Bubblegun";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(deep-florest-dynamic-theme-icon) Deep Florest":
+              selectedTheme = "Deep Florest";
+              Text = "$(deep-florest-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Deep Florest";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(carrot-dynamic-theme-icon) Carrot":
+              selectedTheme = "Carrot";
+              Text = "$(carrot-dynamic-theme-icon) TH";
+              Tooltip = "Switch Editor Theme | Actual: Carrot";
+              this.themeStatusBar.text = Text;
+              this.themeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-theme"] = selectedTheme as TFDVTTheme;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case undefined:
+              break;
+          }
+          this.updateJSONThemeFile(selectedTheme as TFDVTTheme, undefined);
         }
       });
   }
@@ -98,21 +417,173 @@ export class FDVanillaTheme {
   protected configHighlightStatusBar() {
     vscode.window
       .showQuickPick([
-        "Visual Studio Code",
-        "Monokai",
-        "Bluloco",
-        "Dracula",
-        "One Dark",
-        "Iceberg",
-        "Bluloco Italic",
-        "Dracula Soft",
-        "Monokai Dimmed",
-        "One Dark Vivid"
+        "$(visual-studio-code-dynamic-highlight-icon) Visual Studio Code",
+        "$(monokai-dynamic-highlight-icon) Monokai",
+        "$(bluloco-dynamic-highlight-icon) Bluloco",
+        "$(dracula-dynamic-highlight-icon) Dracula",
+        "$(one-dark-dynamic-highlight-icon) One Dark",
+        "$(iceberg-dynamic-highlight-icon) Iceberg",
+        "$(bluloco-italic-dynamic-highlight-icon) Bluloco Italic",
+        "$(dracula-soft-dynamic-highlight-icon) Dracula Soft",
+        "$(monokai-dimmed-dynamic-highlight-icon) Monokai Dimmed",
+        "$(one-dark-vivid-dynamic-highlight-icon) One Dark Vivid"
       ])
       .then((selectedHighlight) => {
         if (selectedHighlight) {
-          let actualHighlight = selectedHighlight as TFDVTHighlight;
-          this.updateJSONThemeFile(undefined, actualHighlight);
+          let Text, Tooltip;
+          switch (selectedHighlight) {
+            case "$(visual-studio-code-dynamic-highlight-icon) Visual Studio Code":
+              selectedHighlight = "Visual Studio Code";
+              Text = "$(visual-studio-code-dynamic-highlight-icon) HL";
+              Tooltip = "Switch Editor Highlight | Actual: Visual Studio Code";
+              this.highlightThemeStatusBar.text = Text;
+              this.highlightThemeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-highlight"] = selectedHighlight as TFDVTHighlight;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(monokai-dynamic-highlight-icon) Monokai":
+              selectedHighlight = "Monokai";
+              Text = "$(monokai-dynamic-highlight-icon) HL";
+              Tooltip = "Switch Editor Highlight | Actual: Monokai";
+              this.highlightThemeStatusBar.text = Text;
+              this.highlightThemeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-highlight"] = selectedHighlight as TFDVTHighlight;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(bluloco-dynamic-highlight-icon) Bluloco":
+              selectedHighlight = "Bluloco";
+              Text = "$(bluloco-dynamic-highlight-icon) HL";
+              Tooltip = "Switch Editor Highlight | Actual: Bluloco";
+              this.highlightThemeStatusBar.text = Text;
+              this.highlightThemeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-highlight"] = selectedHighlight as TFDVTHighlight;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(dracula-dynamic-highlight-icon) Dracula":
+              selectedHighlight = "Dracula";
+              Text = "$(dracula-dynamic-highlight-icon) HL";
+              Tooltip = "Switch Editor Highlight | Actual: Dracula";
+              this.highlightThemeStatusBar.text = Text;
+              this.highlightThemeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-highlight"] = selectedHighlight as TFDVTHighlight;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(one-dark-dynamic-highlight-icon) One Dark":
+              selectedHighlight = "One Dark";
+              Text = "$(one-dark-dynamic-highlight-icon) HL";
+              Tooltip = "Switch Editor Highlight | Actual: One Dark";
+              this.highlightThemeStatusBar.text = Text;
+              this.highlightThemeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-highlight"] = selectedHighlight as TFDVTHighlight;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(iceberg-dynamic-highlight-icon) Iceberg":
+              selectedHighlight = "Iceberg";
+              Text = "$(iceberg-dynamic-highlight-icon) HL";
+              Tooltip = "Switch Editor Highlight | Actual: Iceberg";
+              this.highlightThemeStatusBar.text = Text;
+              this.highlightThemeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-highlight"] = selectedHighlight as TFDVTHighlight;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(bluloco-italic-dynamic-highlight-icon) Bluloco Italic":
+              selectedHighlight = "Bluloco Italic";
+              Text = "$(bluloco-italic-dynamic-highlight-icon) HL";
+              Tooltip = "Switch Editor Highlight | Actual: Bluloco Italic";
+              this.highlightThemeStatusBar.text = Text;
+              this.highlightThemeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-highlight"] = selectedHighlight as TFDVTHighlight;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(dracula-soft-dynamic-highlight-icon) Dracula Soft":
+              selectedHighlight = "Dracula Soft";
+              Text = "$(dracula-soft-dynamic-highlight-icon) HL";
+              Tooltip = "Switch Editor Highlight | Actual: Dracula Soft";
+              this.highlightThemeStatusBar.text = Text;
+              this.highlightThemeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-highlight"] = selectedHighlight as TFDVTHighlight;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(monokai-dimmed-dynamic-highlight-icon) Monokai Dimmed":
+              selectedHighlight = "Monokai Dimmed";
+              Text = "$(monokai-dimmed-dynamic-highlight-icon) HL";
+              Tooltip = "Switch Editor Highlight | Actual: Monokai Dimmed";
+              this.highlightThemeStatusBar.text = Text;
+              this.highlightThemeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-highlight"] = selectedHighlight as TFDVTHighlight;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+            case "$(one-dark-vivid-dynamic-highlight-icon) One Dark Vivid":
+              selectedHighlight = "One Dark Vivid";
+              Text = "$(one-dark-vivid-dynamic-highlight-icon) HL";
+              Tooltip = "Switch Editor Highlight | Actual: One Dark Vivid";
+              this.highlightThemeStatusBar.text = Text;
+              this.highlightThemeStatusBar.tooltip = Tooltip;
+              FDVanillaTheme.dynamicThemeConfig["actual-highlight"] = selectedHighlight as TFDVTHighlight;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-text"] = Text;
+              FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-tooltip"] = Tooltip;
+              writeFileSync(
+                __dirname + "/setupThemeConfig.json",
+                JSON.stringify(FDVanillaTheme.dynamicSetupThemeConfig, null, 2),
+                "utf-8"
+              );
+              break;
+          }
+          this.updateJSONThemeFile(undefined, selectedHighlight as TFDVTHighlight);
         }
       });
   }
@@ -258,16 +729,18 @@ export class FDVanillaTheme {
     this.themeStatusBar.command =
       Global.vanilla.dynamicTheme.comandos["dynamic-theme"];
     this.themeStatusBar.color = "gold";
-    this.themeStatusBar.text = "TH";
-    this.themeStatusBar.tooltip = "Switch Editor Theme";
+    let text = FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-text"];
+    let tooltip = FDVanillaTheme.dynamicSetupThemeConfig["actual-theme-statusbar-tooltip"];
+    this.themeStatusBar.text = text;
+    this.themeStatusBar.tooltip = tooltip;
     this.highlightThemeStatusBar.show();
 
     // Status bar for dynamic highlight switching
     this.highlightThemeStatusBar.command =
       Global.vanilla.dynamicTheme.comandos["dynamic-highlight"];
     this.highlightThemeStatusBar.color = "gold";
-    this.highlightThemeStatusBar.text = "HL";
-    this.highlightThemeStatusBar.tooltip = "Switch Editor Highlight";
+    this.highlightThemeStatusBar.text = FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-text"];
+    this.highlightThemeStatusBar.tooltip = FDVanillaTheme.dynamicSetupThemeConfig["actual-highlight-statusbar-tooltip"];
     this.themeStatusBar.show();
   }
 

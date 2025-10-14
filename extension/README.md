@@ -42,7 +42,7 @@
 
 #### Themes and Source Features
 
-* 20 Custom Fonts
+* 23 Custom Fonts
 
 * 21 Icon Themes
 
@@ -72,6 +72,10 @@
   | `alt + e` | `cmd + alt + e` | Vanilla | Line Has Error Signal |
   | `alt + w` | `cmd + alt + w` | Vanilla | Line Has Warning Signal |
   | `alt + s` | `cmd + alt + s` | Vanilla | Line Has Inline Suggestion Signal |
+  | `alt + b` | `cmd + alt + b` | Vanilla | Enable or disable bracket pair colorization |
+  | `alt + b` `i` | `cmd + alt + b` `i` | Vanilla | Enable or disable independent color pool per bracket type |
+  | `alt + b` `g` | `cmd + alt + b` `g` | Vanilla | Show or Hide Bracket Pair Guides |
+  | `alt + b` `f` | `cmd + alt + b` `f` | Vanilla | Select In Editor Font Size |
   | `alt + v`| `cmd + alt + v` | Vanilla | Show or Hide the Status Bar component |
   | `alt + ;` | `cmd + alt + ;` | Auto Close Tag | Enable or disable auto close tag |
   | `alt + c` | `cmd + alt + c` | Color Highlight | Enable or disable color highlight |

@@ -2468,6 +2468,10 @@ export class FDVanilla {
     vscode.workspace
       .getConfiguration()
       .update("editor.guides.bracketPairs", true);
+    
+    vscode.workspace
+      .getConfiguration()
+      .update("editor.fontsize", 12);
 
     vscode.commands.registerCommand(
       Global.vanilla.accessibilities.comandos.inlayHints.enabled,
@@ -2600,6 +2604,122 @@ export class FDVanilla {
     );
 
     vscode.commands.registerCommand(
+      Global.vanilla.accessibilities.comandos.bracketPairColorization.enabled,
+      () => {
+        if (
+          vscode.workspace
+            .getConfiguration()
+            .get("editor.bracketPairColorization.enabled")
+        ) {
+          vscode.workspace
+            .getConfiguration()
+            .update("editor.bracketPairColorization.enabled", false);
+        } else {
+          vscode.workspace
+            .getConfiguration()
+            .update("editor.bracketPairColorization.enabled", true);
+        }
+      }
+    );
+
+    vscode.commands.registerCommand(
+      Global.vanilla.accessibilities.comandos.bracketPairColorization["independent-color-pool-per-bracket-type"],
+      () => {
+        if (
+          vscode.workspace
+            .getConfiguration()
+            .get("editor.bracketPairColorization.independentColorPoolPerBracketType")
+        ) {
+          vscode.workspace
+            .getConfiguration()
+            .update("editor.bracketPairColorization.independentColorPoolPerBracketType", false);
+        } else {
+          vscode.workspace
+            .getConfiguration()
+            .update("editor.bracketPairColorization.independentColorPoolPerBracketType", true);
+        }
+      }
+    );
+
+    vscode.commands.registerCommand(
+      Global.vanilla.accessibilities.comandos.guides["bracket-pairs"],
+      () => {
+        if (
+          vscode.workspace
+            .getConfiguration()
+            .get("editor.bracketPairColorization.guides.bracketPairs")
+        ) {
+          switch (vscode.workspace.getConfiguration().get("editor.bracketPairColorization.guides.bracketPairs")) {
+            case true:
+              vscode.workspace
+                .getConfiguration()
+                .update("editor.bracketPairColorization.guides.bracketPairs", true);
+              break;
+            case "activate":
+              vscode.workspace
+                .getConfiguration()
+                .update("editor.bracketPairColorization.guides.bracketPairs", "activate");
+              break;
+            case false:
+              vscode.workspace
+                .getConfiguration()
+                .update("editor.bracketPairColorization.guides.bracketPairs", false);
+              break;
+          }
+        }
+      }
+    );
+
+    vscode.commands.registerCommand(
+      Global.vanilla.accessibilities.comandos.fontSize.select,
+      () => {
+        if (
+          vscode.workspace
+            .getConfiguration()
+            .get("editor.fontSize")
+        ) {
+          // select between 10 and 16, or custom size
+          let options: vscode.QuickPickItem[] = [];
+          for (let i = 10; i <= 16; i++) {
+            options.push({ label: i.toString() });
+          }
+          options.push({ label: "Custom size..." });
+          vscode.window.showQuickPick(options, {
+            placeHolder: "Select a font size",
+          }).then((selected) => {
+            if (selected) {
+              if (selected.label === "Custom size...") {
+                vscode.window.showInputBox({
+                  placeHolder: "Enter a custom font size",
+                  validateInput: (input) => {
+                    const value = parseInt(input);
+                    return isNaN(value) || value < 10 || value > 100
+                      ? "Please enter a font size between 10 and 100."
+                      : null;
+                  },
+                }).then((customSize) => {
+                  if (customSize) {
+                    vscode.workspace
+                      .getConfiguration()
+                      .update("editor.fontSize", parseInt(customSize));
+                  }
+                });
+              } else {
+                vscode.workspace
+                  .getConfiguration()
+                  .update("editor.fontSize", parseInt(selected.label));
+              }
+            }
+          });
+        } else {
+          vscode.workspace
+            .getConfiguration()
+            .update("editor.fontSize", 14);
+        }
+      }
+    );
+
+    vscode.commands.registerCommand(
       Global.vanilla.accessibilities.comandos.visibility.statusBar,
       () => {
         if (
@@ -2707,5 +2827,9 @@ export class FDVanilla {
     vscode.workspace
       .getConfiguration()
       .update("editor.guides.bracketPairs", false);
+
+    vscode.workspace
+      .getConfiguration()
+      .update("editor.fontSize", 14);
   }
 }

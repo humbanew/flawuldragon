@@ -6,7 +6,7 @@
  * ========================================================================================
  */
 
-export type TFDVTTheme =
+export declare type TFDVTTheme =
   | "Advanced Circuits"
   | "Blueprint Paper"
   | "Humba01 Design Style"
@@ -28,7 +28,7 @@ export type TFDVTTheme =
   | "Deep Florest"
   | "Carrot";
 
-export type TFDVTHighlight =
+export declare type TFDVTHighlight =
   | "Visual Studio Code"
   | "Monokai"
   | "Bluloco"
@@ -40,14 +40,14 @@ export type TFDVTHighlight =
   | "Monokai Dimmed"
   | "One Dark Vivid";
 
-export interface TFDColorPalette {
+export declare interface IFDColorPalette {
   "1": string;
   "2": string;
   "3": string;
   "4": string;
 }
 
-export interface TFDColorBracketsPalette {
+export declare interface IFDColorBracketsPalette {
   "1": string;
   "2": string;
   "3": string;
@@ -56,13 +56,20 @@ export interface TFDColorBracketsPalette {
   "6": string;
 }
 
-export interface TFDDynamicThemeConfig {
+export declare interface IFDDynamicThemeConfig {
   "actual-theme": TFDVTTheme;
   "actual-highlight": TFDVTHighlight;
 }
 
+export declare interface IFDDynamicSetupThemeConfig {
+  "actual-theme-statusbar-text": string;
+  "actual-theme-statusbar-tooltip": string;
+  "actual-highlight-statusbar-text": string;
+  "actual-highlight-statusbar-tooltip": string;
+}
+
 /** Código pego da Wertsfy, usado temporariamente para a construção dessa versão. */
-export interface VscodeColorTheme {
+export declare interface IVscodeColorTheme {
   name: string;
   type: string;
   colors: {

@@ -17,3 +17,8 @@
 export declare interface IJBMGeneralObject {
   [index: string]: string | number | boolean | IJBMGeneralObject;
 }
+
+export declare interface IFDCustomFontsSetupConfig {
+  "actual-customfonts-statusbar-text": string;
+  "actual-customfonts-statusbar-tooltip": string;
+}

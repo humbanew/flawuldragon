@@ -2,20 +2,24 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
-## v0.0.17 (October 10, 2025) - Published
+## v0.0.17 (October 13, 2025) - Published
 - Updated CHANGELOG.md.
 - Updated package.json.
 - Updated the Flawuldragon Notes.
 - Updated the README.md.
-- Fixed file ``Vanilla.ts`` in module of Vanilla Dynamic Themes.
+- Enabled Custom Font of Martian Condensed Mono.
+- Enabled Custom Font of Martian Semicondensed Mono.
+- Enabled Custom Font of Martian Semiexpanded Mono.
 - Updated and Fixed module of Vanilla.
-- Fixed file ``VanillaTheme.ts`` in module of Vanilla Dynamic Themes.
-- Fixed file ``constants.ts`` in module of Vanilla Dynamic Themes.
-- Fixed file ``defines.d.ts`` in module of Vanilla Dynamic Themes.
 - Updated and Fixed module of Vanilla Dynamic Themes.
+- Updated and Fixed module of Custom Fonts.
 - Added Representation of Custom Fonts in Status Bar.
 - Added Representation of Dynamic Themes in Status Bar.
 - Added Representation of Dynamic Highlights in Status Bar.
+- Added command `flawuldragon.vanilla.accessibility.bracketPairColorization.enabled`, with keybinds `alt+b` (mac: `cmd+alt+b`).
+- Added command `flawuldragon.vanilla.accessibility.bracketPairColorization.independentColorPoolPerBracketType`, with keybinds `alt+b i` (mac: `cmd+alt+b i`).
+- Added command `flawuldragon.vanilla.accessibility.guides.bracketPairs`, with keybinds `alt+b g` (mac: `cmd+alt+b g`).
+- Added command `flawuldragon.vanilla.accessibility.fontSize.select`, with keybinds `alt+b f` (mac: `cmd+alt+b f`).
 
 ## v0.0.16 (September 27, 2025) - Published
 - Hotfix: Fixed problem with the menu selection color.

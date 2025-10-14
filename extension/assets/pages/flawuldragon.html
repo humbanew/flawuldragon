@@ -844,6 +844,24 @@
       )
     );
     keybindings.push(
+      new Keybinding(
+        "alt + b",
+        "Enable or Disable bracket pair colorization"
+      )
+    );
+    keybindings.push(
+      new Keybinding(
+        "alt + b i",
+        "Enable or Disable independent color pool per bracket type"
+      )
+    );
+    keybindings.push(
+      new Keybinding("alt + b g", "Show or Hide Bracket Pair Guides")
+    );
+    keybindings.push(
+      new Keybinding("alt + b f", "Select In Editor Font Size")
+    );
+    keybindings.push(
       new Keybinding("alt + v", "Show/Hide Status Bar component")
     );
     keybindings.push(
@@ -1019,6 +1037,26 @@
     const seccaoRaizCha = document.getElementById("cha");
     let changelogVersions = [];
     let changelogNotes = [];
+    changelogVersions.push(new ChangelogVersion("v0.0.17", "October 13, 2025"));
+    changelogNotes.push([
+      new ChangelogNote("Updated CHANGELOG.md."),
+      new ChangelogNote("Updated package.json."),
+      new ChangelogNote("Updated the Flawuldragon Notes."),
+      new ChangelogNote("Updated the README.md."),
+      new ChangelogNote("Enabled Custom Font of Martian Condensed Mono."),
+      new ChangelogNote("Enabled Custom Font of Martian Semicondensed Mono."),
+      new ChangelogNote("Enabled Custom Font of Martian Semiexpanded Mono."),
+      new ChangelogNote("Updated and Fixed module of Vanilla."),
+      new ChangelogNote("Updated and Fixed module of Vanilla Dynamic Themes."),
+      new ChangelogNote("Updated and Fixed module of Custom Fonts."),
+      new ChangelogNote("Added Representation of Custom Fonts in Status Bar."),
+      new ChangelogNote("Added Representation of Dynamic Themes in Status Bar."),
+      new ChangelogNote("Added Representation of Dynamic Highlights in Status Bar."),
+      new ChangelogNote("Added command `flawuldragon.vanilla.accessibility.bracketPairColorization.enabled`, with keybinds `alt+b` (mac: `cmd+alt+b`)."),
+      new ChangelogNote("Added command `flawuldragon.vanilla.accessibility.bracketPairColorization.independentColorPoolPerBracketType`, with keybinds `alt+b i` (mac: `cmd+alt+b i`)."),
+      new ChangelogNote("Added command `flawuldragon.vanilla.accessibility.guides.bracketPairs`, with keybinds `alt+b g` (mac: `cmd+alt+b g`)."),
+      new ChangelogNote("Added command `flawuldragon.vanilla.accessibility.fontSize.select`, with keybinds `alt+b f` (mac: `cmd+alt+b f`).")
+    ]);
     changelogVersions.push(new ChangelogVersion("v0.0.16", "September 27, 2025"));
     changelogNotes.push([
       new ChangelogNote("Hotfix: Fixed problem with the menu selection color."),

@@ -51,7 +51,9 @@ const extensionConfig = {
     new CopyPlugin({
       patterns: [
         { from: "src/components/vanilla/flwdnDts.json", to: "[name].json" },
-        { from: "src/components/vanillaTheme/themeConfig.json", to: "[name].json" }
+        { from: "src/components/vanillaTheme/themeConfig.json", to: "[name].json" },
+        { from: "src/components/vanillaTheme/setupThemeConfig.json", to: "[name].json" },
+        { from: "src/components/customFonts/setupCustomFontsConfig.json", to: "[name].json" }
       ]
     })
   ]

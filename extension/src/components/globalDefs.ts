@@ -62,6 +62,16 @@ export const Global = {
           'line-has-warning': 'flawuldragon.vanilla.accessibility.signals.lineHasWarning',
           'line-has-inline-suggestion': 'flawuldragon.vanilla.accessibility.signals.lineHasInlineSuggestion'
         },
+        bracketPairColorization: {
+          'enabled': 'flawuldragon.vanilla.accessibility.bracketPairColorization.enabled',
+          'independent-color-pool-per-bracket-type': 'flawuldragon.vanilla.accessibility.bracketPairColorization.independentColorPoolPerBracketType'
+        },
+        guides: {
+          'bracket-pairs': 'flawuldragon.vanilla.accessibility.guides.bracketPairs'
+        },
+        fontSize: {
+          'select': 'flawuldragon.vanilla.accessibility.fontSize.select',
+        },
         visibility: {
           'statusBar': 'flawuldragon.vanilla.accessibility.visibility.statusBar'
         }

@@ -1,0 +1,6 @@
+{
+    "actual-theme-statusbar-text": "$(light-theme-icon) TH",
+    "actual-theme-statusbar-tooltip": "Switch Editor Theme | Actual: Light",
+    "actual-highlight-statusbar-text": "$(light-theme-icon) HL",
+    "actual-highlight-statusbar-tooltip": "Switch Highlight Theme | Actual: Light"
+}
