@@ -176,7 +176,7 @@ export class FDCustomFonts {
      *                  information about the extension's environment and state.
      */
     public firstTimeActivation(context: vscode.ExtensionContext) {
-        const version = context.extension.packageJSON.version ?? "0.0.17";
+        const version = context.extension.packageJSON.version ?? "0.0.19";
         const previousVersion = context.globalState.get(context.extension.id);
         if (previousVersion === version) return;
 
@@ -273,6 +273,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Segoe UI",
+                            "editor.fontLigatures": false,
+                        });
                         break;
                     case "$(fd-cf-cascadia-code) Default VS Code":
                         text = "$(fd-cf-cascadia-code) CF";
@@ -285,6 +289,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Cascadia Code",
+                            "editor.fontLigatures": false,
+                        });
                         break;
                     case "$(fd-cf-cascadia-mono) Cascadia Mono":
                         text = "$(fd-cf-cascadia-mono) CF";
@@ -297,6 +305,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Cascadia Mono",
+                            "editor.fontLigatures": false,
+                        });
                         break;
                     case "$(fd-cf-jetbrains-mono) JetBrains Mono":
                         text = "$(fd-cf-jetbrains-mono) CF";
@@ -309,6 +321,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "JetBrains Mono",
+                            "editor.fontLigatures": true,
+                        })
                         break;
                     case "$(fd-cf-fira-mono) Fira Mono":
                         text = "$(fd-cf-fira-mono) CF";
@@ -321,6 +337,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Fira Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-fira-code) Fira Code":
                         text = "$(fd-cf-fira-code) CF";
@@ -333,6 +353,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Fira Code",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-intel-one-mono) Intel One Mono":
                         text = "$(fd-cf-intel-one-mono) CF";
@@ -345,6 +369,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Intel One Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-pt-mono) PT Mono":
                         text = "$(fd-cf-pt-mono) CF";
@@ -357,6 +385,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "PT Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-space-mono) Space Mono":
                         text = "$(fd-cf-space-mono) CF";
@@ -369,6 +401,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Space Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-ubuntu-mono) Ubuntu Mono":
                         text = "$(fd-cf-ubuntu-mono) CF";
@@ -381,6 +417,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Ubuntu Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-martian-mono) Martian Mono":
                         text = "$(fd-cf-martian-mono) CF";
@@ -393,6 +433,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Martian Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-martian-mono-condensed) Martian Mono Condensed":
                         text = "$(fd-cf-martian-mono-condensed) CF";
@@ -405,6 +449,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Martian Mono Condensed",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-martian-mono-semicondensed) Martian Mono Semicondensed":
                         text = "$(fd-cf-martian-mono-semicondensed) CF";
@@ -417,6 +465,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Martian Mono Semicondensed",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-martian-mono-semiexpanded) Martian Mono Semiexpanded":
                         text = "$(fd-cf-martian-mono-semiexpanded) CF";
@@ -429,6 +481,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Martian Mono Semiexpanded",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-reddit-mono) Reddit Mono":
                         text = "$(fd-cf-reddit-mono) CF";
@@ -441,6 +497,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Reddit Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-cascadia-code) Cascadia Code":
                         text = "$(fd-cf-cascadia-code) CF";
@@ -453,6 +513,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Cascadia Code",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-google-sans-code) Google Sans Code":
                         text = "$(fd-cf-google-sans-code) CF";
@@ -465,6 +529,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Google Sans Code",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-redhat-mono) Red Hat Mono":
                         text = "$(fd-cf-redhat-mono) CF";
@@ -477,6 +545,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Red Hat Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-sometype-mono) Sometype Mono":
                         text = "$(fd-cf-sometype-mono) CF";
@@ -489,6 +561,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Sometype Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-ubuntu-sans-mono) Ubuntu Sans Mono":
                         text = "$(fd-cf-ubuntu-sans-mono) CF";
@@ -501,6 +577,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Ubuntu Sans Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-azeret-mono) Azeret Mono":
                         text = "$(fd-cf-azeret-mono) CF";
@@ -513,6 +593,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Azeret Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-chivo-mono) Chivo Mono":
                         text = "$(fd-cf-chivo-mono) CF";
@@ -525,6 +609,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Chivo Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-fragment-mono) Fragment Mono":
                         text = "$(fd-cf-fragment-mono) CF";
@@ -537,6 +625,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Fragment Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-overpass-mono) Overpass Mono":
                         text = "$(fd-cf-overpass-mono) CF";
@@ -549,6 +641,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Overpass Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     case "$(fd-cf-oxygen-mono) Oxygen Mono":
                         text = "$(fd-cf-oxygen-mono) CF";
@@ -561,6 +657,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
+                        this.updateUserSettings({
+                            "editor.fontFamily": "Oxygen Mono",
+                            "editor.fontLigatures": true,
+                        });
                         break;
                     default:
                         break;

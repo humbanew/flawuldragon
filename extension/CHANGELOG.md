@@ -2,6 +2,14 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
+## v0.0.19 (October 23, 2025) - Published
+- Hotfix: Fixed problem with the representations, part 2.
+- Updated CHANGELOG.md.
+- Updated package.json.
+- Updated the Flawuldragon Notes.
+- Updated the README.md.
+- Updated and Fixed module of Custom Fonts.
+
 ## v0.0.18 (October 23, 2025) - Published
 - Hotfix: Fixed problem with the representations.
 - Updated CHANGELOG.md.
