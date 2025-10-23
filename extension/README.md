@@ -42,7 +42,7 @@
 
 #### Themes and Source Features
 
-* 23 Custom Fonts
+* 25 Custom Fonts
 
 * 21 Icon Themes
 

@@ -64,8 +64,10 @@ export declare interface IFDDynamicThemeConfig {
 export declare interface IFDDynamicSetupThemeConfig {
   "actual-theme-statusbar-text": string;
   "actual-theme-statusbar-tooltip": string;
+  "actual-theme-statusbar-color": string;
   "actual-highlight-statusbar-text": string;
   "actual-highlight-statusbar-tooltip": string;
+  "actual-highlight-statusbar-color": string;
 }
 
 /** Código pego da Wertsfy, usado temporariamente para a construção dessa versão. */

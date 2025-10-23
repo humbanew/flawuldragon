@@ -2,6 +2,17 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
+## v0.0.18 (October 23, 2025) - Published
+- Hotfix: Fixed problem with the representations.
+- Updated CHANGELOG.md.
+- Updated package.json.
+- Updated the Flawuldragon Notes.
+- Updated the README.md.
+- Enabled Custom Font of Fira Code.
+- Enabled Custom Font of Cascadia Mono.
+- Updated and Fixed module of Custom Fonts.
+- Updated and Fixed module of Vanilla Dynamic Themes.
+
 ## v0.0.17 (October 13, 2025) - Published
 - Updated CHANGELOG.md.
 - Updated package.json.

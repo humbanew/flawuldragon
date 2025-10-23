@@ -2499,368 +2499,186 @@
           "fontCharacter": "\\e901"
         }
       },
-      "microsoft-font-cf-icon": {
-        "description": "Microsoft Font Custom Font Icon Representation",
+      "fd-cf-azeret-mono":{
+        "description": "Azeret Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e900"
         }
       },
-      "jetbrains-mono-cf-icon": {
-        "description": "Jetbrains Mono Custom Font Icon Representation",
+      "fd-cf-cascadia-code": {
+        "description": "Cascadia Code Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e901"
         }
       },
-      "martian-mono-condensed-cf-icon": {
-        "description": "Martian Mono Condensed Custom Font Icon Representation",
+      "fd-cf-cascadia-mono": {
+        "description": "Cascadia Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e902"
         }
       },
-      "martian-mono-cf-icon": {
-        "description": "Martian Mono Custom Font Icon Representation",
+      "fd-cf-chivo-mono":{
+        "description": "Chivo Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e903"
         }
       },
-      "martian-mono-semicondensed-cf-icon": {
-        "description": "Martian Mono Semicondensed Custom Font Icon Representation",
+      "fd-cf-fira-code": {
+        "description": "Fira Code Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e904"
         }
       },
-      "martian-mono-semiexpanded-cf-icon": {
-        "description": "Martian Mono Semiexpanded Custom Font Icon Representation",
+      "fd-cf-fira-mono": {
+        "description": "Fira Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e905"
         }
       },
-      "overpass-mono-cf-icon": {
-        "description": "Overpass Mono Custom Font Icon Representation",
+      "fd-cf-fragment-mono": {
+        "description": "Fragment Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e906"
         }
       },
-      "oxygen-mono-cf-icon": {
-        "description": "Oxygen Mono Custom Font Icon Representation",
+      "fd-cf-google-sans-code": {
+        "description": "Google Sans Code Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e907"
         }
       },
-      "pt-mono-cf-icon": {
-        "description": "PT Mono Custom Font Icon Representation",
+      "fd-cf-intel-one-mono": {
+        "description": "Intel One Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e908"
         }
       },
-      "reddit-mono-cf-icon": {
-        "description": "Reddit Mono Custom Font Icon Representation",
+      "fd-cf-jetbrains-mono": {
+        "description": "JetBrains Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e909"
         }
       },
-      "redhat-mono-cf-icon": {
-        "description": "Redhat Mono Custom Font Icon Representation",
+      "fd-cf-martin-mono-condensed": {
+        "description": "Martin Mono Condensed Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e90a"
         }
       },
-      "sometype-mono-cf-icon": {
-        "description": "Sometype Mono Custom Font Icon Representation",
+      "fd-cf-martin-mono": {
+        "description": "Martin Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e90b"
         }
       },
-      "space-mono-cf-icon": {
-        "description": "Space Mono Custom Font Icon Representation",
+      "fd-cf-martin-mono-semicondensed": {
+        "description": "Martin Mono Semicondensed Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e90c"
         }
       },
-      "ubuntu-mono-cf-icon": {
-        "description": "Ubuntu Mono Custom Font Icon Representation",
+      "fd-cf-martin-mono-semiexpanded": {
+        "description": "Martin Mono Semiexpanded Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e90d"
         }
       },
-      "ubuntu-sans-mono-cf-icon": {
-        "description": "Ubuntu Sans Mono Custom Font Icon Representation",
+      "fd-cf-microsoft-font": {
+        "description": "Microsoft Font Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e90e"
         }
       },
-      "azeret-mono-cf-icon": {
-        "description": "Azeret Mono Custom Font Icon Representation",
+      "fd-cf-overpass-mono": {
+        "description": "Overpass Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e90f"
         }
       },
-      "cascadia-code-cf-icon": {
-        "description": "Cascadia Code Custom Font Icon Representation",
+      "fd-cf-oxygen-mono": {
+        "description": "Oxygen Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e910"
         }
       },
-      "chivo-mono-cf-icon": {
-        "description": "Chivo Mono Custom Font Icon Representation",
+      "fd-cf-pt-mono": {
+        "description": "PT Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e911"
         }
       },
-      "fira-mono-cf-icon": {
-        "description": "Fira Mono Custom Font Icon Representation",
+      "fd-cf-reddit-mono": {
+        "description": "Reddit Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e912"
         }
       },
-      "fragment-mono-cf-icon": {
-        "description": "Fragment Mono Custom Font Icon Representation",
+      "fd-cf-redhat-mono": {
+        "description": "Red Hat Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e913"
         }
       },
-      "google-sans-code-cf-icon": {
-        "description": "Google Sans Code Custom Font Icon Representation",
+      "fd-cf-sometype-mono": {
+        "description": "Sometype Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e914"
         }
       },
-      "intel-one-mono-cf-icon": {
-        "description": "Intel One Mono Custom Font Icon Representation",
+      "fd-cf-space-mono": {
+        "description": "Space Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/flawuldragon-customfonts-font.woff",
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
           "fontCharacter": "\\e915"
         }
       },
-      "bluloco-dynamic-highlight-icon": {
-        "description": "Bluloco Dynamic Highlight Icon Representation",
+      "fd-cf-ubuntu-mono": {
+        "description": "Ubuntu Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/highlights/bluloco-dyhlic.woff",
-          "fontCharacter": "\\e900"
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
+          "fontCharacter": "\\e916"
         }
       },
-      "bluloco-italic-dynamic-highlight-icon": {
-        "description": "Bluloco Italic Dynamic Highlight Icon Representation",
+      "fd-cf-ubuntu-sans-mono": {
+        "description": "Ubuntu Sans Mono Custom Font Icon",
         "default": {
-          "fontPath": "assets/fonts/highlights/blulocoitalic-dyhlic.woff",
-          "fontCharacter": "\\e900"
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
+          "fontCharacter": "\\e917"
         }
       },
-      "dracula-dynamic-highlight-icon": {
-        "description": "Dracula Dynamic Highlight Icon Representation",
+      "fd-color-theme": {
+        "description": "Flawuldragon Color Theme Icon",
         "default": {
-          "fontPath": "assets/fonts/highlights/dracula-dyhlic.woff",
-          "fontCharacter": "\\e900"
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
+          "fontCharacter": "\\e918"
         }
       },
-      "dracula-soft-dynamic-highlight-icon": {
-        "description": "Dracula Soft Dynamic Highlight Icon Representation",
+      "fd-highlight": {
+        "description": "Flawuldragon Highlight Icon",
         "default": {
-          "fontPath": "assets/fonts/highlights/draculasoft-dyhlic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "iceberg-dynamic-highlight-icon": {
-        "description": "Iceberg Dynamic Highlight Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/highlights/iceberg-dyhlic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "monokai-dynamic-highlight-icon": {
-        "description": "Monokai Dynamic Highlight Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/highlights/monokai-dyhlic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "monokai-dimmed-dynamic-highlight-icon": {
-        "description": "Monokai Dimmed Dynamic Highlight Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/highlights/monokaidimmed-dyhlic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "one-dark-dynamic-highlight-icon": {
-        "description": "One Dark Dynamic Highlight Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/highlights/onedark-dyhlic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "one-dark-vivid-dynamic-highlight-icon": {
-        "description": "One Dark Vivid Dynamic Highlight Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/highlights/onedarkvivid-dyhlic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "visual-studio-code-dynamic-highlight-icon": {
-        "description": "Visual Studio Code Dynamic Highlight Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/highlights/visualstudiocode-dyhlic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "advanced-circuits-dynamic-theme-icon": {
-        "description": "Advanced Circuits Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/advancedcircuits-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "big-bang-dynamic-theme-icon": {
-        "description": "Big Bang Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/bigbang-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "blueprint-paper-dynamic-theme-icon": {
-        "description": "Blueprint Paper Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/blueprintpaper-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "bubblegun-dynamic-theme-icon": {
-        "description": "Bubblegun Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/bubblegun-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "cappuccino-dynamic-theme-icon": {
-        "description": "Cappuccino Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/cappuccino-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "carmesim-dynamic-theme-icon": {
-        "description": "Carmesim Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/carmesim-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "carrot-dynamic-theme-icon": {
-        "description": "Carrot Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/carrot-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "deep-florest-dynamic-theme-icon": {
-        "description": "Deep Florest Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/deepflorest-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "electric-dynamic-theme-icon": {
-        "description": "Electric Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/electric-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "humba01s-design-style-dynamic-theme-icon": {
-        "description": "Humba01s Design Style Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/humba01designstyle-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "midnight-dynamic-theme-icon": {
-        "description": "Midnight Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/midnight-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "mystical-dynamic-theme-icon": {
-        "description": "Mystical Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/mystical-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "quartz-dynamic-theme-icon": {
-        "description": "Quartz Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/quartz-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "red-velvet-dynamic-theme-icon": {
-        "description": "Red Velvet Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/redvelvet-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "royale-dynamic-theme-icon": {
-        "description": "Royale Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/royale-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "sold-metal-dynamic-theme-icon": {
-        "description": "Sold Metal Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/soldmetal-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "sublime-dynamic-theme-icon": {
-        "description": "Sublime Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/sublime-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "sunshine-dynamic-theme-icon": {
-        "description": "Sunshine Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/sunshine-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "warped-dynamic-theme-icon": {
-        "description": "Warped Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/warped-dythic.woff",
-          "fontCharacter": "\\e900"
-        }
-      },
-      "winter-day-dynamic-theme-icon": {
-        "description": "Winter Day Dynamic Theme Icon Representation",
-        "default": {
-          "fontPath": "assets/fonts/themes/winterday-dythic.woff",
-          "fontCharacter": "\\e900"
+          "fontPath": "assets/fonts/flawuldragon-font-rep.woff",
+          "fontCharacter": "\\e919"
         }
       }
     },

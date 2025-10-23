@@ -233,38 +233,38 @@ export class FDCustomFonts {
     protected switchCustomFonts(): any {
         vscode.window
             .showQuickPick([
-                "$(microsoft-font-cf-icon) Microsoft Font",
-                "$(cascadia-code-cf-icon) Default VS Code",
-                "$(jetbrains-mono-cf-icon) JetBrains Mono",
-                "$(fira-mono-cf-icon) Fira Mono",
-                "$(intel-one-mono-cf-icon) Intel One Mono",
-                "$(pt-mono-cf-icon) PT Mono",
-                "$(space-mono-cf-icon) Space Mono",
-                "$(ubuntu-mono-cf-icon) Ubuntu Mono",
-                "$(martian-mono-cf-icon) Martian Mono",
-                "$(martian-mono-condensed-cf-icon) Martian Mono Condensed",
-                "$(martian-mono-semicondensed-cf-icon) Martian Mono Semicondensed",
-                "$(martian-mono-semiexpanded-cf-icon) Martian Mono Semiexpanded",
-                "$(reddit-mono-cf-icon) Reddit Mono",
-                "$(cascadia-code-cf-icon) Cascadia Code",
-                "$(google-sans-code-cf-icon) Google Sans Code",
-                "$(redhat-mono-cf-icon) Red Hat Mono",
-                "$(sometype-mono-cf-icon) Sometype Mono",
-                "$(ubuntu-sans-mono-cf-icon) Ubuntu Sans Mono",
-                "$(azeret-mono-cf-icon) Azeret Mono",
-                "$(chivo-mono-cf-icon) Chivo Mono",
-                "$(fragment-mono-cf-icon) Fragment Mono",
-                "$(overpass-mono-cf-icon) Overpass Mono",
-                "$(oxygen-mono-cf-icon) Oxygen Mono",
+                "$(fd-cf-microsoft-font) Microsoft Font",
+                "$(fd-cf-cascadia-code) Default VS Code",
+                "$(fd-cf-cascadia-mono) Cascadia Mono",
+                "$(fd-cf-jetbrains-mono) JetBrains Mono",
+                "$(fd-cf-fira-mono) Fira Mono",
+                "$(fd-cf-fira-code) Fira Code",
+                "$(fd-cf-intel-one-mono) Intel One Mono",
+                "$(fd-cf-pt-mono) PT Mono",
+                "$(fd-cf-space-mono) Space Mono",
+                "$(fd-cf-ubuntu-mono) Ubuntu Mono",
+                "$(fd-cf-martian-mono) Martian Mono",
+                "$(fd-cf-martian-mono-condensed) Martian Mono Condensed",
+                "$(fd-cf-martian-mono-semicondensed) Martian Mono Semicondensed",
+                "$(fd-cf-martian-mono-semiexpanded) Martian Mono Semiexpanded",
+                "$(fd-cf-reddit-mono) Reddit Mono",
+                "$(fd-cf-cascadia-code) Cascadia Code",
+                "$(fd-cf-google-sans-code) Google Sans Code",
+                "$(fd-cf-redhat-mono) Red Hat Mono",
+                "$(fd-cf-sometype-mono) Sometype Mono",
+                "$(fd-cf-ubuntu-sans-mono) Ubuntu Sans Mono",
+                "$(fd-cf-azeret-mono) Azeret Mono",
+                "$(fd-cf-chivo-mono) Chivo Mono",
+                "$(fd-cf-fragment-mono) Fragment Mono",
+                "$(fd-cf-overpass-mono) Overpass Mono",
+                "$(fd-cf-oxygen-mono) Oxygen Mono"
             ])
             .then((selectedFont) => {
-                if (selectedFont) {
-                    if (
-                        selectedFont ===
-                        "$(microsoft-font-cf-icon) Microsoft Font"
-                    ) {
-                        let text = "$(microsoft-font-cf-icon) CF";
-                        let tooltip = "Switch Editor Font | Actual: Microsoft Font";
+                let text = "", tooltip = "";
+                switch (selectedFont) {
+                    case "$(fd-cf-microsoft-font) Microsoft Font":
+                        text = "$(microsoft-font-cf-icon) CF";
+                        tooltip = "Switch Editor Font | Actual: Microsoft Font";
                         this.switchCustomFontsStatusBar.text = text;
                         this.switchCustomFontsStatusBar.tooltip = tooltip;
                         FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
@@ -273,15 +273,10 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
-                        this.updateUserSettings({
-                            "editor.fontFamily": "Segoe UI",
-                        });
-                    } else if (
-                        selectedFont ===
-                        "$(cascadia-code-cf-icon) Default VS Code"
-                    ) {
-                        let text = "$(cascadia-code-cf-icon) CF";
-                        let tooltip = "Switch Editor Font | Actual: Default VS Code";
+                        break;
+                    case "$(fd-cf-cascadia-code) Default VS Code":
+                        text = "$(fd-cf-cascadia-code) CF";
+                        tooltip = "Switch Editor Font | Actual: Default VS Code";
                         this.switchCustomFontsStatusBar.text = text;
                         this.switchCustomFontsStatusBar.tooltip = tooltip;
                         FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
@@ -290,308 +285,288 @@ export class FDCustomFonts {
                             __dirname + "/setupCustomFontsConfig.json",
                             JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
                         );
-                        this.updateUserSettings({
-                            "editor.fontFamily": "monospace",
-                        });
-                    } else {
-                        let text, tooltip;
-                        switch (selectedFont) {
-                            case "$(jetbrains-mono-cf-icon) JetBrains Mono":
-                                text = "$(jetbrains-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: JetBrains Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(fira-mono-cf-icon) Fira Mono":
-                                text = "$(fira-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Fira Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(intel-one-mono-cf-icon) Intel One Mono":
-                                text = "$(intel-one-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Intel One Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(pt-mono-cf-icon) PT Mono":
-                                text = "$(pt-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: PT Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(pt-mono-cf-icon) PT Mono":
-                                text = "$(pt-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: PT Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(space-mono-cf-icon) Space Mono":
-                                text = "$(space-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Space Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(space-mono-cf-icon) Space Mono":
-                                text = "$(space-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Space Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(ubuntu-mono-cf-icon) Ubuntu Mono":
-                                text = "$(ubuntu-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Ubuntu Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(ubuntu-mono-cf-icon) Ubuntu Mono":
-                                text = "$(ubuntu-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Ubuntu Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(martian-mono-cf-icon) Martian Mono":
-                                text = "$(martian-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Martian Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(martian-mono-condensed-cf-icon) Martian Mono Condensed":
-                                text = "$(martian-mono-condensed-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Martian Mono Condensed";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(martian-mono-semicondensed-cf-icon) Martian Mono Semicondensed":
-                                text = "$(martian-mono-semicondensed-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Martian Mono Semicondensed";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(martian-mono-seiexpanded-cf-icon) Martian Mono Semiexpanded":
-                                text = "$(martian-mono-seiexpanded-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Martian Mono Semiexpanded";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(reddit-mono-cf-icon) Reddit Mono":
-                                text = "$(reddit-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Reddit Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(cascadia-code-cf-icon) Cascadia Code":
-                                text = "$(cascadia-code-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Cascadia Code";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(google-sans-code-cf-icon) Google Sans Code":
-                                text = "$(google-sans-code-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Google Sans Code";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(red-hat-mono-cf-icon) Red Hat Mono":
-                                text = "$(red-hat-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Red Hat Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(sometype-mono-cf-icon) Sometype Mono":
-                                text = "$(sometype-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Sometype Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(ubuntu-sans-mono-cf-icon) Ubuntu Sans Mono":
-                                text = "$(ubuntu-sans-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Ubuntu Sans Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(azeret-mono-cf-icon) Azeret Mono":
-                                text = "$(azeret-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Azeret Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(chivo-mono-cf-icon) Chivo Mono":
-                                text = "$(chivo-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Chivo Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(fragment-mono-cf-icon) Fragment Mono":
-                                text = "$(fragment-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Fragment Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(overpass-mono-cf-icon) Overpass Mono":
-                                text = "$(overpass-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Overpass Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                            case "$(oxygen-mono-cf-icon) Oxygen Mono":
-                                text = "$(oxygen-mono-cf-icon) CF";
-                                tooltip = "Switch Editor Font | Actual: Oxygen Mono";
-                                this.switchCustomFontsStatusBar.text = text;
-                                this.switchCustomFontsStatusBar.tooltip = tooltip;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
-                                FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
-                                writeFileSync(
-                                    __dirname + "/setupCustomFontsConfig.json",
-                                    JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
-                                );
-                                break;
-                        }
-                        this.updateUserSettings({
-                            // remove the icon part from the selected font string
-                            "editor.fontFamily": selectedFont
-                                .split(") ")[1]
-                                .replace(/ /g, " "),
-                        });
-                    }
+                        break;
+                    case "$(fd-cf-cascadia-mono) Cascadia Mono":
+                        text = "$(fd-cf-cascadia-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Cascadia Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-jetbrains-mono) JetBrains Mono":
+                        text = "$(fd-cf-jetbrains-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: JetBrains Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-fira-mono) Fira Mono":
+                        text = "$(fd-cf-fira-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Fira Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-fira-code) Fira Code":
+                        text = "$(fd-cf-fira-code) CF";
+                        tooltip = "Switch Editor Font | Actual: Fira Code";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-intel-one-mono) Intel One Mono":
+                        text = "$(fd-cf-intel-one-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Intel One Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-pt-mono) PT Mono":
+                        text = "$(fd-cf-pt-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: PT Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-space-mono) Space Mono":
+                        text = "$(fd-cf-space-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Space Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-ubuntu-mono) Ubuntu Mono":
+                        text = "$(fd-cf-ubuntu-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Ubuntu Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-martian-mono) Martian Mono":
+                        text = "$(fd-cf-martian-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Martian Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-martian-mono-condensed) Martian Mono Condensed":
+                        text = "$(fd-cf-martian-mono-condensed) CF";
+                        tooltip = "Switch Editor Font | Actual: Martian Mono Condensed";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-martian-mono-semicondensed) Martian Mono Semicondensed":
+                        text = "$(fd-cf-martian-mono-semicondensed) CF";
+                        tooltip = "Switch Editor Font | Actual: Martian Mono Semicondensed";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-martian-mono-semiexpanded) Martian Mono Semiexpanded":
+                        text = "$(fd-cf-martian-mono-semiexpanded) CF";
+                        tooltip = "Switch Editor Font | Actual: Martian Mono Semiexpanded";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-reddit-mono) Reddit Mono":
+                        text = "$(fd-cf-reddit-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Reddit Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-cascadia-code) Cascadia Code":
+                        text = "$(fd-cf-cascadia-code) CF";
+                        tooltip = "Switch Editor Font | Actual: Cascadia Code";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-google-sans-code) Google Sans Code":
+                        text = "$(fd-cf-google-sans-code) CF";
+                        tooltip = "Switch Editor Font | Actual: Google Sans Code";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-redhat-mono) Red Hat Mono":
+                        text = "$(fd-cf-redhat-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Red Hat Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-sometype-mono) Sometype Mono":
+                        text = "$(fd-cf-sometype-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Sometype Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-ubuntu-sans-mono) Ubuntu Sans Mono":
+                        text = "$(fd-cf-ubuntu-sans-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Ubuntu Sans Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-azeret-mono) Azeret Mono":
+                        text = "$(fd-cf-azeret-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Azeret Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-chivo-mono) Chivo Mono":
+                        text = "$(fd-cf-chivo-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Chivo Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-fragment-mono) Fragment Mono":
+                        text = "$(fd-cf-fragment-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Fragment Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-overpass-mono) Overpass Mono":
+                        text = "$(fd-cf-overpass-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Overpass Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    case "$(fd-cf-oxygen-mono) Oxygen Mono":
+                        text = "$(fd-cf-oxygen-mono) CF";
+                        tooltip = "Switch Editor Font | Actual: Oxygen Mono";
+                        this.switchCustomFontsStatusBar.text = text;
+                        this.switchCustomFontsStatusBar.tooltip = tooltip;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-text"] = text;
+                        FDCustomFonts.dynamicSetupConfig["actual-customfonts-statusbar-tooltip"] = tooltip;
+                        writeFileSync(
+                            __dirname + "/setupCustomFontsConfig.json",
+                            JSON.stringify(FDCustomFonts.dynamicSetupConfig, null, 2)
+                        );
+                        break;
+                    default:
+                        break;
+                }
+                if (!selectedFont) {
+                    return;
                 }
             });
     }
