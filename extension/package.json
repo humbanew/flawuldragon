@@ -3,7 +3,7 @@
   "displayName": "Flawuldragon",
   "publisher": "humbanew",
   "description": "Humbanew starterkit development extension",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "engines": {
     "vscode": "^1.97.0"
   },
@@ -286,10 +286,6 @@
     "Desktop Extension",
     "desktop-extension"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/humbanew/flawuldragon"
-  },
   "activationEvents": [
     "onStartupFinished"
   ],

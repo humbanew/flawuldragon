@@ -1,13 +1,13 @@
 <div align="center">
 
-  <img src="https://strg.humbanew.com.br/projects/cabecalholicensev5.png" alt="Humbanew License Header v5" />
+  <img src="https://src.humbanew.com.br/readme-docs/cabecalholicensev5.png" alt="Humbanew License Header v5" />
 
 </div>
 
 MIT License
 *adapted version*
 
-Copyright (c) 2015-2025 Humbanew Project
+Copyright (c) 2015-2026 Humbanew Project
 
 The Flawuldragon, SPECTRE CYAN PRISM CODENAME
 
