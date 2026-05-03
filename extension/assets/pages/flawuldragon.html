@@ -1037,6 +1037,17 @@
     const seccaoRaizCha = document.getElementById("cha");
     let changelogVersions = [];
     let changelogNotes = [];
+
+    changelogVersions.push(new ChangelogVersion("v0.0.21", "May 02, 2026"));
+    changelogNotes.push([
+      new ChangelogNote("Hotfix: Fixed extension registration problems, part 2."),
+      new ChangelogNote("Updated CHANGELOG.md.")
+    ]);
+    changelogVersions.push(new ChangelogVersion("v0.0.20", "May 02, 2026"));
+    changelogNotes.push([
+      new ChangelogNote("Hotfix: Fixed extension registration problems."),
+      new ChangelogNote("Updated CHANGELOG.md.")
+    ]);
     changelogVersions.push(new ChangelogVersion("v0.0.19", "October 23, 2025"));
     changelogNotes.push([
       new ChangelogNote("Hotfix: Fixed problem with the representations, part 2."),
