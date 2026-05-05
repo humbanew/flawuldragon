@@ -2,6 +2,10 @@
 
 All changes to the "flawuldragon" extension will be documented in this file.
 
+## v0.0.22 (May 04, 2026) - Published
+- Fixed README.md.
+- Updated CHANGELOG.md.
+
 ## v0.0.21 (May 02, 2026) - Published
 - Hotfix: Fixed extension registration problems, part 2.
 - Updated CHANGELOG.md.
