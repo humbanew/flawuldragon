@@ -4,13 +4,6 @@
   ![flawuldragon-logo](https://src.humbanew.com.br/readme-docs/flawuldragon/flawuldragon-readme-logo.png)
 
   <br><br>
-  
-  ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/humbanew/flawuldragon-unbounded?style=flat-square&color=2c79c8)
-  ![GitHub Repo stars](https://img.shields.io/github/stars/humbanew/flawuldragon-unbounded?style=flat-square&label=github%20stars&color=111111)
-  ![GitHub last commit](https://img.shields.io/github/last-commit/humbanew/flawuldragon-unbounded?display_timestamp=committer&style=flat-square&color=ffcf94)
-  ![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/humbanew.flawuldragon-unbounded?include_prereleases&style=flat-square&label=vs%20mkpc%20version)
-  ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/humbanew.flawuldragon-unbounded?style=flat-square&label=vs%20mkpc%20downloads)
-  ![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/stars/humbanew.flawuldragon-unbounded?style=flat-square&label=vs%20mkpc%20rating)
 
 </div>
 <br><br>
